@@ -422,13 +422,13 @@ function renderNew() {
   const order = Object.keys(by).sort((a, b) => by[b].length - by[a].length);
   const docs = N.rules.filter(r => r.type === 'doc_issue');
   $('#p-new').innerHTML = `
-    <div class="panel stack"><h2>Форма нового года за две минуты</h2>
-      <p class="muted" style="max-width:80ch">Так Бюро будет добавлять новую форму или новый год. Здесь — Д-002 за 2022 год, которого инструмент не видел. Новый запуск модели получил только промпт, бланк и структуру файла; правила затем проверены на записях 2022 года. Ключ API не нужен: промпт вставляется в чат Claude.</p>
+    <div class="panel stack"><h2>Подключение новой анкеты или нового года</h2>
+      <p class="muted" style="max-width:80ch">Пример — анкета Д-002 за 2022 год, которая не использовалась при разработке инструмента. Модель получила только типовой запрос, бланк анкеты и структуру файла и сформировала по ним правила проверки; затем правила выполнены на записях 2022 года. Отдельная интеграция не требуется: запрос выполняется через API или в веб-интерфейсе Claude. В модель передаются только бланк и структура файла — микроданные остаются на компьютере Бюро.</p>
       <div class="steps">
-        <div class="step"><span class="k">1 · вход</span><span class="v">Бланк 2022</span><span class="muted">анкета и структура файла, без записей</span></div>
+        <div class="step"><span class="k">1 · вход</span><span class="v">Бланк 2022</span><span class="muted">анкета и структура файла, без микроданных</span></div>
         <div class="step"><span class="k">2 · модель</span><span class="v">${N.rules.length} правила</span><span class="muted">за ${Math.floor(N.seconds.extraction / 60)} мин ${N.seconds.extraction % 60} с, у каждого цитата</span></div>
         <div class="step"><span class="k">3 · движок</span><span class="v">${num(N.seconds.engine)} с</span><span class="muted">каждое правило по каждому региону</span></div>
-        <div class="step"><span class="k">4 · результат</span><span class="v">${N.flags.length} сигнала</span><span class="muted">${N.notRun.length} правило — человеку, ${docs.length} противоречий в документации</span></div>
+        <div class="step"><span class="k">4 · результат</span><span class="v">${N.flags.length} сигнала</span><span class="muted">${N.notRun.length} — на решение специалиста, ${docs.length} противоречий в документации</span></div>
       </div></div>
     <div class="grid2">
       <div class="panel stack"><h2>Сигналы по регионам</h2>
@@ -436,12 +436,12 @@ function renderNew() {
           <div class="row" style="justify-content:space-between"><b>${esc(RU[f.region] || f.region)}</b><span class="pill ${f.trust.startsWith('вытекает') ? 'hold' : 'check'}">${esc(f.trust)}</span></div>
           <div>${esc(f.ru)}</div>${rateRows({ region: f.region, rateRegion: f.rateRegion, rateRest: f.rateRest, status: f.trust.startsWith('вытекает') ? 'держится' : 'проверить' })}
           <span class="code muted">${esc(f.rule)}</span></article>`).join('')}
-        <h3>Отложено для человека</h3>
+        <h3>Оставлено на решение специалиста</h3>
         ${N.notRun.map(n => `<p class="muted"><span class="code">${esc(n.rule)}</span>: ${esc(n.reason)}</p>`).join('')}
         <h3>Противоречия в документации</h3>
         ${docs.map(d => `<div class="stack" style="gap:4px"><p class="quote">«${esc(d.quote)}»</p>${d.note ? `<span class="note-en">Примечание модели (англ.): ${esc(d.note)}</span>` : ''}</div>`).join('')}
       </div>
-      <div class="panel stack"><h2>Правила, которые написала модель</h2>
+      <div class="panel stack"><h2>Правила, сформированные моделью</h2>
         ${order.map(t => `<details ${t === order[0] ? 'open' : ''}><summary>${esc(t)} — ${by[t].length}</summary><div class="stack" style="margin-top:8px">
           ${by[t].map(r => `<div style="display:flex;flex-direction:column;gap:3px"><span>${esc(r.ru)}</span>${r.quote ? `<span class="quote">«${esc(r.quote)}»</span>` : ''}</div>`).join('')}</div></details>`).join('')}
       </div>
