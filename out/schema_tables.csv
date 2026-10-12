@@ -1,0 +1,69 @@
+form,table,year,grain,key,files,rows,columns,rows_real,columns_real,key_unique,households,households_in_roster_pct,regions,role
+D008,kontr_k,2021,person,NOMER+NOMP,1,41868,29,42275,29,True,12000.0,100.0,17.0,household roster: every member of every sampled household
+D008,kontr_k,2022,person,NOMER+NOMP,1,42681,31,42387,31,True,12000.0,100.0,20.0,household roster: every member of every sampled household
+D008,kontr_k,2023,person,NOMER+NOMP,1,42689,31,42466,31,True,12000.0,100.0,20.0,household roster: every member of every sampled household
+D008,kontr_k,2024,person,NOMER+NOMP,1,41821,35,41880,35,True,12000.0,100.0,20.0,household roster: every member of every sampled household
+D002,subject,2021,household,NOMER,1,11953,52,11951,52,True,11953.0,100.0,17.0,"quality of life, part 1 (one respondent per household)"
+D002,subject,2022,household,NOMER,1,11934,48,11939,48,True,11934.0,100.0,20.0,"quality of life, part 1 (one respondent per household)"
+D002,subject,2023,household,NOMER,1,11953,75,11967,75,True,11953.0,100.0,20.0,"quality of life, part 1 (one respondent per household)"
+D002,subject,2024,household,NOMER,1,11931,75,11941,75,True,11931.0,100.0,20.0,"quality of life, part 1 (one respondent per household)"
+D002,ocenka,2021,household,NOMER,1,11953,48,11951,48,True,11953.0,100.0,17.0,"quality of life, parts 2-4 (same respondent)"
+D002,ocenka,2022,household,NOMER,1,11934,63,11939,63,True,11934.0,100.0,20.0,"quality of life, parts 2-4 (same respondent)"
+D002,ocenka,2023,household,NOMER,1,11953,98,11967,98,True,11953.0,100.0,20.0,"quality of life, parts 2-4 (same respondent)"
+D002,ocenka,2024,household,NOMER,1,11931,97,11941,97,True,11931.0,100.0,20.0,"quality of life, parts 2-4 (same respondent)"
+D006,rio,2021,household,NOMER,1,11636,247,11668,247,True,11636.0,100.0,17.0,"main interview: dwelling, amenities, assets"
+D006,rio,2022,household,NOMER,1,11744,247,11727,247,True,11744.0,100.0,20.0,"main interview: dwelling, amenities, assets"
+D006,rio,2023,household,NOMER,1,11659,247,11681,247,True,11659.0,100.0,20.0,"main interview: dwelling, amenities, assets"
+D006,rio,2024,household,NOMER,1,11704,247,11713,247,True,11704.0,100.0,20.0,"main interview: dwelling, amenities, assets"
+D004,kv_vopr0,2021,household x quarter,NOMER+KVARTAL,4,48000,6,48000,6,,,,,quarterly journal: visit result
+D004,kv_vopr0,2022,household x quarter,NOMER+KVARTAL,4,48000,6,48000,6,,,,,quarterly journal: visit result
+D004,kv_vopr0,2023,household x quarter,NOMER+KVARTAL,4,48000,6,48000,6,,,,,quarterly journal: visit result
+D004,kv_vopr0,2024,household x quarter,NOMER+KVARTAL,4,48000,6,48000,6,True,12000.0,100.0,20.0,quarterly journal: visit result
+D004,kv_vopr1,2021,household x quarter x item,NOMER+KVARTAL+KODNU,4,1092444,9,1101426,9,,,,,quarterly journal: spending lines
+D004,kv_vopr1,2022,household x quarter x item,NOMER+KVARTAL+KODNU,4,1104739,9,1105021,9,,,,,quarterly journal: spending lines
+D004,kv_vopr1,2023,household x quarter x item,NOMER+KVARTAL+KODNU,4,1099586,10,1100384,10,,,,,quarterly journal: spending lines
+D004,kv_vopr1,2024,household x quarter x item,NOMER+KVARTAL+KODNU,4,1095051,10,1097906,10,False,11960.0,100.0,20.0,quarterly journal: spending lines
+D004,kv_vopr2,2021,household x quarter x item,NOMER+KVARTAL+KODNU,4,250452,9,248599,9,,,,,quarterly journal: spending lines
+D004,kv_vopr2,2022,household x quarter x item,NOMER+KVARTAL+KODNU,4,247354,9,249014,9,,,,,quarterly journal: spending lines
+D004,kv_vopr2,2023,household x quarter x item,NOMER+KVARTAL+KODNU,4,249550,9,250328,9,,,,,quarterly journal: spending lines
+D004,kv_vopr2,2024,household x quarter x item,NOMER+KVARTAL+KODNU,4,251420,9,251561,9,False,11960.0,100.0,20.0,quarterly journal: spending lines
+D004,kv_vopr3,2021,household x quarter x item,NOMER+KVARTAL+KODNU,4,105758,8,105982,8,,,,,quarterly journal: spending lines
+D004,kv_vopr3,2022,household x quarter x item,NOMER+KVARTAL+KODNU,4,107762,8,107808,8,,,,,quarterly journal: spending lines
+D004,kv_vopr3,2023,household x quarter x item,NOMER+KVARTAL+KODNU,4,106946,8,106934,8,,,,,quarterly journal: spending lines
+D004,kv_vopr3,2024,household x quarter x item,NOMER+KVARTAL+KODNU,4,101664,8,101988,8,False,11960.0,100.0,20.0,quarterly journal: spending lines
+D004,kv_vopr4,2021,household x quarter x item,NOMER+KVARTAL+KODNU,4,6880,8,6860,8,,,,,quarterly journal: spending lines
+D004,kv_vopr4,2022,household x quarter x item,NOMER+KVARTAL+KODNU,4,9305,8,9441,8,,,,,quarterly journal: spending lines
+D004,kv_vopr4,2023,household x quarter x item,NOMER+KVARTAL+KODNU,4,10754,8,10887,8,,,,,quarterly journal: spending lines
+D004,kv_vopr4,2024,household x quarter x item,NOMER+KVARTAL+KODNU,4,10180,8,10372,8,False,3584.0,100.0,20.0,quarterly journal: spending lines
+D004,kv_vopr5,2021,household x quarter x item,NOMER+KVARTAL+KODNU,4,19941,8,19760,8,,,,,quarterly journal: spending lines
+D004,kv_vopr5,2022,household x quarter x item,NOMER+KVARTAL+KODNU,4,18550,8,18800,8,,,,,quarterly journal: spending lines
+D004,kv_vopr5,2023,household x quarter x item,NOMER+KVARTAL+KODNU,4,18069,8,18483,8,,,,,quarterly journal: spending lines
+D004,kv_vopr5,2024,household x quarter x item,NOMER+KVARTAL+KODNU,4,17642,8,17793,8,False,6782.0,100.0,20.0,quarterly journal: spending lines
+D004,kv_vopr6,2021,household x quarter x item,NOMER+KVARTAL+KODNU,4,154115,10,154003,10,,,,,quarterly journal: spending lines
+D004,kv_vopr6,2022,household x quarter x item,NOMER+KVARTAL+KODNU,4,166538,10,167933,10,,,,,quarterly journal: spending lines
+D004,kv_vopr6,2023,household x quarter x item,NOMER+KVARTAL+KODNU,4,176168,10,177357,10,,,,,quarterly journal: spending lines
+D004,kv_vopr6,2024,household x quarter x item,NOMER+KVARTAL+KODNU,4,178702,10,180402,10,False,11932.0,100.0,20.0,quarterly journal: spending lines
+D004,kv_vopr7,2021,household x quarter x item,NOMER+KVARTAL+KODNU,4,57625,8,58381,8,,,,,quarterly journal: spending lines
+D004,kv_vopr7,2022,household x quarter x item,NOMER+KVARTAL+KODNU,4,61262,8,61516,8,,,,,quarterly journal: spending lines
+D004,kv_vopr7,2023,household x quarter x item,NOMER+KVARTAL+KODNU,4,64158,8,64908,8,,,,,quarterly journal: spending lines
+D004,kv_vopr7,2024,household x quarter x item,NOMER+KVARTAL+KODNU,4,65708,8,65812,8,False,11225.0,100.0,20.0,quarterly journal: spending lines
+D004,kv_vopr9,2021,household x quarter x item,NOMER+KVARTAL+KODNU,4,235885,20,241870,20,,,,,quarterly journal: spending lines
+D004,kv_vopr9,2022,household x quarter x item,NOMER+KVARTAL+KODNU,4,236898,19,236275,19,,,,,quarterly journal: spending lines
+D004,kv_vopr9,2023,household x quarter x item,NOMER+KVARTAL+KODNU,4,224198,19,225457,20,,,,,quarterly journal: spending lines
+D004,kv_vopr9,2024,household x quarter x item,NOMER+KVARTAL+KODNU,4,220711,20,222441,20,False,11960.0,100.0,20.0,quarterly journal: spending lines
+D004,kv_vopr10,2021,household x quarter x item,NOMER+KVARTAL+KODNU,4,42109,12,44609,12,,,,,quarterly journal: spending lines
+D004,kv_vopr10,2022,household x quarter x item,NOMER+KVARTAL+KODNU,4,42061,11,42940,11,,,,,quarterly journal: spending lines
+D004,kv_vopr10,2023,household x quarter x item,NOMER+KVARTAL+KODNU,4,42135,11,42542,12,,,,,quarterly journal: spending lines
+D004,kv_vopr10,2024,household x quarter x item,NOMER+KVARTAL+KODNU,4,40488,12,40598,12,False,7284.0,100.0,20.0,quarterly journal: spending lines
+D004,kv_vopr11,2021,household x quarter x item,NOMER+KVARTAL+KODNU,4,99082,33,99646,33,,,,,quarterly journal: spending lines
+D004,kv_vopr11,2022,household x quarter x item,NOMER+KVARTAL+KODNU,4,100137,33,99474,33,,,,,quarterly journal: spending lines
+D004,kv_vopr11,2023,household x quarter x item,NOMER+KVARTAL+KODNU,4,99429,33,99142,33,,,,,quarterly journal: spending lines
+D004,kv_vopr11,2024,household x quarter x item,NOMER+KVARTAL+KODNU,4,97862,33,98221,33,,11948.0,100.0,20.0,quarterly journal: spending lines
+D004,kv_vopr12,2021,household x quarter x item,NOMER+KVARTAL+KODNU,4,20399,9,20696,9,,,,,quarterly journal: spending lines
+D004,kv_vopr12,2022,household x quarter x item,NOMER+KVARTAL+KODNU,4,22238,9,22592,9,,,,,quarterly journal: spending lines
+D004,kv_vopr12,2023,household x quarter x item,NOMER+KVARTAL+KODNU,4,23575,9,23786,12,,,,,quarterly journal: spending lines
+D004,kv_vopr12,2024,household x quarter x item,NOMER+KVARTAL+KODNU,4,24954,12,24525,12,False,5542.0,100.0,20.0,quarterly journal: spending lines
+T001,baza,2021,person (respondent),none,1,472456,39,472456,152,,,,,labour force survey: no household or person number in the release
+T001,baza,2022,person (respondent),none,1,467667,40,467667,166,,,,,labour force survey: no household or person number in the release
+T001,baza,2023,person (respondent),none,1,475635,40,475635,165,,,,,labour force survey: no household or person number in the release
+T001,baza,2024,person (respondent),none,1,469352,40,469352,166,,,,20.0,labour force survey: no household or person number in the release

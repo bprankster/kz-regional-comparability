@@ -1,0 +1,251 @@
+baseline,kind,rule,background_rate,rate,trial,region,planted,eligible,detected,new_flags_other_regions,new_flags_same_region,same_region_rules
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.05,0,Atyrau,6,128,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.05,1,Kostanay,0,8,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.05,2,Zhetysu,4,72,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.05,3,Zhetysu,4,72,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.05,4,North Kazakhstan,0,9,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.05,5,East Kazakhstan,3,58,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.05,6,Shymkent,3,63,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.05,7,Astana,4,88,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.05,8,Pavlodar,1,11,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.05,9,Kyzylorda,6,113,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.1,0,Akmola,9,90,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.1,1,Kostanay,1,8,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.1,2,Karaganda,8,81,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.1,3,Shymkent,6,63,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.1,4,Kostanay,1,8,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.1,5,Kostanay,1,8,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.1,6,Abai,11,114,True,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.1,7,Pavlodar,1,11,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.1,8,Shymkent,6,63,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.1,9,Aktobe,1,10,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.2,0,East Kazakhstan,12,58,True,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.2,1,Akmola,18,90,True,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.2,2,Kostanay,2,8,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.2,3,Akmola,18,90,True,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.2,4,Astana,18,88,True,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.2,5,Karaganda,16,81,True,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.2,6,Kostanay,2,8,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.2,7,Akmola,18,90,True,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.2,8,Akmola,18,90,True,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.2,9,Astana,18,88,True,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.3,0,Pavlodar,3,11,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.3,1,Abai,34,114,True,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.3,2,West Kazakhstan,37,124,True,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.3,3,North Kazakhstan,3,9,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.3,4,East Kazakhstan,17,58,True,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.3,5,Aktobe,3,10,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.3,6,Abai,34,114,True,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.3,7,Atyrau,38,128,True,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.3,8,East Kazakhstan,17,58,True,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.3,9,Ulytau,44,147,True,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.5,0,Aktobe,5,10,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.5,1,Pavlodar,6,11,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.5,2,Pavlodar,6,11,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.5,3,Shymkent,32,63,True,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.5,4,East Kazakhstan,29,58,True,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.5,5,North Kazakhstan,4,9,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.5,6,Pavlodar,6,11,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.5,7,Atyrau,64,128,True,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.5,8,Aktobe,5,10,False,0,0,
+repaired,skip: Q14 asked after 'no internet',D002-P3Q14-skip,0.0,0.5,9,Zhambyl,34,68,True,0,0,
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.05,0,Mangystau,9,173,False,0,0,
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.05,1,Zhambyl,14,285,False,0,0,
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.05,2,Zhetysu,13,255,True,0,27,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.05,3,West Kazakhstan,12,247,False,0,0,
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.05,4,Almaty oblast,10,196,True,0,25,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.05,5,Kyzylorda,7,146,False,0,0,
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.05,6,Almaty oblast,10,196,True,0,24,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.05,7,Zhetysu,13,255,True,0,26,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.05,8,Aktobe,13,265,False,0,0,
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.05,9,Turkistan,3,64,False,0,0,
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.1,0,Almaty city,70,697,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.1,1,Akmola,42,420,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.1,2,Almaty oblast,20,196,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.1,3,Almaty city,70,697,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.1,4,North Kazakhstan,36,358,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.1,5,Kostanay,42,421,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.1,6,West Kazakhstan,25,247,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.1,7,West Kazakhstan,25,247,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.1,8,Astana,30,296,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.1,9,Aktobe,26,265,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.2,0,Almaty oblast,39,196,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.2,1,Almaty city,139,697,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.2,2,Kyzylorda,29,146,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.2,3,Almaty city,139,697,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.2,4,North Kazakhstan,72,358,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.2,5,Pavlodar,86,429,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.2,6,East Kazakhstan,59,294,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.2,7,Karaganda,65,325,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.2,8,Turkistan,13,64,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.2,9,Aktobe,53,265,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.3,0,East Kazakhstan,88,294,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.3,1,North Kazakhstan,107,358,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.3,2,Zhetysu,76,255,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.3,3,East Kazakhstan,88,294,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.3,4,Akmola,126,420,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.3,5,Almaty oblast,59,196,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.3,6,Mangystau,52,173,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.3,7,Turkistan,19,64,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.3,8,Mangystau,52,173,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.3,9,Atyrau,45,150,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.5,0,Zhambyl,142,285,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.5,1,Aktobe,132,265,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.5,2,Mangystau,86,173,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.5,3,Astana,148,296,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.5,4,Akmola,210,420,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.5,5,Atyrau,75,150,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.5,6,Zhetysu,128,255,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.5,7,Aktobe,132,265,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.5,8,Kyzylorda,73,146,True,0,29,D002-P4-skip
+repaired,skip: Part 4 filled for 'no children',D002-P4-skip,0.0,0.5,9,Kyzylorda,73,146,True,0,29,D002-P4-skip
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.05,0,Zhambyl,13,255,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.05,1,Ulytau,2,43,False,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.05,2,Akmola,7,145,False,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.05,3,Abai,8,166,False,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.05,4,Aktobe,3,63,False,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.05,5,Mangystau,4,83,False,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.05,6,Ulytau,2,43,False,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.05,7,Akmola,7,145,False,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.05,8,West Kazakhstan,12,242,False,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.05,9,Pavlodar,6,112,False,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.1,0,Aktobe,6,63,False,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.1,1,Abai,17,166,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.1,2,Almaty city,9,86,False,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.1,3,Turkistan,27,268,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.1,4,Kyzylorda,19,186,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.1,5,Kyzylorda,19,186,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.1,6,Atyrau,15,154,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.1,7,Kyzylorda,19,186,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.1,8,Abai,17,166,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.1,9,Almaty oblast,11,110,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.2,0,Atyrau,31,154,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.2,1,Pavlodar,22,112,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.2,2,Akmola,29,145,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.2,3,North Kazakhstan,35,174,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.2,4,Abai,33,166,True,0,1,D002-mobile-implies-internet
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.2,5,Zhambyl,51,255,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.2,6,Atyrau,31,154,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.2,7,West Kazakhstan,48,242,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.2,8,Zhambyl,51,255,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.2,9,West Kazakhstan,48,242,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.3,0,Atyrau,46,154,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.3,1,Ulytau,13,43,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.3,2,Mangystau,25,83,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.3,3,Ulytau,13,43,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.3,4,Zhetysu,35,118,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.3,5,Karaganda,30,101,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.3,6,Almaty city,26,86,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.3,7,Ulytau,13,43,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.3,8,Astana,21,69,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.3,9,Kyzylorda,56,186,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.5,0,Akmola,72,145,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.5,1,Ulytau,22,43,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.5,2,Pavlodar,56,112,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.5,3,Almaty city,43,86,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.5,4,Almaty city,43,86,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.5,5,West Kazakhstan,121,242,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.5,6,Karaganda,50,101,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.5,7,Mangystau,42,83,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.5,8,Karaganda,50,101,True,0,0,
+repaired,required: reason blank after 'no home internet',D002-P3Q16-required,0.0,0.5,9,Astana,34,69,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.05,0,Almaty oblast,23,464,False,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.05,1,Aktobe,36,718,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.05,2,East Kazakhstan,25,501,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.05,3,Karaganda,31,621,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.05,4,Kyzylorda,29,585,False,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.05,5,Mangystau,27,540,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.05,6,Zhetysu,23,452,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.05,7,Astana,27,535,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.05,8,Aktobe,36,718,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.05,9,Mangystau,27,540,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.1,0,West Kazakhstan,62,621,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.1,1,Astana,54,535,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.1,2,Mangystau,54,540,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.1,3,Zhetysu,45,452,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.1,4,Almaty city,74,736,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.1,5,Kostanay,77,774,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.1,6,Zhetysu,45,452,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.1,7,Atyrau,54,535,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.1,8,Almaty city,74,736,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.1,9,Zhetysu,45,452,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.2,0,Akmola,152,760,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.2,1,Astana,107,535,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.2,2,East Kazakhstan,100,501,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.2,3,Atyrau,107,535,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.2,4,Almaty oblast,93,464,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.2,5,Turkistan,119,595,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.2,6,Atyrau,107,535,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.2,7,Turkistan,119,595,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.2,8,East Kazakhstan,100,501,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.2,9,Almaty oblast,93,464,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.3,0,North Kazakhstan,196,654,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.3,1,Abai,148,492,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.3,2,North Kazakhstan,196,654,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.3,3,Abai,148,492,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.3,4,Akmola,228,760,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.3,5,Almaty oblast,139,464,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.3,6,North Kazakhstan,196,654,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.3,7,Zhetysu,136,452,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.3,8,North Kazakhstan,196,654,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.3,9,Zhambyl,197,656,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.5,0,Mangystau,270,540,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.5,1,East Kazakhstan,250,501,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.5,2,Mangystau,270,540,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.5,3,Zhambyl,328,656,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.5,4,Mangystau,270,540,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.5,5,Zhambyl,328,656,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.5,6,Kyzylorda,292,585,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.5,7,Almaty oblast,232,464,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.5,8,Kostanay,387,774,True,0,0,
+repaired,domain: out-of-range time code,D002-ZT-domain,0.0,0.5,9,Almaty city,368,736,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.05,0,Shymkent,5,103,False,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.05,1,Ulytau,5,91,False,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.05,2,Akmola,3,56,False,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.05,3,Aktobe,3,62,False,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.05,4,Astana,4,85,False,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.05,5,Turkistan,6,124,False,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.05,6,Akmola,3,56,False,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.05,7,Atyrau,7,131,False,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.05,8,East Kazakhstan,3,51,False,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.05,9,Almaty city,2,47,False,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.1,0,Kyzylorda,12,116,True,0,19,D002-P4-skip
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.1,1,Pavlodar,8,75,False,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.1,2,Shymkent,10,103,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.1,3,Akmola,6,56,False,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.1,4,Kostanay,6,55,False,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.1,5,Aktobe,6,62,False,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.1,6,Turkistan,12,124,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.1,7,Kyzylorda,12,116,True,0,19,D002-P4-skip
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.1,8,Atyrau,13,131,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.1,9,Akmola,6,56,False,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.2,0,Mangystau,37,187,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.2,1,Aktobe,12,62,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.2,2,Ulytau,18,91,True,1,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.2,3,Shymkent,21,103,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.2,4,Pavlodar,15,75,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.2,5,Mangystau,37,187,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.2,6,Pavlodar,15,75,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.2,7,Akmola,11,56,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.2,8,Karaganda,13,65,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.2,9,North Kazakhstan,12,58,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.3,0,Zhambyl,24,80,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.3,1,Abai,16,53,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.3,2,Akmola,17,56,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.3,3,Aktobe,19,62,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.3,4,Aktobe,19,62,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.3,5,East Kazakhstan,15,51,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.3,6,Zhetysu,22,74,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.3,7,Turkistan,37,124,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.3,8,Kostanay,16,55,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.3,9,Pavlodar,22,75,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.5,0,Pavlodar,38,75,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.5,1,Almaty oblast,26,52,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.5,2,Shymkent,52,103,True,0,29,D002-P4-skip
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.5,3,Zhambyl,40,80,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.5,4,East Kazakhstan,26,51,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.5,5,Atyrau,66,131,True,0,30,D002-P4-skip
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.5,6,Almaty oblast,26,52,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.5,7,Almaty city,24,47,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.5,8,Turkistan,62,124,True,0,0,
+repaired,filter: 'no children' with a pre-school child,D002-preschool-implies-children,0.0,0.5,9,Karaganda,32,65,True,0,0,

@@ -1,0 +1,642 @@
+{
+ "form": "D008",
+ "years": [
+  2023,
+  2024
+ ],
+ "extracted_by": "Claude (claude-opus-5-5), in session on 10 Oct 2026, following prompts/extract_rules_v1.md",
+ "sources": {
+  "form": "documentation/d008/2023/форма D 008 рус.docx (form + instruction; no 2024 form in the archive)",
+  "structure": "documentation/d008/2024/D008_2024/Структура D008.doc"
+ },
+ "rules": [
+  {
+   "id": "D008-K-domain",
+   "type": "domain",
+   "table": "kontr_k",
+   "targets": [
+    "K"
+   ],
+   "allowed": [
+    1,
+    2
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "Код типа населенного пункта (1 - город, 2 - село)"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D008-POL-domain",
+   "type": "domain",
+   "table": "kontr_k",
+   "targets": [
+    "POL"
+   ],
+   "allowed": [
+    1,
+    2
+   ],
+   "meaning": {
+    "1": "мужской",
+    "2": "женский"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Пол: мужской-1, женский-2"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D008-RODSTVO-domain",
+   "type": "domain",
+   "table": "kontr_k",
+   "targets": [
+    "RODSTVO"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "meaning": {
+    "1": "глава домашнего хозяйства",
+    "2": "муж, жена",
+    "3": "сын, дочь",
+    "4": "отец, мать",
+    "5": "брат, сестра",
+    "6": "дедушка, бабушка",
+    "7": "внук, внучка",
+    "8": "другая степень родства",
+    "9": "не родственник"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "2 – муж, жена 3 – сын, дочь ... 9 – не родственник; глава домашнего хозяйства код 1"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D008-SEM_POL-domain",
+   "type": "domain",
+   "table": "kontr_k",
+   "targets": [
+    "SEM_POL"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "meaning": {
+    "1": "никогда не состоял (а) в браке",
+    "2": "состоит в браке",
+    "3": "вдовец, вдова",
+    "4": "разведен (а)"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "6. Семейное положение 1 – ... 4 – разведен (а)"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D008-UROV-domain",
+   "type": "domain",
+   "table": "kontr_k",
+   "targets": [
+    "UROV"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "7. Уровни образования 1 – дошкольное ... 7 – не достигнут никакой уровень образования"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D008-STATUS-domain",
+   "type": "domain",
+   "table": "kontr_k",
+   "targets": [
+    "STATUS",
+    "STATUS1",
+    "STATUS2",
+    "STATUS3",
+    "STATUS4"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "meaning": {
+    "1": "работающий по найму",
+    "2": "работающий не по найму",
+    "3": "безработный",
+    "4": "пенсионер",
+    "5": "учащийся, студент",
+    "6": "домашнее хозяйство, уход",
+    "7": "нетрудоспособный",
+    "8": "не работающий и не ищущий по другим причинам"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "9. Статус основной деятельности 1 – работающий по найму ... 8 – не работающий и не ищущий работу по другим причинам"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D008-STATUSF-domain",
+   "type": "domain",
+   "table": "kontr_k",
+   "targets": [
+    "STATUSF",
+    "STATUSF1",
+    "STATUSF2",
+    "STATUSF3",
+    "STATUSF4"
+   ],
+   "allowed": [
+    11
+   ],
+   "source": {
+    "doc": "structure",
+    "quote": "Statusf ... заполняется для работающих по найму у физических лиц (код 11)"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D008-VR_OTS-domain",
+   "type": "domain",
+   "table": "kontr_k",
+   "targets": [
+    "VR_OTS"
+   ],
+   "allowed": [
+    33,
+    34,
+    36,
+    37,
+    38,
+    39,
+    43,
+    44,
+    46,
+    47,
+    48,
+    49
+   ],
+   "source": {
+    "doc": "instruction",
+    "quote": "при временном отсутствии – коды 33, 34, 36, 37, 38, 39; при временном присутствии – коды 43, 44, 46, 47, 48, 49"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D008-PR_IZ-domain",
+   "type": "domain",
+   "table": "kontr_k",
+   "targets": [
+    "PR_IZA",
+    "PR_IZI",
+    "PR_IZO",
+    "PR_IZYA"
+   ],
+   "allowed": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    21,
+    23,
+    25,
+    26,
+    27,
+    33,
+    34,
+    36,
+    37,
+    38,
+    39,
+    43,
+    44,
+    46,
+    47,
+    48,
+    49
+   ],
+   "source": {
+    "doc": "instruction",
+    "quote": "при постоянном отсутствии – 12, 13, 14, 15, 16, 17, 18, 19; при постоянном присутствии – 21, 23, 25, 26, 27; при временном отсутствии – 33, 34, 36, 37, 38, 39; при временном присутствии – 43, 44, 46, 47, 48, 49"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D008-ZT-domain",
+   "type": "domain",
+   "table": "kontr_k",
+   "targets": [
+    "ZT"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "до 1 часа | 1-2 | 2-4 | 4-8 | 8-40 | более 40 часов"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D008-ZT-required",
+   "type": "required",
+   "table": "kontr_k",
+   "targets": [
+    "ZT"
+   ],
+   "when": {
+    "col": "NOMP",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "10. Укажите время, затраченное на заполнение статистической формы"
+   },
+   "confidence": "medium",
+   "note": "One time per household, on the head's row."
+  },
+  {
+   "id": "D008-required-person",
+   "type": "required",
+   "table": "kontr_k",
+   "targets": [
+    "RODSTVO",
+    "GOD_ROJD",
+    "MES_ROJD",
+    "POL",
+    "UROV"
+   ],
+   "source": {
+    "doc": "instruction",
+    "quote": "проставляются год (четыре знака) и месяц (два знака) рождения каждого члена домашнего хозяйства"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D008-ROST-range",
+   "type": "domain",
+   "table": "kontr_k",
+   "targets": [
+    "ROST"
+   ],
+   "allowed": {
+    "min": 40,
+    "max": 230
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "В вопросе 5 указывается рост респондентов (на начало года)"
+   },
+   "confidence": "medium"
+  },
+  {
+   "id": "D008-STATUS-15plus",
+   "type": "required",
+   "table": "kontr_k",
+   "targets": [
+    "STATUS"
+   ],
+   "when": {
+    "col": "AGE",
+    "ge": 15
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "В вопросе 9 опрашиваются лица в возрасте 15 лет и старше"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D008-STATUS-skip-under15",
+   "type": "skip",
+   "table": "kontr_k",
+   "targets": [
+    "STATUS",
+    "STATUS1",
+    "STATUS2",
+    "STATUS3",
+    "STATUS4"
+   ],
+   "when": {
+    "col": "AGE",
+    "lt": 15
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Статус Вашей основной деятельности (лица в возрасте 15 лет и старше)"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D008-STATUSF-needs-employee",
+   "type": "consistency",
+   "table": "kontr_k",
+   "targets": [
+    "STATUS"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "STATUSF",
+    "in": [
+     11
+    ]
+   },
+   "then": {
+    "col": "STATUS",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "1.1 – работа по найму у отдельных физических лиц"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D008-married-adult",
+   "type": "consistency",
+   "table": "kontr_k",
+   "targets": [
+    "SEM_POL"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "AGE",
+    "lt": 16
+   },
+   "then": {
+    "any": [
+     {
+      "col": "SEM_POL",
+      "in": [
+       1
+      ]
+     },
+     {
+      "col": "SEM_POL",
+      "blank": true
+     }
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "учитывается брачный возраст для женщин и мужчин – 18 лет"
+   },
+   "confidence": "medium",
+   "note": "Threshold 16 leaves room for the legal exceptions to marriage at 18."
+  },
+  {
+   "id": "D008-spouse-married",
+   "type": "consistency",
+   "table": "kontr_k",
+   "targets": [
+    "SEM_POL"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "RODSTVO",
+    "in": [
+     2
+    ]
+   },
+   "then": {
+    "col": "SEM_POL",
+    "in": [
+     2
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "В Контрольной карточке отмечается как официальный, так и гражданский союз"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D008-higher-ed-age",
+   "type": "consistency",
+   "table": "kontr_k",
+   "targets": [
+    "UROV"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "UROV",
+    "in": [
+     5,
+     6
+    ]
+   },
+   "then": {
+    "col": "AGE",
+    "ge": 18
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "высшее образование – университет, институт, академия"
+   },
+   "confidence": "medium"
+  },
+  {
+   "id": "D008-preschool-age",
+   "type": "consistency",
+   "table": "kontr_k",
+   "targets": [
+    "UROV"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "UROV",
+    "in": [
+     1
+    ]
+   },
+   "then": {
+    "col": "AGE",
+    "lt": 12
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "дошкольное воспитание и обучение – считаются лица от 1 до 7 лет ... дети ... еще не закончившие начальное образование ... относятся к лицам, имеющим дошкольное образование"
+   },
+   "confidence": "medium"
+  },
+  {
+   "id": "D008-hh-size",
+   "type": "consistency",
+   "table": "kontr_k",
+   "targets": [
+    "KOL_CHL"
+   ],
+   "check": "hh_size",
+   "source": {
+    "doc": "structure",
+    "quote": "Kol_chl — количество членов домохозяйства"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D008-one-head",
+   "type": "consistency",
+   "table": "kontr_k",
+   "targets": [
+    "RODSTVO"
+   ],
+   "check": "one_head",
+   "source": {
+    "doc": "instruction",
+    "quote": "В вопросе 1 под номером члена домашнего хозяйства 1 записывается имя главы домашнего хозяйства"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D008-head-is-1",
+   "type": "consistency",
+   "table": "kontr_k",
+   "targets": [
+    "RODSTVO"
+   ],
+   "check": "head_is_member1",
+   "source": {
+    "doc": "instruction",
+    "quote": "под номером члена домашнего хозяйства 1 записывается имя главы"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D008-head-15plus",
+   "type": "consistency",
+   "table": "kontr_k",
+   "targets": [
+    "AGE"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "RODSTVO",
+    "in": [
+     1
+    ]
+   },
+   "then": {
+    "col": "AGE",
+    "ge": 15
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "Главой домашнего хозяйства может выступать занятый член домашнего хозяйства трудоспособного возраста"
+   },
+   "confidence": "medium"
+  },
+  {
+   "id": "D008-doc-PR_IZ-29",
+   "type": "doc_issue",
+   "targets": [
+    "PR_IZA"
+   ],
+   "source": {
+    "doc": "instruction",
+    "quote": "при постоянном присутствии – 21, 23, 25, 26, 27"
+   },
+   "confidence": "high",
+   "note": "The reason list has 9 'иные (переезд ...)', so 'permanently arrived, other' is 29, but the instruction leaves 29 out. Either the instruction is incomplete or 29 is not allowed."
+  },
+  {
+   "id": "D008-doc-head-code",
+   "type": "doc_issue",
+   "targets": [
+    "RODSTVO"
+   ],
+   "source": {
+    "doc": "instruction",
+    "quote": "В вопросе 2 данные по главе домашнего хозяйства не заполняются"
+   },
+   "confidence": "high",
+   "note": "The form prints code 1 for the head; the instruction says the head's row is left empty."
+  },
+  {
+   "id": "D008-doc-quarter-dates",
+   "type": "doc_issue",
+   "targets": [
+    "PR_IZI"
+   ],
+   "source": {
+    "doc": "instruction",
+    "quote": "(по состоянию на 1 апреля, 1 июня, 1 октября, 1 января)"
+   },
+   "confidence": "high",
+   "note": "'1 июня' should be '1 июля' (the structure names the field 'изменение состава в июле')."
+  },
+  {
+   "id": "D008-doc-fiz-undocumented",
+   "type": "doc_issue",
+   "targets": [
+    "FIZ",
+    "FIZM",
+    "FIZCH",
+    "FIZMIN"
+   ],
+   "source": {
+    "doc": "structure",
+    "quote": "fiz — Занятие физическими упражнениями"
+   },
+   "confidence": "high",
+   "note": "Physical-exercise fields are in the 2024 structure and data, but no code list is in the archive."
+  },
+  {
+   "id": "D008-doc-ZT-empty",
+   "type": "doc_issue",
+   "targets": [
+    "ZT"
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "10. Укажите время, затраченное на заполнение статистической формы"
+   },
+   "confidence": "high",
+   "note": "The form asks for time; the 2024 data column is empty for every record."
+  }
+ ]
+}

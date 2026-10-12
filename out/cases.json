@@ -1,0 +1,163 @@
+[
+ {
+  "id": "C1",
+  "title": "Child module: the filter question is filled differently by region",
+  "forms": "D-002 Part 4, D-008 roster",
+  "type": "Routing filter applied inconsistently",
+  "status": "holds in synthetic data",
+  "finding": "In 2024, 7.0% of Ulytau households are marked 'has children under 18' (GR40), against 71.6% with a member under 18 in the D-008 roster; Almaty city 5.3% against 47.2%. The other regions follow the roster closely (R² 0.91). Aktobe shows the same break in 2023 (4.1% against 63.4%) and recovers in 2024 (63.1%). Inside D-002 alone, 92.3% of Ulytau and 89.4% of Almaty city households that report a pre-school child not attending kindergarten are coded 'no children' (other regions together 6.5%). Joined household by household on NOMER (D-002 to the D-008 roster), the same break names the households: 322 of 348 households with a child in the roster are coded 'no children' in Almaty city (92.5%), 250 of 273 in Ulytau (91.6%), 423 of 437 in Aktobe in 2023 (96.8%) and 161 of 289 in Zhetysu in 2023 (55.7%); in the country as a whole GR40 agrees with the roster for 86.4% of households with children. The reverse also appears: households with no one under 18 in the roster coded 'has children' in Turkistan (86.0%, 2024) and Kyzylorda (61.0%, 2023), which may also come from birth years in the roster.",
+  "indicator": "Child multidimensional poverty (D-002 Part 4) for these regions and years rests on a small, self-selected share of households with children.",
+  "cause": "GR40 is not printed on the questionnaire: the file structure says it was added ('В форме нет такого вопроса (добавили)'). Without a printed question, each region fills it by local practice.",
+  "fix": "Derive GR40 from the D-008 roster in processing, or print it on the form; add the rule 'Part 3 Q17 = 1 ⇒ GR40 = 1' to data entry. On the real records, list the households from the record-link query (rules export) for the regional offices to recheck.",
+  "rules": [
+   "D002-preschool-implies-children",
+   "D002-x-D008-children",
+   "D002-x-D008-child-household",
+   "D002-x-D008-nochild-household",
+   "D002-P4-skip",
+   "D002-P4-required"
+  ]
+ },
+ {
+  "id": "C2",
+  "title": "Rent: one situation, two codes",
+  "forms": "D-002 Part 3 Q1.1, D-006 ownership",
+  "type": "Answer meaning coded differently",
+  "status": "holds in synthetic data",
+  "finding": "A household that does not rent cannot be in rent arrears, so 'not relevant' should be at least the share of owners (D-006: 89.3%–98.4% in every region, 2024) and at most 100 minus those paying for their dwelling (at least 92.5%). No region is above the upper bound. Only Kostanay, Kyzylorda, North Kazakhstan reach the lower bound in 2024 (Kostanay, North Kazakhstan, East Kazakhstan in 2023); the other 17 of 20 regions code most owners 3 'no', down to 9.1% in Mangystau. Kyzylorda switched between years: 23.9% in 2023, 97.6% in 2024.",
+  "indicator": "Any arrears indicator computed 'among households for whom rent is relevant' changes with the region's coding habit, not with arrears.",
+  "cause": "Option 4 reads 'маңызды емес' (not important) in Kazakh and 'не актуально' (not relevant) in Russian; the instruction does not say how to code owners.",
+  "fix": "One sentence in the instruction: households that do not rent are coded 4 (most regions do the opposite, so this is a national rule, not a regional error). Align the Kazakh wording with 'қолданылмайды'. Check on the real records: 'not relevant' among owners by region.",
+  "rules": [
+   "D002-x-D006-owners-rent",
+   "D002-doc-kk-ru-P3Q1opt4"
+  ]
+ },
+ {
+  "id": "C3",
+  "title": "Kazakh and Russian versions give code 2 opposite meanings",
+  "forms": "D-002 Part 2 Q5",
+  "type": "Questionnaire wording",
+  "status": "documentation; pattern holds in synthetic data",
+  "finding": "Code 2 is 'кем дегенде айына бір рет' (at least once a month) in Kazakh and 'реже чем раз в месяц' (less than once a month) in Russian. Its share runs from 31.7% (Akmola) to 73.4% (Turkistan) in 2024, and in 2023 it trades off against code 3 across regions (r = -0.79), as the Kazakh overlap predicts.",
+  "indicator": "Social contact frequency, an input to social isolation measures.",
+  "cause": "Translation error in the form. Seven more Kazakh/Russian mismatches in the same form, checked against its text: rent arrears option 4, internet-use codes 1 and 2, air quality (garbage vs emissions), the debt reason (or vs related to), furniture (and vs or), and 'outside the home' missing in Kazakh.",
+  "fix": "Correct the Kazakh option text; recode by interview language for past years if the language is recorded.",
+  "rules": [
+   "D002-doc-kk-ru-P2Q5opt2"
+  ]
+ },
+ {
+  "id": "C4",
+  "title": "The same default time in several regions and forms",
+  "forms": "D-002, D-006",
+  "type": "Default or interviewer-entered values",
+  "status": "holds in synthetic data",
+  "finding": "97.2% of Mangystau's D-002 forms in 2024 record '1–2 hours' to complete (rest of country 7.9%), and 45.7% score life satisfaction 10 of 10 (rest 10.2%). The same time code dominates Astana in 2023 in two forms (D-002 52.5%, D-006 61.7%, against 6.2% and 6.2% elsewhere) and Turkistan's D-002 in 2023 (49.3%).",
+  "indicator": "Life satisfaction and every Part 1 score for Mangystau 2024.",
+  "cause": "A pre-filled default in the entry software, or values entered by interviewers.",
+  "fix": "Break down by interviewer on the real records; block default values in entry software.",
+  "rules": []
+ },
+ {
+  "id": "C5",
+  "title": "Pavlodar enters counts with a leading zero",
+  "forms": "D-006 Q4 (rooms)",
+  "type": "Data-entry signature",
+  "status": "holds in synthetic data",
+  "finding": "Room counts are written '03' instead of '3' in 99.6% (2023) and 99.9% (2024) of Pavlodar records, against 0.4% and 0.0% elsewhere.",
+  "indicator": "None by itself: the value is the same. It marks a different entry program in one region, which is where other recording differences are likely to start.",
+  "cause": "A different data-entry tool or export in Pavlodar.",
+  "fix": "Standardise the export format; check Pavlodar's other D-006 fields first.",
+  "rules": [
+   "D006-KOL_K-format"
+  ]
+ },
+ {
+  "id": "C6",
+  "title": "Astana: half of all birth months are January",
+  "forms": "T-001 (labour force survey)",
+  "type": "Default value",
+  "status": "holds in synthetic data",
+  "finding": "Birth month is '01' for 55.9% (2023) and 51.5% (2024) of Astana's records, against 10.1% elsewhere.",
+  "indicator": "Exact age, so age groups at the boundaries (15, 16–72, 73+) and any age-based weighting.",
+  "cause": "Month defaulted to January when unknown.",
+  "fix": "Record 'unknown' explicitly; impute from D-008 where the household is in both surveys.",
+  "rules": []
+ },
+ {
+  "id": "C7",
+  "title": "Kostanay: nine cars per household",
+  "forms": "D-006 Q9 (durable goods)",
+  "type": "Implausible counts",
+  "status": "holds in synthetic data",
+  "finding": "Among households with a value, the car count (TDP35) averages 9.2 (2023) and 8.6 (2024) in Kostanay, against a median of 1.7 in the other regions.",
+  "indicator": "Car ownership and household asset indices.",
+  "cause": "Another quantity stored in the car column (column shift or code entered as count).",
+  "fix": "Add plausibility limits per item; check Kostanay's D-006 export layout.",
+  "rules": []
+ },
+ {
+  "id": "C8",
+  "title": "Rules broken everywhere: process questions for the Bureau",
+  "forms": "D-002, D-004, D-006, D-008",
+  "type": "National rule breaks",
+  "status": "mixed; listed for checking",
+  "finding": "Part 2 Q2 (reasons for low income) is blank for 95.8% (2023) and 98.9% (2024) of the respondents it applies to. 96.9% of respondents under 18 rate the family's economic situation instead of coding 89, which the instruction suggests for children (a soft check: the instruction names no age). 21.8% of 'no home internet, I use mobile internet' answers come from households reporting no internet use. 5.7% of D-002 respondents are under 15, though the form is for 15+. In D-008, 4.9% of composition-change codes are outside the instruction's list (mostly 29), and the time-to-complete field is blank for every household (100.0%). In D-004, 15.7% (2023) and 11.1% (2024) of loan purpose/source rows belong to households with no credit or debt that quarter. In D-006, 83.5% of land-plot age fields hold 0 rather than blank.",
+  "indicator": "Reasons for low income; FIES-adjacent items; household composition changes; loan purposes.",
+  "cause": "Questions dropped in practice, instructions not followed, or code lists in the instruction incomplete.",
+  "fix": "Confirm on the real records which are real; add the rules to data entry.",
+  "rules": [
+   "D002-P2Q2-required",
+   "D002-child-economic-89",
+   "D002-mobile-implies-internet",
+   "D002-VOZ-respondent15",
+   "D008-PR_IZ-domain",
+   "D008-ZT-required",
+   "D004-2.1-needs-new-loan",
+   "D006-Q8-adult"
+  ]
+ },
+ {
+  "id": "C9",
+  "title": "Kyzylorda codes the education of children aged 7–10 its own way (code shift)",
+  "forms": "D-008 roster, UROV",
+  "type": "Answer meaning coded differently",
+  "status": "holds in synthetic data",
+  "finding": "The D-008 instruction codes children aged 7–10 in grades 1–4 as 1 'preschool' when they had preschool education. Kyzylorda codes 84.9% (2023) and 99.6% (2024) of these children 7 'no level attained'; no other region exceeds 10.3% and 4.0%. The code-shift detector finds it on its own: in Kyzylorda code 7 behaves like code 1 elsewhere.",
+  "indicator": "Children's education level and any preschool-coverage figure derived from D-008.",
+  "cause": "Kyzylorda appears to code current attendance (kindergarten 1, school without completed primary 7) rather than the level attained, as the instruction asks.",
+  "fix": "One sentence in the interviewer instruction; check on the real records and recompute 2023–2024.",
+  "rules": []
+ },
+ {
+  "id": "C10",
+  "title": "Almaty oblast: employer type and contract changed code together (T-001)",
+  "forms": "T-001 labour force survey",
+  "type": "Code redefined between years",
+  "status": "holds in synthetic data",
+  "finding": "Employees of individuals (status 2) in Almaty oblast: 4582 records with employer type 2 and 94 with code 5 in 2023; 0 and 5341 in 2024. In the same year their oral-agreement share is 98.6% against 16.8% elsewhere. Outside the oblast code 5 changed too: oral agreements among code 5 rose from 16.8% (2023) to 84.3% (2024). Found first by the year-vs-year model; the decoder reads what the codes mean.",
+  "indicator": "Share of workers without a written contract (informal employment), Almaty oblast and national, 2024.",
+  "cause": "Code 5 seems to have been redefined in 2024, and Almaty oblast moved all employees of individuals onto it. The jobs are the same: codes 2 and 5 have near-identical profiles.",
+  "fix": "Confirm the 2024 meaning of employer-type code 5 and the contract rule in the T-001 instruction; recompute informal employment.",
+  "rules": []
+ },
+ {
+  "id": "C11",
+  "title": "Household finances (D-004): four corrections before a vulnerability indicator",
+  "forms": "D-004 quarterly journal, sections 1-3",
+  "type": "Indicator impact (second 'so what' case)",
+  "status": "mixed; listed for checking",
+  "finding": "Read naively, D-004 gives a household savings rate of 65.8% (2024). (1) The journal has no food section: recorded spending is 34.6% of income; with food at half of household spending (official figure) it would be about 69.3%, so the 'savings rate' cannot be computed from D-004 alone. (2) Income: on the form GR3 is 'of which' under GR2, so summing all 23 columns counts agricultural sales twice: +1.2% nationally, up to +3.3% in North Kazakhstan. (3) Loans for food: Aktobe is 6.1% of households but 65.1% of households that borrowed for food (67.5% of its loans); the national share of loans taken for food is 9.7%, 3.7% without Aktobe. (4) The loan section is filled for 4.7% of households in Mangystau against a median of 36.8% (2.2–6.7% in every year 2021–2024); Mangystau, Shymkent, Turkistan, Zhambyl are all low (4.7–17.5%). The national share of households repaying loans is 29.5%, 33.7% without these four regions; the share with repayments above 30% of income is 8.5% and 9.6%. In the synthetic release, 14.9% of non-food rows repeat an item (the organisers' guide names this; 13.6–16.0% by region, 4.4% of recorded spending), so regional comparisons are not affected; household-level links are weak (log income vs log spending r = 0.19), so only regional figures are reported.",
+  "indicator": "Financial vulnerability: savings rate, spending and debt burden, borrowing for food, by region.",
+  "cause": "A missing section read as zero spending; an 'of which' line summed as a separate income; one region's coding of informal loans; a section that four regions leave almost empty.",
+  "fix": "Do not publish a savings rate from D-004 without the food diary; never sum GR3 with GR2 (rule D004-3-agri-within-self-employment, and a note in the file structure); Aktobe loan purpose and lender by interviewer; on the real records, loan-section coverage in Mangystau, Shymkent, Turkistan and Zhambyl against the National Bank's regional credit data.",
+  "rules": [
+   "D004-doc-no-food",
+   "D004-3-agri-within-self-employment",
+   "D004-doc-income-of-which",
+   "D004-doc-repeated-items-synthetic",
+   "D004-2.1-required"
+  ]
+ }
+]

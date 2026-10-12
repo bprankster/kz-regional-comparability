@@ -1,0 +1,791 @@
+side,type,column,when,allowed,id,status
+extracted,domain,K,None,"(1, 2)",D002-K-domain@subject,exact
+extracted,domain,K,None,"(1, 2)",D002-K-domain@ocenka,exact
+extracted,domain,VOZ,None,"('range', 15, 120)",D002-VOZ-respondent15@subject,exact
+extracted,domain,POL,None,"(1, 2)",D002-POL-domain@subject,missing
+extracted,domain,POL,None,"(1, 2)",D002-POL-domain@ocenka,missing
+extracted,domain,GR1,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR2,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR3,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR4,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR5,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR6_1,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR6_2,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR6_3,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR7,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR8,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR9_1,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR9_2,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR9_3,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR10,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR11,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR12,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR13,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR14_1,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR14_2,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR15_1,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR15_2,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR16_1,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR16_2,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR16_3,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR16_4,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR17_1,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR17_2,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR17_3,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR17_4,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR18_1,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR18_2,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR18_3,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR18_4,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR18_5,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR18_6,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,domain,GR19,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",D002-P1-scale-domain@subject,exact
+extracted,required,GR1,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR2,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR3,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR4,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR5,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR6_1,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR6_2,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR7,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR8,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR9_1,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR9_2,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR9_3,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR10,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR11,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR12,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR13,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR14_1,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR14_2,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR15_1,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR15_2,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR16_1,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR16_2,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR16_3,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR16_4,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR17_1,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR17_2,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR17_3,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR17_4,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR18_1,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR18_2,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR18_3,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR18_4,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR18_5,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR18_6,None,None,D002-P1-scale-required@subject,exact
+extracted,required,GR19,None,None,D002-P1-scale-required@subject,exact
+extracted,doc_issue,"('GR6_3',)",None,None,D002-P1Q6_3-optional,exact
+extracted,domain,GR21,None,"(1, 2, 3, 4, 5, 6)",D002-P2Q1-domain@subject,exact
+extracted,required,GR21,None,None,D002-P2Q1-required@subject,exact
+extracted,multi_select,GR22_1,None,None,D002-P2Q2-multi@subject,exact
+extracted,multi_select,GR22_2,None,None,D002-P2Q2-multi@subject,exact
+extracted,multi_select,GR22_3,None,None,D002-P2Q2-multi@subject,exact
+extracted,multi_select,GR22_4,None,None,D002-P2Q2-multi@subject,exact
+extracted,multi_select,GR22_5,None,None,D002-P2Q2-multi@subject,exact
+extracted,multi_select,GR22_6,None,None,D002-P2Q2-multi@subject,exact
+extracted,multi_select,GR22_7,None,None,D002-P2Q2-multi@subject,exact
+extracted,multi_select,GR22_8,None,None,D002-P2Q2-multi@subject,exact
+extracted,multi_select,GR22_9,None,None,D002-P2Q2-multi@subject,exact
+extracted,multi_select,GR22_10,None,None,D002-P2Q2-multi@subject,exact
+extracted,multi_select,GR22_11,None,None,D002-P2Q2-multi@subject,exact
+extracted,multi_select,GR22_12,None,None,D002-P2Q2-multi@subject,exact
+extracted,multi_select,GR22_13,None,None,D002-P2Q2-multi@subject,exact
+extracted,multi_select,GR22_14,None,None,D002-P2Q2-multi@subject,exact
+extracted,skip,GR22_1,"('GR21', (4, 5, 6))",None,D002-P2Q2-skip@subject,exact
+extracted,skip,GR22_2,"('GR21', (4, 5, 6))",None,D002-P2Q2-skip@subject,exact
+extracted,skip,GR22_3,"('GR21', (4, 5, 6))",None,D002-P2Q2-skip@subject,exact
+extracted,skip,GR22_4,"('GR21', (4, 5, 6))",None,D002-P2Q2-skip@subject,exact
+extracted,skip,GR22_5,"('GR21', (4, 5, 6))",None,D002-P2Q2-skip@subject,exact
+extracted,skip,GR22_6,"('GR21', (4, 5, 6))",None,D002-P2Q2-skip@subject,exact
+extracted,skip,GR22_7,"('GR21', (4, 5, 6))",None,D002-P2Q2-skip@subject,exact
+extracted,skip,GR22_8,"('GR21', (4, 5, 6))",None,D002-P2Q2-skip@subject,exact
+extracted,skip,GR22_9,"('GR21', (4, 5, 6))",None,D002-P2Q2-skip@subject,exact
+extracted,skip,GR22_10,"('GR21', (4, 5, 6))",None,D002-P2Q2-skip@subject,exact
+extracted,skip,GR22_11,"('GR21', (4, 5, 6))",None,D002-P2Q2-skip@subject,exact
+extracted,skip,GR22_12,"('GR21', (4, 5, 6))",None,D002-P2Q2-skip@subject,exact
+extracted,skip,GR22_13,"('GR21', (4, 5, 6))",None,D002-P2Q2-skip@subject,exact
+extracted,skip,GR22_14,"('GR21', (4, 5, 6))",None,D002-P2Q2-skip@subject,exact
+extracted,required_any,"('GR22_1', 'GR22_10', 'GR22_11', 'GR22_12', 'GR22_13', 'GR22_14', 'GR22_2', 'GR22_3', 'GR22_4', 'GR22_5', 'GR22_6', 'GR22_7', 'GR22_8', 'GR22_9')","('GR21', (1, 2, 3))",None,D002-P2Q2-required,exact
+extracted,domain,GR23,None,"(1, 2, 3)",D002-P2Q3-domain@subject,exact
+extracted,domain,GR24,None,"(1, 2, 3, 4, 5)",D002-P2Q4-domain@subject,exact
+extracted,domain,GR25,None,"(1, 2, 3, 4, 5, 6)",D002-P2Q5-domain@subject,exact
+extracted,required,GR23,None,None,D002-P2Q3to7-required@subject,exact
+extracted,required,GR24,None,None,D002-P2Q3to7-required@subject,exact
+extracted,required,GR25,None,None,D002-P2Q3to7-required@subject,exact
+extracted,required,GR26,None,None,D002-P2Q3to7-required@subject,exact
+extracted,required,GR27,None,None,D002-P2Q3to7-required@subject,exact
+extracted,required,GR29,None,None,D002-P2Q3to7-required@subject,exact
+extracted,required,GR210,None,None,D002-P2Q3to7-required@subject,exact
+extracted,required,GR211,None,None,D002-P2Q3to7-required@subject,exact
+extracted,required,GR212,None,None,D002-P2Q3to7-required@subject,exact
+extracted,required,GR213,None,None,D002-P2Q3to7-required@subject,exact
+extracted,required,GR214,None,None,D002-P2Q3to7-required@subject,exact
+extracted,domain,GR26,None,"(1, 2, 3, 4)",D002-FIES-domain@subject,exact
+extracted,domain,GR27,None,"(1, 2, 3, 4)",D002-FIES-domain@subject,exact
+extracted,domain,GR29,None,"(1, 2, 3, 4)",D002-FIES-domain@subject,exact
+extracted,domain,GR210,None,"(1, 2, 3, 4)",D002-FIES-domain@subject,exact
+extracted,domain,GR211,None,"(1, 2, 3, 4)",D002-FIES-domain@subject,exact
+extracted,domain,GR212,None,"(1, 2, 3, 4)",D002-FIES-domain@subject,exact
+extracted,domain,GR213,None,"(1, 2, 3, 4)",D002-FIES-domain@subject,exact
+extracted,domain,GR214,None,"(1, 2, 3, 4)",D002-FIES-domain@subject,exact
+extracted,consistency,"('GR210', 'GR211', 'GR212', 'GR213', 'GR214', 'GR26', 'GR27', 'GR29')",None,None,D002-FIES-refusal,exact
+extracted,multi_select,GR28_1,None,None,D002-P2Q8-multi@subject,exact
+extracted,multi_select,GR28_2,None,None,D002-P2Q8-multi@subject,exact
+extracted,multi_select,GR28_3,None,None,D002-P2Q8-multi@subject,exact
+extracted,multi_select,GR28_4,None,None,D002-P2Q8-multi@subject,exact
+extracted,multi_select,GR28_5,None,None,D002-P2Q8-multi@subject,exact
+extracted,skip,GR28_1,"('GR27', (2, 3, 4))",None,D002-P2Q8-skip@subject,exact
+extracted,skip,GR28_2,"('GR27', (2, 3, 4))",None,D002-P2Q8-skip@subject,exact
+extracted,skip,GR28_3,"('GR27', (2, 3, 4))",None,D002-P2Q8-skip@subject,exact
+extracted,skip,GR28_4,"('GR27', (2, 3, 4))",None,D002-P2Q8-skip@subject,exact
+extracted,skip,GR28_5,"('GR27', (2, 3, 4))",None,D002-P2Q8-skip@subject,exact
+extracted,required_any,"('GR28_1', 'GR28_2', 'GR28_3', 'GR28_4', 'GR28_5')","('GR27', (1,))",None,D002-P2Q8-required,exact
+extracted,domain,ZT,None,"(1, 2, 3, 4, 5, 6)",D002-ZT-domain@subject,exact
+extracted,required,ZT,None,None,D002-ZT-required@subject,exact
+extracted,domain,GR31_1,None,"(1, 2, 3, 4)",D002-P3Q1-domain@ocenka,exact
+extracted,domain,GR31_2,None,"(1, 2, 3, 4)",D002-P3Q1-domain@ocenka,exact
+extracted,domain,GR31_3,None,"(1, 2, 3, 4)",D002-P3Q1-domain@ocenka,exact
+extracted,domain,GR31_4,None,"(1, 2, 3, 4)",D002-P3Q1-domain@ocenka,exact
+extracted,required,GR31_1,None,None,D002-P3Q1-required@ocenka,exact
+extracted,required,GR31_2,None,None,D002-P3Q1-required@ocenka,exact
+extracted,required,GR31_3,None,None,D002-P3Q1-required@ocenka,exact
+extracted,required,GR31_4,None,None,D002-P3Q1-required@ocenka,exact
+extracted,domain,GR32,None,"(1, 2)",D002-P3-yesno-domain@ocenka,exact
+extracted,domain,GR35,None,"(1, 2)",D002-P3-yesno-domain@ocenka,exact
+extracted,domain,GR36,None,"(1, 2)",D002-P3-yesno-domain@ocenka,exact
+extracted,domain,GR38,None,"(1, 2)",D002-P3-yesno-domain@ocenka,exact
+extracted,domain,GR313,None,"(1, 2)",D002-P3-yesno-domain@ocenka,exact
+extracted,domain,GR315,None,"(1, 2)",D002-P3-yesno-domain@ocenka,exact
+extracted,domain,GR317,None,"(1, 2)",D002-P3-yesno-domain@ocenka,exact
+extracted,domain,GR34,None,"(1, 2)",D002-P3Q4-domain@ocenka,exact
+extracted,domain,GR33,None,"(1, 2, 3)",D002-P3-3opt-domain@ocenka,exact
+extracted,domain,GR37,None,"(1, 2, 3)",D002-P3-3opt-domain@ocenka,exact
+extracted,domain,GR39,None,"(1, 2, 3)",D002-P3-3opt-domain@ocenka,exact
+extracted,domain,GR310,None,"(1, 2, 3)",D002-P3-3opt-domain@ocenka,exact
+extracted,domain,GR311,None,"(1, 2, 3)",D002-P3-3opt-domain@ocenka,exact
+extracted,domain,GR312,None,"(1, 2, 3)",D002-P3-3opt-domain@ocenka,exact
+extracted,required,GR32,None,None,D002-P3Q2to13-required@ocenka,exact
+extracted,required,GR33,None,None,D002-P3Q2to13-required@ocenka,exact
+extracted,required,GR34,None,None,D002-P3Q2to13-required@ocenka,exact
+extracted,required,GR35,None,None,D002-P3Q2to13-required@ocenka,exact
+extracted,required,GR36,None,None,D002-P3Q2to13-required@ocenka,exact
+extracted,required,GR37,None,None,D002-P3Q2to13-required@ocenka,exact
+extracted,required,GR38,None,None,D002-P3Q2to13-required@ocenka,exact
+extracted,required,GR39,None,None,D002-P3Q2to13-required@ocenka,exact
+extracted,required,GR310,None,None,D002-P3Q2to13-required@ocenka,exact
+extracted,required,GR311,None,None,D002-P3Q2to13-required@ocenka,exact
+extracted,required,GR312,None,None,D002-P3Q2to13-required@ocenka,exact
+extracted,required,GR313,None,None,D002-P3Q2to13-required@ocenka,exact
+extracted,required,GR315,None,None,D002-P3Q2to13-required@ocenka,exact
+extracted,required,GR317,None,None,D002-P3Q2to13-required@ocenka,exact
+extracted,required,GR319,None,None,D002-P3Q2to13-required@ocenka,exact
+extracted,domain,GR314,None,"(1, 2)",D002-P3Q14-domain@ocenka,exact
+extracted,skip,GR314,"('GR313', (2,))",None,D002-P3Q14-skip@ocenka,exact
+extracted,required,GR314,"('GR313', (1,))",None,D002-P3Q14-required@ocenka,exact
+extracted,multi_select,GR316_1,None,None,D002-P3Q16-multi@ocenka,exact
+extracted,multi_select,GR316_2,None,None,D002-P3Q16-multi@ocenka,exact
+extracted,multi_select,GR316_3,None,None,D002-P3Q16-multi@ocenka,exact
+extracted,multi_select,GR316_4,None,None,D002-P3Q16-multi@ocenka,exact
+extracted,multi_select,GR316_5,None,None,D002-P3Q16-multi@ocenka,exact
+extracted,multi_select,GR316_6,None,None,D002-P3Q16-multi@ocenka,exact
+extracted,skip,GR316_1,"('GR315', (1,))",None,D002-P3Q16-skip@ocenka,exact
+extracted,skip,GR316_2,"('GR315', (1,))",None,D002-P3Q16-skip@ocenka,exact
+extracted,skip,GR316_3,"('GR315', (1,))",None,D002-P3Q16-skip@ocenka,exact
+extracted,skip,GR316_4,"('GR315', (1,))",None,D002-P3Q16-skip@ocenka,exact
+extracted,skip,GR316_5,"('GR315', (1,))",None,D002-P3Q16-skip@ocenka,exact
+extracted,skip,GR316_6,"('GR315', (1,))",None,D002-P3Q16-skip@ocenka,exact
+extracted,required_any,"('GR316_1', 'GR316_2', 'GR316_3', 'GR316_4', 'GR316_5', 'GR316_6')","('GR315', (2,))",None,D002-P3Q16-required,exact
+extracted,multi_select,GR318_1,None,None,D002-P3Q18-multi@ocenka,exact
+extracted,multi_select,GR318_2,None,None,D002-P3Q18-multi@ocenka,exact
+extracted,multi_select,GR318_3,None,None,D002-P3Q18-multi@ocenka,exact
+extracted,multi_select,GR318_4,None,None,D002-P3Q18-multi@ocenka,exact
+extracted,multi_select,GR318_5,None,None,D002-P3Q18-multi@ocenka,exact
+extracted,multi_select,GR318_6,None,None,D002-P3Q18-multi@ocenka,exact
+extracted,multi_select,GR318_7,None,None,D002-P3Q18-multi@ocenka,exact
+extracted,multi_select,GR318_8,None,None,D002-P3Q18-multi@ocenka,exact
+extracted,multi_select,GR318_9,None,None,D002-P3Q18-multi@ocenka,exact
+extracted,skip,GR318_1,"('GR317', (2,))",None,D002-P3Q18-skip@ocenka,exact
+extracted,skip,GR318_2,"('GR317', (2,))",None,D002-P3Q18-skip@ocenka,exact
+extracted,skip,GR318_3,"('GR317', (2,))",None,D002-P3Q18-skip@ocenka,exact
+extracted,skip,GR318_4,"('GR317', (2,))",None,D002-P3Q18-skip@ocenka,exact
+extracted,skip,GR318_5,"('GR317', (2,))",None,D002-P3Q18-skip@ocenka,exact
+extracted,skip,GR318_6,"('GR317', (2,))",None,D002-P3Q18-skip@ocenka,exact
+extracted,skip,GR318_7,"('GR317', (2,))",None,D002-P3Q18-skip@ocenka,exact
+extracted,skip,GR318_8,"('GR317', (2,))",None,D002-P3Q18-skip@ocenka,exact
+extracted,skip,GR318_9,"('GR317', (2,))",None,D002-P3Q18-skip@ocenka,exact
+extracted,required_any,"('GR318_1', 'GR318_2', 'GR318_3', 'GR318_4', 'GR318_5', 'GR318_6', 'GR318_7', 'GR318_8', 'GR318_9')","('GR317', (1,))",None,D002-P3Q18-required,exact
+extracted,domain,GR319,None,"(1, 2, 3)",D002-P3Q19-domain@ocenka,exact
+extracted,multi_select,GR320_1,None,None,D002-P3Q20-multi@ocenka,exact
+extracted,multi_select,GR320_2,None,None,D002-P3Q20-multi@ocenka,exact
+extracted,multi_select,GR320_3,None,None,D002-P3Q20-multi@ocenka,exact
+extracted,multi_select,GR320_4,None,None,D002-P3Q20-multi@ocenka,exact
+extracted,multi_select,GR320_5,None,None,D002-P3Q20-multi@ocenka,exact
+extracted,multi_select,GR320_6,None,None,D002-P3Q20-multi@ocenka,exact
+extracted,multi_select,GR320_7,None,None,D002-P3Q20-multi@ocenka,exact
+extracted,multi_select,GR320_8,None,None,D002-P3Q20-multi@ocenka,exact
+extracted,multi_select,GR320_9,None,None,D002-P3Q20-multi@ocenka,exact
+extracted,multi_select,GR320_10,None,None,D002-P3Q20-multi@ocenka,exact
+extracted,skip,GR320_1,"('GR319', (2, 3))",None,D002-P3Q20-skip@ocenka,exact
+extracted,skip,GR320_2,"('GR319', (2, 3))",None,D002-P3Q20-skip@ocenka,exact
+extracted,skip,GR320_3,"('GR319', (2, 3))",None,D002-P3Q20-skip@ocenka,exact
+extracted,skip,GR320_4,"('GR319', (2, 3))",None,D002-P3Q20-skip@ocenka,exact
+extracted,skip,GR320_5,"('GR319', (2, 3))",None,D002-P3Q20-skip@ocenka,exact
+extracted,skip,GR320_6,"('GR319', (2, 3))",None,D002-P3Q20-skip@ocenka,exact
+extracted,skip,GR320_7,"('GR319', (2, 3))",None,D002-P3Q20-skip@ocenka,exact
+extracted,skip,GR320_8,"('GR319', (2, 3))",None,D002-P3Q20-skip@ocenka,exact
+extracted,skip,GR320_9,"('GR319', (2, 3))",None,D002-P3Q20-skip@ocenka,exact
+extracted,skip,GR320_10,"('GR319', (2, 3))",None,D002-P3Q20-skip@ocenka,exact
+extracted,required_any,"('GR320_1', 'GR320_10', 'GR320_2', 'GR320_3', 'GR320_4', 'GR320_5', 'GR320_6', 'GR320_7', 'GR320_8', 'GR320_9')","('GR319', (1,))",None,D002-P3Q20-required,exact
+extracted,domain,GR40,None,"(1, 2)",D002-GR40-domain@ocenka,exact
+extracted,required,GR40,None,None,D002-GR40-required@ocenka,exact
+extracted,skip,GR41,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR42_1,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR42_2,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR42_3,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR42_4,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR42_5,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR42_6,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR42_7,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR43_1,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR43_2,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR43_3,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR43_4,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR43_5,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR43_6,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR43_7,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR44_1,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR44_2,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR44_3,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR44_4,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR44_5,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR44_6,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR44_7,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR44_8,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR44_9,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR44_10,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR44_11,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR44_12,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR44_13,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR44_14,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR45_1,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR45_2,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR45_3,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR45_4,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR45_5,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR45_6,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR45_7,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR45_8,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR45_9,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR45_10,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR45_11,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR45_12,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR45_13,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR45_14,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,skip,GR46,"('GR40', (2,))",None,D002-P4-skip@ocenka,exact
+extracted,required,GR41,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR44_1,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR44_2,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR44_3,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR44_4,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR44_5,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR44_6,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR44_7,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR44_8,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR44_9,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR44_10,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR44_11,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR44_12,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR44_13,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR44_14,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR45_1,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR45_2,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR45_3,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR45_4,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR45_5,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR45_6,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR45_7,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR45_8,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR45_9,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR45_10,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR45_11,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR45_12,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR45_13,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR45_14,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,required,GR46,"('GR40', (1,))",None,D002-P4-required@ocenka,exact
+extracted,domain,GR41,None,"(1, 2)",D002-P4Q1-domain@ocenka,exact
+extracted,skip,GR42_1,"('GR41', (2,))",None,D002-P4Q2Q3-skip@ocenka,exact
+extracted,skip,GR42_2,"('GR41', (2,))",None,D002-P4Q2Q3-skip@ocenka,exact
+extracted,skip,GR42_3,"('GR41', (2,))",None,D002-P4Q2Q3-skip@ocenka,exact
+extracted,skip,GR42_4,"('GR41', (2,))",None,D002-P4Q2Q3-skip@ocenka,exact
+extracted,skip,GR42_5,"('GR41', (2,))",None,D002-P4Q2Q3-skip@ocenka,exact
+extracted,skip,GR42_6,"('GR41', (2,))",None,D002-P4Q2Q3-skip@ocenka,exact
+extracted,skip,GR42_7,"('GR41', (2,))",None,D002-P4Q2Q3-skip@ocenka,exact
+extracted,skip,GR43_1,"('GR41', (2,))",None,D002-P4Q2Q3-skip@ocenka,exact
+extracted,skip,GR43_2,"('GR41', (2,))",None,D002-P4Q2Q3-skip@ocenka,exact
+extracted,skip,GR43_3,"('GR41', (2,))",None,D002-P4Q2Q3-skip@ocenka,exact
+extracted,skip,GR43_4,"('GR41', (2,))",None,D002-P4Q2Q3-skip@ocenka,exact
+extracted,skip,GR43_5,"('GR41', (2,))",None,D002-P4Q2Q3-skip@ocenka,exact
+extracted,skip,GR43_6,"('GR41', (2,))",None,D002-P4Q2Q3-skip@ocenka,exact
+extracted,skip,GR43_7,"('GR41', (2,))",None,D002-P4Q2Q3-skip@ocenka,exact
+extracted,required,GR42_1,"('GR41', (1,))",None,D002-P4Q2-required@ocenka,missing
+extracted,domain,GR42_1,None,"(1, 2, 3)",D002-P4Q2-domain@ocenka,exact
+extracted,domain,GR42_2,None,"(1, 2, 3)",D002-P4Q2-domain@ocenka,exact
+extracted,domain,GR42_3,None,"(1, 2, 3)",D002-P4Q2-domain@ocenka,exact
+extracted,domain,GR42_4,None,"(1, 2, 3)",D002-P4Q2-domain@ocenka,exact
+extracted,domain,GR42_5,None,"(1, 2, 3)",D002-P4Q2-domain@ocenka,exact
+extracted,domain,GR42_6,None,"(1, 2, 3)",D002-P4Q2-domain@ocenka,exact
+extracted,domain,GR42_7,None,"(1, 2, 3)",D002-P4Q2-domain@ocenka,exact
+extracted,domain,GR43_1,None,"(1, 2, 9)",D002-P4Q3-domain@ocenka,exact
+extracted,domain,GR43_2,None,"(1, 2, 9)",D002-P4Q3-domain@ocenka,exact
+extracted,domain,GR43_3,None,"(1, 2, 9)",D002-P4Q3-domain@ocenka,exact
+extracted,domain,GR43_4,None,"(1, 2, 9)",D002-P4Q3-domain@ocenka,exact
+extracted,domain,GR43_5,None,"(1, 2, 9)",D002-P4Q3-domain@ocenka,exact
+extracted,domain,GR43_6,None,"(1, 2, 9)",D002-P4Q3-domain@ocenka,exact
+extracted,domain,GR43_7,None,"(1, 2, 9)",D002-P4Q3-domain@ocenka,exact
+extracted,domain,GR44_1,None,"(1, 2, 3, 4, 9)",D002-P4Q4-domain@ocenka,exact
+extracted,domain,GR44_2,None,"(1, 2, 3, 4, 9)",D002-P4Q4-domain@ocenka,exact
+extracted,domain,GR44_3,None,"(1, 2, 3, 4, 9)",D002-P4Q4-domain@ocenka,exact
+extracted,domain,GR44_4,None,"(1, 2, 3, 4, 9)",D002-P4Q4-domain@ocenka,exact
+extracted,domain,GR44_5,None,"(1, 2, 3, 4, 9)",D002-P4Q4-domain@ocenka,exact
+extracted,domain,GR44_6,None,"(1, 2, 3, 4, 9)",D002-P4Q4-domain@ocenka,exact
+extracted,domain,GR44_7,None,"(1, 2, 3, 4, 9)",D002-P4Q4-domain@ocenka,exact
+extracted,domain,GR44_8,None,"(1, 2, 3, 4, 9)",D002-P4Q4-domain@ocenka,exact
+extracted,domain,GR44_9,None,"(1, 2, 3, 4, 9)",D002-P4Q4-domain@ocenka,exact
+extracted,domain,GR44_10,None,"(1, 2, 3, 4, 9)",D002-P4Q4-domain@ocenka,exact
+extracted,domain,GR44_11,None,"(1, 2, 3, 4, 9)",D002-P4Q4-domain@ocenka,exact
+extracted,domain,GR44_12,None,"(1, 2, 3, 4, 9)",D002-P4Q4-domain@ocenka,exact
+extracted,domain,GR44_13,None,"(1, 2, 3, 4, 9)",D002-P4Q4-domain@ocenka,exact
+extracted,domain,GR44_14,None,"(1, 2, 3, 4, 9)",D002-P4Q4-domain@ocenka,exact
+extracted,domain,GR45_1,None,"(1, 2, 3, 9)",D002-P4Q5-domain@ocenka,exact
+extracted,domain,GR45_2,None,"(1, 2, 3, 9)",D002-P4Q5-domain@ocenka,exact
+extracted,domain,GR45_3,None,"(1, 2, 3, 9)",D002-P4Q5-domain@ocenka,exact
+extracted,domain,GR45_4,None,"(1, 2, 3, 9)",D002-P4Q5-domain@ocenka,exact
+extracted,domain,GR45_5,None,"(1, 2, 3, 9)",D002-P4Q5-domain@ocenka,exact
+extracted,domain,GR45_6,None,"(1, 2, 3, 9)",D002-P4Q5-domain@ocenka,exact
+extracted,domain,GR45_7,None,"(1, 2, 3, 9)",D002-P4Q5-domain@ocenka,exact
+extracted,domain,GR45_8,None,"(1, 2, 3, 9)",D002-P4Q5-domain@ocenka,exact
+extracted,domain,GR45_9,None,"(1, 2, 3, 9)",D002-P4Q5-domain@ocenka,exact
+extracted,domain,GR45_10,None,"(1, 2, 3, 9)",D002-P4Q5-domain@ocenka,exact
+extracted,domain,GR45_11,None,"(1, 2, 3, 9)",D002-P4Q5-domain@ocenka,exact
+extracted,domain,GR45_12,None,"(1, 2, 3, 9)",D002-P4Q5-domain@ocenka,exact
+extracted,domain,GR45_13,None,"(1, 2, 3, 9)",D002-P4Q5-domain@ocenka,exact
+extracted,domain,GR45_14,None,"(1, 2, 3, 9)",D002-P4Q5-domain@ocenka,exact
+extracted,domain,GR46,None,"(1, 2, 3, 4, 5)",D002-P4Q6-domain@ocenka,exact
+extracted,consistency,"('GR317', 'GR40')",None,None,D002-preschool-implies-children,exact
+extracted,consistency,"('GR40', 'GR41')",None,None,D002-childdisability-implies-children,missing
+extracted,consistency,"('NOMP', 'POL', 'VOZ')",None,None,D002-same-person,exact
+extracted,cross_form,"('GR40',)",None,None,D002-x-D008-children,exact
+extracted,cross_form,"('GR31_1',)",None,None,D002-x-D006-owners-rent,missing
+extracted,doc_issue,"('GR31_1', 'GR31_2', 'GR31_3', 'GR31_4')",None,None,D002-doc-kk-ru-P3Q1opt4,exact
+extracted,doc_issue,"('GR25',)",None,None,D002-doc-kk-ru-P2Q5opt2,exact
+extracted,doc_issue,"('GR314',)",None,None,D002-doc-kk-ru-P3Q14opt1,exact
+extracted,doc_issue,"('GR314',)",None,None,D002-doc-P3Q14-coverage,exact
+extracted,doc_issue,"('GR42_1', 'GR43_1')",None,None,D002-doc-instr-P4Q2Q3,exact
+extracted,doc_issue,"('GR40',)",None,None,D002-doc-GR40-not-on-form,exact
+extracted,doc_issue,"('GR31_4',)",None,None,D002-doc-structure-GR31_4,missing
+extracted,doc_issue,"('GR14_1', 'GR6_1')",None,None,D002-doc-structure-names,exact
+extracted,doc_issue,"('VOZ',)",None,None,D002-doc-respondent-age,exact
+reference,domain,K,None,"(1, 2)",ref0,found
+reference,domain,K,None,"(1, 2)",ref1,found
+reference,domain,VOZ,None,"('range', 15, 120)",ref2,found
+reference,consistency,"('NOMER', 'NOMP')",None,None,ref3,found
+reference,domain,VOZ,None,"('range', 15, 120)",ref4,missed
+reference,consistency,"('NOMER', 'NOMP')",None,None,ref5,missed
+reference,domain,GR1,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref6,found
+reference,domain,GR2,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref7,found
+reference,domain,GR3,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref8,found
+reference,domain,GR4,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref9,found
+reference,domain,GR5,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref10,found
+reference,domain,GR6_1,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref11,found
+reference,domain,GR6_2,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref12,found
+reference,domain,GR6_3,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref13,found
+reference,domain,GR7,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref14,found
+reference,domain,GR8,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref15,found
+reference,domain,GR9_1,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref16,found
+reference,domain,GR9_2,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref17,found
+reference,domain,GR9_3,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref18,found
+reference,domain,GR10,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref19,found
+reference,domain,GR11,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref20,found
+reference,domain,GR12,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref21,found
+reference,domain,GR13,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref22,found
+reference,domain,GR14_1,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref23,found
+reference,domain,GR14_2,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref24,found
+reference,domain,GR15_1,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref25,found
+reference,domain,GR15_2,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref26,found
+reference,domain,GR16_1,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref27,found
+reference,domain,GR16_2,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref28,found
+reference,domain,GR16_3,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref29,found
+reference,domain,GR16_4,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref30,found
+reference,domain,GR17_1,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref31,found
+reference,domain,GR17_2,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref32,found
+reference,domain,GR17_3,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref33,found
+reference,domain,GR17_4,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref34,found
+reference,domain,GR18_1,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref35,found
+reference,domain,GR18_2,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref36,found
+reference,domain,GR18_3,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref37,found
+reference,domain,GR18_4,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref38,found
+reference,domain,GR18_5,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref39,found
+reference,domain,GR18_6,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref40,found
+reference,domain,GR19,None,"(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89)",ref41,found
+reference,required,GR1,None,None,ref42,found
+reference,required,GR2,None,None,ref43,found
+reference,required,GR3,None,None,ref44,found
+reference,required,GR4,None,None,ref45,found
+reference,required,GR5,None,None,ref46,found
+reference,required,GR6_1,None,None,ref47,found
+reference,required,GR6_2,None,None,ref48,found
+reference,required,GR7,None,None,ref49,found
+reference,required,GR8,None,None,ref50,found
+reference,required,GR9_1,None,None,ref51,found
+reference,required,GR9_2,None,None,ref52,found
+reference,required,GR9_3,None,None,ref53,found
+reference,required,GR10,None,None,ref54,found
+reference,required,GR11,None,None,ref55,found
+reference,required,GR12,None,None,ref56,found
+reference,required,GR13,None,None,ref57,found
+reference,required,GR14_1,None,None,ref58,found
+reference,required,GR14_2,None,None,ref59,found
+reference,required,GR15_1,None,None,ref60,found
+reference,required,GR15_2,None,None,ref61,found
+reference,required,GR16_1,None,None,ref62,found
+reference,required,GR16_2,None,None,ref63,found
+reference,required,GR16_3,None,None,ref64,found
+reference,required,GR16_4,None,None,ref65,found
+reference,required,GR17_1,None,None,ref66,found
+reference,required,GR17_2,None,None,ref67,found
+reference,required,GR17_3,None,None,ref68,found
+reference,required,GR17_4,None,None,ref69,found
+reference,required,GR18_1,None,None,ref70,found
+reference,required,GR18_2,None,None,ref71,found
+reference,required,GR18_3,None,None,ref72,found
+reference,required,GR18_4,None,None,ref73,found
+reference,required,GR18_5,None,None,ref74,found
+reference,required,GR18_6,None,None,ref75,found
+reference,required,GR19,None,None,ref76,found
+reference,consistency,"('GR7', 'VOZ')",None,None,ref77,missed
+reference,domain,GR21,None,"(1, 2, 3, 4, 5, 6)",ref78,found
+reference,multi_select,GR22_1,None,None,ref79,found
+reference,multi_select,GR22_2,None,None,ref80,found
+reference,multi_select,GR22_3,None,None,ref81,found
+reference,multi_select,GR22_4,None,None,ref82,found
+reference,multi_select,GR22_5,None,None,ref83,found
+reference,multi_select,GR22_6,None,None,ref84,found
+reference,multi_select,GR22_7,None,None,ref85,found
+reference,multi_select,GR22_8,None,None,ref86,found
+reference,multi_select,GR22_9,None,None,ref87,found
+reference,multi_select,GR22_10,None,None,ref88,found
+reference,multi_select,GR22_11,None,None,ref89,found
+reference,multi_select,GR22_12,None,None,ref90,found
+reference,multi_select,GR22_13,None,None,ref91,found
+reference,multi_select,GR22_14,None,None,ref92,found
+reference,skip,GR22_1,"('GR21', (4, 5, 6))",None,ref93,found
+reference,skip,GR22_2,"('GR21', (4, 5, 6))",None,ref94,found
+reference,skip,GR22_3,"('GR21', (4, 5, 6))",None,ref95,found
+reference,skip,GR22_4,"('GR21', (4, 5, 6))",None,ref96,found
+reference,skip,GR22_5,"('GR21', (4, 5, 6))",None,ref97,found
+reference,skip,GR22_6,"('GR21', (4, 5, 6))",None,ref98,found
+reference,skip,GR22_7,"('GR21', (4, 5, 6))",None,ref99,found
+reference,skip,GR22_8,"('GR21', (4, 5, 6))",None,ref100,found
+reference,skip,GR22_9,"('GR21', (4, 5, 6))",None,ref101,found
+reference,skip,GR22_10,"('GR21', (4, 5, 6))",None,ref102,found
+reference,skip,GR22_11,"('GR21', (4, 5, 6))",None,ref103,found
+reference,skip,GR22_12,"('GR21', (4, 5, 6))",None,ref104,found
+reference,skip,GR22_13,"('GR21', (4, 5, 6))",None,ref105,found
+reference,skip,GR22_14,"('GR21', (4, 5, 6))",None,ref106,found
+reference,required_any,"('GR22_1', 'GR22_10', 'GR22_11', 'GR22_12', 'GR22_13', 'GR22_14', 'GR22_2', 'GR22_3', 'GR22_4', 'GR22_5', 'GR22_6', 'GR22_7', 'GR22_8', 'GR22_9')","('GR21', (1, 2, 3))",None,ref107,found
+reference,domain,GR23,None,"(1, 2, 3)",ref108,found
+reference,domain,GR24,None,"(1, 2, 3, 4, 5)",ref109,found
+reference,domain,GR25,None,"(1, 2, 3, 4, 5, 6)",ref110,found
+reference,domain,GR26,None,"(1, 2, 3, 4)",ref111,found
+reference,domain,GR27,None,"(1, 2, 3, 4)",ref112,found
+reference,domain,GR29,None,"(1, 2, 3, 4)",ref113,found
+reference,domain,GR210,None,"(1, 2, 3, 4)",ref114,found
+reference,domain,GR211,None,"(1, 2, 3, 4)",ref115,found
+reference,domain,GR212,None,"(1, 2, 3, 4)",ref116,found
+reference,domain,GR213,None,"(1, 2, 3, 4)",ref117,found
+reference,domain,GR214,None,"(1, 2, 3, 4)",ref118,found
+reference,required,GR21,None,None,ref119,found
+reference,required,GR23,None,None,ref120,found
+reference,required,GR24,None,None,ref121,found
+reference,required,GR25,None,None,ref122,found
+reference,required,GR26,None,None,ref123,found
+reference,required,GR27,None,None,ref124,found
+reference,required,GR29,None,None,ref125,found
+reference,required,GR210,None,None,ref126,found
+reference,required,GR211,None,None,ref127,found
+reference,required,GR212,None,None,ref128,found
+reference,required,GR213,None,None,ref129,found
+reference,required,GR214,None,None,ref130,found
+reference,multi_select,GR28_1,None,None,ref131,found
+reference,multi_select,GR28_2,None,None,ref132,found
+reference,multi_select,GR28_3,None,None,ref133,found
+reference,multi_select,GR28_4,None,None,ref134,found
+reference,multi_select,GR28_5,None,None,ref135,found
+reference,skip,GR28_1,"('GR27', (2, 3, 4))",None,ref136,found
+reference,skip,GR28_2,"('GR27', (2, 3, 4))",None,ref137,found
+reference,skip,GR28_3,"('GR27', (2, 3, 4))",None,ref138,found
+reference,skip,GR28_4,"('GR27', (2, 3, 4))",None,ref139,found
+reference,skip,GR28_5,"('GR27', (2, 3, 4))",None,ref140,found
+reference,required_any,"('GR28_1', 'GR28_2', 'GR28_3', 'GR28_4', 'GR28_5')","('GR27', (1,))",None,ref141,found
+reference,consistency,"('GR210', 'GR211', 'GR212', 'GR213', 'GR214', 'GR26', 'GR27', 'GR29')",None,None,ref142,found
+reference,domain,GR31_1,None,"(1, 2, 3, 4)",ref143,found
+reference,required,GR31_1,None,None,ref144,found
+reference,domain,GR31_2,None,"(1, 2, 3, 4)",ref145,found
+reference,required,GR31_2,None,None,ref146,found
+reference,domain,GR31_3,None,"(1, 2, 3, 4)",ref147,found
+reference,required,GR31_3,None,None,ref148,found
+reference,domain,GR31_4,None,"(1, 2, 3, 4)",ref149,found
+reference,required,GR31_4,None,None,ref150,found
+reference,domain,GR32,None,"(1, 2)",ref151,found
+reference,domain,GR33,None,"(1, 2, 3)",ref152,found
+reference,domain,GR34,None,"(1, 2)",ref153,found
+reference,domain,GR35,None,"(1, 2)",ref154,found
+reference,domain,GR36,None,"(1, 2)",ref155,found
+reference,domain,GR37,None,"(1, 2, 3)",ref156,found
+reference,domain,GR38,None,"(1, 2)",ref157,found
+reference,domain,GR39,None,"(1, 2, 3)",ref158,found
+reference,domain,GR310,None,"(1, 2, 3)",ref159,found
+reference,domain,GR311,None,"(1, 2, 3)",ref160,found
+reference,domain,GR312,None,"(1, 2, 3)",ref161,found
+reference,domain,GR313,None,"(1, 2)",ref162,found
+reference,domain,GR314,None,"(1, 2)",ref163,found
+reference,domain,GR315,None,"(1, 2)",ref164,found
+reference,domain,GR317,None,"(1, 2)",ref165,found
+reference,domain,GR319,None,"(1, 2, 3)",ref166,found
+reference,required,GR32,None,None,ref167,found
+reference,required,GR33,None,None,ref168,found
+reference,required,GR34,None,None,ref169,found
+reference,required,GR35,None,None,ref170,found
+reference,required,GR36,None,None,ref171,found
+reference,required,GR37,None,None,ref172,found
+reference,required,GR38,None,None,ref173,found
+reference,required,GR39,None,None,ref174,found
+reference,required,GR310,None,None,ref175,found
+reference,required,GR311,None,None,ref176,found
+reference,required,GR312,None,None,ref177,found
+reference,required,GR313,None,None,ref178,found
+reference,required,GR315,None,None,ref179,found
+reference,required,GR317,None,None,ref180,found
+reference,required,GR319,None,None,ref181,found
+reference,skip,GR314,"('GR313', (2,))",None,ref182,found
+reference,required,GR314,"('GR313', (1,))",None,ref183,found
+reference,multi_select,GR316_1,None,None,ref184,found
+reference,multi_select,GR316_2,None,None,ref185,found
+reference,multi_select,GR316_3,None,None,ref186,found
+reference,multi_select,GR316_4,None,None,ref187,found
+reference,multi_select,GR316_5,None,None,ref188,found
+reference,multi_select,GR316_6,None,None,ref189,found
+reference,skip,GR316_1,"('GR315', (1,))",None,ref190,found
+reference,skip,GR316_2,"('GR315', (1,))",None,ref191,found
+reference,skip,GR316_3,"('GR315', (1,))",None,ref192,found
+reference,skip,GR316_4,"('GR315', (1,))",None,ref193,found
+reference,skip,GR316_5,"('GR315', (1,))",None,ref194,found
+reference,skip,GR316_6,"('GR315', (1,))",None,ref195,found
+reference,required_any,"('GR316_1', 'GR316_2', 'GR316_3', 'GR316_4', 'GR316_5', 'GR316_6')","('GR315', (2,))",None,ref196,found
+reference,multi_select,GR318_1,None,None,ref197,found
+reference,multi_select,GR318_2,None,None,ref198,found
+reference,multi_select,GR318_3,None,None,ref199,found
+reference,multi_select,GR318_4,None,None,ref200,found
+reference,multi_select,GR318_5,None,None,ref201,found
+reference,multi_select,GR318_6,None,None,ref202,found
+reference,multi_select,GR318_7,None,None,ref203,found
+reference,multi_select,GR318_8,None,None,ref204,found
+reference,multi_select,GR318_9,None,None,ref205,found
+reference,skip,GR318_1,"('GR317', (2,))",None,ref206,found
+reference,skip,GR318_2,"('GR317', (2,))",None,ref207,found
+reference,skip,GR318_3,"('GR317', (2,))",None,ref208,found
+reference,skip,GR318_4,"('GR317', (2,))",None,ref209,found
+reference,skip,GR318_5,"('GR317', (2,))",None,ref210,found
+reference,skip,GR318_6,"('GR317', (2,))",None,ref211,found
+reference,skip,GR318_7,"('GR317', (2,))",None,ref212,found
+reference,skip,GR318_8,"('GR317', (2,))",None,ref213,found
+reference,skip,GR318_9,"('GR317', (2,))",None,ref214,found
+reference,required_any,"('GR318_1', 'GR318_2', 'GR318_3', 'GR318_4', 'GR318_5', 'GR318_6', 'GR318_7', 'GR318_8', 'GR318_9')","('GR317', (1,))",None,ref215,found
+reference,multi_select,GR320_1,None,None,ref216,found
+reference,multi_select,GR320_2,None,None,ref217,found
+reference,multi_select,GR320_3,None,None,ref218,found
+reference,multi_select,GR320_4,None,None,ref219,found
+reference,multi_select,GR320_5,None,None,ref220,found
+reference,multi_select,GR320_6,None,None,ref221,found
+reference,multi_select,GR320_7,None,None,ref222,found
+reference,multi_select,GR320_8,None,None,ref223,found
+reference,multi_select,GR320_9,None,None,ref224,found
+reference,multi_select,GR320_10,None,None,ref225,found
+reference,skip,GR320_1,"('GR319', (2, 3))",None,ref226,found
+reference,skip,GR320_2,"('GR319', (2, 3))",None,ref227,found
+reference,skip,GR320_3,"('GR319', (2, 3))",None,ref228,found
+reference,skip,GR320_4,"('GR319', (2, 3))",None,ref229,found
+reference,skip,GR320_5,"('GR319', (2, 3))",None,ref230,found
+reference,skip,GR320_6,"('GR319', (2, 3))",None,ref231,found
+reference,skip,GR320_7,"('GR319', (2, 3))",None,ref232,found
+reference,skip,GR320_8,"('GR319', (2, 3))",None,ref233,found
+reference,skip,GR320_9,"('GR319', (2, 3))",None,ref234,found
+reference,skip,GR320_10,"('GR319', (2, 3))",None,ref235,found
+reference,required_any,"('GR320_1', 'GR320_10', 'GR320_2', 'GR320_3', 'GR320_4', 'GR320_5', 'GR320_6', 'GR320_7', 'GR320_8', 'GR320_9')","('GR319', (1,))",None,ref236,found
+reference,consistency,"('GR313', 'GR316_4')",None,None,ref237,missed
+reference,consistency,"('GR317', 'GR40')",None,None,ref238,found
+reference,consistency,"('GR22_13', 'GR317')",None,None,ref239,missed
+reference,domain,GR40,None,"(1, 2)",ref240,found
+reference,required,GR40,None,None,ref241,found
+reference,domain,GR41,None,"(1, 2)",ref242,found
+reference,domain,GR42_1,None,"(1, 2, 3)",ref243,found
+reference,domain,GR42_2,None,"(1, 2, 3)",ref244,found
+reference,domain,GR42_3,None,"(1, 2, 3)",ref245,found
+reference,domain,GR42_4,None,"(1, 2, 3)",ref246,found
+reference,domain,GR42_5,None,"(1, 2, 3)",ref247,found
+reference,domain,GR42_6,None,"(1, 2, 3)",ref248,found
+reference,domain,GR42_7,None,"(1, 2, 3)",ref249,found
+reference,domain,GR43_1,None,"(1, 2, 9)",ref250,found
+reference,domain,GR43_2,None,"(1, 2, 9)",ref251,found
+reference,domain,GR43_3,None,"(1, 2, 9)",ref252,found
+reference,domain,GR43_4,None,"(1, 2, 9)",ref253,found
+reference,domain,GR43_5,None,"(1, 2, 9)",ref254,found
+reference,domain,GR43_6,None,"(1, 2, 9)",ref255,found
+reference,domain,GR43_7,None,"(1, 2, 9)",ref256,found
+reference,domain,GR44_1,None,"(1, 2, 3, 4, 9)",ref257,found
+reference,domain,GR44_2,None,"(1, 2, 3, 4, 9)",ref258,found
+reference,domain,GR44_3,None,"(1, 2, 3, 4, 9)",ref259,found
+reference,domain,GR44_4,None,"(1, 2, 3, 4, 9)",ref260,found
+reference,domain,GR44_5,None,"(1, 2, 3, 4, 9)",ref261,found
+reference,domain,GR44_6,None,"(1, 2, 3, 4, 9)",ref262,found
+reference,domain,GR44_7,None,"(1, 2, 3, 4, 9)",ref263,found
+reference,domain,GR44_8,None,"(1, 2, 3, 4, 9)",ref264,found
+reference,domain,GR44_9,None,"(1, 2, 3, 4, 9)",ref265,found
+reference,domain,GR44_10,None,"(1, 2, 3, 4, 9)",ref266,found
+reference,domain,GR44_11,None,"(1, 2, 3, 4, 9)",ref267,found
+reference,domain,GR44_12,None,"(1, 2, 3, 4, 9)",ref268,found
+reference,domain,GR44_13,None,"(1, 2, 3, 4, 9)",ref269,found
+reference,domain,GR44_14,None,"(1, 2, 3, 4, 9)",ref270,found
+reference,domain,GR45_1,None,"(1, 2, 3, 9)",ref271,found
+reference,domain,GR45_2,None,"(1, 2, 3, 9)",ref272,found
+reference,domain,GR45_3,None,"(1, 2, 3, 9)",ref273,found
+reference,domain,GR45_4,None,"(1, 2, 3, 9)",ref274,found
+reference,domain,GR45_5,None,"(1, 2, 3, 9)",ref275,found
+reference,domain,GR45_6,None,"(1, 2, 3, 9)",ref276,found
+reference,domain,GR45_7,None,"(1, 2, 3, 9)",ref277,found
+reference,domain,GR45_8,None,"(1, 2, 3, 9)",ref278,found
+reference,domain,GR45_9,None,"(1, 2, 3, 9)",ref279,found
+reference,domain,GR45_10,None,"(1, 2, 3, 9)",ref280,found
+reference,domain,GR45_11,None,"(1, 2, 3, 9)",ref281,found
+reference,domain,GR45_12,None,"(1, 2, 3, 9)",ref282,found
+reference,domain,GR45_13,None,"(1, 2, 3, 9)",ref283,found
+reference,domain,GR45_14,None,"(1, 2, 3, 9)",ref284,found
+reference,domain,GR46,None,"(1, 2, 3, 4, 5)",ref285,found
+reference,skip,GR41,"('GR40', (2,))",None,ref286,found
+reference,skip,GR42_1,"('GR40', (2,))",None,ref287,found
+reference,skip,GR42_2,"('GR40', (2,))",None,ref288,found
+reference,skip,GR42_3,"('GR40', (2,))",None,ref289,found
+reference,skip,GR42_4,"('GR40', (2,))",None,ref290,found
+reference,skip,GR42_5,"('GR40', (2,))",None,ref291,found
+reference,skip,GR42_6,"('GR40', (2,))",None,ref292,found
+reference,skip,GR42_7,"('GR40', (2,))",None,ref293,found
+reference,skip,GR43_1,"('GR40', (2,))",None,ref294,found
+reference,skip,GR43_2,"('GR40', (2,))",None,ref295,found
+reference,skip,GR43_3,"('GR40', (2,))",None,ref296,found
+reference,skip,GR43_4,"('GR40', (2,))",None,ref297,found
+reference,skip,GR43_5,"('GR40', (2,))",None,ref298,found
+reference,skip,GR43_6,"('GR40', (2,))",None,ref299,found
+reference,skip,GR43_7,"('GR40', (2,))",None,ref300,found
+reference,skip,GR44_1,"('GR40', (2,))",None,ref301,found
+reference,skip,GR44_2,"('GR40', (2,))",None,ref302,found
+reference,skip,GR44_3,"('GR40', (2,))",None,ref303,found
+reference,skip,GR44_4,"('GR40', (2,))",None,ref304,found
+reference,skip,GR44_5,"('GR40', (2,))",None,ref305,found
+reference,skip,GR44_6,"('GR40', (2,))",None,ref306,found
+reference,skip,GR44_7,"('GR40', (2,))",None,ref307,found
+reference,skip,GR44_8,"('GR40', (2,))",None,ref308,found
+reference,skip,GR44_9,"('GR40', (2,))",None,ref309,found
+reference,skip,GR44_10,"('GR40', (2,))",None,ref310,found
+reference,skip,GR44_11,"('GR40', (2,))",None,ref311,found
+reference,skip,GR44_12,"('GR40', (2,))",None,ref312,found
+reference,skip,GR44_13,"('GR40', (2,))",None,ref313,found
+reference,skip,GR44_14,"('GR40', (2,))",None,ref314,found
+reference,skip,GR45_1,"('GR40', (2,))",None,ref315,found
+reference,skip,GR45_2,"('GR40', (2,))",None,ref316,found
+reference,skip,GR45_3,"('GR40', (2,))",None,ref317,found
+reference,skip,GR45_4,"('GR40', (2,))",None,ref318,found
+reference,skip,GR45_5,"('GR40', (2,))",None,ref319,found
+reference,skip,GR45_6,"('GR40', (2,))",None,ref320,found
+reference,skip,GR45_7,"('GR40', (2,))",None,ref321,found
+reference,skip,GR45_8,"('GR40', (2,))",None,ref322,found
+reference,skip,GR45_9,"('GR40', (2,))",None,ref323,found
+reference,skip,GR45_10,"('GR40', (2,))",None,ref324,found
+reference,skip,GR45_11,"('GR40', (2,))",None,ref325,found
+reference,skip,GR45_12,"('GR40', (2,))",None,ref326,found
+reference,skip,GR45_13,"('GR40', (2,))",None,ref327,found
+reference,skip,GR45_14,"('GR40', (2,))",None,ref328,found
+reference,skip,GR46,"('GR40', (2,))",None,ref329,found
+reference,required,GR41,"('GR40', (1,))",None,ref330,found
+reference,required,GR44_1,"('GR40', (1,))",None,ref331,found
+reference,required,GR44_2,"('GR40', (1,))",None,ref332,found
+reference,required,GR44_3,"('GR40', (1,))",None,ref333,found
+reference,required,GR44_4,"('GR40', (1,))",None,ref334,found
+reference,required,GR44_5,"('GR40', (1,))",None,ref335,found
+reference,required,GR44_6,"('GR40', (1,))",None,ref336,found
+reference,required,GR44_7,"('GR40', (1,))",None,ref337,found
+reference,required,GR44_8,"('GR40', (1,))",None,ref338,found
+reference,required,GR44_9,"('GR40', (1,))",None,ref339,found
+reference,required,GR44_10,"('GR40', (1,))",None,ref340,found
+reference,required,GR44_11,"('GR40', (1,))",None,ref341,found
+reference,required,GR44_12,"('GR40', (1,))",None,ref342,found
+reference,required,GR44_13,"('GR40', (1,))",None,ref343,found
+reference,required,GR44_14,"('GR40', (1,))",None,ref344,found
+reference,required,GR45_1,"('GR40', (1,))",None,ref345,found
+reference,required,GR45_2,"('GR40', (1,))",None,ref346,found
+reference,required,GR45_3,"('GR40', (1,))",None,ref347,found
+reference,required,GR45_4,"('GR40', (1,))",None,ref348,found
+reference,required,GR45_5,"('GR40', (1,))",None,ref349,found
+reference,required,GR45_6,"('GR40', (1,))",None,ref350,found
+reference,required,GR45_7,"('GR40', (1,))",None,ref351,found
+reference,required,GR45_8,"('GR40', (1,))",None,ref352,found
+reference,required,GR45_9,"('GR40', (1,))",None,ref353,found
+reference,required,GR45_10,"('GR40', (1,))",None,ref354,found
+reference,required,GR45_11,"('GR40', (1,))",None,ref355,found
+reference,required,GR45_12,"('GR40', (1,))",None,ref356,found
+reference,required,GR45_13,"('GR40', (1,))",None,ref357,found
+reference,required,GR45_14,"('GR40', (1,))",None,ref358,found
+reference,required,GR46,"('GR40', (1,))",None,ref359,found
+reference,skip,GR42_1,"('GR41', (2,))",None,ref360,found
+reference,skip,GR42_2,"('GR41', (2,))",None,ref361,found
+reference,skip,GR42_3,"('GR41', (2,))",None,ref362,found
+reference,skip,GR42_4,"('GR41', (2,))",None,ref363,found
+reference,skip,GR42_5,"('GR41', (2,))",None,ref364,found
+reference,skip,GR42_6,"('GR41', (2,))",None,ref365,found
+reference,skip,GR42_7,"('GR41', (2,))",None,ref366,found
+reference,skip,GR43_1,"('GR41', (2,))",None,ref367,found
+reference,skip,GR43_2,"('GR41', (2,))",None,ref368,found
+reference,skip,GR43_3,"('GR41', (2,))",None,ref369,found
+reference,skip,GR43_4,"('GR41', (2,))",None,ref370,found
+reference,skip,GR43_5,"('GR41', (2,))",None,ref371,found
+reference,skip,GR43_6,"('GR41', (2,))",None,ref372,found
+reference,skip,GR43_7,"('GR41', (2,))",None,ref373,found
+reference,required_any,"('GR42_1', 'GR42_2', 'GR42_3', 'GR42_4', 'GR42_5', 'GR42_6', 'GR42_7')","('GR41', (1,))",None,ref374,missed
+reference,consistency,"('GR42_1', 'GR43_1')",None,None,ref375,missed
+reference,consistency,"('GR42_2', 'GR43_2')",None,None,ref376,missed
+reference,consistency,"('GR42_3', 'GR43_3')",None,None,ref377,missed
+reference,consistency,"('GR42_4', 'GR43_4')",None,None,ref378,missed
+reference,consistency,"('GR42_5', 'GR43_5')",None,None,ref379,missed
+reference,consistency,"('GR42_6', 'GR43_6')",None,None,ref380,missed
+reference,consistency,"('GR42_7', 'GR43_7')",None,None,ref381,missed
+reference,domain,ZT,None,"(1, 2, 3, 4, 5, 6)",ref382,found
+reference,required,ZT,None,None,ref383,found
+reference,cross_form,"('GR40',)",None,None,ref384,found
+reference,cross_form,"('GR317',)",None,None,ref385,missed
+reference,doc_issue,"('GR25',)",None,None,ref386,found
+reference,doc_issue,"('GR314',)",None,None,ref387,found
+reference,doc_issue,"('GR314',)",None,None,ref388,found
+reference,doc_issue,"('GR9_2',)",None,None,ref389,missed
+reference,doc_issue,"('GR22_7',)",None,None,ref390,missed
+reference,doc_issue,"('GR33',)",None,None,ref391,missed
+reference,doc_issue,"('GR44_6', 'GR45_6')",None,None,ref392,missed
+reference,doc_issue,"('GR1', 'GR41', 'GR42_1', 'GR43_1')",None,None,ref393,found
+reference,doc_issue,"('GR6_3',)",None,None,ref394,found
+reference,doc_issue,"('GR31_3', 'GR31_4')",None,None,ref395,found
+reference,doc_issue,"('GR40',)",None,None,ref396,found
+reference,doc_issue,"('NOMP', 'POL', 'VOZ')",None,None,ref397,found
+reference,doc_issue,"('GR14_1', 'GR14_2', 'GR15_1', 'GR15_2', 'GR16_1', 'GR17_1', 'GR6_1', 'GR6_2', 'GR6_3')",None,None,ref398,found
+reference,doc_issue,(),None,None,ref399,missed
+reference,doc_issue,"('ZT',)",None,None,ref400,missed
+reference,doc_issue,(),None,None,ref401,missed
+reference,doc_issue,"('ZT',)",None,None,ref402,missed

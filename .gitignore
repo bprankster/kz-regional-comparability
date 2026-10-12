@@ -1,0 +1,17 @@
+# data are not redistributed
+stat_data/
+synthetic_microdata*/
+*.tar.gz
+*.csv.gz
+DATA_DIR/
+# local runs
+demo/live/
+demo/d002_2022_live.json
+reply_live.txt
+out/viz/
+# python / jupyter / os
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+.env

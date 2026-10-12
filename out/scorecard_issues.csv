@@ -1,0 +1,103 @@
+form,rule_id,type,year,region,columns,example_column,records,rate_region,rate_rest,excess,synthesis,evidence,status
+D002,D002-P4-required,required,2023,Zhetysu,30,GR41,137,61.65,13.9,1942.5,could be broken links in the synthetic data,rule check,check on real records
+D002,D002-P4-skip,skip,2023,Kyzylorda,30,GR41,89,75.3,11.8,1672.9,could be broken links in the synthetic data,rule check,check on real records
+D002,D002-P4-skip,skip,2023,Turkistan,30,GR41,75,72.0,12.0,1361.3,could be broken links in the synthetic data,rule check,check on real records
+D002,D002-preschool-implies-children,consistency,2023,Zhetysu,1,GR40,57,54.4,8.7,26.0,could be broken links in the synthetic data,rule check,check on real records
+D002,D002-same-person,consistency,2023,Kyzylorda,1,POL+VOZ+NOMP,587,11.6,2.3,54.6,links between the two halves of the form,rule check,check on real records
+D002,D002-x-D008-nochild-household,consistency,2023,Kyzylorda,1,GR40,123,61.0,6.6,66.9,could be broken links in the synthetic data,rule check,check on real records
+D002,D002-P4-required,required,2024,Almaty city,30,GR41,39,96.15,11.5,988.5,could be broken links in the synthetic data,rule check,check on real records
+D002,D002-P4-skip,skip,2024,Kyzylorda,30,GR41,146,32.2,10.1,1000.8,partly forced,rule check,check on real records
+D002,D002-P4-skip,skip,2024,Shymkent,1,GR41,131,32.8,9.6,30.4,partly forced,rule check,check on real records
+D002,D002-P4-skip,skip,2024,Turkistan,30,GR41,64,87.5,9.8,1491.0,could be broken links in the synthetic data,rule check,check on real records
+D002,D002-preschool-implies-children,consistency,2024,Almaty city,1,GR40,47,89.4,13.0,35.9,could be broken links in the synthetic data,rule check,check on real records
+D002,D002-preschool-implies-children,consistency,2024,Zhetysu,1,GR40,74,43.2,13.8,21.8,could be broken links in the synthetic data,rule check,check on real records
+D002,D002-x-D008-nochild-household,consistency,2024,Kyzylorda,1,GR40,148,33.8,6.2,40.8,partly forced,rule check,check on real records
+D004,section coverage: kv_vopr12 (2 loans and savings),section coverage,2023,Mangystau,1,kv_vopr12,,6.7,32.8,,section coverage; could be a real difference,section coverage (finance case),check on real records
+D004,section coverage: kv_vopr12 (2 loans and savings),section coverage,2023,Shymkent,1,kv_vopr12,,6.9,32.8,,section coverage; could be a real difference,section coverage (finance case),check on real records
+D004,section coverage: kv_vopr12 (2 loans and savings),section coverage,2023,Turkistan,1,kv_vopr12,,15.2,32.8,,section coverage; could be a real difference,section coverage (finance case),check on real records
+D004,section coverage: kv_vopr12 (2 loans and savings),section coverage,2023,Zhambyl,1,kv_vopr12,,14.8,32.8,,section coverage; could be a real difference,section coverage (finance case),check on real records
+D004,section coverage: kv_vopr12 (2 loans and savings),section coverage,2024,Mangystau,1,kv_vopr12,,4.7,36.8,,section coverage; could be a real difference,section coverage (finance case),check on real records
+D004,section coverage: kv_vopr12 (2 loans and savings),section coverage,2024,Shymkent,1,kv_vopr12,,11.4,36.8,,section coverage; could be a real difference,section coverage (finance case),check on real records
+D004,section coverage: kv_vopr12 (2 loans and savings),section coverage,2024,Turkistan,1,kv_vopr12,,17.5,36.8,,section coverage; could be a real difference,section coverage (finance case),check on real records
+D004,section coverage: kv_vopr12 (2 loans and savings),section coverage,2024,Zhambyl,1,kv_vopr12,,17.2,36.8,,section coverage; could be a real difference,section coverage (finance case),check on real records
+D006,D006-Q8-required,required,2023,Mangystau,3,KOL_UCH1,93,84.9,24.8,167.8,could be broken links in the synthetic data,rule check,check on real records
+D006,D006-Q8-skip,skip,2023,Akmola,4,KOL_UCH2,220,9.8,2.35,68.4,partly forced,rule check,check on real records
+D006,D006-Q8-skip,skip,2023,Almaty oblast,6,KOL_UCH2,111,17.1,3.55,94.8,partly forced,rule check,check on real records
+D006,D006-Q8-skip,skip,2023,Atyrau,1,UCH_PL2,111,14.4,3.6,12.0,could be broken links in the synthetic data,rule check,check on real records
+D006,D006-Q8-skip,skip,2023,East Kazakhstan,1,UCH_ISP1_4,319,8.2,0.1,25.7,could be broken links in the synthetic data,rule check,check on real records
+D006,D006-Q8-skip,skip,2023,Karaganda,1,UCH_ISP1_3,381,13.6,2.6,42.1,partly forced,rule check,check on real records
+D006,D006-Q8-skip,skip,2023,Kostanay,1,UCH_PL2,351,11.7,3.3,29.5,could be broken links in the synthetic data,rule check,check on real records
+D006,D006-Q8-skip,skip,2023,Kyzylorda,1,UCH_ISP1_6,138,8.7,1.0,10.6,partly forced,rule check,check on real records
+D006,D006-Q8-skip,skip,2023,Mangystau,1,UCH_ISP1_1,441,9.5,0.5,40.0,could be broken links in the synthetic data,rule check,check on real records
+D006,D006-Q8-skip,skip,2023,Turkistan,5,NOMP2,393,20.4,2.3,355.8,could be broken links in the synthetic data,rule check,check on real records
+D006,D006-Q8-skip,skip,2023,West Kazakhstan,3,KOL_UCH2,252,6.3,1.7,56.9,partly forced,rule check,check on real records
+D006,D006-bath-needs-sewerage,consistency,2023,Kostanay,1,U24+U25,404,9.9,0.5,37.8,partly forced,rule check,check on real records
+D006,D006-sewerage-needs-water,consistency,2023,Ulytau,1,U14+U15,204,5.9,0.8,10.3,partly forced,rule check,check on real records
+D006,D006-shower-needs-sewerage,consistency,2023,Kostanay,1,U24+U25,56,21.4,1.0,11.5,could be broken links in the synthetic data,rule check,check on real records
+D006,D006-Q8-required,required,2024,Almaty city,3,KOL_UCH1,87,66.7,21.5,118.89999999999999,could be broken links in the synthetic data,rule check,check on real records
+D006,D006-Q8-required,required,2024,Astana,3,KOL_UCH1,35,74.3,21.9,55.5,could be broken links in the synthetic data,rule check,check on real records
+D006,D006-Q8-required,required,2024,Karaganda,3,KOL_UCH1,124,80.6,20.9,223.6,could be broken links in the synthetic data,rule check,check on real records
+D006,D006-Q8-skip,skip,2024,Aktobe,1,UCH_FS2_1,280,8.9,2.9,16.9,could be broken links in the synthetic data,rule check,check on real records
+D006,D006-Q8-skip,skip,2024,Almaty city,1,UCH_ISP1_6,628,8.0,1.9,38.1,could be broken links in the synthetic data,rule check,check on real records
+D006,D006-Q8-skip,skip,2024,Almaty oblast,13,KOL_UCH1,124,28.2,3.5,394.3,partly forced,rule check,check on real records
+D006,D006-Q8-skip,skip,2024,Karaganda,1,UCH_ISP1_3,464,12.1,3.3,40.5,could be broken links in the synthetic data,rule check,check on real records
+D006,D006-Q8-skip,skip,2024,Kyzylorda,2,UCH_ISP1_3,170,12.100000000000001,3.05,30.700000000000003,partly forced,rule check,check on real records
+D006,D006-Q8-skip,skip,2024,Mangystau,1,UCH_ISP1_1,294,9.2,0.2,26.4,partly forced,rule check,check on real records
+D006,D006-Q8-skip,skip,2024,Turkistan,8,KOL_UCH1,73,37.7,9.9,179.7,partly forced,rule check,check on real records
+D006,D006-Q8-skip,skip,2024,Zhambyl,2,NOMP2,253,13.0,3.75,47.0,partly forced,rule check,check on real records
+D006,D006-Q8-skip,skip,2024,Zhetysu,1,UCH_ISP1_2,277,8.7,2.9,16.0,could be broken links in the synthetic data,rule check,check on real records
+D006,D006-bath-needs-sewerage,consistency,2024,Almaty oblast,1,U24+U25,144,9.0,1.4,11.0,could be broken links in the synthetic data,rule check,check on real records
+D006,D006-bath-needs-sewerage,consistency,2024,Kostanay,1,U24+U25,414,9.2,1.0,33.7,partly forced,rule check,check on real records
+D006,D006-lift-multiflat,consistency,2024,Shymkent,1,TIP_J,68,16.2,1.0,10.3,partly forced,rule check,check on real records
+D006,D006-shower-needs-sewerage,consistency,2024,Kostanay,1,U24+U25,53,20.8,1.5,10.2,could be broken links in the synthetic data,rule check,check on real records
+T001,code shift: ORB_PKHDHL 5 → 2,code shift,2024,Akmola,1,ORB_PKHDHL,44,6.3,12.8,,small group,code shift (decoder),check on real records
+D002,D002-P2Q8-skip,skip,2023,Aktobe,3,GR28_2,642,6.4,0.1,112.2,forced by the answer shares,rule check,holds in synthetic data
+D002,D002-P3Q16-required,required,2023,Pavlodar,1,GR316_1|GR316_2|GR316_3|GR316_4|GR316_5|GR316_6,33,75.8,1.6,24.5,forced by the answer shares,rule check,holds in synthetic data
+D002,D002-x-D008-child-household,consistency,2023,Aktobe,1,GR40,437,96.8,9.3,382.6,forced by the answer shares,rule check,holds in synthetic data
+D002,D002-x-D008-child-household,consistency,2023,Zhetysu,1,GR40,289,55.7,13.1,123.1,forced by the answer shares,rule check,holds in synthetic data
+D002,D002-x-D008-nochild-household,consistency,2023,Turkistan,1,GR40,136,64.0,6.4,78.3,forced by the answer shares,rule check,holds in synthetic data
+D002,ML: region vs rest,answer shares,2023,Aktobe,20,"GR40, GR41, GR44_1",,96.45,47.2,,not conditional,region vs rest (ML),holds in synthetic data
+D002,ML: region vs rest,answer shares,2023,Astana,1,ZT,,52.5,6.2,,not conditional,region vs rest (ML),holds in synthetic data
+D002,ML: region vs rest,answer shares,2023,Turkistan,2,"ZT, GR315",,62.8,13.65,,not conditional,region vs rest (ML),holds in synthetic data
+D002,D002-preschool-implies-children,consistency,2024,Ulytau,1,GR40,91,92.3,10.7,74.3,forced by the answer shares,rule check,holds in synthetic data
+D002,D002-x-D008-child-household,consistency,2024,Almaty city,1,GR40,348,92.5,9.2,289.9,forced by the answer shares,rule check,holds in synthetic data
+D002,D002-x-D008-child-household,consistency,2024,Ulytau,1,GR40,273,91.6,10.2,222.1,forced by the answer shares,rule check,holds in synthetic data
+D002,D002-x-D008-nochild-household,consistency,2024,Shymkent,1,GR40,163,23.9,6.5,28.5,forced by the answer shares,rule check,holds in synthetic data
+D002,D002-x-D008-nochild-household,consistency,2024,Turkistan,1,GR40,121,86.0,5.2,97.8,forced by the answer shares,rule check,holds in synthetic data
+D002,ML: region vs rest,answer shares,2024,Almaty city,8,"GR40, GR41, GR44_3",,94.9,46.8,,not conditional,region vs rest (ML),holds in synthetic data
+D002,ML: region vs rest,answer shares,2024,Mangystau,5,"GR25, ZT, GR33",,56.1,7.9,,not conditional,region vs rest (ML),holds in synthetic data
+D002,ML: region vs rest,answer shares,2024,Turkistan,3,"GR25, GR40, GR41",,88.7,48.3,,not conditional,region vs rest (ML),holds in synthetic data
+D002,ML: region vs rest,answer shares,2024,Ulytau,6,"GR40, GR41, GR44_3",,93.9,48.150000000000006,,not conditional,region vs rest (ML),holds in synthetic data
+D002×D008,D002-x-D008-children,cross_form,2023,Aktobe,1,GR40,,4.1,63.4,,not conditional,"regional shares, two forms",holds in synthetic data
+D002×D008,D002-x-D008-children,cross_form,2023,Zhetysu,1,GR40,,28.5,60.2,,not conditional,"regional shares, two forms",holds in synthetic data
+D002×D008,D002-x-D008-children,cross_form,2024,Almaty city,1,GR40,,5.3,47.2,,not conditional,"regional shares, two forms",holds in synthetic data
+D002×D008,D002-x-D008-children,cross_form,2024,Ulytau,1,GR40,,7.0,71.6,,not conditional,"regional shares, two forms",holds in synthetic data
+D004,D004-2.1-required,required,2023,Almaty oblast,1,KOD,185,7.6,0.6,12.9,forced by the answer shares,rule check,holds in synthetic data
+D004,D004-2.1-required,required,2024,Mangystau,1,KOD,50,26.0,0.3,12.8,forced by the answer shares,rule check,holds in synthetic data
+D006,D006-KOL_K-format,domain,2023,Pavlodar,1,KOL_K,790,99.6,0.4,783.8,not conditional,rule check,holds in synthetic data
+D006,D006-Q8-required,required,2023,Almaty city,3,KOL_UCH1,65,95.4,25.0,137.3,forced by the answer shares,rule check,holds in synthetic data
+D006,D006-Q8-required,required,2023,Ulytau,3,KOL_UCH1,148,83.1,24.3,261.3,forced by the answer shares,rule check,holds in synthetic data
+D006,ML: region vs rest,answer shares,2023,Astana,1,ZT,,61.7,6.2,,not conditional,region vs rest (ML),holds in synthetic data
+D006,ML: region vs rest,answer shares,2023,Kyzylorda,3,"VOZ5, VOZ6, VOZ7",,100.0,13.7,,not conditional,region vs rest (ML),holds in synthetic data
+D006,ML: region vs rest,answer shares,2023,Pavlodar,1,KOL_K,,49.7,0.2,,not conditional,region vs rest (ML),holds in synthetic data
+D006,ML: region vs rest,answer shares,2023,Shymkent,1,U24,,94.4,45.1,,not conditional,region vs rest (ML),holds in synthetic data
+D006,ML: region vs rest,answer shares,2023,Turkistan,5,"U20, U34, VOZ5",,96.5,14.2,,not conditional,region vs rest (ML),holds in synthetic data
+D006,D006-KOL_K-format,domain,2024,Pavlodar,1,KOL_K,827,99.9,0.0,825.6,not conditional,rule check,holds in synthetic data
+D006,D006-Q8-required,required,2024,Shymkent,3,KOL_UCH1,89,84.3,21.2,169.4,forced by the answer shares,rule check,holds in synthetic data
+D006,D006-Q8-required,required,2024,Zhetysu,3,KOL_UCH1,174,71.8,20.7,268.1,forced by the answer shares,rule check,holds in synthetic data
+D006,ML: region vs rest,answer shares,2024,Abai,2,"VOZ7, VOZ8",,99.8,30.05,,not conditional,region vs rest (ML),holds in synthetic data
+D006,ML: region vs rest,answer shares,2024,Almaty city,1,U38,,98.2,55.3,,not conditional,region vs rest (ML),holds in synthetic data
+D006,ML: region vs rest,answer shares,2024,Almaty oblast,3,"KOL_UCH2, UCH_FS2_1, TDP35",,56.2,4.7,,not conditional,region vs rest (ML),holds in synthetic data
+D006,ML: region vs rest,answer shares,2024,East Kazakhstan,2,"VOZ7, VOZ8",,99.8,29.95,,not conditional,region vs rest (ML),holds in synthetic data
+D006,ML: region vs rest,answer shares,2024,Kyzylorda,2,"VOZ7, VOZ8",,99.7,29.35,,not conditional,region vs rest (ML),holds in synthetic data
+D006,ML: region vs rest,answer shares,2024,North Kazakhstan,2,"VOZ7, VOZ8",,99.9,29.0,,not conditional,region vs rest (ML),holds in synthetic data
+D006,ML: region vs rest,answer shares,2024,Pavlodar,1,KOL_K,,48.7,0.0,,not conditional,region vs rest (ML),holds in synthetic data
+D006,ML: region vs rest,answer shares,2024,Turkistan,3,"NOMP3, VOZ7, VOZ8",,100.0,29.2,,not conditional,region vs rest (ML),holds in synthetic data
+D008,code shift: UROV 7 → 1,code shift,2023,Kyzylorda,1,UROV,560,1.8,8.9,,region-level code profile,code shift (decoder),holds in synthetic data
+D008,ML: region vs rest,answer shares,2024,Turkistan,1,FIZ,,44.6,13.5,,not conditional,region vs rest (ML),holds in synthetic data
+D008,code shift: UROV 1 → 7,code shift,2024,Kyzylorda,1,UROV,94,1.9,10.4,,region-level code profile,code shift (decoder),holds in synthetic data
+D008,code shift: UROV 7 → 1,code shift,2024,Kyzylorda,1,UROV,465,1.4,10.0,,region-level code profile,code shift (decoder),holds in synthetic data
+T001,ML: region vs rest,answer shares,2023,Almaty oblast,2,"DOP_RABOTA, ORB_TERRIT",,62.05,27.85,,not conditional,region vs rest (ML),holds in synthetic data
+T001,ML: region vs rest,answer shares,2023,Astana,1,DH_DATROZH_2,,55.9,10.3,,not conditional,region vs rest (ML),holds in synthetic data
+T001,ML: region vs rest,answer shares,2024,Astana,1,DH_DATROZH_2,,51.5,10.1,,not conditional,region vs rest (ML),holds in synthetic data
+T001,ML: region vs rest,answer shares,2024,Turkistan,1,PROZHSROZH,,68.3,36.8,,not conditional,region vs rest (ML),holds in synthetic data

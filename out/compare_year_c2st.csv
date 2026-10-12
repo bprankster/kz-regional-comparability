@@ -1,0 +1,101 @@
+form,te,region,auc,top_features,compare,robust_z
+D002/ocenka,10,Abai,0.737,"GR36 7%, GR31_1 6%, K 6%",2023 vs 2024,-0.5
+D002/ocenka,11,Akmola,0.646,"K 7%, GR312 6%, GR311 5%",2023 vs 2024,-1.7
+D002/ocenka,15,Aktobe,0.91,"GR44_1 15%, GR40 15%, GR44_12 13%",2023 vs 2024,1.8
+D002/ocenka,19,Almaty oblast,0.774,"GR44_1 6%, GR31_1 5%, GR312 5%",2023 vs 2024,-0.0
+D002/ocenka,23,Atyrau,0.819,"GR31_1 12%, GR31_4 7%, K 6%",2023 vs 2024,0.6
+D002/ocenka,27,West Kazakhstan,0.766,"GR31_2 7%, GR316_1 6%, GR31_4 6%",2023 vs 2024,-0.1
+D002/ocenka,31,Zhambyl,0.75,"GR312 7%, GR46 7%, GR319 5%",2023 vs 2024,-0.3
+D002/ocenka,33,Zhetysu,0.788,"K 8%, GR46 6%, GR40 6%",2023 vs 2024,0.2
+D002/ocenka,35,Karaganda,0.669,"GR31_1 7%, GR312 6%, GR311 5%",2023 vs 2024,-1.4
+D002/ocenka,39,Kostanay,0.767,"GR36 15%, GR33 7%, K 6%",2023 vs 2024,-0.1
+D002/ocenka,43,Kyzylorda,0.956,"GR31_1 51%, GR31_4 7%, GR31_3 3%",2023 vs 2024,2.4
+D002/ocenka,47,Mangystau,0.93,"GR39 21%, GR311 11%, GR46 8%",2023 vs 2024,2.1
+D002/ocenka,55,Pavlodar,0.828,"GR31_4 9%, GR316_4 9%, GR31_1 7%",2023 vs 2024,0.7
+D002/ocenka,59,North Kazakhstan,0.679,"GR33 8%, K 7%, GR312 7%",2023 vs 2024,-1.3
+D002/ocenka,61,Turkistan,0.832,"GR315 8%, GR44_11 5%, GR33 4%",2023 vs 2024,0.8
+D002/ocenka,62,Ulytau,0.908,"GR41 22%, GR40 21%, GR319 6%",2023 vs 2024,1.8
+D002/ocenka,63,East Kazakhstan,0.762,"GR31_1 13%, GR312 6%, K 5%",2023 vs 2024,-0.2
+D002/ocenka,71,Astana,0.728,"GR311 8%, GR312 6%, GR33 5%",2023 vs 2024,-0.6
+D002/ocenka,75,Almaty city,0.857,"GR40 8%, GR45_12 7%, GR312 7%",2023 vs 2024,1.1
+D002/ocenka,79,Shymkent,0.775,"GR44_1 11%, GR41 5%, GR40 5%",2023 vs 2024,0.0
+D002/subject,10,Abai,0.756,"GR11 5%, GR1 5%, GR12 5%",2023 vs 2024,-0.2
+D002/subject,11,Akmola,0.755,"GR1 7%, GR9_2 5%, GR11 4%",2023 vs 2024,-0.2
+D002/subject,15,Aktobe,0.828,"GR13 5%, GR11 5%, GR14_1 4%",2023 vs 2024,0.9
+D002/subject,19,Almaty oblast,0.774,"GR11 7%, GR13 5%, GR8 5%",2023 vs 2024,0.0
+D002/subject,23,Atyrau,0.768,"GR12 7%, GR11 7%, GR14_1 5%",2023 vs 2024,-0.0
+D002/subject,27,West Kazakhstan,0.734,"GR9_3 6%, GR11 5%, GR24 5%",2023 vs 2024,-0.6
+D002/subject,31,Zhambyl,0.727,"GR1 7%, GR10 6%, GR7 4%",2023 vs 2024,-0.7
+D002/subject,33,Zhetysu,0.709,"GR19 5%, GR5 4%, GR12 4%",2023 vs 2024,-1.0
+D002/subject,35,Karaganda,0.759,"ZT 15%, GR10 4%, GR11 4%",2023 vs 2024,-0.2
+D002/subject,39,Kostanay,0.874,"GR11 10%, GR17_3 7%, GR17_4 6%",2023 vs 2024,1.6
+D002/subject,43,Kyzylorda,0.85,"GR1 12%, GR4 10%, GR7 6%",2023 vs 2024,1.2
+D002/subject,47,Mangystau,0.997,"ZT 81%, GR25 8%, GR6_1 1%",2023 vs 2024,3.5
+D002/subject,55,Pavlodar,0.812,"ZT 9%, GR13 5%, GR25 5%",2023 vs 2024,0.6
+D002/subject,59,North Kazakhstan,0.751,"GR11 8%, GR10 6%, GR9_3 5%",2023 vs 2024,-0.3
+D002/subject,61,Turkistan,0.892,"ZT 38%, GR11 3%, GR7 3%",2023 vs 2024,1.9
+D002/subject,62,Ulytau,0.804,"GR12 6%, GR9_3 5%, GR11 5%",2023 vs 2024,0.5
+D002/subject,63,East Kazakhstan,0.718,"GR10 4%, GR7 4%, GR11 4%",2023 vs 2024,-0.8
+D002/subject,71,Astana,0.869,"ZT 18%, GR6_2 5%, GR11 4%",2023 vs 2024,1.5
+D002/subject,75,Almaty city,0.8,"ZT 9%, GR1 5%, GR15_1 4%",2023 vs 2024,0.4
+D002/subject,79,Shymkent,0.709,"GR3 4%, GR12 4%, GR19 4%",2023 vs 2024,-1.0
+D006/rio,10,Abai,0.869,"OB_PL 8%, TDP25 7%, TDP27 5%",2023 vs 2024,0.0
+D006/rio,11,Akmola,0.758,"J_PL 11%, OB_PL 11%, TDP34 6%",2023 vs 2024,-0.9
+D006/rio,15,Aktobe,0.961,"TDP25 28%, U38 10%, TDP5 8%",2023 vs 2024,0.8
+D006/rio,19,Almaty oblast,0.962,"TDP35 48%, ZT 10%, K 4%",2023 vs 2024,0.8
+D006/rio,23,Atyrau,0.717,"J_PL 12%, OB_PL 11%, TDP35 9%",2023 vs 2024,-1.2
+D006/rio,27,West Kazakhstan,0.866,"OB_PL 8%, J_PL 6%, U38 5%",2023 vs 2024,-0.0
+D006/rio,31,Zhambyl,0.918,"U32 23%, OB_PL 8%, J_PL 5%",2023 vs 2024,0.4
+D006/rio,33,Zhetysu,0.887,"OB_PL 8%, ZT 7%, ZEM 7%",2023 vs 2024,0.2
+D006/rio,35,Karaganda,0.735,"OB_PL 12%, TDP35 9%, J_PL 9%",2023 vs 2024,-1.1
+D006/rio,39,Kostanay,0.769,"U38 13%, OB_PL 10%, J_PL 9%",2023 vs 2024,-0.8
+D006/rio,43,Kyzylorda,0.943,"UCH_ISP1_3 17%, TDP34 8%, UCH_ISP1_6 6%",2023 vs 2024,0.6
+D006/rio,47,Mangystau,0.955,"ZT 48%, J_PL 5%, OB_PL 5%",2023 vs 2024,0.7
+D006/rio,55,Pavlodar,0.967,"TDP35 47%, U34 4%, OB_PL 3%",2023 vs 2024,0.8
+D006/rio,59,North Kazakhstan,0.807,"J_PL 9%, TDP35 7%, OB_PL 7%",2023 vs 2024,-0.5
+D006/rio,61,Turkistan,0.994,"ZT 40%, NOMP1 8%, ZEM 6%",2023 vs 2024,1.0
+D006/rio,62,Ulytau,0.916,"U16 11%, OB_PL 7%, U33 6%",2023 vs 2024,0.4
+D006/rio,63,East Kazakhstan,0.833,"OB_PL 9%, U35 8%, J_PL 8%",2023 vs 2024,-0.3
+D006/rio,71,Astana,0.689,"OB_PL 14%, J_PL 11%, TDP28 5%",2023 vs 2024,-1.5
+D006/rio,75,Almaty city,0.8,"TDP35 13%, OB_PL 11%, J_PL 10%",2023 vs 2024,-0.6
+D006/rio,79,Shymkent,0.83,"J_PL 10%, OB_PL 10%, U34 8%",2023 vs 2024,-0.3
+D008/kontr_k,10,Abai,0.97,"STATUS4 64%, STATUS3 14%, ROST 6%",2023 vs 2024,0.6
+D008/kontr_k,11,Akmola,0.972,"STATUS4 63%, STATUS3 17%, ROST 5%",2023 vs 2024,0.8
+D008/kontr_k,15,Aktobe,0.956,"STATUS4 61%, STATUS3 16%, STATUS2 5%",2023 vs 2024,-0.5
+D008/kontr_k,19,Almaty oblast,0.965,"STATUS4 58%, STATUS3 17%, ROST 8%",2023 vs 2024,0.2
+D008/kontr_k,23,Atyrau,0.947,"STATUS4 57%, STATUS3 19%, ROST 6%",2023 vs 2024,-1.3
+D008/kontr_k,27,West Kazakhstan,0.96,"STATUS4 62%, STATUS3 18%, ROST 5%",2023 vs 2024,-0.2
+D008/kontr_k,31,Zhambyl,0.956,"STATUS4 61%, STATUS3 19%, STATUS2 5%",2023 vs 2024,-0.5
+D008/kontr_k,33,Zhetysu,0.963,"STATUS4 60%, STATUS3 14%, ROST 6%",2023 vs 2024,0.0
+D008/kontr_k,35,Karaganda,0.968,"STATUS4 62%, STATUS3 15%, ROST 5%",2023 vs 2024,0.5
+D008/kontr_k,39,Kostanay,0.977,"STATUS4 64%, STATUS3 16%, ROST 5%",2023 vs 2024,1.2
+D008/kontr_k,43,Kyzylorda,0.956,"STATUS4 59%, STATUS3 11%, STATUS2 7%",2023 vs 2024,-0.5
+D008/kontr_k,47,Mangystau,0.949,"STATUS4 61%, STATUS3 17%, ROST 6%",2023 vs 2024,-1.1
+D008/kontr_k,55,Pavlodar,0.968,"STATUS4 67%, STATUS3 16%, ROST 4%",2023 vs 2024,0.5
+D008/kontr_k,59,North Kazakhstan,0.984,"STATUS4 63%, STATUS3 18%, ROST 5%",2023 vs 2024,1.8
+D008/kontr_k,61,Turkistan,0.945,"STATUS4 58%, STATUS3 20%, ROST 6%",2023 vs 2024,-1.5
+D008/kontr_k,62,Ulytau,0.954,"STATUS4 49%, IZM_STATUS 23%, ROST 7%",2023 vs 2024,-0.7
+D008/kontr_k,63,East Kazakhstan,0.974,"STATUS4 63%, STATUS3 10%, ROST 6%",2023 vs 2024,1.0
+D008/kontr_k,71,Astana,0.962,"STATUS4 57%, STATUS3 14%, ROST 6%",2023 vs 2024,-0.0
+D008/kontr_k,75,Almaty city,0.972,"STATUS4 58%, STATUS3 18%, ROST 5%",2023 vs 2024,0.8
+D008/kontr_k,79,Shymkent,0.962,"STATUS4 58%, STATUS3 17%, ROST 7%",2023 vs 2024,-0.0
+T001/baza,10,Abai,0.712,"OTVET_LICO 12%, KOMPT_GRAM 11%, DH_OBRAZOV 10%",2023 vs 2024,1.8
+T001/baza,11,Akmola,0.615,"MES 16%, DH_OBRAZOV 9%, KOMPT_GRAM 6%",2023 vs 2024,-0.8
+T001/baza,15,Aktobe,0.656,"MES 19%, PROZHSROZH 17%, DH_OBRAZOV 7%",2023 vs 2024,0.3
+T001/baza,19,Almaty oblast,0.883,"ORB_TERRIT 29%, PROZHSROZH 21%, ORB_PRODOL_1 17%",2023 vs 2024,6.6
+T001/baza,23,Atyrau,0.626,"ORB_OTRASL 12%, DH_OBRAZOV 10%, DH_DATROZH_2 7%",2023 vs 2024,-0.5
+T001/baza,27,West Kazakhstan,0.618,"ORB_PRODOL_1 10%, DH_OBRAZOV 10%, ORB_OTRASL 8%",2023 vs 2024,-0.7
+T001/baza,31,Zhambyl,0.681,"ORB_OTRASL 10%, DH_OBRAZOV 9%, PROZHSROZH 8%",2023 vs 2024,1.0
+T001/baza,33,Zhetysu,0.647,"KOMPT_GRAM 10%, DH_OBRAZOV 8%, ORB_OTRASL 7%",2023 vs 2024,0.1
+T001/baza,35,Karaganda,0.632,"KOMPT_GRAM 14%, ORB_OTRASL 10%, DH_OBRAZOV 10%",2023 vs 2024,-0.4
+T001/baza,39,Kostanay,0.632,"ORB_PRODOL_1 15%, ORB_OTRASL 8%, MES 8%",2023 vs 2024,-0.4
+T001/baza,43,Kyzylorda,0.643,"DH_OBRAZOV 12%, KOMPT_GRAM 10%, PR_NEPOISK 9%",2023 vs 2024,-0.1
+T001/baza,47,Mangystau,0.719,"MES 22%, ORB_PRODOL_1 10%, ORB_OTRASL 8%",2023 vs 2024,2.0
+T001/baza,55,Pavlodar,0.634,"DH_OBRAZOV 12%, ORB_OTRASL 7%, ORB_VREMRB 7%",2023 vs 2024,-0.3
+T001/baza,59,North Kazakhstan,0.634,"ORB_PRODOL_1 13%, MES 7%, KOMPT_GRAM 7%",2023 vs 2024,-0.3
+T001/baza,61,Turkistan,0.736,"MES 12%, KV 7%, DH_OBRAZOV 7%",2023 vs 2024,2.5
+T001/baza,62,Ulytau,0.715,"KOMPT_GRAM 24%, K 14%, ORB_OTRASL 7%",2023 vs 2024,1.9
+T001/baza,63,East Kazakhstan,0.624,"DH_OBRAZOV 13%, KOMPT_GRAM 11%, ORB_OTRASL 7%",2023 vs 2024,-0.6
+T001/baza,71,Astana,0.665,"ORB_OTRASL 12%, ORB_VREMRB 10%, DH_OBRAZOV 9%",2023 vs 2024,0.6
+T001/baza,75,Almaty city,0.619,"ORB_OTRASL 13%, KOMPT_GRAM 12%, DH_OBRAZOV 7%",2023 vs 2024,-0.7
+T001/baza,79,Shymkent,0.684,"DH_OBRAZOV 11%, DH_DATROZH_2 10%, ORB_OTRASL 9%",2023 vs 2024,1.1

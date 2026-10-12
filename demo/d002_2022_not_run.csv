@@ -1,0 +1,2 @@
+rule_id,type,year,reason
+D002-subject-ocenka-same-person,consistency,2022,ValueError: marked 'manual' by the extraction: for a person to check

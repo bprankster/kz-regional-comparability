@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Консоль StatQUO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:wght@500&display=swap">
+<style>
+/* Layout: a control-room console. Header with the four numbers that matter, then tabs; the map tab is map left, region dossier right. */
+:root {
+  --bg: #f6f7f9; --surface: #ffffff; --sunken: #eef1f5; --line: #dde2ea; --line-strong: #c3cbd7;
+  --fg: #18202b; --fg-2: #47505e; --fg-3: #6a7381;
+  --blue: #2a6fd6; --blue-1: #dce8fa; --blue-2: #a9c6f1; --blue-3: #5d93e2; --blue-ink: #1d4f9c;
+  --orange: #d96a33; --orange-1: #fbe7dc; --orange-ink: #9a4313;
+  --focus: #2a6fd6;
+  --sans: 'IBM Plex Sans', 'Segoe UI', Arial, sans-serif;
+  --mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+  --serif: 'IBM Plex Serif', Georgia, serif;
+  --r: 10px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #12161c; --surface: #1a2029; --sunken: #222a35; --line: #2c3542; --line-strong: #3d4858;
+  --fg: #e8ecf1; --fg-2: #b4bdc9; --fg-3: #8d97a5;
+  --blue: #4f8de8; --blue-1: #1f3350; --blue-2: #2c4f80; --blue-3: #3f72bd; --blue-ink: #9cc0f5;
+  --orange: #d96a33; --orange-1: #3d2618; --orange-ink: #f2a77d; --focus: #7fb0f5; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #12161c; --surface: #1a2029; --sunken: #222a35; --line: #2c3542; --line-strong: #3d4858;
+  --fg: #e8ecf1; --fg-2: #b4bdc9; --fg-3: #8d97a5;
+  --blue: #4f8de8; --blue-1: #1f3350; --blue-2: #2c4f80; --blue-3: #3f72bd; --blue-ink: #9cc0f5;
+  --orange: #d96a33; --orange-1: #3d2618; --orange-ink: #f2a77d; --focus: #7fb0f5; color-scheme: dark; }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { background: var(--bg); color: var(--fg); font: 15px/1.5 var(--sans); }
+.wrap { max-width: 1240px; margin: 0 auto; padding-inline: 20px; padding-block: 24px 64px; display: flex; flex-direction: column; gap: 20px; }
+header { display: flex; flex-direction: column; gap: 14px; }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--fg-3); }
+h1 { font: 500 clamp(26px, 4vw, 36px)/1.1 var(--serif); margin: 0; text-wrap: balance; }
+.lead { margin: 0; color: var(--fg-2); max-width: 72ch; }
+.facts { display: flex; flex-wrap: wrap; gap: 10px 28px; padding-block: 12px; border-block: 1px solid var(--line); }
+.fact { display: flex; align-items: baseline; gap: 8px; }
+.fact b { font: 600 22px/1 var(--sans); font-variant-numeric: tabular-nums; }
+.fact span { color: var(--fg-3); font-size: 13px; }
+nav { display: flex; gap: 4px; flex-wrap: wrap; border-bottom: 1px solid var(--line); }
+nav button { font: 500 14px var(--sans); color: var(--fg-3); background: none; border: 0; border-bottom: 2px solid transparent; padding: 10px 14px; cursor: pointer; }
+nav button[aria-selected="true"] { color: var(--fg); border-bottom-color: var(--blue); }
+button:focus-visible, input:focus-visible, select:focus-visible, .tile:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 18px; min-width: 0; }
+.grid2 { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+.mapgrid { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); }
+@media (max-width: 860px) { .grid2, .mapgrid { grid-template-columns: 1fr; } }
+h2 { font: 600 18px/1.3 var(--sans); margin: 0; text-wrap: balance; }
+h3 { font: 600 15px/1.3 var(--sans); margin: 0; }
+.muted { color: var(--fg-3); font-size: 13px; }
+.stack { display: flex; flex-direction: column; gap: 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 8px; overflow: hidden; }
+.seg button { font: 500 13px var(--sans); border: 0; background: var(--surface); color: var(--fg-2); padding: 6px 11px; cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--line-strong); }
+.seg button[aria-pressed="true"] { background: var(--fg); color: var(--surface); }
+select, input[type="search"] { font: 14px var(--sans); color: var(--fg); background: var(--surface); border: 1px solid var(--line-strong); border-radius: 8px; padding: 6px 10px; }
+input[type="search"] { min-width: 0; flex: 1 1 220px; }
+/* tile map */
+.map { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 6px; }
+.tile { aspect-ratio: 1 / .78; border-radius: 8px; border: 1px solid var(--line); background: var(--sunken); color: var(--fg); padding: 5px 6px; display: flex; flex-direction: column; justify-content: space-between; text-align: left; cursor: pointer; font: inherit; min-width: 0; position: relative; }
+.tile .nm { font-size: 11px; line-height: 1.15; font-weight: 500; hyphens: manual; }
+.tile .ct { display: flex; align-items: center; gap: 5px; font: 600 15px var(--sans); font-variant-numeric: tabular-nums; }
+.tile .dot { display: inline-flex; align-items: center; gap: 2px; font: 600 11px var(--sans); color: var(--orange-ink); }
+.tile .dot::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--orange); }
+.tile[data-level="1"] { background: var(--blue-1); border-color: var(--blue-2); }
+.tile[data-level="2"] { background: var(--blue-2); border-color: var(--blue-3); }
+.tile[data-level="3"] { background: var(--blue); border-color: var(--blue); color: #fff; }
+.tile[data-level="3"] .dot { color: #fff; }
+.tile[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--fg); }
+.tile:hover { border-color: var(--fg-3); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12.5px; color: var(--fg-2); align-items: center; }
+.sw { display: inline-block; width: 14px; height: 14px; border-radius: 4px; vertical-align: -2px; margin-right: 5px; border: 1px solid var(--line); }
+.sw.dotk { border-radius: 50%; width: 9px; height: 9px; background: var(--orange); border: 0; vertical-align: 0; }
+@media (max-width: 560px) { .tile .nm { font-size: 9.5px; } .tile .ct { font-size: 12px; } .map { gap: 3px; } .tile { padding: 4px; } }
+/* issue cards */
+.issue { border: 1px solid var(--line); border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 8px; background: var(--surface); }
+.issue[data-status="проверить"] { border-left: 3px solid var(--orange); }
+.issue[data-status="держится"] { border-left: 3px solid var(--blue); }
+.pill { font: 600 11.5px/1 var(--sans); padding: 4px 8px; border-radius: 99px; white-space: nowrap; }
+.pill.hold { background: var(--blue-1); color: var(--blue-ink); }
+.pill.check { background: var(--orange-1); color: var(--orange-ink); }
+.casecard { flex-shrink: 0; display: block; width: 100%; height: auto; min-height: 0; font: inherit; color: inherit; background: var(--surface); }
+.casecard[aria-selected="false"]:hover { border-color: var(--line-strong); }
+.pill.neutral { background: var(--sunken); color: var(--fg-2); }
+.code { font: 13px/1.45 var(--mono); }
+.quote { font-size: 13.5px; color: var(--fg-2); border-left: 2px solid var(--line-strong); padding-left: 10px; margin: 0; }
+.rate { display: grid; grid-template-columns: 9.5em minmax(0, 1fr) 4.2em; gap: 4px 8px; align-items: center; font-size: 12.5px; color: var(--fg-2); }
+.bar { height: 8px; background: var(--sunken); border-radius: 4px; overflow: hidden; }
+.bar > i { display: block; height: 100%; border-radius: 4px; }
+.num { font-variant-numeric: tabular-nums; text-align: right; color: var(--fg); }
+details > summary { cursor: pointer; color: var(--blue-ink); font-size: 13px; }
+pre.sql { font: 12.5px/1.5 var(--mono); background: var(--sunken); border-radius: 6px; padding: 10px; margin: 6px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.btn { font: 500 13px var(--sans); border: 1px solid var(--line-strong); background: var(--surface); color: var(--fg); border-radius: 7px; padding: 5px 10px; cursor: pointer; }
+.btn:hover { border-color: var(--fg-3); }
+.case { background: var(--sunken); border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; }
+.case dt { font-weight: 600; font-size: 12px; color: var(--fg-3); text-transform: uppercase; letter-spacing: .05em; }
+.case dd { margin: 0 0 4px; }
+/* child chart */
+.callout { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 14px; }
+.callout .big { font: 600 30px/1 var(--sans); font-variant-numeric: tabular-nums; }
+.chart { overflow-x: auto; }
+.crow { display: grid; grid-template-columns: 11em minmax(150px, 1fr) minmax(200px, 1.25fr); gap: 4px 14px; align-items: center; padding: 5px 4px; border-radius: 6px; font-size: 13px; }
+.crow:hover { background: var(--sunken); }
+.crow.head { font-size: 12px; color: var(--fg-3); font-weight: 500; }
+.crow.low .rn { color: var(--orange-ink); font-weight: 600; }
+.cov { display: grid; grid-template-columns: minmax(0, 1fr) 8.6em; gap: 8px; align-items: center; }
+.track { position: relative; height: 22px; }
+.track::before { content: ""; position: absolute; left: 0; right: 0; top: 10px; height: 1px; background: var(--line); }
+.track .g { position: absolute; top: 4px; width: 1px; height: 14px; background: var(--line); }
+.track .ci { position: absolute; top: 9px; height: 4px; border-radius: 2px; opacity: .55; }
+.track .pt { position: absolute; top: 5px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; border: 2px solid var(--surface); }
+.axis { position: relative; height: 16px; }
+.axis span { position: absolute; transform: translateX(-50%); }
+.axis span:first-child { transform: none; } .axis span:last-child { transform: translateX(-100%); }
+/* rules table */
+.tbl { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+th { text-align: left; font-weight: 600; font-size: 12px; color: var(--fg-3); border-bottom: 1px solid var(--line-strong); padding: 8px 8px; position: sticky; top: 0; background: var(--surface); }
+td { border-bottom: 1px solid var(--line); padding: 8px; vertical-align: top; }
+td.id { font: 12px var(--mono); color: var(--fg-3); white-space: nowrap; }
+/* steps */
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 12px; }
+.step { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 14px; display: flex; flex-direction: column; gap: 6px; }
+.step .k { font: 500 12px var(--mono); color: var(--fg-3); }
+.step .v { font: 600 24px/1.1 var(--sans); color: var(--blue-ink); font-variant-numeric: tabular-nums; }
+.cards3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 14px; }
+.verdict { font-weight: 700; }
+.verdict.found { color: var(--blue-ink); } .verdict.missed { color: var(--orange-ink); }
+.accrow { display: grid; grid-template-columns: 13em minmax(0, 1fr) 3.5em; gap: 4px 10px; align-items: center; font-size: 13px; }
+.note-en { font-size: 12.5px; color: var(--fg-3); }
+.tip { position: fixed; z-index: 10; pointer-events: none; background: var(--fg); color: var(--surface); font-size: 12.5px; line-height: 1.4; padding: 8px 10px; border-radius: 7px; max-width: 280px; }
+/* data model diagrams: the SVG carries classes only; colours come from the theme */
+figure.dg { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+figure.dg figcaption { font-size: 13px; color: var(--fg-3); max-width: 90ch; }
+.sq-diagram { display: block; width: 100%; height: auto; }
+.sq-diagram .t { font-family: var(--sans); fill: var(--fg); }
+.sq-diagram .t2 { fill: var(--fg-2); } .sq-diagram .t3 { fill: var(--fg-3); }
+.sq-diagram .tb { fill: var(--blue-ink); } .sq-diagram .to { fill: var(--orange-ink); }
+.sq-diagram .box { fill: var(--surface); stroke: var(--line-strong); stroke-width: 1.2; }
+.sq-diagram .sunk { fill: var(--sunken); }
+.sq-diagram .hub { fill: var(--blue-1); stroke: var(--blue); stroke-width: 1.6; }
+.sq-diagram .call { fill: var(--orange-1); stroke: var(--orange); stroke-width: 1.4; }
+.sq-diagram .island { fill: var(--surface); stroke: var(--fg-3); stroke-width: 1.2; stroke-dasharray: 5 4; }
+.sq-diagram .e-ok { stroke: var(--blue); stroke-width: 2.6; fill: none; }
+.sq-diagram .e-broken { stroke: var(--orange); stroke-width: 2.2; stroke-dasharray: 8 5; fill: none; }
+.sq-diagram .e-key, .sq-diagram .e-flow { stroke: var(--fg-2); stroke-width: 1.6; fill: none; }
+.sq-diagram .e-region { stroke: var(--fg-3); stroke-width: 1.6; stroke-dasharray: 2 4; fill: none; }
+.sq-diagram .m-ok { fill: var(--blue); } .sq-diagram .m-key { fill: var(--fg-2); } .sq-diagram .m-broken { fill: var(--orange); }
+.dgscroll { overflow-x: auto; }
+.dgscroll .sq-diagram { min-width: 760px; }
+.erd { background: #fff; border-radius: 8px; padding: 8px; overflow: auto; max-height: 80vh; }
+.erd svg { display: block; max-width: none; height: auto; }
+footer { color: var(--fg-3); font-size: 12.5px; border-top: 1px solid var(--line); padding-top: 14px; }
+@media (prefers-reduced-motion: no-preference) { .tile, .crow { transition: background-color .15s, border-color .15s; } }
+</style>
+
+<div class="wrap" lang="ru">
+  <header>
+    <div class="eyebrow">STAT.DATATHON 2026 · Трек 2 · команда StatQUO</div>
+    <h1>Одинаково ли регионы записывают одни и те же ответы?</h1>
+    <p class="lead">Инструмент читает анкеты Бюро, превращает их в проверки и запускает по каждому региону и году. Здесь собрано всё, что он нашёл на синтетических микроданных 2023–2024. Нажмите на регион, чтобы увидеть каждую проблему, её источник в анкете и запрос для проверки на реальных данных.</p>
+    <div class="facts" id="facts"></div>
+  </header>
+
+  <nav role="tablist" aria-label="Разделы">
+    <button role="tab" id="t-map" aria-selected="true" aria-controls="p-map">Карта регионов</button>
+    <button role="tab" id="t-case" aria-selected="false" aria-controls="p-case">Проблема → влияние → рекомендация</button>
+    <button role="tab" id="t-child" aria-selected="false" aria-controls="p-child">Детская бедность</button>
+    <button role="tab" id="t-fin" aria-selected="false" aria-controls="p-fin">Финансы домохозяйств</button>
+    <button role="tab" id="t-new" aria-selected="false" aria-controls="p-new">Новая форма</button>
+    <button role="tab" id="t-dec" aria-selected="false" aria-controls="p-dec">Декодер</button>
+    <button role="tab" id="t-rules" aria-selected="false" aria-controls="p-rules">Правила</button>
+    <button role="tab" id="t-trust" aria-selected="false" aria-controls="p-trust">Надёжность</button>
+    <button role="tab" id="t-data" aria-selected="false" aria-controls="p-data">Данные</button>
+  </nav>
+
+  <section id="p-map" role="tabpanel" aria-labelledby="t-map" class="stack">
+    <div class="row">
+      <label class="muted" for="f-form">Форма</label>
+      <select id="f-form"></select>
+      <div class="seg" id="f-year" role="group" aria-label="Год"></div>
+      <div class="seg" id="f-status" role="group" aria-label="Статус"></div>
+    </div>
+    <div class="grid2 mapgrid">
+      <div class="panel stack">
+        <h2 id="map-title">Проблемы по регионам</h2>
+        <div class="map" id="map" aria-label="Схематическая карта регионов Казахстана"></div>
+        <div class="legend">
+          <span><span class="sw" style="background:var(--sunken)"></span>нет</span>
+          <span><span class="sw" style="background:var(--blue-1)"></span>1</span>
+          <span><span class="sw" style="background:var(--blue-2)"></span>2</span>
+          <span><span class="sw" style="background:var(--blue)"></span>3 и больше — держатся на синтетике</span>
+          <span><span class="sw dotk"></span>проверить на реальных данных</span>
+        </div>
+        <p class="muted">Схема, не масштаб: регионы расставлены примерно по географии, с запада на восток. «Держится» — проблема видна в долях ответов, которые синтез сохраняет. «Проверить» — может быть следствием того, что синтез разрывает связи между столбцами.</p>
+      </div>
+      <div class="panel stack" id="dossier" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="p-case" role="tabpanel" aria-labelledby="t-case" class="stack" hidden></section>
+  <section id="p-child" role="tabpanel" aria-labelledby="t-child" class="stack" hidden></section>
+  <section id="p-fin" role="tabpanel" aria-labelledby="t-fin" class="stack" hidden></section>
+  <section id="p-new" role="tabpanel" aria-labelledby="t-new" class="stack" hidden></section>
+  <section id="p-dec" role="tabpanel" aria-labelledby="t-dec" class="stack" hidden></section>
+  <section id="p-rules" role="tabpanel" aria-labelledby="t-rules" class="stack" hidden></section>
+  <section id="p-trust" role="tabpanel" aria-labelledby="t-trust" class="stack" hidden></section>
+  <section id="p-data" role="tabpanel" aria-labelledby="t-data" class="stack" hidden></section>
+
+  <footer>Все цифры — синтетические микроданные STAT.DATATHON 2026 (2021–2024), расчёты команды StatQUO. Каждое число на странице посчитано кодом движка; модель (LLM) пишет только формулировки. Код и правила работают без изменений на реальных записях Бюро, на его компьютере.</footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+const D = /*DATA*/null;
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const pct = (x, d = 1) => x == null ? '—' : x.toFixed(d).replace('.', ',') + '%';
+const num = (x, d = 1) => x == null ? '—' : x.toFixed(d).replace('.', ',');
+const RU = Object.fromEntries(D.regions.map(r => [r.key, r.ru]));
+const SH = '\u00ad';
+const TILE_NAME = { 'Кызылорда': 'Кызыл' + SH + 'орда', 'Караганда': 'Кара' + SH + 'ганда', 'Туркестан': 'Турке' + SH + 'стан', 'Мангистау': 'Манги' + SH + 'стау',
+  'Костанай': 'Коста' + SH + 'най', 'Павлодар': 'Павло' + SH + 'дар', 'Алматинская обл.': 'Алма' + SH + 'тинская обл.', 'г. Шымкент': 'г. Шым' + SH + 'кент' };
+const caseById = Object.fromEntries(D.cases.map(c => [c.id, c]));
+const state = { form: 'all', year: 2024, status: 'all', region: null, childYear: 2024, finYear: 2024 };
+try { const s = JSON.parse(localStorage.getItem('statquo-console') || '{}'); Object.assign(state, s, { region: null }); } catch (e) {}
+const save = () => { try { localStorage.setItem('statquo-console', JSON.stringify({ form: state.form, year: state.year, status: state.status, childYear: state.childYear })); } catch (e) {} };
+
+/* tooltip */
+const tip = $('#tip');
+function showTip(e, html) { tip.innerHTML = html; tip.hidden = false; moveTip(e); }
+function moveTip(e) { const x = Math.min(e.clientX + 14, innerWidth - 300), y = e.clientY + 16; tip.style.left = x + 'px'; tip.style.top = y + 'px'; }
+function hideTip() { tip.hidden = true; }
+
+/* header facts */
+(function facts() {
+  const nRules = Object.values(D.ruleCounts).reduce((a, b) => a + b, 0);
+  const hold = D.issues.filter(i => i.status === 'держится').length, chk = D.issues.length - hold;
+  const ul = D.child.find(c => c.year === 2024 && c.region === 'Ulytau');
+  $('#facts').innerHTML = [
+    [nRules, 'правил из 4 форм'], [D.issues.length, `проблем: ${hold} держатся, ${chk} проверить`],
+    ['2 из 3', 'известных Бюро случаев найдены вслепую'], [`${ul.answered} из ${ul.withKids}`, 'семей с детьми в Улытау ответили на детский модуль (2024)'], [`${D.decoder.validation.filter(v => v.grade === 'correct').length} из ${D.decoder.validation.length}`, 'кодов декодер расшифровал верно вслепую']
+  ].map(([b, s]) => `<div class="fact"><b>${esc(b)}</b><span>${esc(s)}</span></div>`).join('');
+})();
+
+/* tabs */
+const tabs = [...document.querySelectorAll('nav [role=tab]')];
+function openTab(id) {
+  tabs.forEach(t => { const on = t.id === id; t.setAttribute('aria-selected', on); $('#' + t.getAttribute('aria-controls')).hidden = !on; });
+  try { history.replaceState(null, '', '#' + id.slice(2)); } catch (e) {}
+}
+tabs.forEach((t, i) => {
+  t.addEventListener('click', () => openTab(t.id));
+  t.addEventListener('keydown', e => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { const n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length]; n.focus(); openTab(n.id); } });
+});
+
+/* ---------- map tab ---------- */
+const forms = ['all', ...new Set(D.issues.map(i => i.form))];
+$('#f-form').innerHTML = forms.map(f => `<option value="${esc(f)}">${f === 'all' ? 'Все формы' : esc(D.forms[f] || f)}</option>`).join('');
+$('#f-form').value = forms.includes(state.form) ? state.form : 'all';
+$('#f-form').addEventListener('change', e => { state.form = e.target.value; save(); renderMap(); });
+function seg(el, opts, key, after) {
+  el.innerHTML = opts.map(([v, l]) => `<button type="button" data-v="${v}" aria-pressed="${String(state[key]) === String(v)}">${l}</button>`).join('');
+  el.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+    state[key] = isNaN(+b.dataset.v) ? b.dataset.v : +b.dataset.v; save();
+    el.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); after();
+  }));
+}
+seg($('#f-year'), [[2023, '2023'], [2024, '2024']], 'year', () => renderMap());
+seg($('#f-status'), [['all', 'Все'], ['держится', 'Держатся'], ['проверить', 'Проверить']], 'status', () => renderMap());
+
+function filtered() {
+  return D.issues.filter(i => i.year === state.year && (state.form === 'all' || i.form === state.form) && (state.status === 'all' || i.status === state.status));
+}
+function renderMap() {
+  const list = filtered();
+  const by = {}; D.regions.forEach(r => by[r.key] = { hold: 0, check: 0 });
+  list.forEach(i => { if (by[i.region]) by[i.region][i.status === 'держится' ? 'hold' : 'check']++; });
+  $('#map-title').textContent = `Проблемы по регионам, ${state.year}` + (state.form === 'all' ? '' : ` · ${D.forms[state.form] || state.form}`);
+  const m = $('#map'); m.innerHTML = '';
+  D.regions.forEach(r => {
+    const c = by[r.key], lvl = Math.min(3, c.hold);
+    const b = document.createElement('button');
+    b.className = 'tile'; b.type = 'button'; b.dataset.level = lvl;
+    b.style.gridColumn = r.col + 1; b.style.gridRow = r.row + 1;
+    b.setAttribute('aria-pressed', state.region === r.key);
+    b.setAttribute('aria-label', `${r.ru}: ${c.hold} держатся, ${c.check} проверить`);
+    b.innerHTML = `<span class="nm">${esc(TILE_NAME[r.ru] || r.ru)}</span><span class="ct">${c.hold || ''}${c.check ? `<span class="dot">${c.check}</span>` : ''}</span>`;
+    b.addEventListener('click', () => { state.region = state.region === r.key ? null : r.key; renderMap(); });
+    b.addEventListener('mouseenter', e => showTip(e, `<b>${esc(r.ru)}</b><br>${c.hold} держатся на синтетике · ${c.check} проверить`));
+    b.addEventListener('mousemove', moveTip); b.addEventListener('mouseleave', hideTip);
+    m.appendChild(b);
+  });
+  renderDossier(list);
+}
+function rateRows(i) {
+  if (i.rateRegion == null) return '';
+  const mx = Math.max(i.rateRegion, i.rateRest, 1);
+  const w = v => Math.max(1.5, 100 * v / Math.max(100, mx));
+  return `<div class="rate"><span>${esc(RU[i.region] || i.region)}</span><div class="bar"><i style="width:${w(i.rateRegion)}%;background:var(--${i.status === 'держится' ? 'blue' : 'orange'})"></i></div><span class="num">${pct(i.rateRegion)}</span>
+  <span>Остальная страна</span><div class="bar"><i style="width:${w(i.rateRest)}%;background:var(--fg-3)"></i></div><span class="num">${pct(i.rateRest)}</span></div>`;
+}
+function caseBlock(id) {
+  const c = caseById[id]; if (!c) return '';
+  return `<div class="case"><h3>${esc(c.title)}</h3><dl>
+    <dt>Что видно</dt><dd>${esc(c.finding)}</dd><dt>Какой показатель затронут</dt><dd>${esc(c.indicator)}</dd>
+    <dt>Вероятная причина</dt><dd>${esc(c.cause)}</dd><dt>Что исправить</dt><dd>${esc(c.fix)}</dd></dl></div>`;
+}
+function issueCard(i, showRegion) {
+  const st = i.status === 'держится' ? '<span class="pill hold">держится на синтетике</span>' : '<span class="pill check">проверить на реальных данных</span>';
+  const ruleLine = i.rule.startsWith('ML') ? `<span class="pill neutral">обзор ML</span>` : `<span class="code">${esc(i.rule)}</span>`;
+  return `<article class="issue" data-status="${esc(i.status)}">
+    <div class="row" style="justify-content:space-between"><div class="row">${showRegion ? `<b>${esc(RU[i.region] || i.region)}</b>` : ''}<span class="muted">${esc(i.formRu)} · ${i.year} · ${esc(i.type)}</span></div>${st}</div>
+    <div>${esc(i.ru)}</div>
+    ${i.quote ? `<p class="quote">«${esc(i.quote)}» <span class="muted">— ${esc(i.doc)}</span></p>` : ''}
+    ${rateRows(i)}
+    <div class="row muted">${ruleLine}<span>Метка доверия: ${esc(i.trust)}</span></div>
+    ${i.sql ? `<details><summary>Запрос для реальных данных</summary><pre class="sql">${esc(i.sql)}</pre><button class="btn copy" type="button" data-sql="${esc(i.sql)}">Скопировать SQL</button></details>` : ''}
+  </article>`;
+}
+function renderDossier(list) {
+  const el = $('#dossier');
+  if (!state.region) {
+    const top = [...list].sort((a, b) => (a.status === b.status ? 0 : a.status === 'держится' ? -1 : 1) || (b.rateRegion - b.rateRest) - (a.rateRegion - a.rateRest)).slice(0, 6);
+    el.innerHTML = `<h2>Все регионы</h2><p class="muted">${list.length} проблем при выбранных фильтрах. Сначала — те, что держатся на синтетике, с наибольшим отрывом от остальной страны. Нажмите на регион на карте, чтобы открыть его досье.</p>` + top.map(i => issueCard(i, true)).join('');
+  } else {
+    const mine = list.filter(i => i.region === state.region);
+    const cases = [...new Set(mine.map(i => i.case).filter(Boolean))];
+    el.innerHTML = `<div class="row" style="justify-content:space-between"><h2>${esc(RU[state.region])}, ${state.year}</h2><button class="btn" type="button" id="clear">Все регионы</button></div>
+      <p class="muted">${mine.length ? `${mine.length} ${mine.length === 1 ? 'проблема' : mine.length < 5 ? 'проблемы' : 'проблем'} при выбранных фильтрах.` : 'При выбранных фильтрах проблем нет. Попробуйте другой год или «Все формы».'}</p>`
+      + cases.map(caseBlock).join('') + mine.map(i => issueCard(i, false)).join('');
+    $('#clear').addEventListener('click', () => { state.region = null; renderMap(); });
+  }
+  el.querySelectorAll('.copy').forEach(b => b.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(b.dataset.sql); b.textContent = 'Скопировано'; }
+    catch (e) { const pre = b.previousElementSibling; const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Выделено: нажмите Ctrl+C'; }
+  }));
+}
+
+/* ---------- household finance tab (case C11) ---------- */
+function renderFin() {
+  const el = $('#p-fin');
+  if (!D.fin || !D.fin.length) { el.innerHTML = '<p class="muted">Шаг analysis/finance_impact.py не запускался.</p>'; return; }
+  const y = state.finYear, rows = D.fin.filter(r => r.year === y).sort((a, b) => a.cov - b.cov);
+  const n = D.finNat.find(x => x.year === y);
+  const low = rows.filter(r => r.covFlag), mang = rows.find(r => r.region === 'Mangystau');
+  const B = v => Math.max(0, Math.min(100, v / 70 * 100));
+  el.innerHTML = `<div class="panel stack">
+    <div class="row" style="justify-content:space-between"><h2>Финансы домохозяйств (Д-004): что меняет показатель уязвимости</h2><div class="seg" id="fin-year" role="group" aria-label="Год"></div></div>
+    <p class="muted" style="max-width:80ch">Квартальный журнал Д-004: расходы (разделы 1.1–1.3), займы (раздел 2), доходы (раздел 3). Единица — домохозяйство за квартал, участвовавшее в обследовании; без весов. Те же вопросы, что и в детском случае: какие правила анкеты и какие региональные различия меняют цифру до публикации и насколько.</p>
+    <div class="callout">
+      <div><div class="big">${pct(n.savings_rate_naive_pct)}</div><div class="muted">«норма сбережений», если читать Д-004 напрямую. Раздела о питании в журнале нет: записанные расходы — ${pct(n.recorded_spend_to_income_pct)} дохода, с питанием (половина расходов по данным БНС) было бы около ${pct(n.implied_spend_to_income_if_food_half_pct, 0)}. Публиковать нельзя</div></div>
+      <div><div class="big">+${num(n.gr3_added_pct, 1)}%</div><div class="muted">дохода добавляет сумма всех 23 столбцов: GR3 в анкете — «из него» внутри GR2. В регионах до +${num(n.gr3_added_region_max.pct, 1)}% (${esc(RU[n.gr3_added_region_max.region] || n.gr3_added_region_max.region)})</div></div>
+      <div><div class="big">${pct(n.aktobe_share_of_food_loans_pct, 0)}</div><div class="muted">домохозяйств, занимавших на питание, — из Актобе (${pct(n.aktobe_share_of_households_pct)} всех домохозяйств). Доля займов на питание по стране ${pct(n.food_loan_pct_of_purpose)}, без Актобе ${pct(n.food_loan_pct_of_purpose_without_aktobe)}</div></div>
+      <div><div class="big">${pct(mang.cov)}</div><div class="muted">домохозяйств Мангистау заполнили раздел займов (медиана регионов ${pct(rows[Math.floor(rows.length / 2)].cov, 0)}). Без ${low.length} регионов с низким охватом доля погашающих кредиты — ${pct(n.repaying_pct_without_low_coverage)} вместо ${pct(n.repaying_pct)}</div></div>
+    </div>
+    <div class="chart"><div style="min-width:640px">
+      <div class="crow head" style="grid-template-columns:11em minmax(150px,1fr) minmax(170px,1fr) 7em"><span>Регион</span><span>Раздел займов заполнен, % домохозяйств (шкала 0–70%)</span><span>Выплаты по долгам &gt; 30% дохода, % (шкала 0–70%)</span><span>Займы на питание</span></div>
+      ${rows.map(r => `<div class="crow ${r.covFlag ? 'low' : ''}" data-r="${esc(r.region)}" style="grid-template-columns:11em minmax(150px,1fr) minmax(170px,1fr) 7em">
+        <span class="rn">${esc(RU[r.region])}</span>
+        <div class="cov"><div class="bar"><i style="width:${B(r.cov)}%;background:var(--${r.covFlag ? 'orange' : 'blue'})"></i></div><span class="num">${pct(r.cov, 1)}</span></div>
+        <div class="cov"><div class="bar"><i style="width:${B(r.burden)}%;background:var(--${r.covFlag ? 'orange' : 'blue'})"></i></div><span class="num">${pct(r.burden, 1)}</span></div>
+        <span class="num"${r.food >= 30 ? ' style="color:var(--orange-ink);font-weight:600"' : ''}>${r.food == null ? '—' : pct(r.food, 0)} <span class="muted">из ${r.withPurpose}</span></span>
+      </div>`).join('')}
+    </div></div>
+    <p class="muted" style="max-width:80ch">Оранжевым — регионы, где раздел займов заполнен меньше чем у половины медианы остальных в 3–4 годах из 4 (дело C11, сводка). Меньше займов может быть и правдой, поэтому статус — «проверить на реальных данных». В синтетике ${pct(n.kv1_repeat_rows_pct)} строк непродовольственных расходов повторяют товар (в руководстве организаторов: 15% против 2,4% в реальных данных); по регионам ${num(n.kv1_repeat_rows_region_range[0], 1)}–${num(n.kv1_repeat_rows_region_range[1], 1)}%, это ${pct(n.kv1_repeat_value_pct_of_spend)} расходов, поэтому сравнение регионов не меняется. Связи внутри домохозяйства синтез ослабляет (r = ${num(n.corr_log_income_spend_household, 2)} между логарифмами дохода и расходов), поэтому здесь только региональные доли.</p>
+  </div>`;
+  seg($('#fin-year'), [[2021, '2021'], [2022, '2022'], [2023, '2023'], [2024, '2024']], 'finYear', renderFin);
+  el.querySelectorAll('.crow[data-r]').forEach(row => {
+    const r = rows.find(x => x.region === row.dataset.r);
+    row.addEventListener('mouseenter', e => showTip(e, `<b>${esc(RU[r.region])}, ${y}</b><br>Домохозяйство-кварталов: ${r.hh}<br>Раздел займов заполнен: ${pct(r.cov)}<br>Погашают кредиты: ${pct(r.repaying)}; взяли новый заём: ${pct(r.borrowed)}<br>Выплаты &gt; 30% дохода: ${pct(r.burden)}<br>Займы на питание: ${r.food == null ? '—' : pct(r.food)} из ${r.withPurpose} займов с целью<br>GR3, сложенный с GR2: +${num(r.gr3, 2)}% дохода`));
+    row.addEventListener('mousemove', moveTip); row.addEventListener('mouseleave', hideTip);
+  });
+}
+
+/* ---------- child tab ---------- */
+function renderChild() {
+  const y = state.childYear, rows = D.child.filter(c => c.year === y).sort((a, b) => a.coverage - b.coverage);
+  const low = rows.filter(r => r.coverage < 50), med = [...rows].sort((a, b) => a.coverage - b.coverage)[Math.floor(rows.length / 2)].coverage;
+  const big = low[0];
+  const X = v => Math.max(0, Math.min(100, v / 80 * 100));
+  const el = $('#p-child');
+  el.innerHTML = `<div class="panel stack">
+    <div class="row" style="justify-content:space-between"><h2>Детская бедность: на скольких семьях держится цифра</h2><div class="seg" id="c-year" role="group" aria-label="Год"></div></div>
+    <p class="muted" style="max-width:80ch">Часть 4 анкеты Д-002 служит для оценки многоаспектной бедности детей и задаётся каждому домохозяйству с детьми до 18 лет. Показатель здесь — доля семей, которые не могут позволить себе 3 и более из 14 вещей для детей (вопрос 5, код 2). Охват — сколько семей с ребёнком по списку членов Д-008 действительно ответили.</p>
+    ${big ? `<div class="callout">
+      <div><div class="big">${big.answered} из ${big.withKids}</div><div class="muted">семей с детьми в регионе ${esc(RU[big.region])} ответили на детский модуль (${pct(big.coverage)}); в половине регионов — не меньше ${pct(med, 0)}</div></div>
+      <div><div class="big">${pct(big.deprived)} ± ${num(big.moe)}</div><div class="muted">столько показатель даёт для ${esc(RU[big.region])}: реальное значение может быть от ${pct(Math.max(0, big.deprived - big.moe), 0)} до ${pct(big.deprived + big.moe, 0)}</div></div>
+      <div><div class="big">${low.length}</div><div class="muted">${low.length === 1 ? 'регион' : 'региона'} с охватом ниже 50%: ${low.map(r => esc(RU[r.region])).join(', ')}. Причина — фильтр GR40, которого нет в бумажной анкете</div></div>
+    </div>` : `<p>В ${y} году во всех регионах ответило больше половины семей с детьми.</p>`}
+    <div class="chart"><div style="min-width:620px">
+      <div class="crow head"><span>Регион</span><span>Охват: ответили из семей с детьми</span><span>Показатель лишений, % с 95% интервалом (шкала 0–80%)</span></div>
+      ${rows.map(r => `<div class="crow ${r.coverage < 50 ? 'low' : ''}" data-r="${esc(r.region)}">
+        <span class="rn">${esc(RU[r.region])}</span>
+        <div class="cov"><div class="bar"><i style="width:${r.coverage}%;background:var(--${r.coverage < 50 ? 'orange' : 'blue'})"></i></div><span class="num">${pct(r.coverage, 0)} · ${r.answered}/${r.withKids}</span></div>
+        <div class="est">${r.deprived == null ? '<span class="muted">нет ответов</span>' : `<div class="track" role="img" aria-label="${esc(RU[r.region])}: ${pct(r.deprived)} ± ${num(r.moe)}">
+          ${[20, 40, 60].map(g => `<i class="g" style="left:${X(g)}%"></i>`).join('')}
+          <i class="ci" style="left:${X(r.deprived - r.moe)}%;width:${X(r.deprived + r.moe) - X(r.deprived - r.moe)}%;background:var(--${r.coverage < 50 ? 'orange' : 'blue'})"></i>
+          <i class="pt" style="left:${X(r.deprived)}%;background:var(--${r.coverage < 50 ? 'orange' : 'blue'})"></i></div>`}</div>
+      </div>`).join('')}
+      <div class="crow head"><span></span><span></span><div class="axis">${[0, 20, 40, 60, 80].map(v => `<span style="left:${X(v)}%">${v}${v === 80 ? '%' : ''}</span>`).join('')}</div></div>
+    </div></div>
+    <p class="muted" style="max-width:80ch">Ширина интервала растёт, когда ответивших мало. Кроме того, ответившие — не случайная часть: в г. Алматы (2024) у ответивших в среднем ${num(D.child.find(c => c.year === 2024 && c.region === 'Almaty city').kidsAns, 2)} ребёнка против ${num(D.child.find(c => c.year === 2024 && c.region === 'Almaty city').kidsAll, 2)} у всех семей с детьми. Синтетика сохраняет доли по регионам, поэтому охват — надёжная цифра; связь между охватом и самим показателем нужно подтвердить на реальных данных.</p>
+  </div>`;
+  seg($('#c-year'), [[2023, '2023'], [2024, '2024']], 'childYear', renderChild);
+  el.querySelectorAll('.crow[data-r]').forEach(row => {
+    const r = rows.find(x => x.region === row.dataset.r);
+    row.addEventListener('mouseenter', e => showTip(e, `<b>${esc(RU[r.region])}, ${y}</b><br>Ответили ${r.answered} из ${r.withKids} семей с детьми (${pct(r.coverage)})<br>Показатель: ${pct(r.deprived)} ± ${num(r.moe)}`));
+    row.addEventListener('mousemove', moveTip); row.addEventListener('mouseleave', hideTip);
+  });
+}
+
+/* ---------- new form tab ---------- */
+function renderNew() {
+  const N = D.newForm, by = {};
+  N.rules.forEach(r => { (by[r.typeRu] = by[r.typeRu] || []).push(r); });
+  const order = Object.keys(by).sort((a, b) => by[b].length - by[a].length);
+  const docs = N.rules.filter(r => r.type === 'doc_issue');
+  $('#p-new').innerHTML = `
+    <div class="panel stack"><h2>Форма нового года за две минуты</h2>
+      <p class="muted" style="max-width:80ch">Так Бюро будет добавлять новую форму или новый год. Здесь — Д-002 за 2022 год, которого инструмент не видел. Новый запуск модели получил только промпт, бланк и структуру файла; правила затем проверены на записях 2022 года. Ключ API не нужен: промпт вставляется в чат Claude.</p>
+      <div class="steps">
+        <div class="step"><span class="k">1 · вход</span><span class="v">Бланк 2022</span><span class="muted">анкета и структура файла, без записей</span></div>
+        <div class="step"><span class="k">2 · модель</span><span class="v">${N.rules.length} правила</span><span class="muted">за ${Math.floor(N.seconds.extraction / 60)} мин ${N.seconds.extraction % 60} с, у каждого цитата</span></div>
+        <div class="step"><span class="k">3 · движок</span><span class="v">${num(N.seconds.engine)} с</span><span class="muted">каждое правило по каждому региону</span></div>
+        <div class="step"><span class="k">4 · результат</span><span class="v">${N.flags.length} сигнала</span><span class="muted">${N.notRun.length} правило — человеку, ${docs.length} противоречий в документации</span></div>
+      </div></div>
+    <div class="grid2">
+      <div class="panel stack"><h2>Сигналы по регионам</h2>
+        ${N.flags.map(f => `<article class="issue" data-status="${f.trust.startsWith('вытекает') ? 'держится' : 'проверить'}">
+          <div class="row" style="justify-content:space-between"><b>${esc(RU[f.region] || f.region)}</b><span class="pill ${f.trust.startsWith('вытекает') ? 'hold' : 'check'}">${esc(f.trust)}</span></div>
+          <div>${esc(f.ru)}</div>${rateRows({ region: f.region, rateRegion: f.rateRegion, rateRest: f.rateRest, status: f.trust.startsWith('вытекает') ? 'держится' : 'проверить' })}
+          <span class="code muted">${esc(f.rule)}</span></article>`).join('')}
+        <h3>Отложено для человека</h3>
+        ${N.notRun.map(n => `<p class="muted"><span class="code">${esc(n.rule)}</span>: ${esc(n.reason)}</p>`).join('')}
+        <h3>Противоречия в документации</h3>
+        ${docs.map(d => `<div class="stack" style="gap:4px"><p class="quote">«${esc(d.quote)}»</p>${d.note ? `<span class="note-en">Примечание модели (англ.): ${esc(d.note)}</span>` : ''}</div>`).join('')}
+      </div>
+      <div class="panel stack"><h2>Правила, которые написала модель</h2>
+        ${order.map(t => `<details ${t === order[0] ? 'open' : ''}><summary>${esc(t)} — ${by[t].length}</summary><div class="stack" style="margin-top:8px">
+          ${by[t].map(r => `<div style="display:flex;flex-direction:column;gap:3px"><span>${esc(r.ru)}</span>${r.quote ? `<span class="quote">«${esc(r.quote)}»</span>` : ''}</div>`).join('')}</div></details>`).join('')}
+      </div>
+    </div>`;
+}
+
+/* ---------- rules tab ---------- */
+function renderRules() {
+  const el = $('#p-rules');
+  const types = [...new Set(D.rules.map(r => r.type))];
+  const TR = { domain: 'Допустимые коды', required: 'Обязательный ответ', skip: 'Переход', multi_select: 'Множественный выбор', consistency: 'Связь ответов', cross_form: 'Связь с другой формой', doc_issue: 'Документация' };
+  el.innerHTML = `<div class="panel stack"><h2>Все правила из анкет</h2>
+    <p class="muted">${D.rules.length} правил: ${Object.entries(D.ruleCounts).map(([f, n]) => `${esc(D.forms[f] || f)} — ${n}`).join(', ')}. Каждое прочитано моделью из бланка, инструкции или структуры файла и цитирует источник. У ${D.rules.filter(r => r.sql).length} есть SQL-запрос, который считает нарушения по регионам.</p>
+    <div class="row"><input type="search" id="r-q" placeholder="Поиск: столбец, слово из анкеты…" aria-label="Поиск по правилам">
+      <select id="r-form" aria-label="Форма"><option value="all">Все формы</option>${Object.keys(D.ruleCounts).map(f => `<option value="${f}">${esc(D.forms[f] || f)}</option>`).join('')}</select>
+      <select id="r-type" aria-label="Вид правила"><option value="all">Все виды</option>${types.map(t => `<option value="${t}">${esc(TR[t] || t)}</option>`).join('')}</select>
+      <span class="muted" id="r-n"></span></div>
+    <div class="tbl"><table><thead><tr><th>Правило</th><th>Цитата из источника</th><th>Вид</th><th>Код</th></tr></thead><tbody id="r-body"></tbody></table></div></div>`;
+  const draw = () => {
+    const q = $('#r-q').value.trim().toLowerCase(), f = $('#r-form').value, t = $('#r-type').value;
+    const rows = D.rules.filter(r => (f === 'all' || r.form === f) && (t === 'all' || r.type === t) && (!q || (r.ru + ' ' + r.quote + ' ' + r.id).toLowerCase().includes(q)));
+    $('#r-n').textContent = `${rows.length} из ${D.rules.length}`;
+    $('#r-body').innerHTML = rows.slice(0, 200).map(r => `<tr><td>${esc(r.ru)}${r.added ? ' <span class="pill neutral">добавлено после ревью</span>' : ''}
+      ${r.sql ? `<details><summary>SQL</summary><pre class="sql">${esc(r.sql)}</pre></details>` : ''}</td>
+      <td><span class="quote" style="display:block">«${esc(r.quote)}»</span><span class="muted">${esc(r.doc)}${r.conf ? ' · уверенность: ' + esc({ high: 'высокая', medium: 'средняя', low: 'низкая' }[r.conf] || r.conf) : ''}</span></td>
+      <td>${esc(TR[r.type] || r.type)}</td><td class="id">${esc(r.id)}</td></tr>`).join('');
+  };
+  ['#r-q', '#r-form', '#r-type'].forEach(s => $(s).addEventListener('input', draw));
+  draw();
+}
+
+/* ---------- trust tab ---------- */
+function renderTrust() {
+  const A = D.acc, order = ['skip', 'multi_select', 'required', 'domain', 'required_any', 'cross_form', 'doc_issue', 'consistency'];
+  const L = { skip: 'Переходы', multi_select: 'Множественный выбор', required: 'Обязательные ответы', domain: 'Допустимые коды', required_any: 'Хотя бы одна отметка', cross_form: 'Связи с другими формами', doc_issue: 'Документация', consistency: 'Связи между ответами' };
+  const B = D.blind, alm = B.t001[0], nxt = B.t001[1];
+  const akt = B.aktobe;
+  $('#p-trust').innerHTML = `
+    <div class="panel stack"><h2>Вслепую: три случая, которые Бюро уже знает</h2>
+      <p class="muted">Инструменту ничего о них не сообщали: те же обзоры и модели, что работают по всем регионам и формам.</p>
+      <div class="cards3">
+        <div class="case"><span class="verdict found">Найдено</span><h3>Алматинская обл.: работники без договора (Т-001)</h3><span>Модель «2023 против 2024» ставит регион на 1-е место из 20: AUC ${num(alm.auc, 2)}, следующий — ${esc(RU[nxt.region])} ${num(nxt.auc, 2)}.</span></div>
+        <div class="case"><span class="verdict found">Найдено</span><h3>Актобе: займы на продукты питания (Д-004)</h3><span>Ответы о цели займа — ${akt.map(a => a.rank).join('-е и ')}-е места из ${B.d004Signals} сигналов Д-004: ${pct(akt[0].share, 0)} против ${pct(akt[0].rest)} в остальных (${akt[0].year}).</span></div>
+        <div class="case"><span class="verdict missed">Пропущено</span><h3>Норма сбережений 66% (Д-004)</h3><span>Новое извлечение формы нашло ${B.d004DocIssues} проблем в документации, но не то, что в журнале нет раздела о продуктах. Пробел между двумя инструментами не виден внутри одной формы.</span></div>
+      </div></div>
+    <div class="stack">
+      <div class="panel stack"><h2>Насколько точно модель выписывает правила</h2>
+        <p class="muted">Извлечение по Д-002 против эталона, собранного отдельно по тем же документам (${A.ALL.reference} правил). Точность ${pct(100 * A.ALL.precision)}, полнота ${pct(100 * A.ALL.recall)}. Эталон собран вторым запуском модели и проверен командой по бланку: ${D.review.ticked} из ${D.review.rows} решений подтверждено, остальные исправлены.</p>
+        ${order.map(t => `<div class="accrow"><span>${L[t]} <span class="muted">(${A[t].reference})</span></span><div class="bar" style="height:10px"><i style="width:${100 * A[t].recall}%;background:var(--blue)"></i></div><span class="num">${pct(100 * A[t].recall, 0)}</span></div>`).join('')}
+        <p class="muted">Полоса — полнота: доля правил эталона, которые нашла модель. Слабое место — связи между ответами; здесь нужен человек.</p>
+      </div>
+      <div class="panel stack"><h2>Внесённые ошибки находятся</h2>
+        <p class="muted">Ошибки внесены в записи одного региона (Д-002, 2024), ${D.proofRuns} запусков. В клетке: найдено на синтетике как есть → после исправления фоновых ошибок, которые создаёт синтез.</p>
+        <div class="tbl"><table><thead><tr><th>Ошибка</th><th>Фон</th>${D.proofRates.map(r => `<th class="num">${r}%</th>`).join('')}</tr></thead><tbody>
+          ${D.proof.map(p => `<tr><td>${esc(p.kind)}</td><td class="num">${pct(p.background)}</td>${p.shipped.map((a, k) => `<td class="num" style="white-space:nowrap"><span class="muted">${a}</span> → <b style="color:var(${p.repaired[k] >= 75 ? '--blue-ink' : '--fg'})">${p.repaired[k]}</b></td>`).join('')}</tr>`).join('')}
+        </tbody></table></div>
+        <p class="muted">Где у региона 30+ записей, к которым относится правило, и 10+ ошибок, на исправленных данных ошибка находится в ${D.proofOk['10']}% запусков начиная с 10% и в ${D.proofOk['5']}% при 5%. Новых сигналов в других регионах: ${D.proofFp} за ${D.proofRuns} запусков. Регион, получивший домохозяйства другого региона, дал новый сигнал в ${D.spec.flagged} из ${D.spec.runs} случаев: реальное различие не называется ошибкой.</p>
+      </div>
+    </div>`;
+}
+
+
+/* ---------- decoder tab ---------- */
+function renderDecoder() {
+  const X = D.decoder, V = X.validation;
+  const ok = V.filter(v => v.grade === 'correct').length, hi = V.filter(v => v.conf === 'high'), hiok = hi.filter(v => v.grade === 'correct').length;
+  const conf = { high: 'высокая', medium: 'средняя', low: 'низкая' };
+  const gr = { correct: ['hold', 'верно'], partial: ['neutral', 'частично'], wrong: ['check', 'неверно'] };
+  const cols = [...new Set(X.t001.map(r => r.column))];
+  const kz = X.kyzylorda, al = X.almaty;
+  const COLNAME = { 'D-008/STATUS': 'Д-008 · статус деятельности', 'D-008/SEM_POL': 'Д-008 · семейное положение', 'D-008/UROV': 'Д-008 · образование', 'D-006/TIP_J': 'Д-006 · тип жилья' };
+  $('#p-dec').innerHTML = `
+    <div class="panel stack"><h2>Декодер: что означает код, если в документации нет расшифровки</h2>
+      <p class="muted" style="max-width:85ch">В архиве нет анкеты Т-001, а в Д-002 не напечатаны коды пола. Декодер строит для каждого кода «отпечаток» — с чем он связан в данных: возраст, город или село, отрасль (ОКЭД), профессия (НКЗ), часы работы и коды других вопросов. Затем две независимые проверки: сопоставление с формой, где коды расшифрованы (Д-008), и прочтение отпечатка моделью (LLM). Код считает, модель предлагает смысл, человек подтверждает.</p>
+      <div class="steps">
+        <div class="step"><span class="k">проверка вслепую</span><span class="v">${ok} из ${V.length}</span><span class="muted">кодов модель назвала верно, когда расшифровку спрятали (Д-008, Д-006)</span></div>
+        <div class="step"><span class="k">высокая уверенность</span><span class="v">${hiok} из ${hi.length}</span><span class="muted">верны из тех, где модель уверена; ошибки — там, где она сама сомневалась</span></div>
+        <div class="step"><span class="k">перенумерация</span><span class="v">${X.renumber.filter(r => r.pct >= 99.9).length} из ${X.renumber.length}</span><span class="muted">столбцов: спрятанную перестановку кодов между годами расчёт восстанавливает на 100%</span></div>
+        <div class="step"><span class="k">сдвиги кодов</span><span class="v">${X.shiftsFlagged}</span><span class="muted">случая, где код региона ведёт себя как другой код остальной страны (из ${X.shiftsTested} проверенных пар)</span></div>
+      </div></div>
+    <div class="grid2">
+      <div class="panel stack"><h2>Находка: Кызылорда</h2>
+        <p>Детей 7–10 лет, которые учатся в 1–4 классах, по инструкции Д-008 кодируют 1 «дошкольное». В Кызылорде кодом 7 «не достигнут никакой уровень» записаны <b>${pct(kz['2023'].kyzylorda_pct_code7)}</b> таких детей в 2023 и <b>${pct(kz['2024'].kyzylorda_pct_code7)}</b> в 2024; в остальных регионах — не больше ${pct(kz['2023'].other_regions_max)} и ${pct(kz['2024'].other_regions_max)}.</p>
+        <div class="rate"><span>Кызылорда, 2024</span><div class="bar"><i style="width:${kz['2024'].kyzylorda_pct_code7}%;background:var(--blue)"></i></div><span class="num">${pct(kz['2024'].kyzylorda_pct_code7)}</span>
+          <span>Медиана регионов</span><div class="bar"><i style="width:${Math.max(1.5, kz['2024'].other_regions_median)}%;background:var(--fg-3)"></i></div><span class="num">${pct(kz['2024'].other_regions_median)}</span></div>
+        <p class="muted">Декодер нашёл это сам: коды 1 и 7 в Кызылорде ведут себя как 7 и 1 в остальной стране, оба года. Доли по региону переживают синтез, поэтому находка держится; подтвердить на реальных данных.</p>
+      </div>
+      <div class="panel stack"><h2>Находка: код работодателя 5 в 2024 году</h2>
+        <p>Наёмных работников у физических лиц в Алматинской области в 2023 записывали с типом работодателя 2 (${al['2023'].status2_code2} записей), в 2024 — только с кодом 5 (${al['2024'].status2_code5}). В тот же год устный договор у них — <b>${pct(al['2024'].no_contract_status2_almaty_pct)}</b> против ${pct(al['2024'].no_contract_status2_rest_pct)} в остальных.</p>
+        <p>Вне области код 5 тоже изменился: устный договор у ${pct(al['2023'].oral_among_code5_outside_almaty_pct)} его записей в 2023 и у <b>${pct(al['2024'].oral_among_code5_outside_almaty_pct)}</b> в 2024. По профилю коды 2 и 5 почти неотличимы, то есть это те же работники.</p>
+        <p class="muted">Вопрос к Бюро: переопределили ли код 5 в инструкции Т-001 за 2024 год? Если да, рост неформальной занятости в Алматинской области — эффект кодирования. Урок для декодера: отпечаток кода 5 за 2024 год построен в основном на одной области, поэтому его смысл помечен как зависящий от года.</p>
+      </div>
+    </div>
+    <div class="panel stack"><h2>Расшифровка кодов Т-001</h2>
+      <p class="muted">Предложение модели по отпечаткам 2024 года, без анкеты. «Д-008» — что даёт независимое сопоставление с расшифрованной формой по возрасту и типу поселения. Это гипотезы до сверки с анкетой Т-001.</p>
+      ${cols.map(c => { const rows = X.t001.filter(r => r.column === c); return `<details ${c === 'ORB_STATUS' ? 'open' : ''}><summary><span class="code">${esc(c)}</span> — ${esc(rows[0].concept)} (${rows.length} кодов)</summary>
+        <div class="tbl"><table><thead><tr><th>Код</th><th>Смысл (модель)</th><th>Уверенность</th><th>Д-008</th><th>По каким признакам</th></tr></thead><tbody>
+        ${rows.map(r => `<tr><td class="id">${esc(r.code)}</td><td>${esc(r.meaning)}${c === 'ORB_PKHDHL' && r.code === '5' ? ' <span class="pill neutral">смысл менялся в 2024</span>' : ''}</td><td><span class="pill ${r.conf === 'high' ? 'hold' : r.conf === 'low' ? 'check' : 'neutral'}">${conf[r.conf] || r.conf}</span></td>
+          <td>${r.sister ? esc(r.sister) + (r.sisterMargin != null ? `<br><span class="muted">запас ${num(r.sisterMargin, 3)}</span>` : '') : '<span class="muted">—</span>'}</td><td class="muted">${esc(r.evidence)}</td></tr>`).join('')}
+        </tbody></table></div></details>`; }).join('')}
+    </div>
+    <div class="panel stack"><h2>Проверка вслепую: модель против документации</h2>
+      <p class="muted">Те же отпечатки для столбцов, у которых расшифровка есть, но модели её не показали. Оценка: «верно» — та же категория, «частично» — соседняя.</p>
+      <div class="tbl"><table><thead><tr><th>Столбец</th><th>Код</th><th>Модель</th><th>Документация</th><th>Уверенность</th><th>Оценка</th></tr></thead><tbody>
+        ${V.map(v => `<tr><td>${esc(COLNAME[v.column] || v.column)}</td><td class="id">${esc(v.code)}</td><td>${esc(v.model)}</td><td>${esc(v.truth)}</td><td>${conf[v.conf] || v.conf}</td><td><span class="pill ${gr[v.grade][0]}">${gr[v.grade][1]}</span></td></tr>`).join('')}
+      </tbody></table></div></div>`;
+}
+
+
+/* ---------- data tab ---------- */
+function renderData() {
+  const S = D.schema, el = $('#p-data');
+  if (!S) { el.innerHTML = '<div class="panel muted">Модель данных не собрана: запустите schema/profile.py и schema/draw.py.</div>'; return; }
+  const GR = { 'person': 'человек', 'household': 'домохозяйство', 'household x quarter': 'домохозяйство × квартал',
+    'household x quarter x item': 'домохозяйство × квартал × строка', 'person (respondent)': 'респондент' };
+  const KIND = { code: 'код', integer: 'целое', number: 'число', text: 'текст', empty: 'пусто' };
+  const LINK = { 'D002.subject -> D008.kontr_k': 'Д-002 → Д-008 (домохозяйство)', 'D002.subject respondent -> D008.kontr_k person': 'Д-002 респондент → Д-008 человек',
+    'D006.rio -> D008.kontr_k': 'Д-006 → Д-008', 'D004.kv_vopr0 -> D008.kontr_k': 'Д-004 визит → Д-008',
+    'D002.subject <-> D002.ocenka': 'Д-002 subject ↔ ocenka', 'D004.kv_vopr1 -> D004.kv_vopr0': 'Д-004 строки (kv_vopr1) → визит',
+    'D004.kv_vopr12 -> D004.kv_vopr0': 'Д-004 строки (kv_vopr12) → визит',
+    "D002.ocenka GR40 'has children' vs D008 member under 18": 'GR40 «есть дети» при ребёнке в Д-008 / без него',
+    "D002.ocenka GR31_1 'rent: not relevant' vs D006 owner (VLAD1 1-2)": 'GR31_1 «не актуально» у собственника / не собственника' };
+  const years = [...new Set(S.household.map(r => r.year))].sort();
+  const t = S.tables, big = n => n.toLocaleString('ru-RU');
+  const tabs = [...new Set(S.columns.map(c => c.f + '.' + c.t))];
+  el.innerHTML = `
+  <div class="panel stack">
+    <figure class="dg"><div class="dgscroll">${S.svg.links_ru_inline || ''}</div>
+      <figcaption>Номер домохозяйства NOMER один и тот же в Д-002, Д-004, Д-006 и Д-008: каждая запись находит своё домохозяйство в контрольной карточке Д-008, регион и тип местности совпадают. Т-001 номера не имеет. Связь Д-002 ↔ Д-008 сохранилась в синтетических данных по каждому домохозяйству, связь Д-002 ↔ Д-006 — нет (ответы независимы), поэтому там сравниваются только доли по регионам.</figcaption></figure></div>
+  <div class="panel stack"><h2>Проверка по каждому домохозяйству: фильтр детского модуля</h2>
+    <p class="muted">Д-002 GR40 («есть дети до 18 лет») против членов домохозяйства моложе 18 лет в Д-008, по номеру NOMER. Это правила D002-x-D008-child-household и D002-x-D008-nochild-household: они проходят тот же тест «регион против остальной страны», что и все правила, и отмеченные регионы попадают в сводку и в дело C1. Таблица показывает все регионы, а не только отмеченные.</p>
+    <div class="row"><div class="seg" id="hc-year" role="group" aria-label="Год"></div></div>
+    <div class="tbl"><table><thead><tr><th>Регион</th><th class="num">С ребёнком в Д-008</th><th class="num">из них «нет детей» в Д-002</th><th class="num">%</th><th class="num">Без детей в Д-008: «есть дети»</th></tr></thead><tbody id="hc-body"></tbody></table></div></div>
+  <div class="panel stack">
+    <figure class="dg"><div class="dgscroll">${S.svg.pipeline_ru_inline || ''}</div>
+      <figcaption>Языковая модель работает только на первом шаге: читает анкету и пишет правила с цитатой источника. Дальше всё считает код по записям; ML-сравнения и декодер находят то, для чего правила не написаны.</figcaption></figure></div>
+  <div class="panel stack"><h2>Таблицы</h2>
+    <p class="muted">Последний год выпуска. «Найдено в Д-008» — доля домохозяйств таблицы, которые есть в контрольной карточке того же года.</p>
+    <div class="tbl"><table><thead><tr><th>Таблица</th><th>Одна запись</th><th>Ключ</th><th class="num">Записей</th><th class="num">Столбцов (выпуск / реальные)</th><th>Ключ уникален</th><th class="num">Найдено в Д-008</th></tr></thead><tbody>
+    ${t.map(r => `<tr><td class="id">${esc(r.form)}.${esc(r.table)}</td><td>${esc(GR[r.grain] || r.grain)}</td><td class="code">${esc(r.key === 'none' ? 'нет' : r.key)}</td>
+      <td class="num">${big(r.rows)}</td><td class="num">${r.cols} / ${r.colsReal}</td><td>${r.unique == null ? '—' : r.unique ? 'да' : 'нет'}</td><td class="num">${r.inRoster == null ? '—' : pct(r.inRoster, 0)}</td></tr>`).join('')}
+    </tbody></table></div></div>
+  <div class="panel stack"><h2>Связи по годам</h2>
+    <div class="tbl"><table><thead><tr><th>Связь</th><th>Ключ</th>${years.length ? '' : ''}${[2021, 2022, 2023, 2024].map(y => `<th class="num">${y}</th>`).join('')}</tr></thead><tbody>
+    ${[...new Set(S.links.map(l => l.link))].map(name => {
+      const cell = y => { const l = S.links.find(x => x.link === name && x.year === y); if (!l) return '—';
+        if (l.share_if_condition_pct != null) return `${num(l.share_if_condition_pct)} / ${num(l.share_if_not_condition_pct)}`;
+        if (l.respondent_differs != null) return `найдено ${pct(l.found_pct, 0)}; другой человек: ${l.respondent_differs}`;
+        return `найдено ${pct(l.found_pct, 0)}` + (l.region_agrees_pct != null ? `, регион ${pct(l.region_agrees_pct, 0)}` : '') + (l.sex_agrees_pct != null ? `, пол ${pct(l.sex_agrees_pct, 0)}` : ''); };
+      const k = S.links.find(x => x.link === name).key;
+      return `<tr><td>${esc(LINK[name] || name)}</td><td class="code">${esc(k)}</td>${[2021, 2022, 2023, 2024].map(y => `<td class="num">${cell(y)}</td>`).join('')}</tr>`; }).join('')}
+    </tbody></table></div>
+    <p class="muted">Две последние строки — доля ответа при условии и без него (в %): 86 против 7 — ответы связаны; 50 против 52 — не связаны.</p></div>
+  <div class="panel stack"><h2>Словарь столбцов</h2>
+    <p class="muted">${S.columns.length} столбцов. Описание — из файла структуры Бюро, где он его даёт; вид, заполненность и частые значения посчитаны по последнему году; «правила» — какие правила проверяют столбец.</p>
+    <div class="row"><input type="search" id="c-q" placeholder="Поиск: столбец, описание, правило…" aria-label="Поиск по столбцам">
+      <select id="c-t" aria-label="Таблица"><option value="all">Все таблицы</option>${tabs.map(x => `<option>${esc(x)}</option>`).join('')}</select>
+      <span class="muted" id="c-n"></span></div>
+    <div class="tbl" style="max-height:70vh"><table><thead><tr><th>Столбец</th><th>Описание</th><th>Вид</th><th class="num">Заполнено</th><th>Частые значения</th><th>Правила</th></tr></thead><tbody id="c-body"></tbody></table></div></div>
+  <div class="panel stack"><h2>Для технических специалистов</h2>
+    <details><summary>Все таблицы с ключами (схема)</summary><div class="erd">${S.svg.erd_data || ''}</div></details>
+    <details><summary>Все выходные файлы и как они соединяются</summary><div class="erd">${S.svg.erd_outputs || ''}</div></details>
+    <p class="muted">То же в пакете: diagrams/, out/schema_*.csv и DATA_MODEL.md.</p></div>`;
+  state.hcYear = years.includes(state.hcYear) ? state.hcYear : years[years.length - 1];
+  const drawHc = () => {
+    const rows = S.household.filter(r => r.year === state.hcYear).sort((a, b) => b.missed_pct - a.missed_pct);
+    $('#hc-body').innerHTML = rows.map(r => `<tr><td${r.missed_pct >= 20 ? ' style="color:var(--orange-ink);font-weight:600"' : ''}>${esc(RU[r.region] || r.region)}</td>
+      <td class="num">${r.with_child_in_roster}</td><td class="num">${r.coded_no_children}</td><td class="num">${pct(r.missed_pct)}</td><td class="num"${r.false_yes_pct >= 20 ? ' style="color:var(--orange-ink);font-weight:600"' : ''}>${pct(r.false_yes_pct)}</td></tr>`).join('');
+  };
+  seg($('#hc-year'), years.map(y => [y, y]), 'hcYear', drawHc); drawHc();
+  const drawCols = () => {
+    const q = $('#c-q').value.trim().toLowerCase(), tt = $('#c-t').value;
+    const rows = S.columns.filter(c => (tt === 'all' || c.f + '.' + c.t === tt) && (!q || (c.c + ' ' + c.d + ' ' + c.r).toLowerCase().includes(q)));
+    $('#c-n').textContent = `${rows.length} из ${S.columns.length}` + (rows.length > 300 ? ' (показаны первые 300)' : '');
+    $('#c-body').innerHTML = rows.slice(0, 300).map(c => `<tr><td class="id">${esc(c.f)}.${esc(c.t)}.<b>${esc(c.c)}</b></td><td>${esc(c.d)}</td><td>${esc(KIND[c.k] || c.k || '')}</td>
+      <td class="num">${c.fp == null ? '—' : pct(c.fp, 0)}</td><td class="code">${esc((c.top || '').split('; ').slice(0, 4).join(' · '))}</td>
+      <td class="id" style="white-space:normal">${esc((c.r || '').split('; ').slice(0, 3).join(', '))}${(c.r || '').split('; ').length > 3 ? ' …' : ''}</td></tr>`).join('');
+  };
+  ['#c-q', '#c-t'].forEach(s => $(s).addEventListener('input', drawCols)); drawCols();
+}
+
+/* ---------- case tab: problem → impact → fix ---------- */
+function renderCases() {
+  const el = $('#p-case');
+  const CI = D.caseImpact || {};
+  const byCase = id => D.issues.filter(i => i.case === id);
+  const ST = { 'держится': ['hold', 'держится на синтетике'], 'документация': ['neutral', 'документация'], 'смешанный': ['neutral', 'смешанный'] };
+  const ISS = { 'держится': ['hold', 'держится'], 'проверить': ['check', 'проверить на реальных данных'] };
+  if (!state.caseId || !caseById[state.caseId]) state.caseId = D.cases[0].id;
+  const loose = D.issues.filter(i => !i.case);
+  el.innerHTML = `<div class="panel stack">
+    <h2>От проблемы к рекомендации</h2>
+    <p class="muted" style="max-width:85ch">Каждое дело разобрано в три шага: что выявлено, какой официальный показатель это искажает и что нужно исправить. Количественная оценка влияния приводится только там, где она рассчитана; для остальных дел указан затронутый показатель. Расчёты выполнены на синтетических микроданных.</p>
+  </div>
+  <div class="grid2" style="grid-template-columns:minmax(0,.8fr) minmax(0,2fr)">
+    <div class="stack" id="case-list" role="listbox" aria-label="Дела" style="gap:8px;max-height:80vh;overflow:auto;padding-right:4px"></div>
+    <div class="panel stack" id="case-detail" style="position:sticky;top:12px;max-height:calc(100vh - 24px);overflow:auto"></div>
+  </div>
+  <details class="panel"><summary style="cursor:pointer"><b>Прочие отклонения: ${loose.length}</b> <span class="muted">— зафиксированы в сводке по регионам, отдельное дело по ним не составлялось</span></summary>
+    <div style="overflow:auto;max-height:420px;margin-top:10px"><table><thead><tr><th>Регион</th><th>Год</th><th>Форма</th><th>Правило</th><th class="num">Записей</th><th class="num">Регион / остальная страна</th><th>Статус</th></tr></thead><tbody>
+    ${loose.map(i => `<tr><td>${esc(RU[i.region] || i.region)}</td><td>${i.year}</td><td>${esc(i.formRu)}</td><td>${esc(i.ru)}</td><td class="num">${i.records ?? '—'}</td><td class="num">${pct(i.rateRegion)} / ${pct(i.rateRest)}</td><td><span class="pill ${(ISS[i.status] || ['neutral'])[0]}">${esc((ISS[i.status] || [i.status])[1])}</span></td></tr>`).join('')}
+    </tbody></table></div></details>`;
+  const list = $('#case-list');
+  list.innerHTML = D.cases.map(c => {
+    const n = byCase(c.id), regs = new Set(n.map(i => i.region)).size, imp = (CI[c.id] || [])[0];
+    const st = ST[c.status] || ['neutral', c.status];
+    return `<button type="button" class="panel casecard" role="option" data-c="${c.id}" aria-selected="${c.id === state.caseId}"
+      style="text-align:left;cursor:pointer;padding:12px;${c.id === state.caseId ? 'border-color:var(--blue);box-shadow:inset 3px 0 0 var(--blue)' : ''}">
+      <div class="row" style="justify-content:space-between"><span class="id" style="font:12px var(--mono);color:var(--fg-3)">${c.id}</span><span class="pill ${st[0]}">${esc(st[1])}</span></div>
+      <div style="font-weight:600;margin-top:4px">${esc(c.title)}</div>
+      <div class="muted" style="margin-top:4px">${n.length ? `отклонений: ${n.length} · регионов: ${regs}` : 'нет в сводке по регионам'}${imp ? ` · <b style="color:var(--fg)" title="${esc(imp[1])}">${esc(imp[0])}</b>` : ''}</div>
+    </button>`; }).join('');
+  list.querySelectorAll('[data-c]').forEach(b => b.addEventListener('click', () => { state.caseId = b.dataset.c; renderCases(); }));
+  const c = caseById[state.caseId], n = byCase(c.id), imp = CI[c.id] || [];
+  $('#case-detail').innerHTML = `
+    <div class="row" style="justify-content:space-between"><h2>${c.id}. ${esc(c.title)}</h2><span class="pill ${(ST[c.status] || ['neutral'])[0]}">${esc((ST[c.status] || [c.status])[1])}</span></div>
+    <div class="grid2" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px">
+      <div class="stack" style="gap:6px"><div class="eyebrow">1 · Проблема</div><div style="font-size:14px">${esc(c.finding)}</div></div>
+      <div class="stack" style="gap:6px"><div class="eyebrow">2 · Влияние</div>
+        ${imp.map(([b, s]) => `<div><div style="font:600 24px/1.1 var(--sans);font-variant-numeric:tabular-nums">${esc(b)}</div><div class="muted">${esc(s)}</div></div>`).join('')}
+        <div style="font-size:14px">${esc(c.indicator)}</div>
+        ${imp.length ? '' : '<div class="muted">Количественная оценка не приводится: на синтетических данных она была бы ненадёжной.</div>'}</div>
+      <div class="stack" style="gap:6px"><div class="eyebrow">3 · Рекомендация</div><div style="font-size:14px">${esc(c.fix)}</div>
+        <div class="muted"><b>Вероятная причина:</b> ${esc(c.cause)}</div></div>
+    </div>
+    ${n.length ? `<div style="overflow:auto;max-height:360px"><table><thead><tr><th>Регион</th><th>Год</th><th>Форма</th><th>Что проверено</th><th class="num">Записей</th><th class="num">Регион / остальная страна</th><th>Статус</th></tr></thead><tbody>
+      ${n.map(i => `<tr><td>${esc(RU[i.region] || i.region)}</td><td>${i.year}</td><td>${esc(i.formRu)}</td><td>${esc(i.ru)}</td><td class="num">${i.records ?? '—'}</td><td class="num">${i.rateRegion == null ? '—' : pct(i.rateRegion) + ' / ' + pct(i.rateRest)}</td><td><span class="pill ${(ISS[i.status] || ['neutral'])[0]}">${esc((ISS[i.status] || [i.status])[1])}</span></td></tr>`).join('')}
+      </tbody></table></div>` : '<p class="muted">В сводке по регионам этого дела нет: проблема общенациональная или выявлена отдельным расчётом.</p>'}`;
+}
+
+renderMap(); renderCases(); renderChild(); renderFin(); renderNew(); renderDecoder(); renderRules(); renderTrust(); renderData();
+const h = (location.hash || '').slice(1); if (['map', 'case', 'child', 'fin', 'new', 'dec', 'rules', 'trust', 'data'].includes(h)) openTab('t-' + h);
+</script>

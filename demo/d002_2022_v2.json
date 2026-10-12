@@ -1,0 +1,1186 @@
+{
+ "form": "D002",
+ "years": [
+  2022
+ ],
+ "rules": [
+  {
+   "id": "D002-P1-domain",
+   "type": "domain",
+   "table": "subject",
+   "targets": [
+    "GR1",
+    "GR2",
+    "GR3",
+    "GR4",
+    "GR5",
+    "GR61",
+    "GR62",
+    "GR63",
+    "GR7",
+    "GR8",
+    "GR9",
+    "GR101",
+    "GR102",
+    "GR103",
+    "GR11",
+    "GR12",
+    "GR13",
+    "GR14",
+    "GR151",
+    "GR152",
+    "GR161",
+    "GR162",
+    "GR171",
+    "GR172",
+    "GR173",
+    "GR174",
+    "GR181",
+    "GR182",
+    "GR183",
+    "GR184",
+    "GR191",
+    "GR192",
+    "GR193",
+    "GR194",
+    "GR195",
+    "GR196",
+    "GR201",
+    "GR202",
+    "GR21",
+    "GR22"
+   ],
+   "when": null,
+   "allowed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    89
+   ],
+   "meaning": {
+    "1-3": "Не удовлетворен",
+    "4-7": "Частично удовлетворен",
+    "8-10": "Удовлетворен",
+    "89": "Не применимо/ Затрудняюсь ответить"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Степень Вашей удовлетворенности следует определять в соответствии с предложенной шкалой от 1 до 10 ... следует выбрать вариант ответа 89 «Не применимо или Затрудняюсь ответить»"
+   },
+   "confidence": "high",
+   "note": "Part 1 satisfaction scale for every Part 1 question"
+  },
+  {
+   "id": "D002-P1-required",
+   "type": "required",
+   "table": "subject",
+   "targets": [
+    "GR1",
+    "GR2",
+    "GR3",
+    "GR4",
+    "GR5",
+    "GR61",
+    "GR62",
+    "GR63",
+    "GR7",
+    "GR8",
+    "GR9",
+    "GR101",
+    "GR102",
+    "GR103",
+    "GR11",
+    "GR12",
+    "GR13",
+    "GR14",
+    "GR151",
+    "GR152",
+    "GR161",
+    "GR162",
+    "GR171",
+    "GR172",
+    "GR173",
+    "GR174",
+    "GR181",
+    "GR182",
+    "GR183",
+    "GR184",
+    "GR191",
+    "GR192",
+    "GR193",
+    "GR194",
+    "GR195",
+    "GR196",
+    "GR201",
+    "GR202",
+    "GR21",
+    "GR22"
+   ],
+   "when": null,
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "В случае, если на Ваш взгляд, какой-то из вопросов к Вам не применим или Вы затрудняетесь на него ответить, следует выбрать вариант ответа 89"
+   },
+   "confidence": "medium",
+   "note": "No routing in Part 1; non-applicable questions are coded 89, not left blank"
+  },
+  {
+   "id": "D002-P2Q1-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR1"
+   ],
+   "when": null,
+   "allowed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "meaning": {
+    "1": "низкий уровень обеспеченности (малообеспеченные)",
+    "2": "обеспеченность ниже среднего уровня",
+    "3": "средний уровень обеспеченности (средний класс)",
+    "4": "обеспеченность несколько выше среднего уровня",
+    "5": "достаточный уровень обеспеченности (относительно состоятельные)",
+    "6": "высокий уровень обеспеченности"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Укажите, к какому уровню материального обеспечения (достатка) Вы себя относите?"
+   },
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "id": "D002-P2Q2-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR2"
+   ],
+   "when": null,
+   "allowed": [
+    1,
+    2,
+    3
+   ],
+   "meaning": {
+    "1": "не изменилось",
+    "2": "улучшилось",
+    "3": "ухудшилось"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Изменилось ли Ваше благосостояние за последний год?"
+   },
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "id": "D002-P2Q3-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR3"
+   ],
+   "when": null,
+   "allowed": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "meaning": {
+    "1": "уверены, что жить будем лучше",
+    "2": "не совсем уверены, но предполагаем, что будет улучшение",
+    "3": "останемся примерно на достигнутом уровне благосостояния",
+    "4": "возможно некоторое ухудшение",
+    "5": "жить будем хуже"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Как Вы считаете, будете ли Вы жить лучше в ближайший год?"
+   },
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "id": "D002-P2Q4-11-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR4",
+    "GR5",
+    "GR6",
+    "GR7",
+    "GR8",
+    "GR9",
+    "GR10",
+    "GR11"
+   ],
+   "when": null,
+   "allowed": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "meaning": {
+    "1": "да",
+    "2": "нет",
+    "3": "затрудняюсь ответить",
+    "4": "отказ от ответа"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "да | 1 нет | 2 затрудняюсь ответить | 3 отказ от ответа | 4"
+   },
+   "confidence": "high",
+   "note": "Food security questions 4-11"
+  },
+  {
+   "id": "D002-P2-required",
+   "type": "required",
+   "table": "ocenka",
+   "targets": [
+    "GR1",
+    "GR2",
+    "GR3",
+    "GR4",
+    "GR5",
+    "GR6",
+    "GR7",
+    "GR8",
+    "GR9",
+    "GR10",
+    "GR11"
+   ],
+   "when": null,
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "Выбирается и отмечается один вариант ответа."
+   },
+   "confidence": "medium",
+   "note": "Part 2 has no routing; every question is asked, with refusal/difficulty codes available"
+  },
+  {
+   "id": "D002-P3Q1-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR31_1",
+    "GR31_2",
+    "GR31_3",
+    "GR31_4"
+   ],
+   "when": null,
+   "allowed": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "meaning": {
+    "1": "да, единожды",
+    "2": "да, два и более раза",
+    "3": "нет",
+    "4": "не актуально"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "1 – иә, бір рет/да, единожды 2 – иә, екі немесе одан көп/ да, два и более раза 3 –жоқ/ нет 4 – маңызды емес/ не актуально"
+   },
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "id": "D002-P3-yesno-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR32",
+    "GR35",
+    "GR36",
+    "GR38",
+    "GR313",
+    "GR315",
+    "GR317"
+   ],
+   "when": null,
+   "allowed": [
+    1,
+    2
+   ],
+   "meaning": {
+    "1": "да",
+    "2": "нет"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "иә да | 1 жоқ нет | 2"
+   },
+   "confidence": "high",
+   "note": "Part 3 questions 2, 5, 6, 8, 13, 15, 17"
+  },
+  {
+   "id": "D002-P3Q4-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR34"
+   ],
+   "when": null,
+   "allowed": [
+    1,
+    2
+   ],
+   "meaning": {
+    "1": "да",
+    "2": "нет, не хватает средств"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "питаться горячими блюдами ... хотя бы раз в два дня? иә да | 1 жоқ, қаражат жетпейді нет, не хватает средств | 2"
+   },
+   "confidence": "high",
+   "note": "Only two options printed (no 'other reason' option, unlike Q3)"
+  },
+  {
+   "id": "D002-P3-three-option-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR33",
+    "GR37",
+    "GR39",
+    "GR310",
+    "GR311",
+    "GR312"
+   ],
+   "when": null,
+   "allowed": [
+    1,
+    2,
+    3
+   ],
+   "meaning": {
+    "1": "да",
+    "2": "нет, не хватает средств",
+    "3": "нет, по другой причине"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "да | 1 ... нет, не хватает средств | 2 ... нет, по другой причине | 3"
+   },
+   "confidence": "high",
+   "note": "Part 3 questions 3, 7, 9, 10, 11, 12"
+  },
+  {
+   "id": "D002-P3Q14-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR314"
+   ],
+   "when": null,
+   "allowed": [
+    1,
+    2
+   ],
+   "meaning": {
+    "1": "не менее одного раза в день",
+    "2": "не менее одного раза в неделю, но не каждый день"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "не менее одного раза в день | 1 ... не менее одного раза в неделю, но не каждый день | 2"
+   },
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "id": "D002-P3Q19-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR319"
+   ],
+   "when": null,
+   "allowed": [
+    1,
+    2,
+    3
+   ],
+   "meaning": {
+    "1": "да",
+    "2": "нет",
+    "3": "нет, потому что не было необходимости"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "да → 20 | 1 нет | 2 нет, потому что не было необходимости | 3"
+   },
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "id": "D002-P3-required",
+   "type": "required",
+   "table": "ocenka",
+   "targets": [
+    "GR31_1",
+    "GR31_2",
+    "GR31_3",
+    "GR31_4",
+    "GR32",
+    "GR33",
+    "GR34",
+    "GR35",
+    "GR36",
+    "GR37",
+    "GR38",
+    "GR39",
+    "GR310",
+    "GR311",
+    "GR312",
+    "GR313",
+    "GR315",
+    "GR317",
+    "GR319"
+   ],
+   "when": null,
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "Выбирается и отмечается один вариант ответа, за исключением 16, 18 и 20 вопросов ."
+   },
+   "confidence": "medium",
+   "note": "Questions not behind any routing are asked of every respondent"
+  },
+  {
+   "id": "D002-P3Q14-skip",
+   "type": "skip",
+   "table": "ocenka",
+   "targets": [
+    "GR314"
+   ],
+   "when": {
+    "col": "GR313",
+    "in": [
+     2
+    ]
+   },
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "иә→ 14 да → 14 | 1 жоқ→ 15 нет → 15 | 2"
+   },
+   "confidence": "high",
+   "note": "Q13 'no' routes to Q15"
+  },
+  {
+   "id": "D002-P3Q14-required",
+   "type": "required",
+   "table": "ocenka",
+   "targets": [
+    "GR314"
+   ],
+   "when": {
+    "col": "GR313",
+    "in": [
+     1
+    ]
+   },
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "да → 14 ... Если да, как часто пользовались услугами Интернета"
+   },
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "id": "D002-P3Q16-multi",
+   "type": "multi_select",
+   "table": "ocenka",
+   "targets": [
+    "GR316_1",
+    "GR316_2",
+    "GR316_3",
+    "GR316_4",
+    "GR316_5",
+    "GR316_6"
+   ],
+   "when": null,
+   "allowed": [
+    1
+   ],
+   "meaning": {
+    "GR316_1": "отсутствие провайдера",
+    "GR316_2": "слишком дорогая оплата, не можем себе позволить",
+    "GR316_3": "ничего не знаю об этом",
+    "GR316_4": "нет необходимости, использую интернет в мобильном телефоне",
+    "GR316_5": "не хватает технических устройств, но мы можем их докупить",
+    "GR316_6": "другое"
+   },
+   "exclusive": [],
+   "source": {
+    "doc": "form",
+    "quote": "Если нет, по какой причине: (ответов может быть несколько)"
+   },
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "id": "D002-P3Q16-skip",
+   "type": "skip",
+   "table": "ocenka",
+   "targets": [
+    "GR316_1",
+    "GR316_2",
+    "GR316_3",
+    "GR316_4",
+    "GR316_5",
+    "GR316_6"
+   ],
+   "when": {
+    "col": "GR315",
+    "in": [
+     1
+    ]
+   },
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "иә→ 17 да → 17 | 1 жоқ→ 16 нет → 16 | 2"
+   },
+   "confidence": "high",
+   "note": "Q15 'yes' routes to Q17"
+  },
+  {
+   "id": "D002-P3Q16-required",
+   "type": "required",
+   "mode": "any",
+   "table": "ocenka",
+   "targets": [
+    "GR316_1",
+    "GR316_2",
+    "GR316_3",
+    "GR316_4",
+    "GR316_5",
+    "GR316_6"
+   ],
+   "when": {
+    "col": "GR315",
+    "in": [
+     2
+    ]
+   },
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "нет → 16 ... Если нет, по какой причине"
+   },
+   "confidence": "high",
+   "note": "At least one reason when there is no home internet access"
+  },
+  {
+   "id": "D002-P3Q18-multi",
+   "type": "multi_select",
+   "table": "ocenka",
+   "targets": [
+    "GR318_1",
+    "GR318_2",
+    "GR318_3",
+    "GR318_4",
+    "GR318_5",
+    "GR318_6",
+    "GR318_7",
+    "GR318_8",
+    "GR318_9"
+   ],
+   "when": null,
+   "allowed": [
+    1
+   ],
+   "meaning": {
+    "GR318_1": "слишком дорого",
+    "GR318_2": "нет дошкольных учреждений по месту жительства",
+    "GR318_3": "неподходящий возраст",
+    "GR318_4": "болезнь",
+    "GR318_5": "за ребенком присматривают родственники",
+    "GR318_6": "за ребенком присматривает няня",
+    "GR318_7": "нет прописки",
+    "GR318_8": "нет необходимости",
+    "GR318_9": "другие причины"
+   },
+   "exclusive": [],
+   "source": {
+    "doc": "form",
+    "quote": "Если да, по какой причине не посещает? (ответов может быть несколько)"
+   },
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "id": "D002-P3Q18-skip",
+   "type": "skip",
+   "table": "ocenka",
+   "targets": [
+    "GR318_1",
+    "GR318_2",
+    "GR318_3",
+    "GR318_4",
+    "GR318_5",
+    "GR318_6",
+    "GR318_7",
+    "GR318_8",
+    "GR318_9"
+   ],
+   "when": {
+    "col": "GR317",
+    "in": [
+     2
+    ]
+   },
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "иә→ 18 да → 18 | 1 жоқ→ 19 нет → 19 | 2"
+   },
+   "confidence": "high",
+   "note": "Q17 'no' routes to Q19"
+  },
+  {
+   "id": "D002-P3Q18-required",
+   "type": "required",
+   "mode": "any",
+   "table": "ocenka",
+   "targets": [
+    "GR318_1",
+    "GR318_2",
+    "GR318_3",
+    "GR318_4",
+    "GR318_5",
+    "GR318_6",
+    "GR318_7",
+    "GR318_8",
+    "GR318_9"
+   ],
+   "when": {
+    "col": "GR317",
+    "in": [
+     1
+    ]
+   },
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "да → 18 ... Если да, по какой причине не посещает?"
+   },
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "id": "D002-P3Q20-multi",
+   "type": "multi_select",
+   "table": "ocenka",
+   "targets": [
+    "GR320_1",
+    "GR320_2",
+    "GR320_3",
+    "GR320_4",
+    "GR320_5",
+    "GR320_6",
+    "GR320_7",
+    "GR320_8",
+    "GR320_9",
+    "GR320_10"
+   ],
+   "when": null,
+   "allowed": [
+    1
+   ],
+   "meaning": {
+    "GR320_1": "занимался (лась) самолечением",
+    "GR320_2": "решил (а), что и так выздоровлю",
+    "GR320_3": "высокая стоимость услуг",
+    "GR320_4": "слишком дорогое лекарство",
+    "GR320_5": "большие очереди",
+    "GR320_6": "отсутствие специалиста",
+    "GR320_7": "учреждения здравоохранения расположены далеко/нет возможности доехать",
+    "GR320_8": "отсутствие лекарств",
+    "GR320_9": "плохое обслуживание/не доверяю",
+    "GR320_10": "другие причины"
+   },
+   "exclusive": [],
+   "source": {
+    "doc": "form",
+    "quote": "По какой причине в течение года не смогли воспользоваться медицинскими услугами? (ответов может быть несколько)"
+   },
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "id": "D002-P3Q20-skip",
+   "type": "skip",
+   "table": "ocenka",
+   "targets": [
+    "GR320_1",
+    "GR320_2",
+    "GR320_3",
+    "GR320_4",
+    "GR320_5",
+    "GR320_6",
+    "GR320_7",
+    "GR320_8",
+    "GR320_9",
+    "GR320_10"
+   ],
+   "when": {
+    "col": "GR319",
+    "in": [
+     2,
+     3
+    ]
+   },
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "да → 20 | 1 нет | 2 нет, потому что не было необходимости | 3"
+   },
+   "confidence": "medium",
+   "note": "Arrow printed on 'yes' only; Q20 is the last question of Part 3, so 'no' answers have nothing to answer in Q20"
+  },
+  {
+   "id": "D002-P3Q20-required",
+   "type": "required",
+   "mode": "any",
+   "table": "ocenka",
+   "targets": [
+    "GR320_1",
+    "GR320_2",
+    "GR320_3",
+    "GR320_4",
+    "GR320_5",
+    "GR320_6",
+    "GR320_7",
+    "GR320_8",
+    "GR320_9",
+    "GR320_10"
+   ],
+   "when": {
+    "col": "GR319",
+    "in": [
+     1
+    ]
+   },
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "иә→ 20 да → 20 | 1"
+   },
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "id": "D002-subject-VOZ-domain",
+   "type": "domain",
+   "table": "subject",
+   "targets": [
+    "VOZ"
+   ],
+   "when": null,
+   "allowed": {
+    "min": 15
+   },
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "В опросе принимает участие один член домашнего хозяйства в возрасте 15 лет и старше"
+   },
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "id": "D002-ocenka-VOZ-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "VOZ"
+   ],
+   "when": null,
+   "allowed": {
+    "min": 15
+   },
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "В опросе принимает участие один член домашнего хозяйства в возрасте 15 лет и старше"
+   },
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "id": "D002-subject-K-domain",
+   "type": "domain",
+   "table": "subject",
+   "targets": [
+    "K"
+   ],
+   "when": null,
+   "allowed": [
+    1,
+    2
+   ],
+   "meaning": {
+    "1": "город",
+    "2": "село"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Код типа населенного пункта (1 - город, 2 - село)"
+   },
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "id": "D002-ocenka-K-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "K"
+   ],
+   "when": null,
+   "allowed": [
+    1,
+    2
+   ],
+   "meaning": {
+    "1": "город",
+    "2": "село"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Код типа населенного пункта (1 - город, 2 - село)"
+   },
+   "confidence": "high",
+   "note": null
+  },
+  {
+   "id": "D002-subject-GODO-domain",
+   "type": "domain",
+   "table": "subject",
+   "targets": [
+    "GODO"
+   ],
+   "when": null,
+   "allowed": [
+    2022
+   ],
+   "meaning": null,
+   "source": {
+    "doc": "structure",
+    "quote": "Godo | Год"
+   },
+   "confidence": "medium",
+   "note": "File documented as Структура файлов2022 / Форма D 002_2022"
+  },
+  {
+   "id": "D002-ocenka-GODO-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GODO"
+   ],
+   "when": null,
+   "allowed": [
+    2022
+   ],
+   "meaning": null,
+   "source": {
+    "doc": "structure",
+    "quote": "Godo | Год"
+   },
+   "confidence": "medium",
+   "note": "File documented as Структура файлов2022 / Форма D 002_2022"
+  },
+  {
+   "id": "D002-subject-one-respondent",
+   "type": "consistency",
+   "check": "unique",
+   "table": "subject",
+   "targets": [
+    "GODO",
+    "NOMER"
+   ],
+   "when": null,
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "В опросе принимает участие один член домашнего хозяйства в возрасте 15 лет и старше"
+   },
+   "confidence": "high",
+   "note": "One respondent per household per year"
+  },
+  {
+   "id": "D002-ocenka-one-respondent",
+   "type": "consistency",
+   "check": "unique",
+   "table": "ocenka",
+   "targets": [
+    "GODO",
+    "NOMER"
+   ],
+   "when": null,
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "В опросе принимает участие один член домашнего хозяйства в возрасте 15 лет и старше"
+   },
+   "confidence": "high",
+   "note": "One respondent per household per year"
+  },
+  {
+   "id": "D002-subject-ocenka-same-person",
+   "type": "consistency",
+   "check": "manual",
+   "table": "subject",
+   "targets": [
+    "NOMER",
+    "NOMP",
+    "POL",
+    "VOZ",
+    "TE",
+    "K"
+   ],
+   "when": null,
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "В опросе принимает участие один член домашнего хозяйства в возрасте 15 лет и старше"
+   },
+   "confidence": "medium",
+   "note": "Parts 1 (subject) and 2-3 (ocenka) are one questionnaire filled by one person: for the same GODO+NOMER both tables should carry the same NOMP, POL, VOZ, TE, K, and each household should appear in both tables"
+  },
+  {
+   "id": "D002-P3Q16opt4-implies-Q13",
+   "type": "consistency",
+   "check": "implies",
+   "if": {
+    "col": "GR316_4",
+    "in": [
+     1
+    ]
+   },
+   "then": {
+    "col": "GR313",
+    "in": [
+     1
+    ]
+   },
+   "table": "ocenka",
+   "targets": [
+    "GR316_4",
+    "GR313"
+   ],
+   "when": null,
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "нет необходимости, использую интернет в мобильном телефоне | 4"
+   },
+   "confidence": "medium",
+   "note": "A respondent who uses the internet on a mobile phone means someone in the household used the internet in the last 12 months (Q13 = yes)"
+  },
+  {
+   "id": "D002-P3Q17-cross-D008",
+   "type": "cross_form",
+   "table": "ocenka",
+   "targets": [
+    "GR317"
+   ],
+   "when": null,
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "Имеется ли в Вашем домашним хозяйстве ребенок дошкольного возраста, не посещающий дошкольное учреждение?"
+   },
+   "confidence": "medium",
+   "note": "Regional share of households with GR317=1 must not exceed the share of the same households having a pre-school-age child (about 0-6) in the D-008 household roster"
+  },
+  {
+   "id": "D002-struct-GR31_3-duplicate",
+   "type": "doc_issue",
+   "table": "ocenka",
+   "targets": [
+    "GR31_3",
+    "GR31_4"
+   ],
+   "when": null,
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "structure",
+    "quote": "Gr31_3 | 3 часть вопрос 1.3 Gr31_3 | 3 часть вопрос 1.4"
+   },
+   "confidence": "high",
+   "note": "Structure gives the same column name Gr31_3 for questions 1.3 and 1.4; the data has GR31_4 for 1.4"
+  },
+  {
+   "id": "D002-struct-dotted-names",
+   "type": "doc_issue",
+   "table": "subject",
+   "targets": [
+    "GR151",
+    "GR152",
+    "GR161",
+    "GR162",
+    "GR171",
+    "GR172",
+    "GR173",
+    "GR174",
+    "GR181",
+    "GR182",
+    "GR183",
+    "GR184"
+   ],
+   "when": null,
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "structure",
+    "quote": "Gr15.1 | 1 часть вопрос 15.1 ... Gr18.4 | 1 часть вопрос 18.4"
+   },
+   "confidence": "high",
+   "note": "Structure names Gr15.1-Gr18.4 with dots while the data columns are GR151-GR184 (and Gr191, Gr61 etc. are written without dots)"
+  },
+  {
+   "id": "D002-struct-Q16-Q18-single",
+   "type": "doc_issue",
+   "table": "ocenka",
+   "targets": [
+    "GR316_1",
+    "GR316_2",
+    "GR316_3",
+    "GR316_4",
+    "GR316_5",
+    "GR316_6",
+    "GR318_1",
+    "GR318_2",
+    "GR318_3",
+    "GR318_4",
+    "GR318_5",
+    "GR318_6",
+    "GR318_7",
+    "GR318_8",
+    "GR318_9"
+   ],
+   "when": null,
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "structure",
+    "quote": "Gr316 | 3 часть вопрос 16 ... Gr318 | 3 часть вопрос 18"
+   },
+   "confidence": "high",
+   "note": "Structure lists Q16 and Q18 as single columns Gr316, Gr318, but the form makes them multi-answer and the data has GR316_1-6 and GR318_1-9 (Q20 is split into Gr320_1-10 in the structure)"
+  },
+  {
+   "id": "D002-P3Q14-kz-ru",
+   "type": "doc_issue",
+   "table": "ocenka",
+   "targets": [
+    "GR314"
+   ],
+   "when": null,
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "күніне бірнеше рет не менее одного раза в день | 1 аптасына бірнеше рет, бірақ күн сайын емес не менее одного раза в неделю, но не каждый день | 2"
+   },
+   "confidence": "high",
+   "note": "Kazakh says 'several times a day' / 'several times a week', Russian says 'at least once a day' / 'at least once a week'"
+  },
+  {
+   "id": "D002-P3Q14-incomplete-scale",
+   "type": "doc_issue",
+   "table": "ocenka",
+   "targets": [
+    "GR314",
+    "GR313"
+   ],
+   "when": null,
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "Если да, как часто пользовались услугами Интернета на протяжении последних 12 месяцев?"
+   },
+   "confidence": "medium",
+   "note": "Q14 offers only daily and weekly codes; a household that used the internet less than weekly (Q13 = yes) has no code to choose"
+  },
+  {
+   "id": "D002-P4-not-in-structure",
+   "type": "doc_issue",
+   "table": "ocenka",
+   "targets": [],
+   "when": null,
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "4 часть Укажите время, затраченное на заполнение статистической формы, в часах (нужное обвести)"
+   },
+   "confidence": "high",
+   "note": "Part 4 (time spent filling the form) is on the form but has no column in the file structure or data"
+  },
+  {
+   "id": "D002-order-reference",
+   "type": "doc_issue",
+   "table": "subject",
+   "targets": [],
+   "when": null,
+   "allowed": null,
+   "meaning": null,
+   "source": {
+    "doc": "form",
+    "quote": "Приложение 1 к приказу Руководителя Бюро национальной статистики ... Приложение 3 к приказу Председателя Комитета по статистике ... от 19 декабря 2019 года № 14"
+   },
+   "confidence": "medium",
+   "note": "The form header cites two different approving orders (new Bureau order, Appendix 1, and the 2019 Committee order, Appendix 3)"
+  }
+ ],
+ "extracted_by": "a Claude chat (reply pasted from file), extract/llm_extract.py, prompt v2"
+}

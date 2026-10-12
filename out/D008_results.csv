@@ -1,0 +1,1721 @@
+rule_id,type,table,column,year,te,region,records,applicable,violations,conditional,bad_state,rate
+D008-K-domain,domain,kontr_k,K,2023,10,Abai,1647,1647,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2023,11,Akmola,2032,2032,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2023,15,Aktobe,2711,2711,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2023,19,Almaty oblast,1784,1784,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2023,23,Atyrau,2237,2237,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2023,27,West Kazakhstan,2609,2609,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2023,31,Zhambyl,2462,2462,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2023,33,Zhetysu,1795,1795,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2023,35,Karaganda,2003,2003,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2023,39,Kostanay,2243,2243,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2023,43,Kyzylorda,2940,2940,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2023,47,Mangystau,2332,2332,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2023,55,Pavlodar,2604,2604,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2023,59,North Kazakhstan,1735,1735,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2023,61,Turkistan,3009,3009,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2023,62,Ulytau,1716,1716,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2023,63,East Kazakhstan,1420,1420,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2023,71,Astana,1866,1866,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2023,75,Almaty city,1883,1883,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2023,79,Shymkent,1661,1661,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2023,10,Abai,1647,1647,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2023,11,Akmola,2032,2032,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2023,15,Aktobe,2711,2711,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2023,19,Almaty oblast,1784,1784,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2023,23,Atyrau,2237,2237,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2023,27,West Kazakhstan,2609,2609,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2023,31,Zhambyl,2462,2462,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2023,33,Zhetysu,1795,1795,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2023,35,Karaganda,2003,2003,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2023,39,Kostanay,2243,2243,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2023,43,Kyzylorda,2940,2940,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2023,47,Mangystau,2332,2332,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2023,55,Pavlodar,2604,2604,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2023,59,North Kazakhstan,1735,1735,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2023,61,Turkistan,3009,3009,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2023,62,Ulytau,1716,1716,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2023,63,East Kazakhstan,1420,1420,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2023,71,Astana,1866,1866,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2023,75,Almaty city,1883,1883,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2023,79,Shymkent,1661,1661,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2023,10,Abai,1647,1647,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2023,11,Akmola,2032,2032,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2023,15,Aktobe,2711,2711,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2023,19,Almaty oblast,1784,1784,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2023,23,Atyrau,2237,2237,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2023,27,West Kazakhstan,2609,2609,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2023,31,Zhambyl,2462,2462,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2023,33,Zhetysu,1795,1795,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2023,35,Karaganda,2003,2003,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2023,39,Kostanay,2243,2243,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2023,43,Kyzylorda,2940,2940,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2023,47,Mangystau,2332,2332,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2023,55,Pavlodar,2604,2604,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2023,59,North Kazakhstan,1735,1735,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2023,61,Turkistan,3009,3009,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2023,62,Ulytau,1716,1716,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2023,63,East Kazakhstan,1420,1420,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2023,71,Astana,1866,1866,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2023,75,Almaty city,1883,1883,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2023,79,Shymkent,1661,1661,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2023,10,Abai,1647,1177,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2023,11,Akmola,2032,1552,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2023,15,Aktobe,2711,1793,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2023,19,Almaty oblast,1784,1199,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2023,23,Atyrau,2237,1407,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2023,27,West Kazakhstan,2609,1741,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2023,31,Zhambyl,2462,1634,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2023,33,Zhetysu,1795,1191,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2023,35,Karaganda,2003,1404,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2023,39,Kostanay,2243,1709,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2023,43,Kyzylorda,2940,1819,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2023,47,Mangystau,2332,1462,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2023,55,Pavlodar,2604,1788,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2023,59,North Kazakhstan,1735,1333,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2023,61,Turkistan,3009,1839,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2023,62,Ulytau,1716,1125,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2023,63,East Kazakhstan,1420,1075,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2023,71,Astana,1866,1284,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2023,75,Almaty city,1883,1408,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2023,79,Shymkent,1661,1130,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2023,10,Abai,1647,1626,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2023,11,Akmola,2032,2006,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2023,15,Aktobe,2711,2654,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2023,19,Almaty oblast,1784,1749,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2023,23,Atyrau,2237,2179,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2023,27,West Kazakhstan,2609,2582,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2023,31,Zhambyl,2462,2400,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2023,33,Zhetysu,1795,1762,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2023,35,Karaganda,2003,1974,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2023,39,Kostanay,2243,2214,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2023,43,Kyzylorda,2940,2876,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2023,47,Mangystau,2332,2276,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2023,55,Pavlodar,2604,2570,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2023,59,North Kazakhstan,1735,1718,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2023,61,Turkistan,3009,2928,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2023,62,Ulytau,1716,1695,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2023,63,East Kazakhstan,1420,1405,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2023,71,Astana,1866,1837,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2023,75,Almaty city,1883,1853,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2023,79,Shymkent,1661,1622,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2023,10,Abai,1647,1201,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2023,11,Akmola,2032,1563,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2023,15,Aktobe,2711,1817,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2023,19,Almaty oblast,1784,1225,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2023,23,Atyrau,2237,1426,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2023,27,West Kazakhstan,2609,1773,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2023,31,Zhambyl,2462,1636,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2023,33,Zhetysu,1795,1195,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2023,35,Karaganda,2003,1426,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2023,39,Kostanay,2243,1728,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2023,43,Kyzylorda,2940,1854,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2023,47,Mangystau,2332,1488,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2023,55,Pavlodar,2604,1879,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2023,59,North Kazakhstan,1735,1346,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2023,61,Turkistan,3009,1870,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2023,62,Ulytau,1716,1136,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2023,63,East Kazakhstan,1420,1081,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2023,71,Astana,1866,1300,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2023,75,Almaty city,1883,1424,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2023,79,Shymkent,1661,1149,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2023,10,Abai,1647,1203,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2023,11,Akmola,2032,1571,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2023,15,Aktobe,2711,1835,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2023,19,Almaty oblast,1784,1240,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2023,23,Atyrau,2237,1429,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2023,27,West Kazakhstan,2609,1791,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2023,31,Zhambyl,2462,1653,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2023,33,Zhetysu,1795,1226,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2023,35,Karaganda,2003,1439,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2023,39,Kostanay,2243,1732,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2023,43,Kyzylorda,2940,1862,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2023,47,Mangystau,2332,1501,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2023,55,Pavlodar,2604,1888,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2023,59,North Kazakhstan,1735,1367,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2023,61,Turkistan,3009,1880,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2023,62,Ulytau,1716,1148,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2023,63,East Kazakhstan,1420,1084,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2023,71,Astana,1866,1301,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2023,75,Almaty city,1883,1436,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2023,79,Shymkent,1661,1157,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2023,10,Abai,1647,1202,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2023,11,Akmola,2032,1526,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2023,15,Aktobe,2711,1849,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2023,19,Almaty oblast,1784,1227,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2023,23,Atyrau,2237,1412,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2023,27,West Kazakhstan,2609,1786,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2023,31,Zhambyl,2462,1670,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2023,33,Zhetysu,1795,1233,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2023,35,Karaganda,2003,1431,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2023,39,Kostanay,2243,1730,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2023,43,Kyzylorda,2940,1870,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2023,47,Mangystau,2332,1503,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2023,55,Pavlodar,2604,1902,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2023,59,North Kazakhstan,1735,1373,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2023,61,Turkistan,3009,1890,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2023,62,Ulytau,1716,1145,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2023,63,East Kazakhstan,1420,1084,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2023,71,Astana,1866,1258,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2023,75,Almaty city,1883,1431,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2023,79,Shymkent,1661,1163,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2023,10,Abai,1647,1202,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2023,11,Akmola,2032,1485,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2023,15,Aktobe,2711,1859,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2023,19,Almaty oblast,1784,1225,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2023,23,Atyrau,2237,1373,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2023,27,West Kazakhstan,2609,1800,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2023,31,Zhambyl,2462,1697,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2023,33,Zhetysu,1795,1238,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2023,35,Karaganda,2003,1437,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2023,39,Kostanay,2243,1732,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2023,43,Kyzylorda,2940,1851,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2023,47,Mangystau,2332,1500,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2023,55,Pavlodar,2604,1896,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2023,59,North Kazakhstan,1735,1365,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2023,61,Turkistan,3009,1911,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2023,62,Ulytau,1716,1101,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2023,63,East Kazakhstan,1420,1086,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2023,71,Astana,1866,1255,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2023,75,Almaty city,1883,1426,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2023,79,Shymkent,1661,1161,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS4,2023,10,Abai,1647,0,0,False,0,
+D008-STATUS-domain,domain,kontr_k,STATUS4,2023,11,Akmola,2032,0,0,False,0,
+D008-STATUS-domain,domain,kontr_k,STATUS4,2023,15,Aktobe,2711,0,0,False,0,
+D008-STATUS-domain,domain,kontr_k,STATUS4,2023,19,Almaty oblast,1784,0,0,False,0,
+D008-STATUS-domain,domain,kontr_k,STATUS4,2023,23,Atyrau,2237,0,0,False,0,
+D008-STATUS-domain,domain,kontr_k,STATUS4,2023,27,West Kazakhstan,2609,0,0,False,0,
+D008-STATUS-domain,domain,kontr_k,STATUS4,2023,31,Zhambyl,2462,0,0,False,0,
+D008-STATUS-domain,domain,kontr_k,STATUS4,2023,33,Zhetysu,1795,0,0,False,0,
+D008-STATUS-domain,domain,kontr_k,STATUS4,2023,35,Karaganda,2003,0,0,False,0,
+D008-STATUS-domain,domain,kontr_k,STATUS4,2023,39,Kostanay,2243,0,0,False,0,
+D008-STATUS-domain,domain,kontr_k,STATUS4,2023,43,Kyzylorda,2940,0,0,False,0,
+D008-STATUS-domain,domain,kontr_k,STATUS4,2023,47,Mangystau,2332,0,0,False,0,
+D008-STATUS-domain,domain,kontr_k,STATUS4,2023,55,Pavlodar,2604,0,0,False,0,
+D008-STATUS-domain,domain,kontr_k,STATUS4,2023,59,North Kazakhstan,1735,0,0,False,0,
+D008-STATUS-domain,domain,kontr_k,STATUS4,2023,61,Turkistan,3009,0,0,False,0,
+D008-STATUS-domain,domain,kontr_k,STATUS4,2023,62,Ulytau,1716,0,0,False,0,
+D008-STATUS-domain,domain,kontr_k,STATUS4,2023,63,East Kazakhstan,1420,0,0,False,0,
+D008-STATUS-domain,domain,kontr_k,STATUS4,2023,71,Astana,1866,0,0,False,0,
+D008-STATUS-domain,domain,kontr_k,STATUS4,2023,75,Almaty city,1883,0,0,False,0,
+D008-STATUS-domain,domain,kontr_k,STATUS4,2023,79,Shymkent,1661,0,0,False,0,
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2023,10,Abai,1647,40,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2023,11,Akmola,2032,22,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2023,15,Aktobe,2711,16,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2023,19,Almaty oblast,1784,101,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2023,23,Atyrau,2237,1,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2023,27,West Kazakhstan,2609,93,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2023,31,Zhambyl,2462,75,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2023,33,Zhetysu,1795,70,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2023,35,Karaganda,2003,105,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2023,39,Kostanay,2243,179,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2023,43,Kyzylorda,2940,0,0,False,0,
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2023,47,Mangystau,2332,52,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2023,55,Pavlodar,2604,24,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2023,59,North Kazakhstan,1735,13,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2023,61,Turkistan,3009,19,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2023,62,Ulytau,1716,17,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2023,63,East Kazakhstan,1420,14,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2023,71,Astana,1866,1,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2023,75,Almaty city,1883,782,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2023,79,Shymkent,1661,252,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2023,10,Abai,1647,35,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2023,11,Akmola,2032,24,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2023,15,Aktobe,2711,15,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2023,19,Almaty oblast,1784,114,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2023,23,Atyrau,2237,1,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2023,27,West Kazakhstan,2609,90,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2023,31,Zhambyl,2462,91,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2023,33,Zhetysu,1795,69,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2023,35,Karaganda,2003,102,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2023,39,Kostanay,2243,194,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2023,43,Kyzylorda,2940,1,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2023,47,Mangystau,2332,51,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2023,55,Pavlodar,2604,25,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2023,59,North Kazakhstan,1735,13,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2023,61,Turkistan,3009,19,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2023,62,Ulytau,1716,17,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2023,63,East Kazakhstan,1420,14,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2023,71,Astana,1866,13,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2023,75,Almaty city,1883,785,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2023,79,Shymkent,1661,279,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2023,10,Abai,1647,36,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2023,11,Akmola,2032,31,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2023,15,Aktobe,2711,16,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2023,19,Almaty oblast,1784,111,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2023,23,Atyrau,2237,3,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2023,27,West Kazakhstan,2609,87,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2023,31,Zhambyl,2462,91,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2023,33,Zhetysu,1795,70,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2023,35,Karaganda,2003,100,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2023,39,Kostanay,2243,194,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2023,43,Kyzylorda,2940,17,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2023,47,Mangystau,2332,49,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2023,55,Pavlodar,2604,26,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2023,59,North Kazakhstan,1735,16,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2023,61,Turkistan,3009,18,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2023,62,Ulytau,1716,31,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2023,63,East Kazakhstan,1420,14,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2023,71,Astana,1866,24,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2023,75,Almaty city,1883,760,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2023,79,Shymkent,1661,278,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2023,10,Abai,1647,37,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2023,11,Akmola,2032,32,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2023,15,Aktobe,2711,15,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2023,19,Almaty oblast,1784,117,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2023,23,Atyrau,2237,5,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2023,27,West Kazakhstan,2609,87,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2023,31,Zhambyl,2462,98,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2023,33,Zhetysu,1795,74,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2023,35,Karaganda,2003,103,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2023,39,Kostanay,2243,194,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2023,43,Kyzylorda,2940,22,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2023,47,Mangystau,2332,52,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2023,55,Pavlodar,2604,29,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2023,59,North Kazakhstan,1735,17,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2023,61,Turkistan,3009,22,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2023,62,Ulytau,1716,33,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2023,63,East Kazakhstan,1420,18,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2023,71,Astana,1866,25,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2023,75,Almaty city,1883,120,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2023,79,Shymkent,1661,281,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2023,10,Abai,1647,0,0,False,0,
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2023,11,Akmola,2032,0,0,False,0,
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2023,15,Aktobe,2711,0,0,False,0,
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2023,19,Almaty oblast,1784,0,0,False,0,
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2023,23,Atyrau,2237,0,0,False,0,
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2023,27,West Kazakhstan,2609,0,0,False,0,
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2023,31,Zhambyl,2462,0,0,False,0,
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2023,33,Zhetysu,1795,0,0,False,0,
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2023,35,Karaganda,2003,0,0,False,0,
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2023,39,Kostanay,2243,0,0,False,0,
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2023,43,Kyzylorda,2940,0,0,False,0,
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2023,47,Mangystau,2332,0,0,False,0,
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2023,55,Pavlodar,2604,0,0,False,0,
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2023,59,North Kazakhstan,1735,0,0,False,0,
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2023,61,Turkistan,3009,0,0,False,0,
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2023,62,Ulytau,1716,0,0,False,0,
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2023,63,East Kazakhstan,1420,0,0,False,0,
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2023,71,Astana,1866,0,0,False,0,
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2023,75,Almaty city,1883,0,0,False,0,
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2023,79,Shymkent,1661,0,0,False,0,
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2023,10,Abai,1647,42,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2023,11,Akmola,2032,2,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2023,15,Aktobe,2711,89,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2023,19,Almaty oblast,1784,1,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2023,23,Atyrau,2237,47,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2023,27,West Kazakhstan,2609,1,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2023,31,Zhambyl,2462,0,0,False,0,
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2023,33,Zhetysu,1795,1,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2023,35,Karaganda,2003,3,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2023,39,Kostanay,2243,0,0,False,0,
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2023,43,Kyzylorda,2940,13,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2023,47,Mangystau,2332,3,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2023,55,Pavlodar,2604,46,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2023,59,North Kazakhstan,1735,1,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2023,61,Turkistan,3009,0,0,False,0,
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2023,62,Ulytau,1716,0,0,False,0,
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2023,63,East Kazakhstan,1420,6,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2023,71,Astana,1866,1,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2023,75,Almaty city,1883,0,0,False,0,
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2023,79,Shymkent,1661,0,0,False,0,
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2023,10,Abai,1647,14,2,False,2,0.14285714285714285
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2023,11,Akmola,2032,14,2,False,2,0.14285714285714285
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2023,15,Aktobe,2711,67,2,False,2,0.029850746268656716
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2023,19,Almaty oblast,1784,10,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2023,23,Atyrau,2237,68,1,False,1,0.014705882352941176
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2023,27,West Kazakhstan,2609,7,3,False,3,0.42857142857142855
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2023,31,Zhambyl,2462,9,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2023,33,Zhetysu,1795,5,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2023,35,Karaganda,2003,20,4,False,4,0.2
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2023,39,Kostanay,2243,9,2,False,2,0.2222222222222222
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2023,43,Kyzylorda,2940,72,2,False,2,0.027777777777777776
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2023,47,Mangystau,2332,24,4,False,4,0.16666666666666666
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2023,55,Pavlodar,2604,24,6,False,6,0.25
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2023,59,North Kazakhstan,1735,19,3,False,3,0.15789473684210525
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2023,61,Turkistan,3009,14,2,False,2,0.14285714285714285
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2023,62,Ulytau,1716,17,1,False,1,0.058823529411764705
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2023,63,East Kazakhstan,1420,9,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2023,71,Astana,1866,35,7,False,7,0.2
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2023,75,Almaty city,1883,7,1,False,1,0.14285714285714285
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2023,79,Shymkent,1661,7,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2023,10,Abai,1647,21,2,False,2,0.09523809523809523
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2023,11,Akmola,2032,96,5,False,5,0.052083333333333336
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2023,15,Aktobe,2711,50,3,False,3,0.06
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2023,19,Almaty oblast,1784,38,1,False,1,0.02631578947368421
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2023,23,Atyrau,2237,128,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2023,27,West Kazakhstan,2609,58,7,False,7,0.1206896551724138
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2023,31,Zhambyl,2462,16,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2023,33,Zhetysu,1795,14,1,False,1,0.07142857142857142
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2023,35,Karaganda,2003,36,1,False,1,0.027777777777777776
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2023,39,Kostanay,2243,49,4,False,4,0.08163265306122448
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2023,43,Kyzylorda,2940,134,2,False,2,0.014925373134328358
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2023,47,Mangystau,2332,37,1,False,1,0.02702702702702703
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2023,55,Pavlodar,2604,24,1,False,1,0.041666666666666664
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2023,59,North Kazakhstan,1735,19,3,False,3,0.15789473684210525
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2023,61,Turkistan,3009,16,2,False,2,0.125
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2023,62,Ulytau,1716,40,5,False,5,0.125
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2023,63,East Kazakhstan,1420,13,1,False,1,0.07692307692307693
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2023,71,Astana,1866,116,8,False,8,0.06896551724137931
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2023,75,Almaty city,1883,40,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2023,79,Shymkent,1661,11,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2023,10,Abai,1647,64,2,False,2,0.03125
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2023,11,Akmola,2032,170,5,False,5,0.029411764705882353
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2023,15,Aktobe,2711,92,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2023,19,Almaty oblast,1784,56,1,False,1,0.017857142857142856
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2023,23,Atyrau,2237,195,3,False,3,0.015384615384615385
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2023,27,West Kazakhstan,2609,76,1,False,1,0.013157894736842105
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2023,31,Zhambyl,2462,32,2,False,2,0.0625
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2023,33,Zhetysu,1795,23,1,False,1,0.043478260869565216
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2023,35,Karaganda,2003,55,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2023,39,Kostanay,2243,66,1,False,1,0.015151515151515152
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2023,43,Kyzylorda,2940,231,3,False,3,0.012987012987012988
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2023,47,Mangystau,2332,66,1,False,1,0.015151515151515152
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2023,55,Pavlodar,2604,52,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2023,59,North Kazakhstan,1735,40,1,False,1,0.025
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2023,61,Turkistan,3009,30,1,False,1,0.03333333333333333
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2023,62,Ulytau,1716,119,4,False,4,0.03361344537815126
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2023,63,East Kazakhstan,1420,32,1,False,1,0.03125
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2023,71,Astana,1866,139,2,False,2,0.014388489208633094
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2023,75,Almaty city,1883,62,2,False,2,0.03225806451612903
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2023,79,Shymkent,1661,20,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2023,10,Abai,1647,46,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2023,11,Akmola,2032,149,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2023,15,Aktobe,2711,45,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2023,19,Almaty oblast,1784,50,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2023,23,Atyrau,2237,144,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2023,27,West Kazakhstan,2609,59,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2023,31,Zhambyl,2462,18,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2023,33,Zhetysu,1795,16,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2023,35,Karaganda,2003,42,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2023,39,Kostanay,2243,61,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2023,43,Kyzylorda,2940,105,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2023,47,Mangystau,2332,54,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2023,55,Pavlodar,2604,43,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2023,59,North Kazakhstan,1735,36,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2023,61,Turkistan,3009,10,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2023,62,Ulytau,1716,111,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2023,63,East Kazakhstan,1420,18,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2023,71,Astana,1866,132,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2023,75,Almaty city,1883,56,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2023,79,Shymkent,1661,14,0,False,0,0.0
+D008-ZT-domain,domain,kontr_k,ZT,2023,10,Abai,1647,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2023,11,Akmola,2032,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2023,15,Aktobe,2711,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2023,19,Almaty oblast,1784,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2023,23,Atyrau,2237,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2023,27,West Kazakhstan,2609,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2023,31,Zhambyl,2462,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2023,33,Zhetysu,1795,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2023,35,Karaganda,2003,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2023,39,Kostanay,2243,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2023,43,Kyzylorda,2940,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2023,47,Mangystau,2332,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2023,55,Pavlodar,2604,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2023,59,North Kazakhstan,1735,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2023,61,Turkistan,3009,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2023,62,Ulytau,1716,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2023,63,East Kazakhstan,1420,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2023,71,Astana,1866,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2023,75,Almaty city,1883,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2023,79,Shymkent,1661,0,0,False,0,
+D008-ZT-required,required,kontr_k,ZT,2023,10,Abai,1647,507,507,True,1647,1.0
+D008-ZT-required,required,kontr_k,ZT,2023,11,Akmola,2032,738,738,True,2032,1.0
+D008-ZT-required,required,kontr_k,ZT,2023,15,Aktobe,2711,689,689,True,2711,1.0
+D008-ZT-required,required,kontr_k,ZT,2023,19,Almaty oblast,1784,491,491,True,1784,1.0
+D008-ZT-required,required,kontr_k,ZT,2023,23,Atyrau,2237,493,493,True,2237,1.0
+D008-ZT-required,required,kontr_k,ZT,2023,27,West Kazakhstan,2609,697,697,True,2609,1.0
+D008-ZT-required,required,kontr_k,ZT,2023,31,Zhambyl,2462,625,625,True,2462,1.0
+D008-ZT-required,required,kontr_k,ZT,2023,33,Zhetysu,1795,480,480,True,1795,1.0
+D008-ZT-required,required,kontr_k,ZT,2023,35,Karaganda,2003,609,609,True,2003,1.0
+D008-ZT-required,required,kontr_k,ZT,2023,39,Kostanay,2243,796,796,True,2243,1.0
+D008-ZT-required,required,kontr_k,ZT,2023,43,Kyzylorda,2940,587,587,True,2940,1.0
+D008-ZT-required,required,kontr_k,ZT,2023,47,Mangystau,2332,557,557,True,2332,1.0
+D008-ZT-required,required,kontr_k,ZT,2023,55,Pavlodar,2604,790,790,True,2604,1.0
+D008-ZT-required,required,kontr_k,ZT,2023,59,North Kazakhstan,1735,628,628,True,1735,1.0
+D008-ZT-required,required,kontr_k,ZT,2023,61,Turkistan,3009,603,603,True,3009,1.0
+D008-ZT-required,required,kontr_k,ZT,2023,62,Ulytau,1716,402,402,True,1716,1.0
+D008-ZT-required,required,kontr_k,ZT,2023,63,East Kazakhstan,1420,516,516,True,1420,1.0
+D008-ZT-required,required,kontr_k,ZT,2023,71,Astana,1866,604,604,True,1866,1.0
+D008-ZT-required,required,kontr_k,ZT,2023,75,Almaty city,1883,708,708,True,1883,1.0
+D008-ZT-required,required,kontr_k,ZT,2023,79,Shymkent,1661,480,480,True,1661,1.0
+D008-required-person,required,kontr_k,RODSTVO,2023,10,Abai,1647,1647,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2023,11,Akmola,2032,2032,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2023,15,Aktobe,2711,2711,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2023,19,Almaty oblast,1784,1784,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2023,23,Atyrau,2237,2237,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2023,27,West Kazakhstan,2609,2609,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2023,31,Zhambyl,2462,2462,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2023,33,Zhetysu,1795,1795,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2023,35,Karaganda,2003,2003,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2023,39,Kostanay,2243,2243,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2023,43,Kyzylorda,2940,2940,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2023,47,Mangystau,2332,2332,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2023,55,Pavlodar,2604,2604,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2023,59,North Kazakhstan,1735,1735,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2023,61,Turkistan,3009,3009,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2023,62,Ulytau,1716,1716,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2023,63,East Kazakhstan,1420,1420,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2023,71,Astana,1866,1866,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2023,75,Almaty city,1883,1883,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2023,79,Shymkent,1661,1661,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2023,10,Abai,1647,1647,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2023,11,Akmola,2032,2032,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2023,15,Aktobe,2711,2711,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2023,19,Almaty oblast,1784,1784,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2023,23,Atyrau,2237,2237,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2023,27,West Kazakhstan,2609,2609,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2023,31,Zhambyl,2462,2462,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2023,33,Zhetysu,1795,1795,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2023,35,Karaganda,2003,2003,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2023,39,Kostanay,2243,2243,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2023,43,Kyzylorda,2940,2940,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2023,47,Mangystau,2332,2332,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2023,55,Pavlodar,2604,2604,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2023,59,North Kazakhstan,1735,1735,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2023,61,Turkistan,3009,3009,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2023,62,Ulytau,1716,1716,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2023,63,East Kazakhstan,1420,1420,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2023,71,Astana,1866,1866,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2023,75,Almaty city,1883,1883,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2023,79,Shymkent,1661,1661,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2023,10,Abai,1647,1647,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2023,11,Akmola,2032,2032,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2023,15,Aktobe,2711,2711,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2023,19,Almaty oblast,1784,1784,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2023,23,Atyrau,2237,2237,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2023,27,West Kazakhstan,2609,2609,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2023,31,Zhambyl,2462,2462,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2023,33,Zhetysu,1795,1795,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2023,35,Karaganda,2003,2003,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2023,39,Kostanay,2243,2243,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2023,43,Kyzylorda,2940,2940,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2023,47,Mangystau,2332,2332,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2023,55,Pavlodar,2604,2604,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2023,59,North Kazakhstan,1735,1735,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2023,61,Turkistan,3009,3009,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2023,62,Ulytau,1716,1716,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2023,63,East Kazakhstan,1420,1420,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2023,71,Astana,1866,1866,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2023,75,Almaty city,1883,1883,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2023,79,Shymkent,1661,1661,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2023,10,Abai,1647,1647,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2023,11,Akmola,2032,2032,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2023,15,Aktobe,2711,2711,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2023,19,Almaty oblast,1784,1784,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2023,23,Atyrau,2237,2237,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2023,27,West Kazakhstan,2609,2609,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2023,31,Zhambyl,2462,2462,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2023,33,Zhetysu,1795,1795,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2023,35,Karaganda,2003,2003,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2023,39,Kostanay,2243,2243,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2023,43,Kyzylorda,2940,2940,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2023,47,Mangystau,2332,2332,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2023,55,Pavlodar,2604,2604,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2023,59,North Kazakhstan,1735,1735,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2023,61,Turkistan,3009,3009,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2023,62,Ulytau,1716,1716,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2023,63,East Kazakhstan,1420,1420,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2023,71,Astana,1866,1866,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2023,75,Almaty city,1883,1883,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2023,79,Shymkent,1661,1661,0,True,0,0.0
+D008-required-person,required,kontr_k,UROV,2023,10,Abai,1647,1647,21,True,21,0.012750455373406194
+D008-required-person,required,kontr_k,UROV,2023,11,Akmola,2032,2032,26,True,26,0.012795275590551181
+D008-required-person,required,kontr_k,UROV,2023,15,Aktobe,2711,2711,57,True,57,0.02102545186278126
+D008-required-person,required,kontr_k,UROV,2023,19,Almaty oblast,1784,1784,35,True,35,0.01961883408071749
+D008-required-person,required,kontr_k,UROV,2023,23,Atyrau,2237,2237,58,True,58,0.02592758158247653
+D008-required-person,required,kontr_k,UROV,2023,27,West Kazakhstan,2609,2609,27,True,27,0.010348792640858567
+D008-required-person,required,kontr_k,UROV,2023,31,Zhambyl,2462,2462,62,True,62,0.025182778229082048
+D008-required-person,required,kontr_k,UROV,2023,33,Zhetysu,1795,1795,33,True,33,0.01838440111420613
+D008-required-person,required,kontr_k,UROV,2023,35,Karaganda,2003,2003,29,True,29,0.014478282576135796
+D008-required-person,required,kontr_k,UROV,2023,39,Kostanay,2243,2243,29,True,29,0.012929112795363353
+D008-required-person,required,kontr_k,UROV,2023,43,Kyzylorda,2940,2940,64,True,64,0.021768707482993196
+D008-required-person,required,kontr_k,UROV,2023,47,Mangystau,2332,2332,56,True,56,0.024013722126929673
+D008-required-person,required,kontr_k,UROV,2023,55,Pavlodar,2604,2604,34,True,34,0.013056835637480798
+D008-required-person,required,kontr_k,UROV,2023,59,North Kazakhstan,1735,1735,17,True,17,0.009798270893371758
+D008-required-person,required,kontr_k,UROV,2023,61,Turkistan,3009,3009,81,True,81,0.026919242273180457
+D008-required-person,required,kontr_k,UROV,2023,62,Ulytau,1716,1716,21,True,21,0.012237762237762238
+D008-required-person,required,kontr_k,UROV,2023,63,East Kazakhstan,1420,1420,15,True,15,0.01056338028169014
+D008-required-person,required,kontr_k,UROV,2023,71,Astana,1866,1866,29,True,29,0.015541264737406217
+D008-required-person,required,kontr_k,UROV,2023,75,Almaty city,1883,1883,30,True,30,0.015932023366967606
+D008-required-person,required,kontr_k,UROV,2023,79,Shymkent,1661,1661,39,True,39,0.023479831426851294
+D008-ROST-range,domain,kontr_k,ROST,2023,10,Abai,1647,1647,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2023,11,Akmola,2032,2032,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2023,15,Aktobe,2711,2711,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2023,19,Almaty oblast,1784,1784,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2023,23,Atyrau,2237,2237,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2023,27,West Kazakhstan,2609,2609,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2023,31,Zhambyl,2462,2462,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2023,33,Zhetysu,1795,1795,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2023,35,Karaganda,2003,2003,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2023,39,Kostanay,2243,2243,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2023,43,Kyzylorda,2940,2940,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2023,47,Mangystau,2332,2332,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2023,55,Pavlodar,2604,2604,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2023,59,North Kazakhstan,1735,1735,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2023,61,Turkistan,3009,3009,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2023,62,Ulytau,1716,1716,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2023,63,East Kazakhstan,1420,1420,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2023,71,Astana,1866,1866,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2023,75,Almaty city,1883,1883,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2023,79,Shymkent,1661,1661,0,False,0,0.0
+D008-STATUS-15plus,required,kontr_k,STATUS,2023,10,Abai,1647,1242,41,True,446,0.033011272141706925
+D008-STATUS-15plus,required,kontr_k,STATUS,2023,11,Akmola,2032,1614,51,True,469,0.031598513011152414
+D008-STATUS-15plus,required,kontr_k,STATUS,2023,15,Aktobe,2711,1907,92,True,894,0.048243314105925535
+D008-STATUS-15plus,required,kontr_k,STATUS,2023,19,Almaty oblast,1784,1273,48,True,559,0.037706205813040065
+D008-STATUS-15plus,required,kontr_k,STATUS,2023,23,Atyrau,2237,1487,63,True,811,0.04236718224613315
+D008-STATUS-15plus,required,kontr_k,STATUS,2023,27,West Kazakhstan,2609,1858,87,True,836,0.04682454251883746
+D008-STATUS-15plus,required,kontr_k,STATUS,2023,31,Zhambyl,2462,1725,92,True,826,0.05333333333333334
+D008-STATUS-15plus,required,kontr_k,STATUS,2023,33,Zhetysu,1795,1262,67,True,600,0.05309033280507131
+D008-STATUS-15plus,required,kontr_k,STATUS,2023,35,Karaganda,2003,1480,54,True,577,0.03648648648648649
+D008-STATUS-15plus,required,kontr_k,STATUS,2023,39,Kostanay,2243,1790,63,True,515,0.03519553072625698
+D008-STATUS-15plus,required,kontr_k,STATUS,2023,43,Kyzylorda,2940,1933,81,True,1086,0.04190377651319193
+D008-STATUS-15plus,required,kontr_k,STATUS,2023,47,Mangystau,2332,1551,63,True,844,0.04061895551257253
+D008-STATUS-15plus,required,kontr_k,STATUS,2023,55,Pavlodar,2604,1945,67,True,725,0.03444730077120823
+D008-STATUS-15plus,required,kontr_k,STATUS,2023,59,North Kazakhstan,1735,1401,56,True,389,0.03997144896502498
+D008-STATUS-15plus,required,kontr_k,STATUS,2023,61,Turkistan,3009,1949,79,True,1139,0.040533606977937404
+D008-STATUS-15plus,required,kontr_k,STATUS,2023,62,Ulytau,1716,1173,37,True,580,0.03154305200341006
+D008-STATUS-15plus,required,kontr_k,STATUS,2023,63,East Kazakhstan,1420,1109,28,True,339,0.025247971145175834
+D008-STATUS-15plus,required,kontr_k,STATUS,2023,71,Astana,1866,1349,51,True,566,0.03780578206078577
+D008-STATUS-15plus,required,kontr_k,STATUS,2023,75,Almaty city,1883,1467,45,True,459,0.03067484662576687
+D008-STATUS-15plus,required,kontr_k,STATUS,2023,79,Shymkent,1661,1182,33,True,512,0.027918781725888325
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2023,10,Abai,1647,405,0,True,1201,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2023,11,Akmola,2032,418,0,True,1563,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2023,15,Aktobe,2711,804,2,True,1817,0.0024875621890547263
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2023,19,Almaty oblast,1784,511,0,True,1225,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2023,23,Atyrau,2237,750,2,True,1426,0.0026666666666666666
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2023,27,West Kazakhstan,2609,751,2,True,1773,0.002663115845539281
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2023,31,Zhambyl,2462,737,3,True,1636,0.004070556309362279
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2023,33,Zhetysu,1795,533,0,True,1195,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2023,35,Karaganda,2003,523,0,True,1426,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2023,39,Kostanay,2243,453,1,True,1728,0.002207505518763797
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2023,43,Kyzylorda,2940,1007,2,True,1854,0.0019860973187686196
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2023,47,Mangystau,2332,781,0,True,1488,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2023,55,Pavlodar,2604,659,1,True,1879,0.0015174506828528073
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2023,59,North Kazakhstan,1735,334,1,True,1346,0.0029940119760479044
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2023,61,Turkistan,3009,1060,0,True,1870,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2023,62,Ulytau,1716,543,0,True,1136,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2023,63,East Kazakhstan,1420,311,0,True,1081,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2023,71,Astana,1866,517,2,True,1300,0.0038684719535783366
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2023,75,Almaty city,1883,416,2,True,1424,0.004807692307692308
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2023,79,Shymkent,1661,479,0,True,1149,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2023,10,Abai,1647,405,2,True,1203,0.0049382716049382715
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2023,11,Akmola,2032,418,0,True,1571,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2023,15,Aktobe,2711,804,3,True,1835,0.0037313432835820895
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2023,19,Almaty oblast,1784,511,0,True,1240,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2023,23,Atyrau,2237,750,2,True,1429,0.0026666666666666666
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2023,27,West Kazakhstan,2609,751,1,True,1791,0.0013315579227696406
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2023,31,Zhambyl,2462,737,2,True,1653,0.0027137042062415195
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2023,33,Zhetysu,1795,533,0,True,1226,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2023,35,Karaganda,2003,523,0,True,1439,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2023,39,Kostanay,2243,453,0,True,1732,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2023,43,Kyzylorda,2940,1007,2,True,1862,0.0019860973187686196
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2023,47,Mangystau,2332,781,2,True,1501,0.002560819462227913
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2023,55,Pavlodar,2604,659,2,True,1888,0.0030349013657056147
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2023,59,North Kazakhstan,1735,334,0,True,1367,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2023,61,Turkistan,3009,1060,1,True,1880,0.0009433962264150943
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2023,62,Ulytau,1716,543,0,True,1148,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2023,63,East Kazakhstan,1420,311,0,True,1084,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2023,71,Astana,1866,517,1,True,1301,0.0019342359767891683
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2023,75,Almaty city,1883,416,0,True,1436,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2023,79,Shymkent,1661,479,1,True,1157,0.0020876826722338203
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2023,10,Abai,1647,405,2,True,1202,0.0049382716049382715
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2023,11,Akmola,2032,418,0,True,1526,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2023,15,Aktobe,2711,804,3,True,1849,0.0037313432835820895
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2023,19,Almaty oblast,1784,511,0,True,1227,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2023,23,Atyrau,2237,750,2,True,1412,0.0026666666666666666
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2023,27,West Kazakhstan,2609,751,1,True,1786,0.0013315579227696406
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2023,31,Zhambyl,2462,737,2,True,1670,0.0027137042062415195
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2023,33,Zhetysu,1795,533,0,True,1233,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2023,35,Karaganda,2003,523,0,True,1431,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2023,39,Kostanay,2243,453,0,True,1730,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2023,43,Kyzylorda,2940,1007,2,True,1870,0.0019860973187686196
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2023,47,Mangystau,2332,781,2,True,1503,0.002560819462227913
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2023,55,Pavlodar,2604,659,2,True,1902,0.0030349013657056147
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2023,59,North Kazakhstan,1735,334,0,True,1373,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2023,61,Turkistan,3009,1060,1,True,1890,0.0009433962264150943
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2023,62,Ulytau,1716,543,0,True,1145,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2023,63,East Kazakhstan,1420,311,0,True,1084,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2023,71,Astana,1866,517,1,True,1258,0.0019342359767891683
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2023,75,Almaty city,1883,416,0,True,1431,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2023,79,Shymkent,1661,479,1,True,1163,0.0020876826722338203
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2023,10,Abai,1647,405,2,True,1202,0.0049382716049382715
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2023,11,Akmola,2032,418,0,True,1485,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2023,15,Aktobe,2711,804,3,True,1859,0.0037313432835820895
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2023,19,Almaty oblast,1784,511,0,True,1225,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2023,23,Atyrau,2237,750,1,True,1373,0.0013333333333333333
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2023,27,West Kazakhstan,2609,751,2,True,1800,0.002663115845539281
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2023,31,Zhambyl,2462,737,2,True,1697,0.0027137042062415195
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2023,33,Zhetysu,1795,533,0,True,1238,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2023,35,Karaganda,2003,523,0,True,1437,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2023,39,Kostanay,2243,453,0,True,1732,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2023,43,Kyzylorda,2940,1007,3,True,1851,0.0029791459781529296
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2023,47,Mangystau,2332,781,2,True,1500,0.002560819462227913
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2023,55,Pavlodar,2604,659,1,True,1896,0.0015174506828528073
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2023,59,North Kazakhstan,1735,334,0,True,1365,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2023,61,Turkistan,3009,1060,1,True,1911,0.0009433962264150943
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2023,62,Ulytau,1716,543,0,True,1101,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2023,63,East Kazakhstan,1420,311,0,True,1086,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2023,71,Astana,1866,517,1,True,1255,0.0019342359767891683
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2023,75,Almaty city,1883,416,1,True,1426,0.002403846153846154
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2023,79,Shymkent,1661,479,1,True,1161,0.0020876826722338203
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2023,10,Abai,1647,405,0,True,0,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2023,11,Akmola,2032,418,0,True,0,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2023,15,Aktobe,2711,804,0,True,0,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2023,19,Almaty oblast,1784,511,0,True,0,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2023,23,Atyrau,2237,750,0,True,0,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2023,27,West Kazakhstan,2609,751,0,True,0,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2023,31,Zhambyl,2462,737,0,True,0,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2023,33,Zhetysu,1795,533,0,True,0,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2023,35,Karaganda,2003,523,0,True,0,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2023,39,Kostanay,2243,453,0,True,0,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2023,43,Kyzylorda,2940,1007,0,True,0,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2023,47,Mangystau,2332,781,0,True,0,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2023,55,Pavlodar,2604,659,0,True,0,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2023,59,North Kazakhstan,1735,334,0,True,0,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2023,61,Turkistan,3009,1060,0,True,0,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2023,62,Ulytau,1716,543,0,True,0,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2023,63,East Kazakhstan,1420,311,0,True,0,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2023,71,Astana,1866,517,0,True,0,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2023,75,Almaty city,1883,416,0,True,0,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2023,79,Shymkent,1661,479,0,True,0,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2023,10,Abai,1647,40,0,True,1055,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2023,11,Akmola,2032,22,0,True,1165,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2023,15,Aktobe,2711,16,0,True,1700,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2023,19,Almaty oblast,1784,101,0,True,1146,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2023,23,Atyrau,2237,1,0,True,1462,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2023,27,West Kazakhstan,2609,93,0,True,1693,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2023,31,Zhambyl,2462,75,0,True,1727,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2023,33,Zhetysu,1795,70,0,True,1242,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2023,35,Karaganda,2003,105,0,True,1212,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2023,39,Kostanay,2243,179,0,True,1288,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2023,43,Kyzylorda,2940,0,0,True,1990,
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2023,47,Mangystau,2332,52,0,True,1566,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2023,55,Pavlodar,2604,24,0,True,1553,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2023,59,North Kazakhstan,1735,13,0,True,1006,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2023,61,Turkistan,3009,19,0,True,2381,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2023,62,Ulytau,1716,17,0,True,1111,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2023,63,East Kazakhstan,1420,14,0,True,808,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2023,71,Astana,1866,1,0,True,1136,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2023,75,Almaty city,1883,782,0,True,1098,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2023,79,Shymkent,1661,252,0,True,1154,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2023,10,Abai,1647,434,0,True,947,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2023,11,Akmola,2032,451,0,True,1284,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2023,15,Aktobe,2711,874,0,True,1422,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2023,19,Almaty oblast,1784,550,0,True,982,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2023,23,Atyrau,2237,799,0,True,1074,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2023,27,West Kazakhstan,2609,810,0,True,1392,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2023,31,Zhambyl,2462,789,0,True,1270,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2023,33,Zhetysu,1795,572,0,True,938,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2023,35,Karaganda,2003,567,0,True,1126,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2023,39,Kostanay,2243,502,0,True,1403,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2023,43,Kyzylorda,2940,1071,0,True,1369,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2023,47,Mangystau,2332,828,0,True,1141,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2023,55,Pavlodar,2604,703,0,True,1494,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2023,59,North Kazakhstan,1735,366,0,True,1107,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2023,61,Turkistan,3009,1116,0,True,1399,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2023,62,Ulytau,1716,573,0,True,875,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2023,63,East Kazakhstan,1420,328,0,True,896,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2023,71,Astana,1866,554,0,True,1020,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2023,75,Almaty city,1883,447,0,True,1121,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2023,79,Shymkent,1661,502,0,True,882,0.0
+D008-spouse-married,consistency,kontr_k,SEM_POL,2023,10,Abai,1647,319,5,True,914,0.01567398119122257
+D008-spouse-married,consistency,kontr_k,SEM_POL,2023,11,Akmola,2032,441,2,True,1054,0.0045351473922902496
+D008-spouse-married,consistency,kontr_k,SEM_POL,2023,15,Aktobe,2711,471,4,True,1523,0.008492569002123142
+D008-spouse-married,consistency,kontr_k,SEM_POL,2023,19,Almaty oblast,1784,322,5,True,1030,0.015527950310559006
+D008-spouse-married,consistency,kontr_k,SEM_POL,2023,23,Atyrau,2237,322,2,True,1346,0.006211180124223602
+D008-spouse-married,consistency,kontr_k,SEM_POL,2023,27,West Kazakhstan,2609,463,2,True,1499,0.004319654427645789
+D008-spouse-married,consistency,kontr_k,SEM_POL,2023,31,Zhambyl,2462,418,4,True,1466,0.009569377990430622
+D008-spouse-married,consistency,kontr_k,SEM_POL,2023,33,Zhetysu,1795,305,4,True,1085,0.013114754098360656
+D008-spouse-married,consistency,kontr_k,SEM_POL,2023,35,Karaganda,2003,355,2,True,1157,0.005633802816901409
+D008-spouse-married,consistency,kontr_k,SEM_POL,2023,39,Kostanay,2243,500,6,True,1169,0.012
+D008-spouse-married,consistency,kontr_k,SEM_POL,2023,43,Kyzylorda,2940,435,3,True,1791,0.006896551724137931
+D008-spouse-married,consistency,kontr_k,SEM_POL,2023,47,Mangystau,2332,350,3,True,1422,0.008571428571428572
+D008-spouse-married,consistency,kontr_k,SEM_POL,2023,55,Pavlodar,2604,506,7,True,1413,0.01383399209486166
+D008-spouse-married,consistency,kontr_k,SEM_POL,2023,59,North Kazakhstan,1735,376,2,True,918,0.005319148936170213
+D008-spouse-married,consistency,kontr_k,SEM_POL,2023,61,Turkistan,3009,454,4,True,1813,0.00881057268722467
+D008-spouse-married,consistency,kontr_k,SEM_POL,2023,62,Ulytau,1716,277,2,True,996,0.007220216606498195
+D008-spouse-married,consistency,kontr_k,SEM_POL,2023,63,East Kazakhstan,1420,300,4,True,751,0.013333333333333334
+D008-spouse-married,consistency,kontr_k,SEM_POL,2023,71,Astana,1866,332,5,True,1114,0.015060240963855422
+D008-spouse-married,consistency,kontr_k,SEM_POL,2023,75,Almaty city,1883,322,1,True,1153,0.003105590062111801
+D008-spouse-married,consistency,kontr_k,SEM_POL,2023,79,Shymkent,1661,281,1,True,1039,0.0035587188612099642
+D008-higher-ed-age,consistency,kontr_k,AGE,2023,10,Abai,1647,304,0,True,502,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2023,11,Akmola,2032,368,0,True,514,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2023,15,Aktobe,2711,454,0,True,952,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2023,19,Almaty oblast,1784,283,0,True,618,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2023,23,Atyrau,2237,360,0,True,873,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2023,27,West Kazakhstan,2609,476,0,True,903,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2023,31,Zhambyl,2462,571,0,True,873,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2023,33,Zhetysu,1795,287,0,True,641,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2023,35,Karaganda,2003,367,0,True,640,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2023,39,Kostanay,2243,345,0,True,566,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2023,43,Kyzylorda,2940,483,0,True,1180,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2023,47,Mangystau,2332,394,0,True,925,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2023,55,Pavlodar,2604,531,0,True,785,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2023,59,North Kazakhstan,1735,291,0,True,425,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2023,61,Turkistan,3009,399,0,True,1225,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2023,62,Ulytau,1716,247,0,True,632,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2023,63,East Kazakhstan,1420,240,0,True,364,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2023,71,Astana,1866,697,0,True,605,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2023,75,Almaty city,1883,752,0,True,504,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2023,79,Shymkent,1661,588,0,True,561,0.0
+D008-preschool-age,consistency,kontr_k,AGE,2023,10,Abai,1647,204,2,True,1345,0.00980392156862745
+D008-preschool-age,consistency,kontr_k,AGE,2023,11,Akmola,2032,143,1,True,1732,0.006993006993006993
+D008-preschool-age,consistency,kontr_k,AGE,2023,15,Aktobe,2711,267,1,True,2061,0.003745318352059925
+D008-preschool-age,consistency,kontr_k,AGE,2023,19,Almaty oblast,1784,254,2,True,1374,0.007874015748031496
+D008-preschool-age,consistency,kontr_k,AGE,2023,23,Atyrau,2237,286,1,True,1653,0.0034965034965034965
+D008-preschool-age,consistency,kontr_k,AGE,2023,27,West Kazakhstan,2609,280,5,True,2031,0.017857142857142856
+D008-preschool-age,consistency,kontr_k,AGE,2023,31,Zhambyl,2462,380,1,True,1884,0.002631578947368421
+D008-preschool-age,consistency,kontr_k,AGE,2023,33,Zhetysu,1795,290,5,True,1385,0.017241379310344827
+D008-preschool-age,consistency,kontr_k,AGE,2023,35,Karaganda,2003,225,2,True,1600,0.008888888888888889
+D008-preschool-age,consistency,kontr_k,AGE,2023,39,Kostanay,2243,153,3,True,1915,0.0196078431372549
+D008-preschool-age,consistency,kontr_k,AGE,2023,43,Kyzylorda,2940,160,1,True,2134,0.00625
+D008-preschool-age,consistency,kontr_k,AGE,2023,47,Mangystau,2332,336,2,True,1716,0.005952380952380952
+D008-preschool-age,consistency,kontr_k,AGE,2023,55,Pavlodar,2604,294,4,True,2083,0.013605442176870748
+D008-preschool-age,consistency,kontr_k,AGE,2023,59,North Kazakhstan,1735,193,2,True,1482,0.010362694300518135
+D008-preschool-age,consistency,kontr_k,AGE,2023,61,Turkistan,3009,443,1,True,2158,0.002257336343115124
+D008-preschool-age,consistency,kontr_k,AGE,2023,62,Ulytau,1716,168,1,True,1298,0.005952380952380952
+D008-preschool-age,consistency,kontr_k,AGE,2023,63,East Kazakhstan,1420,170,1,True,1175,0.0058823529411764705
+D008-preschool-age,consistency,kontr_k,AGE,2023,71,Astana,1866,191,2,True,1458,0.010471204188481676
+D008-preschool-age,consistency,kontr_k,AGE,2023,75,Almaty city,1883,232,1,True,1559,0.004310344827586207
+D008-preschool-age,consistency,kontr_k,AGE,2023,79,Shymkent,1661,128,3,True,1282,0.0234375
+D008-hh-size,consistency,kontr_k,KOL_CHL,2023,10,Abai,1647,1647,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2023,11,Akmola,2032,2032,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2023,15,Aktobe,2711,2711,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2023,19,Almaty oblast,1784,1784,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2023,23,Atyrau,2237,2237,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2023,27,West Kazakhstan,2609,2609,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2023,31,Zhambyl,2462,2462,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2023,33,Zhetysu,1795,1795,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2023,35,Karaganda,2003,2003,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2023,39,Kostanay,2243,2243,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2023,43,Kyzylorda,2940,2940,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2023,47,Mangystau,2332,2332,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2023,55,Pavlodar,2604,2604,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2023,59,North Kazakhstan,1735,1735,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2023,61,Turkistan,3009,3009,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2023,62,Ulytau,1716,1716,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2023,63,East Kazakhstan,1420,1420,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2023,71,Astana,1866,1866,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2023,75,Almaty city,1883,1883,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2023,79,Shymkent,1661,1661,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2023,10,Abai,1647,1647,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2023,11,Akmola,2032,2032,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2023,15,Aktobe,2711,2711,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2023,19,Almaty oblast,1784,1784,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2023,23,Atyrau,2237,2237,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2023,27,West Kazakhstan,2609,2609,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2023,31,Zhambyl,2462,2462,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2023,33,Zhetysu,1795,1795,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2023,35,Karaganda,2003,2003,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2023,39,Kostanay,2243,2243,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2023,43,Kyzylorda,2940,2940,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2023,47,Mangystau,2332,2332,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2023,55,Pavlodar,2604,2604,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2023,59,North Kazakhstan,1735,1735,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2023,61,Turkistan,3009,3009,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2023,62,Ulytau,1716,1716,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2023,63,East Kazakhstan,1420,1420,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2023,71,Astana,1866,1866,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2023,75,Almaty city,1883,1883,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2023,79,Shymkent,1661,1661,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2023,10,Abai,1647,507,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2023,11,Akmola,2032,738,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2023,15,Aktobe,2711,689,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2023,19,Almaty oblast,1784,491,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2023,23,Atyrau,2237,493,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2023,27,West Kazakhstan,2609,697,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2023,31,Zhambyl,2462,625,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2023,33,Zhetysu,1795,480,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2023,35,Karaganda,2003,609,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2023,39,Kostanay,2243,796,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2023,43,Kyzylorda,2940,587,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2023,47,Mangystau,2332,557,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2023,55,Pavlodar,2604,790,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2023,59,North Kazakhstan,1735,628,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2023,61,Turkistan,3009,603,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2023,62,Ulytau,1716,402,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2023,63,East Kazakhstan,1420,516,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2023,71,Astana,1866,604,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2023,75,Almaty city,1883,708,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2023,79,Shymkent,1661,480,0,False,0,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2023,10,Abai,1647,507,0,True,405,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2023,11,Akmola,2032,738,0,True,418,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2023,15,Aktobe,2711,689,0,True,804,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2023,19,Almaty oblast,1784,491,0,True,511,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2023,23,Atyrau,2237,493,0,True,750,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2023,27,West Kazakhstan,2609,697,0,True,751,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2023,31,Zhambyl,2462,625,0,True,737,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2023,33,Zhetysu,1795,480,0,True,533,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2023,35,Karaganda,2003,609,0,True,523,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2023,39,Kostanay,2243,796,1,True,453,0.001256281407035176
+D008-head-15plus,consistency,kontr_k,AGE,2023,43,Kyzylorda,2940,587,0,True,1007,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2023,47,Mangystau,2332,557,0,True,781,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2023,55,Pavlodar,2604,790,0,True,659,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2023,59,North Kazakhstan,1735,628,0,True,334,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2023,61,Turkistan,3009,603,0,True,1060,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2023,62,Ulytau,1716,402,0,True,543,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2023,63,East Kazakhstan,1420,516,0,True,311,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2023,71,Astana,1866,604,0,True,517,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2023,75,Almaty city,1883,708,0,True,416,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2023,79,Shymkent,1661,480,0,True,479,0.0
+D008-K-domain,domain,kontr_k,K,2024,10,Abai,1453,1453,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2024,11,Akmola,2198,2198,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2024,15,Aktobe,2727,2727,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2024,19,Almaty oblast,1638,1638,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2024,23,Atyrau,2311,2311,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2024,27,West Kazakhstan,2396,2396,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2024,31,Zhambyl,2513,2513,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2024,33,Zhetysu,1585,1585,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2024,35,Karaganda,1788,1788,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2024,39,Kostanay,2228,2228,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2024,43,Kyzylorda,2662,2662,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2024,47,Mangystau,2299,2299,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2024,55,Pavlodar,2401,2401,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2024,59,North Kazakhstan,1899,1899,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2024,61,Turkistan,3145,3145,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2024,62,Ulytau,1732,1732,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2024,63,East Kazakhstan,1390,1390,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2024,71,Astana,1626,1626,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2024,75,Almaty city,2129,2129,0,False,0,0.0
+D008-K-domain,domain,kontr_k,K,2024,79,Shymkent,1701,1701,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2024,10,Abai,1453,1453,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2024,11,Akmola,2198,2198,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2024,15,Aktobe,2727,2727,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2024,19,Almaty oblast,1638,1638,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2024,23,Atyrau,2311,2311,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2024,27,West Kazakhstan,2396,2396,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2024,31,Zhambyl,2513,2513,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2024,33,Zhetysu,1585,1585,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2024,35,Karaganda,1788,1788,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2024,39,Kostanay,2228,2228,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2024,43,Kyzylorda,2662,2662,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2024,47,Mangystau,2299,2299,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2024,55,Pavlodar,2401,2401,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2024,59,North Kazakhstan,1899,1899,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2024,61,Turkistan,3145,3145,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2024,62,Ulytau,1732,1732,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2024,63,East Kazakhstan,1390,1390,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2024,71,Astana,1626,1626,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2024,75,Almaty city,2129,2129,0,False,0,0.0
+D008-POL-domain,domain,kontr_k,POL,2024,79,Shymkent,1701,1701,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2024,10,Abai,1453,1453,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2024,11,Akmola,2198,2198,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2024,15,Aktobe,2727,2727,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2024,19,Almaty oblast,1638,1638,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2024,23,Atyrau,2311,2311,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2024,27,West Kazakhstan,2396,2396,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2024,31,Zhambyl,2513,2513,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2024,33,Zhetysu,1585,1585,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2024,35,Karaganda,1788,1788,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2024,39,Kostanay,2228,2228,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2024,43,Kyzylorda,2662,2662,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2024,47,Mangystau,2299,2299,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2024,55,Pavlodar,2401,2401,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2024,59,North Kazakhstan,1899,1899,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2024,61,Turkistan,3145,3145,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2024,62,Ulytau,1732,1732,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2024,63,East Kazakhstan,1390,1390,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2024,71,Astana,1626,1626,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2024,75,Almaty city,2129,2129,0,False,0,0.0
+D008-RODSTVO-domain,domain,kontr_k,RODSTVO,2024,79,Shymkent,1701,1701,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2024,10,Abai,1453,1080,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2024,11,Akmola,2198,1616,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2024,15,Aktobe,2727,1806,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2024,19,Almaty oblast,1638,1111,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2024,23,Atyrau,2311,1467,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2024,27,West Kazakhstan,2396,1594,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2024,31,Zhambyl,2513,1643,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2024,33,Zhetysu,1585,1088,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2024,35,Karaganda,1788,1312,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2024,39,Kostanay,2228,1670,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2024,43,Kyzylorda,2662,1697,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2024,47,Mangystau,2299,1477,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2024,55,Pavlodar,2401,1751,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2024,59,North Kazakhstan,1899,1428,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2024,61,Turkistan,3145,1887,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2024,62,Ulytau,1732,1082,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2024,63,East Kazakhstan,1390,1034,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2024,71,Astana,1626,1179,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2024,75,Almaty city,2129,1561,0,False,0,0.0
+D008-SEM_POL-domain,domain,kontr_k,SEM_POL,2024,79,Shymkent,1701,1116,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2024,10,Abai,1453,1437,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2024,11,Akmola,2198,2168,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2024,15,Aktobe,2727,2680,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2024,19,Almaty oblast,1638,1600,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2024,23,Atyrau,2311,2267,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2024,27,West Kazakhstan,2396,2375,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2024,31,Zhambyl,2513,2455,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2024,33,Zhetysu,1585,1561,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2024,35,Karaganda,1788,1764,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2024,39,Kostanay,2228,2202,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2024,43,Kyzylorda,2662,2593,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2024,47,Mangystau,2299,2257,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2024,55,Pavlodar,2401,2364,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2024,59,North Kazakhstan,1899,1884,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2024,61,Turkistan,3145,3063,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2024,62,Ulytau,1732,1703,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2024,63,East Kazakhstan,1390,1377,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2024,71,Astana,1626,1602,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2024,75,Almaty city,2129,2101,0,False,0,0.0
+D008-UROV-domain,domain,kontr_k,UROV,2024,79,Shymkent,1701,1682,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2024,10,Abai,1453,1089,1,False,1,0.0009182736455463728
+D008-STATUS-domain,domain,kontr_k,STATUS,2024,11,Akmola,2198,1640,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2024,15,Aktobe,2727,1856,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2024,19,Almaty oblast,1638,1126,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2024,23,Atyrau,2311,1494,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2024,27,West Kazakhstan,2396,1635,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2024,31,Zhambyl,2513,1668,1,False,1,0.0005995203836930455
+D008-STATUS-domain,domain,kontr_k,STATUS,2024,33,Zhetysu,1585,1106,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2024,35,Karaganda,1788,1317,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2024,39,Kostanay,2228,1693,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2024,43,Kyzylorda,2662,1733,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2024,47,Mangystau,2299,1515,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2024,55,Pavlodar,2401,1765,2,False,2,0.0011331444759206798
+D008-STATUS-domain,domain,kontr_k,STATUS,2024,59,North Kazakhstan,1899,1434,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2024,61,Turkistan,3145,1921,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2024,62,Ulytau,1732,1118,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2024,63,East Kazakhstan,1390,1059,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2024,71,Astana,1626,1207,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2024,75,Almaty city,2129,1582,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS,2024,79,Shymkent,1701,1137,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2024,10,Abai,1453,1097,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2024,11,Akmola,2198,1659,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2024,15,Aktobe,2727,1867,1,False,1,0.0005356186395286556
+D008-STATUS-domain,domain,kontr_k,STATUS1,2024,19,Almaty oblast,1638,1131,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2024,23,Atyrau,2311,1503,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2024,27,West Kazakhstan,2396,1645,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2024,31,Zhambyl,2513,1678,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2024,33,Zhetysu,1585,1117,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2024,35,Karaganda,1788,1326,1,False,1,0.0007541478129713424
+D008-STATUS-domain,domain,kontr_k,STATUS1,2024,39,Kostanay,2228,1705,1,False,1,0.0005865102639296188
+D008-STATUS-domain,domain,kontr_k,STATUS1,2024,43,Kyzylorda,2662,1751,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2024,47,Mangystau,2299,1524,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2024,55,Pavlodar,2401,1781,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2024,59,North Kazakhstan,1899,1443,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2024,61,Turkistan,3145,1943,1,False,1,0.000514668039114771
+D008-STATUS-domain,domain,kontr_k,STATUS1,2024,62,Ulytau,1732,1131,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2024,63,East Kazakhstan,1390,1069,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2024,71,Astana,1626,1191,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2024,75,Almaty city,2129,1591,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS1,2024,79,Shymkent,1701,1146,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2024,10,Abai,1453,1077,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2024,11,Akmola,2198,1640,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2024,15,Aktobe,2727,1872,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2024,19,Almaty oblast,1638,1136,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2024,23,Atyrau,2311,1486,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2024,27,West Kazakhstan,2396,1654,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2024,31,Zhambyl,2513,1672,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2024,33,Zhetysu,1585,1125,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2024,35,Karaganda,1788,1308,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2024,39,Kostanay,2228,1709,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2024,43,Kyzylorda,2662,1762,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2024,47,Mangystau,2299,1535,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2024,55,Pavlodar,2401,1790,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2024,59,North Kazakhstan,1899,1426,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2024,61,Turkistan,3145,1957,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2024,62,Ulytau,1732,1134,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2024,63,East Kazakhstan,1390,1065,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2024,71,Astana,1626,1133,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2024,75,Almaty city,2129,1567,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS2,2024,79,Shymkent,1701,1154,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2024,10,Abai,1453,1070,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2024,11,Akmola,2198,1629,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2024,15,Aktobe,2727,1886,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2024,19,Almaty oblast,1638,1122,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2024,23,Atyrau,2311,1485,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2024,27,West Kazakhstan,2396,1642,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2024,31,Zhambyl,2513,1692,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2024,33,Zhetysu,1585,1127,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2024,35,Karaganda,1788,1285,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2024,39,Kostanay,2228,1687,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2024,43,Kyzylorda,2662,1772,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2024,47,Mangystau,2299,1540,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2024,55,Pavlodar,2401,1789,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2024,59,North Kazakhstan,1899,1419,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2024,61,Turkistan,3145,1975,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2024,62,Ulytau,1732,1132,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2024,63,East Kazakhstan,1390,1060,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2024,71,Astana,1626,1115,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2024,75,Almaty city,2129,1566,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS3,2024,79,Shymkent,1701,1159,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS4,2024,10,Abai,1453,1078,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS4,2024,11,Akmola,2198,1636,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS4,2024,15,Aktobe,2727,1888,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS4,2024,19,Almaty oblast,1638,1135,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS4,2024,23,Atyrau,2311,1494,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS4,2024,27,West Kazakhstan,2396,1655,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS4,2024,31,Zhambyl,2513,1712,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS4,2024,33,Zhetysu,1585,1133,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS4,2024,35,Karaganda,1788,1277,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS4,2024,39,Kostanay,2228,1672,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS4,2024,43,Kyzylorda,2662,1786,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS4,2024,47,Mangystau,2299,1548,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS4,2024,55,Pavlodar,2401,1798,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS4,2024,59,North Kazakhstan,1899,1433,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS4,2024,61,Turkistan,3145,2003,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS4,2024,62,Ulytau,1732,1137,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS4,2024,63,East Kazakhstan,1390,1052,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS4,2024,71,Astana,1626,1093,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS4,2024,75,Almaty city,2129,1573,0,False,0,0.0
+D008-STATUS-domain,domain,kontr_k,STATUS4,2024,79,Shymkent,1701,1171,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2024,10,Abai,1453,70,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2024,11,Akmola,2198,18,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2024,15,Aktobe,2727,36,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2024,19,Almaty oblast,1638,137,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2024,23,Atyrau,2311,15,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2024,27,West Kazakhstan,2396,70,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2024,31,Zhambyl,2513,155,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2024,33,Zhetysu,1585,82,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2024,35,Karaganda,1788,81,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2024,39,Kostanay,2228,153,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2024,43,Kyzylorda,2662,101,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2024,47,Mangystau,2299,71,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2024,55,Pavlodar,2401,21,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2024,59,North Kazakhstan,1899,26,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2024,61,Turkistan,3145,10,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2024,62,Ulytau,1732,16,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2024,63,East Kazakhstan,1390,17,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2024,71,Astana,1626,23,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2024,75,Almaty city,2129,42,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF,2024,79,Shymkent,1701,199,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2024,10,Abai,1453,69,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2024,11,Akmola,2198,21,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2024,15,Aktobe,2727,40,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2024,19,Almaty oblast,1638,144,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2024,23,Atyrau,2311,23,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2024,27,West Kazakhstan,2396,75,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2024,31,Zhambyl,2513,164,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2024,33,Zhetysu,1585,81,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2024,35,Karaganda,1788,82,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2024,39,Kostanay,2228,169,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2024,43,Kyzylorda,2662,48,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2024,47,Mangystau,2299,70,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2024,55,Pavlodar,2401,23,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2024,59,North Kazakhstan,1899,30,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2024,61,Turkistan,3145,10,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2024,62,Ulytau,1732,16,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2024,63,East Kazakhstan,1390,19,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2024,71,Astana,1626,22,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2024,75,Almaty city,2129,44,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF1,2024,79,Shymkent,1701,205,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2024,10,Abai,1453,66,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2024,11,Akmola,2198,28,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2024,15,Aktobe,2727,45,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2024,19,Almaty oblast,1638,140,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2024,23,Atyrau,2311,31,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2024,27,West Kazakhstan,2396,74,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2024,31,Zhambyl,2513,169,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2024,33,Zhetysu,1585,81,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2024,35,Karaganda,1788,81,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2024,39,Kostanay,2228,185,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2024,43,Kyzylorda,2662,74,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2024,47,Mangystau,2299,68,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2024,55,Pavlodar,2401,23,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2024,59,North Kazakhstan,1899,35,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2024,61,Turkistan,3145,10,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2024,62,Ulytau,1732,17,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2024,63,East Kazakhstan,1390,20,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2024,71,Astana,1626,21,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2024,75,Almaty city,2129,44,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF2,2024,79,Shymkent,1701,207,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2024,10,Abai,1453,65,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2024,11,Akmola,2198,27,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2024,15,Aktobe,2727,55,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2024,19,Almaty oblast,1638,143,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2024,23,Atyrau,2311,27,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2024,27,West Kazakhstan,2396,75,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2024,31,Zhambyl,2513,165,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2024,33,Zhetysu,1585,80,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2024,35,Karaganda,1788,76,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2024,39,Kostanay,2228,186,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2024,43,Kyzylorda,2662,77,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2024,47,Mangystau,2299,67,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2024,55,Pavlodar,2401,24,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2024,59,North Kazakhstan,1899,36,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2024,61,Turkistan,3145,19,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2024,62,Ulytau,1732,16,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2024,63,East Kazakhstan,1390,21,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2024,71,Astana,1626,19,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2024,75,Almaty city,2129,43,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF3,2024,79,Shymkent,1701,208,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2024,10,Abai,1453,64,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2024,11,Akmola,2198,26,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2024,15,Aktobe,2727,9,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2024,19,Almaty oblast,1638,143,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2024,23,Atyrau,2311,35,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2024,27,West Kazakhstan,2396,78,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2024,31,Zhambyl,2513,166,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2024,33,Zhetysu,1585,79,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2024,35,Karaganda,1788,71,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2024,39,Kostanay,2228,192,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2024,43,Kyzylorda,2662,72,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2024,47,Mangystau,2299,66,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2024,55,Pavlodar,2401,24,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2024,59,North Kazakhstan,1899,34,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2024,61,Turkistan,3145,17,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2024,62,Ulytau,1732,16,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2024,63,East Kazakhstan,1390,20,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2024,71,Astana,1626,17,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2024,75,Almaty city,2129,41,0,False,0,0.0
+D008-STATUSF-domain,domain,kontr_k,STATUSF4,2024,79,Shymkent,1701,209,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2024,10,Abai,1453,27,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2024,11,Akmola,2198,12,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2024,15,Aktobe,2727,60,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2024,19,Almaty oblast,1638,4,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2024,23,Atyrau,2311,46,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2024,27,West Kazakhstan,2396,4,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2024,31,Zhambyl,2513,6,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2024,33,Zhetysu,1585,3,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2024,35,Karaganda,1788,7,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2024,39,Kostanay,2228,4,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2024,43,Kyzylorda,2662,46,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2024,47,Mangystau,2299,6,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2024,55,Pavlodar,2401,32,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2024,59,North Kazakhstan,1899,6,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2024,61,Turkistan,3145,10,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2024,62,Ulytau,1732,3,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2024,63,East Kazakhstan,1390,23,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2024,71,Astana,1626,5,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2024,75,Almaty city,2129,8,0,False,0,0.0
+D008-VR_OTS-domain,domain,kontr_k,VR_OTS,2024,79,Shymkent,1701,5,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2024,10,Abai,1453,12,1,False,1,0.08333333333333333
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2024,11,Akmola,2198,28,8,False,8,0.2857142857142857
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2024,15,Aktobe,2727,81,4,False,4,0.04938271604938271
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2024,19,Almaty oblast,1638,21,3,False,3,0.14285714285714285
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2024,23,Atyrau,2311,74,2,False,2,0.02702702702702703
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2024,27,West Kazakhstan,2396,18,4,False,4,0.2222222222222222
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2024,31,Zhambyl,2513,11,2,False,2,0.18181818181818182
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2024,33,Zhetysu,1585,11,3,False,3,0.2727272727272727
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2024,35,Karaganda,1788,25,12,False,12,0.48
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2024,39,Kostanay,2228,15,2,False,2,0.13333333333333333
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2024,43,Kyzylorda,2662,64,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2024,47,Mangystau,2299,30,8,False,8,0.26666666666666666
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2024,55,Pavlodar,2401,18,4,False,4,0.2222222222222222
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2024,59,North Kazakhstan,1899,18,5,False,5,0.2777777777777778
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2024,61,Turkistan,3145,9,2,False,2,0.2222222222222222
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2024,62,Ulytau,1732,7,1,False,1,0.14285714285714285
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2024,63,East Kazakhstan,1390,32,4,False,4,0.125
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2024,71,Astana,1626,103,37,False,37,0.3592233009708738
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2024,75,Almaty city,2129,21,6,False,6,0.2857142857142857
+D008-PR_IZ-domain,domain,kontr_k,PR_IZA,2024,79,Shymkent,1701,3,2,False,2,0.6666666666666666
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2024,10,Abai,1453,44,3,False,3,0.06818181818181818
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2024,11,Akmola,2198,58,3,False,3,0.05172413793103448
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2024,15,Aktobe,2727,82,2,False,2,0.024390243902439025
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2024,19,Almaty oblast,1638,29,4,False,4,0.13793103448275862
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2024,23,Atyrau,2311,108,4,False,4,0.037037037037037035
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2024,27,West Kazakhstan,2396,21,2,False,2,0.09523809523809523
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2024,31,Zhambyl,2513,39,6,False,6,0.15384615384615385
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2024,33,Zhetysu,1585,7,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2024,35,Karaganda,1788,59,4,False,4,0.06779661016949153
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2024,39,Kostanay,2228,29,3,False,3,0.10344827586206896
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2024,43,Kyzylorda,2662,66,3,False,3,0.045454545454545456
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2024,47,Mangystau,2299,19,3,False,3,0.15789473684210525
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2024,55,Pavlodar,2401,26,6,False,6,0.23076923076923078
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2024,59,North Kazakhstan,1899,50,4,False,4,0.08
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2024,61,Turkistan,3145,6,1,False,1,0.16666666666666666
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2024,62,Ulytau,1732,38,9,False,9,0.23684210526315788
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2024,63,East Kazakhstan,1390,49,5,False,5,0.10204081632653061
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2024,71,Astana,1626,175,16,False,16,0.09142857142857143
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2024,75,Almaty city,2129,61,8,False,8,0.13114754098360656
+D008-PR_IZ-domain,domain,kontr_k,PR_IZI,2024,79,Shymkent,1701,2,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2024,10,Abai,1453,66,1,False,1,0.015151515151515152
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2024,11,Akmola,2198,101,2,False,2,0.019801980198019802
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2024,15,Aktobe,2727,128,1,False,1,0.0078125
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2024,19,Almaty oblast,1638,63,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2024,23,Atyrau,2311,166,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2024,27,West Kazakhstan,2396,74,9,False,9,0.12162162162162163
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2024,31,Zhambyl,2513,36,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2024,33,Zhetysu,1585,13,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2024,35,Karaganda,1788,102,4,False,4,0.0392156862745098
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2024,39,Kostanay,2228,81,3,False,3,0.037037037037037035
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2024,43,Kyzylorda,2662,120,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2024,47,Mangystau,2299,45,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2024,55,Pavlodar,2401,45,1,False,1,0.022222222222222223
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2024,59,North Kazakhstan,1899,74,2,False,2,0.02702702702702703
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2024,61,Turkistan,3145,9,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2024,62,Ulytau,1732,30,1,False,1,0.03333333333333333
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2024,63,East Kazakhstan,1390,61,1,False,1,0.01639344262295082
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2024,71,Astana,1626,205,1,False,1,0.004878048780487805
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2024,75,Almaty city,2129,77,3,False,3,0.03896103896103896
+D008-PR_IZ-domain,domain,kontr_k,PR_IZO,2024,79,Shymkent,1701,10,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2024,10,Abai,1453,72,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2024,11,Akmola,2198,117,1,False,1,0.008547008547008548
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2024,15,Aktobe,2727,156,1,False,1,0.00641025641025641
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2024,19,Almaty oblast,1638,65,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2024,23,Atyrau,2311,179,1,False,1,0.00558659217877095
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2024,27,West Kazakhstan,2396,87,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2024,31,Zhambyl,2513,43,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2024,33,Zhetysu,1585,17,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2024,35,Karaganda,1788,126,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2024,39,Kostanay,2228,119,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2024,43,Kyzylorda,2662,130,1,False,1,0.007692307692307693
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2024,47,Mangystau,2299,57,2,False,2,0.03508771929824561
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2024,55,Pavlodar,2401,51,1,False,1,0.0196078431372549
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2024,59,North Kazakhstan,1899,100,1,False,1,0.01
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2024,61,Turkistan,3145,13,1,False,1,0.07692307692307693
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2024,62,Ulytau,1732,46,0,False,0,0.0
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2024,63,East Kazakhstan,1390,79,2,False,2,0.02531645569620253
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2024,71,Astana,1626,246,3,False,3,0.012195121951219513
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2024,75,Almaty city,2129,88,2,False,2,0.022727272727272728
+D008-PR_IZ-domain,domain,kontr_k,PR_IZYA,2024,79,Shymkent,1701,12,0,False,0,0.0
+D008-ZT-domain,domain,kontr_k,ZT,2024,10,Abai,1453,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2024,11,Akmola,2198,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2024,15,Aktobe,2727,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2024,19,Almaty oblast,1638,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2024,23,Atyrau,2311,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2024,27,West Kazakhstan,2396,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2024,31,Zhambyl,2513,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2024,33,Zhetysu,1585,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2024,35,Karaganda,1788,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2024,39,Kostanay,2228,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2024,43,Kyzylorda,2662,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2024,47,Mangystau,2299,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2024,55,Pavlodar,2401,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2024,59,North Kazakhstan,1899,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2024,61,Turkistan,3145,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2024,62,Ulytau,1732,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2024,63,East Kazakhstan,1390,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2024,71,Astana,1626,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2024,75,Almaty city,2129,0,0,False,0,
+D008-ZT-domain,domain,kontr_k,ZT,2024,79,Shymkent,1701,0,0,False,0,
+D008-ZT-required,required,kontr_k,ZT,2024,10,Abai,1453,492,492,True,1453,1.0
+D008-ZT-required,required,kontr_k,ZT,2024,11,Akmola,2198,760,760,True,2198,1.0
+D008-ZT-required,required,kontr_k,ZT,2024,15,Aktobe,2727,718,718,True,2727,1.0
+D008-ZT-required,required,kontr_k,ZT,2024,19,Almaty oblast,1638,464,464,True,1638,1.0
+D008-ZT-required,required,kontr_k,ZT,2024,23,Atyrau,2311,537,537,True,2311,1.0
+D008-ZT-required,required,kontr_k,ZT,2024,27,West Kazakhstan,2396,621,621,True,2396,1.0
+D008-ZT-required,required,kontr_k,ZT,2024,31,Zhambyl,2513,656,656,True,2513,1.0
+D008-ZT-required,required,kontr_k,ZT,2024,33,Zhetysu,1585,452,452,True,1585,1.0
+D008-ZT-required,required,kontr_k,ZT,2024,35,Karaganda,1788,626,626,True,1788,1.0
+D008-ZT-required,required,kontr_k,ZT,2024,39,Kostanay,2228,781,781,True,2228,1.0
+D008-ZT-required,required,kontr_k,ZT,2024,43,Kyzylorda,2662,585,585,True,2662,1.0
+D008-ZT-required,required,kontr_k,ZT,2024,47,Mangystau,2299,546,546,True,2299,1.0
+D008-ZT-required,required,kontr_k,ZT,2024,55,Pavlodar,2401,827,827,True,2401,1.0
+D008-ZT-required,required,kontr_k,ZT,2024,59,North Kazakhstan,1899,654,654,True,1899,1.0
+D008-ZT-required,required,kontr_k,ZT,2024,61,Turkistan,3145,595,595,True,3145,1.0
+D008-ZT-required,required,kontr_k,ZT,2024,62,Ulytau,1732,401,401,True,1732,1.0
+D008-ZT-required,required,kontr_k,ZT,2024,63,East Kazakhstan,1390,501,501,True,1390,1.0
+D008-ZT-required,required,kontr_k,ZT,2024,71,Astana,1626,566,566,True,1626,1.0
+D008-ZT-required,required,kontr_k,ZT,2024,75,Almaty city,2129,738,738,True,2129,1.0
+D008-ZT-required,required,kontr_k,ZT,2024,79,Shymkent,1701,480,480,True,1701,1.0
+D008-required-person,required,kontr_k,RODSTVO,2024,10,Abai,1453,1453,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2024,11,Akmola,2198,2198,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2024,15,Aktobe,2727,2727,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2024,19,Almaty oblast,1638,1638,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2024,23,Atyrau,2311,2311,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2024,27,West Kazakhstan,2396,2396,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2024,31,Zhambyl,2513,2513,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2024,33,Zhetysu,1585,1585,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2024,35,Karaganda,1788,1788,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2024,39,Kostanay,2228,2228,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2024,43,Kyzylorda,2662,2662,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2024,47,Mangystau,2299,2299,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2024,55,Pavlodar,2401,2401,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2024,59,North Kazakhstan,1899,1899,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2024,61,Turkistan,3145,3145,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2024,62,Ulytau,1732,1732,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2024,63,East Kazakhstan,1390,1390,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2024,71,Astana,1626,1626,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2024,75,Almaty city,2129,2129,0,True,0,0.0
+D008-required-person,required,kontr_k,RODSTVO,2024,79,Shymkent,1701,1701,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2024,10,Abai,1453,1453,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2024,11,Akmola,2198,2198,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2024,15,Aktobe,2727,2727,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2024,19,Almaty oblast,1638,1638,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2024,23,Atyrau,2311,2311,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2024,27,West Kazakhstan,2396,2396,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2024,31,Zhambyl,2513,2513,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2024,33,Zhetysu,1585,1585,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2024,35,Karaganda,1788,1788,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2024,39,Kostanay,2228,2228,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2024,43,Kyzylorda,2662,2662,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2024,47,Mangystau,2299,2299,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2024,55,Pavlodar,2401,2401,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2024,59,North Kazakhstan,1899,1899,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2024,61,Turkistan,3145,3145,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2024,62,Ulytau,1732,1732,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2024,63,East Kazakhstan,1390,1390,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2024,71,Astana,1626,1626,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2024,75,Almaty city,2129,2129,0,True,0,0.0
+D008-required-person,required,kontr_k,GOD_ROJD,2024,79,Shymkent,1701,1701,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2024,10,Abai,1453,1453,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2024,11,Akmola,2198,2198,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2024,15,Aktobe,2727,2727,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2024,19,Almaty oblast,1638,1638,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2024,23,Atyrau,2311,2311,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2024,27,West Kazakhstan,2396,2396,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2024,31,Zhambyl,2513,2513,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2024,33,Zhetysu,1585,1585,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2024,35,Karaganda,1788,1788,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2024,39,Kostanay,2228,2228,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2024,43,Kyzylorda,2662,2662,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2024,47,Mangystau,2299,2299,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2024,55,Pavlodar,2401,2401,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2024,59,North Kazakhstan,1899,1899,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2024,61,Turkistan,3145,3145,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2024,62,Ulytau,1732,1732,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2024,63,East Kazakhstan,1390,1390,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2024,71,Astana,1626,1626,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2024,75,Almaty city,2129,2129,0,True,0,0.0
+D008-required-person,required,kontr_k,MES_ROJD,2024,79,Shymkent,1701,1701,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2024,10,Abai,1453,1453,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2024,11,Akmola,2198,2198,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2024,15,Aktobe,2727,2727,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2024,19,Almaty oblast,1638,1638,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2024,23,Atyrau,2311,2311,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2024,27,West Kazakhstan,2396,2396,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2024,31,Zhambyl,2513,2513,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2024,33,Zhetysu,1585,1585,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2024,35,Karaganda,1788,1788,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2024,39,Kostanay,2228,2228,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2024,43,Kyzylorda,2662,2662,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2024,47,Mangystau,2299,2299,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2024,55,Pavlodar,2401,2401,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2024,59,North Kazakhstan,1899,1899,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2024,61,Turkistan,3145,3145,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2024,62,Ulytau,1732,1732,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2024,63,East Kazakhstan,1390,1390,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2024,71,Astana,1626,1626,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2024,75,Almaty city,2129,2129,0,True,0,0.0
+D008-required-person,required,kontr_k,POL,2024,79,Shymkent,1701,1701,0,True,0,0.0
+D008-required-person,required,kontr_k,UROV,2024,10,Abai,1453,1453,16,True,16,0.011011699931176875
+D008-required-person,required,kontr_k,UROV,2024,11,Akmola,2198,2198,30,True,30,0.01364877161055505
+D008-required-person,required,kontr_k,UROV,2024,15,Aktobe,2727,2727,47,True,47,0.017235056839017236
+D008-required-person,required,kontr_k,UROV,2024,19,Almaty oblast,1638,1638,38,True,38,0.0231990231990232
+D008-required-person,required,kontr_k,UROV,2024,23,Atyrau,2311,2311,44,True,44,0.019039376893119863
+D008-required-person,required,kontr_k,UROV,2024,27,West Kazakhstan,2396,2396,21,True,21,0.008764607679465776
+D008-required-person,required,kontr_k,UROV,2024,31,Zhambyl,2513,2513,58,True,58,0.023079984082769598
+D008-required-person,required,kontr_k,UROV,2024,33,Zhetysu,1585,1585,24,True,24,0.015141955835962145
+D008-required-person,required,kontr_k,UROV,2024,35,Karaganda,1788,1788,24,True,24,0.013422818791946308
+D008-required-person,required,kontr_k,UROV,2024,39,Kostanay,2228,2228,26,True,26,0.011669658886894075
+D008-required-person,required,kontr_k,UROV,2024,43,Kyzylorda,2662,2662,69,True,69,0.025920360631104433
+D008-required-person,required,kontr_k,UROV,2024,47,Mangystau,2299,2299,42,True,42,0.01826881252718573
+D008-required-person,required,kontr_k,UROV,2024,55,Pavlodar,2401,2401,37,True,37,0.015410245730945439
+D008-required-person,required,kontr_k,UROV,2024,59,North Kazakhstan,1899,1899,15,True,15,0.007898894154818325
+D008-required-person,required,kontr_k,UROV,2024,61,Turkistan,3145,3145,82,True,82,0.026073131955484895
+D008-required-person,required,kontr_k,UROV,2024,62,Ulytau,1732,1732,29,True,29,0.01674364896073903
+D008-required-person,required,kontr_k,UROV,2024,63,East Kazakhstan,1390,1390,13,True,13,0.00935251798561151
+D008-required-person,required,kontr_k,UROV,2024,71,Astana,1626,1626,24,True,24,0.014760147601476014
+D008-required-person,required,kontr_k,UROV,2024,75,Almaty city,2129,2129,28,True,28,0.013151714419915453
+D008-required-person,required,kontr_k,UROV,2024,79,Shymkent,1701,1701,19,True,19,0.011169900058788948
+D008-ROST-range,domain,kontr_k,ROST,2024,10,Abai,1453,1453,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2024,11,Akmola,2198,2198,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2024,15,Aktobe,2727,2727,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2024,19,Almaty oblast,1638,1638,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2024,23,Atyrau,2311,2311,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2024,27,West Kazakhstan,2396,2396,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2024,31,Zhambyl,2513,2513,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2024,33,Zhetysu,1585,1585,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2024,35,Karaganda,1788,1788,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2024,39,Kostanay,2228,2228,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2024,43,Kyzylorda,2662,2662,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2024,47,Mangystau,2299,2299,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2024,55,Pavlodar,2401,2401,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2024,59,North Kazakhstan,1899,1899,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2024,61,Turkistan,3145,3145,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2024,62,Ulytau,1732,1732,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2024,63,East Kazakhstan,1390,1390,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2024,71,Astana,1626,1626,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2024,75,Almaty city,2129,2129,0,False,0,0.0
+D008-ROST-range,domain,kontr_k,ROST,2024,79,Shymkent,1701,1701,0,False,0,0.0
+D008-STATUS-15plus,required,kontr_k,STATUS,2024,10,Abai,1453,1129,41,True,364,0.03631532329495128
+D008-STATUS-15plus,required,kontr_k,STATUS,2024,11,Akmola,2198,1690,52,True,558,0.03076923076923077
+D008-STATUS-15plus,required,kontr_k,STATUS,2024,15,Aktobe,2727,1929,73,True,871,0.03784344219803007
+D008-STATUS-15plus,required,kontr_k,STATUS,2024,19,Almaty oblast,1638,1179,54,True,512,0.04580152671755725
+D008-STATUS-15plus,required,kontr_k,STATUS,2024,23,Atyrau,2311,1560,68,True,817,0.04358974358974359
+D008-STATUS-15plus,required,kontr_k,STATUS,2024,27,West Kazakhstan,2396,1700,66,True,761,0.03882352941176471
+D008-STATUS-15plus,required,kontr_k,STATUS,2024,31,Zhambyl,2513,1744,77,True,845,0.04415137614678899
+D008-STATUS-15plus,required,kontr_k,STATUS,2024,33,Zhetysu,1585,1145,40,True,479,0.034934497816593885
+D008-STATUS-15plus,required,kontr_k,STATUS,2024,35,Karaganda,1788,1361,44,True,471,0.03232916972814107
+D008-STATUS-15plus,required,kontr_k,STATUS,2024,39,Kostanay,2228,1751,59,True,535,0.0336950314106225
+D008-STATUS-15plus,required,kontr_k,STATUS,2024,43,Kyzylorda,2662,1813,82,True,929,0.04522890237175951
+D008-STATUS-15plus,required,kontr_k,STATUS,2024,47,Mangystau,2299,1575,62,True,784,0.03936507936507937
+D008-STATUS-15plus,required,kontr_k,STATUS,2024,55,Pavlodar,2401,1828,66,True,636,0.036105032822757115
+D008-STATUS-15plus,required,kontr_k,STATUS,2024,59,North Kazakhstan,1899,1492,59,True,465,0.039544235924932974
+D008-STATUS-15plus,required,kontr_k,STATUS,2024,61,Turkistan,3145,2005,89,True,1224,0.044389027431421445
+D008-STATUS-15plus,required,kontr_k,STATUS,2024,62,Ulytau,1732,1165,48,True,614,0.041201716738197426
+D008-STATUS-15plus,required,kontr_k,STATUS,2024,63,East Kazakhstan,1390,1091,32,True,331,0.02933088909257562
+D008-STATUS-15plus,required,kontr_k,STATUS,2024,71,Astana,1626,1237,30,True,419,0.024252223120452707
+D008-STATUS-15plus,required,kontr_k,STATUS,2024,75,Almaty city,2129,1633,51,True,547,0.031230863441518677
+D008-STATUS-15plus,required,kontr_k,STATUS,2024,79,Shymkent,1701,1177,40,True,564,0.033984706881903144
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2024,10,Abai,1453,324,1,True,1089,0.0030864197530864196
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2024,11,Akmola,2198,508,2,True,1640,0.003937007874015748
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2024,15,Aktobe,2727,798,0,True,1856,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2024,19,Almaty oblast,1638,459,1,True,1126,0.002178649237472767
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2024,23,Atyrau,2311,751,2,True,1494,0.002663115845539281
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2024,27,West Kazakhstan,2396,696,1,True,1635,0.0014367816091954023
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2024,31,Zhambyl,2513,769,1,True,1668,0.0013003901170351106
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2024,33,Zhetysu,1585,440,1,True,1106,0.0022727272727272726
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2024,35,Karaganda,1788,427,0,True,1317,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2024,39,Kostanay,2228,477,1,True,1693,0.0020964360587002098
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2024,43,Kyzylorda,2662,849,2,True,1733,0.002355712603062426
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2024,47,Mangystau,2299,724,2,True,1515,0.0027624309392265192
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2024,55,Pavlodar,2401,573,3,True,1765,0.005235602094240838
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2024,59,North Kazakhstan,1899,407,1,True,1434,0.002457002457002457
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2024,61,Turkistan,3145,1140,5,True,1921,0.0043859649122807015
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2024,62,Ulytau,1732,567,1,True,1118,0.001763668430335097
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2024,63,East Kazakhstan,1390,299,0,True,1059,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2024,71,Astana,1626,389,0,True,1207,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2024,75,Almaty city,2129,496,0,True,1582,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS,2024,79,Shymkent,1701,524,0,True,1137,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2024,10,Abai,1453,324,1,True,1097,0.0030864197530864196
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2024,11,Akmola,2198,508,2,True,1659,0.003937007874015748
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2024,15,Aktobe,2727,798,0,True,1867,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2024,19,Almaty oblast,1638,459,1,True,1131,0.002178649237472767
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2024,23,Atyrau,2311,751,2,True,1503,0.002663115845539281
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2024,27,West Kazakhstan,2396,696,1,True,1645,0.0014367816091954023
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2024,31,Zhambyl,2513,769,1,True,1678,0.0013003901170351106
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2024,33,Zhetysu,1585,440,1,True,1117,0.0022727272727272726
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2024,35,Karaganda,1788,427,1,True,1326,0.00234192037470726
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2024,39,Kostanay,2228,477,1,True,1705,0.0020964360587002098
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2024,43,Kyzylorda,2662,849,2,True,1751,0.002355712603062426
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2024,47,Mangystau,2299,724,2,True,1524,0.0027624309392265192
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2024,55,Pavlodar,2401,573,3,True,1781,0.005235602094240838
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2024,59,North Kazakhstan,1899,407,1,True,1443,0.002457002457002457
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2024,61,Turkistan,3145,1140,5,True,1943,0.0043859649122807015
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2024,62,Ulytau,1732,567,1,True,1131,0.001763668430335097
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2024,63,East Kazakhstan,1390,299,0,True,1069,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2024,71,Astana,1626,389,0,True,1191,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2024,75,Almaty city,2129,496,0,True,1591,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS1,2024,79,Shymkent,1701,524,0,True,1146,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2024,10,Abai,1453,324,1,True,1077,0.0030864197530864196
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2024,11,Akmola,2198,508,2,True,1640,0.003937007874015748
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2024,15,Aktobe,2727,798,0,True,1872,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2024,19,Almaty oblast,1638,459,1,True,1136,0.002178649237472767
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2024,23,Atyrau,2311,751,2,True,1486,0.002663115845539281
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2024,27,West Kazakhstan,2396,696,1,True,1654,0.0014367816091954023
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2024,31,Zhambyl,2513,769,1,True,1672,0.0013003901170351106
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2024,33,Zhetysu,1585,440,1,True,1125,0.0022727272727272726
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2024,35,Karaganda,1788,427,1,True,1308,0.00234192037470726
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2024,39,Kostanay,2228,477,1,True,1709,0.0020964360587002098
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2024,43,Kyzylorda,2662,849,2,True,1762,0.002355712603062426
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2024,47,Mangystau,2299,724,2,True,1535,0.0027624309392265192
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2024,55,Pavlodar,2401,573,3,True,1790,0.005235602094240838
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2024,59,North Kazakhstan,1899,407,1,True,1426,0.002457002457002457
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2024,61,Turkistan,3145,1140,5,True,1957,0.0043859649122807015
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2024,62,Ulytau,1732,567,1,True,1134,0.001763668430335097
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2024,63,East Kazakhstan,1390,299,0,True,1065,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2024,71,Astana,1626,389,0,True,1133,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2024,75,Almaty city,2129,496,0,True,1567,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS2,2024,79,Shymkent,1701,524,0,True,1154,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2024,10,Abai,1453,324,1,True,1070,0.0030864197530864196
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2024,11,Akmola,2198,508,1,True,1629,0.001968503937007874
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2024,15,Aktobe,2727,798,0,True,1886,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2024,19,Almaty oblast,1638,459,1,True,1122,0.002178649237472767
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2024,23,Atyrau,2311,751,2,True,1485,0.002663115845539281
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2024,27,West Kazakhstan,2396,696,1,True,1642,0.0014367816091954023
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2024,31,Zhambyl,2513,769,1,True,1692,0.0013003901170351106
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2024,33,Zhetysu,1585,440,1,True,1127,0.0022727272727272726
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2024,35,Karaganda,1788,427,1,True,1285,0.00234192037470726
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2024,39,Kostanay,2228,477,1,True,1687,0.0020964360587002098
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2024,43,Kyzylorda,2662,849,2,True,1772,0.002355712603062426
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2024,47,Mangystau,2299,724,2,True,1540,0.0027624309392265192
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2024,55,Pavlodar,2401,573,3,True,1789,0.005235602094240838
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2024,59,North Kazakhstan,1899,407,1,True,1419,0.002457002457002457
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2024,61,Turkistan,3145,1140,5,True,1975,0.0043859649122807015
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2024,62,Ulytau,1732,567,1,True,1132,0.001763668430335097
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2024,63,East Kazakhstan,1390,299,0,True,1060,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2024,71,Astana,1626,389,0,True,1115,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2024,75,Almaty city,2129,496,0,True,1566,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS3,2024,79,Shymkent,1701,524,0,True,1159,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2024,10,Abai,1453,324,1,True,1078,0.0030864197530864196
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2024,11,Akmola,2198,508,1,True,1636,0.001968503937007874
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2024,15,Aktobe,2727,798,0,True,1888,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2024,19,Almaty oblast,1638,459,1,True,1135,0.002178649237472767
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2024,23,Atyrau,2311,751,2,True,1494,0.002663115845539281
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2024,27,West Kazakhstan,2396,696,1,True,1655,0.0014367816091954023
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2024,31,Zhambyl,2513,769,1,True,1712,0.0013003901170351106
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2024,33,Zhetysu,1585,440,1,True,1133,0.0022727272727272726
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2024,35,Karaganda,1788,427,1,True,1277,0.00234192037470726
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2024,39,Kostanay,2228,477,1,True,1672,0.0020964360587002098
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2024,43,Kyzylorda,2662,849,2,True,1786,0.002355712603062426
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2024,47,Mangystau,2299,724,2,True,1548,0.0027624309392265192
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2024,55,Pavlodar,2401,573,3,True,1798,0.005235602094240838
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2024,59,North Kazakhstan,1899,407,1,True,1433,0.002457002457002457
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2024,61,Turkistan,3145,1140,5,True,2003,0.0043859649122807015
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2024,62,Ulytau,1732,567,1,True,1137,0.001763668430335097
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2024,63,East Kazakhstan,1390,299,0,True,1052,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2024,71,Astana,1626,389,0,True,1093,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2024,75,Almaty city,2129,496,0,True,1573,0.0
+D008-STATUS-skip-under15,skip,kontr_k,STATUS4,2024,79,Shymkent,1701,524,0,True,1171,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2024,10,Abai,1453,70,0,True,856,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2024,11,Akmola,2198,18,0,True,1310,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2024,15,Aktobe,2727,36,0,True,1711,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2024,19,Almaty oblast,1638,137,0,True,1030,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2024,23,Atyrau,2311,15,0,True,1536,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2024,27,West Kazakhstan,2396,70,0,True,1487,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2024,31,Zhambyl,2513,155,0,True,1748,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2024,33,Zhetysu,1585,82,0,True,1058,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2024,35,Karaganda,1788,81,0,True,1082,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2024,39,Kostanay,2228,153,0,True,1294,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2024,43,Kyzylorda,2662,101,0,True,1770,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2024,47,Mangystau,2299,71,0,True,1488,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2024,55,Pavlodar,2401,21,0,True,1423,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2024,59,North Kazakhstan,1899,26,0,True,1132,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2024,61,Turkistan,3145,10,0,True,2396,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2024,62,Ulytau,1732,16,0,True,1164,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2024,63,East Kazakhstan,1390,17,0,True,792,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2024,71,Astana,1626,23,0,True,955,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2024,75,Almaty city,2129,42,0,True,1269,0.0
+D008-STATUSF-needs-employee,consistency,kontr_k,STATUS,2024,79,Shymkent,1701,199,0,True,1180,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2024,10,Abai,1453,348,0,True,879,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2024,11,Akmola,2198,547,0,True,1301,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2024,15,Aktobe,2727,856,1,True,1441,0.0011682242990654205
+D008-married-adult,consistency,kontr_k,SEM_POL,2024,19,Almaty oblast,1638,495,0,True,909,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2024,23,Atyrau,2311,804,0,True,1149,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2024,27,West Kazakhstan,2396,748,0,True,1235,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2024,31,Zhambyl,2513,829,0,True,1269,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2024,33,Zhetysu,1585,467,0,True,887,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2024,35,Karaganda,1788,451,0,True,1077,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2024,39,Kostanay,2228,519,0,True,1357,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2024,43,Kyzylorda,2662,913,0,True,1283,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2024,47,Mangystau,2299,768,0,True,1089,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2024,55,Pavlodar,2401,616,0,True,1447,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2024,59,North Kazakhstan,1899,450,0,True,1172,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2024,61,Turkistan,3145,1207,0,True,1460,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2024,62,Ulytau,1732,607,0,True,865,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2024,63,East Kazakhstan,1390,322,0,True,836,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2024,71,Astana,1626,414,0,True,919,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2024,75,Almaty city,2129,535,0,True,1209,0.0
+D008-married-adult,consistency,kontr_k,SEM_POL,2024,79,Shymkent,1701,554,0,True,862,0.0
+D008-spouse-married,consistency,kontr_k,SEM_POL,2024,10,Abai,1453,306,2,True,771,0.006535947712418301
+D008-spouse-married,consistency,kontr_k,SEM_POL,2024,11,Akmola,2198,443,3,True,1214,0.006772009029345372
+D008-spouse-married,consistency,kontr_k,SEM_POL,2024,15,Aktobe,2727,504,6,True,1539,0.011904761904761904
+D008-spouse-married,consistency,kontr_k,SEM_POL,2024,19,Almaty oblast,1638,286,5,True,948,0.017482517482517484
+D008-spouse-married,consistency,kontr_k,SEM_POL,2024,23,Atyrau,2311,394,0,True,1326,0.0
+D008-spouse-married,consistency,kontr_k,SEM_POL,2024,27,West Kazakhstan,2396,417,3,True,1394,0.007194244604316547
+D008-spouse-married,consistency,kontr_k,SEM_POL,2024,31,Zhambyl,2513,417,3,True,1520,0.007194244604316547
+D008-spouse-married,consistency,kontr_k,SEM_POL,2024,33,Zhetysu,1585,278,0,True,903,0.0
+D008-spouse-married,consistency,kontr_k,SEM_POL,2024,35,Karaganda,1788,355,3,True,1022,0.008450704225352112
+D008-spouse-married,consistency,kontr_k,SEM_POL,2024,39,Kostanay,2228,473,8,True,1187,0.016913319238900635
+D008-spouse-married,consistency,kontr_k,SEM_POL,2024,43,Kyzylorda,2662,418,4,True,1638,0.009569377990430622
+D008-spouse-married,consistency,kontr_k,SEM_POL,2024,47,Mangystau,2299,340,2,True,1422,0.0058823529411764705
+D008-spouse-married,consistency,kontr_k,SEM_POL,2024,55,Pavlodar,2401,506,3,True,1296,0.005928853754940711
+D008-spouse-married,consistency,kontr_k,SEM_POL,2024,59,North Kazakhstan,1899,399,7,True,1029,0.017543859649122806
+D008-spouse-married,consistency,kontr_k,SEM_POL,2024,61,Turkistan,3145,447,1,True,1888,0.0022371364653243847
+D008-spouse-married,consistency,kontr_k,SEM_POL,2024,62,Ulytau,1732,269,2,True,1033,0.007434944237918215
+D008-spouse-married,consistency,kontr_k,SEM_POL,2024,63,East Kazakhstan,1390,282,5,True,750,0.01773049645390071
+D008-spouse-married,consistency,kontr_k,SEM_POL,2024,71,Astana,1626,289,1,True,951,0.0034602076124567475
+D008-spouse-married,consistency,kontr_k,SEM_POL,2024,75,Almaty city,2129,397,3,True,1267,0.007556675062972292
+D008-spouse-married,consistency,kontr_k,SEM_POL,2024,79,Shymkent,1701,267,1,True,1076,0.003745318352059925
+D008-higher-ed-age,consistency,kontr_k,AGE,2024,10,Abai,1453,299,0,True,407,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2024,11,Akmola,2198,350,0,True,616,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2024,15,Aktobe,2727,468,0,True,977,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2024,19,Almaty oblast,1638,250,0,True,552,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2024,23,Atyrau,2311,397,0,True,885,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2024,27,West Kazakhstan,2396,451,0,True,846,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2024,31,Zhambyl,2513,583,0,True,917,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2024,33,Zhetysu,1585,314,0,True,528,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2024,35,Karaganda,1788,354,0,True,506,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2024,39,Kostanay,2228,381,0,True,601,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2024,43,Kyzylorda,2662,525,0,True,1034,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2024,47,Mangystau,2299,368,1,True,878,0.002717391304347826
+D008-higher-ed-age,consistency,kontr_k,AGE,2024,55,Pavlodar,2401,463,1,True,687,0.0021598272138228943
+D008-higher-ed-age,consistency,kontr_k,AGE,2024,59,North Kazakhstan,1899,296,0,True,507,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2024,61,Turkistan,3145,422,0,True,1332,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2024,62,Ulytau,1732,257,0,True,683,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2024,63,East Kazakhstan,1390,270,0,True,373,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2024,71,Astana,1626,598,0,True,470,0.0
+D008-higher-ed-age,consistency,kontr_k,AGE,2024,75,Almaty city,2129,832,1,True,614,0.001201923076923077
+D008-higher-ed-age,consistency,kontr_k,AGE,2024,79,Shymkent,1701,543,0,True,619,0.0
+D008-preschool-age,consistency,kontr_k,AGE,2024,10,Abai,1453,160,3,True,1207,0.01875
+D008-preschool-age,consistency,kontr_k,AGE,2024,11,Akmola,2198,174,4,True,1814,0.022988505747126436
+D008-preschool-age,consistency,kontr_k,AGE,2024,15,Aktobe,2727,225,3,True,2098,0.013333333333333334
+D008-preschool-age,consistency,kontr_k,AGE,2024,19,Almaty oblast,1638,227,4,True,1271,0.01762114537444934
+D008-preschool-age,consistency,kontr_k,AGE,2024,23,Atyrau,2311,390,2,True,1723,0.005128205128205128
+D008-preschool-age,consistency,kontr_k,AGE,2024,27,West Kazakhstan,2396,205,2,True,1875,0.00975609756097561
+D008-preschool-age,consistency,kontr_k,AGE,2024,31,Zhambyl,2513,412,1,True,1921,0.0024271844660194173
+D008-preschool-age,consistency,kontr_k,AGE,2024,33,Zhetysu,1585,234,6,True,1240,0.02564102564102564
+D008-preschool-age,consistency,kontr_k,AGE,2024,35,Karaganda,1788,150,2,True,1465,0.013333333333333334
+D008-preschool-age,consistency,kontr_k,AGE,2024,39,Kostanay,2228,168,3,True,1861,0.017857142857142856
+D008-preschool-age,consistency,kontr_k,AGE,2024,43,Kyzylorda,2662,94,2,True,1989,0.02127659574468085
+D008-preschool-age,consistency,kontr_k,AGE,2024,47,Mangystau,2299,311,1,True,1732,0.003215434083601286
+D008-preschool-age,consistency,kontr_k,AGE,2024,55,Pavlodar,2401,211,0,True,1970,0.0
+D008-preschool-age,consistency,kontr_k,AGE,2024,59,North Kazakhstan,1899,143,1,True,1597,0.006993006993006993
+D008-preschool-age,consistency,kontr_k,AGE,2024,61,Turkistan,3145,561,7,True,2249,0.012477718360071301
+D008-preschool-age,consistency,kontr_k,AGE,2024,62,Ulytau,1732,210,2,True,1300,0.009523809523809525
+D008-preschool-age,consistency,kontr_k,AGE,2024,63,East Kazakhstan,1390,133,0,True,1172,0.0
+D008-preschool-age,consistency,kontr_k,AGE,2024,71,Astana,1626,152,1,True,1323,0.006578947368421052
+D008-preschool-age,consistency,kontr_k,AGE,2024,75,Almaty city,2129,278,3,True,1735,0.01079136690647482
+D008-preschool-age,consistency,kontr_k,AGE,2024,79,Shymkent,1701,235,1,True,1277,0.00425531914893617
+D008-hh-size,consistency,kontr_k,KOL_CHL,2024,10,Abai,1453,1453,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2024,11,Akmola,2198,2198,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2024,15,Aktobe,2727,2727,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2024,19,Almaty oblast,1638,1638,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2024,23,Atyrau,2311,2311,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2024,27,West Kazakhstan,2396,2396,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2024,31,Zhambyl,2513,2513,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2024,33,Zhetysu,1585,1585,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2024,35,Karaganda,1788,1788,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2024,39,Kostanay,2228,2228,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2024,43,Kyzylorda,2662,2662,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2024,47,Mangystau,2299,2299,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2024,55,Pavlodar,2401,2401,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2024,59,North Kazakhstan,1899,1899,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2024,61,Turkistan,3145,3145,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2024,62,Ulytau,1732,1732,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2024,63,East Kazakhstan,1390,1390,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2024,71,Astana,1626,1626,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2024,75,Almaty city,2129,2129,0,False,0,0.0
+D008-hh-size,consistency,kontr_k,KOL_CHL,2024,79,Shymkent,1701,1701,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2024,10,Abai,1453,1453,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2024,11,Akmola,2198,2198,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2024,15,Aktobe,2727,2727,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2024,19,Almaty oblast,1638,1638,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2024,23,Atyrau,2311,2311,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2024,27,West Kazakhstan,2396,2396,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2024,31,Zhambyl,2513,2513,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2024,33,Zhetysu,1585,1585,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2024,35,Karaganda,1788,1788,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2024,39,Kostanay,2228,2228,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2024,43,Kyzylorda,2662,2662,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2024,47,Mangystau,2299,2299,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2024,55,Pavlodar,2401,2401,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2024,59,North Kazakhstan,1899,1899,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2024,61,Turkistan,3145,3145,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2024,62,Ulytau,1732,1732,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2024,63,East Kazakhstan,1390,1390,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2024,71,Astana,1626,1626,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2024,75,Almaty city,2129,2129,0,False,0,0.0
+D008-one-head,consistency,kontr_k,RODSTVO,2024,79,Shymkent,1701,1701,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2024,10,Abai,1453,492,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2024,11,Akmola,2198,760,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2024,15,Aktobe,2727,718,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2024,19,Almaty oblast,1638,464,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2024,23,Atyrau,2311,537,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2024,27,West Kazakhstan,2396,621,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2024,31,Zhambyl,2513,656,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2024,33,Zhetysu,1585,452,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2024,35,Karaganda,1788,626,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2024,39,Kostanay,2228,781,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2024,43,Kyzylorda,2662,585,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2024,47,Mangystau,2299,546,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2024,55,Pavlodar,2401,827,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2024,59,North Kazakhstan,1899,654,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2024,61,Turkistan,3145,595,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2024,62,Ulytau,1732,401,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2024,63,East Kazakhstan,1390,501,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2024,71,Astana,1626,566,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2024,75,Almaty city,2129,738,0,False,0,0.0
+D008-head-is-1,consistency,kontr_k,RODSTVO,2024,79,Shymkent,1701,480,0,False,0,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2024,10,Abai,1453,492,0,True,324,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2024,11,Akmola,2198,760,0,True,508,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2024,15,Aktobe,2727,718,0,True,798,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2024,19,Almaty oblast,1638,464,0,True,459,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2024,23,Atyrau,2311,537,0,True,751,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2024,27,West Kazakhstan,2396,621,0,True,696,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2024,31,Zhambyl,2513,656,0,True,769,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2024,33,Zhetysu,1585,452,0,True,440,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2024,35,Karaganda,1788,626,0,True,427,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2024,39,Kostanay,2228,781,0,True,477,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2024,43,Kyzylorda,2662,585,0,True,849,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2024,47,Mangystau,2299,546,0,True,724,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2024,55,Pavlodar,2401,827,0,True,573,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2024,59,North Kazakhstan,1899,654,0,True,407,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2024,61,Turkistan,3145,595,0,True,1140,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2024,62,Ulytau,1732,401,0,True,567,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2024,63,East Kazakhstan,1390,501,0,True,299,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2024,71,Astana,1626,566,0,True,389,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2024,75,Almaty city,2129,738,0,True,496,0.0
+D008-head-15plus,consistency,kontr_k,AGE,2024,79,Shymkent,1701,480,0,True,524,0.0

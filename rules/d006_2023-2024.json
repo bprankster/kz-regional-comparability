@@ -1,0 +1,1327 @@
+{
+ "form": "D006",
+ "years": [
+  2023,
+  2024
+ ],
+ "extracted_by": "Claude (claude-opus-5-5), in session on 10 Oct 2026, following prompts/extract_rules_v1.md",
+ "sources": {
+  "form": "documentation/d006/2024/D006_deid/Анкета Д006 рус.doc (form + instruction)",
+  "structure": "documentation/d006/2024/D006_deid/структураД006.doc"
+ },
+ "rules": [
+  {
+   "id": "D006-K-domain",
+   "type": "domain",
+   "table": "rio",
+   "targets": [
+    "K"
+   ],
+   "allowed": [
+    1,
+    2
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "Код типа населенного пункта (1 - город, 2 - село)"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q1-domain",
+   "type": "domain",
+   "table": "rio",
+   "targets": [
+    "TIP_J"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "meaning": {
+    "1": "Одноквартирный (индивидуальный) дом",
+    "2": "комната в доме",
+    "3": "двухквартирный дом",
+    "4": "трех и более квартирный дом",
+    "5": "комната в квартире"
+   },
+   "source": {
+    "doc": "structure",
+    "quote": "поле tip_j=1-5"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q2-domain",
+   "type": "domain",
+   "table": "rio",
+   "targets": [
+    "VLAD1"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "meaning": {
+    "1": "респонденту",
+    "2": "респондентам",
+    "3": "физическому лицу без оплаты",
+    "4": "физическому лицу с оплатой",
+    "5": "юридическому лицу без оплаты",
+    "6": "юридическому лицу с оплатой",
+    "7": "Государственная собственность"
+   },
+   "source": {
+    "doc": "structure",
+    "quote": "поле Vlad=1-7"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q1-Q4-required",
+   "type": "required",
+   "table": "rio",
+   "targets": [
+    "TIP_J",
+    "VLAD1",
+    "OB_PL",
+    "J_PL",
+    "KOL_K",
+    "ZEM",
+    "ZT"
+   ],
+   "source": {
+    "doc": "instruction",
+    "quote": "интервьюер повторно просматривает Вопросник, не пропущены ли какие-либо вопросы"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-area-living-le-total",
+   "type": "consistency",
+   "table": "rio",
+   "targets": [
+    "J_PL",
+    "OB_PL"
+   ],
+   "check": "lte",
+   "a": "J_PL",
+   "b": "OB_PL",
+   "source": {
+    "doc": "instruction",
+    "quote": "В общую (полезную) площадь включается как жилая площадь, так и площадь кухни, коридора..."
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-rooms-positive",
+   "type": "domain",
+   "table": "rio",
+   "targets": [
+    "KOL_K"
+   ],
+   "allowed": {
+    "min": 1,
+    "max": 30
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "В вопросе 4 проставляется количество всех жилых комнат"
+   },
+   "confidence": "medium"
+  },
+  {
+   "id": "D006-KOL_K-format",
+   "type": "domain",
+   "table": "rio",
+   "targets": [
+    "KOL_K"
+   ],
+   "allowed": {
+    "pattern": "^[0-9]{1,2}$",
+    "no_leading_zero": true
+   },
+   "source": {
+    "doc": "structure",
+    "quote": "поле Kol_k -2 знака"
+   },
+   "confidence": "medium",
+   "note": "The same count is written '3' and '03'. Not wrong in itself, but a sign of different entry software."
+  },
+  {
+   "id": "D006-Q5-domain",
+   "type": "domain",
+   "table": "rio",
+   "targets": [
+    "U1",
+    "U2",
+    "U3",
+    "U4",
+    "U5",
+    "U6",
+    "U7",
+    "U8",
+    "U9",
+    "U10",
+    "U11",
+    "U12",
+    "U13",
+    "U14",
+    "U15",
+    "U16",
+    "U17",
+    "U18",
+    "U19",
+    "U20",
+    "U21",
+    "U22",
+    "U23",
+    "U24",
+    "U25",
+    "U26",
+    "U27",
+    "U28",
+    "U29",
+    "U30",
+    "U31",
+    "U32",
+    "U33",
+    "U34",
+    "U35",
+    "U36",
+    "U37",
+    "U38",
+    "U39",
+    "U40",
+    "U41",
+    "U42"
+   ],
+   "allowed": [
+    1,
+    2
+   ],
+   "source": {
+    "doc": "structure",
+    "quote": "поля U1-U42 Ответы 1-да, 2- нет"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q5-required",
+   "type": "required",
+   "table": "rio",
+   "targets": [
+    "U1",
+    "U2",
+    "U3",
+    "U4",
+    "U5",
+    "U6",
+    "U7",
+    "U8",
+    "U9",
+    "U10",
+    "U11",
+    "U12",
+    "U13",
+    "U14",
+    "U15",
+    "U16",
+    "U17",
+    "U18",
+    "U19",
+    "U20",
+    "U21",
+    "U22",
+    "U23",
+    "U24",
+    "U25",
+    "U26",
+    "U27",
+    "U28",
+    "U29",
+    "U30",
+    "U31",
+    "U32",
+    "U33",
+    "U34",
+    "U35",
+    "U36",
+    "U37",
+    "U38",
+    "U39",
+    "U40",
+    "U41",
+    "U42"
+   ],
+   "source": {
+    "doc": "instruction",
+    "quote": "интервьюер вносит соответствующие отметки по всем имеющимся видам благоустройств"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-electric-stove-needs-electricity",
+   "type": "consistency",
+   "table": "rio",
+   "targets": [
+    "U1"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "U2",
+    "in": [
+     1
+    ]
+   },
+   "then": {
+    "col": "U1",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "электроплита − имеется электрическая плита внутри жилья"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-no-toilet-exclusive",
+   "type": "consistency",
+   "table": "rio",
+   "targets": [
+    "U19",
+    "U20",
+    "U21",
+    "U22"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "U23",
+    "in": [
+     1
+    ]
+   },
+   "then": {
+    "all": [
+     {
+      "col": "U19",
+      "in": [
+       2
+      ]
+     },
+     {
+      "col": "U20",
+      "in": [
+       2
+      ]
+     },
+     {
+      "col": "U21",
+      "in": [
+       2
+      ]
+     },
+     {
+      "col": "U22",
+      "in": [
+       2
+      ]
+     }
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "туалет отсутствует − в доме нет вышеуказанных видов туалетов"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-bath-needs-sewerage",
+   "type": "consistency",
+   "table": "rio",
+   "targets": [
+    "U24",
+    "U25"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "U26",
+    "in": [
+     1
+    ]
+   },
+   "then": {
+    "any": [
+     {
+      "col": "U24",
+      "in": [
+       1
+      ]
+     },
+     {
+      "col": "U25",
+      "in": [
+       1
+      ]
+     }
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "не считается оборудованным ванной жилище, в котором ванна установлена, а канализация отсутствует"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-shower-needs-sewerage",
+   "type": "consistency",
+   "table": "rio",
+   "targets": [
+    "U24",
+    "U25"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "U27",
+    "in": [
+     1
+    ]
+   },
+   "then": {
+    "any": [
+     {
+      "col": "U24",
+      "in": [
+       1
+      ]
+     },
+     {
+      "col": "U25",
+      "in": [
+       1
+      ]
+     }
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "не считается оборудованным душем жилище, в котором душ установлен, а канализация отсутствует"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-sewerage-needs-water",
+   "type": "consistency",
+   "table": "rio",
+   "targets": [
+    "U14",
+    "U15"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "U24",
+    "in": [
+     1
+    ]
+   },
+   "then": {
+    "any": [
+     {
+      "col": "U14",
+      "in": [
+       1
+      ]
+     },
+     {
+      "col": "U15",
+      "in": [
+       1
+      ]
+     }
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "Не является оборудованным канализацией жилище, в котором отсутствует водопровод"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-chute-multiflat",
+   "type": "consistency",
+   "table": "rio",
+   "targets": [
+    "TIP_J"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "U31",
+    "in": [
+     1
+    ]
+   },
+   "then": {
+    "col": "TIP_J",
+    "in": [
+     3,
+     4,
+     5
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "мусоропровод − ... смонтированную вертикально в многоэтажных домах"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-lift-multiflat",
+   "type": "consistency",
+   "table": "rio",
+   "targets": [
+    "TIP_J"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "U36",
+    "in": [
+     1
+    ]
+   },
+   "then": {
+    "col": "TIP_J",
+    "in": [
+     3,
+     4,
+     5
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "лифт − техническое устройство для перевозки по вертикали между этажами зданий"
+   },
+   "confidence": "medium"
+  },
+  {
+   "id": "D006-Q6-type-domain",
+   "type": "domain",
+   "table": "rio",
+   "targets": [
+    "TIPNJ1",
+    "TIPNJ2",
+    "TIPNJ3",
+    "TIPNJ4",
+    "TIPNJ5",
+    "TIPNJ6",
+    "TIPNJ7"
+   ],
+   "allowed": [
+    1,
+    2
+   ],
+   "source": {
+    "doc": "structure",
+    "quote": "поле Tipnj 1- Tipnj 7 (да – 1 нет – 2)"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q6-use-domain",
+   "type": "domain",
+   "table": "rio",
+   "targets": [
+    "ISPNJ1",
+    "ISPNJ2",
+    "ISPNJ3",
+    "ISPNJ4",
+    "ISPNJ5",
+    "ISPNJ6",
+    "ISPNJ7"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    9
+   ],
+   "meaning": {
+    "1": "проживаю в летнее и свободное время",
+    "2": "сдаю в аренду",
+    "3": "не использую",
+    "9": "прочее"
+   },
+   "source": {
+    "doc": "structure",
+    "quote": "проживаю ... – 1, сдаю в аренду – 2, не использую – 3, прочее – 9"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q6-skip-1",
+   "type": "skip",
+   "table": "rio",
+   "targets": [
+    "KOLNJ1",
+    "ISPNJ1"
+   ],
+   "when": {
+    "col": "TIPNJ1",
+    "in": [
+     2
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Ответьте на вопросы по неосновному виду жилья при его наличии (в случае его отсутствия, переходите к следующему вопросу)"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q6-required-1",
+   "type": "required",
+   "table": "rio",
+   "targets": [
+    "KOLNJ1",
+    "ISPNJ1"
+   ],
+   "when": {
+    "col": "TIPNJ1",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "Вопрос 6 задается домашним хозяйствам, имеющим неосновное жилье"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q6-skip-2",
+   "type": "skip",
+   "table": "rio",
+   "targets": [
+    "KOLNJ2",
+    "ISPNJ2"
+   ],
+   "when": {
+    "col": "TIPNJ2",
+    "in": [
+     2
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Ответьте на вопросы по неосновному виду жилья при его наличии (в случае его отсутствия, переходите к следующему вопросу)"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q6-required-2",
+   "type": "required",
+   "table": "rio",
+   "targets": [
+    "KOLNJ2",
+    "ISPNJ2"
+   ],
+   "when": {
+    "col": "TIPNJ2",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "Вопрос 6 задается домашним хозяйствам, имеющим неосновное жилье"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q6-skip-3",
+   "type": "skip",
+   "table": "rio",
+   "targets": [
+    "KOLNJ3",
+    "ISPNJ3"
+   ],
+   "when": {
+    "col": "TIPNJ3",
+    "in": [
+     2
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Ответьте на вопросы по неосновному виду жилья при его наличии (в случае его отсутствия, переходите к следующему вопросу)"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q6-required-3",
+   "type": "required",
+   "table": "rio",
+   "targets": [
+    "KOLNJ3",
+    "ISPNJ3"
+   ],
+   "when": {
+    "col": "TIPNJ3",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "Вопрос 6 задается домашним хозяйствам, имеющим неосновное жилье"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q6-skip-4",
+   "type": "skip",
+   "table": "rio",
+   "targets": [
+    "KOLNJ4",
+    "ISPNJ4"
+   ],
+   "when": {
+    "col": "TIPNJ4",
+    "in": [
+     2
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Ответьте на вопросы по неосновному виду жилья при его наличии (в случае его отсутствия, переходите к следующему вопросу)"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q6-required-4",
+   "type": "required",
+   "table": "rio",
+   "targets": [
+    "KOLNJ4",
+    "ISPNJ4"
+   ],
+   "when": {
+    "col": "TIPNJ4",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "Вопрос 6 задается домашним хозяйствам, имеющим неосновное жилье"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q6-skip-5",
+   "type": "skip",
+   "table": "rio",
+   "targets": [
+    "KOLNJ5",
+    "ISPNJ5"
+   ],
+   "when": {
+    "col": "TIPNJ5",
+    "in": [
+     2
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Ответьте на вопросы по неосновному виду жилья при его наличии (в случае его отсутствия, переходите к следующему вопросу)"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q6-required-5",
+   "type": "required",
+   "table": "rio",
+   "targets": [
+    "KOLNJ5",
+    "ISPNJ5"
+   ],
+   "when": {
+    "col": "TIPNJ5",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "Вопрос 6 задается домашним хозяйствам, имеющим неосновное жилье"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q6-skip-6",
+   "type": "skip",
+   "table": "rio",
+   "targets": [
+    "KOLNJ6",
+    "ISPNJ6"
+   ],
+   "when": {
+    "col": "TIPNJ6",
+    "in": [
+     2
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Ответьте на вопросы по неосновному виду жилья при его наличии (в случае его отсутствия, переходите к следующему вопросу)"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q6-required-6",
+   "type": "required",
+   "table": "rio",
+   "targets": [
+    "KOLNJ6",
+    "ISPNJ6"
+   ],
+   "when": {
+    "col": "TIPNJ6",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "Вопрос 6 задается домашним хозяйствам, имеющим неосновное жилье"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q6-skip-7",
+   "type": "skip",
+   "table": "rio",
+   "targets": [
+    "KOLNJ7",
+    "ISPNJ7"
+   ],
+   "when": {
+    "col": "TIPNJ7",
+    "in": [
+     2
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Ответьте на вопросы по неосновному виду жилья при его наличии (в случае его отсутствия, переходите к следующему вопросу)"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q6-required-7",
+   "type": "required",
+   "table": "rio",
+   "targets": [
+    "KOLNJ7",
+    "ISPNJ7"
+   ],
+   "when": {
+    "col": "TIPNJ7",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "Вопрос 6 задается домашним хозяйствам, имеющим неосновное жилье"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q7-domain",
+   "type": "domain",
+   "table": "rio",
+   "targets": [
+    "ZEM"
+   ],
+   "allowed": [
+    1,
+    2
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "Да - 1→ 8; Нет - 2→ 9"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q8-skip",
+   "type": "skip",
+   "table": "rio",
+   "targets": [
+    "NOMP1",
+    "POL1",
+    "KOL_UCH1",
+    "UCH_PL1",
+    "UCH_FS1_1",
+    "UCH_FS1_2",
+    "UCH_FS1_3",
+    "UCH_FS1_4",
+    "UCH_ISP1_1",
+    "UCH_ISP1_2",
+    "UCH_ISP1_3",
+    "UCH_ISP1_4",
+    "UCH_ISP1_5",
+    "UCH_ISP1_6",
+    "UCH_ISP1_7",
+    "NOMP2",
+    "POL2",
+    "KOL_UCH2",
+    "UCH_PL2",
+    "UCH_FS2_1",
+    "UCH_FS2_2",
+    "UCH_FS2_3",
+    "UCH_FS2_4",
+    "UCH_ISP2_1",
+    "UCH_ISP2_2",
+    "UCH_ISP2_3",
+    "UCH_ISP2_4",
+    "UCH_ISP2_5",
+    "UCH_ISP2_6",
+    "UCH_ISP2_7",
+    "NOMP3",
+    "POL3",
+    "KOL_UCH3",
+    "UCH_PL3",
+    "UCH_FS3_1",
+    "UCH_FS3_2",
+    "UCH_FS3_3",
+    "UCH_FS3_4",
+    "UCH_ISP3_1",
+    "UCH_ISP3_2",
+    "UCH_ISP3_3",
+    "UCH_ISP3_4",
+    "UCH_ISP3_5",
+    "UCH_ISP3_6",
+    "UCH_ISP3_7",
+    "NOMP4",
+    "POL4",
+    "KOL_UCH4",
+    "UCH_PL4",
+    "UCH_FS4_1",
+    "UCH_FS4_2",
+    "UCH_FS4_3",
+    "UCH_FS4_4",
+    "UCH_ISP4_1",
+    "UCH_ISP4_2",
+    "UCH_ISP4_3",
+    "UCH_ISP4_4",
+    "UCH_ISP4_5",
+    "UCH_ISP4_6",
+    "UCH_ISP4_7",
+    "NOMP5",
+    "POL5",
+    "KOL_UCH5",
+    "UCH_PL5",
+    "UCH_FS5_1",
+    "UCH_FS5_2",
+    "UCH_FS5_3",
+    "UCH_FS5_4",
+    "UCH_ISP5_1",
+    "UCH_ISP5_2",
+    "UCH_ISP5_3",
+    "UCH_ISP5_4",
+    "UCH_ISP5_5",
+    "UCH_ISP5_6",
+    "UCH_ISP5_7",
+    "NOMP6",
+    "POL6",
+    "KOL_UCH6",
+    "UCH_PL6",
+    "UCH_FS6_1",
+    "UCH_FS6_2",
+    "UCH_FS6_3",
+    "UCH_FS6_4",
+    "UCH_ISP6_1",
+    "UCH_ISP6_2",
+    "UCH_ISP6_3",
+    "UCH_ISP6_4",
+    "UCH_ISP6_5",
+    "UCH_ISP6_6",
+    "UCH_ISP6_7",
+    "NOMP7",
+    "POL7",
+    "KOL_UCH7",
+    "UCH_PL7",
+    "UCH_FS7_1",
+    "UCH_FS7_2",
+    "UCH_FS7_3",
+    "UCH_FS7_4",
+    "UCH_ISP7_1",
+    "UCH_ISP7_2",
+    "UCH_ISP7_3",
+    "UCH_ISP7_4",
+    "UCH_ISP7_5",
+    "UCH_ISP7_6",
+    "UCH_ISP7_7",
+    "NOMP8",
+    "POL8",
+    "KOL_UCH8",
+    "UCH_PL8",
+    "UCH_FS8_1",
+    "UCH_FS8_2",
+    "UCH_FS8_3",
+    "UCH_FS8_4",
+    "UCH_ISP8_1",
+    "UCH_ISP8_2",
+    "UCH_ISP8_3",
+    "UCH_ISP8_4",
+    "UCH_ISP8_5",
+    "UCH_ISP8_6",
+    "UCH_ISP8_7"
+   ],
+   "when": {
+    "col": "ZEM",
+    "in": [
+     2
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Нет - 2→ 9"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q8-required",
+   "type": "required",
+   "table": "rio",
+   "targets": [
+    "NOMP1",
+    "KOL_UCH1",
+    "UCH_PL1"
+   ],
+   "when": {
+    "col": "ZEM",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "На вопрос 8 отвечают домашние хозяйства ..., положительно ответившие на вопрос 7. Здесь указывается соответствующее количество участков земли."
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-Q8-adult",
+   "type": "domain",
+   "table": "rio",
+   "targets": [
+    "VOZ1",
+    "VOZ2",
+    "VOZ3",
+    "VOZ4",
+    "VOZ5",
+    "VOZ6",
+    "VOZ7",
+    "VOZ8"
+   ],
+   "allowed": {
+    "min": 18,
+    "max": 120,
+    "zero_is_blank": false
+   },
+   "source": {
+    "doc": "form",
+    "quote": "к которой Вы (в возрасте от 18 лет и старше) имеете доступ"
+   },
+   "confidence": "high",
+   "note": "Blank is allowed; 0 is not an age."
+  },
+  {
+   "id": "D006-Q8-fs-domain",
+   "type": "domain",
+   "table": "rio",
+   "targets": [
+    "UCH_FS1_1",
+    "UCH_FS1_2",
+    "UCH_FS1_3",
+    "UCH_FS1_4",
+    "UCH_FS2_1",
+    "UCH_FS2_2",
+    "UCH_FS2_3",
+    "UCH_FS2_4",
+    "UCH_FS3_1",
+    "UCH_FS3_2",
+    "UCH_FS3_3",
+    "UCH_FS3_4",
+    "UCH_FS4_1",
+    "UCH_FS4_2",
+    "UCH_FS4_3",
+    "UCH_FS4_4",
+    "UCH_FS5_1",
+    "UCH_FS5_2",
+    "UCH_FS5_3",
+    "UCH_FS5_4",
+    "UCH_FS6_1",
+    "UCH_FS6_2",
+    "UCH_FS6_3",
+    "UCH_FS6_4",
+    "UCH_FS7_1",
+    "UCH_FS7_2",
+    "UCH_FS7_3",
+    "UCH_FS7_4",
+    "UCH_FS8_1",
+    "UCH_FS8_2",
+    "UCH_FS8_3",
+    "UCH_FS8_4"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "meaning": {
+    "1": "в частной собственности",
+    "2": "арендуете у государства",
+    "3": "арендуете у частного лица",
+    "4": "прочие"
+   },
+   "source": {
+    "doc": "structure",
+    "quote": "Форма собственности Uch_fs1_1- Uch_fs8_4 ... -1 ... -2 ... -3 ... -4"
+   },
+   "confidence": "medium"
+  },
+  {
+   "id": "D006-Q8-isp-domain",
+   "type": "domain",
+   "table": "rio",
+   "targets": [
+    "UCH_ISP1_1",
+    "UCH_ISP1_2",
+    "UCH_ISP1_3",
+    "UCH_ISP1_4",
+    "UCH_ISP1_5",
+    "UCH_ISP1_6",
+    "UCH_ISP1_7",
+    "UCH_ISP2_1",
+    "UCH_ISP2_2",
+    "UCH_ISP2_3",
+    "UCH_ISP2_4",
+    "UCH_ISP2_5",
+    "UCH_ISP2_6",
+    "UCH_ISP2_7",
+    "UCH_ISP3_1",
+    "UCH_ISP3_2",
+    "UCH_ISP3_3",
+    "UCH_ISP3_4",
+    "UCH_ISP3_5",
+    "UCH_ISP3_6",
+    "UCH_ISP3_7",
+    "UCH_ISP4_1",
+    "UCH_ISP4_2",
+    "UCH_ISP4_3",
+    "UCH_ISP4_4",
+    "UCH_ISP4_5",
+    "UCH_ISP4_6",
+    "UCH_ISP4_7",
+    "UCH_ISP5_1",
+    "UCH_ISP5_2",
+    "UCH_ISP5_3",
+    "UCH_ISP5_4",
+    "UCH_ISP5_5",
+    "UCH_ISP5_6",
+    "UCH_ISP5_7",
+    "UCH_ISP6_1",
+    "UCH_ISP6_2",
+    "UCH_ISP6_3",
+    "UCH_ISP6_4",
+    "UCH_ISP6_5",
+    "UCH_ISP6_6",
+    "UCH_ISP6_7",
+    "UCH_ISP7_1",
+    "UCH_ISP7_2",
+    "UCH_ISP7_3",
+    "UCH_ISP7_4",
+    "UCH_ISP7_5",
+    "UCH_ISP7_6",
+    "UCH_ISP7_7",
+    "UCH_ISP8_1",
+    "UCH_ISP8_2",
+    "UCH_ISP8_3",
+    "UCH_ISP8_4",
+    "UCH_ISP8_5",
+    "UCH_ISP8_6",
+    "UCH_ISP8_7"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "source": {
+    "doc": "structure",
+    "quote": "Как используется Uch_isp1_1 - Uch_isp8_7 ... -1 ... -7"
+   },
+   "confidence": "medium"
+  },
+  {
+   "id": "D006-Q9-count",
+   "type": "domain",
+   "table": "rio",
+   "targets": [
+    "TDP1",
+    "TDP2",
+    "TDP3",
+    "TDP4",
+    "TDP5",
+    "TDP6",
+    "TDP7",
+    "TDP8",
+    "TDP9",
+    "TDP10",
+    "TDP11",
+    "TDP12",
+    "TDP13",
+    "TDP14",
+    "TDP15",
+    "TDP16",
+    "TDP17",
+    "TDP18",
+    "TDP19",
+    "TDP20",
+    "TDP21",
+    "TDP22",
+    "TDP23",
+    "TDP24",
+    "TDP25",
+    "TDP26",
+    "TDP27",
+    "TDP28",
+    "TDP29",
+    "TDP30",
+    "TDP31",
+    "TDP32",
+    "TDP33",
+    "TDP34",
+    "TDP35",
+    "TDP36",
+    "TDP37",
+    "TDP38",
+    "TDP39",
+    "TDP40",
+    "TDP41",
+    "TDP42",
+    "TDP43",
+    "TDP44",
+    "TDP45"
+   ],
+   "allowed": {
+    "min": 0,
+    "max": 99
+   },
+   "source": {
+    "doc": "structure",
+    "quote": "tdp1- tdp45, значность - 3 знака"
+   },
+   "confidence": "medium"
+  },
+  {
+   "id": "D006-ZT-domain",
+   "type": "domain",
+   "table": "rio",
+   "targets": [
+    "ZT"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "source": {
+    "doc": "structure",
+    "quote": "поле zt – 1 знак, коды 1-6"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D006-doc-TDP46",
+   "type": "doc_issue",
+   "targets": [
+    "TDP46"
+   ],
+   "source": {
+    "doc": "structure",
+    "quote": "tdp1- tdp45"
+   },
+   "confidence": "high",
+   "note": "The data holds TDP46, which the structure does not describe."
+  },
+  {
+   "id": "D006-doc-Q6-code",
+   "type": "doc_issue",
+   "targets": [
+    "TIPNJ1",
+    "TIPNJ2",
+    "TIPNJ3",
+    "TIPNJ4",
+    "TIPNJ5",
+    "TIPNJ6",
+    "TIPNJ7"
+   ],
+   "source": {
+    "doc": "structure",
+    "quote": "Tipnj 1- Tipnj 7 (да – 1 нет – 2)"
+   },
+   "confidence": "medium",
+   "note": "The form lists dwelling types 1–7 as rows; the structure stores them as yes/no columns. Consistent, but the form never shows the 1/2 coding."
+  },
+  {
+   "id": "D006-doc-Q8-who",
+   "type": "doc_issue",
+   "targets": [
+    "NOMP1",
+    "VOZ1"
+   ],
+   "source": {
+    "doc": "instruction",
+    "quote": "На вопрос 8 отвечают домашние хозяйства (в возрасте от 18 лет и старше)"
+   },
+   "confidence": "high",
+   "note": "A household has no age: the instruction means household members aged 18+."
+  },
+  {
+   "id": "D006-doc-UCH-FS-coding",
+   "type": "doc_issue",
+   "targets": [
+    "UCH_FS1_1",
+    "UCH_FS1_2"
+   ],
+   "source": {
+    "doc": "structure",
+    "quote": "Форма собственности Uch_fs1_1- Uch_fs8_4"
+   },
+   "confidence": "medium",
+   "note": "Four columns per plot, each holding a 1–4 code: whether a column is 'plot part k' or 'option k' is not stated."
+  }
+ ]
+}

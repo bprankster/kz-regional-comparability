@@ -1,0 +1,204 @@
+synthesis,floor,independent,rule_id,type,column,year,region,records,applicable,violations,rate_region,rate_rest,z,per_record_region,per_record_rest,excess,flag
+could be broken links in the synthetic data,0.0,3.2,D002-P2Q2-skip,skip,GR22_5,2023,Karaganda,600,60,3,5.0,0.2,6.4,0.5,0.1,2.9,False
+forced by the answer shares,5.0,11.5,D002-P2Q8-skip,skip,GR28_2,2023,Aktobe,689,642,41,6.4,0.1,22.2,6.0,0.1,40.1,True
+forced by the answer shares,5.1,11.6,D002-P2Q8-skip,skip,GR28_3,2023,Aktobe,689,642,41,6.4,0.2,21.6,6.0,0.2,39.9,True
+forced by the answer shares,3.3,9.9,D002-P2Q8-skip,skip,GR28_4,2023,Aktobe,689,642,33,5.1,0.1,19.7,4.8,0.1,32.2,True
+forced by the answer shares,8.2,85.2,D002-P3Q16-required,required,GR316_1|GR316_2|GR316_3|GR316_4|GR316_5|GR316_6,2023,Karaganda,600,97,9,9.3,2.2,4.5,1.5,0.5,6.9,False
+forced by the answer shares,75.8,99.0,D002-P3Q16-required,required,GR316_1|GR316_2|GR316_3|GR316_4|GR316_5|GR316_6,2023,Pavlodar,789,33,25,75.8,1.6,27.5,3.2,0.4,24.5,True
+forced by the answer shares,8.8,79.4,D002-P3Q18-required,required,GR318_1|GR318_2|GR318_3|GR318_4|GR318_5|GR318_6|GR318_7|GR318_8|GR318_9,2023,Ulytau,402,91,8,8.8,2.5,3.5,2.0,0.3,5.7,False
+forced by the answer shares,10.6,94.3,D002-P3Q18-required,required,GR318_1|GR318_2|GR318_3|GR318_4|GR318_5|GR318_6|GR318_7|GR318_8|GR318_9,2024,Almaty city,736,47,5,10.6,2.6,3.3,0.7,0.4,3.8,False
+partly forced,5.8,73.1,D002-P4-required,required,GR41,2023,Zhetysu,480,137,56,40.9,11.8,10.2,11.7,6.2,39.9,True
+could be broken links in the synthetic data,0.0,92.7,D002-P4-required,required,GR41,2024,Almaty city,736,39,37,94.9,9.0,18.2,5.0,4.9,33.5,True
+could be broken links in the synthetic data,26.3,79.0,D002-P4-required,required,GR44_1,2023,Zhetysu,480,137,82,59.9,12.1,16.3,17.1,6.3,65.4,True
+could be broken links in the synthetic data,0.0,92.1,D002-P4-required,required,GR44_1,2024,Almaty city,736,39,37,94.9,10.0,17.2,5.0,5.5,33.1,True
+could be broken links in the synthetic data,26.3,79.0,D002-P4-required,required,GR44_10,2023,Zhetysu,480,137,82,59.9,12.4,16.1,17.1,6.5,65.0,True
+could be broken links in the synthetic data,0.0,92.7,D002-P4-required,required,GR44_10,2024,Almaty city,736,39,37,94.9,10.1,17.1,5.0,5.5,33.1,True
+could be broken links in the synthetic data,28.5,79.6,D002-P4-required,required,GR44_11,2023,Zhetysu,480,137,84,61.3,12.7,16.3,17.5,6.7,66.6,True
+could be broken links in the synthetic data,0.0,92.8,D002-P4-required,required,GR44_11,2024,Almaty city,736,39,37,94.9,10.1,17.1,5.0,5.5,33.0,True
+could be broken links in the synthetic data,28.5,79.6,D002-P4-required,required,GR44_12,2023,Zhetysu,480,137,84,61.3,12.9,16.1,17.5,6.8,66.3,True
+could be broken links in the synthetic data,0.0,93.3,D002-P4-required,required,GR44_12,2024,Almaty city,736,39,37,94.9,10.7,16.6,5.0,5.8,32.8,True
+could be broken links in the synthetic data,29.2,79.8,D002-P4-required,required,GR44_13,2023,Zhetysu,480,137,85,62.0,13.4,16.0,17.7,7.0,66.6,True
+could be broken links in the synthetic data,0.0,93.6,D002-P4-required,required,GR44_13,2024,Almaty city,736,39,37,94.9,11.3,16.1,5.0,6.2,32.6,True
+could be broken links in the synthetic data,29.2,79.8,D002-P4-required,required,GR44_14,2023,Zhetysu,480,137,84,61.3,13.5,15.7,17.5,7.1,65.5,True
+could be broken links in the synthetic data,0.0,94.0,D002-P4-required,required,GR44_14,2024,Almaty city,736,39,37,94.9,11.3,16.1,5.0,6.1,32.6,True
+could be broken links in the synthetic data,26.3,79.0,D002-P4-required,required,GR44_2,2023,Zhetysu,480,137,82,59.9,12.4,16.1,17.1,6.5,65.0,True
+could be broken links in the synthetic data,0.0,92.8,D002-P4-required,required,GR44_2,2024,Almaty city,736,39,37,94.9,10.3,17.0,5.0,5.6,33.0,True
+could be broken links in the synthetic data,28.5,79.6,D002-P4-required,required,GR44_3,2023,Zhetysu,480,137,84,61.3,12.9,16.2,17.5,6.7,66.3,True
+could be broken links in the synthetic data,0.0,93.5,D002-P4-required,required,GR44_3,2024,Almaty city,736,39,37,94.9,10.8,16.5,5.0,5.9,32.8,True
+could be broken links in the synthetic data,28.5,79.6,D002-P4-required,required,GR44_4,2023,Zhetysu,480,137,84,61.3,13.3,15.9,17.5,6.9,65.8,True
+could be broken links in the synthetic data,0.0,93.6,D002-P4-required,required,GR44_4,2024,Almaty city,736,39,37,94.9,10.9,16.4,5.0,5.9,32.7,True
+could be broken links in the synthetic data,29.2,79.8,D002-P4-required,required,GR44_5,2023,Zhetysu,480,137,85,62.0,13.7,15.8,17.7,7.2,66.2,True
+could be broken links in the synthetic data,0.0,93.6,D002-P4-required,required,GR44_5,2024,Almaty city,736,39,37,94.9,11.0,16.3,5.0,6.0,32.7,True
+could be broken links in the synthetic data,29.2,79.8,D002-P4-required,required,GR44_6,2023,Zhetysu,480,137,85,62.0,13.9,15.6,17.7,7.3,66.0,True
+could be broken links in the synthetic data,0.0,94.2,D002-P4-required,required,GR44_6,2024,Almaty city,736,39,37,94.9,11.6,15.9,5.0,6.3,32.5,True
+could be broken links in the synthetic data,29.2,79.8,D002-P4-required,required,GR44_7,2023,Zhetysu,480,137,85,62.0,13.9,15.6,17.7,7.3,66.0,True
+could be broken links in the synthetic data,0.0,94.6,D002-P4-required,required,GR44_7,2024,Almaty city,736,39,37,94.9,11.9,15.7,5.0,6.5,32.4,True
+could be broken links in the synthetic data,29.9,80.0,D002-P4-required,required,GR44_8,2023,Zhetysu,480,137,86,62.8,14.3,15.5,17.9,7.5,66.4,True
+could be broken links in the synthetic data,10.3,95.2,D002-P4-required,required,GR44_8,2024,Almaty city,736,39,37,94.9,12.2,15.4,5.0,6.6,32.2,True
+could be broken links in the synthetic data,29.2,79.8,D002-P4-required,required,GR44_9,2023,Zhetysu,480,137,85,62.0,14.0,15.6,17.7,7.3,65.9,True
+could be broken links in the synthetic data,15.4,95.5,D002-P4-required,required,GR44_9,2024,Almaty city,736,39,37,94.9,12.7,15.1,5.0,6.9,32.1,True
+could be broken links in the synthetic data,26.3,79.0,D002-P4-required,required,GR45_1,2023,Zhetysu,480,137,82,59.9,12.3,16.2,17.1,6.4,65.2,True
+could be broken links in the synthetic data,0.0,93.2,D002-P4-required,required,GR45_1,2024,Almaty city,736,39,38,97.4,10.5,17.3,5.2,5.7,33.9,True
+could be broken links in the synthetic data,27.0,79.2,D002-P4-required,required,GR45_10,2023,Zhetysu,480,137,82,59.9,12.9,15.7,17.1,6.7,64.4,True
+could be broken links in the synthetic data,0.0,94.2,D002-P4-required,required,GR45_10,2024,Almaty city,736,39,38,97.4,11.0,16.9,5.2,6.0,33.7,True
+could be broken links in the synthetic data,27.7,79.4,D002-P4-required,required,GR45_11,2023,Zhetysu,480,137,83,60.6,13.8,15.3,17.3,7.2,64.2,True
+could be broken links in the synthetic data,0.0,94.6,D002-P4-required,required,GR45_11,2024,Almaty city,736,39,38,97.4,11.4,16.5,5.2,6.2,33.6,True
+forced by the answer shares,31.4,80.4,D002-P4-required,required,GR45_12,2023,Zhetysu,480,137,85,62.0,14.4,15.3,17.7,7.5,65.3,True
+could be broken links in the synthetic data,0.0,94.7,D002-P4-required,required,GR45_12,2024,Almaty city,736,39,38,97.4,11.7,16.3,5.2,6.4,33.4,True
+forced by the answer shares,32.1,80.6,D002-P4-required,required,GR45_13,2023,Zhetysu,480,137,85,62.0,15.0,14.8,17.7,7.8,64.5,True
+could be broken links in the synthetic data,10.3,95.2,D002-P4-required,required,GR45_13,2024,Almaty city,736,39,38,97.4,13.0,15.4,5.2,7.0,32.9,True
+forced by the answer shares,31.4,80.4,D002-P4-required,required,GR45_14,2023,Zhetysu,480,137,85,62.0,15.0,14.8,17.7,7.8,64.5,True
+could be broken links in the synthetic data,7.7,95.1,D002-P4-required,required,GR45_14,2024,Almaty city,736,39,38,97.4,13.0,15.4,5.2,7.1,32.9,True
+could be broken links in the synthetic data,27.7,79.4,D002-P4-required,required,GR45_2,2023,Zhetysu,480,137,83,60.6,13.9,15.2,17.3,7.2,64.0,True
+could be broken links in the synthetic data,0.0,94.4,D002-P4-required,required,GR45_2,2024,Almaty city,736,39,38,97.4,11.1,16.7,5.2,6.1,33.7,True
+could be broken links in the synthetic data,29.2,79.8,D002-P4-required,required,GR45_3,2023,Zhetysu,480,137,84,61.3,14.7,14.8,17.5,7.7,63.8,True
+could be broken links in the synthetic data,7.7,95.1,D002-P4-required,required,GR45_3,2024,Almaty city,736,39,38,97.4,12.6,15.7,5.2,6.8,33.1,True
+could be broken links in the synthetic data,30.7,80.2,D002-P4-required,required,GR45_4,2023,Zhetysu,480,137,86,62.8,15.2,14.9,17.9,8.0,65.1,True
+could be broken links in the synthetic data,7.7,95.1,D002-P4-required,required,GR45_4,2024,Almaty city,736,39,38,97.4,12.7,15.5,5.2,6.9,33.0,True
+forced by the answer shares,33.6,81.0,D002-P4-required,required,GR45_5,2023,Zhetysu,480,137,90,65.7,15.9,15.3,18.8,8.3,68.2,True
+could be broken links in the synthetic data,7.7,95.1,D002-P4-required,required,GR45_5,2024,Almaty city,736,39,38,97.4,13.0,15.3,5.2,7.1,32.9,True
+forced by the answer shares,33.6,81.0,D002-P4-required,required,GR45_6,2023,Zhetysu,480,137,90,65.7,16.5,14.9,18.8,8.6,67.4,True
+could be broken links in the synthetic data,10.3,95.2,D002-P4-required,required,GR45_6,2024,Almaty city,736,39,38,97.4,13.6,15.0,5.2,7.4,32.7,True
+forced by the answer shares,35.0,81.5,D002-P4-required,required,GR45_7,2023,Zhetysu,480,137,91,66.4,16.6,15.1,19.0,8.7,68.2,True
+could be broken links in the synthetic data,15.4,95.5,D002-P4-required,required,GR45_7,2024,Almaty city,736,39,38,97.4,13.8,14.8,5.2,7.5,32.6,True
+forced by the answer shares,32.8,80.8,D002-P4-required,required,GR45_8,2023,Zhetysu,480,137,87,63.5,15.4,15.0,18.1,8.1,65.8,True
+could be broken links in the synthetic data,12.8,95.4,D002-P4-required,required,GR45_8,2024,Almaty city,736,39,38,97.4,12.4,15.8,5.2,6.7,33.2,True
+forced by the answer shares,33.6,81.0,D002-P4-required,required,GR45_9,2023,Zhetysu,480,137,88,64.2,15.8,14.9,18.3,8.3,66.3,True
+could be broken links in the synthetic data,15.4,95.5,D002-P4-required,required,GR45_9,2024,Almaty city,736,39,38,97.4,12.9,15.4,5.2,7.0,33.0,True
+could be broken links in the synthetic data,29.9,80.0,D002-P4-required,required,GR46,2023,Zhetysu,480,137,84,61.3,15.5,14.3,17.5,8.1,62.7,True
+could be broken links in the synthetic data,7.7,95.1,D002-P4-required,required,GR46,2024,Almaty city,736,39,38,97.4,13.2,15.2,5.2,7.2,32.8,True
+could be broken links in the synthetic data,2.2,85.2,D002-P4-skip,skip,GR41,2023,Kyzylorda,587,89,54,60.7,11.9,13.7,9.2,6.0,43.4,True
+could be broken links in the synthetic data,8.0,88.6,D002-P4-skip,skip,GR41,2023,Turkistan,603,75,64,85.3,11.7,19.1,10.6,5.9,55.2,True
+could be broken links in the synthetic data,2.7,75.7,D002-P4-skip,skip,GR41,2024,Kyzylorda,585,146,79,54.1,9.0,17.8,13.5,4.5,65.8,True
+could be broken links in the synthetic data,4.7,89.7,D002-P4-skip,skip,GR41,2024,Turkistan,595,64,55,85.9,9.3,20.2,9.2,4.7,49.0,True
+partly forced,6.9,74.6,D002-P4-skip,skip,GR41,2024,Shymkent,480,131,43,32.8,9.6,8.7,9.0,4.8,30.4,True
+could be broken links in the synthetic data,0.0,78.2,D002-P4-skip,skip,GR44_1,2023,Kyzylorda,587,89,67,75.3,12.1,17.5,11.4,6.1,56.2,True
+could be broken links in the synthetic data,0.0,86.6,D002-P4-skip,skip,GR44_1,2023,Turkistan,603,75,54,72.0,12.3,15.2,9.0,6.2,44.8,True
+partly forced,0.0,68.7,D002-P4-skip,skip,GR44_1,2024,Kyzylorda,585,146,47,32.2,10.7,8.1,8.0,5.3,31.4,True
+could be broken links in the synthetic data,3.1,89.6,D002-P4-skip,skip,GR44_1,2024,Turkistan,595,64,56,87.5,10.4,19.5,9.4,5.2,49.4,True
+could be broken links in the synthetic data,0.0,78.2,D002-P4-skip,skip,GR44_10,2023,Kyzylorda,587,89,67,75.3,12.1,17.5,11.4,6.1,56.2,True
+could be broken links in the synthetic data,0.0,86.6,D002-P4-skip,skip,GR44_10,2023,Turkistan,603,75,54,72.0,12.3,15.2,9.0,6.2,44.8,True
+partly forced,0.0,68.5,D002-P4-skip,skip,GR44_10,2024,Kyzylorda,585,146,47,32.2,10.6,8.2,8.0,5.3,31.5,True
+could be broken links in the synthetic data,3.1,89.6,D002-P4-skip,skip,GR44_10,2024,Turkistan,595,64,56,87.5,10.3,19.5,9.4,5.2,49.4,True
+could be broken links in the synthetic data,0.0,78.2,D002-P4-skip,skip,GR44_11,2023,Kyzylorda,587,89,67,75.3,12.0,17.6,11.4,6.0,56.3,True
+could be broken links in the synthetic data,0.0,86.6,D002-P4-skip,skip,GR44_11,2023,Turkistan,603,75,54,72.0,12.2,15.3,9.0,6.2,44.8,True
+partly forced,0.0,68.5,D002-P4-skip,skip,GR44_11,2024,Kyzylorda,585,146,47,32.2,10.6,8.2,8.0,5.3,31.5,True
+could be broken links in the synthetic data,3.1,89.6,D002-P4-skip,skip,GR44_11,2024,Turkistan,595,64,56,87.5,10.3,19.5,9.4,5.2,49.4,True
+could be broken links in the synthetic data,0.0,78.2,D002-P4-skip,skip,GR44_12,2023,Kyzylorda,587,89,67,75.3,12.0,17.6,11.4,6.0,56.3,True
+could be broken links in the synthetic data,0.0,86.6,D002-P4-skip,skip,GR44_12,2023,Turkistan,603,75,54,72.0,12.2,15.3,9.0,6.2,44.9,True
+partly forced,0.0,68.5,D002-P4-skip,skip,GR44_12,2024,Kyzylorda,585,146,47,32.2,10.4,8.3,8.0,5.2,31.8,True
+could be broken links in the synthetic data,0.0,88.9,D002-P4-skip,skip,GR44_12,2024,Turkistan,595,64,56,87.5,10.1,19.7,9.4,5.1,49.5,True
+could be broken links in the synthetic data,0.0,77.2,D002-P4-skip,skip,GR44_13,2023,Kyzylorda,587,89,67,75.3,11.9,17.7,11.4,6.0,56.4,True
+could be broken links in the synthetic data,0.0,86.6,D002-P4-skip,skip,GR44_13,2023,Turkistan,603,75,54,72.0,12.1,15.4,9.0,6.1,44.9,True
+partly forced,0.0,68.5,D002-P4-skip,skip,GR44_13,2024,Kyzylorda,585,146,47,32.2,10.3,8.4,8.0,5.1,31.9,True
+could be broken links in the synthetic data,0.0,88.9,D002-P4-skip,skip,GR44_13,2024,Turkistan,595,64,56,87.5,10.0,19.8,9.4,5.1,49.6,True
+could be broken links in the synthetic data,0.0,77.3,D002-P4-skip,skip,GR44_14,2023,Kyzylorda,587,89,67,75.3,11.9,17.7,11.4,6.0,56.4,True
+could be broken links in the synthetic data,0.0,86.6,D002-P4-skip,skip,GR44_14,2023,Turkistan,603,75,54,72.0,12.1,15.4,9.0,6.1,44.9,True
+partly forced,0.0,68.5,D002-P4-skip,skip,GR44_14,2024,Kyzylorda,585,146,47,32.2,10.2,8.5,8.0,5.1,32.1,True
+could be broken links in the synthetic data,0.0,88.9,D002-P4-skip,skip,GR44_14,2024,Turkistan,595,64,56,87.5,9.9,19.9,9.4,5.0,49.7,True
+could be broken links in the synthetic data,0.0,78.2,D002-P4-skip,skip,GR44_2,2023,Kyzylorda,587,89,67,75.3,12.1,17.6,11.4,6.1,56.3,True
+could be broken links in the synthetic data,0.0,86.4,D002-P4-skip,skip,GR44_2,2023,Turkistan,603,75,54,72.0,12.3,15.3,9.0,6.2,44.8,True
+partly forced,0.0,68.5,D002-P4-skip,skip,GR44_2,2024,Kyzylorda,585,146,47,32.2,10.5,8.2,8.0,5.2,31.7,True
+could be broken links in the synthetic data,3.1,89.6,D002-P4-skip,skip,GR44_2,2024,Turkistan,595,64,56,87.5,10.2,19.6,9.4,5.2,49.5,True
+could be broken links in the synthetic data,0.0,77.9,D002-P4-skip,skip,GR44_3,2023,Kyzylorda,587,89,67,75.3,12.0,17.7,11.4,6.0,56.4,True
+could be broken links in the synthetic data,0.0,86.4,D002-P4-skip,skip,GR44_3,2023,Turkistan,603,75,54,72.0,12.2,15.4,9.0,6.1,44.9,True
+partly forced,0.0,68.5,D002-P4-skip,skip,GR44_3,2024,Kyzylorda,585,146,47,32.2,10.3,8.4,8.0,5.1,31.9,True
+could be broken links in the synthetic data,3.1,89.6,D002-P4-skip,skip,GR44_3,2024,Turkistan,595,64,56,87.5,10.0,19.8,9.4,5.1,49.6,True
+could be broken links in the synthetic data,0.0,77.7,D002-P4-skip,skip,GR44_4,2023,Kyzylorda,587,89,67,75.3,11.9,17.7,11.4,6.0,56.4,True
+could be broken links in the synthetic data,0.0,86.4,D002-P4-skip,skip,GR44_4,2023,Turkistan,603,75,54,72.0,12.1,15.4,9.0,6.1,44.9,True
+partly forced,0.0,68.5,D002-P4-skip,skip,GR44_4,2024,Kyzylorda,585,146,47,32.2,10.3,8.4,8.0,5.1,32.0,True
+could be broken links in the synthetic data,0.0,89.2,D002-P4-skip,skip,GR44_4,2024,Turkistan,595,64,56,87.5,10.0,19.8,9.4,5.0,49.6,True
+could be broken links in the synthetic data,0.0,77.5,D002-P4-skip,skip,GR44_5,2023,Kyzylorda,587,89,67,75.3,11.8,17.8,11.4,6.0,56.5,True
+could be broken links in the synthetic data,0.0,86.2,D002-P4-skip,skip,GR44_5,2023,Turkistan,603,75,54,72.0,12.0,15.4,9.0,6.1,45.0,True
+partly forced,0.0,68.5,D002-P4-skip,skip,GR44_5,2024,Kyzylorda,585,146,47,32.2,10.3,8.4,8.0,5.1,32.0,True
+could be broken links in the synthetic data,0.0,89.2,D002-P4-skip,skip,GR44_5,2024,Turkistan,595,64,56,87.5,10.0,19.9,9.4,5.0,49.6,True
+could be broken links in the synthetic data,0.0,77.5,D002-P4-skip,skip,GR44_6,2023,Kyzylorda,587,89,67,75.3,11.8,17.8,11.4,5.9,56.5,True
+could be broken links in the synthetic data,0.0,86.2,D002-P4-skip,skip,GR44_6,2023,Turkistan,603,75,54,72.0,12.0,15.5,9.0,6.1,45.0,True
+partly forced,0.0,68.5,D002-P4-skip,skip,GR44_6,2024,Kyzylorda,585,146,47,32.2,10.2,8.5,8.0,5.1,32.2,True
+could be broken links in the synthetic data,0.0,89.1,D002-P4-skip,skip,GR44_6,2024,Turkistan,595,64,56,87.5,9.9,20.0,9.4,5.0,49.7,True
+could be broken links in the synthetic data,0.0,77.5,D002-P4-skip,skip,GR44_7,2023,Kyzylorda,587,89,67,75.3,11.8,17.8,11.4,5.9,56.5,True
+could be broken links in the synthetic data,0.0,86.2,D002-P4-skip,skip,GR44_7,2023,Turkistan,603,75,54,72.0,12.0,15.5,9.0,6.0,45.0,True
+partly forced,0.0,68.5,D002-P4-skip,skip,GR44_7,2024,Kyzylorda,585,146,47,32.2,10.1,8.6,8.0,5.0,32.3,True
+could be broken links in the synthetic data,0.0,89.1,D002-P4-skip,skip,GR44_7,2024,Turkistan,595,64,56,87.5,9.8,20.1,9.4,4.9,49.8,True
+could be broken links in the synthetic data,0.0,77.2,D002-P4-skip,skip,GR44_8,2023,Kyzylorda,587,89,67,75.3,11.7,17.9,11.4,5.9,56.6,True
+could be broken links in the synthetic data,0.0,86.1,D002-P4-skip,skip,GR44_8,2023,Turkistan,603,75,54,72.0,11.9,15.6,9.0,6.0,45.1,True
+partly forced,0.0,68.4,D002-P4-skip,skip,GR44_8,2024,Kyzylorda,585,146,47,32.2,9.9,8.7,8.0,4.9,32.5,True
+could be broken links in the synthetic data,0.0,88.9,D002-P4-skip,skip,GR44_8,2024,Turkistan,595,64,56,87.5,9.6,20.2,9.4,4.9,49.8,True
+could be broken links in the synthetic data,0.0,77.3,D002-P4-skip,skip,GR44_9,2023,Kyzylorda,587,89,66,74.2,11.7,17.5,11.2,5.9,55.5,True
+could be broken links in the synthetic data,0.0,86.2,D002-P4-skip,skip,GR44_9,2023,Turkistan,603,75,54,72.0,11.9,15.5,9.0,6.0,45.1,True
+partly forced,0.0,68.4,D002-P4-skip,skip,GR44_9,2024,Kyzylorda,585,146,47,32.2,9.9,8.7,8.0,4.9,32.6,True
+could be broken links in the synthetic data,0.0,88.7,D002-P4-skip,skip,GR44_9,2024,Turkistan,595,64,56,87.5,9.6,20.3,9.4,4.8,49.9,True
+could be broken links in the synthetic data,0.0,78.0,D002-P4-skip,skip,GR45_1,2023,Kyzylorda,587,89,67,75.3,12.0,17.6,11.4,6.1,56.3,True
+could be broken links in the synthetic data,0.0,86.6,D002-P4-skip,skip,GR45_1,2023,Turkistan,603,75,54,72.0,12.2,15.3,9.0,6.2,44.8,True
+partly forced,0.0,68.5,D002-P4-skip,skip,GR45_1,2024,Kyzylorda,585,146,47,32.2,10.4,8.3,8.0,5.2,31.8,True
+could be broken links in the synthetic data,0.0,87.9,D002-P4-skip,skip,GR45_1,2024,Turkistan,595,64,56,87.5,10.1,19.7,9.4,5.1,49.5,True
+could be broken links in the synthetic data,0.0,77.9,D002-P4-skip,skip,GR45_10,2023,Kyzylorda,587,89,67,75.3,11.9,17.7,11.4,6.0,56.4,True
+could be broken links in the synthetic data,0.0,86.6,D002-P4-skip,skip,GR45_10,2023,Turkistan,603,75,54,72.0,12.1,15.4,9.0,6.1,44.9,True
+partly forced,0.0,68.2,D002-P4-skip,skip,GR45_10,2024,Kyzylorda,585,146,47,32.2,10.2,8.4,8.0,5.1,32.1,True
+could be broken links in the synthetic data,0.0,87.9,D002-P4-skip,skip,GR45_10,2024,Turkistan,595,64,56,87.5,9.9,19.9,9.4,5.0,49.6,True
+could be broken links in the synthetic data,0.0,77.5,D002-P4-skip,skip,GR45_11,2023,Kyzylorda,587,89,67,75.3,11.8,17.8,11.4,5.9,56.5,True
+could be broken links in the synthetic data,0.0,86.4,D002-P4-skip,skip,GR45_11,2023,Turkistan,603,75,54,72.0,12.0,15.5,9.0,6.1,45.0,True
+partly forced,0.0,68.2,D002-P4-skip,skip,GR45_11,2024,Kyzylorda,585,146,47,32.2,10.1,8.5,8.0,5.1,32.2,True
+could be broken links in the synthetic data,0.0,87.9,D002-P4-skip,skip,GR45_11,2024,Turkistan,595,64,56,87.5,9.8,20.0,9.4,5.0,49.7,True
+could be broken links in the synthetic data,0.0,77.5,D002-P4-skip,skip,GR45_12,2023,Kyzylorda,587,89,67,75.3,11.7,17.9,11.4,5.9,56.6,True
+could be broken links in the synthetic data,0.0,86.4,D002-P4-skip,skip,GR45_12,2023,Turkistan,603,75,54,72.0,11.9,15.6,9.0,6.0,45.1,True
+partly forced,0.0,68.2,D002-P4-skip,skip,GR45_12,2024,Kyzylorda,585,146,47,32.2,10.1,8.6,8.0,5.0,32.3,True
+could be broken links in the synthetic data,0.0,87.9,D002-P4-skip,skip,GR45_12,2024,Turkistan,595,64,56,87.5,9.8,20.1,9.4,4.9,49.7,True
+could be broken links in the synthetic data,0.0,77.5,D002-P4-skip,skip,GR45_13,2023,Kyzylorda,587,89,67,75.3,11.5,18.0,11.4,5.8,56.7,True
+could be broken links in the synthetic data,0.0,86.4,D002-P4-skip,skip,GR45_13,2023,Turkistan,603,75,54,72.0,11.7,15.7,9.0,5.9,45.2,True
+partly forced,0.0,68.2,D002-P4-skip,skip,GR45_13,2024,Kyzylorda,585,146,47,32.2,9.9,8.7,8.0,4.9,32.5,True
+could be broken links in the synthetic data,0.0,87.9,D002-P4-skip,skip,GR45_13,2024,Turkistan,595,64,56,87.5,9.6,20.2,9.4,4.9,49.8,True
+could be broken links in the synthetic data,0.0,77.5,D002-P4-skip,skip,GR45_14,2023,Kyzylorda,587,89,67,75.3,11.6,18.0,11.4,5.8,56.7,True
+could be broken links in the synthetic data,0.0,86.4,D002-P4-skip,skip,GR45_14,2023,Turkistan,603,75,54,72.0,11.8,15.6,9.0,5.9,45.2,True
+partly forced,0.0,68.2,D002-P4-skip,skip,GR45_14,2024,Kyzylorda,585,146,47,32.2,9.9,8.7,8.0,4.9,32.6,True
+could be broken links in the synthetic data,0.0,87.6,D002-P4-skip,skip,GR45_14,2024,Turkistan,595,64,56,87.5,9.6,20.3,9.4,4.8,49.9,True
+could be broken links in the synthetic data,0.0,77.7,D002-P4-skip,skip,GR45_2,2023,Kyzylorda,587,89,67,75.3,11.8,17.8,11.4,5.9,56.5,True
+could be broken links in the synthetic data,0.0,86.4,D002-P4-skip,skip,GR45_2,2023,Turkistan,603,75,54,72.0,12.0,15.5,9.0,6.0,45.0,True
+partly forced,0.0,68.2,D002-P4-skip,skip,GR45_2,2024,Kyzylorda,585,146,47,32.2,10.1,8.6,8.0,5.0,32.3,True
+could be broken links in the synthetic data,0.0,87.9,D002-P4-skip,skip,GR45_2,2024,Turkistan,595,64,56,87.5,9.8,20.1,9.4,4.9,49.7,True
+could be broken links in the synthetic data,0.0,77.3,D002-P4-skip,skip,GR45_3,2023,Kyzylorda,587,89,66,74.2,11.7,17.6,11.2,5.9,55.6,True
+could be broken links in the synthetic data,0.0,86.4,D002-P4-skip,skip,GR45_3,2023,Turkistan,603,75,54,72.0,11.8,15.6,9.0,6.0,45.1,True
+partly forced,0.0,68.2,D002-P4-skip,skip,GR45_3,2024,Kyzylorda,585,146,47,32.2,9.9,8.7,8.0,4.9,32.6,True
+could be broken links in the synthetic data,0.0,87.7,D002-P4-skip,skip,GR45_3,2024,Turkistan,595,64,56,87.5,9.6,20.3,9.4,4.9,49.9,True
+could be broken links in the synthetic data,0.0,77.2,D002-P4-skip,skip,GR45_4,2023,Kyzylorda,587,89,66,74.2,11.6,17.7,11.2,5.8,55.7,True
+could be broken links in the synthetic data,0.0,86.2,D002-P4-skip,skip,GR45_4,2023,Turkistan,603,75,54,72.0,11.7,15.7,9.0,5.9,45.2,True
+partly forced,0.0,68.2,D002-P4-skip,skip,GR45_4,2024,Kyzylorda,585,146,47,32.2,9.9,8.7,8.0,4.9,32.6,True
+could be broken links in the synthetic data,0.0,87.7,D002-P4-skip,skip,GR45_4,2024,Turkistan,595,64,56,87.5,9.6,20.3,9.4,4.8,49.9,True
+could be broken links in the synthetic data,0.0,77.0,D002-P4-skip,skip,GR45_5,2023,Kyzylorda,587,89,66,74.2,11.5,17.8,11.2,5.8,55.8,True
+could be broken links in the synthetic data,0.0,86.2,D002-P4-skip,skip,GR45_5,2023,Turkistan,603,75,54,72.0,11.6,15.7,9.0,5.9,45.3,True
+partly forced,0.0,68.2,D002-P4-skip,skip,GR45_5,2024,Kyzylorda,585,146,47,32.2,9.8,8.7,8.0,4.9,32.6,True
+could be broken links in the synthetic data,0.0,87.4,D002-P4-skip,skip,GR45_5,2024,Turkistan,595,64,56,87.5,9.5,20.3,9.4,4.8,49.9,True
+could be broken links in the synthetic data,0.0,77.0,D002-P4-skip,skip,GR45_6,2023,Kyzylorda,587,89,66,74.2,11.4,17.9,11.2,5.7,55.9,True
+could be broken links in the synthetic data,0.0,86.2,D002-P4-skip,skip,GR45_6,2023,Turkistan,603,75,54,72.0,11.6,15.8,9.0,5.9,45.3,True
+partly forced,0.0,68.2,D002-P4-skip,skip,GR45_6,2024,Kyzylorda,585,146,47,32.2,9.7,8.8,8.0,4.8,32.8,True
+could be broken links in the synthetic data,0.0,87.4,D002-P4-skip,skip,GR45_6,2024,Turkistan,595,64,56,87.5,9.4,20.5,9.4,4.8,50.0,True
+could be broken links in the synthetic data,0.0,76.7,D002-P4-skip,skip,GR45_7,2023,Kyzylorda,587,89,66,74.2,11.4,17.9,11.2,5.7,55.9,True
+could be broken links in the synthetic data,0.0,86.2,D002-P4-skip,skip,GR45_7,2023,Turkistan,603,75,54,72.0,11.6,15.8,9.0,5.8,45.3,True
+partly forced,0.0,68.2,D002-P4-skip,skip,GR45_7,2024,Kyzylorda,585,146,47,32.2,9.7,8.9,8.0,4.8,32.9,True
+could be broken links in the synthetic data,0.0,87.1,D002-P4-skip,skip,GR45_7,2024,Turkistan,595,64,56,87.5,9.4,20.5,9.4,4.7,50.0,True
+could be broken links in the synthetic data,0.0,77.3,D002-P4-skip,skip,GR45_8,2023,Kyzylorda,587,89,66,74.2,11.5,17.8,11.2,5.8,55.8,True
+could be broken links in the synthetic data,0.0,86.4,D002-P4-skip,skip,GR45_8,2023,Turkistan,603,75,54,72.0,11.7,15.7,9.0,5.9,45.2,True
+partly forced,0.0,68.2,D002-P4-skip,skip,GR45_8,2024,Kyzylorda,585,146,47,32.2,9.8,8.8,8.0,4.9,32.7,True
+could be broken links in the synthetic data,0.0,87.7,D002-P4-skip,skip,GR45_8,2024,Turkistan,595,64,56,87.5,9.5,20.4,9.4,4.8,49.9,True
+could be broken links in the synthetic data,0.0,76.3,D002-P4-skip,skip,GR45_9,2023,Kyzylorda,587,89,65,73.0,11.4,17.5,11.1,5.8,54.8,True
+could be broken links in the synthetic data,0.0,86.4,D002-P4-skip,skip,GR45_9,2023,Turkistan,603,75,54,72.0,11.6,15.8,9.0,5.9,45.3,True
+partly forced,0.0,68.2,D002-P4-skip,skip,GR45_9,2024,Kyzylorda,585,146,47,32.2,9.7,8.8,8.0,4.8,32.8,True
+could be broken links in the synthetic data,0.0,87.6,D002-P4-skip,skip,GR45_9,2024,Turkistan,595,64,56,87.5,9.4,20.4,9.4,4.8,50.0,True
+could be broken links in the synthetic data,0.0,77.0,D002-P4-skip,skip,GR46,2023,Kyzylorda,587,89,66,74.2,11.5,17.8,11.2,5.8,55.8,True
+could be broken links in the synthetic data,0.0,85.7,D002-P4-skip,skip,GR46,2023,Turkistan,603,75,54,72.0,11.6,15.7,9.0,5.9,45.3,True
+partly forced,0.0,68.2,D002-P4-skip,skip,GR46,2024,Kyzylorda,585,146,47,32.2,9.7,8.8,8.0,4.8,32.8,True
+could be broken links in the synthetic data,0.0,87.6,D002-P4-skip,skip,GR46,2024,Turkistan,595,64,56,87.5,9.4,20.5,9.4,4.8,50.0,True
+could be broken links in the synthetic data,0.0,71.5,D002-preschool-implies-children,consistency,GR40,2023,Zhetysu,480,57,31,54.4,8.7,11.2,6.5,1.2,26.0,True
+could be broken links in the synthetic data,0.0,56.9,D002-preschool-implies-children,consistency,GR40,2024,Zhetysu,452,74,32,43.2,13.8,6.9,7.1,1.9,21.8,True
+forced by the answer shares,70.3,93.0,D002-preschool-implies-children,consistency,GR40,2024,Ulytau,385,91,84,92.3,10.7,21.1,21.8,1.5,74.3,True
+could be broken links in the synthetic data,17.0,94.7,D002-preschool-implies-children,consistency,GR40,2024,Almaty city,736,47,42,89.4,13.0,14.4,5.7,1.9,35.9,True
+not conditional,,,D002-same-person,consistency,POL+VOZ+NOMP,2023,Kyzylorda,587,587,68,11.6,2.3,13.4,11.6,2.3,54.6,True
+forced by the answer shares,93.6,95.9,D002-x-D008-child-household,consistency,GR40,2023,Aktobe,689,437,423,96.8,9.3,49.6,61.4,5.2,382.6,True
+forced by the answer shares,52.6,71.5,D002-x-D008-child-household,consistency,GR40,2023,Zhetysu,480,289,161,55.7,13.1,19.9,33.5,7.4,123.1,True
+forced by the answer shares,90.1,93.0,D002-x-D008-child-household,consistency,GR40,2024,Ulytau,385,273,250,91.6,10.2,38.4,64.9,5.7,222.1,True
+forced by the answer shares,88.8,94.7,D002-x-D008-child-household,consistency,GR40,2024,Almaty city,736,348,322,92.5,9.2,44.2,43.8,5.2,289.9,True
+could be broken links in the synthetic data,27.6,84.8,D002-x-D008-nochild-household,consistency,GR40,2023,Kyzylorda,587,123,75,61.0,6.6,22.1,12.8,3.0,66.9,True
+forced by the answer shares,44.9,87.6,D002-x-D008-nochild-household,consistency,GR40,2023,Turkistan,603,136,87,64.0,6.4,24.6,14.4,2.9,78.3,True
+partly forced,1.4,75.0,D002-x-D008-nochild-household,consistency,GR40,2024,Kyzylorda,585,148,50,33.8,6.2,12.9,8.5,2.8,40.8,True
+forced by the answer shares,47.1,89.2,D002-x-D008-nochild-household,consistency,GR40,2024,Turkistan,595,121,104,86.0,5.2,34.4,17.5,2.3,97.8,True
+forced by the answer shares,19.6,72.7,D002-x-D008-nochild-household,consistency,GR40,2024,Shymkent,480,163,39,23.9,6.5,8.6,8.1,2.9,28.5,True

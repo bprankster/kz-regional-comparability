@@ -1,0 +1,181 @@
+form,column,anchors,trial,codes,correct
+D-008,POL,"age, K, RODSTVO",0,2,2
+D-008,POL,"age, K, RODSTVO",1,2,2
+D-008,POL,"age, K, RODSTVO",2,2,2
+D-008,POL,"age, K, RODSTVO",3,2,2
+D-008,POL,"age, K, RODSTVO",4,2,2
+D-008,POL,"age, K, RODSTVO",5,2,2
+D-008,POL,"age, K, RODSTVO",6,2,2
+D-008,POL,"age, K, RODSTVO",7,2,2
+D-008,POL,"age, K, RODSTVO",8,2,2
+D-008,POL,"age, K, RODSTVO",9,2,2
+D-008,POL,"age, K, RODSTVO",10,2,2
+D-008,POL,"age, K, RODSTVO",11,2,2
+D-008,POL,"age, K, RODSTVO",12,2,2
+D-008,POL,"age, K, RODSTVO",13,2,2
+D-008,POL,"age, K, RODSTVO",14,2,2
+D-008,POL,"age, K, RODSTVO",15,2,2
+D-008,POL,"age, K, RODSTVO",16,2,2
+D-008,POL,"age, K, RODSTVO",17,2,2
+D-008,POL,"age, K, RODSTVO",18,2,2
+D-008,POL,"age, K, RODSTVO",19,2,2
+D-008,SEM_POL,"age, K, POL, RODSTVO",0,4,4
+D-008,SEM_POL,"age, K, POL, RODSTVO",1,4,4
+D-008,SEM_POL,"age, K, POL, RODSTVO",2,4,4
+D-008,SEM_POL,"age, K, POL, RODSTVO",3,4,4
+D-008,SEM_POL,"age, K, POL, RODSTVO",4,4,4
+D-008,SEM_POL,"age, K, POL, RODSTVO",5,4,4
+D-008,SEM_POL,"age, K, POL, RODSTVO",6,4,4
+D-008,SEM_POL,"age, K, POL, RODSTVO",7,4,4
+D-008,SEM_POL,"age, K, POL, RODSTVO",8,4,4
+D-008,SEM_POL,"age, K, POL, RODSTVO",9,4,4
+D-008,SEM_POL,"age, K, POL, RODSTVO",10,4,4
+D-008,SEM_POL,"age, K, POL, RODSTVO",11,4,4
+D-008,SEM_POL,"age, K, POL, RODSTVO",12,4,4
+D-008,SEM_POL,"age, K, POL, RODSTVO",13,4,4
+D-008,SEM_POL,"age, K, POL, RODSTVO",14,4,4
+D-008,SEM_POL,"age, K, POL, RODSTVO",15,4,4
+D-008,SEM_POL,"age, K, POL, RODSTVO",16,4,4
+D-008,SEM_POL,"age, K, POL, RODSTVO",17,4,4
+D-008,SEM_POL,"age, K, POL, RODSTVO",18,4,4
+D-008,SEM_POL,"age, K, POL, RODSTVO",19,4,4
+D-008,UROV,"age, K, POL, RODSTVO",0,7,7
+D-008,UROV,"age, K, POL, RODSTVO",1,7,7
+D-008,UROV,"age, K, POL, RODSTVO",2,7,7
+D-008,UROV,"age, K, POL, RODSTVO",3,7,7
+D-008,UROV,"age, K, POL, RODSTVO",4,7,7
+D-008,UROV,"age, K, POL, RODSTVO",5,7,7
+D-008,UROV,"age, K, POL, RODSTVO",6,7,7
+D-008,UROV,"age, K, POL, RODSTVO",7,7,7
+D-008,UROV,"age, K, POL, RODSTVO",8,7,7
+D-008,UROV,"age, K, POL, RODSTVO",9,7,7
+D-008,UROV,"age, K, POL, RODSTVO",10,7,7
+D-008,UROV,"age, K, POL, RODSTVO",11,7,7
+D-008,UROV,"age, K, POL, RODSTVO",12,7,7
+D-008,UROV,"age, K, POL, RODSTVO",13,7,7
+D-008,UROV,"age, K, POL, RODSTVO",14,7,7
+D-008,UROV,"age, K, POL, RODSTVO",15,7,7
+D-008,UROV,"age, K, POL, RODSTVO",16,7,7
+D-008,UROV,"age, K, POL, RODSTVO",17,7,7
+D-008,UROV,"age, K, POL, RODSTVO",18,7,7
+D-008,UROV,"age, K, POL, RODSTVO",19,7,7
+D-008,STATUS,"age, K, POL, RODSTVO",0,8,8
+D-008,STATUS,"age, K, POL, RODSTVO",1,8,8
+D-008,STATUS,"age, K, POL, RODSTVO",2,8,8
+D-008,STATUS,"age, K, POL, RODSTVO",3,8,8
+D-008,STATUS,"age, K, POL, RODSTVO",4,8,8
+D-008,STATUS,"age, K, POL, RODSTVO",5,8,8
+D-008,STATUS,"age, K, POL, RODSTVO",6,8,8
+D-008,STATUS,"age, K, POL, RODSTVO",7,8,8
+D-008,STATUS,"age, K, POL, RODSTVO",8,8,8
+D-008,STATUS,"age, K, POL, RODSTVO",9,8,8
+D-008,STATUS,"age, K, POL, RODSTVO",10,8,8
+D-008,STATUS,"age, K, POL, RODSTVO",11,8,8
+D-008,STATUS,"age, K, POL, RODSTVO",12,8,8
+D-008,STATUS,"age, K, POL, RODSTVO",13,8,8
+D-008,STATUS,"age, K, POL, RODSTVO",14,8,8
+D-008,STATUS,"age, K, POL, RODSTVO",15,8,8
+D-008,STATUS,"age, K, POL, RODSTVO",16,8,8
+D-008,STATUS,"age, K, POL, RODSTVO",17,8,8
+D-008,STATUS,"age, K, POL, RODSTVO",18,8,8
+D-008,STATUS,"age, K, POL, RODSTVO",19,8,8
+D-008,RODSTVO,"age, K, POL",0,9,9
+D-008,RODSTVO,"age, K, POL",1,9,9
+D-008,RODSTVO,"age, K, POL",2,9,9
+D-008,RODSTVO,"age, K, POL",3,9,9
+D-008,RODSTVO,"age, K, POL",4,9,9
+D-008,RODSTVO,"age, K, POL",5,9,9
+D-008,RODSTVO,"age, K, POL",6,9,9
+D-008,RODSTVO,"age, K, POL",7,9,9
+D-008,RODSTVO,"age, K, POL",8,9,9
+D-008,RODSTVO,"age, K, POL",9,9,9
+D-008,RODSTVO,"age, K, POL",10,9,9
+D-008,RODSTVO,"age, K, POL",11,9,9
+D-008,RODSTVO,"age, K, POL",12,9,9
+D-008,RODSTVO,"age, K, POL",13,9,9
+D-008,RODSTVO,"age, K, POL",14,9,9
+D-008,RODSTVO,"age, K, POL",15,9,9
+D-008,RODSTVO,"age, K, POL",16,9,9
+D-008,RODSTVO,"age, K, POL",17,9,9
+D-008,RODSTVO,"age, K, POL",18,9,9
+D-008,RODSTVO,"age, K, POL",19,9,9
+D-006,TIP_J,"K, area, rooms",0,5,5
+D-006,TIP_J,"K, area, rooms",1,5,5
+D-006,TIP_J,"K, area, rooms",2,5,5
+D-006,TIP_J,"K, area, rooms",3,5,5
+D-006,TIP_J,"K, area, rooms",4,5,5
+D-006,TIP_J,"K, area, rooms",5,5,5
+D-006,TIP_J,"K, area, rooms",6,5,5
+D-006,TIP_J,"K, area, rooms",7,5,5
+D-006,TIP_J,"K, area, rooms",8,5,5
+D-006,TIP_J,"K, area, rooms",9,5,5
+D-006,TIP_J,"K, area, rooms",10,5,5
+D-006,TIP_J,"K, area, rooms",11,5,5
+D-006,TIP_J,"K, area, rooms",12,5,5
+D-006,TIP_J,"K, area, rooms",13,5,5
+D-006,TIP_J,"K, area, rooms",14,5,5
+D-006,TIP_J,"K, area, rooms",15,5,5
+D-006,TIP_J,"K, area, rooms",16,5,5
+D-006,TIP_J,"K, area, rooms",17,5,5
+D-006,TIP_J,"K, area, rooms",18,5,5
+D-006,TIP_J,"K, area, rooms",19,5,5
+T-001,ORB_STATUS,"age, K, industry, occupation, hours",0,10,10
+T-001,ORB_STATUS,"age, K, industry, occupation, hours",1,10,10
+T-001,ORB_STATUS,"age, K, industry, occupation, hours",2,10,10
+T-001,ORB_STATUS,"age, K, industry, occupation, hours",3,10,10
+T-001,ORB_STATUS,"age, K, industry, occupation, hours",4,10,10
+T-001,ORB_STATUS,"age, K, industry, occupation, hours",5,10,10
+T-001,ORB_STATUS,"age, K, industry, occupation, hours",6,10,10
+T-001,ORB_STATUS,"age, K, industry, occupation, hours",7,10,10
+T-001,ORB_STATUS,"age, K, industry, occupation, hours",8,10,10
+T-001,ORB_STATUS,"age, K, industry, occupation, hours",9,10,10
+T-001,ORB_STATUS,"age, K, industry, occupation, hours",10,10,10
+T-001,ORB_STATUS,"age, K, industry, occupation, hours",11,10,10
+T-001,ORB_STATUS,"age, K, industry, occupation, hours",12,10,10
+T-001,ORB_STATUS,"age, K, industry, occupation, hours",13,10,10
+T-001,ORB_STATUS,"age, K, industry, occupation, hours",14,10,10
+T-001,ORB_STATUS,"age, K, industry, occupation, hours",15,10,10
+T-001,ORB_STATUS,"age, K, industry, occupation, hours",16,10,10
+T-001,ORB_STATUS,"age, K, industry, occupation, hours",17,10,10
+T-001,ORB_STATUS,"age, K, industry, occupation, hours",18,10,10
+T-001,ORB_STATUS,"age, K, industry, occupation, hours",19,10,10
+T-001,ORB_PKHDHL,"age, K, industry, occupation, hours",0,6,4
+T-001,ORB_PKHDHL,"age, K, industry, occupation, hours",1,6,4
+T-001,ORB_PKHDHL,"age, K, industry, occupation, hours",2,6,4
+T-001,ORB_PKHDHL,"age, K, industry, occupation, hours",3,6,4
+T-001,ORB_PKHDHL,"age, K, industry, occupation, hours",4,6,4
+T-001,ORB_PKHDHL,"age, K, industry, occupation, hours",5,6,4
+T-001,ORB_PKHDHL,"age, K, industry, occupation, hours",6,6,4
+T-001,ORB_PKHDHL,"age, K, industry, occupation, hours",7,6,4
+T-001,ORB_PKHDHL,"age, K, industry, occupation, hours",8,6,4
+T-001,ORB_PKHDHL,"age, K, industry, occupation, hours",9,6,4
+T-001,ORB_PKHDHL,"age, K, industry, occupation, hours",10,6,4
+T-001,ORB_PKHDHL,"age, K, industry, occupation, hours",11,6,4
+T-001,ORB_PKHDHL,"age, K, industry, occupation, hours",12,6,4
+T-001,ORB_PKHDHL,"age, K, industry, occupation, hours",13,6,4
+T-001,ORB_PKHDHL,"age, K, industry, occupation, hours",14,6,4
+T-001,ORB_PKHDHL,"age, K, industry, occupation, hours",15,6,4
+T-001,ORB_PKHDHL,"age, K, industry, occupation, hours",16,6,4
+T-001,ORB_PKHDHL,"age, K, industry, occupation, hours",17,6,4
+T-001,ORB_PKHDHL,"age, K, industry, occupation, hours",18,6,4
+T-001,ORB_PKHDHL,"age, K, industry, occupation, hours",19,6,4
+T-001,DH_OBRAZOV,"age, K, industry, occupation, hours",0,9,9
+T-001,DH_OBRAZOV,"age, K, industry, occupation, hours",1,9,9
+T-001,DH_OBRAZOV,"age, K, industry, occupation, hours",2,9,9
+T-001,DH_OBRAZOV,"age, K, industry, occupation, hours",3,9,9
+T-001,DH_OBRAZOV,"age, K, industry, occupation, hours",4,9,9
+T-001,DH_OBRAZOV,"age, K, industry, occupation, hours",5,9,9
+T-001,DH_OBRAZOV,"age, K, industry, occupation, hours",6,9,9
+T-001,DH_OBRAZOV,"age, K, industry, occupation, hours",7,9,9
+T-001,DH_OBRAZOV,"age, K, industry, occupation, hours",8,9,9
+T-001,DH_OBRAZOV,"age, K, industry, occupation, hours",9,9,9
+T-001,DH_OBRAZOV,"age, K, industry, occupation, hours",10,9,9
+T-001,DH_OBRAZOV,"age, K, industry, occupation, hours",11,9,9
+T-001,DH_OBRAZOV,"age, K, industry, occupation, hours",12,9,9
+T-001,DH_OBRAZOV,"age, K, industry, occupation, hours",13,9,9
+T-001,DH_OBRAZOV,"age, K, industry, occupation, hours",14,9,9
+T-001,DH_OBRAZOV,"age, K, industry, occupation, hours",15,9,9
+T-001,DH_OBRAZOV,"age, K, industry, occupation, hours",16,9,9
+T-001,DH_OBRAZOV,"age, K, industry, occupation, hours",17,9,9
+T-001,DH_OBRAZOV,"age, K, industry, occupation, hours",18,9,9
+T-001,DH_OBRAZOV,"age, K, industry, occupation, hours",19,9,9

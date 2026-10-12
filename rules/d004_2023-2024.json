@@ -1,0 +1,434 @@
+{
+ "form": "D004",
+ "years": [
+  2023,
+  2024
+ ],
+ "extracted_by": "Claude (claude-opus-5-5), in session on 10 Oct 2026, following prompts/extract_rules_v1.md",
+ "sources": {
+  "form": "documentation/d004/2023/д004 форма рус.pdf",
+  "structure": "documentation/d004/2024/.../Структура D004.doc",
+  "codebooks": "documentation/d004/2023/коды/"
+ },
+ "scope": "Cover (kv_vopr0), section 1.1 non-food (kv_vopr1) section 2 loans (kv_vopr12) and section 3 income (kv_vopr11)",
+ "rules": [
+  {
+   "id": "D004-REZ-domain",
+   "type": "domain",
+   "table": "kv0",
+   "targets": [
+    "REZ"
+   ],
+   "allowed": [
+    1,
+    2
+   ],
+   "meaning": {
+    "1": "участвовали в обследовании за квартал",
+    "2": "отказ от обследования"
+   },
+   "source": {
+    "doc": "structure",
+    "quote": "REZ Код результата посещения (1-учавствовали в обследовании за квартал, 2- отказ от обследования)"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D004-K-domain",
+   "type": "domain",
+   "table": "kv0",
+   "targets": [
+    "K"
+   ],
+   "allowed": [
+    1,
+    2
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "Код типа населенного пункта (1 - город, 2 - село)"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D004-quarter-matches-folder",
+   "type": "domain",
+   "table": "kv0",
+   "targets": [
+    "KVARTAL"
+   ],
+   "allowed": {
+    "equals_column": "Q_FOLDER"
+   },
+   "source": {
+    "doc": "structure",
+    "quote": "KVARTAL Character 1 Номер квартала"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D004-quarter-matches-folder-kv1",
+   "type": "domain",
+   "table": "kv1",
+   "targets": [
+    "KVARTAL"
+   ],
+   "allowed": {
+    "equals_column": "Q_FOLDER"
+   },
+   "source": {
+    "doc": "structure",
+    "quote": "KVARTAL Character 1 Номер квартала"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D004-year",
+   "type": "domain",
+   "table": "kv0",
+   "targets": [
+    "GOD"
+   ],
+   "allowed": {
+    "equals_year": true
+   },
+   "source": {
+    "doc": "structure",
+    "quote": "GOD Character 4 Год"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D004-1.1-code",
+   "type": "domain",
+   "table": "kv1",
+   "targets": [
+    "KODNU"
+   ],
+   "allowed": {
+    "codebook": "documentation/d004/2023/коды/kv_vopr1 (непроды).xls",
+    "column": "kodnu"
+   },
+   "source": {
+    "doc": "codebook",
+    "quote": "kv_vopr1 (непроды).xls: name | kodnu"
+   },
+   "confidence": "high",
+   "note": "2023 code book; no 2024 code book in the archive."
+  },
+  {
+   "id": "D004-1.1-purpose",
+   "type": "domain",
+   "table": "kv1",
+   "targets": [
+    "CELPOK"
+   ],
+   "allowed": [
+    1,
+    2,
+    9
+   ],
+   "meaning": {
+    "1": "личное потребление",
+    "2": "подарок",
+    "9": "другое"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Цель покупки 1 – личное потребление 2 – подарок 9 – другое"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D004-1.1-cost",
+   "type": "domain",
+   "table": "kv1",
+   "targets": [
+    "STOIMK"
+   ],
+   "allowed": {
+    "min": 1,
+    "max": 1000000000.0
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Расходы на непродовольственные товары за квартал, тенге"
+   },
+   "confidence": "medium"
+  },
+  {
+   "id": "D004-1.1-required",
+   "type": "required",
+   "table": "kv1",
+   "targets": [
+    "KODNU",
+    "CELPOK",
+    "STOIMK"
+   ],
+   "source": {
+    "doc": "structure",
+    "quote": "KODNU Код товара; CELPOK Цель покупки; STOIMK Стоимость"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D004-refusal-no-expenses",
+   "type": "consistency",
+   "table": "kv1",
+   "targets": [
+    "REZ"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "KODNU",
+    "filled": true
+   },
+   "then": {
+    "col": "REZ",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "structure",
+    "quote": "REZ ... 2- отказ от обследования"
+   },
+   "confidence": "high",
+   "note": "A household that refused the quarter has no expense records for it."
+  },
+  {
+   "id": "D004-refusal-no-loans",
+   "type": "consistency",
+   "table": "kv12",
+   "targets": [
+    "REZ"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "NOMVNEW",
+    "filled": true
+   },
+   "then": {
+    "col": "REZ",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "structure",
+    "quote": "REZ ... 2- отказ от обследования"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D004-2-code",
+   "type": "domain",
+   "table": "kv12",
+   "targets": [
+    "KODNU"
+   ],
+   "allowed": [
+    "59",
+    "2.1.1.4.1",
+    "60",
+    "61",
+    "2.1.1.4.2",
+    "62"
+   ],
+   "meaning": {
+    "59": "Кредит, полученный в текущем квартале",
+    "2.1.1.4.1": "Сумма, выплаченная в счет погашения кредита",
+    "60": "Сумма использованных сбережений",
+    "61": "Деньги, полученные в долг в текущем квартале",
+    "2.1.1.4.2": "Сумма, уплаченная на погашение долга",
+    "62": "Сумма, возвращенного домашнему хозяйству долга"
+   },
+   "source": {
+    "doc": "codebook",
+    "quote": "kv_vopr12_Заемные средства.xls: 59, 2.1.1.4.1, 60, 61, 2.1.1.4.2, 62"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D004-2.1-2.2-domain",
+   "type": "domain",
+   "table": "kv12",
+   "targets": [
+    "KOD"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "meaning": {
+    "2.1": "1 строительство дома ... 3 покупка продуктов питания ... 9 другое",
+    "2.2": "1 микрокредитные ... 2 коммерческий банк ... 7 частное лицо ... 9 другое"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "2.1 Для каких целей был взят долг или кредит? 2.2 Каковы источники поступления кредита (долга)?"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D004-2.1-needs-new-loan",
+   "type": "consistency",
+   "table": "kv12",
+   "targets": [
+    "NEW_LOAN"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "NOMVNEW",
+    "in": [
+     21,
+     22
+    ]
+   },
+   "then": {
+    "col": "NEW_LOAN",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "2.1 Для каких целей был взят долг или кредит?"
+   },
+   "confidence": "high",
+   "note": "Purpose and source are asked about a credit or debt taken in the quarter (codes 59 or 61 with an amount)."
+  },
+  {
+   "id": "D004-2.1-required",
+   "type": "required",
+   "table": "kv12",
+   "targets": [
+    "KOD"
+   ],
+   "when": {
+    "col": "NOMVNEW",
+    "in": [
+     21,
+     22
+    ]
+   },
+   "source": {
+    "doc": "structure",
+    "quote": "KOD Коды вопросов 2.1 и 2.2 раздела 2"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D004-doc-no-food",
+   "type": "doc_issue",
+   "targets": [
+    "KODNU"
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "1.1 Расходы на непродовольственные товары; 1.2 услуги и топливо; 1.3 Прочие финансовые расходы; 2. Заемные средства; 3. Доходы"
+   },
+   "confidence": "high",
+   "note": "The quarterly journal has no food section. Income minus recorded spending is not a savings rate."
+  },
+  {
+   "id": "D004-doc-structure-vs-data",
+   "type": "doc_issue",
+   "targets": [
+    "MESTPOK",
+    "PRIZ",
+    "NOMVNEW",
+    "GR1",
+    "KOD_INT"
+   ],
+   "source": {
+    "doc": "structure",
+    "quote": "Kv_vopr1: TE, K, Nomer, KOD_INT, KODNU, CELPOK, STOIMK, KVARTAL, GOD"
+   },
+   "confidence": "high",
+   "note": "Data has MESTPOK and PRIZ in kv_vopr1 and NOMVNEW, GR1 in kv_vopr12, which the structure does not list; the structure's KOD_INT is not in the data."
+  },
+  {
+   "id": "D004-doc-codebook-comma",
+   "type": "doc_issue",
+   "targets": [
+    "KODNU"
+   ],
+   "source": {
+    "doc": "codebook",
+    "quote": "2.1.1.4.2,"
+   },
+   "confidence": "high",
+   "note": "A code in the loans code book carries a trailing comma, so an exact lookup fails."
+  },
+  {
+   "id": "D004-doc-2.2-truncated",
+   "type": "doc_issue",
+   "targets": [
+    "KOD"
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "Финансовый центр Министерства образования и науки Рес"
+   },
+   "confidence": "low",
+   "note": "Option 6 of 2.2 is cut off in the PDF text layer; check the printed form."
+  },
+  {
+   "id": "D004-3-agri-within-self-employment",
+   "type": "consistency",
+   "table": "kv11",
+   "targets": [
+    "GR3",
+    "GR2"
+   ],
+   "check": "lte",
+   "a": "GR3",
+   "b": "GR2",
+   "source": {
+    "doc": "form",
+    "quote": "Доход от работы не по найму ... из него: доход от продажи сельскохозяйственной продукции"
+   },
+   "confidence": "high",
+   "added": "12 Oct 2026, from the D-004 form, section 3 (finance case C11)",
+   "note": "GR3 is printed as 'из него' under GR2, so it cannot exceed GR2 for the same person and quarter."
+  },
+  {
+   "id": "D004-doc-income-of-which",
+   "type": "doc_issue",
+   "targets": [
+    "GR1",
+    "GR2",
+    "GR3"
+   ],
+   "source": {
+    "doc": "structure",
+    "quote": "GR1 –GR23 Numeric 10 Виды дохода (по порядку бланка)"
+   },
+   "confidence": "high",
+   "added": "12 Oct 2026 (finance case C11)",
+   "note": "The structure file lists GR1-GR23 as 23 income types, but on the form GR3 is a part of GR2 ('из него'). Summing GR1-GR23 counts agricultural sales twice. The structure file should say so."
+  },
+  {
+   "id": "D004-doc-repeated-items-synthetic",
+   "type": "doc_issue",
+   "targets": [
+    "KODNU"
+   ],
+   "source": {
+    "doc": "data guide",
+    "quote": "D-004's kv_vopr1 repeats items within a household more than the real data does 15% of rows vs 2.4%"
+   },
+   "confidence": "high",
+   "added": "12 Oct 2026 (finance case C11)",
+   "note": "Generator artefact of the synthetic release, not a rule for the real records. Measured: 14.9-15.7% of rows by year, 13.6-17.7% by region; 4.4-4.9% of recorded spending."
+  }
+ ]
+}

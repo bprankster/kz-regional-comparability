@@ -1,0 +1,21 @@
+pair,median_js,vars_js_gt_0.05,n_vars
+Atyrau <- Astana,0.04269920616341899,29,111
+Almaty city <- East Kazakhstan,0.038883085791345764,48,111
+Ulytau <- Pavlodar,0.030086157593683,44,111
+North Kazakhstan <- Akmola,0.0073070605269581704,21,111
+Zhambyl <- Pavlodar,0.014118656090875151,5,111
+Zhetysu <- Atyrau,0.019934082472587246,35,111
+Shymkent <- Almaty oblast,0.019302335439788557,12,111
+Shymkent <- Almaty oblast,0.019302335439788557,12,111
+West Kazakhstan <- Karaganda,0.016323095838029295,13,111
+Akmola <- East Kazakhstan,0.012068943389452517,4,111
+Akmola <- Aktobe,0.032968288391451904,43,111
+Pavlodar <- West Kazakhstan,0.029073377523282228,22,111
+Kostanay <- Zhambyl,0.011551340919501586,23,111
+Shymkent <- Akmola,0.02799178135740136,27,111
+Kostanay <- Pavlodar,0.014726531413517402,23,111
+Shymkent <- Astana,0.034669866531896416,35,111
+North Kazakhstan <- Mangystau,0.07957027129761568,73,111
+Ulytau <- Zhambyl,0.03151946517898773,47,111
+Akmola <- Abai,0.009192698200937282,7,111
+Abai <- West Kazakhstan,0.017882944028308825,4,111

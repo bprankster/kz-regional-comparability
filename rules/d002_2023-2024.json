@@ -1,0 +1,2065 @@
+{
+ "form": "D002",
+ "years": [
+  2023,
+  2024
+ ],
+ "extracted_by": "Claude (claude-opus-5-5), in session on 10 Oct 2026, following prompts/extract_rules_v1.md",
+ "sources": {
+  "form": "documentation/d002/2024/Д002- каз,рус.pdf (same file for 2023)",
+  "instruction": "documentation/d002/2024/Д-002 инструкция.pdf",
+  "structure": "documentation/d002/2024/Структура файлов_D002_2024.xls (same layout for 2023)"
+ },
+ "rules": [
+  {
+   "id": "D002-K-domain",
+   "type": "domain",
+   "table": "both",
+   "targets": [
+    "K"
+   ],
+   "allowed": [
+    1,
+    2
+   ],
+   "meaning": {
+    "1": "город",
+    "2": "село"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Код типа населенного пункта (1 - город, 2 - село)"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-VOZ-respondent15",
+   "type": "domain",
+   "table": "subject",
+   "targets": [
+    "VOZ"
+   ],
+   "allowed": {
+    "min": 15,
+    "max": 120
+   },
+   "source": {
+    "doc": "form",
+    "quote": "В опросе принимает участие один член домашнего хозяйства в возрасте 15 лет и старше"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-POL-domain",
+   "type": "domain",
+   "table": "both",
+   "targets": [
+    "POL"
+   ],
+   "allowed": [
+    1,
+    2
+   ],
+   "source": {
+    "doc": "structure",
+    "quote": "Pol | Пол лица"
+   },
+   "confidence": "medium",
+   "note": "Codes are not printed on D-002; 1/2 taken from the household roster convention. Decoder check: d008 POL 1 = male, 2 = female."
+  },
+  {
+   "id": "D002-P1-scale-domain",
+   "type": "domain",
+   "table": "subject",
+   "targets": [
+    "GR1",
+    "GR2",
+    "GR3",
+    "GR4",
+    "GR5",
+    "GR6_1",
+    "GR6_2",
+    "GR6_3",
+    "GR7",
+    "GR8",
+    "GR9_1",
+    "GR9_2",
+    "GR9_3",
+    "GR10",
+    "GR11",
+    "GR12",
+    "GR13",
+    "GR14_1",
+    "GR14_2",
+    "GR15_1",
+    "GR15_2",
+    "GR16_1",
+    "GR16_2",
+    "GR16_3",
+    "GR16_4",
+    "GR17_1",
+    "GR17_2",
+    "GR17_3",
+    "GR17_4",
+    "GR18_1",
+    "GR18_2",
+    "GR18_3",
+    "GR18_4",
+    "GR18_5",
+    "GR18_6",
+    "GR19"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    89
+   ],
+   "meaning": {
+    "1-3": "не удовлетворен",
+    "4-7": "частично удовлетворен",
+    "8-10": "удовлетворен",
+    "89": "Не применимо/Затрудняюсь ответить"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "шкалой от 1 до 10 ... следует выбрать вариант ответа 89 «Не применимо или Затрудняюсь ответить»"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P1-scale-required",
+   "type": "required",
+   "table": "subject",
+   "targets": [
+    "GR1",
+    "GR2",
+    "GR3",
+    "GR4",
+    "GR5",
+    "GR6_1",
+    "GR6_2",
+    "GR7",
+    "GR8",
+    "GR9_1",
+    "GR9_2",
+    "GR9_3",
+    "GR10",
+    "GR11",
+    "GR12",
+    "GR13",
+    "GR14_1",
+    "GR14_2",
+    "GR15_1",
+    "GR15_2",
+    "GR16_1",
+    "GR16_2",
+    "GR16_3",
+    "GR16_4",
+    "GR17_1",
+    "GR17_2",
+    "GR17_3",
+    "GR17_4",
+    "GR18_1",
+    "GR18_2",
+    "GR18_3",
+    "GR18_4",
+    "GR18_5",
+    "GR18_6",
+    "GR19"
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "В случае, если на Ваш взгляд, какой-то из вопросов к Вам не применим ... следует выбрать вариант ответа 89"
+   },
+   "confidence": "high",
+   "note": "Inapplicable items are coded 89, not left blank. 6.3 (colleagues) is excluded: the instruction lets people without colleagues skip it."
+  },
+  {
+   "id": "D002-P1Q6_3-optional",
+   "type": "doc_issue",
+   "table": "subject",
+   "targets": [
+    "GR6_3"
+   ],
+   "source": {
+    "doc": "instruction",
+    "quote": "Респонденты (дети, пенсионеры, безработные и другие), не имеющие коллег, переходят к следующему вопросу"
+   },
+   "confidence": "high",
+   "note": "The form tells respondents to code inapplicable items 89; the instruction tells people without colleagues to skip 6.3. Two codings of the same situation (89 or blank)."
+  },
+  {
+   "id": "D002-P2Q1-domain",
+   "type": "domain",
+   "table": "subject",
+   "targets": [
+    "GR21"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "meaning": {
+    "1": "низкий уровень обеспеченности (малообеспеченные)",
+    "2": "ниже среднего",
+    "3": "средний уровень (средний класс)",
+    "4": "несколько выше среднего",
+    "5": "достаточный уровень (относительно состоятельные)",
+    "6": "высокий уровень"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Укажите, к какому уровню материального обеспечения (достатка) Вы себя относите?"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P2Q1-required",
+   "type": "required",
+   "table": "subject",
+   "targets": [
+    "GR21"
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "Выбирается и отмечается один вариант ответа, за исключением 2 и 8 вопросов."
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P2Q2-multi",
+   "type": "multi_select",
+   "table": "subject",
+   "targets": [
+    "GR22_1",
+    "GR22_2",
+    "GR22_3",
+    "GR22_4",
+    "GR22_5",
+    "GR22_6",
+    "GR22_7",
+    "GR22_8",
+    "GR22_9",
+    "GR22_10",
+    "GR22_11",
+    "GR22_12",
+    "GR22_13",
+    "GR22_14"
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "можно указать несколько вариантов ответов"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P2Q2-skip",
+   "type": "skip",
+   "table": "subject",
+   "targets": [
+    "GR22_1",
+    "GR22_2",
+    "GR22_3",
+    "GR22_4",
+    "GR22_5",
+    "GR22_6",
+    "GR22_7",
+    "GR22_8",
+    "GR22_9",
+    "GR22_10",
+    "GR22_11",
+    "GR22_12",
+    "GR22_13",
+    "GR22_14"
+   ],
+   "when": {
+    "col": "GR21",
+    "in": [
+     4,
+     5,
+     6
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "Респонденты отметившие вариант ответа 4-6 при ответе на вопрос 1 части 2, переходят к вопросу 3 части 2."
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P2Q2-required",
+   "type": "required",
+   "table": "subject",
+   "mode": "any",
+   "targets": [
+    "GR22_1",
+    "GR22_2",
+    "GR22_3",
+    "GR22_4",
+    "GR22_5",
+    "GR22_6",
+    "GR22_7",
+    "GR22_8",
+    "GR22_9",
+    "GR22_10",
+    "GR22_11",
+    "GR22_12",
+    "GR22_13",
+    "GR22_14"
+   ],
+   "when": {
+    "col": "GR21",
+    "in": [
+     1,
+     2,
+     3
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "На вопрос 2 части 2 отвечают респонденты, отметившие вариант ответа 1-3 при ответе на вопрос 1 части 2."
+   },
+   "confidence": "high",
+   "note": "At least one reason must be ticked."
+  },
+  {
+   "id": "D002-P2Q3-domain",
+   "type": "domain",
+   "table": "subject",
+   "targets": [
+    "GR23"
+   ],
+   "allowed": [
+    1,
+    2,
+    3
+   ],
+   "meaning": {
+    "1": "не изменилось",
+    "2": "улучшилось",
+    "3": "ухудшилось"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Изменилось ли Ваше благосостояние за последний год?"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P2Q4-domain",
+   "type": "domain",
+   "table": "subject",
+   "targets": [
+    "GR24"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "Как Вы считаете, будете ли Вы жить лучше в ближайший год?"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P2Q5-domain",
+   "type": "domain",
+   "table": "subject",
+   "targets": [
+    "GR25"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "meaning": {
+    "1": "никогда",
+    "2": "реже чем раз в месяц",
+    "3": "один или несколько раз в месяц",
+    "4": "раз в неделю",
+    "5": "несколько раз в неделю",
+    "6": "каждый день"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Как часто Вы встречаетесь с друзьями, родственниками или коллегами в неформальной обстановке?"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P2Q3to7-required",
+   "type": "required",
+   "table": "subject",
+   "targets": [
+    "GR23",
+    "GR24",
+    "GR25",
+    "GR26",
+    "GR27",
+    "GR29",
+    "GR210",
+    "GR211",
+    "GR212",
+    "GR213",
+    "GR214"
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "Выбирается и отмечается один вариант ответа, за исключением 2 и 8 вопросов."
+   },
+   "confidence": "high",
+   "note": "FIES items 6-14 have their own 'refusal' code 4, so blank is not a valid answer."
+  },
+  {
+   "id": "D002-FIES-domain",
+   "type": "domain",
+   "table": "subject",
+   "targets": [
+    "GR26",
+    "GR27",
+    "GR29",
+    "GR210",
+    "GR211",
+    "GR212",
+    "GR213",
+    "GR214"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "meaning": {
+    "1": "да",
+    "2": "нет",
+    "3": "затрудняюсь ответить",
+    "4": "отказ от ответа"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "иә/да 1; жоқ/нет 2; жауап беруге қиналамын/затрудняюсь ответить 3; жауаптан бас тарту/отказ от ответа 4"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-FIES-refusal",
+   "type": "consistency",
+   "table": "subject",
+   "targets": [
+    "GR26",
+    "GR27",
+    "GR29",
+    "GR210",
+    "GR211",
+    "GR212",
+    "GR213",
+    "GR214"
+   ],
+   "check": "refusal_all_or_none",
+   "code": 4,
+   "source": {
+    "doc": "instruction",
+    "quote": "В случае выбора «отказ от ответа» на любой один из вопросов с 6 по 14, данные по всем вопросам с 6 по 14 не будут учитываться."
+   },
+   "confidence": "medium",
+   "note": "Not an error in itself; flags records that the FIES indicator must drop. Reported as a count."
+  },
+  {
+   "id": "D002-P2Q8-multi",
+   "type": "multi_select",
+   "table": "subject",
+   "targets": [
+    "GR28_1",
+    "GR28_2",
+    "GR28_3",
+    "GR28_4",
+    "GR28_5"
+   ],
+   "exclusive": [
+    "GR28_5"
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "(ответов может быть несколько) ... 5 не применимо/затрудняюсь ответить"
+   },
+   "confidence": "medium",
+   "note": "Option 5 'not applicable / difficult to answer' cannot logically be ticked together with a reason."
+  },
+  {
+   "id": "D002-P2Q8-skip",
+   "type": "skip",
+   "table": "subject",
+   "targets": [
+    "GR28_1",
+    "GR28_2",
+    "GR28_3",
+    "GR28_4",
+    "GR28_5"
+   ],
+   "when": {
+    "col": "GR27",
+    "in": [
+     2,
+     3,
+     4
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "На вопрос 8 части 2 отвечают респонденты, отметившие вариант ответа «да» при ответе на вопрос 7 части 2."
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P2Q8-required",
+   "type": "required",
+   "table": "subject",
+   "mode": "any",
+   "targets": [
+    "GR28_1",
+    "GR28_2",
+    "GR28_3",
+    "GR28_4",
+    "GR28_5"
+   ],
+   "when": {
+    "col": "GR27",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Если да, по какой причине у Вас не было возможности есть здоровую и питательную пищу?"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-ZT-domain",
+   "type": "domain",
+   "table": "subject",
+   "targets": [
+    "ZT"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "meaning": {
+    "1": "до 1 часа",
+    "2": "1-2",
+    "3": "2-4",
+    "4": "4-8",
+    "5": "8-40",
+    "6": "более 40 часов"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "до 1 часа | 1-2 | 2-4 | 4-8 | 8-40 | более 40 часов"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-ZT-required",
+   "type": "required",
+   "table": "subject",
+   "targets": [
+    "ZT"
+   ],
+   "source": {
+    "doc": "instruction",
+    "quote": "По окончании заполнения статистической формы респондент ... продолжительность ее заполнения"
+   },
+   "confidence": "medium"
+  },
+  {
+   "id": "D002-P3Q1-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR31_1",
+    "GR31_2",
+    "GR31_3",
+    "GR31_4"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "meaning": {
+    "1": "да, единожды",
+    "2": "да, два и более раза",
+    "3": "нет",
+    "4": "не актуально"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "1 – да, единожды; 2 – да, два и более раза; 3 – нет; 4 – маңызды емес/не актуально"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P3Q1-required",
+   "type": "required",
+   "table": "ocenka",
+   "targets": [
+    "GR31_1",
+    "GR31_2",
+    "GR31_3",
+    "GR31_4"
+   ],
+   "source": {
+    "doc": "instruction",
+    "quote": "В вопросе 1 части 3 отмечаются все подпункты вопроса."
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P3-yesno-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR32",
+    "GR35",
+    "GR36",
+    "GR38",
+    "GR313",
+    "GR315",
+    "GR317"
+   ],
+   "allowed": [
+    1,
+    2
+   ],
+   "meaning": {
+    "1": "да",
+    "2": "нет"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Part 3 questions 2, 5, 6, 8, 13, 15, 17: иә/да 1, жоқ/нет 2"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P3Q4-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR34"
+   ],
+   "allowed": [
+    1,
+    2
+   ],
+   "meaning": {
+    "1": "да",
+    "2": "нет, не хватает средств"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "4. ... хотя бы раз в два дня? да 1; нет, не хватает средств 2"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P3-3opt-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR33",
+    "GR37",
+    "GR39",
+    "GR310",
+    "GR311",
+    "GR312"
+   ],
+   "allowed": [
+    1,
+    2,
+    3
+   ],
+   "meaning": {
+    "1": "да",
+    "2": "нет, не хватает средств",
+    "3": "нет, по другой причине"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "да 1; нет, не хватает средств 2; нет, по другой причине 3"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P3Q2to13-required",
+   "type": "required",
+   "table": "ocenka",
+   "targets": [
+    "GR32",
+    "GR33",
+    "GR34",
+    "GR35",
+    "GR36",
+    "GR37",
+    "GR38",
+    "GR39",
+    "GR310",
+    "GR311",
+    "GR312",
+    "GR313",
+    "GR315",
+    "GR317",
+    "GR319"
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "Выбирается и отмечается один вариант ответа, за исключением 16, 18 и 20 вопросов."
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P3Q14-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR314"
+   ],
+   "allowed": [
+    1,
+    2
+   ],
+   "meaning": {
+    "1": "не менее одного раза в день",
+    "2": "не менее одного раза в неделю, но не каждый день"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "14. Если да, как часто пользовались услугами Интернета"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P3Q14-skip",
+   "type": "skip",
+   "table": "ocenka",
+   "targets": [
+    "GR314"
+   ],
+   "when": {
+    "col": "GR313",
+    "in": [
+     2
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "да → 14; нет → 15"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P3Q14-required",
+   "type": "required",
+   "table": "ocenka",
+   "targets": [
+    "GR314"
+   ],
+   "when": {
+    "col": "GR313",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "да → 14"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P3Q16-multi",
+   "type": "multi_select",
+   "table": "ocenka",
+   "targets": [
+    "GR316_1",
+    "GR316_2",
+    "GR316_3",
+    "GR316_4",
+    "GR316_5",
+    "GR316_6"
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "16. Если нет, по какой причине: (ответов может быть несколько)"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P3Q16-skip",
+   "type": "skip",
+   "table": "ocenka",
+   "targets": [
+    "GR316_1",
+    "GR316_2",
+    "GR316_3",
+    "GR316_4",
+    "GR316_5",
+    "GR316_6"
+   ],
+   "when": {
+    "col": "GR315",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "15. ... да → 17; нет → 16"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P3Q16-required",
+   "type": "required",
+   "table": "ocenka",
+   "mode": "any",
+   "targets": [
+    "GR316_1",
+    "GR316_2",
+    "GR316_3",
+    "GR316_4",
+    "GR316_5",
+    "GR316_6"
+   ],
+   "when": {
+    "col": "GR315",
+    "in": [
+     2
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "нет → 16"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P3Q18-multi",
+   "type": "multi_select",
+   "table": "ocenka",
+   "targets": [
+    "GR318_1",
+    "GR318_2",
+    "GR318_3",
+    "GR318_4",
+    "GR318_5",
+    "GR318_6",
+    "GR318_7",
+    "GR318_8",
+    "GR318_9"
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "18. Если да, по какой причине не посещает? (ответов может быть несколько)"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P3Q18-skip",
+   "type": "skip",
+   "table": "ocenka",
+   "targets": [
+    "GR318_1",
+    "GR318_2",
+    "GR318_3",
+    "GR318_4",
+    "GR318_5",
+    "GR318_6",
+    "GR318_7",
+    "GR318_8",
+    "GR318_9"
+   ],
+   "when": {
+    "col": "GR317",
+    "in": [
+     2
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "17. ... да → 18; нет → 19"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P3Q18-required",
+   "type": "required",
+   "table": "ocenka",
+   "mode": "any",
+   "targets": [
+    "GR318_1",
+    "GR318_2",
+    "GR318_3",
+    "GR318_4",
+    "GR318_5",
+    "GR318_6",
+    "GR318_7",
+    "GR318_8",
+    "GR318_9"
+   ],
+   "when": {
+    "col": "GR317",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "да → 18"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P3Q19-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR319"
+   ],
+   "allowed": [
+    1,
+    2,
+    3
+   ],
+   "meaning": {
+    "1": "да",
+    "2": "нет",
+    "3": "нет, потому что не было необходимости"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Были ли случаи в течение года, когда Вы не смогли воспользоваться услугами здравоохранения?"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P3Q20-multi",
+   "type": "multi_select",
+   "table": "ocenka",
+   "targets": [
+    "GR320_1",
+    "GR320_2",
+    "GR320_3",
+    "GR320_4",
+    "GR320_5",
+    "GR320_6",
+    "GR320_7",
+    "GR320_8",
+    "GR320_9",
+    "GR320_10"
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "(ответов может быть несколько)"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P3Q20-skip",
+   "type": "skip",
+   "table": "ocenka",
+   "targets": [
+    "GR320_1",
+    "GR320_2",
+    "GR320_3",
+    "GR320_4",
+    "GR320_5",
+    "GR320_6",
+    "GR320_7",
+    "GR320_8",
+    "GR320_9",
+    "GR320_10"
+   ],
+   "when": {
+    "col": "GR319",
+    "in": [
+     2,
+     3
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "да → 20; нет; нет, потому что не было необходимости"
+   },
+   "confidence": "medium",
+   "note": "Only 'yes' carries an arrow; Q20 asks why services could not be used, so it applies to 'yes' only."
+  },
+  {
+   "id": "D002-P3Q20-required",
+   "type": "required",
+   "table": "ocenka",
+   "mode": "any",
+   "targets": [
+    "GR320_1",
+    "GR320_2",
+    "GR320_3",
+    "GR320_4",
+    "GR320_5",
+    "GR320_6",
+    "GR320_7",
+    "GR320_8",
+    "GR320_9",
+    "GR320_10"
+   ],
+   "when": {
+    "col": "GR319",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "да → 20"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-GR40-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR40"
+   ],
+   "allowed": [
+    1,
+    2
+   ],
+   "meaning": {
+    "1": "да",
+    "2": "нет"
+   },
+   "source": {
+    "doc": "structure",
+    "quote": "Gr40 | ... имеются дети не достигшие восемнадцатилетнего возраста? Да -1, нет - 2. В форме нет такого вопроса (добавили)"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-GR40-required",
+   "type": "required",
+   "table": "ocenka",
+   "targets": [
+    "GR40"
+   ],
+   "source": {
+    "doc": "structure",
+    "quote": "Gr40 ... Да -1, нет - 2"
+   },
+   "confidence": "medium"
+  },
+  {
+   "id": "D002-P4-skip",
+   "type": "skip",
+   "table": "ocenka",
+   "targets": [
+    "GR41",
+    "GR42_1",
+    "GR42_2",
+    "GR42_3",
+    "GR42_4",
+    "GR42_5",
+    "GR42_6",
+    "GR42_7",
+    "GR43_1",
+    "GR43_2",
+    "GR43_3",
+    "GR43_4",
+    "GR43_5",
+    "GR43_6",
+    "GR43_7",
+    "GR44_1",
+    "GR44_2",
+    "GR44_3",
+    "GR44_4",
+    "GR44_5",
+    "GR44_6",
+    "GR44_7",
+    "GR44_8",
+    "GR44_9",
+    "GR44_10",
+    "GR44_11",
+    "GR44_12",
+    "GR44_13",
+    "GR44_14",
+    "GR45_1",
+    "GR45_2",
+    "GR45_3",
+    "GR45_4",
+    "GR45_5",
+    "GR45_6",
+    "GR45_7",
+    "GR45_8",
+    "GR45_9",
+    "GR45_10",
+    "GR45_11",
+    "GR45_12",
+    "GR45_13",
+    "GR45_14",
+    "GR46"
+   ],
+   "when": {
+    "col": "GR40",
+    "in": [
+     2
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "На вопросы 1-6 части 4 отвечают респонденты у которых в составе домашнего хозяйства имеются дети не достигшие восемнадцатилетнего возраста"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P4-required",
+   "type": "required",
+   "table": "ocenka",
+   "targets": [
+    "GR41",
+    "GR44_1",
+    "GR44_2",
+    "GR44_3",
+    "GR44_4",
+    "GR44_5",
+    "GR44_6",
+    "GR44_7",
+    "GR44_8",
+    "GR44_9",
+    "GR44_10",
+    "GR44_11",
+    "GR44_12",
+    "GR44_13",
+    "GR44_14",
+    "GR45_1",
+    "GR45_2",
+    "GR45_3",
+    "GR45_4",
+    "GR45_5",
+    "GR45_6",
+    "GR45_7",
+    "GR45_8",
+    "GR45_9",
+    "GR45_10",
+    "GR45_11",
+    "GR45_12",
+    "GR45_13",
+    "GR45_14",
+    "GR46"
+   ],
+   "when": {
+    "col": "GR40",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "На вопросы 1-6 части 4 отвечают респонденты у которых ... имеются дети"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P4Q1-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR41"
+   ],
+   "allowed": [
+    1,
+    2
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "да 1; нет → 4 2"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P4Q2Q3-skip",
+   "type": "skip",
+   "table": "ocenka",
+   "targets": [
+    "GR42_1",
+    "GR42_2",
+    "GR42_3",
+    "GR42_4",
+    "GR42_5",
+    "GR42_6",
+    "GR42_7",
+    "GR43_1",
+    "GR43_2",
+    "GR43_3",
+    "GR43_4",
+    "GR43_5",
+    "GR43_6",
+    "GR43_7"
+   ],
+   "when": {
+    "col": "GR41",
+    "in": [
+     2
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "1. ... инвалидность? да 1; нет → 4"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P4Q2-required",
+   "type": "required",
+   "table": "ocenka",
+   "targets": [
+    "GR42_1"
+   ],
+   "when": {
+    "col": "GR41",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "2. Укажите вид физической и (или) психической инвалидности ... Ребенок 1"
+   },
+   "confidence": "medium",
+   "note": "At least the first child must have a type recorded when Q1 is 'yes'. Superseded after the team review (11 Oct 2026, row 12): a family may list the child with a disability second, so GR42_1 alone gives false errors. Kept for the accuracy score; the engine skips it.",
+   "superseded_by": "D002-P4Q2-required-any"
+  },
+  {
+   "id": "D002-P4Q2-required-any",
+   "type": "required",
+   "table": "ocenka",
+   "mode": "any",
+   "targets": [
+    "GR42_1",
+    "GR42_2",
+    "GR42_3",
+    "GR42_4",
+    "GR42_5",
+    "GR42_6",
+    "GR42_7"
+   ],
+   "when": {
+    "col": "GR41",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "2. Укажите вид физической и (или) психической инвалидности ... Ребенок 1 ... Ребенок 7"
+   },
+   "confidence": "high",
+   "added_after_review": true,
+   "note": "If Part 4 Q1 is 'yes', the type of disability is recorded for at least one child (any of GR42_1…GR42_7). Wording from the reference set, chosen by the team (row 12)."
+  },
+  {
+   "id": "D002-P4Q2-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR42_1",
+    "GR42_2",
+    "GR42_3",
+    "GR42_4",
+    "GR42_5",
+    "GR42_6",
+    "GR42_7"
+   ],
+   "allowed": [
+    1,
+    2,
+    3
+   ],
+   "meaning": {
+    "1": "Физическая инвалидность",
+    "2": "Проблемы с психикой",
+    "3": "Физическая инвалидность и проблемы с психикой"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "Физическая инвалидность 1 | Проблемы с психикой 2 | Физическая инвалидность и проблемы с психикой 3"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P4Q3-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR43_1",
+    "GR43_2",
+    "GR43_3",
+    "GR43_4",
+    "GR43_5",
+    "GR43_6",
+    "GR43_7"
+   ],
+   "allowed": [
+    1,
+    2,
+    9
+   ],
+   "meaning": {
+    "1": "да",
+    "2": "нет",
+    "9": "затрудняюсь ответить (не знаю)"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "да 1 | нет 2 | затрудняюсь ответить (не знаю) 9"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P4Q4-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR44_1",
+    "GR44_2",
+    "GR44_3",
+    "GR44_4",
+    "GR44_5",
+    "GR44_6",
+    "GR44_7",
+    "GR44_8",
+    "GR44_9",
+    "GR44_10",
+    "GR44_11",
+    "GR44_12",
+    "GR44_13",
+    "GR44_14"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    4,
+    9
+   ],
+   "meaning": {
+    "1": "абсолютно необходимо",
+    "2": "необходимо",
+    "3": "желательно, но необходимости нет",
+    "4": "совсем не обязательно",
+    "9": "не знаю"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "4.1 ... 1 2 3 4 9"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P4Q5-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR45_1",
+    "GR45_2",
+    "GR45_3",
+    "GR45_4",
+    "GR45_5",
+    "GR45_6",
+    "GR45_7",
+    "GR45_8",
+    "GR45_9",
+    "GR45_10",
+    "GR45_11",
+    "GR45_12",
+    "GR45_13",
+    "GR45_14"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    9
+   ],
+   "meaning": {
+    "1": "Да",
+    "2": "Нет. Хотелось бы иметь, но в данный момент не можем позволить",
+    "3": "Нет необходимости в текущий момент",
+    "9": "Не знаю"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "5.1 ... 1 2 3 9"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-P4Q6-domain",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "GR46"
+   ],
+   "allowed": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "meaning": {
+    "1": "нет, не нуждались",
+    "2": "нет, получали когда было необходимо",
+    "3": "да, не могли оплатить",
+    "4": "да, не было доступно",
+    "5": "не знаю"
+   },
+   "source": {
+    "doc": "form",
+    "quote": "6. За последние 12 месяцев ... 1-5"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-preschool-implies-children",
+   "type": "consistency",
+   "table": "ocenka",
+   "targets": [
+    "GR40"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "GR317",
+    "in": [
+     1
+    ]
+   },
+   "then": {
+    "col": "GR40",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "17. Имеется ли в Вашем домашним хозяйстве ребенок дошкольного возраста, не посещающий дошкольное учреждение?"
+   },
+   "confidence": "high",
+   "note": "A pre-school child in the household means the household has children under 18."
+  },
+  {
+   "id": "D002-childdisability-implies-children",
+   "type": "consistency",
+   "table": "ocenka",
+   "targets": [
+    "GR40"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "GR41",
+    "in": [
+     1
+    ]
+   },
+   "then": {
+    "col": "GR40",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "1. В Вашем домашнем хозяйстве имеет ли кто из детей ... инвалидность?"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-same-person",
+   "type": "consistency",
+   "table": "both",
+   "targets": [
+    "POL",
+    "VOZ",
+    "NOMP"
+   ],
+   "check": "tables_agree",
+   "key": "NOMER",
+   "source": {
+    "doc": "form",
+    "quote": "В опросе принимает участие один член домашнего хозяйства"
+   },
+   "confidence": "high",
+   "note": "subject and ocenka are two halves of one questionnaire filled by one respondent: for the same NOMER, NOMP, POL and VOZ must agree. 2021: VOZ is not compared (the organisers' guide says the 2021 age is not tied to the person); NOMP and POL still are. Synthetic release: 2022 0, 2023 328, 2024 32 households differ; check on the real records whether this is the generator or the collection.",
+   "skip_targets_by_year": {
+    "2021": [
+     "VOZ"
+    ]
+   },
+   "also_source": {
+    "doc": "organisers' data guide (D. Medeuov)",
+    "quote": "In 2021 the respondent's age is not tied to the person named — that year's roster has no birth year at all"
+   },
+   "reviewed": "team review 11 Oct 2026 (row 11 of D002_review_for_team.csv)"
+  },
+  {
+   "id": "D002-x-D008-children",
+   "type": "cross_form",
+   "table": "ocenka",
+   "targets": [
+    "GR40"
+   ],
+   "other_form": "D008",
+   "check": "regional_share_match",
+   "this": {
+    "col": "GR40",
+    "in": [
+     1
+    ]
+   },
+   "other": "household has a member under 18 (GOD_ROJD)",
+   "source": {
+    "doc": "structure",
+    "quote": "имеются дети не достигшие восемнадцатилетнего возраста"
+   },
+   "confidence": "high"
+  },
+  {
+   "id": "D002-x-D006-owners-rent",
+   "type": "cross_form",
+   "table": "ocenka",
+   "targets": [
+    "GR31_1"
+   ],
+   "other_form": "D006",
+   "check": "regional_share_bounds",
+   "this": {
+    "col": "GR31_1",
+    "in": [
+     4
+    ]
+   },
+   "other": "lower bound: dwelling owned by the respondent's household (VLAD1 1-2); upper bound: 100 minus dwellings rented for payment (VLAD1 4, 6)",
+   "source": {
+    "doc": "form",
+    "quote": "1.1 аренду жилья или комнаты ... 4 – не актуально"
+   },
+   "confidence": "high",
+   "note": "Households that do not rent have nothing to be in arrears on, so 'не актуально' is at least the owners' share (owners are a subset of non-renters; relatives' and service housing, VLAD1 3 and 5, are non-renters too). Households paying for their dwelling (VLAD1 4, 6) cannot answer 'not relevant', so the share is at most 100 minus them. Revised after the team review (11 Oct 2026, row 2): the first version required equality with owners, which is wrong.",
+   "lower": {
+    "col": "VLAD1",
+    "in": [
+     1,
+     2
+    ]
+   },
+   "upper_not": {
+    "col": "VLAD1",
+    "in": [
+     4,
+     6
+    ]
+   },
+   "tolerance": 5,
+   "revised_after_review": true
+  },
+  {
+   "id": "D002-x-D008-child-household",
+   "type": "consistency",
+   "table": "ocenka",
+   "targets": [
+    "GR40"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "ROSTER_U18",
+    "in": [
+     1
+    ]
+   },
+   "then": {
+    "col": "GR40",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "structure",
+    "quote": "Gr40 | ... имеются дети не достигшие восемнадцатилетнего возраста? Да -1, нет - 2"
+   },
+   "also_source": {
+    "doc": "D-008 structure",
+    "quote": "God_rojd | год рождения"
+   },
+   "confidence": "high",
+   "added_after_review": true,
+   "other_form": "D008",
+   "note": "Record link, household by household: a household with a member under 18 in the D-008 roster (same NOMER, same year) must have GR40 = 1. ROSTER_U18 is computed by the engine from D-008 GOD_ROJD (engine/statquo.py attach_roster). The region-level rule D002-x-D008-children compares shares; this one names the households. Added 12 Oct 2026 from the data model (schema/profile.py).",
+   "sql": "WITH r AS (SELECT NOMER, CASE WHEN MAX(CASE WHEN :year - CAST(GOD_ROJD AS INT) < 18 THEN 1 ELSE 0 END) = 1 THEN 1 ELSE 2 END AS ROSTER_U18 FROM d008_kontr_k GROUP BY NOMER) SELECT o.TE, COUNT(*) AS violations FROM d002_ocenka o JOIN r ON r.NOMER = o.NOMER WHERE r.ROSTER_U18 = 1 AND (o.GR40 IS NULL OR CAST(o.GR40 AS INT) <> 1) GROUP BY o.TE ORDER BY violations DESC;"
+  },
+  {
+   "id": "D002-x-D008-nochild-household",
+   "type": "consistency",
+   "table": "ocenka",
+   "targets": [
+    "GR40"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "ROSTER_U18",
+    "in": [
+     2
+    ]
+   },
+   "then": {
+    "col": "GR40",
+    "in": [
+     2
+    ]
+   },
+   "source": {
+    "doc": "structure",
+    "quote": "Gr40 | ... имеются дети не достигшие восемнадцатилетнего возраста? Да -1, нет - 2"
+   },
+   "also_source": {
+    "doc": "D-008 structure",
+    "quote": "God_rojd | год рождения"
+   },
+   "confidence": "medium",
+   "added_after_review": true,
+   "other_form": "D008",
+   "note": "Reverse of D002-x-D008-child-household: a household with no member under 18 in the roster must have GR40 = 2. Medium confidence: a child temporarily absent from the roster, or a birth year recorded wrongly in D-008, also breaks it. Added 12 Oct 2026.",
+   "sql": "WITH r AS (SELECT NOMER, CASE WHEN MAX(CASE WHEN :year - CAST(GOD_ROJD AS INT) < 18 THEN 1 ELSE 0 END) = 1 THEN 1 ELSE 2 END AS ROSTER_U18 FROM d008_kontr_k GROUP BY NOMER) SELECT o.TE, COUNT(*) AS violations FROM d002_ocenka o JOIN r ON r.NOMER = o.NOMER WHERE r.ROSTER_U18 = 2 AND (o.GR40 IS NULL OR CAST(o.GR40 AS INT) <> 2) GROUP BY o.TE ORDER BY violations DESC;"
+  },
+  {
+   "id": "D002-doc-kk-ru-P3Q1opt4",
+   "type": "doc_issue",
+   "targets": [
+    "GR31_1",
+    "GR31_2",
+    "GR31_3",
+    "GR31_4"
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "4 – маңызды емес/не актуально"
+   },
+   "confidence": "high",
+   "note": "Kazakh 'маңызды емес' means 'not important'; Russian 'не актуально' means 'not relevant'. Elsewhere the form uses 'қолданылмайды' for 'not applicable'."
+  },
+  {
+   "id": "D002-doc-kk-ru-P2Q5opt2",
+   "type": "doc_issue",
+   "targets": [
+    "GR25"
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "кем дегенде айына бір рет / реже чем раз в месяц"
+   },
+   "confidence": "high",
+   "note": "Kazakh says 'at least once a month'; Russian says 'less often than once a month'. Code 2 means opposite things in the two languages and overlaps code 3 in Kazakh."
+  },
+  {
+   "id": "D002-doc-kk-ru-P3Q14opt1",
+   "type": "doc_issue",
+   "targets": [
+    "GR314"
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "күніне бірнеше рет / не менее одного раза в день"
+   },
+   "confidence": "high",
+   "note": "Kazakh 'several times a day' vs Russian 'at least once a day'. A daily single user fits code 1 only in Russian."
+  },
+  {
+   "id": "D002-doc-P3Q14-coverage",
+   "type": "doc_issue",
+   "targets": [
+    "GR314"
+   ],
+   "source": {
+    "doc": "form",
+    "quote": "не менее одного раза в день | не менее одного раза в неделю, но не каждый день"
+   },
+   "confidence": "medium",
+   "note": "No option for internet use less often than weekly, although Q13 counts any use in 12 months."
+  },
+  {
+   "id": "D002-doc-instr-P4Q2Q3",
+   "type": "doc_issue",
+   "targets": [
+    "GR42_1",
+    "GR43_1"
+   ],
+   "source": {
+    "doc": "instruction",
+    "quote": "На вопросы 2,3 части 4 отвечают респонденты отметившие вариант ответа 1 при ответе на вопрос 1 части 1."
+   },
+   "confidence": "high",
+   "note": "Should read 'вопрос 1 части 4' (child disability). Part 1 Q1 is life satisfaction, where code 1 means 'very dissatisfied'."
+  },
+  {
+   "id": "D002-doc-GR40-not-on-form",
+   "type": "doc_issue",
+   "targets": [
+    "GR40"
+   ],
+   "source": {
+    "doc": "structure",
+    "quote": "В форме нет такого вопроса (добавили)"
+   },
+   "confidence": "high",
+   "note": "The Part 4 filter is not printed on the questionnaire, so how it is filled depends on local practice."
+  },
+  {
+   "id": "D002-doc-structure-GR31_4",
+   "type": "doc_issue",
+   "targets": [
+    "GR31_4"
+   ],
+   "source": {
+    "doc": "structure",
+    "quote": "Gr31_3 | 3 часть вопрос 1.3; Gr31_3 | 3 часть вопрос 1.4"
+   },
+   "confidence": "high",
+   "note": "The structure file names two columns Gr31_3; the data uses GR31_4 for item 1.4."
+  },
+  {
+   "id": "D002-doc-structure-names",
+   "type": "doc_issue",
+   "targets": [
+    "GR6_1",
+    "GR14_1"
+   ],
+   "source": {
+    "doc": "structure",
+    "quote": "Gr61, Gr14.1, Gr9_1"
+   },
+   "confidence": "high",
+   "note": "Structure uses three naming styles (Gr61, Gr14.1, Gr9_1); data uses GR6_1, GR14_1, GR9_1. Automated mapping needs normalisation."
+  },
+  {
+   "id": "D002-doc-respondent-age",
+   "type": "doc_issue",
+   "targets": [
+    "VOZ"
+   ],
+   "source": {
+    "doc": "instruction",
+    "quote": "например, дети не могут оценить экономическое положение семьи"
+   },
+   "confidence": "medium",
+   "note": "The form limits respondents to age 15+, yet the instruction discusses children answering."
+  },
+  {
+   "id": "D002-one-respondent",
+   "type": "consistency",
+   "table": "subject",
+   "targets": [
+    "NOMER"
+   ],
+   "check": "unique",
+   "source": {
+    "doc": "form",
+    "quote": "В опросе принимает участие один член домашнего хозяйства"
+   },
+   "confidence": "high",
+   "added_after_review": true
+  },
+  {
+   "id": "D002-VOZ-respondent15-ocenka",
+   "type": "domain",
+   "table": "ocenka",
+   "targets": [
+    "VOZ"
+   ],
+   "allowed": {
+    "min": 15,
+    "max": 120
+   },
+   "source": {
+    "doc": "form",
+    "quote": "В опросе принимает участие один член домашнего хозяйства в возрасте 15 лет и старше"
+   },
+   "confidence": "high",
+   "added_after_review": true
+  },
+  {
+   "id": "D002-child-economic-89",
+   "type": "consistency",
+   "table": "subject",
+   "targets": [
+    "GR7"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "VOZ",
+    "lt": 18
+   },
+   "then": {
+    "col": "GR7",
+    "in": [
+     89
+    ]
+   },
+   "source": {
+    "doc": "instruction",
+    "quote": "дети не могут оценить экономическое положение семьи (домашнего хозяйства), выбирается вариант ответа «Не применимо»"
+   },
+   "confidence": "medium",
+   "added_after_review": true
+  },
+  {
+   "id": "D002-mobile-implies-internet",
+   "type": "consistency",
+   "table": "ocenka",
+   "targets": [
+    "GR313"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "GR316_4",
+    "in": [
+     1
+    ]
+   },
+   "then": {
+    "col": "GR313",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "нет необходимости, использую интернет в мобильном телефоне"
+   },
+   "confidence": "high",
+   "added_after_review": true
+  },
+  {
+   "id": "D002-preschool-reason-implies-Q17",
+   "type": "consistency",
+   "table": "hh",
+   "targets": [
+    "GR317"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "GR22_13",
+    "in": [
+     1
+    ]
+   },
+   "then": {
+    "col": "GR317",
+    "in": [
+     1
+    ]
+   },
+   "source": {
+    "doc": "form",
+    "quote": "необходимость присмотра и/или ухода за ребенком (детьми) дошкольного возраста не посещающих дошкольное учреждение"
+   },
+   "confidence": "medium",
+   "added_after_review": true
+  },
+  {
+   "id": "D002-P4Q3-needs-Q2-child1",
+   "type": "consistency",
+   "table": "ocenka",
+   "targets": [
+    "GR42_1"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "GR43_1",
+    "filled": true
+   },
+   "then": {
+    "col": "GR42_1",
+    "filled": true
+   },
+   "source": {
+    "doc": "form",
+    "quote": "3. Установлена ли ребенку/детям (старше 7 лет) группа инвалидности?"
+   },
+   "confidence": "high",
+   "added_after_review": true
+  },
+  {
+   "id": "D002-P4Q3-needs-Q2-child2",
+   "type": "consistency",
+   "table": "ocenka",
+   "targets": [
+    "GR42_2"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "GR43_2",
+    "filled": true
+   },
+   "then": {
+    "col": "GR42_2",
+    "filled": true
+   },
+   "source": {
+    "doc": "form",
+    "quote": "3. Установлена ли ребенку/детям (старше 7 лет) группа инвалидности?"
+   },
+   "confidence": "high",
+   "added_after_review": true
+  },
+  {
+   "id": "D002-P4Q3-needs-Q2-child3",
+   "type": "consistency",
+   "table": "ocenka",
+   "targets": [
+    "GR42_3"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "GR43_3",
+    "filled": true
+   },
+   "then": {
+    "col": "GR42_3",
+    "filled": true
+   },
+   "source": {
+    "doc": "form",
+    "quote": "3. Установлена ли ребенку/детям (старше 7 лет) группа инвалидности?"
+   },
+   "confidence": "high",
+   "added_after_review": true
+  },
+  {
+   "id": "D002-P4Q3-needs-Q2-child4",
+   "type": "consistency",
+   "table": "ocenka",
+   "targets": [
+    "GR42_4"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "GR43_4",
+    "filled": true
+   },
+   "then": {
+    "col": "GR42_4",
+    "filled": true
+   },
+   "source": {
+    "doc": "form",
+    "quote": "3. Установлена ли ребенку/детям (старше 7 лет) группа инвалидности?"
+   },
+   "confidence": "high",
+   "added_after_review": true
+  },
+  {
+   "id": "D002-P4Q3-needs-Q2-child5",
+   "type": "consistency",
+   "table": "ocenka",
+   "targets": [
+    "GR42_5"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "GR43_5",
+    "filled": true
+   },
+   "then": {
+    "col": "GR42_5",
+    "filled": true
+   },
+   "source": {
+    "doc": "form",
+    "quote": "3. Установлена ли ребенку/детям (старше 7 лет) группа инвалидности?"
+   },
+   "confidence": "high",
+   "added_after_review": true
+  },
+  {
+   "id": "D002-P4Q3-needs-Q2-child6",
+   "type": "consistency",
+   "table": "ocenka",
+   "targets": [
+    "GR42_6"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "GR43_6",
+    "filled": true
+   },
+   "then": {
+    "col": "GR42_6",
+    "filled": true
+   },
+   "source": {
+    "doc": "form",
+    "quote": "3. Установлена ли ребенку/детям (старше 7 лет) группа инвалидности?"
+   },
+   "confidence": "high",
+   "added_after_review": true
+  },
+  {
+   "id": "D002-P4Q3-needs-Q2-child7",
+   "type": "consistency",
+   "table": "ocenka",
+   "targets": [
+    "GR42_7"
+   ],
+   "check": "implies",
+   "if": {
+    "col": "GR43_7",
+    "filled": true
+   },
+   "then": {
+    "col": "GR42_7",
+    "filled": true
+   },
+   "source": {
+    "doc": "form",
+    "quote": "3. Установлена ли ребенку/детям (старше 7 лет) группа инвалидности?"
+   },
+   "confidence": "high",
+   "added_after_review": true
+  }
+ ],
+ "revision": "v1.1: v1 extraction plus 12 executable rules taken from the reviewed reference (marked added_after_review). Accuracy is reported for v1."
+}

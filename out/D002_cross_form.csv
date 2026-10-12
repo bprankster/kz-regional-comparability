@@ -1,0 +1,81 @@
+rule_id,check,year,te,region,this_share,other_share,upper_share,tolerance
+D002-x-D008-children,regional_share_match,2023,10,Abai,49.7,49.5,,
+D002-x-D008-children,regional_share_match,2023,11,Akmola,41.5,41.1,,
+D002-x-D008-children,regional_share_match,2023,15,Aktobe,4.1,63.4,,
+D002-x-D008-children,regional_share_match,2023,19,Almaty oblast,54.8,55.8,,
+D002-x-D008-children,regional_share_match,2023,23,Atyrau,72.3,73.4,,
+D002-x-D008-children,regional_share_match,2023,27,West Kazakhstan,57.0,60.4,,
+D002-x-D008-children,regional_share_match,2023,31,Zhambyl,61.0,64.5,,
+D002-x-D008-children,regional_share_match,2023,33,Zhetysu,28.5,60.2,,
+D002-x-D008-children,regional_share_match,2023,35,Karaganda,52.3,53.7,,
+D002-x-D008-children,regional_share_match,2023,39,Kostanay,41.2,41.2,,
+D002-x-D008-children,regional_share_match,2023,43,Kyzylorda,84.8,79.0,,
+D002-x-D008-children,regional_share_match,2023,47,Mangystau,62.5,66.4,,
+D002-x-D008-children,regional_share_match,2023,55,Pavlodar,52.9,54.2,,
+D002-x-D008-children,regional_share_match,2023,59,North Kazakhstan,40.8,38.7,,
+D002-x-D008-children,regional_share_match,2023,61,Turkistan,87.6,77.4,,
+D002-x-D008-children,regional_share_match,2023,62,Ulytau,61.4,66.4,,
+D002-x-D008-children,regional_share_match,2023,63,East Kazakhstan,41.1,41.7,,
+D002-x-D008-children,regional_share_match,2023,71,Astana,52.2,52.6,,
+D002-x-D008-children,regional_share_match,2023,75,Almaty city,41.2,42.1,,
+D002-x-D008-children,regional_share_match,2023,79,Shymkent,56.7,59.4,,
+D002-x-D006-owners-rent,regional_share_bounds,2023,10,Abai,57.0,96.2,98.2,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2023,11,Akmola,58.0,97.1,98.3,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2023,15,Aktobe,26.7,97.4,98.8,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2023,19,Almaty oblast,23.0,98.3,99.2,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2023,23,Atyrau,70.0,96.1,97.6,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2023,27,West Kazakhstan,67.8,96.7,98.4,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2023,31,Zhambyl,14.2,97.1,98.7,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2023,33,Zhetysu,24.0,97.3,98.7,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2023,35,Karaganda,63.0,97.4,99.0,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2023,39,Kostanay,95.5,96.9,97.9,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2023,43,Kyzylorda,23.9,97.4,98.8,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2023,47,Mangystau,18.1,97.6,99.1,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2023,55,Pavlodar,20.0,97.8,98.6,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2023,59,North Kazakhstan,96.7,97.4,98.7,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2023,61,Turkistan,22.1,97.7,98.7,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2023,62,Ulytau,12.7,94.3,96.2,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2023,63,East Kazakhstan,96.5,97.1,98.4,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2023,71,Astana,31.9,88.2,88.7,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2023,75,Almaty city,50.3,96.7,98.7,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2023,79,Shymkent,66.2,93.9,95.2,5.0
+D002-x-D008-children,regional_share_match,2024,10,Abai,41.7,45.7,,
+D002-x-D008-children,regional_share_match,2024,11,Akmola,44.7,43.9,,
+D002-x-D008-children,regional_share_match,2024,15,Aktobe,63.1,63.9,,
+D002-x-D008-children,regional_share_match,2024,19,Almaty oblast,57.8,55.6,,
+D002-x-D008-children,regional_share_match,2024,23,Atyrau,72.0,72.1,,
+D002-x-D008-children,regional_share_match,2024,27,West Kazakhstan,60.2,59.9,,
+D002-x-D008-children,regional_share_match,2024,31,Zhambyl,56.4,61.0,,
+D002-x-D008-children,regional_share_match,2024,33,Zhetysu,43.1,55.8,,
+D002-x-D008-children,regional_share_match,2024,35,Karaganda,47.7,46.5,,
+D002-x-D008-children,regional_share_match,2024,39,Kostanay,45.6,44.2,,
+D002-x-D008-children,regional_share_match,2024,43,Kyzylorda,75.0,74.7,,
+D002-x-D008-children,regional_share_match,2024,47,Mangystau,68.0,67.6,,
+D002-x-D008-children,regional_share_match,2024,55,Pavlodar,48.1,46.3,,
+D002-x-D008-children,regional_share_match,2024,59,North Kazakhstan,45.3,44.5,,
+D002-x-D008-children,regional_share_match,2024,61,Turkistan,89.2,79.7,,
+D002-x-D008-children,regional_share_match,2024,62,Ulytau,7.0,71.6,,
+D002-x-D008-children,regional_share_match,2024,63,East Kazakhstan,41.3,42.7,,
+D002-x-D008-children,regional_share_match,2024,71,Astana,44.7,45.4,,
+D002-x-D008-children,regional_share_match,2024,75,Almaty city,5.3,47.2,,
+D002-x-D008-children,regional_share_match,2024,79,Shymkent,72.7,66.0,,
+D002-x-D006-owners-rent,regional_share_bounds,2024,10,Abai,55.9,94.8,99.2,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2024,11,Akmola,60.3,97.3,98.5,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2024,15,Aktobe,30.8,96.8,98.5,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2024,19,Almaty oblast,31.0,98.0,98.7,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2024,23,Atyrau,38.1,98.4,99.2,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2024,27,West Kazakhstan,55.6,92.1,93.2,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2024,31,Zhambyl,22.4,97.4,98.3,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2024,33,Zhetysu,27.9,97.8,98.9,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2024,35,Karaganda,42.5,96.6,98.0,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2024,39,Kostanay,97.4,97.1,99.2,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2024,43,Kyzylorda,97.6,96.6,97.9,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2024,47,Mangystau,9.1,96.1,97.8,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2024,55,Pavlodar,15.7,97.0,98.4,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2024,59,North Kazakhstan,96.5,95.9,98.7,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2024,61,Turkistan,13.4,98.0,98.5,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2024,62,Ulytau,27.5,91.6,99.0,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2024,63,East Kazakhstan,75.2,97.7,98.8,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2024,71,Astana,41.5,91.6,94.0,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2024,75,Almaty city,70.7,98.2,99.2,5.0
+D002-x-D006-owners-rent,regional_share_bounds,2024,79,Shymkent,72.3,89.3,92.5,5.0

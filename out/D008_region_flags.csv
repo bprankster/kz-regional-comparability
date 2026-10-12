@@ -1,0 +1,2 @@
+synthesis,floor,independent,rule_id,type,column,year,region,records,applicable,violations,rate_region,rate_rest,z,per_record_region,per_record_rest,excess,flag
+not conditional,,,D008-PR_IZ-domain,domain,PR_IZO,2024,West Kazakhstan,2396,74,9,12.2,1.4,6.6,0.4,0.1,8.0,False

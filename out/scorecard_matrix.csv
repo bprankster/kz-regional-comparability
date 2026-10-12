@@ -1,0 +1,23 @@
+col,D002 2023,D002 2023,D002 2024,D002 2024,D004 2023,D004 2023,D004 2024,D004 2024,D006 2023,D006 2023,D006 2024,D006 2024,D008 2023,D008 2024,T001 2023,T001 2024,T001 2024
+status,check on real records,holds in synthetic data,check on real records,holds in synthetic data,check on real records,holds in synthetic data,check on real records,holds in synthetic data,check on real records,holds in synthetic data,check on real records,holds in synthetic data,holds in synthetic data,holds in synthetic data,holds in synthetic data,check on real records,holds in synthetic data
+region,,,,,,,,,,,,,,,,,
+Abai,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+Akmola,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0
+Aktobe,0,4,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Almaty city,0,0,2,3,0,0,0,0,0,1,2,1,0,0,0,0,0
+Almaty oblast,0,0,0,0,0,1,0,0,1,0,2,1,0,0,1,0,0
+Astana,0,1,0,0,0,0,0,0,0,1,1,0,0,0,1,0,1
+Atyrau,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+East Kazakhstan,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0
+Karaganda,0,0,0,0,0,0,0,0,1,0,2,0,0,0,0,0,0
+Kostanay,0,0,0,0,0,0,0,0,3,0,2,0,0,0,0,0,0
+Kyzylorda,3,0,2,0,0,0,0,0,1,1,1,1,1,2,0,0,0
+Mangystau,0,0,0,1,1,0,1,1,2,0,1,0,0,0,0,0,0
+North Kazakhstan,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+Pavlodar,0,1,0,0,0,0,0,0,0,2,0,2,0,0,0,0,0
+Shymkent,0,0,1,1,1,0,1,0,0,1,1,1,0,0,0,0,0
+Turkistan,1,2,1,2,1,0,1,0,1,1,1,1,0,1,0,0,1
+Ulytau,0,0,0,4,0,0,0,0,1,1,0,0,0,0,0,0,0
+West Kazakhstan,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Zhambyl,0,0,0,0,1,0,1,0,0,0,1,0,0,0,0,0,0
+Zhetysu,2,2,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0

@@ -1,0 +1,38 @@
+{
+ "graded_by": "Claude (StatQUO session, 10 Oct 2026); team to confirm",
+ "rule": "correct = same category as the documented label; partial = overlapping or neighbouring category; wrong = otherwise",
+ "grades": {
+  "D-008/STATUS": {
+   "1": "correct",
+   "2": "correct",
+   "3": "correct",
+   "4": "correct",
+   "5": "correct",
+   "6": "correct",
+   "7": "correct",
+   "8": "correct"
+  },
+  "D-008/SEM_POL": {
+   "1": "correct",
+   "2": "correct",
+   "3": "correct",
+   "4": "correct"
+  },
+  "D-008/UROV": {
+   "1": "wrong",
+   "2": "correct",
+   "3": "correct",
+   "4": "correct",
+   "5": "correct",
+   "6": "correct",
+   "7": "correct"
+  },
+  "D-006/TIP_J": {
+   "1": "correct",
+   "2": "wrong",
+   "3": "correct",
+   "4": "correct",
+   "5": "partial"
+  }
+ }
+}

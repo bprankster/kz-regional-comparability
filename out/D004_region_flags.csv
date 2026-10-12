@@ -1,0 +1,5 @@
+synthesis,floor,independent,rule_id,type,column,year,region,records,applicable,violations,rate_region,rate_rest,z,per_record_region,per_record_rest,excess,flag
+forced by the answer shares,7.6,79.6,D004-2.1-required,required,KOD,2023,Almaty oblast,837,185,14,7.6,0.6,10.5,1.7,0.1,12.9,True
+forced by the answer shares,10.4,79.8,D004-2.1-required,required,KOD,2023,Mangystau,213,48,5,10.4,0.7,7.5,2.3,0.2,4.7,False
+forced by the answer shares,26.0,78.6,D004-2.1-required,required,KOD,2024,Mangystau,173,50,13,26.0,0.3,24.3,7.5,0.1,12.8,True
+forced by the answer shares,6.6,82.0,D004-2.1-required,required,KOD,2024,Shymkent,317,61,4,6.6,0.5,6.3,1.3,0.1,3.7,False

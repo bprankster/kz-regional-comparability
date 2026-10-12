@@ -1,0 +1,35 @@
+year,link,key,level,records,found,found_pct,region_agrees_pct,settlement_type_agrees_pct,sex_agrees_pct,respondent_differs,compared,share_if_condition_pct,share_if_not_condition_pct
+2021,D002.subject -> D008.kontr_k,NOMER,household,11953,11953.0,100.0,100.0,100.0,,,,,
+2021,D006.rio -> D008.kontr_k,NOMER,household,11636,11636.0,100.0,100.0,100.0,,,,,
+2021,D004.kv_vopr0 -> D008.kontr_k,NOMER,household,12000,12000.0,100.0,100.0,100.0,,,,,
+2021,D002.subject respondent -> D008.kontr_k person,NOMER+NOMP,person,11953,11953.0,100.0,,,100.0,,,,
+2021,D002.subject <-> D002.ocenka,NOMER,household (1:1),11953,11953.0,100.0,,,,32.0,NOMP+POL,,
+2021,D004.kv_vopr1 -> D004.kv_vopr0,NOMER+KVARTAL,household x quarter,1092444,1092444.0,100.0,,,,,,,
+2021,D004.kv_vopr12 -> D004.kv_vopr0,NOMER+KVARTAL,household x quarter,20399,20399.0,100.0,,,,,,,
+2021,D002.ocenka GR31_1 'rent: not relevant' vs D006 owner (VLAD1 1-2),NOMER,"household, answer vs answer",11627,,,,,,,,39.8,38.8
+2022,D002.subject -> D008.kontr_k,NOMER,household,11934,11934.0,100.0,100.0,100.0,,,,,
+2022,D006.rio -> D008.kontr_k,NOMER,household,11744,11744.0,100.0,100.0,100.0,,,,,
+2022,D004.kv_vopr0 -> D008.kontr_k,NOMER,household,12000,12000.0,100.0,100.0,100.0,,,,,
+2022,D002.subject respondent -> D008.kontr_k person,NOMER+NOMP,person,11934,11934.0,100.0,,,100.0,,,,
+2022,D002.subject <-> D002.ocenka,NOMER,household (1:1),11934,11934.0,100.0,,,,0.0,NOMP+POL+VOZ,,
+2022,D004.kv_vopr1 -> D004.kv_vopr0,NOMER+KVARTAL,household x quarter,1104739,1104739.0,100.0,,,,,,,
+2022,D004.kv_vopr12 -> D004.kv_vopr0,NOMER+KVARTAL,household x quarter,22238,22238.0,100.0,,,,,,,
+2022,D002.ocenka GR31_1 'rent: not relevant' vs D006 owner (VLAD1 1-2),NOMER,"household, answer vs answer",11738,,,,,,,,46.4,42.9
+2023,D002.subject -> D008.kontr_k,NOMER,household,11953,11953.0,100.0,100.0,100.0,,,,,
+2023,D006.rio -> D008.kontr_k,NOMER,household,11659,11659.0,100.0,100.0,100.0,,,,,
+2023,D004.kv_vopr0 -> D008.kontr_k,NOMER,household,12000,12000.0,100.0,100.0,100.0,,,,,
+2023,D002.subject respondent -> D008.kontr_k person,NOMER+NOMP,person,11953,11953.0,100.0,,,100.0,,,,
+2023,D002.subject <-> D002.ocenka,NOMER,household (1:1),11953,11953.0,100.0,,,,328.0,NOMP+POL+VOZ,,
+2023,D004.kv_vopr1 -> D004.kv_vopr0,NOMER+KVARTAL,household x quarter,1099586,1099586.0,100.0,,,,,,,
+2023,D004.kv_vopr12 -> D004.kv_vopr0,NOMER+KVARTAL,household x quarter,23575,23575.0,100.0,,,,,,,
+2023,D002.ocenka GR40 'has children' vs D008 member under 18,NOMER,"household, answer vs answer",11953,,,,,,,,85.1,7.9
+2023,D002.ocenka GR31_1 'rent: not relevant' vs D006 owner (VLAD1 1-2),NOMER,"household, answer vs answer",11637,,,,,,,,47.7,49.8
+2024,D002.subject -> D008.kontr_k,NOMER,household,11931,11931.0,100.0,100.0,100.0,,,,,
+2024,D006.rio -> D008.kontr_k,NOMER,household,11704,11704.0,100.0,100.0,100.0,,,,,
+2024,D004.kv_vopr0 -> D008.kontr_k,NOMER,household,12000,12000.0,100.0,100.0,100.0,,,,,
+2024,D002.subject respondent -> D008.kontr_k person,NOMER+NOMP,person,11931,11931.0,100.0,,,100.0,,,,
+2024,D002.subject <-> D002.ocenka,NOMER,household (1:1),11931,11931.0,100.0,,,,32.0,NOMP+POL+VOZ,,
+2024,D004.kv_vopr1 -> D004.kv_vopr0,NOMER+KVARTAL,household x quarter,1095051,1095051.0,100.0,,,,,,,
+2024,D004.kv_vopr12 -> D004.kv_vopr0,NOMER+KVARTAL,household x quarter,24954,24954.0,100.0,,,,,,,
+2024,D002.ocenka GR40 'has children' vs D008 member under 18,NOMER,"household, answer vs answer",11931,,,,,,,,86.4,7.0
+2024,D002.ocenka GR31_1 'rent: not relevant' vs D006 owner (VLAD1 1-2),NOMER,"household, answer vs answer",11674,,,,,,,,49.9,52.1

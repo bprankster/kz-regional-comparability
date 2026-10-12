@@ -1,0 +1,5 @@
+{
+ "note": "Blind runs on 10 Oct 2026. Each extraction was a fresh model run (Claude, no context from the project) given only the prompt file, as a pasted Claude chat or an API call would be.",
+ "d004_blind": {"prompt": "v1", "rules": 24, "doc_issues": 6, "found_missing_food_section": false},
+ "d002_2022": {"prompt": "v2", "rules": 43, "extraction_seconds": 105, "engine_seconds": 3.4, "region_flags": 2, "not_run": 1}
+}

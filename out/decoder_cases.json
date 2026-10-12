@@ -1,0 +1,38 @@
+{
+ "kyzylorda": {
+  "2023": {
+   "kyzylorda_pct_code7": 84.9,
+   "other_regions_max": 10.3,
+   "other_regions_median": 3.8,
+   "children_7_10_kyzylorda": 299
+  },
+  "2024": {
+   "kyzylorda_pct_code7": 99.6,
+   "other_regions_max": 4.0,
+   "other_regions_median": 2.7,
+   "children_7_10_kyzylorda": 262
+  }
+ },
+ "almaty": {
+  "2023": {
+   "status2_code2": 4582,
+   "status2_code5": 94,
+   "oral_among_code5_national_pct": 16.4,
+   "oral_among_code2_national_pct": 12.4,
+   "no_contract_status2_almaty_pct": 10.6,
+   "no_contract_status2_rest_pct": 15.6,
+   "code5_outside_almaty_n": 917,
+   "oral_among_code5_outside_almaty_pct": 16.8
+  },
+  "2024": {
+   "status2_code2": 0,
+   "status2_code5": 5341,
+   "oral_among_code5_national_pct": 97.7,
+   "oral_among_code2_national_pct": 12.5,
+   "no_contract_status2_almaty_pct": 98.6,
+   "no_contract_status2_rest_pct": 16.8,
+   "code5_outside_almaty_n": 337,
+   "oral_among_code5_outside_almaty_pct": 84.3
+  }
+ }
+}

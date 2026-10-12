@@ -1,0 +1,81 @@
+rule_id,year,region,this_share,other_share,upper_share,gap,flag,side,r2_other_regions
+D002-x-D006-owners-rent,2023,Abai,57.0,96.2,98.2,-39.2,True,below lower bound,
+D002-x-D006-owners-rent,2023,Akmola,58.0,97.1,98.3,-39.1,True,below lower bound,
+D002-x-D006-owners-rent,2023,Aktobe,26.7,97.4,98.8,-70.7,True,below lower bound,
+D002-x-D006-owners-rent,2023,Almaty oblast,23.0,98.3,99.2,-75.3,True,below lower bound,
+D002-x-D006-owners-rent,2023,Atyrau,70.0,96.1,97.6,-26.1,True,below lower bound,
+D002-x-D006-owners-rent,2023,West Kazakhstan,67.8,96.7,98.4,-28.9,True,below lower bound,
+D002-x-D006-owners-rent,2023,Zhambyl,14.2,97.1,98.7,-82.9,True,below lower bound,
+D002-x-D006-owners-rent,2023,Zhetysu,24.0,97.3,98.7,-73.3,True,below lower bound,
+D002-x-D006-owners-rent,2023,Karaganda,63.0,97.4,99.0,-34.4,True,below lower bound,
+D002-x-D006-owners-rent,2023,Kostanay,95.5,96.9,97.9,-1.4,False,within bounds,
+D002-x-D006-owners-rent,2023,Kyzylorda,23.9,97.4,98.8,-73.5,True,below lower bound,
+D002-x-D006-owners-rent,2023,Mangystau,18.1,97.6,99.1,-79.5,True,below lower bound,
+D002-x-D006-owners-rent,2023,Pavlodar,20.0,97.8,98.6,-77.8,True,below lower bound,
+D002-x-D006-owners-rent,2023,North Kazakhstan,96.7,97.4,98.7,-0.7,False,within bounds,
+D002-x-D006-owners-rent,2023,Turkistan,22.1,97.7,98.7,-75.6,True,below lower bound,
+D002-x-D006-owners-rent,2023,Ulytau,12.7,94.3,96.2,-81.6,True,below lower bound,
+D002-x-D006-owners-rent,2023,East Kazakhstan,96.5,97.1,98.4,-0.6,False,within bounds,
+D002-x-D006-owners-rent,2023,Astana,31.9,88.2,88.7,-56.3,True,below lower bound,
+D002-x-D006-owners-rent,2023,Almaty city,50.3,96.7,98.7,-46.4,True,below lower bound,
+D002-x-D006-owners-rent,2023,Shymkent,66.2,93.9,95.2,-27.7,True,below lower bound,
+D002-x-D006-owners-rent,2024,Abai,55.9,94.8,99.2,-38.9,True,below lower bound,
+D002-x-D006-owners-rent,2024,Akmola,60.3,97.3,98.5,-37.0,True,below lower bound,
+D002-x-D006-owners-rent,2024,Aktobe,30.8,96.8,98.5,-66.0,True,below lower bound,
+D002-x-D006-owners-rent,2024,Almaty oblast,31.0,98.0,98.7,-67.0,True,below lower bound,
+D002-x-D006-owners-rent,2024,Atyrau,38.1,98.4,99.2,-60.3,True,below lower bound,
+D002-x-D006-owners-rent,2024,West Kazakhstan,55.6,92.1,93.2,-36.5,True,below lower bound,
+D002-x-D006-owners-rent,2024,Zhambyl,22.4,97.4,98.3,-75.0,True,below lower bound,
+D002-x-D006-owners-rent,2024,Zhetysu,27.9,97.8,98.9,-69.9,True,below lower bound,
+D002-x-D006-owners-rent,2024,Karaganda,42.5,96.6,98.0,-54.1,True,below lower bound,
+D002-x-D006-owners-rent,2024,Kostanay,97.4,97.1,99.2,0.3,False,within bounds,
+D002-x-D006-owners-rent,2024,Kyzylorda,97.6,96.6,97.9,1.0,False,within bounds,
+D002-x-D006-owners-rent,2024,Mangystau,9.1,96.1,97.8,-87.0,True,below lower bound,
+D002-x-D006-owners-rent,2024,Pavlodar,15.7,97.0,98.4,-81.3,True,below lower bound,
+D002-x-D006-owners-rent,2024,North Kazakhstan,96.5,95.9,98.7,0.6,False,within bounds,
+D002-x-D006-owners-rent,2024,Turkistan,13.4,98.0,98.5,-84.6,True,below lower bound,
+D002-x-D006-owners-rent,2024,Ulytau,27.5,91.6,99.0,-64.1,True,below lower bound,
+D002-x-D006-owners-rent,2024,East Kazakhstan,75.2,97.7,98.8,-22.5,True,below lower bound,
+D002-x-D006-owners-rent,2024,Astana,41.5,91.6,94.0,-50.1,True,below lower bound,
+D002-x-D006-owners-rent,2024,Almaty city,70.7,98.2,99.2,-27.5,True,below lower bound,
+D002-x-D006-owners-rent,2024,Shymkent,72.3,89.3,92.5,-17.0,True,below lower bound,
+D002-x-D008-children,2023,Abai,49.7,49.5,,0.2,False,,0.94
+D002-x-D008-children,2023,Akmola,41.5,41.1,,0.4,False,,0.94
+D002-x-D008-children,2023,Aktobe,4.1,63.4,,-59.3,True,,0.94
+D002-x-D008-children,2023,Almaty oblast,54.8,55.8,,-1.0,False,,0.94
+D002-x-D008-children,2023,Atyrau,72.3,73.4,,-1.1,False,,0.94
+D002-x-D008-children,2023,West Kazakhstan,57.0,60.4,,-3.4,False,,0.94
+D002-x-D008-children,2023,Zhambyl,61.0,64.5,,-3.5,False,,0.94
+D002-x-D008-children,2023,Zhetysu,28.5,60.2,,-31.7,True,,0.94
+D002-x-D008-children,2023,Karaganda,52.3,53.7,,-1.4,False,,0.94
+D002-x-D008-children,2023,Kostanay,41.2,41.2,,0.0,False,,0.94
+D002-x-D008-children,2023,Kyzylorda,84.8,79.0,,5.8,False,,0.94
+D002-x-D008-children,2023,Mangystau,62.5,66.4,,-3.9,False,,0.94
+D002-x-D008-children,2023,Pavlodar,52.9,54.2,,-1.3,False,,0.94
+D002-x-D008-children,2023,North Kazakhstan,40.8,38.7,,2.1,False,,0.94
+D002-x-D008-children,2023,Turkistan,87.6,77.4,,10.2,False,,0.94
+D002-x-D008-children,2023,Ulytau,61.4,66.4,,-5.0,False,,0.94
+D002-x-D008-children,2023,East Kazakhstan,41.1,41.7,,-0.6,False,,0.94
+D002-x-D008-children,2023,Astana,52.2,52.6,,-0.4,False,,0.94
+D002-x-D008-children,2023,Almaty city,41.2,42.1,,-0.9,False,,0.94
+D002-x-D008-children,2023,Shymkent,56.7,59.4,,-2.7,False,,0.94
+D002-x-D008-children,2024,Abai,41.7,45.7,,-4.0,False,,0.91
+D002-x-D008-children,2024,Akmola,44.7,43.9,,0.8,False,,0.91
+D002-x-D008-children,2024,Aktobe,63.1,63.9,,-0.8,False,,0.91
+D002-x-D008-children,2024,Almaty oblast,57.8,55.6,,2.2,False,,0.91
+D002-x-D008-children,2024,Atyrau,72.0,72.1,,-0.1,False,,0.91
+D002-x-D008-children,2024,West Kazakhstan,60.2,59.9,,0.3,False,,0.91
+D002-x-D008-children,2024,Zhambyl,56.4,61.0,,-4.6,False,,0.91
+D002-x-D008-children,2024,Zhetysu,43.1,55.8,,-12.7,False,,0.91
+D002-x-D008-children,2024,Karaganda,47.7,46.5,,1.2,False,,0.91
+D002-x-D008-children,2024,Kostanay,45.6,44.2,,1.4,False,,0.91
+D002-x-D008-children,2024,Kyzylorda,75.0,74.7,,0.3,False,,0.91
+D002-x-D008-children,2024,Mangystau,68.0,67.6,,0.4,False,,0.91
+D002-x-D008-children,2024,Pavlodar,48.1,46.3,,1.8,False,,0.91
+D002-x-D008-children,2024,North Kazakhstan,45.3,44.5,,0.8,False,,0.91
+D002-x-D008-children,2024,Turkistan,89.2,79.7,,9.5,False,,0.91
+D002-x-D008-children,2024,Ulytau,7.0,71.6,,-64.6,True,,0.91
+D002-x-D008-children,2024,East Kazakhstan,41.3,42.7,,-1.4,False,,0.91
+D002-x-D008-children,2024,Astana,44.7,45.4,,-0.7,False,,0.91
+D002-x-D008-children,2024,Almaty city,5.3,47.2,,-41.9,True,,0.91
+D002-x-D008-children,2024,Shymkent,72.7,66.0,,6.7,False,,0.91

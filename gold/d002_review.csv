@@ -1,0 +1,15 @@
+side,item,"decision (Claude, to confirm)",reason,team check (✓/✗)
+extracted only,consistency GR41=1 → GR40=1 (child disability implies children),accept into reference,Logically implied by Part 4 Q1; the reference had the analogous GR317 rule but not this one.,✓
+extracted only,cross_form GR31_1 'not relevant' vs D-006 owner share,accept into reference (medium),Analyst rule: option 4 is meant for households to whom rent does not apply; ownership is in D-006.,✗
+extracted only,"domain POL ∈ {1,2}",reject,"D-002 prints no sex codes; the rule comes from another form, not this documentation.",✓
+extracted only,doc_issue: structure lists Gr31_3 twice,equivalent to reference item 10,Same issue; the scorer could not pair them because the two files cite different columns (GR31_4 vs GR31_3).,✓
+reference only,consistency: one record per NOMER,accept,Form: one member per household answers.,✓
+reference only,consistency: VOZ < 18 → GR7 = 89,accept (medium),Instruction: 'дети не могут оценить экономическое положение семьи' → code 89.,✓
+reference only,consistency: GR316_4 = 1 → GR313 = 1,accept,Using mobile internet means someone in the household used internet.,✓
+reference only,consistency: GR22_13 = 1 → GR317 = 1,accept (medium),Both describe a pre-school child not attending kindergarten; spans the two tables.,✓
+reference only,consistency ×7: GR43_k filled → GR42_k filled,accept,Disability group is asked only for a child with a disability type.,✓
+reference only,cross_form: GR317 vs D-008 pre-school-age children,accept (medium),Households with a pre-school child need a member aged under 7 in the roster.,✓
+reference only,domain VOZ ≥ 15 on ocenka table,accept,Same respondent fields are repeated in ocenka.,✓
+reference only,required_any GR42_1..7 when GR41 = 1,equivalent,Extraction had the same rule as 'GR42_1 required'.,✓
+reference only,"doc_issue ×7 wording and documentation (GR9_2, GR22_7, GR33, GR44_6/45_6, self-completion vs interviewer, organic-mark definition, ZT codes and duration location)",accept all,Checked against the form and instruction text.,✓
+extracted only,doc_issue: Part 3 Q1 option 4 Kazakh 'маңызды емес' vs Russian 'не актуально',add to reference,Real mismatch in the form; the reference missed it.,✓

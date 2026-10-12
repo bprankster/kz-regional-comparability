@@ -1,0 +1,710 @@
+form,table,column,years,in_key,kind,filled_pct,distinct,top_values,profiled_year,doc_type,doc_length,description,rule_ids,rules,documented
+D008,kontr_k,TE,2021-2024,False,code,100.0,20.0,61:3145; 15:2727; 43:2662; 31:2513; 55:2401,2024.0,Character,2,код территории,,0,True
+D008,kontr_k,K,2021-2024,False,code,100.0,2.0,1:21496; 2:20325,2024.0,Character,1,код местожительства,D008-K-domain,1,True
+D008,kontr_k,KOL_CHL,2021-2024,False,code,100.0,12.0,4:7556; 5:6760; 3:6555; 6:6120; 2:5692,2024.0,Character,2,количество членов домохозяйства,D008-hh-size,1,True
+D008,kontr_k,NOMP,2021-2024,True,code,100.0,12.0,01:12000; 02:10274; 03:7428; 04:5243; 05:3354,2024.0,Character,2,порядковый номер,D008-ZT-required,1,True
+D008,kontr_k,RODSTVO,2021-2024,False,code,100.0,9.0,3:16073; 1:12000; 2:7487; 7:3115; 8:1491,2024.0,Character,2,родство,D008-RODSTVO-domain; D008-doc-head-code; D008-head-15plus; D008-head-is-1; D008-one-head; D008-required-person; D008-spouse-married,7,True
+D008,kontr_k,POL,2021-2024,False,code,100.0,2.0,2:22346; 1:19475,2024.0,Character,1,пол,D008-POL-domain; D008-required-person,2,True
+D008,kontr_k,ROST,2021-2024,False,integer,100.0,157.0,170:4038; 165:3358; 160:2963; 168:2215; 175:1584,2024.0,Numeric,3,рост,D008-ROST-range,1,True
+D008,kontr_k,SEM_POL,2021-2024,False,code,68.4,4.0,2:17647; 1:5953; 3:2749; 4:2250,2024.0,Character,2,семейное положение,D008-SEM_POL-domain; D008-married-adult; D008-spouse-married,3,True
+D008,kontr_k,UROV,2021-2024,False,code,98.4,7.0,4:17635; 5:8391; 1:4673; 2:4130; 3:3202,2024.0,Character,1,уровень образования,D008-UROV-domain; D008-higher-ed-age; D008-preschool-age; D008-required-person,4,True
+D008,kontr_k,VR_OTS,2021-2024,False,code,0.8,4.0,37:279; 38:32; 33:4; 39:2,2024.0,Character,2,код временного отсутствия,D008-VR_OTS-domain,1,True
+D008,kontr_k,IZM_SOST,2021-2024,False,code,100.0,2.0,0:39632; 1:2189,2024.0,Numeric,1,Переключатель изменения состава,,0,True
+D008,kontr_k,PR_IZA,2021-2024,False,code,1.4,11.0,37:221; 19:120; 29:110; 21:84; 38:23,2024.0,Character,2,изменение состава в апреле,D008-PR_IZ-domain; D008-doc-PR_IZ-29,2,True
+D008,kontr_k,PR_IZI,2021-2024,False,code,2.3,14.0,19:506; 37:214; 29:86; 12:52; 21:46,2024.0,Character,2,изменение состава в июле,D008-PR_IZ-domain; D008-doc-quarter-dates,2,True
+D008,kontr_k,PR_IZO,2021-2024,False,code,3.6,16.0,19:913; 37:316; 12:88; 21:53; 29:29,2024.0,Character,2,изменение состава в октябре,D008-PR_IZ-domain,1,True
+D008,kontr_k,PR_IZYA,2021-2024,False,code,4.3,13.0,19:1171; 37:302; 12:146; 21:50; 15:42,2024.0,Character,2,изменение состава в январе,D008-PR_IZ-domain,1,True
+D008,kontr_k,STATUS,2021-2024,False,code,69.6,10.0,1:15140; 4:5086; 5:3601; 6:2020; 2:1833,2024.0,Character,1,Статус основной деятельности  на  1 января отчетного года,D008-STATUS-15plus; D008-STATUS-domain; D008-STATUS-skip-under15; D008-STATUSF-needs-employee,4,True
+D008,kontr_k,STATUSF,2021-2024,False,code,3.2,1.0,11:1343,2024.0,Character,2,заполняется для работающих по найму у физических лиц (код 11),D008-STATUSF-domain; D008-STATUSF-needs-employee,2,True
+D008,kontr_k,IZM_STATUS,2021-2024,False,code,100.0,2.0,0:35837; 1:5984,2024.0,,,,,0,False
+D008,kontr_k,STATUS1,2021-2024,False,code,70.1,10.0,1:15235; 4:5031; 5:3765; 2:1964; 6:1917,2024.0,Character,1,Статус основной деятельности  на  1 января отчетного года,D008-STATUS-domain; D008-STATUS-skip-under15,2,True
+D008,kontr_k,STATUSF1,2021-2024,False,code,3.2,1.0,11:1355,2024.0,Character,2,заполняется для работающих по найму у физических лиц (код 11),D008-STATUSF-domain,1,True
+D008,kontr_k,STATUS2,2021-2024,False,code,69.8,8.0,1:15238; 4:5008; 5:3886; 2:1976; 6:1762,2024.0,Character,1,Статус основной деятельности  на  1 января отчетного года,D008-STATUS-domain; D008-STATUS-skip-under15,2,True
+D008,kontr_k,STATUSF2,2021-2024,False,code,3.4,1.0,11:1419,2024.0,Character,2,заполняется для работающих по найму у физических лиц (код 11),D008-STATUSF-domain,1,True
+D008,kontr_k,STATUS3,2021-2024,False,code,69.7,8.0,1:15152; 4:5069; 5:3976; 2:2010; 6:1644,2024.0,Character,1,Статус основной деятельности  на  1 января отчетного года,D008-STATUS-domain; D008-STATUS-skip-under15,2,True
+D008,kontr_k,STATUSF3,2021-2024,False,code,3.4,1.0,11:1429,2024.0,Character,2,заполняется для работающих по найму у физических лиц (код 11),D008-STATUSF-domain,1,True
+D008,kontr_k,STATUS4,2021-2024,False,code,70.0,8.0,1:15205; 4:5155; 5:4112; 2:1945; 6:1596,2024.0,Character,1,Статус основной деятельности  на  1 января отчетного года,D008-STATUS-domain; D008-STATUS-skip-under15,2,True
+D008,kontr_k,STATUSF4,2021-2024,False,code,3.3,1.0,11:1379,2024.0,Character,2,заполняется для работающих по найму у физических лиц (код 11),D008-STATUSF-domain,1,True
+D008,kontr_k,ZT,2021-2024,False,empty,0.0,0.0,,2024.0,Character,1,Затраченное время на обследование,D008-ZT-domain; D008-ZT-required; D008-doc-ZT-empty,3,True
+D008,kontr_k,GOD,2021-2024,False,code,100.0,1.0,2024:41821,2024.0,Character,4,год,,0,True
+D008,kontr_k,NOMER,2021-2024,True,integer,100.0,12000.0,2024010147:12; 2024002404:12; 2024005912:11; 2024006416:11; 2024005613:11,2024.0,Character,10,код домохозяйства,,0,True
+D008,kontr_k,GOD_ROJD,"2022,2023,2024",False,integer,100.0,98.0,2013:931; 2012:922; 2014:908; 2015:875; 2010:866,2024.0,Character,4,год рождения,D008-required-person,1,True
+D008,kontr_k,MES_ROJD,"2022,2023,2024",False,code,100.0,12.0,01:3989; 07:3713; 08:3637; 03:3571; 05:3528,2024.0,Character,2,месяц рождения,D008-required-person,1,True
+D008,kontr_k,FIZ,2024,False,code,96.6,4.0,4:22213; 2:11365; 1:6619; 3:212,2024.0,Character,2,Занятие физическими упражнениями,D008-doc-fiz-undocumented,1,True
+D008,kontr_k,FIZM,2024,False,code,15.6,3.0,2:5159; 1:1098; 3:283,2024.0,Character,2,Место занятия  физическими упражнениями,D008-doc-fiz-undocumented,1,True
+D008,kontr_k,FIZCH,2024,False,code,15.8,8.0,8:2523; 3:1561; 2:665; 4:656; 5:471,2024.0,Character,2,Частота занятий физическими упражнениями,D008-doc-fiz-undocumented,1,True
+D008,kontr_k,FIZMIN,2024,False,code,100.0,26.0,0:37800; 30:1197; 60:1092; 40:602; 50:310,2024.0,Numeric,3,Средняя продолжительность одного занятия в минутах,D008-doc-fiz-undocumented,1,True
+D002,subject,GODO,2021-2024,False,code,100.0,1.0,2024:11931,2024.0,,,Год,,0,True
+D002,subject,TE,2021-2024,False,code,100.0,20.0,55:827; 39:774; 11:760; 75:736; 15:718,2024.0,,,Код территории,,0,True
+D002,subject,K,2021-2024,False,code,100.0,2.0,1:6556; 2:5375,2024.0,,,Код типа населенного пункта,D002-K-domain,1,True
+D002,subject,NOMP,2021-2024,False,code,100.0,8.0,01:6535; 02:3640; 03:1172; 04:417; 05:99,2024.0,,,Номер лица,D002-same-person,1,True
+D002,subject,POL,2021-2024,False,code,100.0,2.0,2:6978; 1:4953,2024.0,,,Пол лица,D002-POL-domain; D002-same-person,2,True
+D002,subject,VOZ,2021-2024,False,integer,100.0,98.0,64:272; 59:271; 62:261; 57:254; 33:250,2024.0,,,Возраст лица,D002-VOZ-respondent15; D002-child-economic-89; D002-doc-respondent-age; D002-same-person,4,True
+D002,subject,GR1,2021-2024,False,code,100.0,10.0,7:4741; 8:2323; 9:1689; 10:1412; 6:1001,2024.0,,,1 часть вопрос 1,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR2,2021-2024,False,code,100.0,11.0,7:3430; 8:3179; 9:1951; 10:1251; 6:1232,2024.0,,,1 часть вопрос 2,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR3,2021-2024,False,code,100.0,11.0,7:2947; 8:2798; 9:1934; 10:1321; 6:1305,2024.0,,,1 часть вопрос 3,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR4,2021-2024,False,code,100.0,10.0,7:4246; 8:2159; 6:1570; 9:1462; 5:906,2024.0,,,1 часть вопрос 4,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR5,2021-2024,False,code,100.0,11.0,8:2721; 7:2166; 89:2127; 9:1830; 10:1614,2024.0,,,1 часть вопрос 5,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR6,2021,False,code,100.0,11.0,8:2883; 7:2842; 6:1685; 9:1541; 5:1066,2021.0,,,,,0,False
+D002,subject,GR7,2021-2024,False,code,100.0,11.0,7:4372; 8:2228; 6:1533; 9:1527; 5:869,2024.0,,,1 часть вопрос 7,D002-P1-scale-domain; D002-P1-scale-required; D002-child-economic-89,3,True
+D002,subject,GR81,2021,False,code,100.0,11.0,8:2479; 7:2271; 6:1483; 9:1353; 5:1203,2021.0,,,,,0,False
+D002,subject,GR82,2021,False,code,100.0,11.0,8:2247; 7:2218; 6:1710; 5:1310; 9:1205,2021.0,,,,,0,False
+D002,subject,GR83,2021,False,code,100.0,11.0,8:2341; 7:2202; 6:1478; 9:1400; 10:1136,2021.0,,,,,0,False
+D002,subject,GR84,2021,False,code,100.0,11.0,7:2211; 8:2142; 6:1534; 5:1381; 9:1120,2021.0,,,,,0,False
+D002,subject,GR85,2021,False,code,100.0,11.0,8:2169; 7:2042; 6:1360; 9:1304; 89:1235,2021.0,,,,,0,False
+D002,subject,GR86,2021,False,code,100.0,11.0,8:2393; 7:1893; 10:1763; 9:1621; 6:1199,2021.0,,,,,0,False
+D002,subject,GR9,"2021,2022",False,code,100.0,11.0,8:3346; 7:2532; 9:2056; 10:1568; 6:1108,2022.0,,,,,0,False
+D002,subject,GR101,"2021,2022",False,code,100.0,11.0,8:3301; 7:2521; 9:1780; 6:1413; 10:1264,2022.0,,,,,0,False
+D002,subject,GR102,"2021,2022",False,code,100.0,11.0,8:3034; 7:2605; 9:1504; 6:1372; 10:1166,2022.0,,,,,0,False
+D002,subject,GR103,"2021,2022",False,code,100.0,11.0,8:2847; 7:2239; 9:1496; 10:1315; 6:1159,2022.0,,,,,0,False
+D002,subject,GR11,2021-2024,False,code,100.0,11.0,8:1996; 89:1778; 7:1757; 5:1055; 6:1027,2024.0,,,1 часть вопрос 11,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR12,2021-2024,False,code,100.0,11.0,8:1813; 89:1693; 7:1551; 3:1268; 1:978,2024.0,,,1 часть вопрос 12,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR13,2021-2024,False,code,100.0,11.0,8:3142; 7:2628; 9:1797; 6:1415; 10:1282,2024.0,,,1 часть вопрос 13,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR14,"2021,2022",False,code,100.0,11.0,8:3077; 7:2371; 9:1715; 10:1594; 6:1328,2022.0,,,,,0,False
+D002,subject,GR151,"2021,2022",False,code,100.0,11.0,7:2645; 8:2526; 6:1668; 9:1239; 5:1170,2022.0,,,,,0,False
+D002,subject,GR152,"2021,2022",False,code,100.0,11.0,8:3125; 7:2441; 9:1674; 6:1321; 10:1079,2022.0,,,,,0,False
+D002,subject,GR153,2021,False,code,100.0,11.0,8:2686; 7:2380; 6:1503; 9:1346; 5:1292,2021.0,,,,,0,False
+D002,subject,GR161,"2021,2022",False,code,100.0,11.0,8:2740; 7:2424; 6:1541; 9:1517; 10:1209,2022.0,,,,,0,False
+D002,subject,GR162,"2021,2022",False,code,100.0,11.0,8:2638; 7:2481; 9:1558; 6:1439; 10:1183,2022.0,,,,,0,False
+D002,subject,GR163,2021,False,code,100.0,11.0,8:2705; 7:2189; 9:1345; 6:1335; 5:1246,2021.0,,,,,0,False
+D002,subject,GR171,"2021,2022",False,code,100.0,11.0,8:2964; 89:1924; 9:1864; 7:1707; 10:1532,2022.0,,,,,0,False
+D002,subject,GR172,"2021,2022",False,code,100.0,11.0,8:3071; 9:1898; 7:1888; 10:1561; 89:1395,2022.0,,,,,0,False
+D002,subject,GR173,"2021,2022",False,code,100.0,11.0,8:2751; 89:2154; 7:1885; 9:1754; 10:1225,2022.0,,,,,0,False
+D002,subject,GR174,"2021,2022",False,code,100.0,11.0,8:2551; 89:2334; 7:1911; 9:1721; 10:1187,2022.0,,,,,0,False
+D002,subject,GR181,"2021,2022",False,code,100.0,11.0,8:2780; 10:2144; 9:1985; 7:1690; 89:1531,2022.0,,,,,0,False
+D002,subject,GR182,"2021,2022",False,code,100.0,11.0,10:3026; 8:2810; 9:2157; 7:1440; 89:1072,2022.0,,,,,0,False
+D002,subject,GR183,"2021,2022",False,code,100.0,11.0,8:2815; 9:1967; 7:1962; 89:1805; 10:1543,2022.0,,,,,0,False
+D002,subject,GR184,"2021,2022",False,code,100.0,11.0,8:2520; 7:2020; 89:1957; 9:1574; 10:1239,2022.0,,,,,0,False
+D002,subject,GR191,"2021,2022",False,code,100.0,11.0,8:3132; 7:2518; 9:1599; 89:1302; 10:1112,2022.0,,,,,0,False
+D002,subject,GR192,"2021,2022",False,code,100.0,11.0,8:3245; 7:2358; 9:1532; 6:1232; 89:1201,2022.0,,,,,0,False
+D002,subject,GR193,"2021,2022",False,code,100.0,11.0,8:3159; 7:2310; 9:1538; 89:1202; 6:1094,2022.0,,,,,0,False
+D002,subject,GR194,"2021,2022",False,code,100.0,11.0,8:3454; 7:2212; 9:1866; 10:1554; 6:1040,2022.0,,,,,0,False
+D002,subject,GR195,"2021,2022",False,code,100.0,11.0,8:3062; 7:1971; 9:1791; 89:1749; 10:1483,2022.0,,,,,0,False
+D002,subject,GR196,"2021,2022",False,code,100.0,11.0,8:3086; 7:2265; 89:2108; 9:1426; 6:1009,2022.0,,,,,0,False
+D002,subject,GR201,"2021,2022",False,code,100.0,11.0,8:2416; 7:2338; 6:1418; 9:1138; 5:1109,2022.0,,,,,0,False
+D002,subject,GR202,"2021,2022",False,code,100.0,11.0,8:2838; 7:2162; 9:1525; 6:1205; 89:998,2022.0,,,,,0,False
+D002,subject,GR21,2021-2024,False,code,100.0,6.0,3:8735; 4:2411; 5:596; 2:94; 6:80,2024.0,,,2 часть вопрос 1,D002-P2Q1-domain; D002-P2Q1-required; D002-P2Q2-required; D002-P2Q2-skip,4,True
+D002,subject,GR22,"2021,2022",False,code,100.0,11.0,8:3067; 10:2513; 9:2186; 7:1911; 6:854,2022.0,,,,,0,False
+D002,subject,NOMER,2021-2024,True,integer,100.0,11931.0,2024012000:1; 2024000001:1; 2024000002:1; 2024000003:1; 2024000004:1,2024.0,,,Номер домохозяйства,D002-one-respondent; D002-same-person,2,True
+D002,subject,GR61,2022,False,code,100.0,11.0,10:4344; 8:2917; 9:2643; 7:1196; 6:416,2022.0,,,1 часть вопрос 6.1,,0,True
+D002,subject,GR62,2022,False,code,100.0,11.0,10:3812; 8:3001; 9:2564; 7:1268; 6:518,2022.0,,,1 часть вопрос 6.2,,0,True
+D002,subject,GR63,2022,False,code,100.0,11.0,10:2770; 8:2533; 89:2459; 9:1918; 7:1191,2022.0,,,1 часть вопрос 6.3,,0,True
+D002,subject,GR8,"2022,2023,2024",False,code,100.0,11.0,8:3273; 7:3054; 9:2044; 6:1289; 10:1159,2024.0,,,1 часть вопрос 8,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,ZT,"2022,2023,2024",False,code,99.7,5.0,1:10461; 2:1428; 4:6; 3:4; 7:1,2024.0,,,Затраченное время на заполнение бланка,D002-ZT-domain; D002-ZT-required,2,True
+D002,subject,GR6_1,"2023,2024",False,code,100.0,11.0,10:4007; 8:3183; 9:2707; 7:1329; 6:400,2024.0,,,,D002-P1-scale-domain; D002-P1-scale-required; D002-doc-structure-names,3,False
+D002,subject,GR6_2,"2023,2024",False,code,100.0,11.0,10:3373; 8:3160; 9:2645; 7:1491; 6:593,2024.0,,,,D002-P1-scale-domain; D002-P1-scale-required,2,False
+D002,subject,GR6_3,"2023,2024",False,code,100.0,11.0,89:2603; 8:2549; 10:2406; 9:2011; 7:1275,2024.0,,,,D002-P1-scale-domain; D002-P1Q6_3-optional,2,False
+D002,subject,GR9_1,"2023,2024",False,code,100.0,11.0,8:3272; 7:2736; 9:1979; 6:1488; 10:1014,2024.0,,,1 часть вопрос 9.1,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR9_2,"2023,2024",False,code,100.0,11.0,8:2976; 7:2463; 9:1878; 6:1565; 10:1076,2024.0,,,1 часть вопрос 9.2,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR9_3,"2023,2024",False,code,100.0,11.0,8:2786; 7:2261; 9:1666; 6:1394; 10:1324,2024.0,,,1 часть вопрос 9.3,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR10,"2023,2024",False,code,100.0,11.0,8:3467; 7:2726; 9:1786; 10:1287; 6:1268,2024.0,,,1 часть вопрос 10,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR14_1,"2023,2024",False,code,100.0,11.0,8:2871; 7:2643; 9:1567; 6:1443; 10:1005,2024.0,,,1 часть вопрос 14.1,D002-P1-scale-domain; D002-P1-scale-required; D002-doc-structure-names,3,True
+D002,subject,GR14_2,"2023,2024",False,code,100.0,11.0,8:3307; 7:2368; 9:1986; 10:1326; 6:1186,2024.0,,,1 часть вопрос 14.2,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR15_1,"2023,2024",False,code,100.0,11.0,8:3050; 7:2451; 9:1822; 10:1256; 6:1226,2024.0,,,1 часть вопрос 15.1,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR15_2,"2023,2024",False,code,100.0,11.0,8:3107; 7:2286; 9:1973; 10:1396; 6:1215,2024.0,,,1 часть вопрос 15.2,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR16_1,"2023,2024",False,code,100.0,11.0,8:3228; 9:2158; 7:1962; 89:1777; 10:1569,2024.0,,,1 часть вопрос 16.1,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR16_2,"2023,2024",False,code,100.0,11.0,8:3502; 7:2226; 9:2139; 10:1509; 89:1224,2024.0,,,1 часть вопрос 16.2,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR16_3,"2023,2024",False,code,100.0,11.0,8:3246; 7:2082; 9:2043; 89:1881; 10:1243,2024.0,,,1 часть вопрос 16.3,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR16_4,"2023,2024",False,code,100.0,11.0,8:3131; 89:2140; 7:2005; 9:1908; 10:1243,2024.0,,,1 часть вопрос 16.4,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR17_1,"2023,2024",False,code,100.0,11.0,8:3354; 9:1970; 10:1853; 7:1816; 89:1571,2024.0,,,1 часть вопрос 17.1,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR17_2,"2023,2024",False,code,100.0,11.0,8:3196; 10:2658; 9:2194; 7:1764; 89:1139,2024.0,,,1 часть вопрос 17.2,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR17_3,"2023,2024",False,code,100.0,11.0,8:3206; 9:2002; 7:1973; 89:1735; 10:1481,2024.0,,,1 часть вопрос 17.3,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR17_4,"2023,2024",False,code,100.0,11.0,8:2939; 7:2044; 89:1969; 9:1728; 10:1129,2024.0,,,1 часть вопрос 17.4,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR18_1,"2023,2024",False,code,100.0,11.0,8:3210; 9:2206; 7:2163; 10:1334; 89:1236,2024.0,,,1 часть вопрос 18.1,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR18_2,"2023,2024",False,code,100.0,11.0,8:3073; 7:2224; 9:2090; 10:1265; 89:1209,2024.0,,,1 часть вопрос 18.2,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR18_3,"2023,2024",False,code,100.0,11.0,8:3097; 7:2178; 9:2133; 10:1363; 89:1051,2024.0,,,1 часть вопрос 18.3,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR18_4,"2023,2024",False,code,100.0,11.0,8:3386; 9:2456; 7:2150; 10:1706; 6:837,2024.0,,,1 часть вопрос 18.4,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR18_5,"2023,2024",False,code,100.0,11.0,8:3222; 9:2175; 10:1966; 7:1930; 89:1310,2024.0,,,1 часть вопрос 18.5,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR18_6,"2023,2024",False,code,100.0,11.0,8:3021; 89:2071; 9:2053; 7:2041; 10:1086,2024.0,,,1 часть вопрос 18.6,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR19,"2023,2024",False,code,100.0,11.0,8:3139; 10:2479; 9:2365; 7:1981; 6:645,2024.0,,,1 часть вопрос 19,D002-P1-scale-domain; D002-P1-scale-required,2,True
+D002,subject,GR22_1,"2023,2024",False,code,0.1,1.0,1:11,2024.0,,,отсутствие какой-либо оплачиваемой работы,D002-P2Q2-multi; D002-P2Q2-required; D002-P2Q2-skip,3,True
+D002,subject,GR22_2,"2023,2024",False,code,0.2,1.0,1:28,2024.0,,,"невозможность найти постоянную оплачеваемую
+работу по месту жительства",D002-P2Q2-multi; D002-P2Q2-required; D002-P2Q2-skip,3,True
+D002,subject,GR22_3,"2023,2024",False,code,0.1,1.0,1:7,2024.0,,,недостаточный уровень квалификации и/или опыта работы,D002-P2Q2-multi; D002-P2Q2-required; D002-P2Q2-skip,3,True
+D002,subject,GR22_4,"2023,2024",False,code,0.5,1.0,1:60,2024.0,,,низкая оплата труда,D002-P2Q2-multi; D002-P2Q2-required; D002-P2Q2-skip,3,True
+D002,subject,GR22_5,"2023,2024",False,code,0.3,1.0,1:32,2024.0,,,низкая пенсия,D002-P2Q2-multi; D002-P2Q2-required; D002-P2Q2-skip,3,True
+D002,subject,GR22_6,"2023,2024",False,code,0.2,1.0,1:19,2024.0,,,низкое социальное пособие,D002-P2Q2-multi; D002-P2Q2-required; D002-P2Q2-skip,3,True
+D002,subject,GR22_7,"2023,2024",False,code,0.1,1.0,1:12,2024.0,,,"наличие избыточной долговой нагрузки, связанной с оплатой
+кредитов и займов, в том числе ипотечных",D002-P2Q2-multi; D002-P2Q2-required; D002-P2Q2-skip,3,True
+D002,subject,GR22_8,"2023,2024",False,code,0.1,1.0,1:11,2024.0,,,недостаточный уровень образования для получения подходящей работы,D002-P2Q2-multi; D002-P2Q2-required; D002-P2Q2-skip,3,True
+D002,subject,GR22_9,"2023,2024",False,code,0.0,1.0,1:1,2024.0,,,"наличие социально-неадекватных членов семьи
+(страдающих от алкоголизма, наркомании и так далее) и/или наличие лиц с инвалидностью в домашнем хозяйстве",D002-P2Q2-multi; D002-P2Q2-required; D002-P2Q2-skip,3,True
+D002,subject,GR22_10,"2023,2024",False,code,0.1,1.0,1:17,2024.0,,,плохое состояние здоровья,D002-P2Q2-multi; D002-P2Q2-required; D002-P2Q2-skip,3,True
+D002,subject,GR22_11,"2023,2024",False,empty,0.0,0.0,,2024.0,,,"чрезвычайные ситуации, стихийные бедствия (неурожай, пожары,
+наводнения, потеря близких людей и так далее)",D002-P2Q2-multi; D002-P2Q2-required; D002-P2Q2-skip,3,True
+D002,subject,GR22_12,"2023,2024",False,empty,0.0,0.0,,2024.0,,,"утрата имущества вследствие кражи, грабежа, угона скота и так далее",D002-P2Q2-multi; D002-P2Q2-required; D002-P2Q2-skip,3,True
+D002,subject,GR22_13,"2023,2024",False,empty,0.0,0.0,,2024.0,,,"необходимость присмотра и/или ухода за ребенком (детьми)
+дошкольного возраста не посещающих дошкольное учреждение",D002-P2Q2-multi; D002-P2Q2-required; D002-P2Q2-skip; D002-preschool-reason-implies-Q17,4,True
+D002,subject,GR22_14,"2023,2024",False,code,0.1,1.0,1:13,2024.0,,,другая причина (укажите),D002-P2Q2-multi; D002-P2Q2-required; D002-P2Q2-skip,3,True
+D002,subject,GR23,"2023,2024",False,code,100.0,3.0,1:7489; 2:4039; 3:403,2024.0,,,2 часть вопрос 3,D002-P2Q3-domain; D002-P2Q3to7-required,2,True
+D002,subject,GR24,"2023,2024",False,code,100.0,5.0,1:5647; 2:3914; 3:2044; 4:268; 5:58,2024.0,,,2 часть вопрос 4,D002-P2Q3to7-required; D002-P2Q4-domain,2,True
+D002,subject,GR25,"2023,2024",False,code,100.0,6.0,2:5033; 3:4000; 4:1499; 5:898; 1:264,2024.0,,,2 часть вопрос 5,D002-P2Q3to7-required; D002-P2Q5-domain; D002-doc-kk-ru-P2Q5opt2,3,True
+D002,subject,GR26,"2023,2024",False,code,100.0,4.0,2:10917; 1:461; 3:286; 4:267,2024.0,,,2 часть вопрос 6,D002-FIES-domain; D002-FIES-refusal; D002-P2Q3to7-required,3,True
+D002,subject,GR27,"2023,2024",False,code,100.0,4.0,2:11051; 3:351; 4:292; 1:237,2024.0,,,2 часть вопрос 7,D002-FIES-domain; D002-FIES-refusal; D002-P2Q3to7-required; D002-P2Q8-required; D002-P2Q8-skip,5,True
+D002,subject,GR28_1,"2023,2024",False,code,1.5,1.0,1:178,2024.0,,,недостаток денежных средств,D002-P2Q8-multi; D002-P2Q8-required; D002-P2Q8-skip,3,True
+D002,subject,GR28_2,"2023,2024",False,code,0.3,1.0,1:35,2024.0,,,отсутствие огорода или подсобного хозяйства для выращивания продукции,D002-P2Q8-multi; D002-P2Q8-required; D002-P2Q8-skip,3,True
+D002,subject,GR28_3,"2023,2024",False,code,0.2,1.0,1:22,2024.0,,,отсутствие знаний о правильном питании,D002-P2Q8-multi; D002-P2Q8-required; D002-P2Q8-skip,3,True
+D002,subject,GR28_4,"2023,2024",False,code,0.3,1.0,1:37,2024.0,,,прочее,D002-P2Q8-multi; D002-P2Q8-required; D002-P2Q8-skip,3,True
+D002,subject,GR28_5,"2023,2024",False,code,0.2,1.0,1:29,2024.0,,,не применимо/затрудняюсь ответить,D002-P2Q8-multi; D002-P2Q8-required; D002-P2Q8-skip,3,True
+D002,subject,GR29,"2023,2024",False,code,100.0,4.0,2:10991; 1:377; 4:335; 3:228,2024.0,,,2 часть вопрос 9,D002-FIES-domain; D002-FIES-refusal; D002-P2Q3to7-required,3,True
+D002,subject,GR210,"2023,2024",False,code,100.0,4.0,2:11413; 4:265; 3:189; 1:64,2024.0,,,2 часть вопрос 10,D002-FIES-domain; D002-FIES-refusal; D002-P2Q3to7-required,3,True
+D002,subject,GR211,"2023,2024",False,code,100.0,4.0,2:11321; 4:294; 3:206; 1:110,2024.0,,,2 часть вопрос 11,D002-FIES-domain; D002-FIES-refusal; D002-P2Q3to7-required,3,True
+D002,subject,GR212,"2023,2024",False,code,100.0,4.0,2:11334; 4:298; 3:201; 1:98,2024.0,,,2 часть вопрос 12,D002-FIES-domain; D002-FIES-refusal; D002-P2Q3to7-required,3,True
+D002,subject,GR213,"2023,2024",False,code,100.0,4.0,2:11446; 4:253; 3:175; 1:57,2024.0,,,2 часть вопрос 13,D002-FIES-domain; D002-FIES-refusal; D002-P2Q3to7-required,3,True
+D002,subject,GR214,"2023,2024",False,code,100.0,4.0,2:11542; 3:171; 4:171; 1:47,2024.0,,,2 часть вопрос 14,D002-FIES-domain; D002-FIES-refusal; D002-P2Q3to7-required,3,True
+D002,ocenka,GODO,2021-2024,False,code,100.0,1.0,2024:11931,2024.0,,,,,0,False
+D002,ocenka,TE,2021-2024,False,code,100.0,20.0,55:827; 39:774; 11:760; 75:736; 15:718,2024.0,,,Код территории,,0,True
+D002,ocenka,K,2021-2024,False,code,100.0,2.0,1:6556; 2:5375,2024.0,,,Код типа населенного пункта,D002-K-domain,1,True
+D002,ocenka,NOMP,2021-2024,False,code,100.0,8.0,01:6541; 02:3640; 03:1166; 04:417; 05:99,2024.0,,,Номер лица,D002-same-person,1,True
+D002,ocenka,POL,2021-2024,False,code,100.0,2.0,2:6976; 1:4955,2024.0,,,Пол лица,D002-POL-domain; D002-same-person,2,True
+D002,ocenka,VOZ,2021-2024,False,integer,100.0,98.0,59:271; 64:270; 62:263; 57:253; 33:252,2024.0,,,Возраст лица,D002-VOZ-respondent15-ocenka; D002-doc-respondent-age; D002-same-person,3,True
+D002,ocenka,GR1,"2021,2022",False,code,100.0,6.0,3:9529; 4:1763; 5:346; 2:220; 1:39,2022.0,,,,,0,False
+D002,ocenka,GR2,"2021,2022",False,code,100.0,3.0,1:7356; 2:3974; 3:604,2022.0,,,,,0,False
+D002,ocenka,GR3,"2021,2022",False,code,100.0,5.0,1:5015; 2:3990; 3:2577; 4:301; 5:51,2022.0,,,,,0,False
+D002,ocenka,GR4,"2021,2022",False,code,100.0,4.0,2:10661; 1:637; 3:442; 4:194,2022.0,,,,,0,False
+D002,ocenka,GR5,"2021,2022",False,code,100.0,4.0,2:11036; 3:354; 1:315; 4:229,2022.0,,,,,0,False
+D002,ocenka,GR6,"2021,2022",False,code,100.0,4.0,2:11055; 1:348; 3:290; 4:241,2022.0,,,,,0,False
+D002,ocenka,GR7,"2021,2022",False,code,100.0,4.0,2:11367; 3:254; 4:192; 1:121,2022.0,,,,,0,False
+D002,ocenka,GR8,"2021,2022",False,code,100.0,4.0,2:11331; 3:225; 1:202; 4:176,2022.0,,,,,0,False
+D002,ocenka,GR9,"2021,2022",False,code,100.0,4.0,2:11178; 3:336; 4:272; 1:148,2022.0,,,,,0,False
+D002,ocenka,GR10,"2021,2022",False,code,100.0,4.0,2:11200; 3:283; 4:230; 1:221,2022.0,,,,,0,False
+D002,ocenka,GR11,"2021,2022",False,code,100.0,4.0,2:11319; 3:263; 4:242; 1:110,2022.0,,,,,0,False
+D002,ocenka,GR31_1,2021-2024,False,code,100.0,4.0,4:5971; 3:5738; 1:134; 2:88,2024.0,,,3 часть вопрос 1.1,D002-P3Q1-domain; D002-P3Q1-required; D002-doc-kk-ru-P3Q1opt4; D002-x-D006-owners-rent,4,True
+D002,ocenka,GR31_2,2021-2024,False,code,100.0,4.0,3:10616; 4:497; 1:448; 2:370,2024.0,,,3 часть вопрос 1.2,D002-P3Q1-domain; D002-P3Q1-required; D002-doc-kk-ru-P3Q1opt4,3,True
+D002,ocenka,GR31_3,2021-2024,False,code,100.0,4.0,3:7538; 4:3690; 1:382; 2:321,2024.0,,,3 часть вопрос 1.4,D002-P3Q1-domain; D002-P3Q1-required; D002-doc-kk-ru-P3Q1opt4,3,True
+D002,ocenka,GR32,2021-2024,False,code,100.0,2.0,1:11645; 2:286,2024.0,,,3 часть вопрос 2,D002-P3-yesno-domain; D002-P3Q2to13-required,2,True
+D002,ocenka,GR33,2021-2024,False,code,100.0,3.0,1:7622; 3:2187; 2:2122,2024.0,,,3 часть вопрос 3,D002-P3-3opt-domain; D002-P3Q2to13-required,2,True
+D002,ocenka,GR34,2021-2024,False,code,100.0,2.0,1:11428; 2:503,2024.0,,,3 часть вопрос 4,D002-P3Q2to13-required; D002-P3Q4-domain,2,True
+D002,ocenka,GR35,2021-2024,False,code,100.0,2.0,1:9694; 2:2237,2024.0,,,3 часть вопрос 5,D002-P3-yesno-domain; D002-P3Q2to13-required,2,True
+D002,ocenka,GR36,2021-2024,False,code,100.0,2.0,1:9252; 2:2679,2024.0,,,3 часть вопрос 6,D002-P3-yesno-domain; D002-P3Q2to13-required,2,True
+D002,ocenka,GR37,2021-2024,False,code,100.0,3.0,1:10337; 3:1022; 2:572,2024.0,,,3 часть вопрос 7,D002-P3-3opt-domain; D002-P3Q2to13-required,2,True
+D002,ocenka,GR38,2021-2024,False,code,100.0,2.0,1:8055; 2:3876,2024.0,,,3 часть вопрос 8,D002-P3-yesno-domain; D002-P3Q2to13-required,2,True
+D002,ocenka,GR39,2021-2024,False,code,100.0,3.0,1:10007; 3:1094; 2:830,2024.0,,,3 часть вопрос 9,D002-P3-3opt-domain; D002-P3Q2to13-required,2,True
+D002,ocenka,GR310,2021-2024,False,code,100.0,3.0,1:10993; 3:561; 2:377,2024.0,,,3 часть вопрос 10,D002-P3-3opt-domain; D002-P3Q2to13-required,2,True
+D002,ocenka,GR311,2021-2024,False,code,100.0,3.0,1:9097; 3:1879; 2:955,2024.0,,,3 часть вопрос 11,D002-P3-3opt-domain; D002-P3Q2to13-required,2,True
+D002,ocenka,GR312,2021-2024,False,code,100.0,3.0,1:7935; 3:2944; 2:1052,2024.0,,,3 часть вопрос 12,D002-P3-3opt-domain; D002-P3Q2to13-required,2,True
+D002,ocenka,GR313,2021-2024,False,code,100.0,2.0,1:10594; 2:1337,2024.0,,,3 часть вопрос 13,D002-P3-yesno-domain; D002-P3Q14-required; D002-P3Q14-skip; D002-P3Q2to13-required; D002-mobile-implies-internet,5,True
+D002,ocenka,GR314,2021-2024,False,code,88.8,2.0,1:10052; 2:541,2024.0,,,3 часть вопрос 14,D002-P3Q14-domain; D002-P3Q14-required; D002-P3Q14-skip; D002-doc-P3Q14-coverage; D002-doc-kk-ru-P3Q14opt1,5,True
+D002,ocenka,GR315,2021-2024,False,code,100.0,2.0,1:9085; 2:2846,2024.0,,,3 часть вопрос 15,D002-P3-yesno-domain; D002-P3Q16-required; D002-P3Q16-skip; D002-P3Q2to13-required,4,True
+D002,ocenka,GR316,2021,False,code,100.0,2.0,2:9956; 1:1997,2021.0,,,,,0,False
+D002,ocenka,GR317,2021-2024,False,code,100.0,2.0,2:10265; 1:1666,2024.0,,,3 часть вопрос 17,D002-P3-yesno-domain; D002-P3Q18-required; D002-P3Q18-skip; D002-P3Q2to13-required; D002-preschool-implies-children; D002-preschool-reason-implies-Q17,6,True
+D002,ocenka,GR318,2021,False,code,100.0,3.0,2:8719; 3:1645; 1:1589,2021.0,,,,,0,False
+D002,ocenka,GR319_1,2021,False,code,5.1,1.0,1:610,2021.0,,,,,0,False
+D002,ocenka,GR319_2,2021,False,code,1.3,1.0,1:150,2021.0,,,,,0,False
+D002,ocenka,GR319_3,2021,False,code,1.5,1.0,1:175,2021.0,,,,,0,False
+D002,ocenka,GR319_4,2021,False,code,1.6,1.0,1:186,2021.0,,,,,0,False
+D002,ocenka,GR319_5,2021,False,code,2.2,1.0,1:258,2021.0,,,,,0,False
+D002,ocenka,GR319_6,2021,False,code,3.0,1.0,1:361,2021.0,,,,,0,False
+D002,ocenka,GR319_7,2021,False,code,0.6,1.0,1:74,2021.0,,,,,0,False
+D002,ocenka,GR319_8,2021,False,code,0.4,1.0,1:47,2021.0,,,,,0,False
+D002,ocenka,GR319_9,2021,False,code,0.7,1.0,1:89,2021.0,,,,,0,False
+D002,ocenka,GR319_10,2021,False,code,0.5,1.0,1:57,2021.0,,,,,0,False
+D002,ocenka,NOMER,2021-2024,True,integer,100.0,11931.0,2024012000:1; 2024000001:1; 2024000002:1; 2024000003:1; 2024000004:1,2024.0,,,Номер домохозяйства,D002-same-person,1,True
+D002,ocenka,GR31_4,"2022,2023,2024",False,code,100.0,4.0,3:7261; 4:4033; 1:364; 2:273,2024.0,,,,D002-P3Q1-domain; D002-P3Q1-required; D002-doc-kk-ru-P3Q1opt4; D002-doc-structure-GR31_4,4,False
+D002,ocenka,GR316_1,"2022,2023,2024",False,code,0.6,1.0,1:66,2024.0,,,3 часть вопрос 16. Отсутствие провайдера,D002-P3Q16-multi; D002-P3Q16-required; D002-P3Q16-skip,3,True
+D002,ocenka,GR316_2,"2022,2023,2024",False,code,1.8,1.0,1:212,2024.0,,,"3 часть вопрос 16. Слишком дорогая оплата, не можем себе позволить",D002-P3Q16-multi; D002-P3Q16-required; D002-P3Q16-skip,3,True
+D002,ocenka,GR316_3,"2022,2023,2024",False,code,0.9,1.0,1:105,2024.0,,,3 часть вопрос 16. Ничего не знаю об этом,D002-P3Q16-multi; D002-P3Q16-required; D002-P3Q16-skip,3,True
+D002,ocenka,GR316_4,"2022,2023,2024",False,code,21.6,1.0,1:2580,2024.0,,,"3 часть вопрос 16. Нет необходимости, использую интернет в мобильном телефоне",D002-P3Q16-multi; D002-P3Q16-required; D002-P3Q16-skip; D002-mobile-implies-internet,4,True
+D002,ocenka,GR316_5,"2022,2023,2024",False,code,0.2,1.0,1:20,2024.0,,,"3 часть вопрос 16. Не хватает технических устройств, но мы можем их докупить",D002-P3Q16-multi; D002-P3Q16-required; D002-P3Q16-skip,3,True
+D002,ocenka,GR316_6,"2022,2023,2024",False,code,0.3,1.0,1:35,2024.0,,,3 часть вопрос 16. Другое,D002-P3Q16-multi; D002-P3Q16-required; D002-P3Q16-skip,3,True
+D002,ocenka,GR318_1,"2022,2023,2024",False,code,0.4,1.0,1:51,2024.0,,,3 часть вопрос 18. Слишком дорого,D002-P3Q18-multi; D002-P3Q18-required; D002-P3Q18-skip,3,True
+D002,ocenka,GR318_2,"2022,2023,2024",False,code,0.3,1.0,1:30,2024.0,,,3 часть вопрос 18. Нет дошкольных учреждений по месту жительства,D002-P3Q18-multi; D002-P3Q18-required; D002-P3Q18-skip,3,True
+D002,ocenka,GR318_3,"2022,2023,2024",False,code,8.5,1.0,1:1009,2024.0,,,3 часть вопрос 18. Неподходящий возраст,D002-P3Q18-multi; D002-P3Q18-required; D002-P3Q18-skip,3,True
+D002,ocenka,GR318_4,"2022,2023,2024",False,code,0.3,1.0,1:37,2024.0,,,3 часть вопрос 18. Болезнь,D002-P3Q18-multi; D002-P3Q18-required; D002-P3Q18-skip,3,True
+D002,ocenka,GR318_5,"2022,2023,2024",False,code,3.5,1.0,1:423,2024.0,,,3 часть вопрос 18. За ребенком присматривают родственники,D002-P3Q18-multi; D002-P3Q18-required; D002-P3Q18-skip,3,True
+D002,ocenka,GR318_6,"2022,2023,2024",False,code,0.3,1.0,1:33,2024.0,,,3 часть вопрос 18. За ребенком присматривает няня,D002-P3Q18-multi; D002-P3Q18-required; D002-P3Q18-skip,3,True
+D002,ocenka,GR318_7,"2022,2023,2024",False,code,0.0,1.0,1:4,2024.0,,,3 часть вопрос 18. Нет прописки,D002-P3Q18-multi; D002-P3Q18-required; D002-P3Q18-skip,3,True
+D002,ocenka,GR318_8,"2022,2023,2024",False,code,2.6,1.0,1:310,2024.0,,,3 часть вопрос 18. Нет необходимости,D002-P3Q18-multi; D002-P3Q18-required; D002-P3Q18-skip,3,True
+D002,ocenka,GR318_9,"2022,2023,2024",False,code,0.4,1.0,1:42,2024.0,,,3 часть вопрос 18. Другие причины,D002-P3Q18-multi; D002-P3Q18-required; D002-P3Q18-skip,3,True
+D002,ocenka,GR319,"2022,2023,2024",False,code,100.0,3.0,2:9624; 1:1327; 3:980,2024.0,,,3 часть вопрос 19.,D002-P3Q19-domain; D002-P3Q20-required; D002-P3Q20-skip; D002-P3Q2to13-required,4,True
+D002,ocenka,GR320_1,"2022,2023,2024",False,code,5.1,1.0,1:614,2024.0,,,3 часть вопрос 20.Занимался(лась) самолечением,D002-P3Q20-multi; D002-P3Q20-required; D002-P3Q20-skip,3,True
+D002,ocenka,GR320_2,"2022,2023,2024",False,code,2.2,1.0,1:267,2024.0,,,"3 часть вопрос 20.Решил(а), что и так выздоровлю",D002-P3Q20-multi; D002-P3Q20-required; D002-P3Q20-skip,3,True
+D002,ocenka,GR320_3,"2022,2023,2024",False,code,1.6,1.0,1:185,2024.0,,,3 часть вопрос 20.Высокая стоимость услуг,D002-P3Q20-multi; D002-P3Q20-required; D002-P3Q20-skip,3,True
+D002,ocenka,GR320_4,"2022,2023,2024",False,code,2.1,1.0,1:254,2024.0,,,3 часть вопрос 20.Слишком дорогое лекарство,D002-P3Q20-multi; D002-P3Q20-required; D002-P3Q20-skip,3,True
+D002,ocenka,GR320_5,"2022,2023,2024",False,code,2.7,1.0,1:328,2024.0,,,3 часть вопрос 20.Большие очереди,D002-P3Q20-multi; D002-P3Q20-required; D002-P3Q20-skip,3,True
+D002,ocenka,GR320_6,"2022,2023,2024",False,code,2.8,1.0,1:329,2024.0,,,3 часть вопрос 20.Отсутствие специалиста,D002-P3Q20-multi; D002-P3Q20-required; D002-P3Q20-skip,3,True
+D002,ocenka,GR320_7,"2022,2023,2024",False,code,0.6,1.0,1:67,2024.0,,,3 часть вопрос 20.Учреждения здравоохранения далеко / нет возможности доехать,D002-P3Q20-multi; D002-P3Q20-required; D002-P3Q20-skip,3,True
+D002,ocenka,GR320_8,"2022,2023,2024",False,code,0.3,1.0,1:37,2024.0,,,3 часть вопрос 20.Отсутствие лекарств,D002-P3Q20-multi; D002-P3Q20-required; D002-P3Q20-skip,3,True
+D002,ocenka,GR320_9,"2022,2023,2024",False,code,0.9,1.0,1:113,2024.0,,,3 часть вопрос 20. Плохое обслуживание / не доверяю,D002-P3Q20-multi; D002-P3Q20-required; D002-P3Q20-skip,3,True
+D002,ocenka,GR320_10,"2022,2023,2024",False,code,0.5,1.0,1:65,2024.0,,,3 часть вопрос 20. Другие причины,D002-P3Q20-multi; D002-P3Q20-required; D002-P3Q20-skip,3,True
+D002,ocenka,GR40,"2023,2024",False,code,100.0,2.0,1:6131; 2:5797,2024.0,,,"4 часть вопрос 0. В вашем домашнем хозяйстве имеются дети не достигшие
+ восемнадцатилетнего возраста (совершеннолетия)? 
+Да -1, нет - 2. В форме  нет такого вопроса  (добавили)",D002-GR40-domain; D002-GR40-required; D002-P4-required; D002-P4-skip; D002-childdisability-implies-children; D002-doc-GR40-not-on-form; D002-preschool-implies-children; D002-x-D008-child-household; D002-x-D008-children; D002-x-D008-nochild-household,10,True
+D002,ocenka,GR41,"2023,2024",False,code,51.4,2.0,2:6007; 1:127,2024.0,,,4 часть вопрос 1.,D002-P4-required; D002-P4-skip; D002-P4Q1-domain; D002-P4Q2-required-any; D002-P4Q2Q3-skip; D002-childdisability-implies-children,6,True
+D002,ocenka,GR42_1,"2023,2024",False,code,0.7,3.0,1:53; 2:17; 3:10,2024.0,,,4 часть вопрос 2. Ребенок 1.,D002-P4-skip; D002-P4Q2-domain; D002-P4Q2-required-any; D002-P4Q2Q3-skip; D002-P4Q3-needs-Q2-child1; D002-doc-instr-P4Q2Q3,6,True
+D002,ocenka,GR42_2,"2023,2024",False,code,0.2,3.0,1:16; 2:7; 3:2,2024.0,,,4 часть вопрос 2. Ребенок 2.,D002-P4-skip; D002-P4Q2-domain; D002-P4Q2-required-any; D002-P4Q2Q3-skip; D002-P4Q3-needs-Q2-child2,5,True
+D002,ocenka,GR42_3,"2023,2024",False,code,0.0,2.0,2:2; 1:1,2024.0,,,4 часть вопрос 2. Ребенок 3.,D002-P4-skip; D002-P4Q2-domain; D002-P4Q2-required-any; D002-P4Q2Q3-skip; D002-P4Q3-needs-Q2-child3,5,True
+D002,ocenka,GR42_4,"2023,2024",False,code,0.0,2.0,1:2; 2:2,2024.0,,,4 часть вопрос 2. Ребенок 4.,D002-P4-skip; D002-P4Q2-domain; D002-P4Q2-required-any; D002-P4Q2Q3-skip; D002-P4Q3-needs-Q2-child4,5,True
+D002,ocenka,GR42_5,"2023,2024",False,code,0.0,1.0,1:3,2024.0,,,4 часть вопрос 2. Ребенок 5.,D002-P4-skip; D002-P4Q2-domain; D002-P4Q2-required-any; D002-P4Q2Q3-skip; D002-P4Q3-needs-Q2-child5,5,True
+D002,ocenka,GR42_6,"2023,2024",False,empty,0.0,0.0,,2024.0,,,4 часть вопрос 2. Ребенок 6.,D002-P4-skip; D002-P4Q2-domain; D002-P4Q2-required-any; D002-P4Q2Q3-skip; D002-P4Q3-needs-Q2-child6,5,True
+D002,ocenka,GR42_7,"2023,2024",False,empty,0.0,0.0,,2024.0,,,4 часть вопрос 2. Ребенок 7.,D002-P4-skip; D002-P4Q2-domain; D002-P4Q2-required-any; D002-P4Q2Q3-skip; D002-P4Q3-needs-Q2-child7,5,True
+D002,ocenka,GR43_1,"2023,2024",False,code,0.6,2.0,1:68; 2:2,2024.0,,,4 часть вопрос 3. Ребенок 1,D002-P4-skip; D002-P4Q2Q3-skip; D002-P4Q3-domain; D002-P4Q3-needs-Q2-child1; D002-doc-instr-P4Q2Q3,5,True
+D002,ocenka,GR43_2,"2023,2024",False,code,0.2,3.0,1:22; 2:2; 9:1,2024.0,,,4 часть вопрос 3. Ребенок 2,D002-P4-skip; D002-P4Q2Q3-skip; D002-P4Q3-domain; D002-P4Q3-needs-Q2-child2,4,True
+D002,ocenka,GR43_3,"2023,2024",False,code,0.0,2.0,1:3; 2:1,2024.0,,,4 часть вопрос 3. Ребенок 3,D002-P4-skip; D002-P4Q2Q3-skip; D002-P4Q3-domain; D002-P4Q3-needs-Q2-child3,4,True
+D002,ocenka,GR43_4,"2023,2024",False,code,0.0,1.0,1:5,2024.0,,,4 часть вопрос 3. Ребенок 4,D002-P4-skip; D002-P4Q2Q3-skip; D002-P4Q3-domain; D002-P4Q3-needs-Q2-child4,4,True
+D002,ocenka,GR43_5,"2023,2024",False,code,0.0,1.0,1:1,2024.0,,,4 часть вопрос 3. Ребенок 5,D002-P4-skip; D002-P4Q2Q3-skip; D002-P4Q3-domain; D002-P4Q3-needs-Q2-child5,4,True
+D002,ocenka,GR43_6,"2023,2024",False,empty,0.0,0.0,,2024.0,,,4 часть вопрос 3. Ребенок 6,D002-P4-skip; D002-P4Q2Q3-skip; D002-P4Q3-domain; D002-P4Q3-needs-Q2-child6,4,True
+D002,ocenka,GR43_7,"2023,2024",False,empty,0.0,0.0,,2024.0,,,4 часть вопрос 3. Ребенок 7,D002-P4-skip; D002-P4Q2Q3-skip; D002-P4Q3-domain; D002-P4Q3-needs-Q2-child7,4,True
+D002,ocenka,GR44_1,"2023,2024",False,code,51.4,5.0,1:4418; 2:1443; 3:211; 9:35; 4:28,2024.0,,,4 часть вопрос 4. Ответ 4.1,D002-P4-required; D002-P4-skip; D002-P4Q4-domain,3,True
+D002,ocenka,GR44_2,"2023,2024",False,code,51.2,5.0,1:4335; 2:1524; 3:205; 4:26; 9:22,2024.0,,,4 часть вопрос 4. Ответ 4.2,D002-P4-required; D002-P4-skip; D002-P4Q4-domain,3,True
+D002,ocenka,GR44_3,"2023,2024",False,code,50.9,5.0,1:4216; 2:1654; 3:143; 4:30; 9:29,2024.0,,,4 часть вопрос 4. Ответ 4.3,D002-P4-required; D002-P4-skip; D002-P4Q4-domain,3,True
+D002,ocenka,GR44_4,"2023,2024",False,code,50.8,5.0,1:4209; 2:1610; 3:178; 4:35; 9:28,2024.0,,,4 часть вопрос 4. Ответ 4.4,D002-P4-required; D002-P4-skip; D002-P4Q4-domain,3,True
+D002,ocenka,GR44_5,"2023,2024",False,code,50.7,5.0,1:3695; 2:1862; 3:418; 9:40; 4:36,2024.0,,,4 часть вопрос 4. Ответ 4.5,D002-P4-required; D002-P4-skip; D002-P4Q4-domain,3,True
+D002,ocenka,GR44_6,"2023,2024",False,code,50.4,5.0,1:3452; 2:1815; 3:628; 4:80; 9:38,2024.0,,,4 часть вопрос 4. Ответ 4.6,D002-P4-required; D002-P4-skip; D002-P4Q4-domain,3,True
+D002,ocenka,GR44_7,"2023,2024",False,code,50.2,5.0,1:3454; 2:1794; 3:572; 4:102; 9:65,2024.0,,,4 часть вопрос 4. Ответ 4.7,D002-P4-required; D002-P4-skip; D002-P4Q4-domain,3,True
+D002,ocenka,GR44_8,"2023,2024",False,code,50.0,5.0,1:3929; 2:1695; 3:272; 4:55; 9:10,2024.0,,,4 часть вопрос 4. Ответ 4.8,D002-P4-required; D002-P4-skip; D002-P4Q4-domain,3,True
+D002,ocenka,GR44_9,"2023,2024",False,code,49.7,5.0,1:3543; 2:1835; 3:441; 4:68; 9:42,2024.0,,,4 часть вопрос 4. Ответ 4.9,D002-P4-required; D002-P4-skip; D002-P4Q4-domain,3,True
+D002,ocenka,GR44_10,"2023,2024",False,code,51.4,5.0,1:3501; 2:1881; 3:560; 4:131; 9:54,2024.0,,,4 часть вопрос 4. Ответ 4.10,D002-P4-required; D002-P4-skip; D002-P4Q4-domain,3,True
+D002,ocenka,GR44_11,"2023,2024",False,code,51.3,5.0,1:3273; 2:1627; 3:800; 4:328; 9:95,2024.0,,,4 часть вопрос 4. Ответ 4.11,D002-P4-required; D002-P4-skip; D002-P4Q4-domain,3,True
+D002,ocenka,GR44_12,"2023,2024",False,code,50.9,5.0,1:3254; 2:1882; 3:730; 4:129; 9:83,2024.0,,,4 часть вопрос 4. Ответ 4.12,D002-P4-required; D002-P4-skip; D002-P4Q4-domain,3,True
+D002,ocenka,GR44_13,"2023,2024",False,code,50.6,5.0,1:3524; 2:1801; 3:579; 9:76; 4:58,2024.0,,,4 часть вопрос 4. Ответ 4.13,D002-P4-required; D002-P4-skip; D002-P4Q4-domain,3,True
+D002,ocenka,GR44_14,"2023,2024",False,code,50.5,5.0,1:3359; 2:1816; 3:708; 4:78; 9:70,2024.0,,,4 часть вопрос 4. Ответ 4.14,D002-P4-required; D002-P4-skip; D002-P4Q4-domain,3,True
+D002,ocenka,GR45_1,"2023,2024",False,code,51.1,4.0,1:5286; 2:412; 3:369; 9:27,2024.0,,,4 часть вопрос 5. Ответ 5.1,D002-P4-required; D002-P4-skip; D002-P4Q5-domain,3,True
+D002,ocenka,GR45_2,"2023,2024",False,code,50.6,4.0,1:5084; 2:461; 3:447; 9:40,2024.0,,,4 часть вопрос 5. Ответ 5.2,D002-P4-required; D002-P4-skip; D002-P4Q5-domain,3,True
+D002,ocenka,GR45_3,"2023,2024",False,code,49.7,4.0,1:5198; 2:588; 3:135; 9:14,2024.0,,,4 часть вопрос 5. Ответ 5.3,D002-P4-required; D002-P4-skip; D002-P4Q5-domain,3,True
+D002,ocenka,GR45_4,"2023,2024",False,code,49.7,4.0,1:5262; 2:446; 3:191; 9:26,2024.0,,,4 часть вопрос 5. Ответ 5.4,D002-P4-required; D002-P4-skip; D002-P4Q5-domain,3,True
+D002,ocenka,GR45_5,"2023,2024",False,code,49.5,4.0,1:4692; 3:591; 2:544; 9:76,2024.0,,,4 часть вопрос 5. Ответ 5.5,D002-P4-required; D002-P4-skip; D002-P4Q5-domain,3,True
+D002,ocenka,GR45_6,"2023,2024",False,code,49.1,4.0,1:4447; 2:673; 3:659; 9:84,2024.0,,,4 часть вопрос 5. Ответ 5.6,D002-P4-required; D002-P4-skip; D002-P4Q5-domain,3,True
+D002,ocenka,GR45_7,"2023,2024",False,code,49.0,4.0,1:4421; 3:763; 2:555; 9:108,2024.0,,,4 часть вопрос 5. Ответ 5.7,D002-P4-required; D002-P4-skip; D002-P4Q5-domain,3,True
+D002,ocenka,GR45_8,"2023,2024",False,code,49.8,4.0,1:4989; 3:498; 2:430; 9:25,2024.0,,,4 часть вопрос 5. Ответ 5.8,D002-P4-required; D002-P4-skip; D002-P4Q5-domain,3,True
+D002,ocenka,GR45_9,"2023,2024",False,code,49.5,4.0,1:4711; 3:617; 2:474; 9:104,2024.0,,,4 часть вопрос 5. Ответ 5.9,D002-P4-required; D002-P4-skip; D002-P4Q5-domain,3,True
+D002,ocenka,GR45_10,"2023,2024",False,code,50.7,4.0,1:4736; 3:673; 2:554; 9:89,2024.0,,,4 часть вопрос 5. Ответ 5.10,D002-P4-required; D002-P4-skip; D002-P4Q5-domain,3,True
+D002,ocenka,GR45_11,"2023,2024",False,code,50.5,4.0,1:4326; 3:1090; 2:498; 9:107,2024.0,,,4 часть вопрос 5. Ответ 5.11,D002-P4-required; D002-P4-skip; D002-P4Q5-domain,3,True
+D002,ocenka,GR45_12,"2023,2024",False,code,50.3,4.0,1:4009; 3:1210; 2:627; 9:150,2024.0,,,4 часть вопрос 5. Ответ 5.12,D002-P4-required; D002-P4-skip; D002-P4Q5-domain,3,True
+D002,ocenka,GR45_13,"2023,2024",False,code,49.6,4.0,1:4151; 2:1065; 3:632; 9:66,2024.0,,,4 часть вопрос 5. Ответ 5.13,D002-P4-required; D002-P4-skip; D002-P4Q5-domain,3,True
+D002,ocenka,GR45_14,"2023,2024",False,code,49.5,4.0,1:3885; 3:1201; 2:694; 9:127,2024.0,,,4 часть вопрос 5. Ответ 5.14,D002-P4-required; D002-P4-skip; D002-P4Q5-domain,3,True
+D002,ocenka,GR46,"2023,2024",False,code,49.3,5.0,2:4088; 1:1624; 5:83; 3:67; 4:23,2024.0,,,4 часть вопрос 6.,D002-P4-required; D002-P4-skip; D002-P4Q6-domain,3,True
+D002,ocenka,KVINT,2023,False,code,100.0,5.0,5:3254; 4:2818; 3:2374; 2:1837; 1:1670,2023.0,,,,,0,False
+D006,rio,TE,2021-2024,False,code,100.0,20.0,55:827; 39:770; 11:745; 75:715; 15:714,2024.0,,,,,0,False
+D006,rio,K,2021-2024,False,code,100.0,2.0,1:6375; 2:5329,2024.0,,,,D006-K-domain,1,False
+D006,rio,TIP_J,2021-2024,False,code,100.0,5.0,1:5305; 4:4902; 3:1353; 2:82; 5:62,2024.0,,,"В вопросе 1: Каков тип помещения, в котором Вы проживаете (арендуете)? Значность-1 знак, поле tip_j=1-5",D006-Q1-Q4-required; D006-Q1-domain; D006-chute-multiflat; D006-lift-multiflat,4,True
+D006,rio,VLAD1,2021-2024,False,code,100.0,7.0,1:10317; 2:932; 4:243; 3:164; 7:44,2024.0,,,"В вопросе 2: Значность-1 знак, поле Vlad=1-7",D006-Q1-Q4-required; D006-Q2-domain,2,True
+D006,rio,J_PL,2021-2024,False,integer,100.0,173.0,30:464; 40:452; 36:339; 42:324; 28:319,2024.0,,,"В вопросе 3: Значность-3 знака, поля Ob_pl, J_pl –ввод общей и жилой площади.",D006-Q1-Q4-required; D006-area-living-le-total,2,True
+D006,rio,KOL_K,2021-2024,False,code,100.0,15.0,3:4081; 2:2937; 4:2130; 1:866; 5:647,2024.0,,,"В вопросе 4 Значность -2 знака, поле Kol_k -2 знака.",D006-KOL_K-format; D006-Q1-Q4-required; D006-rooms-positive,3,True
+D006,rio,OB_PL,2021-2024,False,integer,100.0,216.0,60:343; 48:290; 45:261; 63:258; 44:256,2024.0,,,"В вопросе 3: Значность-3 знака, поля Ob_pl, J_pl –ввод общей и жилой площади.",D006-Q1-Q4-required; D006-area-living-le-total,2,True
+D006,rio,U1,2021-2024,False,code,100.0,1.0,1:11704,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required; D006-electric-stove-needs-electricity,3,True
+D006,rio,U2,2021-2024,False,code,100.0,2.0,2:8976; 1:2728,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required; D006-electric-stove-needs-electricity,3,True
+D006,rio,U3,2021-2024,False,code,100.0,2.0,1:5994; 2:5710,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U4,2021-2024,False,code,100.0,2.0,2:7826; 1:3878,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U5,2021-2024,False,code,100.0,2.0,2:6523; 1:5181,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U6,2021-2024,False,code,100.0,2.0,2:8529; 1:3175,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U7,2021-2024,False,code,100.0,2.0,2:11691; 1:13,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U8,2021-2024,False,code,100.0,2.0,2:8296; 1:3408,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U9,2021-2024,False,code,100.0,2.0,2:11610; 1:94,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U10,2021-2024,False,code,100.0,1.0,2:11704,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U11,2021-2024,False,code,100.0,1.0,2:11704,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U12,2021-2024,False,code,100.0,1.0,2:11704,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U13,2021-2024,False,code,100.0,1.0,2:11704,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U14,2021-2024,False,code,100.0,2.0,1:9671; 2:2033,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required; D006-sewerage-needs-water,3,True
+D006,rio,U15,2021-2024,False,code,100.0,2.0,2:10138; 1:1566,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required; D006-sewerage-needs-water,3,True
+D006,rio,U16,2021-2024,False,code,100.0,2.0,2:10388; 1:1316,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U17,2021-2024,False,code,100.0,2.0,2:11531; 1:173,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U18,2021-2024,False,code,100.0,2.0,2:11702; 1:2,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U19,2021-2024,False,code,100.0,2.0,2:6152; 1:5552,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required; D006-no-toilet-exclusive,3,True
+D006,rio,U20,2021-2024,False,code,100.0,2.0,2:7489; 1:4215,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required; D006-no-toilet-exclusive,3,True
+D006,rio,U21,2021-2024,False,code,100.0,2.0,2:7655; 1:4049,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required; D006-no-toilet-exclusive,3,True
+D006,rio,U22,2021-2024,False,code,100.0,2.0,2:11684; 1:20,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required; D006-no-toilet-exclusive,3,True
+D006,rio,U23,2021-2024,False,code,100.0,1.0,2:11704,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required; D006-no-toilet-exclusive,3,True
+D006,rio,U24,2021-2024,False,code,100.0,2.0,2:6145; 1:5559,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required; D006-bath-needs-sewerage; D006-sewerage-needs-water; D006-shower-needs-sewerage,5,True
+D006,rio,U25,2021-2024,False,code,100.0,2.0,2:6444; 1:5260,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required; D006-bath-needs-sewerage; D006-shower-needs-sewerage,4,True
+D006,rio,U26,2021-2024,False,code,100.0,2.0,1:6926; 2:4778,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required; D006-bath-needs-sewerage,3,True
+D006,rio,U27,2021-2024,False,code,100.0,2.0,2:9307; 1:2397,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required; D006-shower-needs-sewerage,3,True
+D006,rio,U28,2021-2024,False,code,100.0,2.0,2:8307; 1:3397,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U29,2021-2024,False,code,100.0,2.0,2:7574; 1:4130,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U30,2021-2024,False,code,100.0,2.0,1:6602; 2:5102,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U31,2021-2024,False,code,100.0,2.0,2:11525; 1:179,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required; D006-chute-multiflat,3,True
+D006,rio,U32,2021-2024,False,code,100.0,2.0,1:8733; 2:2971,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U33,2021-2024,False,code,100.0,2.0,2:8836; 1:2868,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U34,2021-2024,False,code,100.0,2.0,1:6020; 2:5683,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U35,2021-2024,False,code,100.0,2.0,1:10916; 2:788,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U36,2021-2024,False,code,100.0,2.0,2:10703; 1:1001,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required; D006-lift-multiflat,3,True
+D006,rio,U37,2021-2024,False,code,100.0,2.0,2:7747; 1:3957,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U38,2021-2024,False,code,100.0,2.0,2:6782; 1:4922,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U39,2021-2024,False,code,100.0,2.0,2:7946; 1:3758,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U40,2021-2024,False,code,100.0,2.0,2:8460; 1:3244,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U41,2021-2024,False,code,100.0,2.0,2:9542; 1:2162,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,U42,2021-2024,False,code,100.0,2.0,2:11694; 1:10,2024.0,,,"В вопросе 5 - изменения: Значность-1 знак, поля U1-U42",D006-Q5-domain; D006-Q5-required,2,True
+D006,rio,TIPNJ1,2021-2024,False,code,100.0,2.0,2:11647; 1:57,2024.0,,,"Вопрос 6 (1 графа): Значность-1 знак, поле Tipnj 1- Tipnj 7 (да – 1 нет – 2):",D006-Q6-required-1; D006-Q6-skip-1; D006-Q6-type-domain; D006-doc-Q6-code,4,True
+D006,rio,KOLNJ1,2021-2024,False,code,0.5,2.0,1:56; 2:2,2024.0,,,"Вопрос 6 (2 графа): Значность-1 знак, поле Kolnj1- Kolnj7:",D006-Q6-required-1; D006-Q6-skip-1,2,True
+D006,rio,ISPNJ1,2021-2024,False,code,0.5,4.0,1:37; 3:11; 9:6; 2:4,2024.0,,,"Вопрос 6 (3 графа): Значность-1 знак, поле Ispnj1- Ispnj7 :",D006-Q6-required-1; D006-Q6-skip-1; D006-Q6-use-domain,3,True
+D006,rio,TIPNJ2,2021-2024,False,code,100.0,2.0,2:11702; 1:2,2024.0,,,"Вопрос 6 (1 графа): Значность-1 знак, поле Tipnj 1- Tipnj 7 (да – 1 нет – 2):",D006-Q6-required-2; D006-Q6-skip-2; D006-Q6-type-domain; D006-doc-Q6-code,4,True
+D006,rio,KOLNJ2,2021-2024,False,empty,0.0,0.0,,2024.0,,,"Вопрос 6 (2 графа): Значность-1 знак, поле Kolnj1- Kolnj7:",D006-Q6-required-2; D006-Q6-skip-2,2,True
+D006,rio,ISPNJ2,2021-2024,False,code,0.0,1.0,2:2,2024.0,,,"Вопрос 6 (3 графа): Значность-1 знак, поле Ispnj1- Ispnj7 :",D006-Q6-required-2; D006-Q6-skip-2; D006-Q6-use-domain,3,True
+D006,rio,TIPNJ3,2021-2024,False,code,100.0,2.0,2:11677; 1:27,2024.0,,,"Вопрос 6 (1 графа): Значность-1 знак, поле Tipnj 1- Tipnj 7 (да – 1 нет – 2):",D006-Q6-required-3; D006-Q6-skip-3; D006-Q6-type-domain; D006-doc-Q6-code,4,True
+D006,rio,KOLNJ3,2021-2024,False,code,0.2,2.0,1:16; 2:2,2024.0,,,"Вопрос 6 (2 графа): Значность-1 знак, поле Kolnj1- Kolnj7:",D006-Q6-required-3; D006-Q6-skip-3,2,True
+D006,rio,ISPNJ3,2021-2024,False,code,0.2,4.0,9:8; 1:5; 2:3; 3:2,2024.0,,,"Вопрос 6 (3 графа): Значность-1 знак, поле Ispnj1- Ispnj7 :",D006-Q6-required-3; D006-Q6-skip-3; D006-Q6-use-domain,3,True
+D006,rio,TIPNJ4,2021-2024,False,code,100.0,2.0,2:11659; 1:45,2024.0,,,"Вопрос 6 (1 графа): Значность-1 знак, поле Tipnj 1- Tipnj 7 (да – 1 нет – 2):",D006-Q6-required-4; D006-Q6-skip-4; D006-Q6-type-domain; D006-doc-Q6-code,4,True
+D006,rio,KOLNJ4,2021-2024,False,code,0.5,2.0,1:50; 5:3,2024.0,,,"Вопрос 6 (2 графа): Значность-1 знак, поле Kolnj1- Kolnj7:",D006-Q6-required-4; D006-Q6-skip-4,2,True
+D006,rio,ISPNJ4,2021-2024,False,code,0.5,4.0,2:26; 1:14; 9:8; 3:5,2024.0,,,"Вопрос 6 (3 графа): Значность-1 знак, поле Ispnj1- Ispnj7 :",D006-Q6-required-4; D006-Q6-skip-4; D006-Q6-use-domain,3,True
+D006,rio,TIPNJ5,2021-2024,False,code,100.0,1.0,2:11704,2024.0,,,"Вопрос 6 (1 графа): Значность-1 знак, поле Tipnj 1- Tipnj 7 (да – 1 нет – 2):",D006-Q6-required-5; D006-Q6-skip-5; D006-Q6-type-domain; D006-doc-Q6-code,4,True
+D006,rio,KOLNJ5,2021-2024,False,empty,0.0,0.0,,2024.0,,,"Вопрос 6 (2 графа): Значность-1 знак, поле Kolnj1- Kolnj7:",D006-Q6-required-5; D006-Q6-skip-5,2,True
+D006,rio,ISPNJ5,2021-2024,False,empty,0.0,0.0,,2024.0,,,"Вопрос 6 (3 графа): Значность-1 знак, поле Ispnj1- Ispnj7 :",D006-Q6-required-5; D006-Q6-skip-5; D006-Q6-use-domain,3,True
+D006,rio,TIPNJ6,2021-2024,False,code,100.0,2.0,2:11633; 1:71,2024.0,,,"Вопрос 6 (1 графа): Значность-1 знак, поле Tipnj 1- Tipnj 7 (да – 1 нет – 2):",D006-Q6-required-6; D006-Q6-skip-6; D006-Q6-type-domain; D006-doc-Q6-code,4,True
+D006,rio,KOLNJ6,2021-2024,False,code,0.6,1.0,1:71,2024.0,,,"Вопрос 6 (2 графа): Значность-1 знак, поле Kolnj1- Kolnj7:",D006-Q6-required-6; D006-Q6-skip-6,2,True
+D006,rio,ISPNJ6,2021-2024,False,code,0.6,3.0,1:57; 9:13; 3:1,2024.0,,,"Вопрос 6 (3 графа): Значность-1 знак, поле Ispnj1- Ispnj7 :",D006-Q6-required-6; D006-Q6-skip-6; D006-Q6-use-domain,3,True
+D006,rio,TIPNJ7,2021-2024,False,code,100.0,2.0,2:11700; 1:4,2024.0,,,"Вопрос 6 (1 графа): Значность-1 знак, поле Tipnj 1- Tipnj 7 (да – 1 нет – 2):",D006-Q6-required-7; D006-Q6-skip-7; D006-Q6-type-domain; D006-doc-Q6-code,4,True
+D006,rio,KOLNJ7,2021-2024,False,code,0.0,1.0,1:1,2024.0,,,"Вопрос 6 (2 графа): Значность-1 знак, поле Kolnj1- Kolnj7:",D006-Q6-required-7; D006-Q6-skip-7,2,True
+D006,rio,ISPNJ7,2021-2024,False,code,0.0,1.0,1:2,2024.0,,,"Вопрос 6 (3 графа): Значность-1 знак, поле Ispnj1- Ispnj7 :",D006-Q6-required-7; D006-Q6-skip-7; D006-Q6-use-domain,3,True
+D006,rio,ZEM,2021-2024,False,code,100.0,2.0,1:5938; 2:5766,2024.0,,,"Вопрос 7: Скажите, пожалуйста, имеет ли Ваше домашнее хозяйство доступ к использованию сельскохозяйственной зе",D006-Q1-Q4-required; D006-Q7-domain; D006-Q8-required; D006-Q8-skip,4,True
+D006,rio,NOMP1,2021-2024,False,code,45.4,4.0,01:5280; 02:27; 07:1; 03:1,2024.0,,,,D006-Q8-required; D006-Q8-skip; D006-doc-Q8-who,3,False
+D006,rio,POL1,2021-2024,False,code,45.1,2.0,1:2946; 2:2337,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,VOZ1,2021-2024,False,integer,97.8,72.0,0:6153; 62:188; 61:179; 53:175; 58:162,2024.0,,,,D006-Q8-adult; D006-doc-Q8-who,2,False
+D006,rio,KOL_UCH1,2021-2024,False,code,44.6,5.0,1:4828; 2:240; 3:140; 4:10; 01:1,2024.0,,,,D006-Q8-required; D006-Q8-skip,2,False
+D006,rio,UCH_PL1,2021-2024,False,integer,44.7,157.0,10:1209; 6:755; 8:556; 5:327; 4:303,2024.0,,,,D006-Q8-required; D006-Q8-skip,2,False
+D006,rio,UCH_FS1_1,2021-2024,False,code,44.1,2.0,1:4867; 2:298,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip; D006-doc-UCH-FS-coding,3,False
+D006,rio,UCH_FS1_2,2021-2024,False,code,2.4,2.0,1:276; 2:9,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip; D006-doc-UCH-FS-coding,3,False
+D006,rio,UCH_FS1_3,2021-2024,False,code,0.2,2.0,1:15; 2:3,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS1_4,2021-2024,False,code,0.1,1.0,1:6,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP1_1,2021-2024,False,code,2.0,1.0,1:231,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP1_2,2021-2024,False,code,21.7,2.0,1:2543; 2:1,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP1_3,2021-2024,False,code,13.2,2.0,1:1535; 2:5,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP1_4,2021-2024,False,code,0.7,2.0,1:75; 2:2,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP1_5,2021-2024,False,code,1.5,2.0,1:166; 2:6,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP1_6,2021-2024,False,code,7.0,2.0,1:822; 2:2,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP1_7,2021-2024,False,code,2.2,1.0,1:253,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,NOMP2,2021-2024,False,code,13.7,3.0,02:1587; 03:17; 04:2,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,POL2,2021-2024,False,code,13.5,2.0,2:973; 1:607,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,VOZ2,2021-2024,False,integer,84.6,67.0,0:8295; 51:60; 60:58; 42:55; 53:55,2024.0,,,,D006-Q8-adult,1,False
+D006,rio,KOL_UCH2,2021-2024,False,code,7.1,4.0,1:772; 2:53; 3:5; 4:1,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,UCH_PL2,2021-2024,False,integer,7.1,57.0,6:150; 10:143; 8:90; 5:72; 4:68,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,UCH_FS2_1,2021-2024,False,code,6.6,3.0,1:753; 2:21; 4:2,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS2_2,2021-2024,False,code,0.7,2.0,1:80; 2:3,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS2_3,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS2_4,2021-2024,False,code,0.0,1.0,1:5,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP2_1,2021-2024,False,code,0.1,1.0,1:15,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP2_2,2021-2024,False,code,3.6,2.0,1:425; 2:1,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP2_3,2021-2024,False,code,1.7,1.0,1:196,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP2_4,2021-2024,False,code,0.2,1.0,1:18,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP2_5,2021-2024,False,code,0.3,2.0,1:38; 2:2,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP2_6,2021-2024,False,code,1.2,1.0,1:139,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP2_7,2021-2024,False,code,0.1,1.0,1:17,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,NOMP3,2021-2024,False,code,5.5,6.0,03:614; 04:14; 05:12; 06:7; 08:1,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,POL3,2021-2024,False,code,5.3,2.0,1:340; 2:285,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,VOZ3,2021-2024,False,integer,52.6,64.0,0:5516; 18:34; 20:32; 19:32; 32:26,2024.0,,,,D006-Q8-adult,1,False
+D006,rio,KOL_UCH3,2021-2024,False,code,1.6,2.0,1:177; 2:12,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,UCH_PL3,2021-2024,False,code,1.6,23.0,6:41; 8:28; 5:24; 10:19; 4:15,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,UCH_FS3_1,2021-2024,False,code,1.6,2.0,1:183; 2:1,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS3_2,2021-2024,False,code,0.1,1.0,1:13,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS3_3,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS3_4,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP3_1,2021-2024,False,code,0.1,1.0,1:9,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP3_2,2021-2024,False,code,1.0,1.0,1:113,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP3_3,2021-2024,False,code,0.1,1.0,1:15,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP3_4,2021-2024,False,code,0.1,1.0,1:16,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP3_5,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP3_6,2021-2024,False,code,0.2,1.0,1:28,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP3_7,2021-2024,False,code,0.0,1.0,1:2,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,NOMP4,2021-2024,False,code,2.3,6.0,04:228; 05:22; 06:8; 08:3; 07:2,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,POL4,2021-2024,False,code,2.3,2.0,2:175; 1:89,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,VOZ4,2021-2024,False,code,38.5,37.0,0:4265; 21:23; 19:23; 18:15; 31:14,2024.0,,,,D006-Q8-adult,1,False
+D006,rio,KOL_UCH4,2021-2024,False,code,0.6,1.0,1:65,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,UCH_PL4,2021-2024,False,code,0.5,7.0,6:20; 10:11; 8:11; 4:6; 5:5,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,UCH_FS4_1,2021-2024,False,code,0.4,1.0,1:52,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS4_2,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS4_3,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS4_4,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP4_1,2021-2024,False,code,0.0,1.0,1:4,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP4_2,2021-2024,False,code,0.3,1.0,1:39,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP4_3,2021-2024,False,code,0.0,1.0,1:2,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP4_4,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP4_5,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP4_6,2021-2024,False,code,0.1,1.0,1:16,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP4_7,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,NOMP5,2021-2024,False,code,0.6,5.0,05:46; 06:8; 07:5; 08:5; 09:2,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,POL5,2021-2024,False,code,0.6,2.0,1:34; 2:32,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,VOZ5,2021-2024,False,code,34.5,20.0,0:3979; 22:10; 18:9; 19:8; 21:6,2024.0,,,,D006-Q8-adult,1,False
+D006,rio,KOL_UCH5,2021-2024,False,code,0.2,1.0,1:18,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,UCH_PL5,2021-2024,False,code,0.2,4.0,6:9; 8:6; 5:3; 4:1,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,UCH_FS5_1,2021-2024,False,code,0.1,1.0,1:16,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS5_2,2021-2024,False,code,0.0,1.0,1:1,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS5_3,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS5_4,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP5_1,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP5_2,2021-2024,False,code,0.1,1.0,1:11,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP5_3,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP5_4,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP5_5,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP5_6,2021-2024,False,code,0.0,1.0,1:1,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP5_7,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,NOMP6,2021-2024,False,code,0.3,4.0,06:21; 07:4; 08:3; 10:2,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,POL6,2021-2024,False,code,0.2,2.0,2:17; 1:8,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,VOZ6,2021-2024,False,code,33.3,11.0,0:3876; 18:8; 21:5; 19:2; 28:2,2024.0,,,,D006-Q8-adult,1,False
+D006,rio,KOL_UCH6,2021-2024,False,code,0.0,1.0,1:5,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,UCH_PL6,2021-2024,False,code,0.0,2.0,6:3; 4:1,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,UCH_FS6_1,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS6_2,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS6_3,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS6_4,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP6_1,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP6_2,2021-2024,False,code,0.0,1.0,1:3,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP6_3,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP6_4,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP6_5,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP6_6,2021-2024,False,code,0.0,1.0,1:2,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP6_7,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,NOMP7,2021-2024,False,code,0.1,3.0,07:4; 08:1; 09:1,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,POL7,2021-2024,False,code,0.0,2.0,2:4; 1:1,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,VOZ7,2021-2024,False,code,32.9,5.0,0:3842; 21:2; 27:2; 22:1; 20:1,2024.0,,,,D006-Q8-adult,1,False
+D006,rio,KOL_UCH7,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,UCH_PL7,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,UCH_FS7_1,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS7_2,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS7_3,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS7_4,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP7_1,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP7_2,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP7_3,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP7_4,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP7_5,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP7_6,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP7_7,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,NOMP8,2021-2024,False,code,0.0,2.0,08:1; 10:1,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,POL8,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,VOZ8,2021-2024,False,code,32.9,2.0,0:3852; 19:3,2024.0,,,,D006-Q8-adult,1,False
+D006,rio,KOL_UCH8,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,UCH_PL8,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-skip,1,False
+D006,rio,UCH_FS8_1,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS8_2,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS8_3,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_FS8_4,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-fs-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP8_1,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP8_2,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP8_3,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP8_4,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP8_5,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP8_6,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,UCH_ISP8_7,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D006-Q8-isp-domain; D006-Q8-skip,2,False
+D006,rio,TDP1,2021-2024,False,code,99.9,4.0,1:10502; 2:1143; 3:37; 4:7,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP2,2021-2024,False,code,3.1,3.0,1:249; 0:97; 2:13,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP3,2021-2024,False,code,4.1,3.0,1:372; 0:100; 2:11,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP4,2021-2024,False,code,10.3,3.0,1:1100; 0:92; 2:16,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP5,2021-2024,False,code,36.9,3.0,1:4257; 0:39; 2:19,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP6,2021-2024,False,code,2.0,4.0,1:122; 0:100; 2:12; 4:1,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP7,2021-2024,False,code,3.3,3.0,1:282; 0:100; 2:9,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP8,2021-2024,False,code,5.7,3.0,1:554; 0:99; 2:10,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP9,2021-2024,False,code,1.5,3.0,0:100; 1:58; 2:13,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP10,2021-2024,False,code,51.8,4.0,1:5725; 2:262; 0:68; 3:5,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP11,2021-2024,False,code,22.1,5.0,1:2453; 2:82; 0:52; 3:2; 4:1,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP12,2021-2024,False,code,4.6,3.0,1:423; 0:100; 2:16,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP13,2021-2024,False,code,100.0,2.0,1:11461; 2:240,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP14,2021-2024,False,code,50.3,4.0,1:5774; 2:106; 0:8; 3:2,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP15,2021-2024,False,code,97.4,3.0,1:11334; 2:61; 3:1,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP16,2021-2024,False,code,5.6,3.0,1:538; 0:91; 2:21,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP17,2021-2024,False,code,24.0,4.0,1:2759; 2:25; 0:20; 3:1,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP18,2021-2024,False,code,84.4,3.0,1:9870; 2:12; 0:2,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP19,2021-2024,False,code,95.3,2.0,1:11095; 2:60,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP20,2021-2024,False,code,100.0,3.0,1:11585; 2:118; 3:1,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP21,2021-2024,False,code,33.9,4.0,1:3609; 2:274; 0:54; 3:27,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP22,2021-2024,False,code,27.3,4.0,1:3147; 0:34; 2:15; 3:1,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP23,2021-2024,False,code,21.3,4.0,1:2377; 2:88; 0:23; 3:7,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP24,2021-2024,False,code,11.2,7.0,1:776; 2:230; 3:97; 0:94; 4:56,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP25,2021-2024,False,code,18.6,6.0,1:1918; 2:123; 0:85; 3:31; 4:13,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP26,2021-2024,False,code,2.4,3.0,1:166; 0:100; 2:12,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP27,2021-2024,False,code,30.8,7.0,1:3509; 0:75; 2:9; 3:8; 4:3,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP28,2021-2024,False,code,100.0,10.0,2:3372; 3:2815; 1:2196; 4:2193; 5:927,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP29,2021-2024,False,code,61.0,6.0,1:6795; 2:302; 3:21; 4:8; 0:8,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP30,2021-2024,False,code,89.6,4.0,1:9912; 2:563; 3:12; 4:3,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP31,2021-2024,False,code,83.7,6.0,1:8443; 2:1193; 3:141; 0:6; 4:6,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP32,2021-2024,False,code,95.5,4.0,1:11079; 2:87; 3:9; 0:1,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP33,2021-2024,False,code,5.9,8.0,1:382; 2:143; 0:100; 3:52; 4:9,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP34,2021-2024,False,code,97.1,14.0,3:2960; 4:2389; 2:2299; 5:1784; 1:1145,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP35,2021-2024,False,code,32.2,21.0,1:1691; 2:385; 3:290; 4:243; 5:238,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP36,2021-2024,False,code,35.3,5.0,1:3975; 2:122; 0:33; 4:2; 3:1,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP37,2021-2024,False,code,2.9,4.0,1:229; 0:94; 2:13; 00:1,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP38,2021-2024,False,code,3.7,3.0,1:314; 0:86; 2:29,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP39,2021-2024,False,code,2.9,3.0,1:232; 0:95; 2:15,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP40,2021-2024,False,code,18.9,5.0,1:1936; 2:208; 0:53; 3:11; 4:3,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP41,2021-2024,False,code,1.6,3.0,0:100; 1:66; 2:22,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP42,2021-2024,False,code,1.9,3.0,1:111; 0:100; 2:17,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP43,2021-2024,False,code,6.5,3.0,1:645; 0:98; 2:18,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP44,2021-2024,False,code,13.4,3.0,1:1475; 0:69; 2:28,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP45,2021-2024,False,code,1.7,3.0,0:100; 1:89; 2:14,2024.0,,,,D006-Q9-count,1,False
+D006,rio,TDP46,2021-2024,False,code,1.1,4.0,0:98; 2:18; 1:11; 3:6,2024.0,,,,D006-doc-TDP46,1,False
+D006,rio,ZT,2021-2024,False,code,100.0,5.0,1:9681; 2:1897; 3:93; 4:18; 6:15,2024.0,,,"Вопрос 10. Укажите время, затраченное на заполнение статистической формы, в часах (нужное обвести) поле zt – 1",D006-Q1-Q4-required; D006-ZT-domain,2,True
+D006,rio,NOMER,2021-2024,True,integer,100.0,11704.0,2024012000:1; 2024000001:1; 2024000002:1; 2024000003:1; 2024000004:1,2024.0,,,,,0,False
+D004,kv_vopr0,TE,2021-2024,False,code,100.0,20.0,55:3308; 39:3124; 11:3040; 75:2952; 15:2872,2024.0,Character,2,Код территории,,0,True
+D004,kv_vopr0,K,2021-2024,False,code,100.0,2.0,1:26412; 2:21588,2024.0,Character,1,Код местности,D004-K-domain,1,True
+D004,kv_vopr0,REZ,2021-2024,False,code,100.0,2.0,1:47255; 2:745,2024.0,Character,1,Код результата посещения,D004-REZ-domain,1,True
+D004,kv_vopr0,KVARTAL,2021-2024,True,code,100.0,4.0,1:12000; 2:12000; 3:12000; 4:12000,2024.0,Character,1,Номер квартала,D004-quarter-matches-folder,1,True
+D004,kv_vopr0,GOD,2021-2024,False,code,100.0,1.0,2024:48000,2024.0,Character,4,Год,D004-year,1,True
+D004,kv_vopr0,NOMER,2021-2024,True,integer,100.0,12000.0,2024011961:4; 2024011962:4; 2024011963:4; 2024011964:4; 2024011965:4,2024.0,Character,10,код домохозяйства,,0,True
+D004,kv_vopr1,TE,2021-2024,False,code,100.0,20.0,39:77175; 15:76161; 55:70848; 43:66651; 59:65051,2024.0,Character,2,Код территории,,0,True
+D004,kv_vopr1,K,2021-2024,False,code,100.0,2.0,1:584291; 2:510760,2024.0,Character,1,Код местности,,0,True
+D004,kv_vopr1,KODNU,2021-2024,True,integer,100.0,400.0,05611002:43115; 12130001:43006; 12130002:41378; 12130011:40623; 05611006:38630,2024.0,Character,8,Код товара,D004-1.1-code; D004-1.1-required; D004-doc-codebook-comma; D004-doc-no-food; D004-refusal-no-expenses,5,True
+D004,kv_vopr1,CELPOK,2021-2024,False,code,100.0,3.0,1:1085394; 2:9098; 9:559,2024.0,Character,1,Цель покупки,D004-1.1-purpose; D004-1.1-required,2,True
+D004,kv_vopr1,STOIMK,2021-2024,False,integer,100.0,8250.0,3000:43883; 2000:40747; 1500:31912; 1200:27648; 1000:27554,2024.0,Numeric,10,Стоимость,D004-1.1-cost; D004-1.1-required,2,True
+D004,kv_vopr1,KVARTAL,2021-2024,True,code,100.0,4.0,3:294179; 1:269130; 2:267326; 4:264416,2024.0,Character,1,Номер квартала,D004-quarter-matches-folder-kv1,1,True
+D004,kv_vopr1,PRIZ,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D004-doc-structure-vs-data,1,False
+D004,kv_vopr1,GOD,2021-2024,False,code,100.0,1.0,2024:1095051,2024.0,Character,4,Год,,0,True
+D004,kv_vopr1,NOMER,2021-2024,True,integer,100.0,11960.0,2024005922:279; 2024003698:276; 2024011789:271; 2024001245:262; 2024005622:261,2024.0,Character,10,код домохозяйства,,0,True
+D004,kv_vopr1,MESTPOK,"2023,2024",False,code,100.0,5.0,1:842209; 2:109249; 3:82099; 4:36654; 9:24840,2024.0,,,,D004-doc-structure-vs-data,1,False
+D004,kv_vopr2,TE,2021-2024,False,code,100.0,20.0,75:23447; 55:17713; 15:17604; 39:17336; 71:16072,2024.0,Character,2,Код территории,,0,True
+D004,kv_vopr2,K,2021-2024,False,code,100.0,2.0,1:173534; 2:77886,2024.0,Character,1,Код местности,,0,True
+D004,kv_vopr2,KODNU,2021-2024,True,number,100.0,19.0,04510001:47220; 04410011:42575; 04420000:31492; 04520001:23307; 044300:20563,2024.0,Character,8,Код товара,D004-doc-codebook-comma; D004-doc-no-food,2,True
+D004,kv_vopr2,NOMVOPR,2021-2024,False,code,100.0,1.0,21:251420,2024.0,,,,,0,False
+D004,kv_vopr2,STOIMK,2021-2024,False,integer,100.0,16164.0,3000:8589; 1500:7059; 6000:6394; 4500:5058; 1200:3811,2024.0,Numeric,10,Стоимость,,0,True
+D004,kv_vopr2,KVARTAL,2021-2024,True,code,100.0,4.0,1:65466; 4:64421; 2:62559; 3:58974,2024.0,Character,1,Номер квартала,,0,True
+D004,kv_vopr2,GOD,2021-2024,False,code,100.0,1.0,2024:251420,2024.0,Character,4,Год,,0,True
+D004,kv_vopr2,TIME,2021-2024,False,code,91.8,7.0,1:114018; 2:74566; 4:21650; 8:11828; 41:5281,2024.0,,,,,0,False
+D004,kv_vopr2,NOMER,2021-2024,True,integer,100.0,11960.0,2024004066:45; 2024004216:44; 2024002750:43; 2024004379:43; 2024011402:42,2024.0,Character,10,код домохозяйства,,0,True
+D004,kv_vopr3,TE,2021-2024,False,code,100.0,20.0,75:7695; 39:7570; 55:7502; 11:6820; 59:6253,2024.0,Character,2,Код территории,,0,True
+D004,kv_vopr3,K,2021-2024,False,code,100.0,2.0,1:56879; 2:44785,2024.0,Character,1,Код местности,,0,True
+D004,kv_vopr3,KODNU,2021-2024,True,code,100.0,11.0,08300014:34541; 08300004:29239; 08300008:17299; 08300001:11584; 08300006:5813,2024.0,Character,8,Код товара,D004-doc-codebook-comma; D004-doc-no-food,2,True
+D004,kv_vopr3,NOMVOPR,2021-2024,False,code,100.0,1.0,31:101664,2024.0,Character,2,Номер вопроса,,0,True
+D004,kv_vopr3,STOIMK,2021-2024,False,integer,100.0,2972.0,15000:5963; 18000:4963; 12000:4427; 6000:3637; 9000:3445,2024.0,Numeric,6,Стоимость,,0,True
+D004,kv_vopr3,KVARTAL,2021-2024,True,code,100.0,4.0,1:26191; 2:25476; 3:25350; 4:24647,2024.0,Character,1,Номер квартала,,0,True
+D004,kv_vopr3,GOD,2021-2024,False,code,100.0,1.0,2024:101664,2024.0,Character,4,Год,,0,True
+D004,kv_vopr3,NOMER,2021-2024,True,integer,100.0,11960.0,2024003551:22; 2024007430:21; 2024001116:21; 2024011527:21; 2024011795:21,2024.0,Character,10,код домохозяйства,,0,True
+D004,kv_vopr4,TE,2021-2024,False,code,100.0,20.0,43:1025; 47:754; 15:718; 75:665; 55:635,2024.0,Character,2,Код территории,,0,True
+D004,kv_vopr4,K,2021-2024,False,code,100.0,2.0,1:6288; 2:3892,2024.0,Character,1,Код местности,,0,True
+D004,kv_vopr4,KODNU,2021-2024,True,code,100.0,11.0,10100001:4272; 2212:1650; 04110002:843; 10100002:829; 10200002:781,2024.0,Character,8,Код товара,D004-doc-codebook-comma; D004-doc-no-food,2,True
+D004,kv_vopr4,NOMVOPR,2021-2024,False,code,100.0,1.0,41:10180,2024.0,Character,2,Номер вопроса,,0,True
+D004,kv_vopr4,STOIMK,2021-2024,False,integer,100.0,797.0,60000:506; 45000:502; 30000:490; 15000:327; 5000:306,2024.0,Numeric,7,Стоимость,,0,True
+D004,kv_vopr4,KVARTAL,2021-2024,True,code,100.0,4.0,1:2843; 4:2586; 2:2490; 3:2261,2024.0,Character,1,Номер квартала,,0,True
+D004,kv_vopr4,GOD,2021-2024,False,code,100.0,1.0,2024:10180,2024.0,Character,4,Год,,0,True
+D004,kv_vopr4,NOMER,2021-2024,True,integer,100.0,3584.0,2024008620:13; 2024011956:12; 2024006117:12; 2024010535:11; 2024010552:11,2024.0,Character,10,код домохозяйства,,0,True
+D004,kv_vopr5,TE,2021-2024,False,code,100.0,20.0,75:1681; 61:1447; 43:1304; 33:1169; 15:1087,2024.0,Character,2,Код территории,,0,True
+D004,kv_vopr5,K,2021-2024,False,code,100.0,2.0,1:10627; 2:7015,2024.0,Character,1,Код местности,,0,True
+D004,kv_vopr5,KODNU,2021-2024,True,code,100.0,12.0,062200:6837; 06210002:3701; 062310:2680; 06210001:1253; 062320:764,2024.0,Character,8,Код товара,D004-doc-codebook-comma; D004-doc-no-food,2,True
+D004,kv_vopr5,NOMVOPR,2021-2024,False,code,100.0,1.0,51:17642,2024.0,Character,2,Номер вопроса,,0,True
+D004,kv_vopr5,STOIMK,2021-2024,False,integer,100.0,680.0,5000:1641; 10000:1395; 15000:1085; 20000:842; 8000:749,2024.0,Numeric,7,Стоимость,,0,True
+D004,kv_vopr5,KVARTAL,2021-2024,True,code,100.0,4.0,2:4673; 1:4511; 3:4295; 4:4163,2024.0,Character,1,Номер квартала,,0,True
+D004,kv_vopr5,GOD,2021-2024,False,code,100.0,1.0,2024:17642,2024.0,Character,4,Год,,0,True
+D004,kv_vopr5,NOMER,2021-2024,True,integer,100.0,6782.0,2024004319:13; 2024009456:12; 2024004270:12; 2024001946:11; 2024009459:11,2024.0,Character,10,код домохозяйства,,0,True
+D004,kv_vopr6,TE,2021-2024,False,code,100.0,20.0,43:14698; 15:13101; 75:12664; 39:11017; 55:10146,2024.0,Character,2,Код территории,,0,True
+D004,kv_vopr6,K,2021-2024,False,code,100.0,2.0,1:103423; 2:75279,2024.0,Character,1,Код местности,,0,True
+D004,kv_vopr6,KOD,2021-2024,False,empty,0.0,0.0,,2024.0,,,,D004-doc-2.2-truncated,1,False
+D004,kv_vopr6,KODNU,2021-2024,True,integer,100.0,76.0,12111002:33652; 12111001:27822; 12112003:14907; 12111099:14158; 21121:9379,2024.0,Character,8,Код товара,D004-doc-codebook-comma; D004-doc-no-food,2,True
+D004,kv_vopr6,NOMVOPR,2021-2024,False,code,100.0,3.0,61:126923; 62:26864; 60:24915,2024.0,Character,2,Номер вопроса,,0,True
+D004,kv_vopr6,NOMOTV,2021-2024,False,code,56.7,1.0,0:101313,2024.0,Numeric,1,Номер ответа,,0,True
+D004,kv_vopr6,STOIMK,2021-2024,False,integer,100.0,2829.0,6000:15377; 3000:10480; 5000:9759; 10000:8049; 4000:7659,2024.0,Numeric,7,Стоимость,,0,True
+D004,kv_vopr6,KVARTAL,2021-2024,True,code,100.0,4.0,3:46988; 2:44266; 1:44054; 4:43394,2024.0,Character,1,Номер квартала,,0,True
+D004,kv_vopr6,GOD,2021-2024,False,code,100.0,1.0,2024:178702,2024.0,Character,4,Год,,0,True
+D004,kv_vopr6,NOMER,2021-2024,True,integer,100.0,11932.0,2024009055:82; 2024008915:61; 2024003430:59; 2024007501:58; 2024000414:56,2024.0,Character,10,код домохозяйства,,0,True
+D004,kv_vopr7,TE,2021-2024,False,code,100.0,20.0,75:5554; 43:4651; 15:4246; 47:4137; 61:4034,2024.0,Character,2,Код территории,,0,True
+D004,kv_vopr7,K,2021-2024,False,code,100.0,2.0,1:41000; 2:24708,2024.0,Character,1,Код местности,,0,True
+D004,kv_vopr7,KODNU,2021-2024,True,code,100.0,16.0,07322001:26378; 07321001:20751; 073230:8283; 07312001:3910; 07321002:1855,2024.0,Character,8,Код товара,D004-doc-codebook-comma; D004-doc-no-food,2,True
+D004,kv_vopr7,NOMVOPR,2021-2024,False,code,100.0,1.0,71:65708,2024.0,Character,2,Номер вопроса,,0,True
+D004,kv_vopr7,STOIMK,2021-2024,False,integer,100.0,1947.0,6000:3657; 12000:3077; 15000:3066; 3000:2436; 9000:2359,2024.0,Numeric,6,Стоимость,,0,True
+D004,kv_vopr7,KVARTAL,2021-2024,True,code,100.0,4.0,2:16645; 3:16576; 1:16355; 4:16132,2024.0,Character,1,Номер квартала,,0,True
+D004,kv_vopr7,GOD,2021-2024,False,code,100.0,1.0,2024:65708,2024.0,Character,4,Год,,0,True
+D004,kv_vopr7,NOMER,2021-2024,True,integer,100.0,11225.0,2024005448:18; 2024009253:18; 2024010156:18; 2024006275:17; 2024006993:17,2024.0,Character,10,код домохозяйства,,0,True
+D004,kv_vopr9,TE,2021-2024,False,code,100.0,20.0,55:22747; 59:18779; 39:18334; 11:15827; 27:14797,2024.0,Character,2,Код территории,,0,True
+D004,kv_vopr9,K,2021-2024,False,code,100.0,2.0,2:151212; 1:69499,2024.0,Character,1,Код местности,,0,True
+D004,kv_vopr9,KODNU,2021-2024,True,number,20.5,51.0,26.1:5657; 011411:4129; 011420:2723; 011219:2637; 51:2221,2024.0,Character,9,Код товара,D004-doc-codebook-comma; D004-doc-no-food,2,True
+D004,kv_vopr9,NOMVOPR,2021-2024,False,code,100.0,11.0,91:47235; 97:46779; 94:22143; 95:21890; 92:21812,2024.0,Character,3,Номер вопроса,,0,True
+D004,kv_vopr9,NOMVNEW,"2021,2024",False,code,100.0,11.0,41:47231; 46:46801; 44:22149; 451:21900; 42:21821,2024.0,,,,D004-doc-structure-vs-data,1,False
+D004,kv_vopr9,NOMOTV,2021-2024,False,code,87.2,3.0,2:118290; 1:49584; 0:24641,2024.0,Numeric,1,Номер ответа,,0,True
+D004,kv_vopr9,EDIZ,2021-2024,False,code,14.9,5.0,166:23687; 796:4945; 112:4148; 168:67; 286:3,2024.0,Character,3,Единица измерения,,0,True
+D004,kv_vopr9,GR1,2021-2024,False,number,61.7,1709.0,0.0:83376; 2.0:8640; 1.0:2301; 10.0:1393; 20.0:1107,2024.0,,,,D004-doc-structure-vs-data,1,False
+D004,kv_vopr9,GR2,2021-2024,False,number,58.3,648.0,0.0:97838; 2.0:2663; 10.0:1989; 5.0:1927; 3.0:1468,2024.0,,,,,0,False
+D004,kv_vopr9,GR3,2021-2024,False,number,58.4,207.0,0.0:116882; 2.0:7000; 1.0:792; 10.0:516; 20.0:348,2024.0,,,,,0,False
+D004,kv_vopr9,GR4,2021-2024,False,number,58.3,605.0,0.0:124011; 20.0:190; 10.0:149; 30.0:136; 300.0:95,2024.0,,,,,0,False
+D004,kv_vopr9,GR5,2021-2024,False,number,56.5,487.0,0.0:114012; 10.0:1031; 20.0:849; 5.0:608; 15.0:576,2024.0,,,,,0,False
+D004,kv_vopr9,GR6,2021-2024,False,number,56.5,95.0,0.0:123239; 2.0:638; 1.0:243; 3.0:76; 10.0:62,2024.0,,,,,0,False
+D004,kv_vopr9,GR7,2021-2024,False,integer,56.5,718.0,0.0:121726; 12000.0:47; 60000.0:40; 9000.0:39; 45000.0:38,2024.0,Numeric,10,Графа 7,,0,True
+D004,kv_vopr9,GR8,2021-2024,False,integer,56.6,99.0,0:124515; 4000:20; 5000:16; 6000:14; 10000:12,2024.0,Numeric,10,Графа 8        (В бланке Д004 гр.2-гр.9),,0,True
+D004,kv_vopr9,GR9,2021-2024,False,code,51.8,5.0,0:114213; 4000:4; 700:2; 50000:1; 40000:1,2024.0,,,,,0,False
+D004,kv_vopr9,KVARTAL,2021-2024,True,code,100.0,4.0,3:64524; 2:56682; 1:50165; 4:49340,2024.0,Character,1,Номер квартала,,0,True
+D004,kv_vopr9,PRICE,2021-2024,False,integer,56.2,261.0,0:120874; 50:287; 60:215; 2000:210; 300:199,2024.0,Numeric,10,Средняя цена,,0,True
+D004,kv_vopr9,GOD,2021-2024,False,code,100.0,1.0,2024:220711,2024.0,Character,4,Год,,0,True
+D004,kv_vopr9,NOMER,2021-2024,True,integer,100.0,11960.0,2024006644:78; 2024008951:77; 2024010647:75; 2024003563:75; 2024000557:74,2024.0,Character,10,код домохозяйства,,0,True
+D004,kv_vopr10,TE,2021-2024,False,code,100.0,20.0,55:6790; 27:3956; 39:3565; 59:3526; 35:2736,2024.0,Character,2,Код территории,,0,True
+D004,kv_vopr10,K,2021-2024,False,code,100.0,2.0,2:28948; 1:11540,2024.0,Character,1,Код местности,,0,True
+D004,kv_vopr10,KODNU,2021-2024,True,number,100.0,27.0,011150:12243; 011130:6201; 01182001:3340; 01174:3261; 01141:2582,2024.0,Character,8,Код товара,D004-doc-codebook-comma; D004-doc-no-food,2,True
+D004,kv_vopr10,NOMVOPR,2021-2024,False,code,100.0,2.0,101:34996; 102:5492,2024.0,Character,2,Номер вопроса,,0,True
+D004,kv_vopr10,NOMVNEW,"2021,2024",False,code,100.0,2.0,412:34996; 413:5492,2024.0,,,,D004-doc-structure-vs-data,1,False
+D004,kv_vopr10,GR1,2021-2024,False,integer,100.0,3783.0,6000:1078; 10000:904; 8000:750; 12000:748; 5000:735,2024.0,Numeric,10,Стоимость,D004-doc-structure-vs-data,1,True
+D004,kv_vopr10,GR2,2021-2024,False,integer,100.0,693.0,0:34389; 90000:250; 30000:233; 60000:224; 150000:180,2024.0,Numeric,10,Сумма продажи,,0,True
+D004,kv_vopr10,GR3,2021-2024,False,code,92.0,10.0,0:37240; 22000:4; 23000:3; 4000:3; 12000:2,2024.0,Numeric,10,Сумма продано  продукции произведенной ранее,,0,True
+D004,kv_vopr10,GR4,2021-2024,False,integer,92.0,5760.0,0:2279; 12000:470; 3000:439; 4000:410; 6000:367,2024.0,Numeric,10,Оценка затрат на производство,,0,True
+D004,kv_vopr10,KVARTAL,2021-2024,True,code,100.0,4.0,3:14444; 2:9634; 4:8303; 1:8107,2024.0,Character,1,Номер квартала,,0,True
+D004,kv_vopr10,GOD,2021-2024,False,code,100.0,1.0,2024:40488,2024.0,Character,4,Год,,0,True
+D004,kv_vopr10,NOMER,2021-2024,True,integer,100.0,7284.0,2024003594:30; 2024005722:28; 2024000902:28; 2024011964:27; 2024004899:27,2024.0,Character,10,код домохозяйства,,0,True
+D004,kv_vopr11,TE,2021-2024,False,code,100.0,20.0,15:6419; 55:6276; 61:6156; 39:6101; 43:5750,2024.0,Character,9,Код территории,,0,True
+D004,kv_vopr11,K,2021-2024,False,code,100.0,2.0,1:50641; 2:47221,2024.0,Character,1,Код местности,,0,True
+D004,kv_vopr11,NOMP,2021-2024,False,code,100.0,9.0,01:46274; 02:34569; 03:10268; 04:4310; 05:1275,2024.0,Character,2,Номер члена домохоз-ва,,0,True
+D004,kv_vopr11,VOZ,2021-2024,False,integer,100.0,101.0,35:2387; 34:2363; 37:2363; 36:2310; 38:2226,2024.0,Character,3,Возраст члена домохоз-ва,,0,True
+D004,kv_vopr11,POL,2021-2024,False,code,100.0,2.0,2:55312; 1:42550,2024.0,Character,1,Пол члена домохоз-ва,,0,True
+D004,kv_vopr11,NOMVOPR,2021-2024,False,code,100.0,1.0,111:97862,2024.0,Character,2,Номер вопроса,,0,True
+D004,kv_vopr11,NOMVNEW,2021-2024,False,code,100.0,1.0,300:97862,2024.0,,,,D004-doc-structure-vs-data,1,False
+D004,kv_vopr11,GR1,2021-2024,False,integer,100.0,2244.0,0:37361; 450000:4725; 600000:4317; 300000:3422; 750000:2761,2024.0,,,,D004-doc-structure-vs-data,1,False
+D004,kv_vopr11,GR2,2021-2024,False,integer,100.0,1182.0,0:87959; 300000:739; 600000:721; 450000:626; 750000:291,2024.0,,,,,0,False
+D004,kv_vopr11,GR3,2021-2024,False,integer,100.0,820.0,0:95203; 300000:51; 200000:42; 250000:41; 180000:36,2024.0,,,,,0,False
+D004,kv_vopr11,GR4,2021-2024,False,integer,100.0,1575.0,0:75933; 300000:1097; 360000:860; 450000:679; 270000:610,2024.0,,,,,0,False
+D004,kv_vopr11,GR5,2021-2024,False,integer,100.0,210.0,0:95323; 90000:173; 93000:166; 141405:136; 98043:117,2024.0,,,,,0,False
+D004,kv_vopr11,GR6,2021-2024,False,integer,100.0,54.0,0:97758; 180000:6; 24000:6; 90000:5; 77436:4,2024.0,,,,,0,False
+D004,kv_vopr11,GR7,2021-2024,False,code,100.0,27.0,0:97820; 34000:3; 32500:3; 330000:3; 30000:2,2024.0,,,,,0,False
+D004,kv_vopr11,GR8,2021-2024,False,integer,100.0,565.0,0:92966; 177000:536; 177549:510; 165000:152; 221964:147,2024.0,,,,,0,False
+D004,kv_vopr11,GR9,2021-2024,False,integer,100.0,387.0,0:93133; 156267:303; 229191:231; 209658:179; 119805:177,2024.0,,,,,0,False
+D004,kv_vopr11,GR10,2021-2024,False,integer,100.0,185.0,0:96698; 209658:104; 156000:59; 177000:54; 81960:52,2024.0,,,,,0,False
+D004,kv_vopr11,GR11,2021-2024,False,integer,100.0,126.0,0:97302; 17724:65; 8307:39; 8492:32; 17722:29,2024.0,,,,,0,False
+D004,kv_vopr11,GR12,2021-2024,False,integer,100.0,58.0,0:97689; 10000:11; 9000:10; 90000:10; 18000:9,2024.0,,,,,0,False
+D004,kv_vopr11,GR13,2021-2024,False,integer,100.0,301.0,0:93595; 150000:368; 100000:313; 300000:281; 30000:238,2024.0,,,,,0,False
+D004,kv_vopr11,GR14,2021-2024,False,integer,100.0,71.0,0:97482; 20000:43; 30000:30; 50000:27; 40000:24,2024.0,,,,,0,False
+D004,kv_vopr11,GR15,2021-2024,False,code,100.0,12.0,0:97787; 8492:42; 6648:12; 8942:4; 50000:3,2024.0,,,,,0,False
+D004,kv_vopr11,GR16,2021-2024,False,integer,100.0,215.0,0:96665; 150000:129; 120000:83; 90000:75; 60000:75,2024.0,,,,,0,False
+D004,kv_vopr11,GR17,2021-2024,False,code,100.0,6.0,0:97852; 18000000:4; 2000000:3; 6000000:1; 700000:1,2024.0,,,,,0,False
+D004,kv_vopr11,GR18,2021-2024,False,integer,100.0,58.0,0:97698; 140000:9; 35000:9; 85000:7; 20000:7,2024.0,,,,,0,False
+D004,kv_vopr11,GR19,2021-2024,False,integer,100.0,99.0,0:97678; 60000:7; 90000:5; 150000:5; 21900:4,2024.0,,,,,0,False
+D004,kv_vopr11,GR20,2021-2024,False,integer,100.0,49.0,0:97514; 300000:38; 180000:34; 240000:26; 390000:23,2024.0,,,,,0,False
+D004,kv_vopr11,GR21,2021-2024,False,integer,100.0,42.0,0:97672; 30000:26; 85000:24; 91000:19; 45000:15,2024.0,,,,,0,False
+D004,kv_vopr11,GR22,2021-2024,False,integer,100.0,307.0,0:57155; 11696:10719; 13291:4208; 14620:3016; 14768:2214,2024.0,,,,,0,False
+D004,kv_vopr11,GR23,2021-2024,False,integer,100.0,244.0,0:95780; 7800:801; 21349:78; 11540:54; 30004:50,2024.0,,,,,0,False
+D004,kv_vopr11,KVARTAL,2021-2024,True,code,100.0,4.0,1:24535; 2:24513; 4:24427; 3:24387,2024.0,Character,1,Номер квартала,,0,True
+D004,kv_vopr11,GOD,2021-2024,False,code,100.0,1.0,2024:97862,2024.0,Character,4,Год,,0,True
+D004,kv_vopr11,NOMER,2021-2024,True,integer,100.0,11948.0,2024011870:28; 2024009849:27; 2024000897:24; 2024002298:24; 2024009035:24,2024.0,Character,10,код домохозяйства,,0,True
+D004,kv_vopr12,TE,2021-2024,False,code,100.0,20.0,15:2060; 11:1918; 55:1873; 27:1661; 35:1632,2024.0,Character,2,Код территории,,0,True
+D004,kv_vopr12,K,2021-2024,False,code,100.0,2.0,1:13928; 2:11026,2024.0,Character,1,Код местности,,0,True
+D004,kv_vopr12,KODNU,2021-2024,True,text,75.6,6.0,2.1.1.4.1:13931; 59:2435; 60:1088; 2.1.1.4.2:699; 61:533,2024.0,Character,9,Наименование видов расходов,D004-2-code; D004-doc-codebook-comma; D004-doc-no-food,3,True
+D004,kv_vopr12,NOMVNEW,2021-2024,False,code,100.0,3.0,20:18856; 21:3115; 22:2983,2024.0,,,,D004-2.1-needs-new-loan; D004-2.1-required; D004-doc-structure-vs-data; D004-refusal-no-loans,4,False
+D004,kv_vopr12,KOD,2021-2024,False,code,24.3,9.0,2:2184; 6:1620; 9:921; 7:494; 1:425,2024.0,Character,1,Коды вопросов 2.1 и 2.2 раздела 2,D004-2.1-2.2-domain; D004-2.1-required; D004-doc-2.2-truncated,3,True
+D004,kv_vopr12,STOIMK,2021-2024,False,integer,84.3,1939.0,0:2222; 150000:762; 300000:600; 120000:558; 90000:471,2024.0,Numeric,10,"Сумма за квартал, тенге",,0,True
+D004,kv_vopr12,KVARTAL,2021-2024,True,code,100.0,4.0,1:6882; 2:6330; 3:6131; 4:5611,2024.0,Character,1,Номер квартала,,0,True
+D004,kv_vopr12,GOD,2021-2024,False,code,100.0,1.0,2024:24954,2024.0,Character,4,Год,,0,True
+D004,kv_vopr12,NOMER,2021-2024,True,integer,100.0,5542.0,2024009828:24; 2024000808:23; 2024006257:23; 2024003708:23; 2024005738:23,2024.0,Character,10,код домохозяйства,,0,True
+D004,kv_vopr12,NOMVOPR,2024,False,code,100.0,3.0,200:18856; 1211:3115; 1212:2983,2024.0,Character,4,Номер вопроса,,0,True
+D004,kv_vopr12,NOMOTV,2024,False,code,55.9,2.0,0:7839; 1:6102,2024.0,Numeric,1,Номер ответа,,0,True
+D004,kv_vopr12,GR1,2024,False,code,40.7,1.0,0:10155,2024.0,,,,D004-doc-structure-vs-data,1,False
+T001,baza,DH_DATROZH_2,2021-2024,False,code,100.0,12.0,01:54141; 03:41675; 04:40755; 05:39512; 10:38356,2024.0,text,2,вопрос 5 месяц,,0,True
+T001,baza,DH_DATROZH_3,2021-2024,False,integer,100.0,87.0,1988:11530; 1986:11091; 1989:10844; 1985:10765; 1990:10746,2024.0,text,4,вопрос 5 год,,0,True
+T001,baza,DH_GLROSTV,2021-2024,False,code,100.0,9.0,1:225477; 2:125802; 3:73123; 8:17478; 4:10965,2024.0,text,5,вопрос 4,,0,True
+T001,baza,DH_OBRAZOV,2021-2024,False,code,100.0,9.0,5:166871; 7:130764; 3:71887; 6:62773; 4:19749,2024.0,text,5,вопрос 7,,0,True
+T001,baza,DH_POLRESP,2021-2024,False,code,100.0,2.0,2:252805; 1:216547,2024.0,text,1,вопрос 3,,0,True
+T001,baza,DH_PROZHIV_0,2021-2024,False,code,48.0,26.0,2:61913; 1:54587; 3:37261; 4:30049; 5:19937,2024.0,text,5,вопрос 1) Всего человек,,0,True
+T001,baza,DH_PROZHIV_5,2021,False,,,,,,,,,,0,True
+T001,baza,DH_SEMSOST,2021-2024,False,code,100.0,4.0,2:292218; 1:92331; 3:46806; 4:37997,2024.0,text,5,вопрос 6,,0,True
+T001,baza,DOP_RABOTA,2021-2024,False,code,28.4,2.0,2:130667; 1:2750,2024.0,text,5,(основной) вопрос 42,,0,True
+T001,baza,DRB_PKHDHL,2021-2024,False,code,0.5,6.0,6:1961; 4:374; 1:114; 2:92; 3:27,2024.0,text,5,(основной) вопрос 54,,0,True
+T001,baza,IM_LI_D,2021-2024,False,code,100.0,2.0,2:425715; 1:43637,2024.0,text,5,вопрос 8,,0,True
+T001,baza,K,2021-2024,False,code,100.0,2.0,2:268589; 1:200763,2024.0,text,1,,,0,False
+T001,baza,KOMPT_GRAM,2021-2024,False,code,100.0,4.0,3:312712; 2:72158; 1:64422; 4:20060,2024.0,text,5,(основной) вопрос 82,,0,True
+T001,baza,LP_POTREBL,2021-2024,False,code,6.6,3.0,2:23532; 1:7113; 3:159,2024.0,text,5,(основной) вопрос 11,,0,True
+T001,baza,ORB_CHISRB,2021,False,,,,,,,,,,0,True
+T001,baza,ORB_MESTOR,2021-2024,False,code,65.6,10.0,3:243746; 7:23907; 4:15719; 8:7037; 6:6483,2024.0,text,5,(основной) вопрос 26,,0,True
+T001,baza,ORB_OTRASL,2021-2024,False,code,66.0,19.0,1:57577; 16:46860; 7:40140; 15:21018; 8:20332,2024.0,,,,,0,False
+T001,baza,ORB_OTRASLKOD,2021-2024,False,integer,65.6,557.0,8531:28217; 0150:22906; 8610:13598; 8510:10880; 8411:10504,2024.0,text,3,(основной) вопрос 32,,0,True
+T001,baza,ORB_PKHDHL,2021-2024,False,code,65.6,6.0,1:193008; 4:50811; 6:23891; 2:22076; 3:12508,2024.0,text,5,(основной) вопрос 29,,0,True
+T001,baza,ORB_PRODOL_1,2021-2024,False,code,65.5,8.0,5:200209; 6:58280; 7:27221; 4:8720; 0:4758,2024.0,text,1,(основной) вопрос 37 дни в нед.,,0,True
+T001,baza,ORB_PRODOL_2,2021-2024,False,integer,65.6,69.0,040:228669; 048:31405; 014:6545; 042:4820; 0:4763,2024.0,text,3,(основной) вопрос 37 часы в нед.,,0,True
+T001,baza,ORB_PROFES,2021-2024,False,integer,65.6,430.0,9211:23057; 2350:14481; 5210:14328; 9520:11685; 8322:11399,2024.0,text,3,(основной) вопрос 33,,0,True
+T001,baza,ORB_STATUS,2021-2024,False,code,65.6,10.0,1:191200; 6:50805; 10:23889; 2:23329; 3:11941,2024.0,text,5,(основной) вопрос 16,,0,True
+T001,baza,ORB_TERRIT,2021-2024,False,code,28.2,5.0,1:123716; 3:4156; 2:2434; 4:1991; 5:189,2024.0,text,5,(основной) вопрос 34,,0,True
+T001,baza,ORB_TRDDOG,2021-2024,False,code,48.6,2.0,1:216201; 2:11815,2024.0,text,5,(основной) вопрос 17,,0,True
+T001,baza,ORB_VREMRB,2021-2024,False,code,65.6,5.0,5:185354; 3:52285; 4:43055; 2:16564; 1:10630,2024.0,text,5,(основной) вопрос 25,,0,True
+T001,baza,OTVET_LICO,2021-2024,False,code,100.0,2.0,1:273913; 2:195439,2024.0,text,5,(основной) вопрос 81,,0,True
+T001,baza,PRD_STATUS,2021-2024,False,code,1.8,10.0,1:6167; 2:1143; 6:490; 3:379; 10:153,2024.0,text,5,(основной) вопрос 70,,0,True
+T001,baza,PROZHSROZH,2021-2024,False,code,44.0,2.0,1:184190; 2:22489,2024.0,text,5,(основной) вопрос 2,,0,True
+T001,baza,PR_NEPOISK,2021-2024,False,code,96.5,16.0,15:308827; 11:83845; 9:35099; 5:10173; 12:7654,2024.0,text,5,(основной) вопрос 61,,0,True
+T001,baza,PSK_RABOTA,2021-2024,False,code,100.0,2.0,2:452867; 1:16485,2024.0,text,5,(основной) вопрос 59,,0,True
+T001,baza,RSPD,2021-2024,False,code,100.0,9.0,1:225416; 2:162426; 3:54643; 4:21017; 5:4806,2024.0,text,5,Номер респондента,,0,True
+T001,baza,TE,2021-2024,False,code,100.0,20.0,39:38986; 61:36847; 11:36203; 35:33334; 19:29197,2024.0,text,9,,,0,False
+T001,baza,ZAN_PR_ST,2021-2024,False,code,100.0,2.0,2:466973; 1:2379,2024.0,,,,,0,False
+T001,baza,ZAN_RABOTA,2021-2024,False,code,100.0,2.0,1:309128; 2:160224,2024.0,text,1,(основной) вопрос 6,,0,True
+T001,baza,ZAN_RBLPDU,2021-2024,False,code,100.0,2.0,2:438034; 1:31318,2024.0,text,5,(основной) вопрос 10,,0,True
+T001,baza,ZAN_VREMYA_1,2021-2024,False,code,65.8,8.0,5:194876; 6:57516; 7:35777; 4:8192; 3:4557,2024.0,text,1,(основной) вопрос 14 дни в нед.,,0,True
+T001,baza,ZAN_VREMYA_2,2021-2024,False,integer,65.8,83.0,040:223097; 048:30873; 014:7146; 042:4779; 0:4519,2024.0,text,3,(основной) вопрос 14 часы в нед.,,0,True
+T001,baza,VOSR,2021-2024,False,integer,100.0,87.0,37:11425; 35:11018; 34:10932; 38:10850; 36:10834,2024.0,,,,,0,False
+T001,baza,PRICH_ZANV,"2022,2023,2024",False,code,0.3,8.0,1:1249; 8:244; 2:33; 3:9; 5:4,2024.0,,,,,0,False
+T001,baza,KV,"2022,2023,2024",False,code,99.8,4.0,1:126854; 2:119992; 3:117121; 4:104675,2024.0,,,,,0,False
+T001,baza,MES,"2022,2023,2024",False,code,100.0,12.0,07:40185; 05:40066; 04:39732; 06:39629; 08:39504,2024.0,,,,,0,False
