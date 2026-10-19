@@ -737,8 +737,14 @@ function download(name, text, type = 'text/csv') { const a = document.createElem
 
 /* ---------- 3 · analysis ---------- */
 let selRegion = null, selCase = B.cases[0].id;
+/* a deviation from the last file check belongs to a case file when the full analysis has the same rule, region and year in it */
+function caseOf(i) {
+  const hit = B.issues.find(x => x.case && x.rule === i.rule_id && x.region === i.region && +x.year === +i.year)
+    || B.issues.find(x => x.case && x.rule === i.rule_id && x.region === i.region);
+  return hit ? hit.case : null;
+}
 function analysisIssues() {
-  if (RUN) return { src: `последняя проверка: ${RUN.forms.map(f => FORM[f]).join(', ')}, ${RUN.year}`, list: RUN.issues.map(i => ({ region: i.region, status: i.status, form: i.form, year: i.year, ru: issueText(i), rr: i.rate_region, rs: i.rate_rest, rule: i.rule_id, quote: i.quote, doc: DOC[i.doc] || i.doc, sql: i.sql, trust: SYN[i.synthesis] || i.synthesis, records: i.records })) };
+  if (RUN) return { src: `последняя проверка: ${RUN.forms.map(f => FORM[f]).join(', ')}, ${RUN.year}`, list: RUN.issues.map(i => ({ region: i.region, status: i.status, form: i.form, year: i.year, ru: issueText(i), rr: i.rate_region, rs: i.rate_rest, rule: i.rule_id, quote: i.quote, doc: DOC[i.doc] || i.doc, sql: i.sql, trust: SYN[i.synthesis] || i.synthesis, records: i.records, cas: caseOf(i) })) };
   return { src: 'полный анализ: 5 форм, 2023–2024', list: B.issues.map(i => ({ region: i.region, status: i.status === 'держится' ? 'hold' : 'check', form: i.form, year: i.year, ru: i.ru, rr: i.rateRegion, rs: i.rateRest, rule: i.rule, cas: i.case, quote: i.quote, doc: i.doc, sql: i.sql, trust: i.trust, records: i.records })) };
 }
 function renderAnalysis() {
