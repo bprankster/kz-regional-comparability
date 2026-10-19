@@ -69,6 +69,23 @@ select, input[type="number"], input[type="text"] { font: 14px var(--sans); color
 .hit .head .pill { flex: none; margin-top: 1px; }
 #entry { gap: 0; }
 .entry-note { margin-bottom: 4px; }
+.entry-ctl { padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 8px; overflow: hidden; }
+.seg button { font: 500 13px var(--sans); border: 0; background: var(--surface); color: var(--fg-2); padding: 6px 11px; cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--line-strong); }
+.seg button[aria-pressed="true"] { background: var(--fg); color: var(--surface); }
+details.fgroup { padding: 10px 0; }
+details.fgroup > summary { list-style: none; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; color: var(--fg); padding: 2px 0; }
+details.fgroup > summary::-webkit-details-marker { display: none; }
+details.fgroup > summary::before { content: "▸"; color: var(--fg-3); font-size: 12px; margin-right: 2px; }
+details.fgroup[open] > summary::before { content: "▾"; }
+details.fgroup > summary .lbl { flex: 1; }
+details.fgroup > .field { margin-top: 10px; }
+details.fgroup:first-child { border-top: 0; }
+.field .calc { font: 14px var(--sans); color: var(--fg-2); padding: 6px 10px; background: var(--sunken); border-radius: 8px; }
+.field .hint { grid-column: 1 / -1; margin-top: -6px; }
+.misslist { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; font-size: 13.5px; color: var(--fg-2); }
+.misslist code { font: 12px var(--mono); color: var(--fg-3); }
 .hit { border: 1px solid var(--line); border-left: 4px solid var(--orange); border-radius: 8px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
 .hit.miss { border-left-color: var(--line-strong); }
 .quote { font-size: 13px; color: var(--fg-2); border-left: 2px solid var(--line-strong); padding-left: 10px; }
@@ -203,9 +220,14 @@ details > summary { cursor: pointer; color: var(--blue-ink); font-size: 13px; }
   <!-- 1 · ENTRY -->
   <section id="p-entry" role="tabpanel" aria-labelledby="t-entry" class="grid2">
     <div class="panel stack">
-      <div class="row" style="justify-content:space-between"><h2>Анкета Д-002, фрагмент</h2>
+      <div class="row entry-ctl">
+        <label class="muted" for="e-form">Анкета</label><select id="e-form"></select>
+        <label class="muted" for="e-year">Год</label><select id="e-year"><option>2024</option><option>2023</option></select>
+        <div class="seg" id="e-mode" role="group" aria-label="Вид формы"><button type="button" data-v="demo" aria-pressed="true">Демо-фрагмент</button><button type="button" data-v="full" aria-pressed="false">Вся анкета из правил</button></div>
+      </div>
+      <div class="row" style="justify-content:space-between"><h2 id="e-title">Анкета Д-002, фрагмент</h2>
         <div class="row"><button class="btn" id="ex-bad">Пример с ошибкой</button><button class="btn" id="ex-ok">Корректная анкета</button><button class="btn" id="ex-clear">Очистить</button></div></div>
-      <p class="muted entry-note">Поля и коды — из бланка Д-002 2024 года. Правила применяются к каждому изменению.</p>
+      <p class="muted entry-note" id="e-note"></p>
       <form id="entry" class="stack" autocomplete="off" onsubmit="return false"></form>
     </div>
     <div class="panel stack" aria-live="polite">
@@ -315,7 +337,11 @@ function openSub(k) {
 subs.forEach(t => t.addEventListener('click', () => openSub(t.id.slice(2))));
 
 /* ---------- 1 · entry ---------- */
-const FIELDS = [
+/* The form is built from the rules the model extracted: which fields a questionnaire has, their codes and code
+   meanings (domain rules), ranges, multiple-choice ticks and the question each field belongs to (rule ids).
+   Field labels come from the Bureau's file-structure description. The demo fragment is a hand-picked subset
+   of D-002 for the talk; everything else is generated. */
+const FRAGMENT = [
   { g: 'Респондент' },
   { c: 'VOZ', l: 'Возраст респондента', t: 'num' },
   { c: 'K', l: 'Тип населённого пункта', o: [[1, 'город'], [2, 'село']] },
@@ -331,42 +357,158 @@ const FIELDS = [
   { g: 'Сверка с контрольной карточкой Д-008' },
   { c: 'ROSTER_U18', l: 'По списку членов Д-008 есть член моложе 18 лет', o: [[1, 'да'], [2, 'нет']] },
 ];
+const SPECIAL = {
+  ROSTER_U18: { l: 'По списку членов Д-008 есть член моложе 18 лет (в рабочей системе — из контрольной карточки)', o: [[1, 'да'], [2, 'нет']], g: 'Сверка с контрольной карточкой Д-008' },
+  K: { l: 'Тип населённого пункта' },   // empty in some structure files
+  AGE: { l: 'Возраст на год обследования (считается из года рождения)', calc: (r, y) => /^\d{4}$/.test(r.GOD_ROJD || '') ? String(y - +r.GOD_ROJD) : '' },
+};
+const EXAMPLES = {   // records typed as an interviewer would; the checker decides what is wrong
+  D002: { bad: { VOZ: '41', K: '1', ZT: '1', GR31_1: '3', GR317: '1', GR318_2: '1', GR40: '2', ROSTER_U18: '1' },
+          ok: { VOZ: '41', K: '1', ZT: '1', GR31_1: '4', GR317: '1', GR318_2: '1', GR40: '1', GR41: '2', ROSTER_U18: '1' } },
+  D006: { bad: { K: '1', TIP_J: '1', VLAD1: '1', OB_PL: '40', J_PL: '55', KOL_K: '02', ZEM: '2', ZT: '1' },
+          ok: { K: '1', TIP_J: '1', VLAD1: '1', OB_PL: '55', J_PL: '40', KOL_K: '2', ZEM: '2', ZT: '1' } },
+  D008: { bad: { NOMP: '1', RODSTVO: '1', POL: '1', GOD_ROJD: '2014', SEM_POL: '2', STATUS: '1', K: '1', ZT: '1' },
+          ok: { NOMP: '1', RODSTVO: '1', POL: '1', GOD_ROJD: '1980', SEM_POL: '2', STATUS: '1', K: '1', ZT: '1' } },
+};
+const ENTRY = { form: 'D002', year: 2024, mode: 'demo', fields: [], specs: {} };
+const plural = (n, one, few, many) => n % 10 === 1 && n % 100 !== 11 ? one : (n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? few : many;
+const cleanDesc = s => String(s || '').replace(/\s+/g, ' ').replace(/[.,;:]?\s*Значность.*$/iu, '').replace(/\s*поле\s+\w+\s*[-=].*$/iu, '').trim();
+
+function buildSpec(form) {
+  if (ENTRY.specs[form]) return ENTRY.specs[form];
+  const rules = B.rules[form].filter(r => r.type !== 'doc_issue' && r.type !== 'cross_form' && !r.superseded_by);
+  const info = {}, order = [];
+  const touch = (c, r) => { if (!info[c]) { info[c] = { c, rules: [] }; order.push(c); } if (!info[c].rules.includes(r)) info[c].rules.push(r); };
+  const walk = (o, r) => {
+    if (Array.isArray(o)) { o.forEach(x => walk(x, r)); return; }
+    if (!o || typeof o !== 'object') return;
+    for (const [k, v] of Object.entries(o)) {
+      if (k === 'source' || k === 'meaning' || k === 'sql' || k === 'allowed' || k === 'note') continue;
+      if (k === 'col' && typeof v === 'string') touch(v, r);
+      else if ((k === 'targets' || k === 'exclusive') && Array.isArray(v)) v.forEach(c => touch(c, r));
+      else if ((k === 'a' || k === 'b') && typeof v === 'string') touch(v, r);
+      else walk(v, r);
+    }
+  };
+  rules.forEach(r => walk(r, r));
+  const desc = (B.cols || {})[form] || {};
+  const groupOf = c => {
+    for (const r of info[c].rules) {
+      let m = r.id.match(/-P(\d)(?:Q(\d+))?/); if (m) return { k: 100 * +m[1], g: 'Часть ' + m[1] };
+      m = r.id.match(/-Q(\d+)/); if (m) return { k: +m[1], g: 'Вопрос ' + m[1] };
+    }
+    return { k: 0, g: 'Общие сведения' };
+  };
+  const fields = order.map(c => {
+    const rs = info[c].rules, sp = SPECIAL[c] || {};
+    const f = { c, l: sp.l || cleanDesc((desc[c] || [])[0]) || c, idx: (desc[c] || [0, 9999])[1], ...groupOf(c), n: rs.length };
+    if (sp.g) { f.g = sp.g; f.k = 1000; }
+    if (sp.calc) { f.t = 'calc'; f.calc = sp.calc; return f; }
+    if (sp.o) { f.o = sp.o; return f; }
+    if (rs.some(r => r.type === 'multi_select')) { f.t = 'chk'; return f; }
+    const dom = rs.find(r => r.type === 'domain' && Array.isArray(r.allowed) && (r.targets || []).includes(c));
+    const rng = rs.find(r => r.type === 'domain' && r.allowed && !Array.isArray(r.allowed) && ('min' in r.allowed || 'max' in r.allowed) && (r.targets || []).includes(c));
+    if (dom && dom.allowed.length <= 15) { f.o = dom.allowed.map(v => [v, ((dom.meaning || {})[v] || '')]); return f; }
+    f.t = 'num';
+    if (rng) { f.min = rng.allowed.min; f.max = rng.allowed.max; f.hint = `допустимо ${rng.allowed.min ?? '…'}–${rng.allowed.max ?? '…'}`; }
+    else if (dom) f.hint = 'коды: ' + dom.allowed.join(', ');
+    return f;
+  });
+  fields.sort((a, b) => a.k - b.k || a.idx - b.idx || a.c.localeCompare(b.c));
+  return ENTRY.specs[form] = { fields, rules: rules.length };
+}
+
 const form = $('#entry');
-(function buildForm() {
-  let html = '', open = false;
-  for (const f of FIELDS) {
-    if (f.g) { if (open) html += '</div>'; html += `<div class="fgroup"><p class="lbl">${esc(f.g)}</p>`; open = true; continue; }
-    const ctl = f.t === 'num' ? `<input type="number" id="f_${f.c}" name="${f.c}" min="0" max="130" inputmode="numeric">`
-      : f.t === 'chk' ? `<label class="check"><input type="checkbox" id="f_${f.c}" name="${f.c}"> отмечено</label>`
-      : `<select id="f_${f.c}" name="${f.c}"><option value="">—</option>${f.o.map(([v, l]) => `<option value="${v}">${v} — ${esc(l)}</option>`).join('')}</select>`;
-    html += `<div class="field" data-c="${f.c}"><label for="f_${f.c}">${esc(f.l)} <span class="code">${f.c}</span></label>${ctl}</div>`;
+function fieldHTML(f) {
+  const id = 'f_' + f.c;
+  const ctl = f.t === 'calc' ? `<output class="calc" id="${id}">—</output>`
+    : f.t === 'num' ? `<input type="text" id="${id}" name="${f.c}" inputmode="numeric" autocomplete="off"${f.hint ? ` placeholder="${esc(f.hint)}"` : ''}>`
+    : f.t === 'chk' ? `<label class="check"><input type="checkbox" id="${id}" name="${f.c}"> отмечено</label>`
+    : `<select id="${id}" name="${f.c}"><option value="">—</option>${f.o.map(([v, l]) => `<option value="${v}">${v}${l ? ' — ' + esc(l) : ''}</option>`).join('')}</select>`;
+  return `<div class="field" data-c="${f.c}"><label for="${id}">${esc(f.l)} <span class="code">${f.c}</span></label>${ctl}</div>`;
+}
+function renderForm() {
+  const demo = ENTRY.form === 'D002' && ENTRY.mode === 'demo';
+  $('#e-mode').hidden = ENTRY.form !== 'D002';
+  let html = '';
+  if (demo) {
+    ENTRY.fields = FRAGMENT.filter(f => f.c);
+    let open = false;
+    for (const f of FRAGMENT) { if (f.g) { if (open) html += '</div>'; html += `<div class="fgroup"><p class="lbl">${esc(f.g)}</p>`; open = true; } else html += fieldHTML(f); }
+    html += open ? '</div>' : '';
+    $('#e-title').textContent = 'Анкета Д-002, демо-фрагмент';
+    $('#e-note').textContent = `13 полей Д-002 2024 года для демонстрации. Проверяют их правила, которые модель извлекла из анкеты. «Вся анкета из правил» показывает форму, построенную из этих правил автоматически.`;
+  } else {
+    const S = buildSpec(ENTRY.form); ENTRY.fields = S.fields;
+    const groups = []; for (const f of S.fields) { const g = groups[groups.length - 1]; if (g && g.g === f.g) g.f.push(f); else groups.push({ g: f.g, f: [f] }); }
+    $('#e-title').textContent = `Анкета ${FORM[ENTRY.form]}, построена из правил`;
+    if (groups.length === 1) groups[0].g = 'Поля анкеты';
+    html = groups.map((g, i) => `<details class="fgroup" data-g="${esc(g.g)}"${i === 0 ? ' open' : ''}><summary><span class="lbl">${esc(g.g)}</span><span class="muted">${g.f.length} ${plural(g.f.length, 'поле', 'поля', 'полей')}</span></summary>${g.f.map(fieldHTML).join('')}</details>`).join('');
+    $('#e-note').textContent = `${S.fields.length} ${plural(S.fields.length, 'поле', 'поля', 'полей')} и ${S.rules} ${plural(S.rules, 'правило', 'правила', 'правил')}, которые модель извлекла из анкеты и инструкции; коды и их значения — из правил, подписи — из файла структуры Бюро. Новая анкета или новый год даёт новую форму без изменения кода.`;
   }
-  form.innerHTML = html + (open ? '</div>' : '');
-})();
-function record() { const r = {}; for (const f of FIELDS) { if (!f.c) continue; const el = $('#f_' + f.c); r[f.c] = f.t === 'chk' ? (el.checked ? '1' : '') : el.value; } return r; }
-function setRecord(r) { for (const f of FIELDS) { if (!f.c) continue; const el = $('#f_' + f.c); if (f.t === 'chk') el.checked = r[f.c] === '1'; else el.value = r[f.c] ?? ''; } checkEntry(); }
+  form.innerHTML = html;
+  const ex = EXAMPLES[ENTRY.form]; $('#ex-bad').hidden = !ex; $('#ex-ok').hidden = !ex;
+  checkEntry();
+}
+function record() {
+  const r = {};
+  for (const f of ENTRY.fields) { if (f.t === 'calc') continue; const el = $('#f_' + f.c); if (el) r[f.c] = f.t === 'chk' ? (el.checked ? '1' : '') : el.value.trim(); }
+  for (const f of ENTRY.fields) if (f.t === 'calc') { r[f.c] = f.calc(r, ENTRY.year); const el = $('#f_' + f.c); if (el) el.textContent = r[f.c] || '—'; }
+  return r;
+}
+function setRecord(r) {
+  for (const f of ENTRY.fields) { if (f.t === 'calc') continue; const el = $('#f_' + f.c); if (!el) continue; if (f.t === 'chk') el.checked = r[f.c] === '1'; else el.value = r[f.c] ?? ''; }
+  checkEntry();
+}
 function checkEntry() {
-  const rec = record(), hits = E.checkRecord(B.rules.D002, rec, 2024);
+  const rec = record(), present = new Set(ENTRY.fields.map(f => f.c));
+  const hits = E.checkRecord(B.rules[ENTRY.form], rec, ENTRY.year)
+    .filter(h => String(h.column).split(/[|+]|<=/).some(c => present.has(c)));   // only what is on the screen
   const seen = new Map();
   for (const h of hits) { const t = B.txt[h.rule.id] || {}; const k = (t.ru || h.rule.id) + h.kind; if (!seen.has(k)) seen.set(k, { ...h, t, cols: new Set() }); seen.get(k).cols.add(h.column); }
-  const list = [...seen.values()].sort((a, b) => (a.kind === 'error' ? 0 : 1) - (b.kind === 'error' ? 0 : 1));
+  const list = [...seen.values()];
   const err = list.filter(h => h.kind === 'error'), miss = list.filter(h => h.kind === 'missing');
-  document.querySelectorAll('.field').forEach(el => { el.classList.remove('bad', 'miss'); });
-  for (const h of list) for (const c of String(h.column).split(/[|+]/)) { const el = document.querySelector(`.field[data-c="${c}"]`); if (el) el.classList.add(h.kind === 'error' ? 'bad' : 'miss'); }
+  form.querySelectorAll('.field').forEach(el => { el.classList.remove('bad', 'miss'); });
+  for (const h of list) for (const c of String(h.column).split(/[|+]|<=/)) { const el = form.querySelector(`.field[data-c="${c}"]`); if (el) { el.classList.add(h.kind === 'error' ? 'bad' : 'miss'); if (h.kind === 'error') { const d = el.closest('details'); if (d) d.open = true; } } }
   $('#e-sum').innerHTML = err.length ? `<span class="pill err">Ошибок: ${err.length}</span>` + (miss.length ? ` <span class="pill miss">Не заполнено: ${miss.length}</span>` : '')
     : miss.length ? `<span class="pill miss">Не заполнено: ${miss.length}</span>` : '<span class="pill ok">Ошибок нет</span>';
-  const title = h => { const s = h.t.ru || h.rule.id; return h.kind === 'missing' ? 'Нужен ответ: ' + s.replace(/\s+заполнено\.?$/u, '') : s; };
-  $('#e-hits').innerHTML = list.length ? list.map(h => `<article class="hit ${h.kind === 'missing' ? 'miss' : ''}">
-      <div class="head"><b>${esc(title(h))}</b><span class="pill ${h.kind === 'missing' ? 'miss' : 'err'}">${h.kind === 'missing' ? 'не заполнено' : esc(TYPE[h.rule.type] || h.rule.type)}</span></div>
+  const errHTML = err.map(h => `<article class="hit">
+      <div class="head"><b>${esc(h.t.ru || h.rule.id)}</b><span class="pill err">${esc(TYPE[h.rule.type] || h.rule.type)}</span></div>
       ${h.t.quote ? `<p class="quote">«${esc(h.t.quote)}» — ${esc(DOC[h.t.doc] || h.t.doc || '')}</p>` : ''}
-      <p class="muted"><code>${esc(h.rule.id)}</code></p></article>`).join('')
-    : '<p class="muted">Все применимые правила выполнены.</p>';
+      <p class="muted"><code>${esc(h.rule.id)}</code></p></article>`).join('');
+  const missHTML = miss.length ? `<article class="hit miss"><div class="head"><b>Нужен ответ</b><span class="pill miss">не заполнено: ${miss.length}</span></div>
+      <ul class="misslist">${miss.map(h => `<li>${esc((h.t.ru || h.rule.id).replace(/\s+заполнено\.?$/u, ''))} <code>${esc(h.rule.id)}</code></li>`).join('')}</ul></article>` : '';
+  $('#e-hits').innerHTML = list.length ? errHTML + missHTML : '<p class="muted">Все применимые правила выполнены.</p>';
 }
+$('#e-form').innerHTML = Object.keys(B.rules).map(f => `<option value="${f}">${FORM[f] || f}</option>`).join('');
+$('#e-form').addEventListener('change', e => { ENTRY.form = e.target.value; renderForm(); });
+$('#e-year').addEventListener('change', e => { ENTRY.year = +e.target.value; checkEntry(); });
+$('#e-mode').querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+  const keep = record(); ENTRY.mode = b.dataset.v; $('#e-mode').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); renderForm(); setRecord(keep);
+}));
 form.addEventListener('input', checkEntry); form.addEventListener('change', checkEntry);
-$('#ex-bad').addEventListener('click', () => setRecord({ VOZ: '41', K: '1', ZT: '1', GR31_1: '3', GR317: '1', GR318_1: '', GR318_2: '1', GR40: '2', GR41: '', ROSTER_U18: '1' }));
-$('#ex-ok').addEventListener('click', () => setRecord({ VOZ: '41', K: '1', ZT: '1', GR31_1: '4', GR317: '1', GR318_1: '', GR318_2: '1', GR40: '1', GR41: '2', ROSTER_U18: '1' }));
+$('#ex-bad').addEventListener('click', () => setRecord(EXAMPLES[ENTRY.form].bad));
+/* the correct example: the prepared record, then every answer the rules still ask for gets its first valid code */
+function completeRecord(base) {
+  const rec = { ...base };
+  for (let pass = 0; pass < 4; pass++) {
+    setRecord(rec); const cur = record();
+    const miss = E.checkRecord(B.rules[ENTRY.form], cur, ENTRY.year).filter(h => h.kind === 'missing');
+    if (!miss.length) break;
+    for (const h of miss) for (const c of String(h.column).split('|')) {
+      const f = ENTRY.fields.find(x => x.c === c); if (!f || f.t === 'calc' || cur[c]) continue;
+      const cand = f.o ? f.o.map(o => String(o[0])) : f.t === 'chk' ? ['1'] : [String(f.min ?? 1)];
+      const errs = r => E.checkRecord(B.rules[ENTRY.form], r, ENTRY.year).filter(x => x.kind === 'error').length;
+      const base = errs({ ...cur, ...rec });
+      rec[c] = cand.find(v => errs({ ...cur, ...rec, [c]: v }) <= base) ?? cand[0];   // first code that adds no error
+      if (String(h.column).includes('|')) break;   // 'any of' rules: one answer is enough
+    }
+  }
+  setRecord(rec);
+}
+$('#ex-ok').addEventListener('click', () => completeRecord(EXAMPLES[ENTRY.form].ok));
 $('#ex-clear').addEventListener('click', () => setRecord({}));
-checkEntry();
+renderForm();
 
 /* ---------- 2 · file ---------- */
 const loaded = {};   // role -> {name, table}

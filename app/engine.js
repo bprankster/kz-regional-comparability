@@ -313,8 +313,8 @@
     const tables = { entry: t }, hits = [];
     for (const r0 of rules) {
       if (r0.type === 'doc_issue' || r0.type === 'cross_form' || r0.superseded_by) continue;
-      if (r0.type === 'consistency' && r0.check !== 'implies') continue;
-      const conds = condCols(r0.when, []).concat(condCols(r0.if, []), r0.type === 'consistency' ? condCols(r0.then, []) : []);
+      if (r0.type === 'consistency' && r0.check !== 'implies' && r0.check !== 'lte') continue;   // checks that need one record only
+      const conds = condCols(r0.when, []).concat(condCols(r0.if, []), r0.type === 'consistency' ? condCols(r0.then, []) : [], r0.check === 'lte' ? [r0.a, r0.b] : []);
       if (!conds.every(c => has(t, c))) continue;
       if (r0.type !== 'consistency' && !(r0.targets || []).some(c => has(t, c))) continue;
       let items; try { items = evaluate(Object.assign({}, r0, { table: 'entry', _year: year }), tables); } catch (e) { continue; }

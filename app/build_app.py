@@ -36,6 +36,9 @@ bundle = {
     "ruleCount": sum(d["ruleCounts"].values()),
     "sqlCount": sum(1 for r in d["rules"] if r["sql"]),
     "acc": d["acc"].get("ALL", {}),
+    # field labels for the form built from the rules: the Bureau's file-structure description and column order
+    "cols": {f: {c["c"]: [c["d"] or "", i] for i, c in enumerate(d["schema"]["columns"]) if c["f"] == f}
+             for f in rules},
 }
 js = lambda o: json.dumps(o, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 engine = (APP / "engine.js").read_text(encoding="utf-8").replace("</", "<\\/")
