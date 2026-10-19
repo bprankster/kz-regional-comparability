@@ -103,6 +103,82 @@ pre.sql { font: 12.5px/1.5 var(--mono); background: var(--sunken); border-radius
 footer { color: var(--fg-3); font-size: 13px; border-top: 1px solid var(--line); padding-top: 14px; }
 .prog { height: 6px; background: var(--sunken); border-radius: 99px; overflow: hidden; }
 .prog i { display: block; height: 100%; background: var(--blue); width: 0; transition: width .2s; }
+/* analysis sub-sections */
+.subnav { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: flex-end; border-bottom: 1px solid var(--line); }
+.subnav .grp { display: flex; flex-direction: column; gap: 2px; }
+.subnav .grp .lbl { padding-left: 12px; font-size: 11px; }
+.subnav .grp div { display: flex; flex-wrap: wrap; gap: 2px; }
+.subnav button { font: 500 14px var(--sans); color: var(--fg-3); background: none; border: 0; border-bottom: 2px solid transparent; padding: 8px 12px; cursor: pointer; }
+.subnav button[aria-selected="true"] { color: var(--fg); border-bottom-color: var(--blue); }
+.subnav .sep { width: 1px; align-self: stretch; background: var(--line); margin: 6px 0; }
+/* console styles, scoped to the carried-over sections (.cx) */
+.cx { --blue-2: #a9c6f1; --blue-3: #5d93e2; }
+:root[data-theme="dark"] .cx { --blue-2: #2c4f80; --blue-3: #3f72bd; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cx { --blue-2: #2c4f80; --blue-3: #3f72bd; } }
+.cx .seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 8px; overflow: hidden; }
+.cx .seg button { font: 500 13px var(--sans); border: 0; background: var(--surface); color: var(--fg-2); padding: 6px 11px; cursor: pointer; }
+.cx .seg button + button { border-left: 1px solid var(--line-strong); }
+.cx .seg button[aria-pressed="true"] { background: var(--fg); color: var(--surface); }
+.cx input[type="search"] { font: 14px var(--sans); color: var(--fg); background: var(--surface); border: 1px solid var(--line-strong); border-radius: 8px; padding: 6px 10px; min-width: 0; flex: 1 1 220px; }
+.cx .issue { border: 1px solid var(--line); border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 8px; background: var(--surface); }
+.cx .issue[data-status="проверить"] { border-left: 3px solid var(--orange); }
+.cx .issue[data-status="держится"] { border-left: 3px solid var(--blue); }
+.pill.neutral { background: var(--sunken); color: var(--fg-2); }
+.cx .code, .rate + .code { font: 13px/1.45 var(--mono); }
+.rate { display: grid; grid-template-columns: 9.5em minmax(0, 1fr) 4.2em; gap: 4px 8px; align-items: center; font-size: 12.5px; color: var(--fg-2); }
+.bar { height: 8px; background: var(--sunken); border-radius: 4px; overflow: hidden; }
+.bar > i { display: block; height: 100%; border-radius: 4px; }
+.rate .num, .cx .num { font-variant-numeric: tabular-nums; text-align: right; color: var(--fg); }
+details > summary { cursor: pointer; color: var(--blue-ink); font-size: 13px; }
+.cx .xcase { background: var(--sunken); border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; }
+.cx .callout { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 14px; }
+.cx .callout .big { font: 600 30px/1 var(--sans); font-variant-numeric: tabular-nums; }
+.cx .chart { overflow-x: auto; }
+.cx .crow { display: grid; grid-template-columns: 11em minmax(150px, 1fr) minmax(200px, 1.25fr); gap: 4px 14px; align-items: center; padding: 5px 4px; border-radius: 6px; font-size: 13px; }
+.cx .crow:hover { background: var(--sunken); }
+.cx .crow.head { font-size: 12px; color: var(--fg-3); font-weight: 500; }
+.cx .crow.low .rn { color: var(--orange-ink); font-weight: 600; }
+.cx .cov { display: grid; grid-template-columns: minmax(0, 1fr) 8.6em; gap: 8px; align-items: center; }
+.cx .track { position: relative; height: 22px; }
+.cx .track::before { content: ""; position: absolute; left: 0; right: 0; top: 10px; height: 1px; background: var(--line); }
+.cx .track .g { position: absolute; top: 4px; width: 1px; height: 14px; background: var(--line); }
+.cx .track .ci { position: absolute; top: 9px; height: 4px; border-radius: 2px; opacity: .55; }
+.cx .track .pt { position: absolute; top: 5px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; border: 2px solid var(--surface); }
+.cx .axis { position: relative; height: 16px; }
+.cx .axis span { position: absolute; transform: translateX(-50%); }
+.cx .axis span:first-child { transform: none; } .cx .axis span:last-child { transform: translateX(-100%); }
+.cx .tbl { overflow-x: auto; }
+.cx td.id { font: 12px var(--mono); color: var(--fg-3); white-space: nowrap; }
+.cx .xsteps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 12px; }
+.cx .xstep { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 14px; display: flex; flex-direction: column; gap: 6px; }
+.cx .xstep .k { font: 500 12px var(--mono); color: var(--fg-3); }
+.cx .xstep .v { font: 600 24px/1.1 var(--sans); color: var(--blue-ink); font-variant-numeric: tabular-nums; }
+.cx .cards3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 14px; }
+.cx .verdict { font-weight: 700; }
+.cx .verdict.found { color: var(--blue-ink); } .cx .verdict.missed { color: var(--orange-ink); }
+.cx .accrow { display: grid; grid-template-columns: 13em minmax(0, 1fr) 3.5em; gap: 4px 10px; align-items: center; font-size: 13px; }
+.cx .note-en { font-size: 12.5px; color: var(--fg-3); }
+.tip { position: fixed; z-index: 10; pointer-events: none; background: var(--fg); color: var(--surface); font-size: 12.5px; line-height: 1.4; padding: 8px 10px; border-radius: 7px; max-width: 280px; }
+.cx figure.dg { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.cx figure.dg figcaption { font-size: 13px; color: var(--fg-3); max-width: 90ch; }
+.cx .sq-diagram { display: block; width: 100%; height: auto; }
+.cx .sq-diagram .t { font-family: var(--sans); fill: var(--fg); }
+.cx .sq-diagram .t2 { fill: var(--fg-2); } .cx .sq-diagram .t3 { fill: var(--fg-3); }
+.cx .sq-diagram .tb { fill: var(--blue-ink); } .cx .sq-diagram .to { fill: var(--orange-ink); }
+.cx .sq-diagram .box { fill: var(--surface); stroke: var(--line-strong); stroke-width: 1.2; }
+.cx .sq-diagram .sunk { fill: var(--sunken); }
+.cx .sq-diagram .hub { fill: var(--blue-1); stroke: var(--blue); stroke-width: 1.6; }
+.cx .sq-diagram .call { fill: var(--orange-1); stroke: var(--orange); stroke-width: 1.4; }
+.cx .sq-diagram .island { fill: var(--surface); stroke: var(--fg-3); stroke-width: 1.2; stroke-dasharray: 5 4; }
+.cx .sq-diagram .e-ok { stroke: var(--blue); stroke-width: 2.6; fill: none; }
+.cx .sq-diagram .e-broken { stroke: var(--orange); stroke-width: 2.2; stroke-dasharray: 8 5; fill: none; }
+.cx .sq-diagram .e-key, .cx .sq-diagram .e-flow { stroke: var(--fg-2); stroke-width: 1.6; fill: none; }
+.cx .sq-diagram .e-region { stroke: var(--fg-3); stroke-width: 1.6; stroke-dasharray: 2 4; fill: none; }
+.cx .sq-diagram .m-ok { fill: var(--blue); } .cx .sq-diagram .m-key { fill: var(--fg-2); } .cx .sq-diagram .m-broken { fill: var(--orange); }
+.cx .dgscroll { overflow-x: auto; }
+.cx .dgscroll .sq-diagram { min-width: 760px; }
+.cx .erd { background: #fff; border-radius: 8px; padding: 8px; overflow: auto; max-height: 80vh; }
+.cx .erd svg { display: block; max-width: none; height: auto; }
 </style>
 <div class="wrap">
   <header class="stack" style="gap:10px">
@@ -115,7 +191,7 @@ footer { color: var(--fg-3); font-size: 13px; border-top: 1px solid var(--line);
   <nav class="steps" role="tablist" aria-label="Этапы">
     <button class="step" role="tab" id="t-entry" aria-controls="p-entry" aria-selected="true"><span class="k">1 · Сбор</span><span class="t">Проверка при вводе</span><span class="d">Интервьюер заполняет анкету — ошибки видны сразу</span></button>
     <button class="step" role="tab" id="t-file" aria-controls="p-file" aria-selected="false"><span class="k">2 · Обработка</span><span class="t">Проверка файла по регионам</span><span class="d">Загрузите CSV обследования — правила по каждому региону</span></button>
-    <button class="step" role="tab" id="t-anal" aria-controls="p-anal" aria-selected="false"><span class="k">3 · Анализ</span><span class="t">Сводка и дела</span><span class="d">Где регион записывает иначе, что это меняет и что исправить</span></button>
+    <button class="step" role="tab" id="t-anal" aria-controls="p-anal" aria-selected="false"><span class="k">3 · Анализ</span><span class="t">Результаты и метод</span><span class="d">Где регион записывает иначе, что это меняет, что исправить и почему этому можно верить</span></button>
   </nav>
 
   <!-- 1 · ENTRY -->
@@ -149,6 +225,20 @@ footer { color: var(--fg-3); font-size: 13px; border-top: 1px solid var(--line);
 
   <!-- 3 · ANALYSIS -->
   <section id="p-anal" role="tabpanel" aria-labelledby="t-anal" class="stack" hidden>
+    <nav class="subnav" aria-label="Разделы анализа">
+      <div class="grp"><span class="lbl">Результаты</span><div role="tablist">
+        <button role="tab" id="s-map" aria-controls="x-map" aria-selected="true">Карта и дела</button>
+        <button role="tab" id="s-child" aria-controls="p-child" aria-selected="false">Детская бедность</button>
+        <button role="tab" id="s-fin" aria-controls="p-fin" aria-selected="false">Финансы домохозяйств</button></div></div>
+      <span class="sep" aria-hidden="true"></span>
+      <div class="grp"><span class="lbl">Как получены правила и почему им можно доверять</span><div role="tablist">
+        <button role="tab" id="s-rules" aria-controls="p-rules" aria-selected="false">Правила</button>
+        <button role="tab" id="s-new" aria-controls="p-new" aria-selected="false">Новая форма</button>
+        <button role="tab" id="s-dec" aria-controls="p-dec" aria-selected="false">Декодер</button>
+        <button role="tab" id="s-trust" aria-controls="p-trust" aria-selected="false">Надёжность</button>
+        <button role="tab" id="s-data" aria-controls="p-data" aria-selected="false">Данные</button></div></div>
+    </nav>
+    <div id="x-map" role="tabpanel" aria-labelledby="s-map" class="stack">
     <div class="grid2" style="grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)">
       <div class="panel stack">
         <div class="row" style="justify-content:space-between"><h2>Отклонения по регионам</h2><span id="a-src" class="muted"></span></div>
@@ -161,13 +251,26 @@ footer { color: var(--fg-3); font-size: 13px; border-top: 1px solid var(--line);
       <div class="cases" id="a-cases"></div>
       <div class="panel stack" id="a-case"></div>
     </div>
+    <details class="panel" id="a-loose"></details>
+    </div>
+    <section id="p-child" role="tabpanel" aria-labelledby="s-child" class="stack cx" hidden></section>
+    <section id="p-fin" role="tabpanel" aria-labelledby="s-fin" class="stack cx" hidden></section>
+    <section id="p-rules" role="tabpanel" aria-labelledby="s-rules" class="stack cx" hidden></section>
+    <section id="p-new" role="tabpanel" aria-labelledby="s-new" class="stack cx" hidden></section>
+    <section id="p-dec" role="tabpanel" aria-labelledby="s-dec" class="stack cx" hidden></section>
+    <section id="p-trust" role="tabpanel" aria-labelledby="s-trust" class="stack cx" hidden></section>
+    <section id="p-data" role="tabpanel" aria-labelledby="s-data" class="stack cx" hidden></section>
   </section>
 
-  <footer>Правила и проверки — открытый код: github.com/bprankster/kz-regional-comparability. Движок в браузере даёт те же результаты, что и Python-версия (сверено построчно на Д-002, Д-006, Д-008 за 2024 год). Демонстрационные расчёты — на синтетических микроданных STAT.DATATHON 2026.</footer>
+  <footer>Правила и проверки — открытый код: github.com/bprankster/kz-regional-comparability. Движок в браузере даёт те же результаты, что и Python-версия (сверено построчно на Д-002, Д-006, Д-008 за 2024 год). Демонстрационные расчёты — на синтетических микроданных STAT.DATATHON 2026. Каждое число посчитано кодом; языковая модель пишет правила и формулировки.</footer>
 </div>
+<div class="tip" id="x-tip" hidden></div>
 
 <script>
 /*ENGINE*/
+</script>
+<script>
+/*EXTRA*/
 </script>
 <script>
 const B = /*DATA*/null;
@@ -187,9 +290,23 @@ $('#h-rules').textContent = B.ruleCount;
 $('#h-acc').textContent = B.acc.precision ? (100 * B.acc.precision).toFixed(1).replace('.', ',') + '% / полнота ' + (100 * B.acc.recall).toFixed(1).replace('.', ',') + '%' : '—';
 
 /* tabs */
-const tabs = [...document.querySelectorAll('[role=tab]')];
-function openTab(id) { tabs.forEach(t => { const on = t.id === id; t.setAttribute('aria-selected', on); $('#' + t.getAttribute('aria-controls')).hidden = !on; }); if (id === 't-anal') renderAnalysis(); try { history.replaceState(null, '', '#' + id.slice(2)); } catch (e) {} }
+const tabs = [...document.querySelectorAll('nav.steps [role=tab]')];
+function openTab(id) { tabs.forEach(t => { const on = t.id === id; t.setAttribute('aria-selected', on); $('#' + t.getAttribute('aria-controls')).hidden = !on; }); if (id === 't-anal') openSub(curSub); else try { history.replaceState(null, '', '#' + id.slice(2)); } catch (e) {} }
 tabs.forEach(t => t.addEventListener('click', () => openTab(t.id)));
+
+/* analysis sub-sections: map and cases (this app) + sections carried over from the console */
+const X = window.StatQUOAnalysis;
+const subs = [...document.querySelectorAll('.subnav [role=tab]')];
+const SUBRENDER = { map: () => renderAnalysis(), child: X.renderChild, fin: X.renderFin, rules: X.renderRules, new: X.renderNew, dec: X.renderDecoder, trust: X.renderTrust, data: X.renderData };
+const subDone = {};
+let curSub = 'map';
+function openSub(k) {
+  curSub = k;
+  subs.forEach(t => { const on = t.id === 's-' + k; t.setAttribute('aria-selected', on); $('#' + t.getAttribute('aria-controls')).hidden = !on; });
+  if (k === 'map' || !subDone[k]) { SUBRENDER[k](); subDone[k] = true; }
+  try { history.replaceState(null, '', '#' + (k === 'map' ? 'anal' : k)); } catch (e) {}
+}
+subs.forEach(t => t.addEventListener('click', () => openSub(t.id.slice(2))));
 
 /* ---------- 1 · entry ---------- */
 const FIELDS = [
@@ -359,8 +476,8 @@ function download(name, text, type = 'text/csv') { const a = document.createElem
 /* ---------- 3 · analysis ---------- */
 let selRegion = null, selCase = B.cases[0].id;
 function analysisIssues() {
-  if (RUN) return { src: `последняя проверка: ${RUN.forms.map(f => FORM[f]).join(', ')}, ${RUN.year}`, list: RUN.issues.map(i => ({ region: i.region, status: i.status, form: i.form, year: i.year, ru: issueText(i), rr: i.rate_region, rs: i.rate_rest, rule: i.rule_id })) };
-  return { src: 'полный анализ: 5 форм, 2023–2024', list: B.issues.map(i => ({ region: i.region, status: i.status === 'держится' ? 'hold' : 'check', form: i.form, year: i.year, ru: i.ru, rr: i.rateRegion, rs: i.rateRest, rule: i.rule, cas: i.case })) };
+  if (RUN) return { src: `последняя проверка: ${RUN.forms.map(f => FORM[f]).join(', ')}, ${RUN.year}`, list: RUN.issues.map(i => { const t = B.txt[i.rule_id] || {}; return { region: i.region, status: i.status, form: i.form, year: i.year, ru: issueText(i), rr: i.rate_region, rs: i.rate_rest, rule: i.rule_id, quote: t.quote, doc: DOC[t.doc] || t.doc, sql: t.sql, trust: SYN[i.synthesis] || i.synthesis, records: i.records }; }) };
+  return { src: 'полный анализ: 5 форм, 2023–2024', list: B.issues.map(i => ({ region: i.region, status: i.status === 'держится' ? 'hold' : 'check', form: i.form, year: i.year, ru: i.ru, rr: i.rateRegion, rs: i.rateRest, rule: i.rule, cas: i.case, quote: i.quote, doc: i.doc, sql: i.sql, trust: i.trust, records: i.records })) };
 }
 function renderAnalysis() {
   const A = analysisIssues(); $('#a-src').textContent = 'Источник: ' + A.src;
@@ -379,8 +496,19 @@ function renderAnalysis() {
   if (selRegion) {
     const L = A.list.filter(i => i.region === selRegion);
     $('#a-rh').textContent = `${RU[selRegion] || selRegion}: отклонений ${L.length}`;
-    $('#a-reg').innerHTML = L.length ? L.map(i => `<article class="hit ${i.status === 'hold' ? '' : 'miss'}" style="border-left-color:${i.status === 'hold' ? 'var(--blue)' : 'var(--orange)'}"><div class="row" style="justify-content:space-between"><b>${esc(FORM[i.form] || i.form)} · ${i.year}</b><span class="pill ${i.status}">${i.status === 'hold' ? 'держится' : 'проверить'}</span></div><p>${esc(i.ru)}</p><p class="muted">${i.rr == null ? '' : `в регионе ${pct(i.rr)}, в остальной стране ${pct(i.rs)}`}${i.cas ? ` · дело ${esc(i.cas)}` : ''}</p></article>`).join('') : '<p class="muted">Отклонений нет.</p>';
+    $('#a-reg').innerHTML = L.length ? L.map(i => `<article class="hit ${i.status === 'hold' ? '' : 'miss'}" style="border-left-color:${i.status === 'hold' ? 'var(--blue)' : 'var(--orange)'}"><div class="row" style="justify-content:space-between"><b>${esc(FORM[i.form] || i.form)} · ${i.year}</b><span class="pill ${i.status}">${i.status === 'hold' ? 'держится' : 'проверить'}</span></div><p>${esc(i.ru)}</p>
+      ${i.quote ? `<p class="quote">«${esc(i.quote)}»${i.doc ? ` — ${esc(i.doc)}` : ''}</p>` : ''}
+      ${i.rr == null ? '' : X.rateRows({ region: i.region, rateRegion: i.rr, rateRest: i.rs, status: i.status === 'hold' ? 'держится' : 'проверить' })}
+      <p class="muted">${i.trust ? `Метка доверия: ${esc(i.trust)}` : ''}${i.cas ? ` · <a href="#" data-case="${esc(i.cas)}">дело ${esc(i.cas)}</a>` : ''}</p>
+      ${i.sql ? `<details><summary>Запрос для реальных данных (SQL)</summary><pre class="sql">${esc(i.sql)}</pre></details>` : ''}</article>`).join('') : '<p class="muted">Отклонений нет.</p>';
+    $('#a-reg').querySelectorAll('a[data-case]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); selCase = a.dataset.case; renderAnalysis(); $('#a-case').scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   }
+  // issues outside the case files (full analysis)
+  const loose = B.issues.filter(i => !i.case);
+  $('#a-loose').innerHTML = `<summary><b>Прочие отклонения: ${loose.length}</b> <span class="muted">— полный анализ, 2023–2024: в сводке по регионам, отдельное дело не составлялось</span></summary>
+    <div class="scroll" style="max-height:420px;margin-top:10px"><table><thead><tr><th>Регион</th><th>Год</th><th>Форма</th><th>Что проверено</th><th class="num">Записей</th><th class="num">Регион / остальные</th><th>Статус</th></tr></thead><tbody>
+    ${loose.map(i => `<tr><td>${esc(RU[i.region] || i.region)}</td><td>${i.year}</td><td>${esc(i.formRu)}</td><td>${esc(i.ru)}</td><td class="num">${i.records ?? '—'}</td><td class="num">${i.rateRegion == null ? '—' : pct(i.rateRegion) + ' / ' + pct(i.rateRest)}</td><td><span class="pill ${i.status === 'держится' ? 'hold' : 'check'}">${i.status === 'держится' ? 'держится' : 'проверить'}</span></td></tr>`).join('')}
+    </tbody></table></div>`;
   // cases
   const CI = B.caseImpact || {};
   $('#a-cases').innerHTML = `<p class="lbl">Разобранные дела · все формы, 2023–2024</p>` + B.cases.map(c => `<button class="case" data-c="${c.id}" aria-selected="${c.id === selCase}"><div class="row" style="justify-content:space-between"><span class="muted">${c.id}</span><span class="pill ${c.status === 'держится' ? 'hold' : 'miss'}">${esc(c.status === 'держится' ? 'держится на синтетике' : c.status)}</span></div><div style="font-weight:600">${esc(c.title)}</div>${(CI[c.id] || [])[0] ? `<div class="muted"><b style="color:var(--fg)">${esc(CI[c.id][0][0])}</b> ${esc(CI[c.id][0][1])}</div>` : ''}</button>`).join('');
@@ -389,7 +517,12 @@ function renderAnalysis() {
   $('#a-case').innerHTML = `<h2>${c.id}. ${esc(c.title)}</h2><div class="cols3">
     <div class="stack" style="gap:6px"><p class="lbl">1 · Проблема</p><p>${esc(c.finding)}</p></div>
     <div class="stack" style="gap:6px"><p class="lbl">2 · Влияние</p>${imp.map(([b, s]) => `<div><div class="big" style="font-size:24px">${esc(b)}</div><div class="muted">${esc(s)}</div></div>`).join('')}<p>${esc(c.indicator)}</p></div>
-    <div class="stack" style="gap:6px"><p class="lbl">3 · Рекомендация</p><p>${esc(c.fix)}</p><p class="muted"><b>Вероятная причина:</b> ${esc(c.cause)}</p></div></div>`;
+    <div class="stack" style="gap:6px"><p class="lbl">3 · Рекомендация</p><p>${esc(c.fix)}</p><p class="muted"><b>Вероятная причина:</b> ${esc(c.cause)}</p></div></div>`
+    + (() => { const n = B.issues.filter(i => i.case === c.id); return n.length ? `<details><summary>Отклонения по регионам в этом деле: ${n.length}</summary><div class="scroll" style="max-height:360px"><table><thead><tr><th>Регион</th><th>Год</th><th>Форма</th><th>Что проверено</th><th class="num">Записей</th><th class="num">Регион / остальные</th><th>Статус</th></tr></thead><tbody>
+      ${n.map(i => `<tr><td>${esc(RU[i.region] || i.region)}</td><td>${i.year}</td><td>${esc(i.formRu)}</td><td>${esc(i.ru)}</td><td class="num">${i.records ?? '—'}</td><td class="num">${i.rateRegion == null ? '—' : pct(i.rateRegion) + ' / ' + pct(i.rateRest)}</td><td><span class="pill ${i.status === 'держится' ? 'hold' : 'check'}">${i.status === 'держится' ? 'держится' : 'проверить'}</span></td></tr>`).join('')}
+      </tbody></table></div></details>` : '<p class="muted">В сводке по регионам этого дела нет: проблема общенациональная или выявлена отдельным расчётом.</p>'; })();
 }
-const h0 = (location.hash || '').slice(1); if (['entry', 'file', 'anal'].includes(h0)) openTab('t-' + h0);
+const h0 = (location.hash || '').slice(1);
+if (['entry', 'file', 'anal'].includes(h0)) openTab('t-' + h0);
+else if (h0 in SUBRENDER) { curSub = h0; openTab('t-anal'); }
 </script>

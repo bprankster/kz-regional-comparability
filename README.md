@@ -3,9 +3,9 @@
 STAT.DATATHON 2026 · Track 2 "AI for Official Statistics" · team StatQUO
 (Aidai Totoeva, Baiirbek Kholikov, Almanbet Kaldybaev, Nargiza Zhumalieva)
 
-**Console (results, in Russian):** https://bprankster.github.io/kz-regional-comparability/ — the same page as `console/StatQUO_console.html`.
+**Web app (the IT solution, in Russian):** https://bprankster.github.io/kz-regional-comparability/app/ (the site root opens it) — also `app/StatQUO_app.html`, works offline.
 
-**Web app (the IT solution, in Russian):** https://bprankster.github.io/kz-regional-comparability/app/ — also `app/StatQUO_app.html`, works offline. Three modules: (1) checks while a D-002 questionnaire is filled in; (2) upload survey CSV files (D-002, D-006, D-008) and get rule checks by region with CSV and SQL downloads; (3) region map and case files. All checks run in the browser; data never leaves the computer. `app/engine.js` is a JavaScript port of `engine/statquo.py`, verified row by row against the Python results for 2024. Rebuild: `python app/build_app.py`.
+Three stages: (1) checks while a D-002 questionnaire is filled in; (2) upload survey CSV files (D-002, D-006, D-008) and get rule checks by region with CSV and SQL downloads; (3) analysis — results (region map with questionnaire quotes and SQL, eleven case files problem → impact → fix, child poverty, household finances) and method (all 176 rules, new-form demo, decoder, trust checks, data model; these sections come from the former console, `app/analysis_extra.js`). All checks run in the browser; data never leaves the computer. `app/engine.js` is a JavaScript port of `engine/statquo.py`, verified row by row against the Python results for 2024. Rebuild: `python app/build_app.py`. The former console is kept as an archive at https://bprankster.github.io/kz-regional-comparability/console/.
 
 > **Кратко.** Инструмент для Бюро национальной статистики: читает анкеты обследований домохозяйств (Д-002, Д-004, Д-006, Д-008),
 > превращает их в исполняемые проверки (LLM) и сравнивает регионы, годы и формы (ML), чтобы найти, где одна и та же ситуация
@@ -92,7 +92,7 @@ situation in the same way? It is rerun every quarter on the Bureau's own records
    `D002-x-D008-nochild-household` (the engine adds `ROSTER_U18` from D-008); flagged regions enter the scorecard and case C1. `schema/draw.py` draws the diagrams (Russian and English for
    slides, two full technical diagrams) and writes `DATA_MODEL.md`.
 
-11. **Console** (`console/`): one page in Russian with the map, the tab "Проблема → влияние → рекомендация", child-poverty coverage,
+11. **Console** (`console/`, archive; its sections now live in the app's Analysis tab): one page in Russian with the map, the tab "Проблема → влияние → рекомендация", child-poverty coverage,
    household finances, decoder, new-form demo, rules, trust checks and the data model. `python console/build_console.py out/ console/ && python console/make_page.py`.
    The tab "Проблема → влияние → рекомендация" shows each of the 11 case files as one chain: the problem (the case finding and its scorecard
    rows by region), the impact (the indicator affected, with a number only where code computed it: C1 child-indicator coverage, C4, C9, C10, C11),
