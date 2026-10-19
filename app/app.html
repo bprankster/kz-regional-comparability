@@ -62,7 +62,13 @@ select, input[type="number"], input[type="text"] { font: 14px var(--sans); color
 .field.bad select, .field.bad input { border-color: var(--orange); box-shadow: 0 0 0 2px var(--orange-1); }
 .field.miss select, .field.miss input { border-color: var(--line-strong); border-style: dashed; }
 @media (max-width: 560px) { .field { grid-template-columns: 1fr; } }
-.check { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+.check { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--fg-2); cursor: pointer; }
+.field .check input[type="checkbox"] { width: 18px; height: 18px; margin: 0; flex: none; accent-color: var(--blue); }
+.hit .head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.hit .head b { flex: 1 1 auto; min-width: 0; }
+.hit .head .pill { flex: none; margin-top: 1px; }
+#entry { gap: 0; }
+.entry-note { margin-bottom: 4px; }
 .hit { border: 1px solid var(--line); border-left: 4px solid var(--orange); border-radius: 8px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
 .hit.miss { border-left-color: var(--line-strong); }
 .quote { font-size: 13px; color: var(--fg-2); border-left: 2px solid var(--line-strong); padding-left: 10px; }
@@ -199,7 +205,7 @@ details > summary { cursor: pointer; color: var(--blue-ink); font-size: 13px; }
     <div class="panel stack">
       <div class="row" style="justify-content:space-between"><h2>Анкета Д-002, фрагмент</h2>
         <div class="row"><button class="btn" id="ex-bad">Пример с ошибкой</button><button class="btn" id="ex-ok">Корректная анкета</button><button class="btn" id="ex-clear">Очистить</button></div></div>
-      <p class="muted">Поля и коды — из бланка Д-002 2024 года. Правила применяются к каждому изменению.</p>
+      <p class="muted entry-note">Поля и коды — из бланка Д-002 2024 года. Правила применяются к каждому изменению.</p>
       <form id="entry" class="stack" autocomplete="off" onsubmit="return false"></form>
     </div>
     <div class="panel stack" aria-live="polite">
@@ -349,8 +355,9 @@ function checkEntry() {
   for (const h of list) for (const c of String(h.column).split(/[|+]/)) { const el = document.querySelector(`.field[data-c="${c}"]`); if (el) el.classList.add(h.kind === 'error' ? 'bad' : 'miss'); }
   $('#e-sum').innerHTML = err.length ? `<span class="pill err">Ошибок: ${err.length}</span>` + (miss.length ? ` <span class="pill miss">Не заполнено: ${miss.length}</span>` : '')
     : miss.length ? `<span class="pill miss">Не заполнено: ${miss.length}</span>` : '<span class="pill ok">Ошибок нет</span>';
+  const title = h => { const s = h.t.ru || h.rule.id; return h.kind === 'missing' ? 'Нужен ответ: ' + s.replace(/\s+заполнено\.?$/u, '') : s; };
   $('#e-hits').innerHTML = list.length ? list.map(h => `<article class="hit ${h.kind === 'missing' ? 'miss' : ''}">
-      <div class="row" style="justify-content:space-between"><b>${esc(h.t.ru || h.rule.id)}</b><span class="pill ${h.kind === 'missing' ? 'miss' : 'err'}">${h.kind === 'missing' ? 'не заполнено' : esc(TYPE[h.rule.type] || h.rule.type)}</span></div>
+      <div class="head"><b>${esc(title(h))}</b><span class="pill ${h.kind === 'missing' ? 'miss' : 'err'}">${h.kind === 'missing' ? 'не заполнено' : esc(TYPE[h.rule.type] || h.rule.type)}</span></div>
       ${h.t.quote ? `<p class="quote">«${esc(h.t.quote)}» — ${esc(DOC[h.t.doc] || h.t.doc || '')}</p>` : ''}
       <p class="muted"><code>${esc(h.rule.id)}</code></p></article>`).join('')
     : '<p class="muted">Все применимые правила выполнены.</p>';
