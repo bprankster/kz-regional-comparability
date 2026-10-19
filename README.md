@@ -5,6 +5,8 @@ STAT.DATATHON 2026 · Track 2 "AI for Official Statistics" · team StatQUO
 
 **Console (results, in Russian):** https://bprankster.github.io/kz-regional-comparability/ — the same page as `console/StatQUO_console.html`.
 
+**Web app (the IT solution, in Russian):** https://bprankster.github.io/kz-regional-comparability/app/ — also `app/StatQUO_app.html`, works offline. Three modules: (1) checks while a D-002 questionnaire is filled in; (2) upload survey CSV files (D-002, D-006, D-008) and get rule checks by region with CSV and SQL downloads; (3) region map and case files. All checks run in the browser; data never leaves the computer. `app/engine.js` is a JavaScript port of `engine/statquo.py`, verified row by row against the Python results for 2024. Rebuild: `python app/build_app.py`.
+
 > **Кратко.** Инструмент для Бюро национальной статистики: читает анкеты обследований домохозяйств (Д-002, Д-004, Д-006, Д-008),
 > превращает их в исполняемые проверки (LLM) и сравнивает регионы, годы и формы (ML), чтобы найти, где одна и та же ситуация
 > записывается по-разному. На синтетическом выпуске 2023–2024: 176 правил (142 в виде SQL-запросов для Бюро), 102 отклонения

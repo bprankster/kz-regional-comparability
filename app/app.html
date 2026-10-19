@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StatQUO — контроль качества первичных данных</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:wght@500&display=swap">
+<style>
+:root {
+  --bg: #f6f7f9; --surface: #ffffff; --sunken: #eef1f5; --line: #dde2ea; --line-strong: #c3cbd7;
+  --fg: #18202b; --fg-2: #47505e; --fg-3: #6a7381;
+  --blue: #2a6fd6; --blue-1: #dce8fa; --blue-ink: #1d4f9c;
+  --orange: #d96a33; --orange-1: #fbe7dc; --orange-ink: #9a4313;
+  --green-1: #e1f2e6; --green-ink: #1f6b39;
+  --sans: 'IBM Plex Sans', 'Segoe UI', Arial, sans-serif; --mono: 'IBM Plex Mono', Consolas, monospace; --serif: 'IBM Plex Serif', Georgia, serif;
+  --r: 10px; color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #12161c; --surface: #1a2029; --sunken: #222a35; --line: #2c3542; --line-strong: #3d4858;
+  --fg: #e8ecf1; --fg-2: #b4bdc9; --fg-3: #8d97a5; --blue: #4f8de8; --blue-1: #1f3350; --blue-ink: #9cc0f5;
+  --orange: #d96a33; --orange-1: #3d2618; --orange-ink: #f2a77d; --green-1: #1c3324; --green-ink: #8fd4a6; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #12161c; --surface: #1a2029; --sunken: #222a35; --line: #2c3542; --line-strong: #3d4858;
+  --fg: #e8ecf1; --fg-2: #b4bdc9; --fg-3: #8d97a5; --blue: #4f8de8; --blue-1: #1f3350; --blue-ink: #9cc0f5;
+  --orange: #d96a33; --orange-1: #3d2618; --orange-ink: #f2a77d; --green-1: #1c3324; --green-ink: #8fd4a6; color-scheme: dark; }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.5 var(--sans); }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 24px 20px 64px; display: flex; flex-direction: column; gap: 20px; }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--fg-3); margin: 0; }
+h1 { font: 500 clamp(26px, 4vw, 36px)/1.1 var(--serif); margin: 0; text-wrap: balance; }
+h2 { font: 600 18px/1.3 var(--sans); margin: 0; }
+h3 { font: 600 15px/1.3 var(--sans); margin: 0; }
+p { margin: 0; }
+.lead { color: var(--fg-2); max-width: 78ch; }
+.muted { color: var(--fg-3); font-size: 13px; }
+.badge { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--green-ink); background: var(--green-1); padding: 6px 10px; border-radius: 99px; }
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.step { text-align: left; font: inherit; color: inherit; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px; cursor: pointer; display: flex; flex-direction: column; gap: 4px; }
+.step .k { font: 500 12px var(--mono); color: var(--fg-3); letter-spacing: .06em; text-transform: uppercase; }
+.step .t { font-weight: 600; font-size: 16px; }
+.step .d { color: var(--fg-3); font-size: 13px; }
+.step[aria-selected="true"] { border-color: var(--blue); box-shadow: inset 0 -3px 0 var(--blue); }
+.step:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+@media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 18px; min-width: 0; }
+.stack { display: flex; flex-direction: column; gap: 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.grid2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 860px) { .grid2 { grid-template-columns: 1fr; } }
+button.btn { font: 500 14px var(--sans); border: 1px solid var(--line-strong); background: var(--surface); color: var(--fg); border-radius: 8px; padding: 7px 12px; cursor: pointer; }
+button.btn.primary { background: var(--blue); border-color: var(--blue); color: #fff; }
+button.btn:disabled { opacity: .5; cursor: default; }
+select, input[type="number"], input[type="text"] { font: 14px var(--sans); color: var(--fg); background: var(--surface); border: 1px solid var(--line-strong); border-radius: 8px; padding: 6px 10px; }
+/* entry form */
+.fgroup { display: flex; flex-direction: column; gap: 10px; padding: 12px 0; border-top: 1px solid var(--line); }
+.fgroup:first-child { border-top: 0; padding-top: 0; }
+.field { display: grid; grid-template-columns: minmax(0, 1fr) 190px; gap: 12px; align-items: center; }
+.field label { font-size: 14px; }
+.field .code { font: 12px var(--mono); color: var(--fg-3); }
+.field select, .field input { width: 100%; }
+.field.bad select, .field.bad input { border-color: var(--orange); box-shadow: 0 0 0 2px var(--orange-1); }
+.field.miss select, .field.miss input { border-color: var(--line-strong); border-style: dashed; }
+@media (max-width: 560px) { .field { grid-template-columns: 1fr; } }
+.check { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+.hit { border: 1px solid var(--line); border-left: 4px solid var(--orange); border-radius: 8px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+.hit.miss { border-left-color: var(--line-strong); }
+.quote { font-size: 13px; color: var(--fg-2); border-left: 2px solid var(--line-strong); padding-left: 10px; }
+.pill { font: 600 12px/1 var(--sans); padding: 4px 8px; border-radius: 99px; white-space: nowrap; }
+.pill.err { background: var(--orange-1); color: var(--orange-ink); }
+.pill.miss { background: var(--sunken); color: var(--fg-2); }
+.pill.hold { background: var(--blue-1); color: var(--blue-ink); }
+.pill.check { background: var(--orange-1); color: var(--orange-ink); }
+.pill.ok { background: var(--green-1); color: var(--green-ink); }
+.big { font: 600 34px/1 var(--sans); font-variant-numeric: tabular-nums; }
+.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.kpi { border-top: 3px solid var(--blue); padding-top: 10px; display: flex; flex-direction: column; gap: 6px; }
+@media (max-width: 760px) { .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* processing */
+.drop { border: 2px dashed var(--line-strong); border-radius: var(--r); padding: 26px; text-align: center; background: var(--sunken); cursor: pointer; }
+.drop.over { border-color: var(--blue); background: var(--blue-1); }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+th { text-align: left; font-weight: 600; font-size: 12px; color: var(--fg-3); border-bottom: 1px solid var(--line-strong); padding: 8px; position: sticky; top: 0; background: var(--surface); }
+td { border-bottom: 1px solid var(--line); padding: 8px; vertical-align: top; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr.clickable { cursor: pointer; }
+tr.clickable:hover td { background: var(--sunken); }
+pre.sql { font: 12.5px/1.5 var(--mono); background: var(--sunken); border-radius: 8px; padding: 10px 12px; white-space: pre-wrap; margin: 0; }
+.scroll { overflow: auto; max-height: 520px; }
+/* map */
+.map { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 5px; }
+@media (max-width: 560px) { .tile { padding: 5px; min-height: 54px; } .tile .nm { font-size: 10px; } }
+.tile { font: inherit; text-align: left; border: 1px solid var(--line); border-radius: 8px; padding: 8px; min-height: 66px; background: var(--surface); color: var(--fg); cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; }
+.tile .n { font: 600 16px var(--sans); }
+.tile .nm { font-size: 11.5px; line-height: 1.2; hyphens: auto; overflow-wrap: break-word; }
+.tile[aria-pressed="true"] { outline: 2px solid var(--fg); }
+.cases { display: flex; flex-direction: column; gap: 8px; }
+.case { font: inherit; color: inherit; text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; cursor: pointer; }
+.case[aria-selected="true"] { border-color: var(--blue); box-shadow: inset 3px 0 0 var(--blue); }
+.cols3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 860px) { .cols3 { grid-template-columns: 1fr; } }
+.lbl { font: 500 12px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--fg-3); }
+footer { color: var(--fg-3); font-size: 13px; border-top: 1px solid var(--line); padding-top: 14px; }
+.prog { height: 6px; background: var(--sunken); border-radius: 99px; overflow: hidden; }
+.prog i { display: block; height: 100%; background: var(--blue); width: 0; transition: width .2s; }
+</style>
+<div class="wrap">
+  <header class="stack" style="gap:10px">
+    <p class="eyebrow">StatQUO · STAT.DATATHON 2026 · Трек «ИИ для официальной статистики»</p>
+    <h1>Контроль качества первичных данных обследований домохозяйств</h1>
+    <p class="lead">Правила проверки извлечены из анкет и инструкций Бюро языковой моделью (<span id="h-rules"></span> правил, точность <span id="h-acc"></span>). Приложение применяет их на трёх этапах: при вводе анкеты, при проверке файла перед публикацией и при анализе различий между регионами.</p>
+    <div class="row"><span class="badge">● Данные обрабатываются в этом браузере и никуда не отправляются</span><span class="muted">Работает и без интернета: файл можно открыть с диска.</span></div>
+  </header>
+
+  <nav class="steps" role="tablist" aria-label="Этапы">
+    <button class="step" role="tab" id="t-entry" aria-controls="p-entry" aria-selected="true"><span class="k">1 · Сбор</span><span class="t">Проверка при вводе</span><span class="d">Интервьюер заполняет анкету — ошибки видны сразу</span></button>
+    <button class="step" role="tab" id="t-file" aria-controls="p-file" aria-selected="false"><span class="k">2 · Обработка</span><span class="t">Проверка файла по регионам</span><span class="d">Загрузите CSV обследования — правила по каждому региону</span></button>
+    <button class="step" role="tab" id="t-anal" aria-controls="p-anal" aria-selected="false"><span class="k">3 · Анализ</span><span class="t">Сводка и дела</span><span class="d">Где регион записывает иначе, что это меняет и что исправить</span></button>
+  </nav>
+
+  <!-- 1 · ENTRY -->
+  <section id="p-entry" role="tabpanel" aria-labelledby="t-entry" class="grid2">
+    <div class="panel stack">
+      <div class="row" style="justify-content:space-between"><h2>Анкета Д-002, фрагмент</h2>
+        <div class="row"><button class="btn" id="ex-bad">Пример с ошибкой</button><button class="btn" id="ex-ok">Корректная анкета</button><button class="btn" id="ex-clear">Очистить</button></div></div>
+      <p class="muted">Поля и коды — из бланка Д-002 2024 года. Правила применяются к каждому изменению.</p>
+      <form id="entry" class="stack" autocomplete="off" onsubmit="return false"></form>
+    </div>
+    <div class="panel stack" aria-live="polite">
+      <div class="row" style="justify-content:space-between"><h2>Проверка анкеты</h2><span id="e-sum"></span></div>
+      <div id="e-hits" class="stack"></div>
+      <p class="muted">В рабочей системе поле «по списку членов Д-008» заполняется автоматически из контрольной карточки того же домохозяйства. Те же правила встраиваются в программу ввода или планшет интервьюера.</p>
+    </div>
+  </section>
+
+  <!-- 2 · FILE -->
+  <section id="p-file" role="tabpanel" aria-labelledby="t-file" class="stack" hidden>
+    <div class="panel stack">
+      <h2>Загрузите файлы обследования</h2>
+      <p class="muted">Д-002: <code>subject.csv</code> и <code>ocenka.csv</code> · Д-006: <code>rio_2024.csv</code> · Д-008: <code>kontr_k.csv</code> (он же нужен для сверки детского модуля Д-002). Форма и таблица определяются по столбцам. Можно выбрать сразу несколько файлов.</p>
+      <label class="drop" id="drop" tabindex="0"><input type="file" id="files" multiple accept=".csv,text/csv" hidden><b>Перетащите CSV-файлы сюда</b> или нажмите, чтобы выбрать</label>
+      <div id="f-list" class="stack"></div>
+      <div class="row"><label class="muted" for="f-year">Год обследования</label><select id="f-year"><option>2024</option><option>2023</option><option>2022</option><option>2021</option></select>
+        <button class="btn primary" id="f-run" disabled>Проверить</button><span id="f-status" class="muted"></span></div>
+      <div class="prog" id="f-prog" hidden><i></i></div>
+    </div>
+    <div id="f-out" class="stack" hidden></div>
+  </section>
+
+  <!-- 3 · ANALYSIS -->
+  <section id="p-anal" role="tabpanel" aria-labelledby="t-anal" class="stack" hidden>
+    <div class="grid2" style="grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)">
+      <div class="panel stack">
+        <div class="row" style="justify-content:space-between"><h2>Отклонения по регионам</h2><span id="a-src" class="muted"></span></div>
+        <div class="map" id="a-map"></div>
+        <p class="muted">Число — устойчивые отклонения («держится на синтетике»); в скобках — к проверке на реальных данных. Схема, не масштаб.</p>
+      </div>
+      <div class="panel stack"><h2 id="a-rh">Выберите регион</h2><div id="a-reg" class="stack scroll" style="max-height:420px"></div></div>
+    </div>
+    <div class="grid2" style="grid-template-columns:minmax(0,.8fr) minmax(0,2fr)">
+      <div class="cases" id="a-cases"></div>
+      <div class="panel stack" id="a-case"></div>
+    </div>
+  </section>
+
+  <footer>Правила и проверки — открытый код: github.com/bprankster/kz-regional-comparability. Движок в браузере даёт те же результаты, что и Python-версия (сверено построчно на Д-002, Д-006, Д-008 за 2024 год). Демонстрационные расчёты — на синтетических микроданных STAT.DATATHON 2026.</footer>
+</div>
+
+<script>
+/*ENGINE*/
+</script>
+<script>
+const B = /*DATA*/null;
+const E = window.StatQUO;
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const pct = (x, d = 1) => (x == null || Number.isNaN(x)) ? '—' : x.toFixed(d).replace('.', ',') + '%';
+const RU = Object.fromEntries(B.regions.map(r => [r.key, r.ru]));
+const FORM = { D002: 'Д-002', D006: 'Д-006', D008: 'Д-008', T001: 'Т-001', D004: 'Д-004', 'D002×D008': 'Д-002 × Д-008' };
+const TYPE = { domain: 'Допустимые коды', required: 'Обязательный ответ', skip: 'Переход', multi_select: 'Множественный выбор', consistency: 'Связь ответов' };
+const SYN = { 'forced by the answer shares': 'вытекает из долей ответов', 'partly forced': 'частично вытекает из долей',
+  'could be broken links in the synthetic data': 'может быть разрывом связей в синтетике', 'not conditional': 'доли ответов',
+  'links between the two halves of the form': 'связь двух частей формы', 'holds': 'держится' };
+const LABEL = { 'forced by the answer shares': 'hold', 'not conditional': 'hold', 'partly forced': 'check', 'could be broken links in the synthetic data': 'check' };
+const DOC = { form: 'анкета', instruction: 'инструкция', structure: 'структура файла', codebook: 'справочник' };
+$('#h-rules').textContent = B.ruleCount;
+$('#h-acc').textContent = B.acc.precision ? (100 * B.acc.precision).toFixed(1).replace('.', ',') + '% / полнота ' + (100 * B.acc.recall).toFixed(1).replace('.', ',') + '%' : '—';
+
+/* tabs */
+const tabs = [...document.querySelectorAll('[role=tab]')];
+function openTab(id) { tabs.forEach(t => { const on = t.id === id; t.setAttribute('aria-selected', on); $('#' + t.getAttribute('aria-controls')).hidden = !on; }); if (id === 't-anal') renderAnalysis(); try { history.replaceState(null, '', '#' + id.slice(2)); } catch (e) {} }
+tabs.forEach(t => t.addEventListener('click', () => openTab(t.id)));
+
+/* ---------- 1 · entry ---------- */
+const FIELDS = [
+  { g: 'Респондент' },
+  { c: 'VOZ', l: 'Возраст респондента', t: 'num' },
+  { c: 'K', l: 'Тип населённого пункта', o: [[1, 'город'], [2, 'село']] },
+  { c: 'ZT', l: 'Время на заполнение бланка', o: [[1, 'до 1 часа'], [2, '1–2 часа'], [3, '2–4 часа'], [4, '4–8 часов'], [5, '8–40 часов'], [6, 'более 40 часов']] },
+  { g: 'Часть 3' },
+  { c: 'GR31_1', l: '3.1.1 Не смогли вовремя оплатить аренду жилья (12 мес.)', o: [[1, 'да, единожды'], [2, 'да, два и более раза'], [3, 'нет'], [4, 'не актуально']] },
+  { c: 'GR317', l: '3.17 Есть ребёнок дошкольного возраста, не посещающий дошкольное учреждение?', o: [[1, 'да'], [2, 'нет']] },
+  { c: 'GR318_1', l: '3.18 Причина: слишком дорого', t: 'chk' },
+  { c: 'GR318_2', l: '3.18 Причина: нет дошкольных учреждений рядом', t: 'chk' },
+  { g: 'Часть 4 · дети' },
+  { c: 'GR40', l: 'В домашнем хозяйстве есть дети до 18 лет?', o: [[1, 'да'], [2, 'нет']] },
+  { c: 'GR41', l: '4.1 Вопрос 1 части 4 (отвечают семьи с детьми)', o: [[1, 'да'], [2, 'нет']] },
+  { g: 'Сверка с контрольной карточкой Д-008' },
+  { c: 'ROSTER_U18', l: 'По списку членов Д-008 есть член моложе 18 лет', o: [[1, 'да'], [2, 'нет']] },
+];
+const form = $('#entry');
+(function buildForm() {
+  let html = '', open = false;
+  for (const f of FIELDS) {
+    if (f.g) { if (open) html += '</div>'; html += `<div class="fgroup"><p class="lbl">${esc(f.g)}</p>`; open = true; continue; }
+    const ctl = f.t === 'num' ? `<input type="number" id="f_${f.c}" name="${f.c}" min="0" max="130" inputmode="numeric">`
+      : f.t === 'chk' ? `<label class="check"><input type="checkbox" id="f_${f.c}" name="${f.c}"> отмечено</label>`
+      : `<select id="f_${f.c}" name="${f.c}"><option value="">—</option>${f.o.map(([v, l]) => `<option value="${v}">${v} — ${esc(l)}</option>`).join('')}</select>`;
+    html += `<div class="field" data-c="${f.c}"><label for="f_${f.c}">${esc(f.l)} <span class="code">${f.c}</span></label>${ctl}</div>`;
+  }
+  form.innerHTML = html + (open ? '</div>' : '');
+})();
+function record() { const r = {}; for (const f of FIELDS) { if (!f.c) continue; const el = $('#f_' + f.c); r[f.c] = f.t === 'chk' ? (el.checked ? '1' : '') : el.value; } return r; }
+function setRecord(r) { for (const f of FIELDS) { if (!f.c) continue; const el = $('#f_' + f.c); if (f.t === 'chk') el.checked = r[f.c] === '1'; else el.value = r[f.c] ?? ''; } checkEntry(); }
+function checkEntry() {
+  const rec = record(), hits = E.checkRecord(B.rules.D002, rec, 2024);
+  const seen = new Map();
+  for (const h of hits) { const t = B.txt[h.rule.id] || {}; const k = (t.ru || h.rule.id) + h.kind; if (!seen.has(k)) seen.set(k, { ...h, t, cols: new Set() }); seen.get(k).cols.add(h.column); }
+  const list = [...seen.values()].sort((a, b) => (a.kind === 'error' ? 0 : 1) - (b.kind === 'error' ? 0 : 1));
+  const err = list.filter(h => h.kind === 'error'), miss = list.filter(h => h.kind === 'missing');
+  document.querySelectorAll('.field').forEach(el => { el.classList.remove('bad', 'miss'); });
+  for (const h of list) for (const c of String(h.column).split(/[|+]/)) { const el = document.querySelector(`.field[data-c="${c}"]`); if (el) el.classList.add(h.kind === 'error' ? 'bad' : 'miss'); }
+  $('#e-sum').innerHTML = err.length ? `<span class="pill err">Ошибок: ${err.length}</span>` + (miss.length ? ` <span class="pill miss">Не заполнено: ${miss.length}</span>` : '')
+    : miss.length ? `<span class="pill miss">Не заполнено: ${miss.length}</span>` : '<span class="pill ok">Ошибок нет</span>';
+  $('#e-hits').innerHTML = list.length ? list.map(h => `<article class="hit ${h.kind === 'missing' ? 'miss' : ''}">
+      <div class="row" style="justify-content:space-between"><b>${esc(h.t.ru || h.rule.id)}</b><span class="pill ${h.kind === 'missing' ? 'miss' : 'err'}">${h.kind === 'missing' ? 'не заполнено' : esc(TYPE[h.rule.type] || h.rule.type)}</span></div>
+      ${h.t.quote ? `<p class="quote">«${esc(h.t.quote)}» — ${esc(DOC[h.t.doc] || h.t.doc || '')}</p>` : ''}
+      <p class="muted"><code>${esc(h.rule.id)}</code></p></article>`).join('')
+    : '<p class="muted">Все применимые правила выполнены.</p>';
+}
+form.addEventListener('input', checkEntry); form.addEventListener('change', checkEntry);
+$('#ex-bad').addEventListener('click', () => setRecord({ VOZ: '41', K: '1', ZT: '1', GR31_1: '3', GR317: '1', GR318_1: '', GR318_2: '1', GR40: '2', GR41: '', ROSTER_U18: '1' }));
+$('#ex-ok').addEventListener('click', () => setRecord({ VOZ: '41', K: '1', ZT: '1', GR31_1: '4', GR317: '1', GR318_1: '', GR318_2: '1', GR40: '1', GR41: '2', ROSTER_U18: '1' }));
+$('#ex-clear').addEventListener('click', () => setRecord({}));
+checkEntry();
+
+/* ---------- 2 · file ---------- */
+const loaded = {};   // role -> {name, table}
+function detect(t) {
+  const c = t.cols;
+  if ('GR31_1' in c || 'GR317' in c) return ['D002', 'ocenka'];
+  if ('GR1' in c && 'VOZ' in c) return ['D002', 'subject'];
+  if ('VLAD1' in c || 'VLAD' in c || 'TIP_J' in c) return ['D006', 'rio'];
+  if ('GOD_ROJD' in c && 'RODSTVO' in c) return ['D008', 'kontr_k'];
+  return [null, null];
+}
+function guessYear(t) { for (const c of ['GODO', 'GOD']) if (c in t.cols) { const v = t.cols[c].find(x => x); if (v && /^20\d\d$/.test(v)) return v; } return null; }
+async function addFiles(fileList) {
+  $('#f-status').textContent = 'Читаю файлы…';
+  for (const f of fileList) {
+    const text = await f.text(); const t = E.parseCSV(text); const [form, role] = detect(t);
+    if (!form) { loaded['?' + f.name] = { name: f.name, form: null, table: t }; continue; }
+    loaded[role] = { name: f.name, form, role, table: t };
+    const y = guessYear(t); if (y) $('#f-year').value = y;
+  }
+  renderFiles(); $('#f-status').textContent = '';
+}
+function canRun() { return (loaded.subject && loaded.ocenka) || loaded.rio || loaded.kontr_k; }
+function renderFiles() {
+  const rows = Object.values(loaded).map(x => `<div class="row"><span class="pill ${x.form ? 'ok' : 'miss'}">${x.form ? FORM[x.form] + ' · ' + x.role : 'не распознан'}</span><span>${esc(x.name)}</span><span class="muted">${x.table.n.toLocaleString('ru-RU')} записей, ${Object.keys(x.table.cols).length} столбцов</span></div>`);
+  const need = []; if (loaded.subject && !loaded.ocenka) need.push('для Д-002 нужен ещё ocenka.csv'); if (loaded.ocenka && !loaded.subject) need.push('для Д-002 нужен ещё subject.csv');
+  if ((loaded.subject || loaded.ocenka) && !loaded.kontr_k) need.push('без kontr_k.csv (Д-008) сверка детского модуля по домохозяйствам будет пропущена');
+  $('#f-list').innerHTML = rows.join('') + need.map(n => `<p class="muted">${esc(n)}</p>`).join('');
+  $('#f-run').disabled = !canRun();
+}
+const drop = $('#drop'), input = $('#files');
+drop.addEventListener('click', e => { if (e.target !== input) input.click(); });
+drop.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); } });
+input.addEventListener('change', () => addFiles(input.files));
+['dragenter', 'dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('over'); }));
+['dragleave', 'drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('over'); }));
+drop.addEventListener('drop', e => addFiles(e.dataTransfer.files));
+
+let RUN = null;   // last run: {issues, rows, notRun, forms, year}
+function median(a) { const s = [...a].sort((x, y) => x - y), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; }
+function modeStr(a) { const c = {}; a.forEach(x => c[x] = (c[x] || 0) + 1); const mx = Math.max(...Object.values(c)); return Object.keys(c).filter(k => c[k] === mx).sort()[0]; }
+function toIssues(form, flags) {   // the same grouping as engine/scorecard.py
+  const g = {};
+  for (const f of flags.filter(f => f.flag)) { const k = [f.rule_id, f.type, f.year, f.region].join('\u0001'); (g[k] = g[k] || []).push(f); }
+  return Object.values(g).map(fs => {
+    const f0 = fs[0], syn = modeStr(fs.map(f => f.synthesis));
+    let status = LABEL[syn] || 'check', synthesis = syn;
+    if (f0.rule_id.includes('same-person')) { synthesis = 'links between the two halves of the form'; status = 'check'; }
+    return { form, rule_id: f0.rule_id, type: f0.type, year: f0.year, region: f0.region, columns: new Set(fs.map(f => f.column)).size,
+      example_column: fs[0].column, records: Math.max(...fs.map(f => f.applicable)), rate_region: median(fs.map(f => f.rate_region)),
+      rate_rest: median(fs.map(f => f.rate_rest)), excess: fs.reduce((s, f) => s + f.excess, 0), synthesis, status };
+  });
+}
+const tick = () => new Promise(r => setTimeout(r, 0));
+$('#f-run').addEventListener('click', async () => {
+  const year = +$('#f-year').value, prog = $('#f-prog'), bar = prog.querySelector('i');
+  prog.hidden = false; bar.style.width = '5%'; $('#f-run').disabled = true;
+  const jobs = [];
+  if (loaded.subject && loaded.ocenka) jobs.push(['D002', () => E.buildTables('D002', { subject: loaded.subject.table, ocenka: loaded.ocenka.table, roster: loaded.kontr_k && loaded.kontr_k.table }, year)]);
+  if (loaded.rio) jobs.push(['D006', () => E.buildTables('D006', { rio: loaded.rio.table }, year)]);
+  if (loaded.kontr_k) jobs.push(['D008', () => E.buildTables('D008', { kontr_k: loaded.kontr_k.table }, year)]);
+  const t0 = performance.now(); let issues = [], rows = [], notRun = [], records = 0, checks = 0;
+  for (let i = 0; i < jobs.length; i++) {
+    const [form, build] = jobs[i]; $('#f-status').textContent = `Проверяю ${FORM[form]}…`; await tick();
+    const tables = build(); const res = E.runRules(B.rules[form], tables, year);
+    const flags = E.flagRegions(res.rows);
+    issues = issues.concat(toIssues(form, flags)); rows = rows.concat(res.rows.map(r => ({ form, ...r })));
+    notRun = notRun.concat(res.notRun.map(n => ({ form, ...n })));
+    records += Object.entries(tables).filter(([k]) => k !== 'hh').reduce((s, [, t]) => s + t.n, 0);
+    checks += new Set(res.rows.map(r => r.rule_id + '|' + r.column)).size;
+    bar.style.width = (5 + 95 * (i + 1) / jobs.length) + '%';
+  }
+  const ms = performance.now() - t0;
+  RUN = { issues, rows, notRun, year, forms: jobs.map(j => j[0]), records, checks, ms };
+  $('#f-status').textContent = `Готово за ${(ms / 1000).toFixed(1).replace('.', ',')} с`; $('#f-run').disabled = false;
+  renderRun();
+});
+function issueText(i) { const t = B.txt[i.rule_id]; return t ? t.ru : i.rule_id; }
+function renderRun() {
+  const R = RUN, hold = R.issues.filter(i => i.status === 'hold').length, chk = R.issues.length - hold;
+  const regions = [...new Set(R.issues.map(i => i.region))];
+  const out = $('#f-out'); out.hidden = false;
+  out.innerHTML = `<div class="panel stack">
+      <div class="row" style="justify-content:space-between"><h2>Результат проверки · ${R.forms.map(f => FORM[f]).join(', ')} · ${R.year}</h2>
+        <div class="row"><button class="btn" id="dl-iss">Отклонения (CSV)</button><button class="btn" id="dl-all">Все проверки (CSV)</button><button class="btn" id="dl-sql">SQL для реальных данных</button><button class="btn primary" id="go-anal">Открыть анализ →</button></div></div>
+      <div class="kpis">
+        <div class="kpi"><span class="big">${R.records.toLocaleString('ru-RU')}</span><span class="muted">записей проверено</span></div>
+        <div class="kpi"><span class="big">${R.checks}</span><span class="muted">проверок (правило × столбец) по ${new Set(R.rows.map(r => r.te)).size} регионам</span></div>
+        <div class="kpi"><span class="big">${R.issues.length}</span><span class="muted">отклонений регионов: ${hold} держатся, ${chk} проверить</span></div>
+        <div class="kpi"><span class="big">${regions.length}</span><span class="muted">регионов с отклонениями</span></div>
+      </div>
+      <div class="row"><label class="muted" for="fi-reg">Регион</label><select id="fi-reg"><option value="">все</option>${regions.sort((a, b) => (RU[a] || a).localeCompare(RU[b] || b, 'ru')).map(r => `<option value="${esc(r)}">${esc(RU[r] || r)}</option>`).join('')}</select>
+        <label class="muted" for="fi-st">Статус</label><select id="fi-st"><option value="">все</option><option value="hold">держится на синтетике</option><option value="check">проверить на реальных данных</option></select></div>
+      <div class="scroll"><table><thead><tr><th>Регион</th><th>Форма</th><th>Что проверено</th><th class="num">Записей</th><th class="num">Регион / остальные</th><th>Статус</th></tr></thead><tbody id="fi-body"></tbody></table></div>
+      ${R.notRun.length ? `<details><summary class="muted">Не выполнено правил: ${new Set(R.notRun.map(n => n.rule_id)).size}</summary><ul class="muted">${[...new Map(R.notRun.map(n => [n.rule_id, n])).values()].map(n => `<li><code>${esc(n.rule_id)}</code> — ${esc(n.reason)}</li>`).join('')}</ul></details>` : ''}
+    </div>`;
+  const draw = () => {
+    const reg = $('#fi-reg').value, st = $('#fi-st').value;
+    const list = R.issues.filter(i => (!reg || i.region === reg) && (!st || i.status === st)).sort((a, b) => b.excess - a.excess);
+    $('#fi-body').innerHTML = list.map((i, k) => `<tr class="clickable" data-k="${k}"><td>${esc(RU[i.region] || i.region)}</td><td>${FORM[i.form]}</td><td>${esc(issueText(i))}</td><td class="num">${i.records}</td><td class="num">${pct(i.rate_region)} / ${pct(i.rate_rest)}</td><td><span class="pill ${i.status}">${i.status === 'hold' ? 'держится' : 'проверить'}</span></td></tr>
+      <tr hidden data-d="${k}"><td colspan="6"><div class="stack"><p class="muted">Метка доверия: ${esc(SYN[i.synthesis] || i.synthesis)} · правило <code>${esc(i.rule_id)}</code></p>${B.txt[i.rule_id] && B.txt[i.rule_id].quote ? `<p class="quote">«${esc(B.txt[i.rule_id].quote)}»</p>` : ''}${B.txt[i.rule_id] && B.txt[i.rule_id].sql ? `<pre class="sql">${esc(B.txt[i.rule_id].sql)}</pre>` : ''}</div></td></tr>`).join('') || '<tr><td colspan="6" class="muted">Нет отклонений при выбранных фильтрах.</td></tr>';
+    $('#fi-body').querySelectorAll('tr.clickable').forEach(tr => tr.addEventListener('click', () => { const d = $('#fi-body').querySelector(`tr[data-d="${tr.dataset.k}"]`); d.hidden = !d.hidden; }));
+  };
+  $('#fi-reg').addEventListener('change', draw); $('#fi-st').addEventListener('change', draw); draw();
+  $('#dl-iss').addEventListener('click', () => download('statquo_issues.csv', toCSV(R.issues.map(i => ({ form: i.form, year: i.year, region: i.region, region_ru: RU[i.region] || i.region, rule_id: i.rule_id, rule_ru: issueText(i), type: i.type, columns: i.columns, example_column: i.example_column, records: i.records, rate_region: i.rate_region.toFixed(1), rate_rest: i.rate_rest.toFixed(1), status: i.status === 'hold' ? 'держится на синтетике' : 'проверить на реальных данных', trust: SYN[i.synthesis] || i.synthesis })))));
+  $('#dl-all').addEventListener('click', () => download('statquo_checks.csv', toCSV(R.rows.map(r => ({ form: r.form, year: r.year, region: r.region, rule_id: r.rule_id, type: r.type, table: r.table, column: r.column, records: r.records, applicable: r.applicable, violations: r.violations, rate: Number.isNaN(r.rate) ? '' : (100 * r.rate).toFixed(2) })))));
+  $('#dl-sql').addEventListener('click', () => { const ids = [...new Set(R.issues.map(i => i.rule_id))].filter(id => B.txt[id] && B.txt[id].sql);
+    download('statquo_checks.sql', ids.map(id => `-- ${id}: ${B.txt[id].ru}\n-- источник: «${(B.txt[id].quote || '').replace(/\n/g, ' ')}»\n${B.txt[id].sql}\n`).join('\n'), 'text/plain'); });
+  $('#go-anal').addEventListener('click', () => openTab('t-anal'));
+}
+function toCSV(rows) { if (!rows.length) return ''; const h = Object.keys(rows[0]); const q = v => { const s = String(v ?? ''); return /[",\n;]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; }; return '﻿' + [h.join(','), ...rows.map(r => h.map(k => q(r[k])).join(','))].join('\n'); }
+function download(name, text, type = 'text/csv') { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], { type: type + ';charset=utf-8' })); a.download = name; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500); }
+
+/* ---------- 3 · analysis ---------- */
+let selRegion = null, selCase = B.cases[0].id;
+function analysisIssues() {
+  if (RUN) return { src: `последняя проверка: ${RUN.forms.map(f => FORM[f]).join(', ')}, ${RUN.year}`, list: RUN.issues.map(i => ({ region: i.region, status: i.status, form: i.form, year: i.year, ru: issueText(i), rr: i.rate_region, rs: i.rate_rest, rule: i.rule_id })) };
+  return { src: 'полный анализ: 5 форм, 2023–2024', list: B.issues.map(i => ({ region: i.region, status: i.status === 'держится' ? 'hold' : 'check', form: i.form, year: i.year, ru: i.ru, rr: i.rateRegion, rs: i.rateRest, rule: i.rule, cas: i.case })) };
+}
+function renderAnalysis() {
+  const A = analysisIssues(); $('#a-src').textContent = 'Источник: ' + A.src;
+  const by = {}; for (const i of A.list) { const b = by[i.region] || (by[i.region] = { hold: 0, check: 0 }); b[i.status]++; }
+  const maxH = Math.max(1, ...Object.values(by).map(b => b.hold));
+  const cells = []; const W = 8, H = Math.max(...B.regions.map(r => r.row)) + 1;
+  for (let row = 0; row < H; row++) for (let col = 0; col < W; col++) {
+    const r = B.regions.find(x => x.col === col && x.row === row);
+    if (!r) { cells.push('<div></div>'); continue; }
+    const b = by[r.key] || { hold: 0, check: 0 }, a = b.hold / maxH;
+    const bg = b.hold ? `rgba(42,111,214,${0.15 + 0.7 * a})` : 'var(--surface)', fg = a > 0.55 ? '#fff' : 'var(--fg)';
+    cells.push(`<button class="tile" data-r="${esc(r.key)}" aria-pressed="${selRegion === r.key}" style="background:${bg};color:${fg}"><span class="nm">${esc(r.ru)}</span><span class="n">${b.hold}${b.check ? ` <span style="font-weight:500;font-size:13px">(${b.check})</span>` : ''}</span></button>`);
+  }
+  $('#a-map').innerHTML = cells.join('');
+  $('#a-map').querySelectorAll('.tile').forEach(t => t.addEventListener('click', () => { selRegion = t.dataset.r; renderAnalysis(); }));
+  if (selRegion) {
+    const L = A.list.filter(i => i.region === selRegion);
+    $('#a-rh').textContent = `${RU[selRegion] || selRegion}: отклонений ${L.length}`;
+    $('#a-reg').innerHTML = L.length ? L.map(i => `<article class="hit ${i.status === 'hold' ? '' : 'miss'}" style="border-left-color:${i.status === 'hold' ? 'var(--blue)' : 'var(--orange)'}"><div class="row" style="justify-content:space-between"><b>${esc(FORM[i.form] || i.form)} · ${i.year}</b><span class="pill ${i.status}">${i.status === 'hold' ? 'держится' : 'проверить'}</span></div><p>${esc(i.ru)}</p><p class="muted">${i.rr == null ? '' : `в регионе ${pct(i.rr)}, в остальной стране ${pct(i.rs)}`}${i.cas ? ` · дело ${esc(i.cas)}` : ''}</p></article>`).join('') : '<p class="muted">Отклонений нет.</p>';
+  }
+  // cases
+  const CI = B.caseImpact || {};
+  $('#a-cases').innerHTML = `<p class="lbl">Разобранные дела · все формы, 2023–2024</p>` + B.cases.map(c => `<button class="case" data-c="${c.id}" aria-selected="${c.id === selCase}"><div class="row" style="justify-content:space-between"><span class="muted">${c.id}</span><span class="pill ${c.status === 'держится' ? 'hold' : 'miss'}">${esc(c.status === 'держится' ? 'держится на синтетике' : c.status)}</span></div><div style="font-weight:600">${esc(c.title)}</div>${(CI[c.id] || [])[0] ? `<div class="muted"><b style="color:var(--fg)">${esc(CI[c.id][0][0])}</b> ${esc(CI[c.id][0][1])}</div>` : ''}</button>`).join('');
+  $('#a-cases').querySelectorAll('.case').forEach(b => b.addEventListener('click', () => { selCase = b.dataset.c; renderAnalysis(); }));
+  const c = B.cases.find(x => x.id === selCase), imp = CI[c.id] || [];
+  $('#a-case').innerHTML = `<h2>${c.id}. ${esc(c.title)}</h2><div class="cols3">
+    <div class="stack" style="gap:6px"><p class="lbl">1 · Проблема</p><p>${esc(c.finding)}</p></div>
+    <div class="stack" style="gap:6px"><p class="lbl">2 · Влияние</p>${imp.map(([b, s]) => `<div><div class="big" style="font-size:24px">${esc(b)}</div><div class="muted">${esc(s)}</div></div>`).join('')}<p>${esc(c.indicator)}</p></div>
+    <div class="stack" style="gap:6px"><p class="lbl">3 · Рекомендация</p><p>${esc(c.fix)}</p><p class="muted"><b>Вероятная причина:</b> ${esc(c.cause)}</p></div></div>`;
+}
+const h0 = (location.hash || '').slice(1); if (['entry', 'file', 'anal'].includes(h0)) openTab('t-' + h0);
+</script>
