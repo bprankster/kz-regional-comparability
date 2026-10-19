@@ -52,7 +52,7 @@ p { margin: 0; }
 button.btn { font: 500 14px var(--sans); border: 1px solid var(--line-strong); background: var(--surface); color: var(--fg); border-radius: 8px; padding: 7px 12px; cursor: pointer; }
 button.btn.primary { background: var(--blue); border-color: var(--blue); color: #fff; }
 button.btn:disabled { opacity: .5; cursor: default; }
-select, input[type="number"], input[type="text"] { font: 14px var(--sans); color: var(--fg); background: var(--surface); border: 1px solid var(--line-strong); border-radius: 8px; padding: 6px 10px; }
+select, input[type="number"], input[type="text"], input[type="password"] { font: 14px var(--sans); color: var(--fg); background: var(--surface); border: 1px solid var(--line-strong); border-radius: 8px; padding: 6px 10px; }
 /* entry form */
 .fgroup { display: flex; flex-direction: column; gap: 10px; padding: 12px 0; border-top: 1px solid var(--line); }
 .fgroup:first-child { border-top: 0; padding-top: 0; }
@@ -208,7 +208,7 @@ details > summary { cursor: pointer; color: var(--blue-ink); font-size: 13px; }
   <header class="stack" style="gap:10px">
     <p class="eyebrow">StatQUO · STAT.DATATHON 2026 · Трек «ИИ для официальной статистики»</p>
     <h1>Контроль качества первичных данных обследований домохозяйств</h1>
-    <p class="lead">Языковая модель читает анкету и инструкцию Бюро и пишет правила проверки с цитатой-источником — прямо в приложении (этап 0) или заранее (<span id="h-rules"></span> правил для четырёх форм, точность <span id="h-acc"></span>). Приложение применяет правила при вводе анкеты, при проверке файла перед публикацией и при анализе различий между регионами.</p>
+    <p class="lead">Языковая модель (в нашей работе — Claude, Anthropic; можно подключить другую) читает анкету и инструкцию Бюро и пишет правила проверки с цитатой-источником — прямо в приложении (этап 0) или заранее (<span id="h-rules"></span> правил для четырёх форм, точность <span id="h-acc"></span>). Приложение применяет правила при вводе анкеты, при проверке файла перед публикацией и при анализе различий между регионами.</p>
     <div class="row"><span class="badge">● Данные обрабатываются в этом браузере и никуда не отправляются</span><span class="muted">Работает и без интернета: файл можно открыть с диска.</span></div>
   </header>
 
@@ -225,7 +225,7 @@ details > summary { cursor: pointer; color: var(--blue-ink); font-size: 13px; }
       <ol class="stack" style="margin:12px 0 0;padding-left:22px;gap:6px">
         <li>Возьмите документы одной формы (Д-002, Д-006 или Д-008) за любой год: бланк, инструкцию, структуру файла. Файлы .doc сначала пересохраните в .docx или PDF.</li>
         <li>Добавьте CSV этой формы — из него читается только строка с названиями столбцов, записи не открываются и никуда не уходят.</li>
-        <li>Выберите способ: ключ Anthropic API (вызов идёт прямо из этой страницы) или «Через чат Claude» — скопируйте запрос в чат и вставьте ответ обратно. «Сохранённый запуск» показывает ответ модели на бланк Д-002 2022 года без вызова.</li>
+        <li>Выберите модель: Claude по ключу Anthropic API, «Другая модель» — любая модель с интерфейсом, совместимым с OpenAI (например, открытая модель на сервере Бюро), или «Через чат» — скопируйте запрос в чат и вставьте ответ обратно. «Сохранённый запуск» показывает ответ Claude на бланк Д-002 2022 года без вызова.</li>
         <li>Проверьте результат: у каждого правила есть цитата из ваших документов, программа отмечает столбцы, которых нет в данных. «Скачать правила (JSON)» — для сравнения с правилами в репозитории (rules/).</li>
         <li>«Применить» — форма на этапе «Сбор» и проверка файла на этапе «Обработка» строятся по новым правилам. Встроенные правила 2023–2024 возвращаются выбором «Д-002» на «Сборе» и «встроенные» на «Обработке».</li>
       </ol></details>
@@ -240,15 +240,23 @@ details > summary { cursor: pointer; color: var(--blue-ink); font-size: 13px; }
       </div>
       <div class="panel stack">
         <h2>2. Модель</h2>
-        <div class="seg" id="ai-mode" role="group" aria-label="Способ вызова"><button type="button" data-v="api" aria-pressed="true">Ключ API</button><button type="button" data-v="chat" aria-pressed="false">Через чат Claude</button><button type="button" data-v="saved" aria-pressed="false">Сохранённый запуск</button></div>
+        <p class="muted">Правила в приложении и сохранённый запуск получены моделью <b>Claude (Anthropic)</b>; точность 99,2% / полнота 94,8% измерены для неё. Можно подключить любую другую модель — её точность измеряется на том же эталоне (<code>gold/score.py</code>).</p>
+        <div class="seg" id="ai-mode" role="group" aria-label="Способ вызова"><button type="button" data-v="api" aria-pressed="true">Claude · ключ API</button><button type="button" data-v="oai" aria-pressed="false">Другая модель</button><button type="button" data-v="chat" aria-pressed="false">Через чат</button><button type="button" data-v="saved" aria-pressed="false">Сохранённый запуск</button></div>
         <div id="ai-m-api" class="stack">
           <div class="row"><label class="muted" for="ai-key">Ключ Anthropic API</label><input type="password" id="ai-key" autocomplete="off" spellcheck="false" placeholder="sk-ant-…" style="flex:1 1 220px">
             <label class="muted" for="ai-model">Модель</label><select id="ai-model"><option value="claude-sonnet-5-5">Claude Sonnet 5.5 (быстрее)</option><option value="claude-opus-5-5">Claude Opus 5.5</option></select></div>
           <p class="muted">Ключ хранится только в этой вкладке и уходит только в api.anthropic.com.</p>
-          <div class="row"><button class="btn primary" id="ai-run" disabled>Извлечь правила</button><button class="btn" id="ai-stop" hidden>Остановить</button><span id="ai-status" class="muted"></span></div>
+        </div>
+        <div id="ai-m-oai" class="stack" hidden>
+          <div class="row"><label class="muted" for="ai-oai-preset">Где модель</label><select id="ai-oai-preset">
+            <option value="ollama">Ollama на этом компьютере</option><option value="server">Сервер Бюро (vLLM, LLM-платформа)</option><option value="openrouter">OpenRouter</option><option value="custom">Другой адрес</option></select></div>
+          <div class="row"><label class="muted" for="ai-oai-url">Адрес API</label><input type="text" id="ai-oai-url" autocomplete="off" spellcheck="false" placeholder="https://…/v1" style="flex:1 1 260px"></div>
+          <div class="row"><label class="muted" for="ai-oai-model">Модель</label><input type="text" id="ai-oai-model" autocomplete="off" spellcheck="false" placeholder="название модели на сервере, например qwen2.5:32b" style="flex:1 1 260px">
+            <label class="muted" for="ai-oai-key">Ключ</label><input type="password" id="ai-oai-key" autocomplete="off" spellcheck="false" placeholder="если нужен" style="flex:0 1 160px"></div>
+          <p class="muted" id="ai-oai-note">Любая модель с интерфейсом, совместимым с OpenAI (/v1/chat/completions): открытая модель (Qwen, Llama, AlemLLM, KazLLM и др.) на сервере Бюро через vLLM или Ollama, будущая LLM-платформа Бюро или облачный провайдер. PDF передаются извлечённым текстом. Сервер должен разрешать запросы из браузера (CORS; для Ollama — переменная OLLAMA_ORIGINS).</p>
         </div>
         <div id="ai-m-chat" class="stack" hidden>
-          <p class="muted">Без ключа: скопируйте запрос, вставьте в новый чат Claude (PDF-файлы приложите к сообщению), затем вставьте ответ сюда.</p>
+          <p class="muted">Без ключа: скопируйте запрос, вставьте в новый чат с моделью (Claude или другой; PDF-файлы приложите к сообщению), затем вставьте ответ сюда.</p>
           <div class="row"><button class="btn" id="ai-copy" disabled>Скопировать запрос</button><span id="ai-copy-st" class="muted"></span></div>
           <textarea id="ai-reply" rows="6" placeholder="Вставьте сюда ответ модели (JSON)" style="font:12.5px var(--mono);width:100%;border:1px solid var(--line-strong);border-radius:8px;padding:8px;background:var(--surface);color:var(--fg)"></textarea>
           <div class="row"><button class="btn primary" id="ai-parse">Разобрать ответ</button></div>
@@ -257,6 +265,7 @@ details > summary { cursor: pointer; color: var(--blue-ink); font-size: 13px; }
           <p class="muted" id="ai-saved-note"></p>
           <div class="row"><button class="btn primary" id="ai-replay">Воспроизвести запуск</button></div>
         </div>
+        <div class="row"><button class="btn primary" id="ai-run" disabled>Извлечь правила</button><button class="btn" id="ai-stop" hidden>Остановить</button><span id="ai-status" class="muted"></span></div>
         <div class="prog" id="ai-prog" hidden><i></i></div>
         <pre id="ai-stream" class="sql" hidden style="max-height:180px;overflow:auto"></pre>
       </div>

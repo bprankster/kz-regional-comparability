@@ -65,7 +65,7 @@ function renderInputs() {
   $('#ai-list').innerHTML = docs.join('') + cols.join('') + (AI.docs.length && !Object.keys(AI.cols).length ? '<p class="muted">Добавьте CSV обследования: модель должна знать точные названия столбцов (сами записи не читаются).</p>' : '');
   $('#ai-list').querySelectorAll('[data-rm]').forEach(b => b.addEventListener('click', () => { const v = b.dataset.rm; if (v[0] === 'd') AI.docs.splice(+v.slice(1), 1); else delete AI.cols[v.slice(1)]; renderInputs(); }));
   const ready = AI.docs.length > 0;
-  $('#ai-run').disabled = !ready || !$('#ai-key').value.trim(); $('#ai-copy').disabled = !ready;
+  $('#ai-run').disabled = !ready || !modelReady(); $('#ai-copy').disabled = !ready;
 }
 async function addFiles(list) {
   if (AI.docs.some(d => d.saved)) { AI.docs = []; AI.cols = {}; }   // new files replace the replayed run's inputs
@@ -126,6 +126,41 @@ async function callClaude({ system, content, maxTokens, onText, signal }) {
   }
   return { text, stop };
 }
+/* any model with an OpenAI-compatible /v1/chat/completions (Ollama, vLLM, the Bureau's LLM platform, cloud providers) */
+async function callOpenAI({ system, text, maxTokens, onText, signal }) {
+  const base = $('#ai-oai-url').value.trim().replace(/\/+$/, ''), model = $('#ai-oai-model').value.trim(), key = $('#ai-oai-key').value.trim();
+  if (!base || !model) throw new Error('укажите адрес API и название модели');
+  let res;
+  try {
+    res = await fetch(base + '/chat/completions', {
+      method: 'POST', signal,
+      headers: Object.assign({ 'content-type': 'application/json' }, key ? { authorization: 'Bearer ' + key } : {}),
+      body: JSON.stringify({ model, max_tokens: maxTokens, temperature: 0, stream: true, messages: [{ role: 'system', content: system }, { role: 'user', content: text }] }),
+    });
+  } catch (e) { if (e.name === 'AbortError') throw e; throw new Error(`нет связи с ${base} (сервер не запущен или не разрешает запросы из браузера — CORS)`); }
+  if (!res.ok) { let m = ''; try { m = (await res.text()).slice(0, 200); } catch (e) {} throw new Error(`ошибка сервера ${res.status}${m ? ': ' + m : ''}`); }
+  const reader = res.body.getReader(), dec = new TextDecoder(); let buf = '', out = '', stop = null;
+  for (;;) {
+    const { value, done } = await reader.read(); if (done) break;
+    buf += dec.decode(value, { stream: true }); let i;
+    while ((i = buf.indexOf('\n')) >= 0) {
+      const line = buf.slice(0, i).trim(); buf = buf.slice(i + 1);
+      if (!line.startsWith('data:')) continue; const data = line.slice(5).trim(); if (data === '[DONE]') continue;
+      let j; try { j = JSON.parse(data); } catch (e) { continue; }
+      const c = j.choices && j.choices[0]; if (!c) continue;
+      const t = (c.delta && c.delta.content) || (c.message && c.message.content) || ''; if (t) { out += t; onText(out); }
+      if (c.finish_reason) stop = c.finish_reason === 'length' ? 'max_tokens' : c.finish_reason;
+    }
+  }
+  return { text: out, stop };
+}
+const modelLabel = () => AI.mode === 'oai' ? $('#ai-oai-model').value.trim() || 'модель' : $('#ai-model').selectedOptions[0].textContent.split(' (')[0];
+const modelId = () => AI.mode === 'oai' ? `${$('#ai-oai-model').value.trim()} (${$('#ai-oai-url').value.trim()})` : $('#ai-model').value;
+function modelReady() { return AI.mode === 'oai' ? !!($('#ai-oai-url').value.trim() && $('#ai-oai-model').value.trim()) : AI.mode === 'api' ? !!$('#ai-key').value.trim() : false; }
+function callModel({ system, content, text, maxTokens, onText, signal }) {
+  if (AI.mode === 'oai') return callOpenAI({ system, text, maxTokens: Math.min(maxTokens, 16000), onText, signal });
+  return callClaude({ system, content: content || [{ type: 'text', text }], maxTokens, onText, signal });
+}
 function parseJSON(text, listKey) {
   const a = text.indexOf('{'), b = text.lastIndexOf('}');
   if (a < 0) throw new Error('в ответе нет JSON');
@@ -149,16 +184,22 @@ function stopProgress() { clearInterval(timer); $('#ai-prog i').style.width = '1
 
 $('#ai-run').addEventListener('click', async () => {
   AI.abort = new AbortController(); $('#ai-run').disabled = true; $('#ai-stop').hidden = false; AI.n = 0;
-  startProgress(`Модель читает документы (${$('#ai-model').selectedOptions[0].textContent.split(' (')[0]})`);
+  if (AI.mode === 'oai' && AI.docs.some(d => d.pdf && d.text == null)) { $('#ai-status').textContent = 'PDF не удалось прочитать как текст (нужен интернет для pdf.js) — сохраните его как DOCX или TXT'; $('#ai-run').disabled = false; $('#ai-stop').hidden = true; return; }
+  startProgress(`Модель читает документы (${modelLabel()})`);
   try {
-    const { text, stop } = await callClaude({ system: CFG.prompt, content: apiContent(), maxTokens: 32000, onText: onStream, signal: AI.abort.signal });
-    stopProgress(); AI.source = `${$('#ai-model').value}, вызов из приложения, ${new Date().toLocaleString('ru-RU')}`;
+    const { text, stop } = await callModel({ system: CFG.prompt, content: apiContent(), text: userText(true), maxTokens: 32000, onText: onStream, signal: AI.abort.signal });
+    stopProgress(); AI.source = `${modelId()}, вызов из приложения, ${new Date().toLocaleString('ru-RU')}`;
     accept(text, stop === 'max_tokens');
   } catch (e) { stopProgress(); $('#ai-status').textContent = e.name === 'AbortError' ? 'Остановлено' : 'Не получилось: ' + e.message; }
   $('#ai-run').disabled = false; $('#ai-stop').hidden = true;
 });
 $('#ai-stop').addEventListener('click', () => AI.abort && AI.abort.abort());
 $('#ai-key').value = store.get('statquo-key');
+const PRESETS = { ollama: 'http://localhost:11434/v1', server: '', openrouter: 'https://openrouter.ai/api/v1', custom: '' };
+for (const id of ['ai-oai-url', 'ai-oai-model', 'ai-oai-key']) { $('#' + id).value = store.get('statquo-' + id); $('#' + id).addEventListener('input', () => { store.set('statquo-' + id, $('#' + id).value.trim()); renderInputs(); }); }
+$('#ai-oai-preset').value = store.get('statquo-preset') || 'ollama';
+if (!$('#ai-oai-url').value) $('#ai-oai-url').value = PRESETS[$('#ai-oai-preset').value];
+$('#ai-oai-preset').addEventListener('change', e => { store.set('statquo-preset', e.target.value); $('#ai-oai-url').value = PRESETS[e.target.value]; store.set('statquo-ai-oai-url', $('#ai-oai-url').value); if (e.target.value === 'server') $('#ai-oai-url').focus(); renderInputs(); });
 $('#ai-key').addEventListener('input', () => { store.set('statquo-key', $('#ai-key').value.trim()); renderInputs(); });
 $('#ai-copy').addEventListener('click', async () => {
   const text = CFG.prompt + '\n\n---\n\n' + userText(true);
@@ -169,10 +210,11 @@ $('#ai-copy').addEventListener('click', async () => {
 $('#ai-parse').addEventListener('click', () => { AI.seconds = null; AI.source = 'чат Claude, ответ вставлен вручную'; accept($('#ai-reply').value, false); });
 $('#ai-mode').querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
   AI.mode = b.dataset.v; $('#ai-mode').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
-  $('#ai-m-api').hidden = AI.mode !== 'api'; $('#ai-m-chat').hidden = AI.mode !== 'chat'; $('#ai-m-saved').hidden = AI.mode !== 'saved';
+  for (const m of ['api', 'oai', 'chat', 'saved']) $('#ai-m-' + m).hidden = AI.mode !== m;
+  $('#ai-run').hidden = !['api', 'oai'].includes(AI.mode); store.set('statquo-mode', AI.mode); renderInputs();
 }));
 const S = CFG.saved;
-$('#ai-saved-note').textContent = `Запуск ${S.when}: модель Claude получила только бланк ${FORMNAME(S.form)} ${S.year} года и структуру файла (анкета не использовалась при разработке) и работала ${S.seconds} с. Здесь записанный ответ воспроизводится за несколько секунд; дальше всё как при живом вызове.`;
+$('#ai-saved-note').textContent = `Запуск ${S.when}: модель Claude (Anthropic) получила только бланк ${FORMNAME(S.form)} ${S.year} года и структуру файла (анкета не использовалась при разработке) и работала ${S.seconds} с. Здесь записанный ответ воспроизводится за несколько секунд; дальше всё как при живом вызове.`;
 $('#ai-replay').addEventListener('click', async () => {
   $('#ai-form').value = S.form; $('#ai-year').value = String(S.year); AI.cols = JSON.parse(JSON.stringify(S.columns)); AI.docs = S.docs.map(n => ({ kind: 'doc', name: n, text: '(в сохранённом запуске)', saved: true }));
   renderInputs(); AI.n = 0; startProgress('Воспроизвожу сохранённый ответ');
@@ -264,20 +306,21 @@ function renderAiCases() {
   if (!box) { box = document.createElement('div'); box.id = 'a-ai'; box.className = 'panel stack'; $('#a-loose').before(box); }
   if (!RUN) { box.hidden = true; return; }
   box.hidden = false;
+  if (!RUN.issues.length) { box.innerHTML = '<h2>Дела по этой проверке · ИИ</h2><p class="muted">В последней проверке отклонений нет — составлять дела не из чего.</p>'; return; }
   if (AI.cases && AI.cases.run === RUN) return drawCases(box);
   box.innerHTML = `<div class="row" style="justify-content:space-between"><h2>Дела по этой проверке · ИИ</h2>
       <div class="row"><button class="btn primary" id="ac-run">Составить дела</button><button class="btn" id="ac-copy">Скопировать запрос</button></div></div>
-    <p class="muted">Модель получает только сводку отклонений последней проверки (правило, регион, доли, число записей) — ни одной записи — и группирует их в дела «проблема → влияние → рекомендация». Числа в тексте программа сверяет с расчётом. Нужен ключ API на этапе 0 или ответ из чата.</p>
+    <p class="muted">Модель получает только сводку отклонений последней проверки (правило, регион, доли, число записей) — ни одной записи — и группирует их в дела «проблема → влияние → рекомендация». Числа в тексте программа сверяет с расчётом. Модель — та, что выбрана на этапе 0 (Claude или другая), или ответ из чата.</p>
     <div id="ac-paste" class="stack" hidden><textarea id="ac-reply" rows="5" placeholder="Вставьте ответ модели (JSON)" style="font:12.5px var(--mono);width:100%;border:1px solid var(--line-strong);border-radius:8px;padding:8px;background:var(--surface);color:var(--fg)"></textarea><div class="row"><button class="btn primary" id="ac-parse">Разобрать ответ</button></div></div>
     <span id="ac-status" class="muted"></span><pre id="ac-stream" class="sql" hidden style="max-height:140px;overflow:auto"></pre>`;
   const inp = caseInput(), user = 'Сводка отклонений:\n' + JSON.stringify(inp.json, null, 1);
   $('#ac-copy').addEventListener('click', async () => { $('#ac-paste').hidden = false; try { await navigator.clipboard.writeText(CASE_SYSTEM + '\n\n---\n\n' + user); $('#ac-status').textContent = 'Запрос скопирован: вставьте его в чат Claude, ответ — в поле ниже.'; } catch (e) { $('#ac-reply').value = CASE_SYSTEM + '\n\n---\n\n' + user; $('#ac-status').textContent = 'Буфер обмена недоступен: запрос в поле ниже.'; } });
   $('#ac-parse').addEventListener('click', () => take($('#ac-reply').value, 'чат Claude'));
   $('#ac-run').addEventListener('click', async () => {
-    if (!$('#ai-key').value.trim()) { $('#ac-status').textContent = 'Нет ключа API: введите его на этапе 0 или используйте «Скопировать запрос».'; return; }
+    if (!modelReady()) { $('#ac-status').textContent = 'Модель не настроена: на этапе 0 выберите «Claude · ключ API» или «Другая модель» и заполните поля, либо используйте «Скопировать запрос».'; return; }
     $('#ac-run').disabled = true; const t0 = performance.now(); const pre = $('#ac-stream'); pre.hidden = false;
     const tick = setInterval(() => { $('#ac-status').textContent = `Модель пишет дела · ${((performance.now() - t0) / 1000).toFixed(0)} с`; }, 250);
-    try { const { text } = await callClaude({ system: CASE_SYSTEM, content: [{ type: 'text', text: user }], maxTokens: 8000, onText: t => { pre.textContent = t.slice(-1200); pre.scrollTop = pre.scrollHeight; } }); clearInterval(tick); take(text, `${$('#ai-model').value}, ${((performance.now() - t0) / 1000).toFixed(0)} с`); }
+    try { const { text } = await callModel({ system: CASE_SYSTEM, text: user, maxTokens: 8000, onText: t => { pre.textContent = t.slice(-1200); pre.scrollTop = pre.scrollHeight; } }); clearInterval(tick); take(text, `${modelId()}, ${((performance.now() - t0) / 1000).toFixed(0)} с`); }
     catch (e) { clearInterval(tick); $('#ac-status').textContent = 'Не получилось: ' + e.message; $('#ac-run').disabled = false; }
   });
   function take(text, src) {
@@ -298,5 +341,6 @@ function drawCases(box) {
 }
 const baseRender = renderAnalysis;
 renderAnalysis = function () { baseRender(); renderAiCases(); };
+const m0 = store.get('statquo-mode'); if (m0 && m0 !== 'api') { const b = $(`#ai-mode button[data-v="${m0}"]`); if (b) b.click(); }
 renderInputs();
 })();
