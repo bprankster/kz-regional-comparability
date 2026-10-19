@@ -44,7 +44,18 @@ js = lambda o: json.dumps(o, ensure_ascii=False, separators=(",", ":")).replace(
 engine = (APP / "engine.js").read_text(encoding="utf-8").replace("</", "<\\/")
 extra = (APP / "analysis_extra.js").read_text(encoding="utf-8").replace("/*CONSOLE*/null", js(d))
 page = (APP / "app.html").read_text(encoding="utf-8")
-page = page.replace("/*ENGINE*/", engine).replace("/*EXTRA*/", extra).replace("/*DATA*/null", js(bundle))
+# the model step: the extraction prompt (same as extract/llm_extract.py) and the saved run of 10 Oct 2026 (D-002 2022)
+prompt_txt = (ROOT / "demo" / "prompt_d002_2022_v2.txt").read_text(encoding="utf-8")
+cols_line = prompt_txt.split("Data columns by table:\n", 1)[1].split("\n", 1)[0]
+aicfg = {
+    "prompt": (ROOT / "prompts" / "extract_rules_v2.md").read_text(encoding="utf-8"),
+    "saved": {"form": "D002", "year": 2022, "when": "10.10.2026", "seconds": 105,
+              "columns": json.loads(cols_line),
+              "docs": [l[4:-4] for l in prompt_txt.splitlines() if l.startswith("=== ") and l.endswith(" ===")],
+              "reply": (ROOT / "demo" / "reply_d002_2022_v2.txt").read_text(encoding="utf-8")},
+}
+ai = (APP / "ai_stage.js").read_text(encoding="utf-8").replace("/*AICFG*/null", js(aicfg)).replace("</", "<\\/")
+page = page.replace("/*ENGINE*/", engine).replace("/*EXTRA*/", extra).replace("/*DATA*/null", js(bundle)).replace("/*AI*/", ai)
 out = APP / "StatQUO_app.html"
 out.write_text(page, encoding="utf-8")
 

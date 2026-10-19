@@ -35,7 +35,8 @@ p { margin: 0; }
 .lead { color: var(--fg-2); max-width: 78ch; }
 .muted { color: var(--fg-3); font-size: 13px; }
 .badge { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--green-ink); background: var(--green-1); padding: 6px 10px; border-radius: 99px; }
-.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 1000px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .step { text-align: left; font: inherit; color: inherit; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px; cursor: pointer; display: flex; flex-direction: column; gap: 4px; }
 .step .k { font: 500 12px var(--mono); color: var(--fg-3); letter-spacing: .06em; text-transform: uppercase; }
 .step .t { font-weight: 600; font-size: 16px; }
@@ -70,7 +71,7 @@ select, input[type="number"], input[type="text"] { font: 14px var(--sans); color
 #entry { gap: 0; }
 .entry-note { margin-bottom: 4px; }
 .entry-ctl { padding-bottom: 12px; border-bottom: 1px solid var(--line); }
-.seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 8px; overflow: hidden; }
+.seg { display: inline-flex; align-self: flex-start; border: 1px solid var(--line-strong); border-radius: 8px; overflow: hidden; }
 .seg button { font: 500 13px var(--sans); border: 0; background: var(--surface); color: var(--fg-2); padding: 6px 11px; cursor: pointer; }
 .seg button + button { border-left: 1px solid var(--line-strong); }
 .seg button[aria-pressed="true"] { background: var(--fg); color: var(--surface); }
@@ -207,22 +208,60 @@ details > summary { cursor: pointer; color: var(--blue-ink); font-size: 13px; }
   <header class="stack" style="gap:10px">
     <p class="eyebrow">StatQUO · STAT.DATATHON 2026 · Трек «ИИ для официальной статистики»</p>
     <h1>Контроль качества первичных данных обследований домохозяйств</h1>
-    <p class="lead">Правила проверки извлечены из анкет и инструкций Бюро языковой моделью (<span id="h-rules"></span> правил, точность <span id="h-acc"></span>). Приложение применяет их на трёх этапах: при вводе анкеты, при проверке файла перед публикацией и при анализе различий между регионами.</p>
+    <p class="lead">Языковая модель читает анкету и инструкцию Бюро и пишет правила проверки с цитатой-источником — прямо в приложении (этап 0) или заранее (<span id="h-rules"></span> правил для четырёх форм, точность <span id="h-acc"></span>). Приложение применяет правила при вводе анкеты, при проверке файла перед публикацией и при анализе различий между регионами.</p>
     <div class="row"><span class="badge">● Данные обрабатываются в этом браузере и никуда не отправляются</span><span class="muted">Работает и без интернета: файл можно открыть с диска.</span></div>
   </header>
 
   <nav class="steps" role="tablist" aria-label="Этапы">
+    <button class="step" role="tab" id="t-ai" aria-controls="p-ai" aria-selected="false"><span class="k">0 · Правила · ИИ</span><span class="t">Анкета → правила</span><span class="d">Модель читает бланк и инструкцию и пишет правила с цитатами</span></button>
     <button class="step" role="tab" id="t-entry" aria-controls="p-entry" aria-selected="true"><span class="k">1 · Сбор</span><span class="t">Проверка при вводе</span><span class="d">Интервьюер заполняет анкету — ошибки видны сразу</span></button>
     <button class="step" role="tab" id="t-file" aria-controls="p-file" aria-selected="false"><span class="k">2 · Обработка</span><span class="t">Проверка файла по регионам</span><span class="d">Загрузите CSV обследования — правила по каждому региону</span></button>
     <button class="step" role="tab" id="t-anal" aria-controls="p-anal" aria-selected="false"><span class="k">3 · Анализ</span><span class="t">Результаты и метод</span><span class="d">Где регион записывает иначе, что это меняет, что исправить и почему этому можно верить</span></button>
   </nav>
+
+  <!-- 0 · RULES FROM THE QUESTIONNAIRE (model) -->
+  <section id="p-ai" role="tabpanel" aria-labelledby="t-ai" class="stack" hidden>
+    <div class="grid2">
+      <div class="panel stack">
+        <h2>1. Документы анкеты</h2>
+        <div class="row"><label class="muted" for="ai-form">Форма</label><select id="ai-form"><option value="D002">Д-002</option><option value="D006">Д-006</option><option value="D008">Д-008</option><option value="D004">Д-004</option><option value="OTHER">другая</option></select>
+          <label class="muted" for="ai-year">Год</label><select id="ai-year"><option>2024</option><option>2023</option><option selected>2022</option><option>2021</option><option>2025</option></select></div>
+        <label class="drop" id="ai-drop" tabindex="0"><input type="file" id="ai-files" multiple hidden accept=".pdf,.docx,.xls,.xlsx,.txt,.md,.csv"><b>Бланк, инструкция, структура файла</b> (PDF, DOCX, XLS/XLSX, TXT)<br><span class="muted">и CSV обследования — из него читается только строка с названиями столбцов</span></label>
+        <div id="ai-list" class="stack"></div>
+        <p class="badge" style="align-self:flex-start">● В модель уходят только бланк, инструкция, структура и названия столбцов — записи обследования не отправляются</p>
+      </div>
+      <div class="panel stack">
+        <h2>2. Модель</h2>
+        <div class="seg" id="ai-mode" role="group" aria-label="Способ вызова"><button type="button" data-v="api" aria-pressed="true">Ключ API</button><button type="button" data-v="chat" aria-pressed="false">Через чат Claude</button><button type="button" data-v="saved" aria-pressed="false">Сохранённый запуск</button></div>
+        <div id="ai-m-api" class="stack">
+          <div class="row"><label class="muted" for="ai-key">Ключ Anthropic API</label><input type="password" id="ai-key" autocomplete="off" spellcheck="false" placeholder="sk-ant-…" style="flex:1 1 220px">
+            <label class="muted" for="ai-model">Модель</label><select id="ai-model"><option value="claude-sonnet-5-5">Claude Sonnet 5.5 (быстрее)</option><option value="claude-opus-5-5">Claude Opus 5.5</option></select></div>
+          <p class="muted">Ключ хранится только в этой вкладке и уходит только в api.anthropic.com.</p>
+          <div class="row"><button class="btn primary" id="ai-run" disabled>Извлечь правила</button><button class="btn" id="ai-stop" hidden>Остановить</button><span id="ai-status" class="muted"></span></div>
+        </div>
+        <div id="ai-m-chat" class="stack" hidden>
+          <p class="muted">Без ключа: скопируйте запрос, вставьте в новый чат Claude (PDF-файлы приложите к сообщению), затем вставьте ответ сюда.</p>
+          <div class="row"><button class="btn" id="ai-copy" disabled>Скопировать запрос</button><span id="ai-copy-st" class="muted"></span></div>
+          <textarea id="ai-reply" rows="6" placeholder="Вставьте сюда ответ модели (JSON)" style="font:12.5px var(--mono);width:100%;border:1px solid var(--line-strong);border-radius:8px;padding:8px;background:var(--surface);color:var(--fg)"></textarea>
+          <div class="row"><button class="btn primary" id="ai-parse">Разобрать ответ</button></div>
+        </div>
+        <div id="ai-m-saved" class="stack" hidden>
+          <p class="muted" id="ai-saved-note"></p>
+          <div class="row"><button class="btn primary" id="ai-replay">Воспроизвести запуск</button></div>
+        </div>
+        <div class="prog" id="ai-prog" hidden><i></i></div>
+        <pre id="ai-stream" class="sql" hidden style="max-height:180px;overflow:auto"></pre>
+      </div>
+    </div>
+    <div id="ai-out" class="stack" hidden></div>
+  </section>
 
   <!-- 1 · ENTRY -->
   <section id="p-entry" role="tabpanel" aria-labelledby="t-entry" class="grid2">
     <div class="panel stack">
       <div class="row entry-ctl">
         <label class="muted" for="e-form">Анкета</label><select id="e-form"></select>
-        <label class="muted" for="e-year">Год</label><select id="e-year"><option>2024</option><option>2023</option></select>
+        <label class="muted" for="e-year">Год</label><select id="e-year"><option>2024</option><option>2023</option><option>2022</option><option>2021</option></select>
         <div class="seg" id="e-mode" role="group" aria-label="Вид формы"><button type="button" data-v="demo" aria-pressed="true">Демо-фрагмент</button><button type="button" data-v="full" aria-pressed="false">Вся анкета из правил</button></div>
       </div>
       <div class="row" style="justify-content:space-between"><h2 id="e-title">Анкета Д-002, фрагмент</h2>
@@ -245,6 +284,7 @@ details > summary { cursor: pointer; color: var(--blue-ink); font-size: 13px; }
       <label class="drop" id="drop" tabindex="0"><input type="file" id="files" multiple accept=".csv,text/csv" hidden><b>Перетащите CSV-файлы сюда</b> или нажмите, чтобы выбрать</label>
       <div id="f-list" class="stack"></div>
       <div class="row"><label class="muted" for="f-year">Год обследования</label><select id="f-year"><option>2024</option><option>2023</option><option>2022</option><option>2021</option></select>
+        <span id="f-rs-row" class="row" hidden><label class="muted" for="f-rs">Правила</label><select id="f-rs"></select></span>
         <button class="btn primary" id="f-run" disabled>Проверить</button><span id="f-status" class="muted"></span></div>
       <div class="prog" id="f-prog" hidden><i></i></div>
     </div>
@@ -315,6 +355,46 @@ const SYN = { 'forced by the answer shares': 'вытекает из долей �
 const LABEL = { 'forced by the answer shares': 'hold', 'not conditional': 'hold', 'partly forced': 'check', 'could be broken links in the synthetic data': 'check' };
 const DOC = { form: 'анкета', instruction: 'инструкция', structure: 'структура файла', codebook: 'справочник' };
 $('#h-rules').textContent = B.ruleCount;
+
+/* rule sets: the built-in ones (rules/*.json) and those the model extracts in stage 0 */
+const RULESETS = {};
+for (const f of Object.keys(B.rules)) RULESETS[f] = { key: f, form: f, year: null, label: `${FORM[f]} · правила 2023–2024`, rules: B.rules[f], ai: false };
+const FILE_RS = {};   // form -> rule-set key used by stage 2 (default: the built-in set)
+const rsFor = form => RULESETS[FILE_RS[form]] || RULESETS[form];
+const listCols = cs => { cs = cs || []; return cs.length > 4 ? `${cs.slice(0, 3).join(', ')} … ${cs[cs.length - 1]} (${cs.length})` : cs.join(', '); };
+function condRu(c) {
+  if (!c) return '';
+  if (c.all) return c.all.map(condRu).join(' и ');
+  if (c.any) return c.any.map(condRu).join(' или ');
+  if (c.blank) return `${c.col} пусто`;
+  if (c.filled) return `${c.col} заполнено`;
+  if ('lt' in c) return `${c.col} < ${c.lt}`;
+  if ('ge' in c) return `${c.col} ≥ ${c.ge}`;
+  if (c.in) return c.in.length === 1 ? `${c.col} = ${c.in[0]}` : `${c.col} ∈ {${c.in.join(', ')}}`;
+  return c.col || '';
+}
+function describeRule(r) {   // Russian text for a rule the model wrote (built-in rules carry their own)
+  const cs = listCols(r.targets), w = r.when ? `Если ${condRu(r.when)} — ` : '';
+  switch (r.type) {
+    case 'domain': { const a = r.allowed; const v = Array.isArray(a) ? a.join(', ') : a && ('min' in a || 'max' in a) ? `${a.min ?? '…'}–${a.max ?? '…'}` : a && a.no_leading_zero ? 'число без ведущего нуля' : 'по справочнику'; return `${cs}: допустимо ${v}`; }
+    case 'required': return w + (r.mode === 'any' ? `хотя бы одно из ${cs} заполнено` : `${cs} заполнено`);
+    case 'skip': return `${w || 'Всегда — '}${cs} пусто (переход по анкете)`;
+    case 'multi_select': return `${cs}: отметка 1 или пусто${(r.exclusive || []).length ? `; ${r.exclusive.join(', ')} — только без других` : ''}`;
+    case 'consistency':
+      if (r.check === 'implies') return `Если ${condRu(r.if)}, то ${condRu(r.then)}`;
+      if (r.check === 'lte') return `${r.a} не больше ${r.b}`;
+      if (r.check === 'unique') return `${cs}: сочетание встречается один раз`;
+      return `${cs}: связь ответов (проверяет специалист)`;
+    case 'cross_form': return `${cs}: сверка с другой формой (${r.note || ''})`;
+    case 'doc_issue': return `Документация: ${r.note || cs}`;
+    default: return r.id;
+  }
+}
+function ruleText(rs, rule) {
+  if (!rs || !rs.ai) return B.txt[rule.id] || { ru: rule.id };
+  const s = rule.source || {};
+  return { ru: describeRule(rule), quote: s.quote, doc: s.doc, sql: null };
+}
 $('#h-acc').textContent = B.acc.precision ? (100 * B.acc.precision).toFixed(1).replace('.', ',') + '% / полнота ' + (100 * B.acc.recall).toFixed(1).replace('.', ',') + '%' : '—';
 
 /* tabs */
@@ -371,12 +451,13 @@ const EXAMPLES = {   // records typed as an interviewer would; the checker decid
           ok: { NOMP: '1', RODSTVO: '1', POL: '1', GOD_ROJD: '1980', SEM_POL: '2', STATUS: '1', K: '1', ZT: '1' } },
 };
 const ENTRY = { form: 'D002', year: 2024, mode: 'demo', fields: [], specs: {} };
+const exampleFor = key => RULESETS[key].ai ? { ok: {} } : EXAMPLES[key];
 const plural = (n, one, few, many) => n % 10 === 1 && n % 100 !== 11 ? one : (n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? few : many;
 const cleanDesc = s => String(s || '').replace(/\s+/g, ' ').replace(/[.,;:]?\s*Значность.*$/iu, '').replace(/\s*поле\s+\w+\s*[-=].*$/iu, '').trim();
 
 function buildSpec(form) {
   if (ENTRY.specs[form]) return ENTRY.specs[form];
-  const rules = B.rules[form].filter(r => r.type !== 'doc_issue' && r.type !== 'cross_form' && !r.superseded_by);
+  const rules = RULESETS[form].rules.filter(r => r.type !== 'doc_issue' && r.type !== 'cross_form' && !r.superseded_by);
   const info = {}, order = [];
   const touch = (c, r) => { if (!info[c]) { info[c] = { c, rules: [] }; order.push(c); } if (!info[c].rules.includes(r)) info[c].rules.push(r); };
   const walk = (o, r) => {
@@ -391,7 +472,7 @@ function buildSpec(form) {
     }
   };
   rules.forEach(r => walk(r, r));
-  const desc = (B.cols || {})[form] || {};
+  const desc = (B.cols || {})[RULESETS[form].form] || {};
   const groupOf = c => {
     for (const r of info[c].rules) {
       let m = r.id.match(/-P(\d)(?:Q(\d+))?/); if (m) return { k: 100 * +m[1], g: 'Часть ' + m[1] };
@@ -441,13 +522,13 @@ function renderForm() {
   } else {
     const S = buildSpec(ENTRY.form); ENTRY.fields = S.fields;
     const groups = []; for (const f of S.fields) { const g = groups[groups.length - 1]; if (g && g.g === f.g) g.f.push(f); else groups.push({ g: f.g, f: [f] }); }
-    $('#e-title').textContent = `Анкета ${FORM[ENTRY.form]}, построена из правил`;
+    $('#e-title').textContent = `Анкета ${RULESETS[ENTRY.form].label}: форма из правил`;
     if (groups.length === 1) groups[0].g = 'Поля анкеты';
     html = groups.map((g, i) => `<details class="fgroup" data-g="${esc(g.g)}"${i === 0 ? ' open' : ''}><summary><span class="lbl">${esc(g.g)}</span><span class="muted">${g.f.length} ${plural(g.f.length, 'поле', 'поля', 'полей')}</span></summary>${g.f.map(fieldHTML).join('')}</details>`).join('');
     $('#e-note').textContent = `${S.fields.length} ${plural(S.fields.length, 'поле', 'поля', 'полей')} и ${S.rules} ${plural(S.rules, 'правило', 'правила', 'правил')}, которые модель извлекла из анкеты и инструкции; коды и их значения — из правил, подписи — из файла структуры Бюро. Новая анкета или новый год даёт новую форму без изменения кода.`;
   }
   form.innerHTML = html;
-  const ex = EXAMPLES[ENTRY.form]; $('#ex-bad').hidden = !ex; $('#ex-ok').hidden = !ex;
+  const ex = exampleFor(ENTRY.form); $('#ex-bad').hidden = !(ex && ex.bad); $('#ex-ok').hidden = !ex;
   checkEntry();
 }
 function record() {
@@ -462,10 +543,10 @@ function setRecord(r) {
 }
 function checkEntry() {
   const rec = record(), present = new Set(ENTRY.fields.map(f => f.c));
-  const hits = E.checkRecord(B.rules[ENTRY.form], rec, ENTRY.year)
+  const hits = E.checkRecord(RULESETS[ENTRY.form].rules, rec, ENTRY.year)
     .filter(h => String(h.column).split(/[|+]|<=/).some(c => present.has(c)));   // only what is on the screen
   const seen = new Map();
-  for (const h of hits) { const t = B.txt[h.rule.id] || {}; const k = (t.ru || h.rule.id) + h.kind; if (!seen.has(k)) seen.set(k, { ...h, t, cols: new Set() }); seen.get(k).cols.add(h.column); }
+  for (const h of hits) { const t = ruleText(RULESETS[ENTRY.form], h.rule); const k = (t.ru || h.rule.id) + h.kind; if (!seen.has(k)) seen.set(k, { ...h, t, cols: new Set() }); seen.get(k).cols.add(h.column); }
   const list = [...seen.values()];
   const err = list.filter(h => h.kind === 'error'), miss = list.filter(h => h.kind === 'missing');
   form.querySelectorAll('.field').forEach(el => { el.classList.remove('bad', 'miss'); });
@@ -480,25 +561,38 @@ function checkEntry() {
       <ul class="misslist">${miss.map(h => `<li>${esc((h.t.ru || h.rule.id).replace(/\s+заполнено\.?$/u, ''))} <code>${esc(h.rule.id)}</code></li>`).join('')}</ul></article>` : '';
   $('#e-hits').innerHTML = list.length ? errHTML + missHTML : '<p class="muted">Все применимые правила выполнены.</p>';
 }
-$('#e-form').innerHTML = Object.keys(B.rules).map(f => `<option value="${f}">${FORM[f] || f}</option>`).join('');
-$('#e-form').addEventListener('change', e => { ENTRY.form = e.target.value; renderForm(); });
+function refreshRulesetSelectors() {
+  $('#e-form').innerHTML = Object.values(RULESETS).map(r => `<option value="${r.key}">${esc(r.ai ? '✦ ' + r.label : FORM[r.key])}</option>`).join('');
+  $('#e-form').value = ENTRY.form;
+  const ai = Object.values(RULESETS).filter(r => r.ai);
+  $('#f-rs').innerHTML = `<option value="">встроенные (2023–2024)</option>` + ai.map(r => `<option value="${r.key}">✦ ${esc(r.label)}</option>`).join('');
+  $('#f-rs').value = Object.values(FILE_RS)[0] || '';
+  $('#f-rs-row').hidden = !ai.length;
+}
+function selectRuleset(key) {
+  ENTRY.form = key; const rs = RULESETS[key];
+  if (rs.year) { ENTRY.year = rs.year; $('#e-year').value = String(rs.year); }
+  if (rs.ai) { ENTRY.mode = 'full'; }
+  refreshRulesetSelectors(); renderForm();
+}
+$('#e-form').addEventListener('change', e => selectRuleset(e.target.value));
 $('#e-year').addEventListener('change', e => { ENTRY.year = +e.target.value; checkEntry(); });
 $('#e-mode').querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
   const keep = record(); ENTRY.mode = b.dataset.v; $('#e-mode').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); renderForm(); setRecord(keep);
 }));
 form.addEventListener('input', checkEntry); form.addEventListener('change', checkEntry);
-$('#ex-bad').addEventListener('click', () => setRecord(EXAMPLES[ENTRY.form].bad));
+$('#ex-bad').addEventListener('click', () => setRecord(exampleFor(ENTRY.form).bad));
 /* the correct example: the prepared record, then every answer the rules still ask for gets its first valid code */
 function completeRecord(base) {
   const rec = { ...base };
   for (let pass = 0; pass < 4; pass++) {
     setRecord(rec); const cur = record();
-    const miss = E.checkRecord(B.rules[ENTRY.form], cur, ENTRY.year).filter(h => h.kind === 'missing');
+    const miss = E.checkRecord(RULESETS[ENTRY.form].rules, cur, ENTRY.year).filter(h => h.kind === 'missing');
     if (!miss.length) break;
     for (const h of miss) for (const c of String(h.column).split('|')) {
       const f = ENTRY.fields.find(x => x.c === c); if (!f || f.t === 'calc' || cur[c]) continue;
       const cand = f.o ? f.o.map(o => String(o[0])) : f.t === 'chk' ? ['1'] : [String(f.min ?? 1)];
-      const errs = r => E.checkRecord(B.rules[ENTRY.form], r, ENTRY.year).filter(x => x.kind === 'error').length;
+      const errs = r => E.checkRecord(RULESETS[ENTRY.form].rules, r, ENTRY.year).filter(x => x.kind === 'error').length;
       const base = errs({ ...cur, ...rec });
       rec[c] = cand.find(v => errs({ ...cur, ...rec, [c]: v }) <= base) ?? cand[0];   // first code that adds no error
       if (String(h.column).includes('|')) break;   // 'any of' rules: one answer is enough
@@ -506,8 +600,9 @@ function completeRecord(base) {
   }
   setRecord(rec);
 }
-$('#ex-ok').addEventListener('click', () => completeRecord(EXAMPLES[ENTRY.form].ok));
+$('#ex-ok').addEventListener('click', () => completeRecord(exampleFor(ENTRY.form).ok));
 $('#ex-clear').addEventListener('click', () => setRecord({}));
+refreshRulesetSelectors();
 renderForm();
 
 /* ---------- 2 · file ---------- */
@@ -539,6 +634,7 @@ function renderFiles() {
   $('#f-list').innerHTML = rows.join('') + need.map(n => `<p class="muted">${esc(n)}</p>`).join('');
   $('#f-run').disabled = !canRun();
 }
+$('#f-rs').addEventListener('change', e => { for (const k of Object.keys(FILE_RS)) delete FILE_RS[k]; const rs = RULESETS[e.target.value]; if (rs) { FILE_RS[rs.form] = rs.key; if (rs.year) $('#f-year').value = String(rs.year); } });
 const drop = $('#drop'), input = $('#files');
 drop.addEventListener('click', e => { if (e.target !== input) input.click(); });
 drop.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); } });
@@ -573,9 +669,9 @@ $('#f-run').addEventListener('click', async () => {
   const t0 = performance.now(); let issues = [], rows = [], notRun = [], records = 0, checks = 0;
   for (let i = 0; i < jobs.length; i++) {
     const [form, build] = jobs[i]; $('#f-status').textContent = `Проверяю ${FORM[form]}…`; await tick();
-    const tables = build(); const res = E.runRules(B.rules[form], tables, year);
+    const tables = build(); const rs = rsFor(form); const res = E.runRules(rs.rules, tables, year);
     const flags = E.flagRegions(res.rows);
-    issues = issues.concat(toIssues(form, flags)); rows = rows.concat(res.rows.map(r => ({ form, ...r })));
+    issues = issues.concat(toIssues(form, flags).map(i => { const r = rs.rules.find(x => x.id === i.rule_id) || { id: i.rule_id }; const t = ruleText(rs, r); return { ...i, rs: rs.key, ru: t.ru, quote: t.quote, doc: t.doc, sql: t.sql }; })); rows = rows.concat(res.rows.map(r => ({ form, ...r })));
     notRun = notRun.concat(res.notRun.map(n => ({ form, ...n })));
     records += Object.entries(tables).filter(([k]) => k !== 'hh').reduce((s, [, t]) => s + t.n, 0);
     checks += new Set(res.rows.map(r => r.rule_id + '|' + r.column)).size;
@@ -586,13 +682,13 @@ $('#f-run').addEventListener('click', async () => {
   $('#f-status').textContent = `Готово за ${(ms / 1000).toFixed(1).replace('.', ',')} с`; $('#f-run').disabled = false;
   renderRun();
 });
-function issueText(i) { const t = B.txt[i.rule_id]; return t ? t.ru : i.rule_id; }
+function issueText(i) { if (i.ru) return i.ru; const t = B.txt[i.rule_id]; return t ? t.ru : i.rule_id; }
 function renderRun() {
   const R = RUN, hold = R.issues.filter(i => i.status === 'hold').length, chk = R.issues.length - hold;
   const regions = [...new Set(R.issues.map(i => i.region))];
   const out = $('#f-out'); out.hidden = false;
   out.innerHTML = `<div class="panel stack">
-      <div class="row" style="justify-content:space-between"><h2>Результат проверки · ${R.forms.map(f => FORM[f]).join(', ')} · ${R.year}</h2>
+      <div class="row" style="justify-content:space-between"><h2>Результат проверки · ${R.forms.map(f => FORM[f] + (RULESETS[FILE_RS[f]] ? ' (правила ИИ)' : '')).join(', ')} · ${R.year}</h2>
         <div class="row"><button class="btn" id="dl-iss">Отклонения (CSV)</button><button class="btn" id="dl-all">Все проверки (CSV)</button><button class="btn" id="dl-sql">SQL для реальных данных</button><button class="btn primary" id="go-anal">Открыть анализ →</button></div></div>
       <div class="kpis">
         <div class="kpi"><span class="big">${R.records.toLocaleString('ru-RU')}</span><span class="muted">записей проверено</span></div>
@@ -609,14 +705,14 @@ function renderRun() {
     const reg = $('#fi-reg').value, st = $('#fi-st').value;
     const list = R.issues.filter(i => (!reg || i.region === reg) && (!st || i.status === st)).sort((a, b) => b.excess - a.excess);
     $('#fi-body').innerHTML = list.map((i, k) => `<tr class="clickable" data-k="${k}"><td>${esc(RU[i.region] || i.region)}</td><td>${FORM[i.form]}</td><td>${esc(issueText(i))}</td><td class="num">${i.records}</td><td class="num">${pct(i.rate_region)} / ${pct(i.rate_rest)}</td><td><span class="pill ${i.status}">${i.status === 'hold' ? 'держится' : 'проверить'}</span></td></tr>
-      <tr hidden data-d="${k}"><td colspan="6"><div class="stack"><p class="muted">Метка доверия: ${esc(SYN[i.synthesis] || i.synthesis)} · правило <code>${esc(i.rule_id)}</code></p>${B.txt[i.rule_id] && B.txt[i.rule_id].quote ? `<p class="quote">«${esc(B.txt[i.rule_id].quote)}»</p>` : ''}${B.txt[i.rule_id] && B.txt[i.rule_id].sql ? `<pre class="sql">${esc(B.txt[i.rule_id].sql)}</pre>` : ''}</div></td></tr>`).join('') || '<tr><td colspan="6" class="muted">Нет отклонений при выбранных фильтрах.</td></tr>';
+      <tr hidden data-d="${k}"><td colspan="6"><div class="stack"><p class="muted">Метка доверия: ${esc(SYN[i.synthesis] || i.synthesis)} · правило <code>${esc(i.rule_id)}</code></p>${i.quote ? `<p class="quote">«${esc(i.quote)}»</p>` : ''}${i.sql ? `<pre class="sql">${esc(i.sql)}</pre>` : ''}</div></td></tr>`).join('') || '<tr><td colspan="6" class="muted">Нет отклонений при выбранных фильтрах.</td></tr>';
     $('#fi-body').querySelectorAll('tr.clickable').forEach(tr => tr.addEventListener('click', () => { const d = $('#fi-body').querySelector(`tr[data-d="${tr.dataset.k}"]`); d.hidden = !d.hidden; }));
   };
   $('#fi-reg').addEventListener('change', draw); $('#fi-st').addEventListener('change', draw); draw();
   $('#dl-iss').addEventListener('click', () => download('statquo_issues.csv', toCSV(R.issues.map(i => ({ form: i.form, year: i.year, region: i.region, region_ru: RU[i.region] || i.region, rule_id: i.rule_id, rule_ru: issueText(i), type: i.type, columns: i.columns, example_column: i.example_column, records: i.records, rate_region: i.rate_region.toFixed(1), rate_rest: i.rate_rest.toFixed(1), status: i.status === 'hold' ? 'держится на синтетике' : 'проверить на реальных данных', trust: SYN[i.synthesis] || i.synthesis })))));
   $('#dl-all').addEventListener('click', () => download('statquo_checks.csv', toCSV(R.rows.map(r => ({ form: r.form, year: r.year, region: r.region, rule_id: r.rule_id, type: r.type, table: r.table, column: r.column, records: r.records, applicable: r.applicable, violations: r.violations, rate: Number.isNaN(r.rate) ? '' : (100 * r.rate).toFixed(2) })))));
-  $('#dl-sql').addEventListener('click', () => { const ids = [...new Set(R.issues.map(i => i.rule_id))].filter(id => B.txt[id] && B.txt[id].sql);
-    download('statquo_checks.sql', ids.map(id => `-- ${id}: ${B.txt[id].ru}\n-- источник: «${(B.txt[id].quote || '').replace(/\n/g, ' ')}»\n${B.txt[id].sql}\n`).join('\n'), 'text/plain'); });
+  $('#dl-sql').addEventListener('click', () => { const by = new Map(R.issues.filter(i => i.sql).map(i => [i.rule_id, i]));
+    download('statquo_checks.sql', [...by.values()].map(i => `-- ${i.rule_id}: ${i.ru}\n-- источник: «${(i.quote || '').replace(/\n/g, ' ')}»\n${i.sql}\n`).join('\n'), 'text/plain'); });
   $('#go-anal').addEventListener('click', () => openTab('t-anal'));
 }
 function toCSV(rows) { if (!rows.length) return ''; const h = Object.keys(rows[0]); const q = v => { const s = String(v ?? ''); return /[",\n;]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; }; return '﻿' + [h.join(','), ...rows.map(r => h.map(k => q(r[k])).join(','))].join('\n'); }
@@ -625,7 +721,7 @@ function download(name, text, type = 'text/csv') { const a = document.createElem
 /* ---------- 3 · analysis ---------- */
 let selRegion = null, selCase = B.cases[0].id;
 function analysisIssues() {
-  if (RUN) return { src: `последняя проверка: ${RUN.forms.map(f => FORM[f]).join(', ')}, ${RUN.year}`, list: RUN.issues.map(i => { const t = B.txt[i.rule_id] || {}; return { region: i.region, status: i.status, form: i.form, year: i.year, ru: issueText(i), rr: i.rate_region, rs: i.rate_rest, rule: i.rule_id, quote: t.quote, doc: DOC[t.doc] || t.doc, sql: t.sql, trust: SYN[i.synthesis] || i.synthesis, records: i.records }; }) };
+  if (RUN) return { src: `последняя проверка: ${RUN.forms.map(f => FORM[f]).join(', ')}, ${RUN.year}`, list: RUN.issues.map(i => ({ region: i.region, status: i.status, form: i.form, year: i.year, ru: issueText(i), rr: i.rate_region, rs: i.rate_rest, rule: i.rule_id, quote: i.quote, doc: DOC[i.doc] || i.doc, sql: i.sql, trust: SYN[i.synthesis] || i.synthesis, records: i.records })) };
   return { src: 'полный анализ: 5 форм, 2023–2024', list: B.issues.map(i => ({ region: i.region, status: i.status === 'держится' ? 'hold' : 'check', form: i.form, year: i.year, ru: i.ru, rr: i.rateRegion, rs: i.rateRest, rule: i.rule, cas: i.case, quote: i.quote, doc: i.doc, sql: i.sql, trust: i.trust, records: i.records })) };
 }
 function renderAnalysis() {
@@ -672,6 +768,9 @@ function renderAnalysis() {
       </tbody></table></div></details>` : '<p class="muted">В сводке по регионам этого дела нет: проблема общенациональная или выявлена отдельным расчётом.</p>'; })();
 }
 const h0 = (location.hash || '').slice(1);
-if (['entry', 'file', 'anal'].includes(h0)) openTab('t-' + h0);
+if (['ai', 'entry', 'file', 'anal'].includes(h0)) openTab('t-' + h0);
 else if (h0 in SUBRENDER) { curSub = h0; openTab('t-anal'); }
+</script>
+<script>
+/*AI*/
 </script>

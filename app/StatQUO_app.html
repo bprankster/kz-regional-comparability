@@ -35,7 +35,8 @@ p { margin: 0; }
 .lead { color: var(--fg-2); max-width: 78ch; }
 .muted { color: var(--fg-3); font-size: 13px; }
 .badge { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--green-ink); background: var(--green-1); padding: 6px 10px; border-radius: 99px; }
-.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 1000px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .step { text-align: left; font: inherit; color: inherit; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px; cursor: pointer; display: flex; flex-direction: column; gap: 4px; }
 .step .k { font: 500 12px var(--mono); color: var(--fg-3); letter-spacing: .06em; text-transform: uppercase; }
 .step .t { font-weight: 600; font-size: 16px; }
@@ -70,7 +71,7 @@ select, input[type="number"], input[type="text"] { font: 14px var(--sans); color
 #entry { gap: 0; }
 .entry-note { margin-bottom: 4px; }
 .entry-ctl { padding-bottom: 12px; border-bottom: 1px solid var(--line); }
-.seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 8px; overflow: hidden; }
+.seg { display: inline-flex; align-self: flex-start; border: 1px solid var(--line-strong); border-radius: 8px; overflow: hidden; }
 .seg button { font: 500 13px var(--sans); border: 0; background: var(--surface); color: var(--fg-2); padding: 6px 11px; cursor: pointer; }
 .seg button + button { border-left: 1px solid var(--line-strong); }
 .seg button[aria-pressed="true"] { background: var(--fg); color: var(--surface); }
@@ -207,22 +208,60 @@ details > summary { cursor: pointer; color: var(--blue-ink); font-size: 13px; }
   <header class="stack" style="gap:10px">
     <p class="eyebrow">StatQUO · STAT.DATATHON 2026 · Трек «ИИ для официальной статистики»</p>
     <h1>Контроль качества первичных данных обследований домохозяйств</h1>
-    <p class="lead">Правила проверки извлечены из анкет и инструкций Бюро языковой моделью (<span id="h-rules"></span> правил, точность <span id="h-acc"></span>). Приложение применяет их на трёх этапах: при вводе анкеты, при проверке файла перед публикацией и при анализе различий между регионами.</p>
+    <p class="lead">Языковая модель читает анкету и инструкцию Бюро и пишет правила проверки с цитатой-источником — прямо в приложении (этап 0) или заранее (<span id="h-rules"></span> правил для четырёх форм, точность <span id="h-acc"></span>). Приложение применяет правила при вводе анкеты, при проверке файла перед публикацией и при анализе различий между регионами.</p>
     <div class="row"><span class="badge">● Данные обрабатываются в этом браузере и никуда не отправляются</span><span class="muted">Работает и без интернета: файл можно открыть с диска.</span></div>
   </header>
 
   <nav class="steps" role="tablist" aria-label="Этапы">
+    <button class="step" role="tab" id="t-ai" aria-controls="p-ai" aria-selected="false"><span class="k">0 · Правила · ИИ</span><span class="t">Анкета → правила</span><span class="d">Модель читает бланк и инструкцию и пишет правила с цитатами</span></button>
     <button class="step" role="tab" id="t-entry" aria-controls="p-entry" aria-selected="true"><span class="k">1 · Сбор</span><span class="t">Проверка при вводе</span><span class="d">Интервьюер заполняет анкету — ошибки видны сразу</span></button>
     <button class="step" role="tab" id="t-file" aria-controls="p-file" aria-selected="false"><span class="k">2 · Обработка</span><span class="t">Проверка файла по регионам</span><span class="d">Загрузите CSV обследования — правила по каждому региону</span></button>
     <button class="step" role="tab" id="t-anal" aria-controls="p-anal" aria-selected="false"><span class="k">3 · Анализ</span><span class="t">Результаты и метод</span><span class="d">Где регион записывает иначе, что это меняет, что исправить и почему этому можно верить</span></button>
   </nav>
+
+  <!-- 0 · RULES FROM THE QUESTIONNAIRE (model) -->
+  <section id="p-ai" role="tabpanel" aria-labelledby="t-ai" class="stack" hidden>
+    <div class="grid2">
+      <div class="panel stack">
+        <h2>1. Документы анкеты</h2>
+        <div class="row"><label class="muted" for="ai-form">Форма</label><select id="ai-form"><option value="D002">Д-002</option><option value="D006">Д-006</option><option value="D008">Д-008</option><option value="D004">Д-004</option><option value="OTHER">другая</option></select>
+          <label class="muted" for="ai-year">Год</label><select id="ai-year"><option>2024</option><option>2023</option><option selected>2022</option><option>2021</option><option>2025</option></select></div>
+        <label class="drop" id="ai-drop" tabindex="0"><input type="file" id="ai-files" multiple hidden accept=".pdf,.docx,.xls,.xlsx,.txt,.md,.csv"><b>Бланк, инструкция, структура файла</b> (PDF, DOCX, XLS/XLSX, TXT)<br><span class="muted">и CSV обследования — из него читается только строка с названиями столбцов</span></label>
+        <div id="ai-list" class="stack"></div>
+        <p class="badge" style="align-self:flex-start">● В модель уходят только бланк, инструкция, структура и названия столбцов — записи обследования не отправляются</p>
+      </div>
+      <div class="panel stack">
+        <h2>2. Модель</h2>
+        <div class="seg" id="ai-mode" role="group" aria-label="Способ вызова"><button type="button" data-v="api" aria-pressed="true">Ключ API</button><button type="button" data-v="chat" aria-pressed="false">Через чат Claude</button><button type="button" data-v="saved" aria-pressed="false">Сохранённый запуск</button></div>
+        <div id="ai-m-api" class="stack">
+          <div class="row"><label class="muted" for="ai-key">Ключ Anthropic API</label><input type="password" id="ai-key" autocomplete="off" spellcheck="false" placeholder="sk-ant-…" style="flex:1 1 220px">
+            <label class="muted" for="ai-model">Модель</label><select id="ai-model"><option value="claude-sonnet-5-5">Claude Sonnet 5.5 (быстрее)</option><option value="claude-opus-5-5">Claude Opus 5.5</option></select></div>
+          <p class="muted">Ключ хранится только в этой вкладке и уходит только в api.anthropic.com.</p>
+          <div class="row"><button class="btn primary" id="ai-run" disabled>Извлечь правила</button><button class="btn" id="ai-stop" hidden>Остановить</button><span id="ai-status" class="muted"></span></div>
+        </div>
+        <div id="ai-m-chat" class="stack" hidden>
+          <p class="muted">Без ключа: скопируйте запрос, вставьте в новый чат Claude (PDF-файлы приложите к сообщению), затем вставьте ответ сюда.</p>
+          <div class="row"><button class="btn" id="ai-copy" disabled>Скопировать запрос</button><span id="ai-copy-st" class="muted"></span></div>
+          <textarea id="ai-reply" rows="6" placeholder="Вставьте сюда ответ модели (JSON)" style="font:12.5px var(--mono);width:100%;border:1px solid var(--line-strong);border-radius:8px;padding:8px;background:var(--surface);color:var(--fg)"></textarea>
+          <div class="row"><button class="btn primary" id="ai-parse">Разобрать ответ</button></div>
+        </div>
+        <div id="ai-m-saved" class="stack" hidden>
+          <p class="muted" id="ai-saved-note"></p>
+          <div class="row"><button class="btn primary" id="ai-replay">Воспроизвести запуск</button></div>
+        </div>
+        <div class="prog" id="ai-prog" hidden><i></i></div>
+        <pre id="ai-stream" class="sql" hidden style="max-height:180px;overflow:auto"></pre>
+      </div>
+    </div>
+    <div id="ai-out" class="stack" hidden></div>
+  </section>
 
   <!-- 1 · ENTRY -->
   <section id="p-entry" role="tabpanel" aria-labelledby="t-entry" class="grid2">
     <div class="panel stack">
       <div class="row entry-ctl">
         <label class="muted" for="e-form">Анкета</label><select id="e-form"></select>
-        <label class="muted" for="e-year">Год</label><select id="e-year"><option>2024</option><option>2023</option></select>
+        <label class="muted" for="e-year">Год</label><select id="e-year"><option>2024</option><option>2023</option><option>2022</option><option>2021</option></select>
         <div class="seg" id="e-mode" role="group" aria-label="Вид формы"><button type="button" data-v="demo" aria-pressed="true">Демо-фрагмент</button><button type="button" data-v="full" aria-pressed="false">Вся анкета из правил</button></div>
       </div>
       <div class="row" style="justify-content:space-between"><h2 id="e-title">Анкета Д-002, фрагмент</h2>
@@ -245,6 +284,7 @@ details > summary { cursor: pointer; color: var(--blue-ink); font-size: 13px; }
       <label class="drop" id="drop" tabindex="0"><input type="file" id="files" multiple accept=".csv,text/csv" hidden><b>Перетащите CSV-файлы сюда</b> или нажмите, чтобы выбрать</label>
       <div id="f-list" class="stack"></div>
       <div class="row"><label class="muted" for="f-year">Год обследования</label><select id="f-year"><option>2024</option><option>2023</option><option>2022</option><option>2021</option></select>
+        <span id="f-rs-row" class="row" hidden><label class="muted" for="f-rs">Правила</label><select id="f-rs"></select></span>
         <button class="btn primary" id="f-run" disabled>Проверить</button><span id="f-status" class="muted"></span></div>
       <div class="prog" id="f-prog" hidden><i></i></div>
     </div>
@@ -954,6 +994,46 @@ const SYN = { 'forced by the answer shares': 'вытекает из долей �
 const LABEL = { 'forced by the answer shares': 'hold', 'not conditional': 'hold', 'partly forced': 'check', 'could be broken links in the synthetic data': 'check' };
 const DOC = { form: 'анкета', instruction: 'инструкция', structure: 'структура файла', codebook: 'справочник' };
 $('#h-rules').textContent = B.ruleCount;
+
+/* rule sets: the built-in ones (rules/*.json) and those the model extracts in stage 0 */
+const RULESETS = {};
+for (const f of Object.keys(B.rules)) RULESETS[f] = { key: f, form: f, year: null, label: `${FORM[f]} · правила 2023–2024`, rules: B.rules[f], ai: false };
+const FILE_RS = {};   // form -> rule-set key used by stage 2 (default: the built-in set)
+const rsFor = form => RULESETS[FILE_RS[form]] || RULESETS[form];
+const listCols = cs => { cs = cs || []; return cs.length > 4 ? `${cs.slice(0, 3).join(', ')} … ${cs[cs.length - 1]} (${cs.length})` : cs.join(', '); };
+function condRu(c) {
+  if (!c) return '';
+  if (c.all) return c.all.map(condRu).join(' и ');
+  if (c.any) return c.any.map(condRu).join(' или ');
+  if (c.blank) return `${c.col} пусто`;
+  if (c.filled) return `${c.col} заполнено`;
+  if ('lt' in c) return `${c.col} < ${c.lt}`;
+  if ('ge' in c) return `${c.col} ≥ ${c.ge}`;
+  if (c.in) return c.in.length === 1 ? `${c.col} = ${c.in[0]}` : `${c.col} ∈ {${c.in.join(', ')}}`;
+  return c.col || '';
+}
+function describeRule(r) {   // Russian text for a rule the model wrote (built-in rules carry their own)
+  const cs = listCols(r.targets), w = r.when ? `Если ${condRu(r.when)} — ` : '';
+  switch (r.type) {
+    case 'domain': { const a = r.allowed; const v = Array.isArray(a) ? a.join(', ') : a && ('min' in a || 'max' in a) ? `${a.min ?? '…'}–${a.max ?? '…'}` : a && a.no_leading_zero ? 'число без ведущего нуля' : 'по справочнику'; return `${cs}: допустимо ${v}`; }
+    case 'required': return w + (r.mode === 'any' ? `хотя бы одно из ${cs} заполнено` : `${cs} заполнено`);
+    case 'skip': return `${w || 'Всегда — '}${cs} пусто (переход по анкете)`;
+    case 'multi_select': return `${cs}: отметка 1 или пусто${(r.exclusive || []).length ? `; ${r.exclusive.join(', ')} — только без других` : ''}`;
+    case 'consistency':
+      if (r.check === 'implies') return `Если ${condRu(r.if)}, то ${condRu(r.then)}`;
+      if (r.check === 'lte') return `${r.a} не больше ${r.b}`;
+      if (r.check === 'unique') return `${cs}: сочетание встречается один раз`;
+      return `${cs}: связь ответов (проверяет специалист)`;
+    case 'cross_form': return `${cs}: сверка с другой формой (${r.note || ''})`;
+    case 'doc_issue': return `Документация: ${r.note || cs}`;
+    default: return r.id;
+  }
+}
+function ruleText(rs, rule) {
+  if (!rs || !rs.ai) return B.txt[rule.id] || { ru: rule.id };
+  const s = rule.source || {};
+  return { ru: describeRule(rule), quote: s.quote, doc: s.doc, sql: null };
+}
 $('#h-acc').textContent = B.acc.precision ? (100 * B.acc.precision).toFixed(1).replace('.', ',') + '% / полнота ' + (100 * B.acc.recall).toFixed(1).replace('.', ',') + '%' : '—';
 
 /* tabs */
@@ -1010,12 +1090,13 @@ const EXAMPLES = {   // records typed as an interviewer would; the checker decid
           ok: { NOMP: '1', RODSTVO: '1', POL: '1', GOD_ROJD: '1980', SEM_POL: '2', STATUS: '1', K: '1', ZT: '1' } },
 };
 const ENTRY = { form: 'D002', year: 2024, mode: 'demo', fields: [], specs: {} };
+const exampleFor = key => RULESETS[key].ai ? { ok: {} } : EXAMPLES[key];
 const plural = (n, one, few, many) => n % 10 === 1 && n % 100 !== 11 ? one : (n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? few : many;
 const cleanDesc = s => String(s || '').replace(/\s+/g, ' ').replace(/[.,;:]?\s*Значность.*$/iu, '').replace(/\s*поле\s+\w+\s*[-=].*$/iu, '').trim();
 
 function buildSpec(form) {
   if (ENTRY.specs[form]) return ENTRY.specs[form];
-  const rules = B.rules[form].filter(r => r.type !== 'doc_issue' && r.type !== 'cross_form' && !r.superseded_by);
+  const rules = RULESETS[form].rules.filter(r => r.type !== 'doc_issue' && r.type !== 'cross_form' && !r.superseded_by);
   const info = {}, order = [];
   const touch = (c, r) => { if (!info[c]) { info[c] = { c, rules: [] }; order.push(c); } if (!info[c].rules.includes(r)) info[c].rules.push(r); };
   const walk = (o, r) => {
@@ -1030,7 +1111,7 @@ function buildSpec(form) {
     }
   };
   rules.forEach(r => walk(r, r));
-  const desc = (B.cols || {})[form] || {};
+  const desc = (B.cols || {})[RULESETS[form].form] || {};
   const groupOf = c => {
     for (const r of info[c].rules) {
       let m = r.id.match(/-P(\d)(?:Q(\d+))?/); if (m) return { k: 100 * +m[1], g: 'Часть ' + m[1] };
@@ -1080,13 +1161,13 @@ function renderForm() {
   } else {
     const S = buildSpec(ENTRY.form); ENTRY.fields = S.fields;
     const groups = []; for (const f of S.fields) { const g = groups[groups.length - 1]; if (g && g.g === f.g) g.f.push(f); else groups.push({ g: f.g, f: [f] }); }
-    $('#e-title').textContent = `Анкета ${FORM[ENTRY.form]}, построена из правил`;
+    $('#e-title').textContent = `Анкета ${RULESETS[ENTRY.form].label}: форма из правил`;
     if (groups.length === 1) groups[0].g = 'Поля анкеты';
     html = groups.map((g, i) => `<details class="fgroup" data-g="${esc(g.g)}"${i === 0 ? ' open' : ''}><summary><span class="lbl">${esc(g.g)}</span><span class="muted">${g.f.length} ${plural(g.f.length, 'поле', 'поля', 'полей')}</span></summary>${g.f.map(fieldHTML).join('')}</details>`).join('');
     $('#e-note').textContent = `${S.fields.length} ${plural(S.fields.length, 'поле', 'поля', 'полей')} и ${S.rules} ${plural(S.rules, 'правило', 'правила', 'правил')}, которые модель извлекла из анкеты и инструкции; коды и их значения — из правил, подписи — из файла структуры Бюро. Новая анкета или новый год даёт новую форму без изменения кода.`;
   }
   form.innerHTML = html;
-  const ex = EXAMPLES[ENTRY.form]; $('#ex-bad').hidden = !ex; $('#ex-ok').hidden = !ex;
+  const ex = exampleFor(ENTRY.form); $('#ex-bad').hidden = !(ex && ex.bad); $('#ex-ok').hidden = !ex;
   checkEntry();
 }
 function record() {
@@ -1101,10 +1182,10 @@ function setRecord(r) {
 }
 function checkEntry() {
   const rec = record(), present = new Set(ENTRY.fields.map(f => f.c));
-  const hits = E.checkRecord(B.rules[ENTRY.form], rec, ENTRY.year)
+  const hits = E.checkRecord(RULESETS[ENTRY.form].rules, rec, ENTRY.year)
     .filter(h => String(h.column).split(/[|+]|<=/).some(c => present.has(c)));   // only what is on the screen
   const seen = new Map();
-  for (const h of hits) { const t = B.txt[h.rule.id] || {}; const k = (t.ru || h.rule.id) + h.kind; if (!seen.has(k)) seen.set(k, { ...h, t, cols: new Set() }); seen.get(k).cols.add(h.column); }
+  for (const h of hits) { const t = ruleText(RULESETS[ENTRY.form], h.rule); const k = (t.ru || h.rule.id) + h.kind; if (!seen.has(k)) seen.set(k, { ...h, t, cols: new Set() }); seen.get(k).cols.add(h.column); }
   const list = [...seen.values()];
   const err = list.filter(h => h.kind === 'error'), miss = list.filter(h => h.kind === 'missing');
   form.querySelectorAll('.field').forEach(el => { el.classList.remove('bad', 'miss'); });
@@ -1119,25 +1200,38 @@ function checkEntry() {
       <ul class="misslist">${miss.map(h => `<li>${esc((h.t.ru || h.rule.id).replace(/\s+заполнено\.?$/u, ''))} <code>${esc(h.rule.id)}</code></li>`).join('')}</ul></article>` : '';
   $('#e-hits').innerHTML = list.length ? errHTML + missHTML : '<p class="muted">Все применимые правила выполнены.</p>';
 }
-$('#e-form').innerHTML = Object.keys(B.rules).map(f => `<option value="${f}">${FORM[f] || f}</option>`).join('');
-$('#e-form').addEventListener('change', e => { ENTRY.form = e.target.value; renderForm(); });
+function refreshRulesetSelectors() {
+  $('#e-form').innerHTML = Object.values(RULESETS).map(r => `<option value="${r.key}">${esc(r.ai ? '✦ ' + r.label : FORM[r.key])}</option>`).join('');
+  $('#e-form').value = ENTRY.form;
+  const ai = Object.values(RULESETS).filter(r => r.ai);
+  $('#f-rs').innerHTML = `<option value="">встроенные (2023–2024)</option>` + ai.map(r => `<option value="${r.key}">✦ ${esc(r.label)}</option>`).join('');
+  $('#f-rs').value = Object.values(FILE_RS)[0] || '';
+  $('#f-rs-row').hidden = !ai.length;
+}
+function selectRuleset(key) {
+  ENTRY.form = key; const rs = RULESETS[key];
+  if (rs.year) { ENTRY.year = rs.year; $('#e-year').value = String(rs.year); }
+  if (rs.ai) { ENTRY.mode = 'full'; }
+  refreshRulesetSelectors(); renderForm();
+}
+$('#e-form').addEventListener('change', e => selectRuleset(e.target.value));
 $('#e-year').addEventListener('change', e => { ENTRY.year = +e.target.value; checkEntry(); });
 $('#e-mode').querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
   const keep = record(); ENTRY.mode = b.dataset.v; $('#e-mode').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); renderForm(); setRecord(keep);
 }));
 form.addEventListener('input', checkEntry); form.addEventListener('change', checkEntry);
-$('#ex-bad').addEventListener('click', () => setRecord(EXAMPLES[ENTRY.form].bad));
+$('#ex-bad').addEventListener('click', () => setRecord(exampleFor(ENTRY.form).bad));
 /* the correct example: the prepared record, then every answer the rules still ask for gets its first valid code */
 function completeRecord(base) {
   const rec = { ...base };
   for (let pass = 0; pass < 4; pass++) {
     setRecord(rec); const cur = record();
-    const miss = E.checkRecord(B.rules[ENTRY.form], cur, ENTRY.year).filter(h => h.kind === 'missing');
+    const miss = E.checkRecord(RULESETS[ENTRY.form].rules, cur, ENTRY.year).filter(h => h.kind === 'missing');
     if (!miss.length) break;
     for (const h of miss) for (const c of String(h.column).split('|')) {
       const f = ENTRY.fields.find(x => x.c === c); if (!f || f.t === 'calc' || cur[c]) continue;
       const cand = f.o ? f.o.map(o => String(o[0])) : f.t === 'chk' ? ['1'] : [String(f.min ?? 1)];
-      const errs = r => E.checkRecord(B.rules[ENTRY.form], r, ENTRY.year).filter(x => x.kind === 'error').length;
+      const errs = r => E.checkRecord(RULESETS[ENTRY.form].rules, r, ENTRY.year).filter(x => x.kind === 'error').length;
       const base = errs({ ...cur, ...rec });
       rec[c] = cand.find(v => errs({ ...cur, ...rec, [c]: v }) <= base) ?? cand[0];   // first code that adds no error
       if (String(h.column).includes('|')) break;   // 'any of' rules: one answer is enough
@@ -1145,8 +1239,9 @@ function completeRecord(base) {
   }
   setRecord(rec);
 }
-$('#ex-ok').addEventListener('click', () => completeRecord(EXAMPLES[ENTRY.form].ok));
+$('#ex-ok').addEventListener('click', () => completeRecord(exampleFor(ENTRY.form).ok));
 $('#ex-clear').addEventListener('click', () => setRecord({}));
+refreshRulesetSelectors();
 renderForm();
 
 /* ---------- 2 · file ---------- */
@@ -1178,6 +1273,7 @@ function renderFiles() {
   $('#f-list').innerHTML = rows.join('') + need.map(n => `<p class="muted">${esc(n)}</p>`).join('');
   $('#f-run').disabled = !canRun();
 }
+$('#f-rs').addEventListener('change', e => { for (const k of Object.keys(FILE_RS)) delete FILE_RS[k]; const rs = RULESETS[e.target.value]; if (rs) { FILE_RS[rs.form] = rs.key; if (rs.year) $('#f-year').value = String(rs.year); } });
 const drop = $('#drop'), input = $('#files');
 drop.addEventListener('click', e => { if (e.target !== input) input.click(); });
 drop.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); } });
@@ -1212,9 +1308,9 @@ $('#f-run').addEventListener('click', async () => {
   const t0 = performance.now(); let issues = [], rows = [], notRun = [], records = 0, checks = 0;
   for (let i = 0; i < jobs.length; i++) {
     const [form, build] = jobs[i]; $('#f-status').textContent = `Проверяю ${FORM[form]}…`; await tick();
-    const tables = build(); const res = E.runRules(B.rules[form], tables, year);
+    const tables = build(); const rs = rsFor(form); const res = E.runRules(rs.rules, tables, year);
     const flags = E.flagRegions(res.rows);
-    issues = issues.concat(toIssues(form, flags)); rows = rows.concat(res.rows.map(r => ({ form, ...r })));
+    issues = issues.concat(toIssues(form, flags).map(i => { const r = rs.rules.find(x => x.id === i.rule_id) || { id: i.rule_id }; const t = ruleText(rs, r); return { ...i, rs: rs.key, ru: t.ru, quote: t.quote, doc: t.doc, sql: t.sql }; })); rows = rows.concat(res.rows.map(r => ({ form, ...r })));
     notRun = notRun.concat(res.notRun.map(n => ({ form, ...n })));
     records += Object.entries(tables).filter(([k]) => k !== 'hh').reduce((s, [, t]) => s + t.n, 0);
     checks += new Set(res.rows.map(r => r.rule_id + '|' + r.column)).size;
@@ -1225,13 +1321,13 @@ $('#f-run').addEventListener('click', async () => {
   $('#f-status').textContent = `Готово за ${(ms / 1000).toFixed(1).replace('.', ',')} с`; $('#f-run').disabled = false;
   renderRun();
 });
-function issueText(i) { const t = B.txt[i.rule_id]; return t ? t.ru : i.rule_id; }
+function issueText(i) { if (i.ru) return i.ru; const t = B.txt[i.rule_id]; return t ? t.ru : i.rule_id; }
 function renderRun() {
   const R = RUN, hold = R.issues.filter(i => i.status === 'hold').length, chk = R.issues.length - hold;
   const regions = [...new Set(R.issues.map(i => i.region))];
   const out = $('#f-out'); out.hidden = false;
   out.innerHTML = `<div class="panel stack">
-      <div class="row" style="justify-content:space-between"><h2>Результат проверки · ${R.forms.map(f => FORM[f]).join(', ')} · ${R.year}</h2>
+      <div class="row" style="justify-content:space-between"><h2>Результат проверки · ${R.forms.map(f => FORM[f] + (RULESETS[FILE_RS[f]] ? ' (правила ИИ)' : '')).join(', ')} · ${R.year}</h2>
         <div class="row"><button class="btn" id="dl-iss">Отклонения (CSV)</button><button class="btn" id="dl-all">Все проверки (CSV)</button><button class="btn" id="dl-sql">SQL для реальных данных</button><button class="btn primary" id="go-anal">Открыть анализ →</button></div></div>
       <div class="kpis">
         <div class="kpi"><span class="big">${R.records.toLocaleString('ru-RU')}</span><span class="muted">записей проверено</span></div>
@@ -1248,14 +1344,14 @@ function renderRun() {
     const reg = $('#fi-reg').value, st = $('#fi-st').value;
     const list = R.issues.filter(i => (!reg || i.region === reg) && (!st || i.status === st)).sort((a, b) => b.excess - a.excess);
     $('#fi-body').innerHTML = list.map((i, k) => `<tr class="clickable" data-k="${k}"><td>${esc(RU[i.region] || i.region)}</td><td>${FORM[i.form]}</td><td>${esc(issueText(i))}</td><td class="num">${i.records}</td><td class="num">${pct(i.rate_region)} / ${pct(i.rate_rest)}</td><td><span class="pill ${i.status}">${i.status === 'hold' ? 'держится' : 'проверить'}</span></td></tr>
-      <tr hidden data-d="${k}"><td colspan="6"><div class="stack"><p class="muted">Метка доверия: ${esc(SYN[i.synthesis] || i.synthesis)} · правило <code>${esc(i.rule_id)}</code></p>${B.txt[i.rule_id] && B.txt[i.rule_id].quote ? `<p class="quote">«${esc(B.txt[i.rule_id].quote)}»</p>` : ''}${B.txt[i.rule_id] && B.txt[i.rule_id].sql ? `<pre class="sql">${esc(B.txt[i.rule_id].sql)}</pre>` : ''}</div></td></tr>`).join('') || '<tr><td colspan="6" class="muted">Нет отклонений при выбранных фильтрах.</td></tr>';
+      <tr hidden data-d="${k}"><td colspan="6"><div class="stack"><p class="muted">Метка доверия: ${esc(SYN[i.synthesis] || i.synthesis)} · правило <code>${esc(i.rule_id)}</code></p>${i.quote ? `<p class="quote">«${esc(i.quote)}»</p>` : ''}${i.sql ? `<pre class="sql">${esc(i.sql)}</pre>` : ''}</div></td></tr>`).join('') || '<tr><td colspan="6" class="muted">Нет отклонений при выбранных фильтрах.</td></tr>';
     $('#fi-body').querySelectorAll('tr.clickable').forEach(tr => tr.addEventListener('click', () => { const d = $('#fi-body').querySelector(`tr[data-d="${tr.dataset.k}"]`); d.hidden = !d.hidden; }));
   };
   $('#fi-reg').addEventListener('change', draw); $('#fi-st').addEventListener('change', draw); draw();
   $('#dl-iss').addEventListener('click', () => download('statquo_issues.csv', toCSV(R.issues.map(i => ({ form: i.form, year: i.year, region: i.region, region_ru: RU[i.region] || i.region, rule_id: i.rule_id, rule_ru: issueText(i), type: i.type, columns: i.columns, example_column: i.example_column, records: i.records, rate_region: i.rate_region.toFixed(1), rate_rest: i.rate_rest.toFixed(1), status: i.status === 'hold' ? 'держится на синтетике' : 'проверить на реальных данных', trust: SYN[i.synthesis] || i.synthesis })))));
   $('#dl-all').addEventListener('click', () => download('statquo_checks.csv', toCSV(R.rows.map(r => ({ form: r.form, year: r.year, region: r.region, rule_id: r.rule_id, type: r.type, table: r.table, column: r.column, records: r.records, applicable: r.applicable, violations: r.violations, rate: Number.isNaN(r.rate) ? '' : (100 * r.rate).toFixed(2) })))));
-  $('#dl-sql').addEventListener('click', () => { const ids = [...new Set(R.issues.map(i => i.rule_id))].filter(id => B.txt[id] && B.txt[id].sql);
-    download('statquo_checks.sql', ids.map(id => `-- ${id}: ${B.txt[id].ru}\n-- источник: «${(B.txt[id].quote || '').replace(/\n/g, ' ')}»\n${B.txt[id].sql}\n`).join('\n'), 'text/plain'); });
+  $('#dl-sql').addEventListener('click', () => { const by = new Map(R.issues.filter(i => i.sql).map(i => [i.rule_id, i]));
+    download('statquo_checks.sql', [...by.values()].map(i => `-- ${i.rule_id}: ${i.ru}\n-- источник: «${(i.quote || '').replace(/\n/g, ' ')}»\n${i.sql}\n`).join('\n'), 'text/plain'); });
   $('#go-anal').addEventListener('click', () => openTab('t-anal'));
 }
 function toCSV(rows) { if (!rows.length) return ''; const h = Object.keys(rows[0]); const q = v => { const s = String(v ?? ''); return /[",\n;]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; }; return '﻿' + [h.join(','), ...rows.map(r => h.map(k => q(r[k])).join(','))].join('\n'); }
@@ -1264,7 +1360,7 @@ function download(name, text, type = 'text/csv') { const a = document.createElem
 /* ---------- 3 · analysis ---------- */
 let selRegion = null, selCase = B.cases[0].id;
 function analysisIssues() {
-  if (RUN) return { src: `последняя проверка: ${RUN.forms.map(f => FORM[f]).join(', ')}, ${RUN.year}`, list: RUN.issues.map(i => { const t = B.txt[i.rule_id] || {}; return { region: i.region, status: i.status, form: i.form, year: i.year, ru: issueText(i), rr: i.rate_region, rs: i.rate_rest, rule: i.rule_id, quote: t.quote, doc: DOC[t.doc] || t.doc, sql: t.sql, trust: SYN[i.synthesis] || i.synthesis, records: i.records }; }) };
+  if (RUN) return { src: `последняя проверка: ${RUN.forms.map(f => FORM[f]).join(', ')}, ${RUN.year}`, list: RUN.issues.map(i => ({ region: i.region, status: i.status, form: i.form, year: i.year, ru: issueText(i), rr: i.rate_region, rs: i.rate_rest, rule: i.rule_id, quote: i.quote, doc: DOC[i.doc] || i.doc, sql: i.sql, trust: SYN[i.synthesis] || i.synthesis, records: i.records })) };
   return { src: 'полный анализ: 5 форм, 2023–2024', list: B.issues.map(i => ({ region: i.region, status: i.status === 'держится' ? 'hold' : 'check', form: i.form, year: i.year, ru: i.ru, rr: i.rateRegion, rs: i.rateRest, rule: i.rule, cas: i.case, quote: i.quote, doc: i.doc, sql: i.sql, trust: i.trust, records: i.records })) };
 }
 function renderAnalysis() {
@@ -1311,6 +1407,311 @@ function renderAnalysis() {
       </tbody></table></div></details>` : '<p class="muted">В сводке по регионам этого дела нет: проблема общенациональная или выявлена отдельным расчётом.</p>'; })();
 }
 const h0 = (location.hash || '').slice(1);
-if (['entry', 'file', 'anal'].includes(h0)) openTab('t-' + h0);
+if (['ai', 'entry', 'file', 'anal'].includes(h0)) openTab('t-' + h0);
 else if (h0 in SUBRENDER) { curSub = h0; openTab('t-anal'); }
+</script>
+<script>
+/* The model step inside the app.
+   Stage 0: questionnaire documents → rules (prompts/extract_rules_v2.md, the same prompt as extract/llm_extract.py).
+   Analysis: the regional deviations of the last file check → case files (problem → impact → fix).
+   Three ways to reach the model: an Anthropic API key (called from this browser tab, streamed), a Claude chat
+   (copy the request, paste the answer back), or the saved run of 10 Oct 2026 (D-002 2022), replayed.
+   Only the blank form, instruction, file structure and column names go to the model; for case files, only the
+   regional summary (rule, region, shares). Survey records never leave the computer.
+   Runs after the main script and uses its globals (B, E, $, esc, pct, FORM, RU, RULESETS, FILE_RS, ...). */
+(function () {
+const CFG = {"prompt":"# Prompt: questionnaire → executable rules (v2)\n\nYou are given the documentation of one statistical form of the Bureau of National Statistics of Kazakhstan:\nthe blank questionnaire (Kazakh and Russian), the interviewer instruction, and the file structure that maps\ndata columns to questions. You are also given the list of column names that actually occur in the data file.\n\nYour task is to write down every rule the documentation implies about the data, as JSON that a program\ncan execute. Do not invent rules. Every rule must quote the passage it comes from.\n\n## Rule types\n\n| type | meaning | example |\n|---|---|---|\n| `domain` | the column may only hold these codes (blank is allowed unless a `required` rule says otherwise) | Part 1 scale: 1–10 or 89 |\n| `required` | when `when` holds (or always), the column must not be blank | Part 2 Q1 is asked of everyone |\n| `skip` | when `when` holds, the column must be blank (the questionnaire routes past it) | Part 3 Q13 \"no → 15\", so Q14 is blank |\n| `multi_select` | a tick-box group: each column is 1 or blank; `exclusive` lists options that cannot be ticked with others | Part 2 Q8 option 5 \"not applicable\" |\n| `consistency` | a logical relation between two answers in the same record | a pre-school child not attending kindergarten implies \"there are children\" |\n| `cross_form` | a relation between this form and another form of the same household, checked on regional shares | D-002 \"has children\" vs D-008 roster |\n| `doc_issue` | the documentation contradicts itself (Kazakh vs Russian wording, instruction vs form, structure vs data) | — |\n\n`meaning` gives code labels (Russian, as printed) for `domain` rules when the form prints them.\n\n## Output\n\nA JSON object `{\"form\": ..., \"years\": [...], \"rules\": [...]}`. Each rule:\n\n```json\n{\n  \"id\": \"D002-P3Q14-skip\",\n  \"type\": \"skip\",\n  \"table\": \"ocenka\",\n  \"targets\": [\"GR314\"],\n  \"when\": {\"col\": \"GR313\", \"in\": [2]},\n  \"allowed\": null,\n  \"meaning\": null,\n  \"source\": {\"doc\": \"form\", \"quote\": \"иә→ 14 / да → 14; жоқ→ 15 / нет → 15\"},\n  \"confidence\": \"high\",\n  \"note\": \"Q13 'no' routes to Q15\"\n}\n```\n\n`when` is either `{\"col\": C, \"in\": [...]}`, `{\"col\": C, \"blank\": true}`, `{\"col\": C, \"filled\": true}`,\n`{\"col\": C, \"lt\": N}`, `{\"col\": C, \"ge\": N}`, `{\"all\": [...]}` or `{\"any\": [...]}`. Use `\"confidence\": \"medium\"`\nwhen the rule is implied rather than printed (for example, a question with an arrow on \"yes\" only). Use the data\ncolumn names exactly as listed. `table` is one of the table names given with the columns.\n\n## Fields the program needs, by type\n\n- `domain`: `allowed` is a list of codes (`[1, 2, 3, 89]`) or a range `{\"min\": 15, \"max\": 120}` (either bound may be left out).\n- `required`: add `\"mode\": \"any\"` when at least one column of a tick-box group must be ticked.\n- `multi_select`: `exclusive` is a list of columns (may be empty).\n- `consistency`: give `check` and its fields, one of:\n  - `{\"check\": \"implies\", \"if\": <condition>, \"then\": <condition>}`: in every record where `if` holds, `then` must hold\n    (conditions have the same form as `when`);\n  - `{\"check\": \"lte\", \"a\": C1, \"b\": C2}`: the number in C1 must not exceed the number in C2;\n  - `{\"check\": \"unique\"}`: the combination of the `targets` columns occurs once.\n  A relation that fits none of these: write it with `\"check\": \"manual\"`; it is listed for a person, not run.\n- `cross_form`: say in `note` which share in this form should match which share in the other form.\n- `doc_issue`: `targets` are the columns concerned; say in `note` what contradicts what.\n\nWrite the most complete list you can. A rule the form states but the data breaks is exactly what we want to find.\n","saved":{"form":"D002","year":2022,"when":"10.10.2026","seconds":105,"columns":{"subject":["GODO","TE","K","NOMP","POL","VOZ","GR1","GR2","GR3","GR4","GR5","GR61","GR62","GR63","GR7","GR8","GR9","GR101","GR102","GR103","GR11","GR12","GR13","GR14","GR151","GR152","GR161","GR162","GR171","GR172","GR173","GR174","GR181","GR182","GR183","GR184","GR191","GR192","GR193","GR194","GR195","GR196","GR201","GR202","GR21","GR22","ZT","NOMER"],"ocenka":["GODO","TE","K","NOMP","POL","VOZ","GR1","GR2","GR3","GR4","GR5","GR6","GR7","GR8","GR9","GR10","GR11","GR31_1","GR31_2","GR31_3","GR31_4","GR32","GR33","GR34","GR35","GR36","GR37","GR38","GR39","GR310","GR311","GR312","GR313","GR314","GR315","GR316_1","GR316_2","GR316_3","GR316_4","GR316_5","GR316_6","GR317","GR318_1","GR318_2","GR318_3","GR318_4","GR318_5","GR318_6","GR318_7","GR318_8","GR318_9","GR319","GR320_1","GR320_2","GR320_3","GR320_4","GR320_5","GR320_6","GR320_7","GR320_8","GR320_9","GR320_10","NOMER"]},"docs":["Структура файлов2022.xls","Форма D 002_2022.docx"],"reply":"{\n  \"form\": \"D002\",\n  \"years\": [2022],\n  \"rules\": [\n    {\n      \"id\": \"D002-P1-domain\",\n      \"type\": \"domain\",\n      \"table\": \"subject\",\n      \"targets\": [\"GR1\", \"GR2\", \"GR3\", \"GR4\", \"GR5\", \"GR61\", \"GR62\", \"GR63\", \"GR7\", \"GR8\", \"GR9\", \"GR101\", \"GR102\", \"GR103\", \"GR11\", \"GR12\", \"GR13\", \"GR14\", \"GR151\", \"GR152\", \"GR161\", \"GR162\", \"GR171\", \"GR172\", \"GR173\", \"GR174\", \"GR181\", \"GR182\", \"GR183\", \"GR184\", \"GR191\", \"GR192\", \"GR193\", \"GR194\", \"GR195\", \"GR196\", \"GR201\", \"GR202\", \"GR21\", \"GR22\"],\n      \"when\": null,\n      \"allowed\": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 89],\n      \"meaning\": {\"1-3\": \"Не удовлетворен\", \"4-7\": \"Частично удовлетворен\", \"8-10\": \"Удовлетворен\", \"89\": \"Не применимо/ Затрудняюсь ответить\"},\n      \"source\": {\"doc\": \"form\", \"quote\": \"Степень Вашей удовлетворенности следует определять в соответствии с предложенной шкалой от 1 до 10 ... следует выбрать вариант ответа 89 «Не применимо или Затрудняюсь ответить»\"},\n      \"confidence\": \"high\",\n      \"note\": \"Part 1 satisfaction scale for every Part 1 question\"\n    },\n    {\n      \"id\": \"D002-P1-required\",\n      \"type\": \"required\",\n      \"table\": \"subject\",\n      \"targets\": [\"GR1\", \"GR2\", \"GR3\", \"GR4\", \"GR5\", \"GR61\", \"GR62\", \"GR63\", \"GR7\", \"GR8\", \"GR9\", \"GR101\", \"GR102\", \"GR103\", \"GR11\", \"GR12\", \"GR13\", \"GR14\", \"GR151\", \"GR152\", \"GR161\", \"GR162\", \"GR171\", \"GR172\", \"GR173\", \"GR174\", \"GR181\", \"GR182\", \"GR183\", \"GR184\", \"GR191\", \"GR192\", \"GR193\", \"GR194\", \"GR195\", \"GR196\", \"GR201\", \"GR202\", \"GR21\", \"GR22\"],\n      \"when\": null,\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"В случае, если на Ваш взгляд, какой-то из вопросов к Вам не применим или Вы затрудняетесь на него ответить, следует выбрать вариант ответа 89\"},\n      \"confidence\": \"medium\",\n      \"note\": \"No routing in Part 1; non-applicable questions are coded 89, not left blank\"\n    },\n    {\n      \"id\": \"D002-P2Q1-domain\",\n      \"type\": \"domain\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR1\"],\n      \"when\": null,\n      \"allowed\": [1, 2, 3, 4, 5, 6],\n      \"meaning\": {\"1\": \"низкий уровень обеспеченности (малообеспеченные)\", \"2\": \"обеспеченность ниже среднего уровня\", \"3\": \"средний уровень обеспеченности (средний класс)\", \"4\": \"обеспеченность несколько выше среднего уровня\", \"5\": \"достаточный уровень обеспеченности (относительно состоятельные)\", \"6\": \"высокий уровень обеспеченности\"},\n      \"source\": {\"doc\": \"form\", \"quote\": \"Укажите, к какому уровню материального обеспечения (достатка) Вы себя относите?\"},\n      \"confidence\": \"high\",\n      \"note\": null\n    },\n    {\n      \"id\": \"D002-P2Q2-domain\",\n      \"type\": \"domain\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR2\"],\n      \"when\": null,\n      \"allowed\": [1, 2, 3],\n      \"meaning\": {\"1\": \"не изменилось\", \"2\": \"улучшилось\", \"3\": \"ухудшилось\"},\n      \"source\": {\"doc\": \"form\", \"quote\": \"Изменилось ли Ваше благосостояние за последний год?\"},\n      \"confidence\": \"high\",\n      \"note\": null\n    },\n    {\n      \"id\": \"D002-P2Q3-domain\",\n      \"type\": \"domain\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR3\"],\n      \"when\": null,\n      \"allowed\": [1, 2, 3, 4, 5],\n      \"meaning\": {\"1\": \"уверены, что жить будем лучше\", \"2\": \"не совсем уверены, но предполагаем, что будет улучшение\", \"3\": \"останемся примерно на достигнутом уровне благосостояния\", \"4\": \"возможно некоторое ухудшение\", \"5\": \"жить будем хуже\"},\n      \"source\": {\"doc\": \"form\", \"quote\": \"Как Вы считаете, будете ли Вы жить лучше в ближайший год?\"},\n      \"confidence\": \"high\",\n      \"note\": null\n    },\n    {\n      \"id\": \"D002-P2Q4-11-domain\",\n      \"type\": \"domain\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR4\", \"GR5\", \"GR6\", \"GR7\", \"GR8\", \"GR9\", \"GR10\", \"GR11\"],\n      \"when\": null,\n      \"allowed\": [1, 2, 3, 4],\n      \"meaning\": {\"1\": \"да\", \"2\": \"нет\", \"3\": \"затрудняюсь ответить\", \"4\": \"отказ от ответа\"},\n      \"source\": {\"doc\": \"form\", \"quote\": \"да | 1 нет | 2 затрудняюсь ответить | 3 отказ от ответа | 4\"},\n      \"confidence\": \"high\",\n      \"note\": \"Food security questions 4-11\"\n    },\n    {\n      \"id\": \"D002-P2-required\",\n      \"type\": \"required\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR1\", \"GR2\", \"GR3\", \"GR4\", \"GR5\", \"GR6\", \"GR7\", \"GR8\", \"GR9\", \"GR10\", \"GR11\"],\n      \"when\": null,\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"Выбирается и отмечается один вариант ответа.\"},\n      \"confidence\": \"medium\",\n      \"note\": \"Part 2 has no routing; every question is asked, with refusal/difficulty codes available\"\n    },\n    {\n      \"id\": \"D002-P3Q1-domain\",\n      \"type\": \"domain\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR31_1\", \"GR31_2\", \"GR31_3\", \"GR31_4\"],\n      \"when\": null,\n      \"allowed\": [1, 2, 3, 4],\n      \"meaning\": {\"1\": \"да, единожды\", \"2\": \"да, два и более раза\", \"3\": \"нет\", \"4\": \"не актуально\"},\n      \"source\": {\"doc\": \"form\", \"quote\": \"1 – иә, бір рет/да, единожды 2 – иә, екі немесе одан көп/ да, два и более раза 3 –жоқ/ нет 4 – маңызды емес/ не актуально\"},\n      \"confidence\": \"high\",\n      \"note\": null\n    },\n    {\n      \"id\": \"D002-P3-yesno-domain\",\n      \"type\": \"domain\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR32\", \"GR35\", \"GR36\", \"GR38\", \"GR313\", \"GR315\", \"GR317\"],\n      \"when\": null,\n      \"allowed\": [1, 2],\n      \"meaning\": {\"1\": \"да\", \"2\": \"нет\"},\n      \"source\": {\"doc\": \"form\", \"quote\": \"иә да | 1 жоқ нет | 2\"},\n      \"confidence\": \"high\",\n      \"note\": \"Part 3 questions 2, 5, 6, 8, 13, 15, 17\"\n    },\n    {\n      \"id\": \"D002-P3Q4-domain\",\n      \"type\": \"domain\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR34\"],\n      \"when\": null,\n      \"allowed\": [1, 2],\n      \"meaning\": {\"1\": \"да\", \"2\": \"нет, не хватает средств\"},\n      \"source\": {\"doc\": \"form\", \"quote\": \"питаться горячими блюдами ... хотя бы раз в два дня? иә да | 1 жоқ, қаражат жетпейді нет, не хватает средств | 2\"},\n      \"confidence\": \"high\",\n      \"note\": \"Only two options printed (no 'other reason' option, unlike Q3)\"\n    },\n    {\n      \"id\": \"D002-P3-three-option-domain\",\n      \"type\": \"domain\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR33\", \"GR37\", \"GR39\", \"GR310\", \"GR311\", \"GR312\"],\n      \"when\": null,\n      \"allowed\": [1, 2, 3],\n      \"meaning\": {\"1\": \"да\", \"2\": \"нет, не хватает средств\", \"3\": \"нет, по другой причине\"},\n      \"source\": {\"doc\": \"form\", \"quote\": \"да | 1 ... нет, не хватает средств | 2 ... нет, по другой причине | 3\"},\n      \"confidence\": \"high\",\n      \"note\": \"Part 3 questions 3, 7, 9, 10, 11, 12\"\n    },\n    {\n      \"id\": \"D002-P3Q14-domain\",\n      \"type\": \"domain\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR314\"],\n      \"when\": null,\n      \"allowed\": [1, 2],\n      \"meaning\": {\"1\": \"не менее одного раза в день\", \"2\": \"не менее одного раза в неделю, но не каждый день\"},\n      \"source\": {\"doc\": \"form\", \"quote\": \"не менее одного раза в день | 1 ... не менее одного раза в неделю, но не каждый день | 2\"},\n      \"confidence\": \"high\",\n      \"note\": null\n    },\n    {\n      \"id\": \"D002-P3Q19-domain\",\n      \"type\": \"domain\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR319\"],\n      \"when\": null,\n      \"allowed\": [1, 2, 3],\n      \"meaning\": {\"1\": \"да\", \"2\": \"нет\", \"3\": \"нет, потому что не было необходимости\"},\n      \"source\": {\"doc\": \"form\", \"quote\": \"да → 20 | 1 нет | 2 нет, потому что не было необходимости | 3\"},\n      \"confidence\": \"high\",\n      \"note\": null\n    },\n    {\n      \"id\": \"D002-P3-required\",\n      \"type\": \"required\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR31_1\", \"GR31_2\", \"GR31_3\", \"GR31_4\", \"GR32\", \"GR33\", \"GR34\", \"GR35\", \"GR36\", \"GR37\", \"GR38\", \"GR39\", \"GR310\", \"GR311\", \"GR312\", \"GR313\", \"GR315\", \"GR317\", \"GR319\"],\n      \"when\": null,\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"Выбирается и отмечается один вариант ответа, за исключением 16, 18 и 20 вопросов .\"},\n      \"confidence\": \"medium\",\n      \"note\": \"Questions not behind any routing are asked of every respondent\"\n    },\n    {\n      \"id\": \"D002-P3Q14-skip\",\n      \"type\": \"skip\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR314\"],\n      \"when\": {\"col\": \"GR313\", \"in\": [2]},\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"иә→ 14 да → 14 | 1 жоқ→ 15 нет → 15 | 2\"},\n      \"confidence\": \"high\",\n      \"note\": \"Q13 'no' routes to Q15\"\n    },\n    {\n      \"id\": \"D002-P3Q14-required\",\n      \"type\": \"required\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR314\"],\n      \"when\": {\"col\": \"GR313\", \"in\": [1]},\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"да → 14 ... Если да, как часто пользовались услугами Интернета\"},\n      \"confidence\": \"high\",\n      \"note\": null\n    },\n    {\n      \"id\": \"D002-P3Q16-multi\",\n      \"type\": \"multi_select\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR316_1\", \"GR316_2\", \"GR316_3\", \"GR316_4\", \"GR316_5\", \"GR316_6\"],\n      \"when\": null,\n      \"allowed\": [1],\n      \"meaning\": {\"GR316_1\": \"отсутствие провайдера\", \"GR316_2\": \"слишком дорогая оплата, не можем себе позволить\", \"GR316_3\": \"ничего не знаю об этом\", \"GR316_4\": \"нет необходимости, использую интернет в мобильном телефоне\", \"GR316_5\": \"не хватает технических устройств, но мы можем их докупить\", \"GR316_6\": \"другое\"},\n      \"exclusive\": [],\n      \"source\": {\"doc\": \"form\", \"quote\": \"Если нет, по какой причине: (ответов может быть несколько)\"},\n      \"confidence\": \"high\",\n      \"note\": null\n    },\n    {\n      \"id\": \"D002-P3Q16-skip\",\n      \"type\": \"skip\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR316_1\", \"GR316_2\", \"GR316_3\", \"GR316_4\", \"GR316_5\", \"GR316_6\"],\n      \"when\": {\"col\": \"GR315\", \"in\": [1]},\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"иә→ 17 да → 17 | 1 жоқ→ 16 нет → 16 | 2\"},\n      \"confidence\": \"high\",\n      \"note\": \"Q15 'yes' routes to Q17\"\n    },\n    {\n      \"id\": \"D002-P3Q16-required\",\n      \"type\": \"required\",\n      \"mode\": \"any\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR316_1\", \"GR316_2\", \"GR316_3\", \"GR316_4\", \"GR316_5\", \"GR316_6\"],\n      \"when\": {\"col\": \"GR315\", \"in\": [2]},\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"нет → 16 ... Если нет, по какой причине\"},\n      \"confidence\": \"high\",\n      \"note\": \"At least one reason when there is no home internet access\"\n    },\n    {\n      \"id\": \"D002-P3Q18-multi\",\n      \"type\": \"multi_select\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR318_1\", \"GR318_2\", \"GR318_3\", \"GR318_4\", \"GR318_5\", \"GR318_6\", \"GR318_7\", \"GR318_8\", \"GR318_9\"],\n      \"when\": null,\n      \"allowed\": [1],\n      \"meaning\": {\"GR318_1\": \"слишком дорого\", \"GR318_2\": \"нет дошкольных учреждений по месту жительства\", \"GR318_3\": \"неподходящий возраст\", \"GR318_4\": \"болезнь\", \"GR318_5\": \"за ребенком присматривают родственники\", \"GR318_6\": \"за ребенком присматривает няня\", \"GR318_7\": \"нет прописки\", \"GR318_8\": \"нет необходимости\", \"GR318_9\": \"другие причины\"},\n      \"exclusive\": [],\n      \"source\": {\"doc\": \"form\", \"quote\": \"Если да, по какой причине не посещает? (ответов может быть несколько)\"},\n      \"confidence\": \"high\",\n      \"note\": null\n    },\n    {\n      \"id\": \"D002-P3Q18-skip\",\n      \"type\": \"skip\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR318_1\", \"GR318_2\", \"GR318_3\", \"GR318_4\", \"GR318_5\", \"GR318_6\", \"GR318_7\", \"GR318_8\", \"GR318_9\"],\n      \"when\": {\"col\": \"GR317\", \"in\": [2]},\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"иә→ 18 да → 18 | 1 жоқ→ 19 нет → 19 | 2\"},\n      \"confidence\": \"high\",\n      \"note\": \"Q17 'no' routes to Q19\"\n    },\n    {\n      \"id\": \"D002-P3Q18-required\",\n      \"type\": \"required\",\n      \"mode\": \"any\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR318_1\", \"GR318_2\", \"GR318_3\", \"GR318_4\", \"GR318_5\", \"GR318_6\", \"GR318_7\", \"GR318_8\", \"GR318_9\"],\n      \"when\": {\"col\": \"GR317\", \"in\": [1]},\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"да → 18 ... Если да, по какой причине не посещает?\"},\n      \"confidence\": \"high\",\n      \"note\": null\n    },\n    {\n      \"id\": \"D002-P3Q20-multi\",\n      \"type\": \"multi_select\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR320_1\", \"GR320_2\", \"GR320_3\", \"GR320_4\", \"GR320_5\", \"GR320_6\", \"GR320_7\", \"GR320_8\", \"GR320_9\", \"GR320_10\"],\n      \"when\": null,\n      \"allowed\": [1],\n      \"meaning\": {\"GR320_1\": \"занимался (лась) самолечением\", \"GR320_2\": \"решил (а), что и так выздоровлю\", \"GR320_3\": \"высокая стоимость услуг\", \"GR320_4\": \"слишком дорогое лекарство\", \"GR320_5\": \"большие очереди\", \"GR320_6\": \"отсутствие специалиста\", \"GR320_7\": \"учреждения здравоохранения расположены далеко/нет возможности доехать\", \"GR320_8\": \"отсутствие лекарств\", \"GR320_9\": \"плохое обслуживание/не доверяю\", \"GR320_10\": \"другие причины\"},\n      \"exclusive\": [],\n      \"source\": {\"doc\": \"form\", \"quote\": \"По какой причине в течение года не смогли воспользоваться медицинскими услугами? (ответов может быть несколько)\"},\n      \"confidence\": \"high\",\n      \"note\": null\n    },\n    {\n      \"id\": \"D002-P3Q20-skip\",\n      \"type\": \"skip\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR320_1\", \"GR320_2\", \"GR320_3\", \"GR320_4\", \"GR320_5\", \"GR320_6\", \"GR320_7\", \"GR320_8\", \"GR320_9\", \"GR320_10\"],\n      \"when\": {\"col\": \"GR319\", \"in\": [2, 3]},\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"да → 20 | 1 нет | 2 нет, потому что не было необходимости | 3\"},\n      \"confidence\": \"medium\",\n      \"note\": \"Arrow printed on 'yes' only; Q20 is the last question of Part 3, so 'no' answers have nothing to answer in Q20\"\n    },\n    {\n      \"id\": \"D002-P3Q20-required\",\n      \"type\": \"required\",\n      \"mode\": \"any\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR320_1\", \"GR320_2\", \"GR320_3\", \"GR320_4\", \"GR320_5\", \"GR320_6\", \"GR320_7\", \"GR320_8\", \"GR320_9\", \"GR320_10\"],\n      \"when\": {\"col\": \"GR319\", \"in\": [1]},\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"иә→ 20 да → 20 | 1\"},\n      \"confidence\": \"high\",\n      \"note\": null\n    },\n    {\n      \"id\": \"D002-subject-VOZ-domain\",\n      \"type\": \"domain\",\n      \"table\": \"subject\",\n      \"targets\": [\"VOZ\"],\n      \"when\": null,\n      \"allowed\": {\"min\": 15},\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"В опросе принимает участие один член домашнего хозяйства в возрасте 15 лет и старше\"},\n      \"confidence\": \"high\",\n      \"note\": null\n    },\n    {\n      \"id\": \"D002-ocenka-VOZ-domain\",\n      \"type\": \"domain\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"VOZ\"],\n      \"when\": null,\n      \"allowed\": {\"min\": 15},\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"В опросе принимает участие один член домашнего хозяйства в возрасте 15 лет и старше\"},\n      \"confidence\": \"high\",\n      \"note\": null\n    },\n    {\n      \"id\": \"D002-subject-K-domain\",\n      \"type\": \"domain\",\n      \"table\": \"subject\",\n      \"targets\": [\"K\"],\n      \"when\": null,\n      \"allowed\": [1, 2],\n      \"meaning\": {\"1\": \"город\", \"2\": \"село\"},\n      \"source\": {\"doc\": \"form\", \"quote\": \"Код типа населенного пункта (1 - город, 2 - село)\"},\n      \"confidence\": \"high\",\n      \"note\": null\n    },\n    {\n      \"id\": \"D002-ocenka-K-domain\",\n      \"type\": \"domain\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"K\"],\n      \"when\": null,\n      \"allowed\": [1, 2],\n      \"meaning\": {\"1\": \"город\", \"2\": \"село\"},\n      \"source\": {\"doc\": \"form\", \"quote\": \"Код типа населенного пункта (1 - город, 2 - село)\"},\n      \"confidence\": \"high\",\n      \"note\": null\n    },\n    {\n      \"id\": \"D002-subject-GODO-domain\",\n      \"type\": \"domain\",\n      \"table\": \"subject\",\n      \"targets\": [\"GODO\"],\n      \"when\": null,\n      \"allowed\": [2022],\n      \"meaning\": null,\n      \"source\": {\"doc\": \"structure\", \"quote\": \"Godo | Год\"},\n      \"confidence\": \"medium\",\n      \"note\": \"File documented as Структура файлов2022 / Форма D 002_2022\"\n    },\n    {\n      \"id\": \"D002-ocenka-GODO-domain\",\n      \"type\": \"domain\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GODO\"],\n      \"when\": null,\n      \"allowed\": [2022],\n      \"meaning\": null,\n      \"source\": {\"doc\": \"structure\", \"quote\": \"Godo | Год\"},\n      \"confidence\": \"medium\",\n      \"note\": \"File documented as Структура файлов2022 / Форма D 002_2022\"\n    },\n    {\n      \"id\": \"D002-subject-one-respondent\",\n      \"type\": \"consistency\",\n      \"check\": \"unique\",\n      \"table\": \"subject\",\n      \"targets\": [\"GODO\", \"NOMER\"],\n      \"when\": null,\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"В опросе принимает участие один член домашнего хозяйства в возрасте 15 лет и старше\"},\n      \"confidence\": \"high\",\n      \"note\": \"One respondent per household per year\"\n    },\n    {\n      \"id\": \"D002-ocenka-one-respondent\",\n      \"type\": \"consistency\",\n      \"check\": \"unique\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GODO\", \"NOMER\"],\n      \"when\": null,\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"В опросе принимает участие один член домашнего хозяйства в возрасте 15 лет и старше\"},\n      \"confidence\": \"high\",\n      \"note\": \"One respondent per household per year\"\n    },\n    {\n      \"id\": \"D002-subject-ocenka-same-person\",\n      \"type\": \"consistency\",\n      \"check\": \"manual\",\n      \"table\": \"subject\",\n      \"targets\": [\"NOMER\", \"NOMP\", \"POL\", \"VOZ\", \"TE\", \"K\"],\n      \"when\": null,\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"В опросе принимает участие один член домашнего хозяйства в возрасте 15 лет и старше\"},\n      \"confidence\": \"medium\",\n      \"note\": \"Parts 1 (subject) and 2-3 (ocenka) are one questionnaire filled by one person: for the same GODO+NOMER both tables should carry the same NOMP, POL, VOZ, TE, K, and each household should appear in both tables\"\n    },\n    {\n      \"id\": \"D002-P3Q16opt4-implies-Q13\",\n      \"type\": \"consistency\",\n      \"check\": \"implies\",\n      \"if\": {\"col\": \"GR316_4\", \"in\": [1]},\n      \"then\": {\"col\": \"GR313\", \"in\": [1]},\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR316_4\", \"GR313\"],\n      \"when\": null,\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"нет необходимости, использую интернет в мобильном телефоне | 4\"},\n      \"confidence\": \"medium\",\n      \"note\": \"A respondent who uses the internet on a mobile phone means someone in the household used the internet in the last 12 months (Q13 = yes)\"\n    },\n    {\n      \"id\": \"D002-P3Q17-cross-D008\",\n      \"type\": \"cross_form\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR317\"],\n      \"when\": null,\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"Имеется ли в Вашем домашним хозяйстве ребенок дошкольного возраста, не посещающий дошкольное учреждение?\"},\n      \"confidence\": \"medium\",\n      \"note\": \"Regional share of households with GR317=1 must not exceed the share of the same households having a pre-school-age child (about 0-6) in the D-008 household roster\"\n    },\n    {\n      \"id\": \"D002-struct-GR31_3-duplicate\",\n      \"type\": \"doc_issue\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR31_3\", \"GR31_4\"],\n      \"when\": null,\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"structure\", \"quote\": \"Gr31_3 | 3 часть вопрос 1.3 Gr31_3 | 3 часть вопрос 1.4\"},\n      \"confidence\": \"high\",\n      \"note\": \"Structure gives the same column name Gr31_3 for questions 1.3 and 1.4; the data has GR31_4 for 1.4\"\n    },\n    {\n      \"id\": \"D002-struct-dotted-names\",\n      \"type\": \"doc_issue\",\n      \"table\": \"subject\",\n      \"targets\": [\"GR151\", \"GR152\", \"GR161\", \"GR162\", \"GR171\", \"GR172\", \"GR173\", \"GR174\", \"GR181\", \"GR182\", \"GR183\", \"GR184\"],\n      \"when\": null,\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"structure\", \"quote\": \"Gr15.1 | 1 часть вопрос 15.1 ... Gr18.4 | 1 часть вопрос 18.4\"},\n      \"confidence\": \"high\",\n      \"note\": \"Structure names Gr15.1-Gr18.4 with dots while the data columns are GR151-GR184 (and Gr191, Gr61 etc. are written without dots)\"\n    },\n    {\n      \"id\": \"D002-struct-Q16-Q18-single\",\n      \"type\": \"doc_issue\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR316_1\", \"GR316_2\", \"GR316_3\", \"GR316_4\", \"GR316_5\", \"GR316_6\", \"GR318_1\", \"GR318_2\", \"GR318_3\", \"GR318_4\", \"GR318_5\", \"GR318_6\", \"GR318_7\", \"GR318_8\", \"GR318_9\"],\n      \"when\": null,\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"structure\", \"quote\": \"Gr316 | 3 часть вопрос 16 ... Gr318 | 3 часть вопрос 18\"},\n      \"confidence\": \"high\",\n      \"note\": \"Structure lists Q16 and Q18 as single columns Gr316, Gr318, but the form makes them multi-answer and the data has GR316_1-6 and GR318_1-9 (Q20 is split into Gr320_1-10 in the structure)\"\n    },\n    {\n      \"id\": \"D002-P3Q14-kz-ru\",\n      \"type\": \"doc_issue\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR314\"],\n      \"when\": null,\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"күніне бірнеше рет не менее одного раза в день | 1 аптасына бірнеше рет, бірақ күн сайын емес не менее одного раза в неделю, но не каждый день | 2\"},\n      \"confidence\": \"high\",\n      \"note\": \"Kazakh says 'several times a day' / 'several times a week', Russian says 'at least once a day' / 'at least once a week'\"\n    },\n    {\n      \"id\": \"D002-P3Q14-incomplete-scale\",\n      \"type\": \"doc_issue\",\n      \"table\": \"ocenka\",\n      \"targets\": [\"GR314\", \"GR313\"],\n      \"when\": null,\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"Если да, как часто пользовались услугами Интернета на протяжении последних 12 месяцев?\"},\n      \"confidence\": \"medium\",\n      \"note\": \"Q14 offers only daily and weekly codes; a household that used the internet less than weekly (Q13 = yes) has no code to choose\"\n    },\n    {\n      \"id\": \"D002-P4-not-in-structure\",\n      \"type\": \"doc_issue\",\n      \"table\": \"ocenka\",\n      \"targets\": [],\n      \"when\": null,\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"4 часть Укажите время, затраченное на заполнение статистической формы, в часах (нужное обвести)\"},\n      \"confidence\": \"high\",\n      \"note\": \"Part 4 (time spent filling the form) is on the form but has no column in the file structure or data\"\n    },\n    {\n      \"id\": \"D002-order-reference\",\n      \"type\": \"doc_issue\",\n      \"table\": \"subject\",\n      \"targets\": [],\n      \"when\": null,\n      \"allowed\": null,\n      \"meaning\": null,\n      \"source\": {\"doc\": \"form\", \"quote\": \"Приложение 1 к приказу Руководителя Бюро национальной статистики ... Приложение 3 к приказу Председателя Комитета по статистике ... от 19 декабря 2019 года № 14\"},\n      \"confidence\": \"medium\",\n      \"note\": \"The form header cites two different approving orders (new Bureau order, Appendix 1, and the 2019 Committee order, Appendix 3)\"\n    }\n  ]\n}\n"}};
+const AI = { docs: [], cols: {}, mode: 'api', abort: null, spec: null, seconds: null, source: '' };
+const LIBS = {
+  JSZip: 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js',
+  XLSX: 'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js',
+  pdfjsLib: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js',
+};
+const FORMNAME = f => FORM[f] || (f === 'OTHER' ? 'Другая форма' : f);
+const store = { get(k) { try { return sessionStorage.getItem(k) || ''; } catch (e) { return ''; } }, set(k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} } };
+
+function loadLib(g) {
+  if (window[g]) return Promise.resolve(window[g]);
+  return new Promise((ok, bad) => {
+    const s = document.createElement('script'); s.src = LIBS[g];
+    s.onload = () => { if (g === 'pdfjsLib' && window.pdfjsLib) window.pdfjsLib.GlobalWorkerOptions.workerSrc = LIBS.pdfjsLib.replace('pdf.min.js', 'pdf.worker.min.js'); ok(window[g]); };
+    s.onerror = () => bad(new Error('для чтения этого формата нужен интернет'));
+    document.head.appendChild(s);
+  });
+}
+function toB64(buf) { const u = new Uint8Array(buf); let s = ''; for (let i = 0; i < u.length; i += 0x8000) s += String.fromCharCode.apply(null, u.subarray(i, i + 0x8000)); return btoa(s); }
+function docxText(xml) {
+  return xml.replace(/<w:tab\/>/g, '\t').replace(/<\/w:tc>/g, ' | ').replace(/<\/w:p>/g, '\n').replace(/<[^>]+>/g, '')
+    .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&amp;/g, '&')
+    .replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
+}
+async function pdfText(buf) {
+  const pdfjs = await loadLib('pdfjsLib'); const doc = await pdfjs.getDocument({ data: new Uint8Array(buf) }).promise; const out = [];
+  for (let i = 1; i <= doc.numPages; i++) { const pg = await doc.getPage(i); const tc = await pg.getTextContent(); out.push(tc.items.map(x => x.str + (x.hasEOL ? '\n' : ' ')).join('')); }
+  return out.join('\n');
+}
+async function readFile(f) {
+  const ext = (f.name.split('.').pop() || '').toLowerCase();
+  if (ext === 'csv') {   // only the header line is read
+    const line = (await f.slice(0, 65536).text()).split(/\r?\n/)[0].replace(/^﻿/, '');
+    const sep = (line.match(/;/g) || []).length > (line.match(/,/g) || []).length ? ';' : ',';
+    const cols = line.split(sep).map(x => x.replace(/"/g, '').trim()).filter(Boolean);
+    const [, role] = detect({ cols: Object.fromEntries(cols.map(c => [c, [null]])) });
+    return { kind: 'cols', name: f.name, table: role || f.name.replace(/\.csv$/i, '').replace(/_\d{4}$/, ''), cols };
+  }
+  if (ext === 'doc') throw new Error('формат .doc не читается в браузере — сохраните файл как .docx или PDF');
+  if (ext === 'pdf') { const buf = await f.arrayBuffer(); let text = null; try { text = await pdfText(buf.slice(0)); } catch (e) {} return { kind: 'doc', name: f.name, pdf: toB64(buf), text }; }
+  if (ext === 'docx') { const JSZip = await loadLib('JSZip'); const z = await JSZip.loadAsync(f); return { kind: 'doc', name: f.name, text: docxText(await z.file('word/document.xml').async('string')) }; }
+  if (ext === 'xls' || ext === 'xlsx') {
+    const X = await loadLib('XLSX'); const wb = X.read(await f.arrayBuffer(), { type: 'array' });
+    const text = wb.SheetNames.map(n => X.utils.sheet_to_json(wb.Sheets[n], { header: 1, blankrows: false, defval: '' })
+      .map(r => r.map(c => String(c).trim()).filter(Boolean).join(' | ')).filter(Boolean).join('\n')).join('\n');
+    return { kind: 'doc', name: f.name, text };
+  }
+  return { kind: 'doc', name: f.name, text: await f.text() };
+}
+
+/* ---------- inputs ---------- */
+function renderInputs() {
+  const docs = AI.docs.map((d, k) => `<div class="row"><span class="pill ok">${d.pdf ? 'PDF' : 'текст'}<\/span><span>${esc(d.name)}<\/span><span class="muted">${d.saved ? 'из сохранённого запуска' : d.text ? d.text.length.toLocaleString('ru-RU') + ' знаков' : 'передаётся как PDF'}<\/span><button class="btn" data-rm="d${k}" aria-label="Убрать">×<\/button><\/div>`);
+  const cols = Object.entries(AI.cols).map(([t, cs]) => `<div class="row"><span class="pill hold">столбцы<\/span><span>${esc(t)}<\/span><span class="muted">${cs.length} столбцов (только заголовок)<\/span><button class="btn" data-rm="c${esc(t)}" aria-label="Убрать">×<\/button><\/div>`);
+  $('#ai-list').innerHTML = docs.join('') + cols.join('') + (AI.docs.length && !Object.keys(AI.cols).length ? '<p class="muted">Добавьте CSV обследования: модель должна знать точные названия столбцов (сами записи не читаются).<\/p>' : '');
+  $('#ai-list').querySelectorAll('[data-rm]').forEach(b => b.addEventListener('click', () => { const v = b.dataset.rm; if (v[0] === 'd') AI.docs.splice(+v.slice(1), 1); else delete AI.cols[v.slice(1)]; renderInputs(); }));
+  const ready = AI.docs.length > 0;
+  $('#ai-run').disabled = !ready || !$('#ai-key').value.trim(); $('#ai-copy').disabled = !ready;
+}
+async function addFiles(list) {
+  if (AI.docs.some(d => d.saved)) { AI.docs = []; AI.cols = {}; }   // new files replace the replayed run's inputs
+  $('#ai-status').textContent = 'Читаю файлы…';
+  for (const f of list) {
+    try { const r = await readFile(f); if (r.kind === 'cols') AI.cols[r.table] = r.cols; else AI.docs.push(r); }
+    catch (e) { alertLine(`${f.name}: ${e.message}`); }
+  }
+  $('#ai-status').textContent = ''; renderInputs();
+}
+function alertLine(msg) { const p = document.createElement('p'); p.className = 'muted'; p.style.color = 'var(--orange-ink)'; p.textContent = msg; $('#ai-list').after(p); setTimeout(() => p.remove(), 9000); }
+const drop = $('#ai-drop'), input = $('#ai-files');
+drop.addEventListener('click', e => { if (e.target !== input) input.click(); });
+drop.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); } });
+input.addEventListener('change', () => { addFiles([...input.files]); input.value = ''; });
+['dragenter', 'dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('over'); }));
+['dragleave', 'drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('over'); }));
+drop.addEventListener('drop', e => addFiles([...e.dataTransfer.files]));
+
+/* ---------- the request (same text as extract/llm_extract.py) ---------- */
+function userText(forChat) {
+  const docs = AI.docs.map(d => `=== ${d.name} ===\n${!forChat && d.pdf ? '(PDF приложен к сообщению)' : d.text != null ? d.text : '(PDF приложен к сообщению)'}`).join('\n\n');
+  return `Form: ${$('#ai-form').value}\n\nData columns by table:\n${JSON.stringify(AI.cols)}\n\nDocumentation:\n${docs}\n\nReturn only the JSON object.`;
+}
+function apiContent() {
+  const pdfs = AI.docs.filter(d => d.pdf).map(d => ({ type: 'document', title: d.name, source: { type: 'base64', media_type: 'application/pdf', data: d.pdf } }));
+  return [...pdfs, { type: 'text', text: userText(false) }];
+}
+
+/* ---------- calling the model ---------- */
+async function callClaude({ system, content, maxTokens, onText, signal }) {
+  const key = $('#ai-key').value.trim(), model = $('#ai-model').value;
+  if (!key) throw new Error('введите ключ Anthropic API');
+  let res;
+  try {
+    res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST', signal,
+      headers: { 'content-type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
+      body: JSON.stringify({ model, max_tokens: maxTokens, system, stream: true, messages: [{ role: 'user', content }] }),
+    });
+  } catch (e) { if (e.name === 'AbortError') throw e; throw new Error('нет связи с api.anthropic.com (интернет или сетевой фильтр)'); }
+  if (!res.ok) {
+    let m = ''; try { const j = await res.json(); m = (j.error && j.error.message) || ''; } catch (e) {}
+    throw new Error(res.status === 401 ? 'ключ не принят (401)' : res.status === 429 ? 'превышен лимит запросов (429), подождите минуту' : res.status === 529 ? 'модель перегружена (529), повторите' : `ошибка API ${res.status}${m ? ': ' + m : ''}`);
+  }
+  const reader = res.body.getReader(), dec = new TextDecoder(); let buf = '', text = '', stop = null;
+  for (;;) {
+    const { value, done } = await reader.read(); if (done) break;
+    buf += dec.decode(value, { stream: true }); let i;
+    while ((i = buf.indexOf('\n\n')) >= 0) {
+      const ev = buf.slice(0, i); buf = buf.slice(i + 2);
+      const data = ev.split('\n').filter(l => l.startsWith('data:')).map(l => l.slice(5).trim()).join('');
+      if (!data) continue; let j; try { j = JSON.parse(data); } catch (e) { continue; }
+      if (j.type === 'content_block_delta' && j.delta && j.delta.type === 'text_delta') { text += j.delta.text; onText(text); }
+      else if (j.type === 'message_delta' && j.delta) stop = j.delta.stop_reason;
+      else if (j.type === 'error') throw new Error('ошибка модели: ' + ((j.error && j.error.message) || ''));
+    }
+  }
+  return { text, stop };
+}
+function parseJSON(text, listKey) {
+  const a = text.indexOf('{'), b = text.lastIndexOf('}');
+  if (a < 0) throw new Error('в ответе нет JSON');
+  try { return JSON.parse(text.slice(a, b + 1)); } catch (e) {
+    const at = text.indexOf(`"${listKey}"`); let k = b;   // cut off answer: keep every complete item
+    while (at > 0 && k > at) { try { const j = JSON.parse(text.slice(a, k + 1) + ']}'); j._truncated = true; return j; } catch (e2) { k = text.lastIndexOf('}', k - 1); } }
+    throw new Error('ответ не разобран как JSON');
+  }
+}
+
+/* ---------- stage 0: run, stream, check, show ---------- */
+let timer = null;
+function startProgress(label) {
+  const t0 = performance.now(); AI.seconds = 0; $('#ai-prog').hidden = false; $('#ai-stream').hidden = false; $('#ai-stream').textContent = ''; $('#ai-out').hidden = true;
+  const bar = $('#ai-prog i'); bar.style.width = '3%';
+  clearInterval(timer); timer = setInterval(() => { const s = (performance.now() - t0) / 1000; AI.seconds = s; $('#ai-status').textContent = `${label} · ${s.toFixed(0)} с${AI.n ? ` · получено правил: ${AI.n}` : ''}`; bar.style.width = Math.min(95, 3 + s * 0.8) + '%'; }, 250);
+  return t0;
+}
+function onStream(text) { AI.n = (text.match(/"id"\s*:/g) || []).length; const pre = $('#ai-stream'); pre.textContent = text.slice(-1800); pre.scrollTop = pre.scrollHeight; }
+function stopProgress() { clearInterval(timer); $('#ai-prog i').style.width = '100%'; setTimeout(() => { $('#ai-prog').hidden = true; }, 600); }
+
+$('#ai-run').addEventListener('click', async () => {
+  AI.abort = new AbortController(); $('#ai-run').disabled = true; $('#ai-stop').hidden = false; AI.n = 0;
+  startProgress(`Модель читает документы (${$('#ai-model').selectedOptions[0].textContent.split(' (')[0]})`);
+  try {
+    const { text, stop } = await callClaude({ system: CFG.prompt, content: apiContent(), maxTokens: 32000, onText: onStream, signal: AI.abort.signal });
+    stopProgress(); AI.source = `${$('#ai-model').value}, вызов из приложения, ${new Date().toLocaleString('ru-RU')}`;
+    accept(text, stop === 'max_tokens');
+  } catch (e) { stopProgress(); $('#ai-status').textContent = e.name === 'AbortError' ? 'Остановлено' : 'Не получилось: ' + e.message; }
+  $('#ai-run').disabled = false; $('#ai-stop').hidden = true;
+});
+$('#ai-stop').addEventListener('click', () => AI.abort && AI.abort.abort());
+$('#ai-key').value = store.get('statquo-key');
+$('#ai-key').addEventListener('input', () => { store.set('statquo-key', $('#ai-key').value.trim()); renderInputs(); });
+$('#ai-copy').addEventListener('click', async () => {
+  const text = CFG.prompt + '\n\n---\n\n' + userText(true);
+  const pdfs = AI.docs.filter(d => d.pdf && d.text == null).map(d => d.name);
+  try { await navigator.clipboard.writeText(text); $('#ai-copy-st').textContent = `Скопировано: ${text.length.toLocaleString('ru-RU')} знаков.` + (pdfs.length ? ` Приложите в чат: ${pdfs.join(', ')}.` : ''); }
+  catch (e) { $('#ai-reply').value = text; $('#ai-copy-st').textContent = 'Буфер обмена недоступен: запрос вставлен в поле ниже — выделите и скопируйте его, затем замените ответом.'; }
+});
+$('#ai-parse').addEventListener('click', () => { AI.seconds = null; AI.source = 'чат Claude, ответ вставлен вручную'; accept($('#ai-reply').value, false); });
+$('#ai-mode').querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+  AI.mode = b.dataset.v; $('#ai-mode').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  $('#ai-m-api').hidden = AI.mode !== 'api'; $('#ai-m-chat').hidden = AI.mode !== 'chat'; $('#ai-m-saved').hidden = AI.mode !== 'saved';
+}));
+const S = CFG.saved;
+$('#ai-saved-note').textContent = `Запуск ${S.when}: модель Claude получила только бланк ${FORMNAME(S.form)} ${S.year} года и структуру файла (анкета не использовалась при разработке) и работала ${S.seconds} с. Здесь записанный ответ воспроизводится за несколько секунд; дальше всё как при живом вызове.`;
+$('#ai-replay').addEventListener('click', async () => {
+  $('#ai-form').value = S.form; $('#ai-year').value = String(S.year); AI.cols = JSON.parse(JSON.stringify(S.columns)); AI.docs = S.docs.map(n => ({ kind: 'doc', name: n, text: '(в сохранённом запуске)', saved: true }));
+  renderInputs(); AI.n = 0; startProgress('Воспроизвожу сохранённый ответ');
+  const txt = S.reply, step = Math.ceil(txt.length / 60);
+  for (let i = step; i < txt.length + step; i += step) { onStream(txt.slice(0, i)); await new Promise(r => setTimeout(r, 70)); }
+  stopProgress(); AI.seconds = S.seconds; AI.source = `сохранённый запуск ${S.when} (Claude, prompt v2)`; accept(txt, false);
+});
+
+const TYPES = { domain: 'Допустимые коды', required: 'Обязательный ответ', skip: 'Переход', multi_select: 'Множественный выбор', consistency: 'Связь ответов', cross_form: 'Связь с другой формой', doc_issue: 'Противоречие в документации' };
+function check(spec) {
+  const known = new Set(Object.values(AI.cols).flat().map(c => c.toUpperCase())), tables = Object.keys(AI.cols);
+  for (const r of spec.rules) {
+    const w = [];
+    if (!TYPES[r.type]) w.push(`неизвестный вид «${r.type}»`);
+    if (!(r.source && r.source.quote)) w.push('нет цитаты');
+    if (known.size && r.type !== 'doc_issue') { const miss = (r.targets || []).filter(c => !known.has(String(c).toUpperCase())); if (miss.length) w.push(`нет в данных: ${listCols(miss)}`); }
+    if (tables.length && r.table && !['both', 'hh'].includes(r.table) && !tables.includes(r.table)) w.push(`таблица ${r.table} не загружена`);
+    if (r.type === 'consistency' && (r.check === 'manual' || !r.check)) w.push('для специалиста');
+    r._warn = w;
+    r._exec = !['doc_issue', 'cross_form'].includes(r.type) && !(r.type === 'consistency' && (r.check === 'manual' || !r.check)) && TYPES[r.type] && !w.some(x => x.startsWith('нет в данных') || x.startsWith('неизвестный'));
+  }
+}
+function accept(text, cut) {
+  let spec;
+  try { spec = parseJSON(text, 'rules'); } catch (e) { $('#ai-status').textContent = 'Не получилось: ' + e.message; return; }
+  if (!Array.isArray(spec.rules)) { $('#ai-status').textContent = 'В ответе нет списка rules'; return; }
+  spec.rules.forEach((r, k) => { if (!r.id) r.id = `AI-${k + 1}`; });
+  check(spec); AI.spec = spec; AI.truncated = cut || spec._truncated;
+  $('#ai-status').textContent = `Готово: ${spec.rules.length} правил` + (AI.seconds ? ` за ${Math.round(AI.seconds)} с` : '');
+  renderSpec();
+}
+function renderSpec() {
+  const sp = AI.spec, rules = sp.rules, form = $('#ai-form').value, year = +$('#ai-year').value;
+  const exec = rules.filter(r => r._exec), docs = rules.filter(r => r.type === 'doc_issue'), warn = rules.filter(r => r._warn.length && r.type !== 'doc_issue');
+  const by = {}; rules.filter(r => r.type !== 'doc_issue').forEach(r => (by[r.type] = by[r.type] || []).push(r));
+  const canRun = ['D002', 'D006', 'D008'].includes(form);
+  const out = $('#ai-out'); out.hidden = false;
+  out.innerHTML = `<div class="panel stack">
+    <div class="row" style="justify-content:space-between"><h2>3. Правила, извлечённые моделью · ${esc(FORMNAME(form))} ${year}<\/h2>
+      <div class="row"><button class="btn" id="ai-dl">Скачать правила (JSON)<\/button><button class="btn primary" id="ai-apply"${exec.length ? '' : ' disabled'}>Применить: форма и проверка файла →<\/button><\/div><\/div>
+    ${AI.truncated ? '<p class="pill err" style="align-self:flex-start">Ответ модели обрезан по длине: показаны все правила, которые пришли целиком<\/p>' : ''}
+    <div class="kpis">
+      <div class="kpi"><span class="big">${rules.length}<\/span><span class="muted">правил и замечаний, у ${rules.filter(r => r.source && r.source.quote).length} есть цитата-источник<\/span><\/div>
+      <div class="kpi"><span class="big">${exec.length}<\/span><span class="muted">выполняются программой на записях<\/span><\/div>
+      <div class="kpi"><span class="big">${docs.length}<\/span><span class="muted">противоречий в документации<\/span><\/div>
+      <div class="kpi"><span class="big">${warn.length}<\/span><span class="muted">на решение специалиста<\/span><\/div>
+    <\/div>
+    <p class="muted">Источник: ${esc(AI.source)}. Правила проверены программой: вид правила, цитата, есть ли столбцы в данных. Утверждает специалист.${canRun ? '' : ' Проверка файлов в приложении есть для Д-002, Д-006 и Д-008; для этой формы правила можно скачать и выполнить движком на Python.'}<\/p>
+    <div class="stack">${Object.entries(by).sort((a, b) => b[1].length - a[1].length).map(([t, rs], k) => `<details${k === 0 ? ' open' : ''}><summary>${esc(TYPES[t] || t)} — ${rs.length}<\/summary><div class="stack" style="margin-top:8px">
+      ${rs.map(r => `<div class="hit${r._exec ? '' : ' miss'}"><div class="head"><b>${esc(describeRule(r))}<\/b>${r._warn.map(w => `<span class="pill ${w === 'для специалиста' ? 'miss' : 'err'}">${esc(w)}<\/span>`).join(' ')}<\/div>
+        ${r.source && r.source.quote ? `<p class="quote">«${esc(r.source.quote)}» — ${esc(DOC[r.source.doc] || r.source.doc || '')}<\/p>` : ''}<p class="muted"><code>${esc(r.id)}<\/code>${r.confidence ? ` · уверенность: ${esc({ high: 'высокая', medium: 'средняя', low: 'низкая' }[r.confidence] || r.confidence)}` : ''}<\/p><\/div>`).join('')}<\/div><\/details>`).join('')}
+      ${docs.length ? `<details><summary>Противоречия в документации — ${docs.length}<\/summary><div class="stack" style="margin-top:8px">${docs.map(r => `<div class="hit miss"><b>${esc(r.note || describeRule(r))}<\/b>${r.source && r.source.quote ? `<p class="quote">«${esc(r.source.quote)}»<\/p>` : ''}<\/div>`).join('')}<\/div><\/details>` : ''}
+    <\/div><\/div>`;
+  $('#ai-dl').addEventListener('click', () => download(`rules_${form.toLowerCase()}_${year}_ai.json`, JSON.stringify({ form, years: [year], rules: rules.map(r => { const { _warn, _exec, ...x } = r; return x; }), extracted_by: AI.source + ', prompt v2' }, null, 1), 'application/json'));
+  $('#ai-apply').addEventListener('click', () => {
+    const key = `AI-${form}-${year}-${Object.keys(RULESETS).length}`;
+    RULESETS[key] = { key, form, year, label: `${FORMNAME(form)} ${year} · правила ИИ`, rules: rules.filter(r => r.type === 'doc_issue' || r._exec).map(r => { const { _warn, _exec, ...x } = r; return x; }), ai: true };
+    if (canRun) { for (const k of Object.keys(FILE_RS)) delete FILE_RS[k]; FILE_RS[form] = key; $('#f-year').value = String(year); }
+    selectRuleset(key); openTab('t-entry'); window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+/* ---------- analysis: the model writes case files from the regional summary ---------- */
+const CASE_SYSTEM = `Ты — методолог Бюро национальной статистики Казахстана. Тебе дана сводка отклонений, которые программа нашла при проверке файла обследования домохозяйств по регионам. Для каждого отклонения: номер, форма, год, регион, правило анкеты (текст и цитата из документации), доля нарушений в регионе и в остальной стране (в процентах), число записей, к которым применимо правило, и статус: «держится» — вывод устойчив на синтетических данных; «проверить» — его нужно подтвердить на реальных записях.
+
+Сгруппируй связанные отклонения в дела (не больше 6, сначала самые важные для официальной статистики). Для каждого дела верни:
+- "title": короткое название;
+- "issues": номера отклонений из сводки;
+- "finding": что выявлено — только числа из сводки, с указанием региона и года;
+- "indicator": какой официальный показатель или раздел публикации это может исказить и в какую сторону;
+- "cause": вероятная причина (гипотеза: формулировка бланка, инструкция, ввод данных, своё кодирование в регионе);
+- "fix": что исправить (инструкция, бланк, контроль при вводе, проверка на реальных записях);
+- "confidence": "высокая", "средняя" или "низкая".
+Не придумывай чисел, которых нет в сводке. Если у отклонений статус «проверить», так и напиши. Пиши по-русски, коротко и конкретно. Ответ — только JSON {"cases": [...]}.`;
+function caseInput() {
+  const list = [...RUN.issues].sort((a, b) => (a.status === b.status ? 0 : a.status === 'hold' ? -1 : 1) || b.excess - a.excess).slice(0, 25);
+  return { list, json: list.map((i, k) => ({ n: k + 1, form: FORM[i.form], year: i.year, region: RU[i.region] || i.region, rule: i.ru || i.rule_id, quote: i.quote || '', rate_region: +i.rate_region.toFixed(1), rate_rest: +i.rate_rest.toFixed(1), records: i.records, status: i.status === 'hold' ? 'держится' : 'проверить' })) };
+}
+function numbersIn(s) { return (String(s).match(/(?<![\p{L}\d_.,])\d+(?:[.,]\d+)?/gu) || []).map(x => x.replace(',', '.')); }
+function verify(cases, inputJSON) {
+  const ok = new Set(numbersIn(JSON.stringify(inputJSON)).flatMap(x => [x, String(+x), (+x).toFixed(1), (+x).toFixed(0)]));
+  let n = 0, good = 0;
+  const mark = s => esc(s).replace(/(?<![\p{L}\d_.,])\d+(?:[.,]\d+)?/gu, m => { n++; const v = m.replace(',', '.'); if (ok.has(v) || ok.has(String(+v))) { good++; return m; } return `<mark title="Этого числа нет в расчёте" style="background:var(--orange-1);color:var(--orange-ink)">${m}<\/mark>`; });
+  const html = cases.map(c => ({ ...c, _f: mark(c.finding || ''), _i: mark(c.indicator || '') }));
+  return { html, n, good };
+}
+function renderAiCases() {
+  let box = $('#a-ai');
+  if (!box) { box = document.createElement('div'); box.id = 'a-ai'; box.className = 'panel stack'; $('#a-loose').before(box); }
+  if (!RUN) { box.hidden = true; return; }
+  box.hidden = false;
+  if (AI.cases && AI.cases.run === RUN) return drawCases(box);
+  box.innerHTML = `<div class="row" style="justify-content:space-between"><h2>Дела по этой проверке · ИИ<\/h2>
+      <div class="row"><button class="btn primary" id="ac-run">Составить дела<\/button><button class="btn" id="ac-copy">Скопировать запрос<\/button><\/div><\/div>
+    <p class="muted">Модель получает только сводку отклонений последней проверки (правило, регион, доли, число записей) — ни одной записи — и группирует их в дела «проблема → влияние → рекомендация». Числа в тексте программа сверяет с расчётом. Нужен ключ API на этапе 0 или ответ из чата.<\/p>
+    <div id="ac-paste" class="stack" hidden><textarea id="ac-reply" rows="5" placeholder="Вставьте ответ модели (JSON)" style="font:12.5px var(--mono);width:100%;border:1px solid var(--line-strong);border-radius:8px;padding:8px;background:var(--surface);color:var(--fg)"><\/textarea><div class="row"><button class="btn primary" id="ac-parse">Разобрать ответ<\/button><\/div><\/div>
+    <span id="ac-status" class="muted"><\/span><pre id="ac-stream" class="sql" hidden style="max-height:140px;overflow:auto"><\/pre>`;
+  const inp = caseInput(), user = 'Сводка отклонений:\n' + JSON.stringify(inp.json, null, 1);
+  $('#ac-copy').addEventListener('click', async () => { $('#ac-paste').hidden = false; try { await navigator.clipboard.writeText(CASE_SYSTEM + '\n\n---\n\n' + user); $('#ac-status').textContent = 'Запрос скопирован: вставьте его в чат Claude, ответ — в поле ниже.'; } catch (e) { $('#ac-reply').value = CASE_SYSTEM + '\n\n---\n\n' + user; $('#ac-status').textContent = 'Буфер обмена недоступен: запрос в поле ниже.'; } });
+  $('#ac-parse').addEventListener('click', () => take($('#ac-reply').value, 'чат Claude'));
+  $('#ac-run').addEventListener('click', async () => {
+    if (!$('#ai-key').value.trim()) { $('#ac-status').textContent = 'Нет ключа API: введите его на этапе 0 или используйте «Скопировать запрос».'; return; }
+    $('#ac-run').disabled = true; const t0 = performance.now(); const pre = $('#ac-stream'); pre.hidden = false;
+    const tick = setInterval(() => { $('#ac-status').textContent = `Модель пишет дела · ${((performance.now() - t0) / 1000).toFixed(0)} с`; }, 250);
+    try { const { text } = await callClaude({ system: CASE_SYSTEM, content: [{ type: 'text', text: user }], maxTokens: 8000, onText: t => { pre.textContent = t.slice(-1200); pre.scrollTop = pre.scrollHeight; } }); clearInterval(tick); take(text, `${$('#ai-model').value}, ${((performance.now() - t0) / 1000).toFixed(0)} с`); }
+    catch (e) { clearInterval(tick); $('#ac-status').textContent = 'Не получилось: ' + e.message; $('#ac-run').disabled = false; }
+  });
+  function take(text, src) {
+    let j; try { j = parseJSON(text, 'cases'); } catch (e) { $('#ac-status').textContent = 'Не получилось: ' + e.message; return; }
+    AI.cases = { run: RUN, cases: j.cases || [], input: inp, src }; drawCases(box);
+  }
+}
+function drawCases(box) {
+  const C = AI.cases, v = verify(C.cases, C.input.json);
+  box.innerHTML = `<div class="row" style="justify-content:space-between"><h2>Дела по этой проверке · ИИ<\/h2><div class="row"><span class="pill ${v.good === v.n ? 'ok' : 'err'}">Числа сверены с расчётом: ${v.good} из ${v.n}<\/span><button class="btn" id="ac-again">Составить заново<\/button><\/div><\/div>
+    <p class="muted">Источник: ${esc(C.src)}. Модель видела только сводку из ${C.input.list.length} отклонений. Числа, которых нет в расчёте, подсвечены. Выводы — гипотезы для методолога.<\/p>
+    ${v.html.map((c, k) => `<article class="hit" style="border-left-color:var(--blue)"><div class="head"><b>И${k + 1}. ${esc(c.title || '')}<\/b><span class="pill ${c.confidence === 'высокая' ? 'hold' : 'miss'}">${esc(c.confidence || '')}<\/span><\/div>
+      <div class="cols3"><div class="stack" style="gap:4px"><p class="lbl">1 · Проблема<\/p><p>${c._f}<\/p><\/div>
+        <div class="stack" style="gap:4px"><p class="lbl">2 · Влияние<\/p><p>${c._i}<\/p><\/div>
+        <div class="stack" style="gap:4px"><p class="lbl">3 · Рекомендация<\/p><p>${esc(c.fix || '')}<\/p><p class="muted"><b>Вероятная причина:<\/b> ${esc(c.cause || '')}<\/p><\/div><\/div>
+      <p class="muted">Отклонения: ${(c.issues || []).map(n => { const i = C.input.list[n - 1]; return i ? `${esc(RU[i.region] || i.region)} · ${esc(FORM[i.form])} (${n})` : n; }).join('; ')}<\/p><\/article>`).join('')}`;
+  $('#ac-again').addEventListener('click', () => { AI.cases = null; renderAiCases(); });
+}
+const baseRender = renderAnalysis;
+renderAnalysis = function () { baseRender(); renderAiCases(); };
+renderInputs();
+})();
+
 </script>
