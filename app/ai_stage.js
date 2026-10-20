@@ -78,12 +78,12 @@ async function addFiles(list) {
 }
 function alertLine(msg) { const p = document.createElement('p'); p.className = 'muted'; p.style.color = 'var(--orange-ink)'; p.textContent = msg; $('#ai-list').after(p); setTimeout(() => p.remove(), 9000); }
 const drop = $('#ai-drop'), input = $('#ai-files');
-drop.addEventListener('click', e => { if (e.target !== input) input.click(); });
+drop.addEventListener('click', e => { if (e.target !== input) { e.preventDefault(); input.click(); } });
 drop.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); } });
 input.addEventListener('change', () => { addFiles([...input.files]); input.value = ''; });
 ['dragenter', 'dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('over'); }));
 ['dragleave', 'drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('over'); }));
-drop.addEventListener('drop', e => addFiles([...e.dataTransfer.files]));
+drop.addEventListener('drop', e => { e.stopPropagation(); addFiles([...e.dataTransfer.files]); });
 
 /* ---------- the request (same text as extract/llm_extract.py) ---------- */
 function userText(forChat) {

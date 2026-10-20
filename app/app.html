@@ -633,15 +633,22 @@ function detect(t) {
   return [null, null];
 }
 function guessYear(t) { for (const c of ['GODO', 'GOD']) if (c in t.cols) { const v = t.cols[c].find(x => x); if (v && /^20\d\d$/.test(v)) return v; } return null; }
-async function addFiles(fileList) {
-  $('#f-status').textContent = 'Читаю файлы…';
-  for (const f of fileList) {
-    const text = await f.text(); const t = E.parseCSV(text); const [form, role] = detect(t);
-    if (!form) { loaded['?' + f.name] = { name: f.name, form: null, table: t }; continue; }
-    loaded[role] = { name: f.name, form, role, table: t };
-    const y = guessYear(t); if (y) $('#f-year').value = y;
+// Safari: read through FileReader when File.text() is missing; the file list is copied before the first await,
+// because a drop's DataTransfer is emptied once the event is over.
+const readText = f => f.text ? f.text() : new Promise((ok, no) => { const r = new FileReader(); r.onload = () => ok(r.result); r.onerror = () => no(r.error); r.readAsText(f); });
+async function addFiles(files) {
+  files = Array.from(files || []);
+  if (!files.length) return;
+  $('#f-status').textContent = 'Читаю файлы…'; const bad = [];
+  for (const f of files) {
+    try {
+      const text = await readText(f); const t = E.parseCSV(text); const [form, role] = detect(t);
+      if (!form) { loaded['?' + f.name] = { name: f.name, form: null, table: t }; continue; }
+      loaded[role] = { name: f.name, form, role, table: t };
+      const y = guessYear(t); if (y) $('#f-year').value = y;
+    } catch (e) { bad.push(`${f.name}: ${e && e.message || e}`); }
   }
-  renderFiles(); $('#f-status').textContent = '';
+  renderFiles(); $('#f-status').textContent = bad.length ? 'Не удалось прочитать: ' + bad.join('; ') : '';
 }
 function canRun() { return (loaded.subject && loaded.ocenka) || loaded.rio || loaded.kontr_k; }
 function renderFiles() {
@@ -653,12 +660,16 @@ function renderFiles() {
 }
 $('#f-rs').addEventListener('change', e => { for (const k of Object.keys(FILE_RS)) delete FILE_RS[k]; const rs = RULESETS[e.target.value]; if (rs) { FILE_RS[rs.form] = rs.key; if (rs.year) $('#f-year').value = String(rs.year); } });
 const drop = $('#drop'), input = $('#files');
-drop.addEventListener('click', e => { if (e.target !== input) input.click(); });
+// the label already opens the picker; preventDefault stops Safari from opening it twice (and cancelling)
+drop.addEventListener('click', e => { if (e.target !== input) { e.preventDefault(); input.click(); } });
 drop.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); } });
-input.addEventListener('change', () => addFiles(input.files));
-['dragenter', 'dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('over'); }));
+input.addEventListener('change', () => { const fs = Array.from(input.files || []); input.value = ''; addFiles(fs); });
+['dragenter', 'dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); if (e.dataTransfer) e.dataTransfer.dropEffect = 'copy'; drop.classList.add('over'); }));
 ['dragleave', 'drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('over'); }));
-drop.addEventListener('drop', e => addFiles(e.dataTransfer.files));
+drop.addEventListener('drop', e => { e.stopPropagation(); addFiles(Array.from(e.dataTransfer.files)); });
+// a file dropped anywhere else on the page must not replace the app; on step 2 it is taken as if dropped on the box
+window.addEventListener('dragover', e => { e.preventDefault(); if (e.dataTransfer) e.dataTransfer.dropEffect = $('#p-file').hidden ? 'none' : 'copy'; });
+window.addEventListener('drop', e => { e.preventDefault(); if (!$('#p-file').hidden && e.dataTransfer) addFiles(Array.from(e.dataTransfer.files)); });
 
 let RUN = null;   // last run: {issues, rows, notRun, forms, year}
 function median(a) { const s = [...a].sort((x, y) => x - y), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; }
